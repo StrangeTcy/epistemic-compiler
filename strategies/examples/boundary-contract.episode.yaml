@@ -1,0 +1,168 @@
+ir_kind: episode
+schema_version: "0.2"
+episode_id: EP-BOUNDARY-CONTRACT
+title: Two-step composition - decomposition, then boundary contracts (hypothetical scenario)
+status: illustrative
+epistemic_note: >-
+  A hypothetical planning scenario written to exercise the composition rules of the schema (state
+  continuity, interface checks, carried assumptions). It is not an executed episode, uses no
+  measurements, and says nothing about the effectiveness of either strategy. It is unrelated to the
+  frozen Mission 01 registration.
+
+root_state: PS-0
+
+problem_states:
+  - problem_state_id: PS-0
+    title: Plan independent construction of a three-module feature
+    statement: >-
+      A feature spans three modules (parser, cache, scheduler) that will be produced independently.
+      In comparable earlier work each module passed its own tests while the assembled feature failed
+      end-to-end checks. (Hypothetical scenario.)
+    goal: >-
+      Produce a plan under which the assembled feature can be checked for global validity, not only
+      for validity of each module.
+    features:
+      - feature: identifiable_subsystem_interfaces
+        evidence: The three modules meet at three named call interfaces.
+        confidence: high
+        asserted_by: human
+      - feature: local_checks_pass_global_may_fail
+        evidence: >-
+          Stated precedent: in comparable earlier work modules passed their own tests and the
+          assembled feature failed end-to-end checks.
+        confidence: moderate
+        asserted_by: human
+    absent_features:
+      - feature: competing_hypotheses_remain
+        evidence: No diagnosis is under way; this is a planning problem.
+        asserted_by: human
+
+  - problem_state_id: PS-1
+    title: Three sub-problems with a cross-boundary dependency list
+    statement: >-
+      Parser, cache, and scheduler sub-problems, with these cross-boundary dependencies recorded: the
+      index base used by parser output and by cache keys; the order of cache updates relative to
+      scheduler reads; the time units shared by the scheduler and cache expiry.
+    goal: >-
+      Declare the semantics of each recorded dependency as a boundary, and define a global predicate
+      for the assembled feature.
+    features:
+      - feature: identifiable_subsystem_interfaces
+        evidence: The recorded dependency list names the three boundaries explicitly.
+        confidence: high
+        asserted_by: human
+      - feature: local_checks_pass_global_may_fail
+        evidence: Unchanged from PS-0; splitting the work does not remove the stated precedent.
+        confidence: moderate
+        asserted_by: human
+    absent_features: []
+
+  - problem_state_id: PS-2
+    title: Boundary manifest and global predicate declared before module work
+    statement: >-
+      A boundary manifest (owner, schema, semantics, compatibility relation) exists for each of the
+      three recorded dependencies and is frozen before any module work is dispatched. A global
+      end-to-end predicate is defined separately from the boundary checks.
+    goal: >-
+      Once modules exist, run local validity, boundary compatibility, and global validity as three
+      separate measurements.
+    features: []
+    absent_features: []
+
+applications:
+  - application_id: APP-1
+    strategy_ref:
+      strategy_id: decomposition-explicit-interfaces
+      version: 1
+    input_state_ref: PS-0
+    output_state_ref: PS-1
+    trigger_evidence:
+      - condition_id: TC1
+        note: PS-0 declares three modules that meet at named call interfaces.
+    off_trigger_rationale: null
+    selection_rationale: >-
+      The modules are separable at existing interfaces, and independent production needs an explicit
+      list of what crosses each interface.
+    transformation_record: >-
+      Split the feature at the three named interfaces and listed what crosses each one (see the
+      statement of PS-1).
+    assumptions_introduced:
+      - >-
+        The three call interfaces are real boundaries of the feature, not only a convenient way to
+        split the work.
+    information_discarded:
+      - >-
+        Cross-cutting concerns that belong to no single boundary (for example an error-handling
+        policy) are not listed and must be added if they matter.
+    interface_check: null
+    obligation_checks:
+      - obligation_id: OB1
+        status: passed
+        evidence: >-
+          The dependency list was compared with the interface signatures and records implicit
+          conventions (index base, update order, units).
+      - obligation_id: OB2
+        status: passed
+        evidence: Each boundary coincides with an existing module interface, so each is classified as real.
+      - obligation_id: OB3
+        status: passed
+        evidence: The union of the three sub-problems covers the stated feature goal.
+    outcome: reduced
+    measurement_refs: []
+    review_status: unreviewed
+
+  - application_id: APP-2
+    strategy_ref:
+      strategy_id: local-to-global-boundary-contract
+      version: 1
+    input_state_ref: PS-1
+    output_state_ref: PS-2
+    trigger_evidence:
+      - condition_id: TC1
+        note: >-
+          PS-1 declares both the named boundaries and the precedent of locally valid components
+          failing a global check.
+    off_trigger_rationale: null
+    selection_rationale: >-
+      The recorded dependencies are exactly the shared content that must be declared before the
+      modules are produced.
+    transformation_record: >-
+      Drafted a boundary manifest entry for each of the three dependencies and froze it before
+      dispatch. Defined the end-to-end predicate separately and specified that local validity,
+      boundary compatibility, and global validity are reported as three measurements.
+    assumptions_introduced:
+      - >-
+        The three recorded dependencies are the only shared content that matters; a missing
+        dependency would not be caught by the manifest.
+    information_discarded: []
+    interface_check: >-
+      PS-1 supplies the recorded cross-boundary dependency list that this strategy turns into
+      declared boundaries, and the goal of PS-1 asks for a global predicate, which is the input this
+      strategy requires.
+    obligation_checks:
+      - obligation_id: OB1
+        status: passed
+        evidence: The manifest is frozen in PS-2 before any module work is dispatched.
+      - obligation_id: OB2
+        status: passed
+        evidence: >-
+          The end-to-end predicate checks assembled behaviour and is specified without reference to
+          the content of the manifest entries.
+      - obligation_id: OB3
+        status: passed
+        evidence: PS-2 specifies three separate measurements.
+      - obligation_id: OB4
+        status: passed
+        evidence: >-
+          No formal structure is invoked; the manifest is described as a set of engineering
+          contracts.
+    outcome: reduced
+    measurement_refs: []
+    review_status: unreviewed
+
+terminal:
+  state_ref: PS-2
+  claim: unsolved
+  note: >-
+    The plan is ready for execution. Whether it lowers global failures has not been measured, which
+    is why the claim is unsolved.

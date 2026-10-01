@@ -1,0 +1,111 @@
+ir_kind: episode
+schema_version: "0.2"
+episode_id: EP-MUTILATED-BOARD
+title: Mutilated chessboard - colour-balance invariant (textbook illustration)
+status: illustrative
+epistemic_note: >-
+  Textbook mathematics used to exercise the schema and to show the trace format. It is not an
+  executed episode, it has no measurement artifacts, and it is not evidence that strategy retrieval
+  or any card improves problem solving.
+
+root_state: PS-0
+
+problem_states:
+  - problem_state_id: PS-0
+    title: Tile the mutilated board with dominoes
+    statement: >-
+      An 8x8 chessboard has two diagonally opposite corner squares removed. Can the remaining 62
+      squares be covered exactly by 31 dominoes, each covering two edge-adjacent squares?
+    goal: Decide whether such a tiling exists and justify the answer.
+    features:
+      - feature: transition_system_reachability_question
+        evidence: >-
+          A tiling can be built by repeatedly placing a domino on two edge-adjacent uncovered
+          squares, so the question is whether the fully covered state is reachable from the empty
+          cover.
+        confidence: high
+        asserted_by: human
+      - feature: candidate_conserved_quantity_suspected
+        evidence: >-
+          Edge-adjacent squares have opposite colours, so every domino covers one square of each
+          colour; a colour balance may be unchanged by every placement.
+        confidence: moderate
+        asserted_by: human
+    absent_features:
+      - feature: competing_hypotheses_remain
+        evidence: This is a single yes/no question; no competing explanations are being weighed.
+        asserted_by: human
+
+  - problem_state_id: PS-1
+    title: Colour-balance argument completed
+    statement: >-
+      Every partial tiling reachable by legal placements has a colour balance of zero, while any
+      complete cover of the mutilated board has a balance of plus or minus two. No sequence of legal
+      placements reaches the full cover.
+    goal: Record the answer (no tiling exists) with the argument that supports it.
+    features: []
+    absent_features: []
+
+applications:
+  - application_id: APP-1
+    strategy_ref:
+      strategy_id: invariant-conserved-quantity
+      version: 1
+    input_state_ref: PS-0
+    output_state_ref: PS-1
+    trigger_evidence:
+      - condition_id: TC1
+        note: >-
+          PS-0 declares a reachability question over legal placements and a specific colour-based
+          reason to suspect a conserved quantity.
+    off_trigger_rationale: null
+    selection_rationale: >-
+      Exhaustive enumeration of partial tilings is the alternative; the paired-colour structure of
+      the placements makes a balance argument cheaper to state and check.
+    transformation_record: >-
+      Q(s) = (number of covered black squares) - (number of covered white squares) in the partial
+      tiling s; P(v) holds exactly when v = 0. States: partial domino covers. Transition schema:
+      place a domino on two edge-adjacent uncovered squares. Start: the empty cover, with Q = 0.
+      Target: the full cover of the 62 remaining squares. The two removed corners have the same
+      colour, so the board has 30 squares of that colour and 32 of the other, and any full cover has
+      Q = plus or minus 2.
+    assumptions_introduced:
+      - >-
+        Dominoes are placed only on two edge-adjacent squares, may not overlap, and may not extend
+        off the board (the stated rules of the problem).
+    information_discarded:
+      - >-
+        Which squares are covered, and the geometry of any placement, are discarded; only the colour
+        balance is kept. The argument proves that no tiling exists but would give no construction if
+        one did.
+    interface_check: null
+    obligation_checks:
+      - obligation_id: "invariant-closed-predicate#OB1"
+        status: passed
+        evidence: The empty cover covers no square, so Q = 0 and P holds on the start state.
+      - obligation_id: "invariant-closed-predicate#OB2"
+        status: passed
+        evidence: >-
+          Every placement covers one black and one white square because edge-adjacent squares differ
+          in colour, so Q is unchanged; the argument covers every instance of the placement schema.
+      - obligation_id: "invariant-closed-predicate#OB3"
+        status: passed
+        evidence: A full cover has Q = plus or minus 2, so P fails on the target state.
+      - obligation_id: "invariant-closed-predicate#OB4"
+        status: passed
+        evidence: >-
+          By the statement of the problem a placement of one domino is the only operation; no other
+          move exists (recorded as an assumption).
+      - obligation_id: "OB1"
+        status: passed
+        evidence: >-
+          The change of Q under the placement schema is zero by construction (plus one black and
+          plus one white), shown for the schema rather than by sampling placements.
+    outcome: solved
+    measurement_refs: []
+    review_status: unreviewed
+
+terminal:
+  state_ref: PS-1
+  claim: solved
+  note: Illustrative only; see epistemic_note.

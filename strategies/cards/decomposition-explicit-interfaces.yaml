@@ -1,0 +1,105 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: decomposition-explicit-interfaces
+version: 1
+name: Decompose along real boundaries and list what crosses them
+family: decomposition
+status: candidate
+
+scope:
+  problem_classes:
+    - Tasks whose parts interact through identifiable interfaces and that are too large or too tangled to attack as a whole.
+  preconditions:
+    - Candidate boundaries correspond to structure that exists in the task, not only to a convenient way of splitting the work.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        The task contains parts with identifiable interfaces or limited cross-boundary
+        dependencies.
+      requires_features:
+        - identifiable_subsystem_interfaces
+  diagnostic_questions:
+    - Which dependencies cross each proposed boundary?
+    - Is each boundary real in the task, or imposed for convenience?
+    - What does each side need from the other at the boundary, including implicit conventions?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A task treated as one undivided problem.
+  operation: >-
+    Split the task along the proposed boundaries. For every boundary, list the information that
+    crosses it (data, conventions, ordering, units, state handoff timing) and classify the boundary
+    as real, with an independent structural reason, or as convenience.
+  output_representation: >-
+    A set of sub-problems and an explicit cross-boundary dependency list, with a real or convenience
+    classification for each boundary.
+
+expected_effect:
+  measurable_prediction: >-
+    Sub-problems become individually tractable while the recorded dependency list captures the
+    couplings that matter, so that fewer defects appear at integration than with an unrecorded
+    split.
+  outcome_measure: >-
+    Solve success and effort against the undivided baseline, and the share of integration defects
+    traceable to dependencies missing from the recorded list.
+
+obligations:
+  - id: OB1
+    text: >-
+      Every cross-boundary dependency is recorded, including implicit conventions such as indexing
+      base, ordering of updates, and units.
+  - id: OB2
+    text: Each boundary is classified as real or convenience, with the reason.
+  - id: OB3
+    text: The sub-problems together cover the original goal; nothing is dropped at the seams.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      A false boundary hides coupling and produces components that are valid locally but
+      incompatible globally.
+  - id: FM2
+    text: >-
+      The coordination overhead of the split exceeds the benefit of smaller sub-problems.
+  - id: FM3
+    text: >-
+      An implicit dependency is not listed and is discovered only at integration.
+
+validation:
+  discriminating_tests:
+    - >-
+      Compare solve success and effort on matched tasks with and without the decomposition, under
+      equal budgets.
+    - >-
+      Audit the recorded dependency list against the defects found during integration; dependencies
+      found late indicate an incomplete list.
+  baseline: >-
+    Direct attack on the undivided problem under an equal budget.
+  falsification_condition: >-
+    Integration defects traced to dependencies absent from the recorded list exceed a share fixed
+    before the comparison, or there is no improvement over the undivided baseline on trigger-matched
+    tasks.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations:
+  - type: composes_with
+    target: local-to-global-boundary-contract
+    rationale: >-
+      The dependency list produced here names the boundaries whose contracts the local-to-global
+      strategy declares and tests.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#decomposition
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Derived from the decomposition family; it has no exemplars or counterexamples on record.

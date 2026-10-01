@@ -1,0 +1,96 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: meta-unfix-assumptions
+version: 1
+name: Audit which formulation choices are actually fixed
+family: meta
+status: candidate
+
+scope:
+  problem_classes:
+    - Stuck or unexpectedly hard problems whose formulation (objective, representation, decomposition, measurement, access, timing, ordering, interface, prior knowledge) was inherited rather than derived.
+  preconditions:
+    - The original question can be stated well enough to test whether a changed formulation still answers it.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Difficulty may depend on rules, objectives, representation, timing, information access, or
+        decomposition that were treated as fixed without checking.
+      requires_features:
+        - unexamined_fixed_assumptions
+  diagnostic_questions:
+    - >-
+      Which formulation choices does the task itself fix, and which were inherited by habit?
+    - What changes if one of the free choices is treated as a variable?
+    - Does the changed problem still answer the original question?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A problem attacked in the form in which it was first posed.
+  operation: >-
+    List the formulation choices (objective, representation, decomposition, measurement, access to
+    information, timing, ordering, interface, prior knowledge). Classify each as constrained, citing
+    the task rule that constrains it, or free. Vary one free choice at a time and tag each resulting
+    variant as question-preserving or question-changing.
+  output_representation: >-
+    A register of formulation choices (constrained or free, with reasons) and a set of variant
+    problems, each tagged as question-preserving or question-changing.
+
+expected_effect:
+  measurable_prediction: >-
+    For some stuck problems a free choice exists whose variation gives an easier variant that still
+    answers the original question.
+  outcome_measure: >-
+    Share of stuck problems for which a question-preserving easier variant is found, compared with an
+    unprompted attempt of equal duration, and the share of claimed solutions that blind review judges
+    question-changing.
+
+obligations:
+  - id: OB1
+    text: >-
+      Each variant is checked against the original question; a variant that changes what is being
+      asked is tagged question-changing and is not counted as a solution.
+  - id: OB2
+    text: >-
+      Each choice classified as constrained cites the task rule or requirement that constrains it.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      A different problem is solved while appearing to solve the original one.
+  - id: FM2
+    text: >-
+      A real constraint is treated as free, which breaks a rule of the task.
+  - id: FM3
+    text: >-
+      The register grows without bound and the audit replaces progress on the problem.
+
+validation:
+  discriminating_tests:
+    - >-
+      Replay stuck cases with a register-based audit and with an unprompted attempt of equal
+      duration, and have a blind reviewer judge whether each variant preserves the question.
+  baseline: >-
+    An unprompted problem-solving attempt of equal duration.
+  falsification_condition: >-
+    No increase in question-preserving easier variants over the baseline, or a share of claimed
+    solutions judged question-changing in blind review above a level fixed before the comparison.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#meta
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Derived from the meta family; it has no exemplars or counterexamples on record.

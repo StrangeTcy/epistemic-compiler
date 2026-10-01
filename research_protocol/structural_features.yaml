@@ -1,0 +1,164 @@
+ir_kind: feature_vocabulary
+schema_version: "0.2"
+status: proposed_unvalidated
+provenance:
+  origin: derived_from_strategy_families
+  source_refs:
+    - research_protocol/strategy_families.yaml
+  note: >-
+    Each feature restates a trigger condition of strategy_families.yaml as a property of a
+    problem state that a human or agent can assess. The vocabulary is a coordination device
+    that lets triggers be matched mechanically; it is not a validated ontology of problems.
+    Asserting a feature is a claim about a problem and must carry evidence (see
+    research_protocol/strategy_ir.md, section 4). The invariant family's single trigger is
+    split into a reachability question plus separate conserved/monotone suspicions so that
+    specializations of one strategy can be told apart.
+features:
+  - id: representation_hides_structure
+    label: Representation hides structure
+    description: >-
+      The current encoding of the problem hides constraints, interfaces, or other structure
+      that is relevant to solving it.
+    diagnostic_question: >-
+      Is there an alternative encoding in which the structure relevant to the goal would be
+      explicit, and which distinctions would that encoding lose?
+    derived_from_family: representation
+
+  - id: transition_system_reachability_question
+    label: Reachability question over allowed transitions
+    description: >-
+      The question is whether some state or outcome is reachable (or impossible) under an
+      explicit set of allowed operations or transitions.
+    diagnostic_question: >-
+      Can the allowed operations, the starting state(s), and the target state(s) each be
+      stated precisely enough to evaluate a quantity on them?
+    derived_from_family: invariant
+
+  - id: candidate_conserved_quantity_suspected
+    label: Conserved quantity suspected
+    description: >-
+      There is a specific reason to suspect that some quantity (a count, residue, balance,
+      or total) is left unchanged by every allowed operation. The suspicion is not yet verified.
+    diagnostic_question: >-
+      Which quantity might every allowed operation leave unchanged, and what observation
+      about the operations suggests it?
+    derived_from_family: invariant
+
+  - id: candidate_monotone_quantity_suspected
+    label: Monotone quantity suspected
+    description: >-
+      There is a specific reason to suspect that some quantity can only move in one direction
+      under the allowed operations (growth, accumulation, irreversibility). The suspicion is
+      not yet verified.
+    diagnostic_question: >-
+      Which quantity might never decrease (or never increase) under any allowed operation,
+      and under which order on its values?
+    derived_from_family: invariant
+
+  - id: capability_or_access_asymmetry
+    label: Capability or access asymmetry
+    description: >-
+      The investigator and the target, or participants in the problem, differ in information,
+      access, cost of acting, or capability.
+    diagnostic_question: >-
+      What is cheap to inspect or change for one side but expensive or unavailable to the other,
+      and will that difference exist in the intended deployment?
+    derived_from_family: asymmetry
+
+  - id: identifiable_subsystem_interfaces
+    label: Identifiable subsystem interfaces
+    description: >-
+      The task contains parts with identifiable interfaces or limited cross-boundary
+      dependencies, so that it can be split along boundaries that exist in the task itself.
+    diagnostic_question: >-
+      Which dependencies cross each proposed boundary, and is each boundary real in the task or
+      imposed for convenience?
+    derived_from_family: decomposition
+
+  - id: competing_hypotheses_remain
+    label: Competing hypotheses remain
+    description: >-
+      Several explanations, designs, or diagnoses are still live and have not been separated by
+      evidence.
+    diagnostic_question: >-
+      Which candidate explanations are still live, including a null or artifactual one, and what
+      is the current evidence against each?
+    derived_from_family: elimination
+
+  - id: cheap_discriminating_test_available
+    label: Cheap discriminating test available
+    description: >-
+      At least one inexpensive test exists whose outcome would distinguish between some of the
+      live candidates.
+    diagnostic_question: >-
+      Which test is cheap, and for each live candidate, which outcome of that test would
+      eliminate it?
+    derived_from_family: elimination
+
+  - id: oversized_or_underdetermined_solution_space
+    label: Oversized or underdetermined solution space
+    description: >-
+      The space of candidate solutions is too large or too weakly specified for direct search or
+      direct reasoning.
+    diagnostic_question: >-
+      Which constraints follow from the goal or the interface, and which are only convenient
+      assumptions?
+    derived_from_family: constraint
+
+  - id: claim_with_searchable_state_space
+    label: Claim with a searchable state space
+    description: >-
+      A proposed rule, explanation, or generalization quantifies over a concrete input or state
+      space in which violating cases can be searched for or constructed.
+    diagnostic_question: >-
+      Can the claim be written as a predicate over a defined object space, and is that space
+      enumerable or constructible?
+    derived_from_family: counterexample
+
+  - id: unexamined_fixed_assumptions
+    label: Unexamined fixed assumptions
+    description: >-
+      Difficulty may depend on rules, objectives, representation, timing, information access, or
+      decomposition that have been treated as fixed without checking whether the task fixes them.
+    diagnostic_question: >-
+      Which formulation choices are actually constrained by the task, and which were inherited by
+      habit?
+    derived_from_family: meta
+
+  - id: enumerable_candidate_space
+    label: Enumerable candidate space
+    description: >-
+      A finite or tractable candidate space exists, and computation, enumeration, or parallel
+      candidate generation is available within budget.
+    diagnostic_question: >-
+      Can the space be enumerated or searched with a complete stopping condition, and what cost or
+      coverage limit applies?
+    derived_from_family: search
+
+  - id: strategic_actors
+    label: Strategic actors
+    description: >-
+      Multiple actors have incentives, beliefs, information, or responses that affect the outcome.
+    diagnostic_question: >-
+      Who acts, what does each actor know, and how can each respond to the others?
+    derived_from_family: game
+
+  - id: local_checks_pass_global_may_fail
+    label: Local checks pass but the global result may fail
+    description: >-
+      Components can pass their own local checks while the composed result may still fail a global
+      requirement that the local checks do not entail.
+    diagnostic_question: >-
+      What global predicate is not entailed by local validity alone, and what boundary information
+      must be preserved for local results to compose?
+    derived_from_family: local_to_global
+
+  - id: resembles_known_problem_under_mapping
+    label: Resembles a known problem under a mapping
+    description: >-
+      After some candidate mapping, the problem looks like a well-understood problem with
+      established machinery.
+    diagnostic_question: >-
+      What map sends this problem to the known one, and which assumptions and conclusions survive
+      the mapping?
+    derived_from_family: transformation

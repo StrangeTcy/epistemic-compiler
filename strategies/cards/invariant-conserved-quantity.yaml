@@ -1,0 +1,122 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: invariant-conserved-quantity
+version: 1
+name: Conserved quantity (conservation, parity, or colouring argument)
+family: invariant
+status: candidate
+
+scope:
+  problem_classes:
+    - Reachability or impossibility questions in which each allowed operation changes the state in a balanced or paired way.
+  preconditions:
+    - Each allowed operation can be described as a schema whose effect on a candidate quantity can be computed symbolically.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        A reachability or impossibility question over allowed transitions, together with a specific
+        reason to suspect a conserved quantity.
+      requires_features:
+        - transition_system_reachability_question
+        - candidate_conserved_quantity_suspected
+  diagnostic_questions:
+    - >-
+      Does every allowed operation act in a balanced or paired way (adds one item of each of two
+      kinds, moves a unit from one place to another, flips two things together)?
+    - >-
+      Which count, residue, balance, or total over a classification of the state components is
+      unchanged by each operation schema?
+    - Does the quantity take different values on the start state(s) and on the target state(s)?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A reachability question over a transition system with a suspicion that some quantity is left
+    unchanged by every operation.
+  operation: >-
+    Classify the state components so that a count, residue, or balance Q is defined (for example by
+    colouring), compute the change in Q under each operation schema, and show it is exactly zero.
+    Evaluate Q on the start and on the target states. If they differ, no target is reachable.
+  output_representation: >-
+    A per-schema calculation that Q is unchanged, plus two evaluations of Q (start and target), in
+    place of a search over trajectories.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched problems with a valid conserved quantity, the infeasibility argument is
+    found and verified with less effort than exhaustive search, without false infeasibility
+    verdicts.
+  outcome_measure: >-
+    Effort to a verified infeasibility verdict versus the complete-search baseline, and the number
+    of false infeasibility verdicts on instances with known ground truth.
+
+obligations:
+  - id: OB1
+    text: >-
+      The change of Q under each operation schema is shown to be exactly zero by an argument that
+      covers every instance of the schema, not by testing sample transitions.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      The classification that defines Q is applied inconsistently between the transition
+      calculation and the start/target evaluations, so the calculation does not support the
+      conclusion.
+  - id: FM2
+    text: >-
+      Q is conserved but takes the same value on start and target; the strategy yields nothing and
+      should be recorded as no_effect rather than as a partial success.
+  - id: FM3
+    text: >-
+      A conserved quantity proves infeasibility only; where the target is reachable it yields no
+      construction.
+
+validation:
+  discriminating_tests:
+    - >-
+      Plant instances where an operation that breaks conservation is added to the allowed set and
+      check that the per-schema argument fails on it.
+    - >-
+      Compare the verified verdicts with exhaustive search on enumerable instances.
+  baseline: >-
+    Exhaustive search, and the closed-predicate parent strategy applied without the conservation
+    heuristic, under the same instance budget.
+  falsification_condition: >-
+    The conservation argument yields an infeasibility verdict contradicted by an independent
+    search, or on trigger-matched instances it finds a verified separating quantity no more often or
+    no more cheaply than the parent strategy, by a margin fixed before the comparison.
+  counterexample_attempts: []
+
+exemplars:
+  - id: EX1
+    kind: textbook_illustration
+    ref: strategies/examples/mutilated-board.episode.yaml
+    note: >-
+      Colour balance on the mutilated chessboard. Textbook mathematics; it shows the trace format
+      and the obligation checks, not that the card helps on unfamiliar problems.
+counterexamples: []
+
+relations:
+  - type: specializes
+    target: invariant-closed-predicate
+    rationale: >-
+      Exact conservation is the case in which the closed predicate is equality with the start
+      value of Q.
+    bindings:
+      P: Equality with the start value, so P(v) holds exactly when v equals Q(start).
+      Q: >-
+        A count, residue, or balance over a classification of the state components, chosen so that
+        each operation schema leaves it unchanged.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#invariant
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Covers the conservation-argument and parity-trick variants named in the supplied reflection as
+    cases of one parameterised schema. Whether they are usefully one strategy is a hypothesis.

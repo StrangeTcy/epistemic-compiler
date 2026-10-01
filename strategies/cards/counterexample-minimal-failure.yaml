@@ -1,0 +1,96 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: counterexample-minimal-failure
+version: 1
+name: Search for and minimise the smallest counterexample
+family: counterexample
+status: candidate
+
+scope:
+  problem_classes:
+    - Rules, explanations, or generalizations that quantify over a defined object space in which violating objects can be searched for or constructed.
+  preconditions:
+    - The claim can be written as a predicate over a defined object space.
+    - A violation can be checked mechanically or by a stated procedure.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        A proposed rule, explanation, or generalization has a concrete input or state space that
+        can be searched.
+      requires_features:
+        - claim_with_searchable_state_space
+  diagnostic_questions:
+    - What is the smallest object that would make the claim fail?
+    - Can a failure be minimised and traced to a specific assumption?
+    - Is the object space enumerable, or can violating objects be constructed?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A claim assessed by confirming instances or by broad, benchmark-style evaluation.
+  operation: >-
+    State the claim as a universally quantified predicate over a defined object space. Search by
+    enumeration, sampling, or construction for a violating object. Minimise any violation found,
+    trace it to the assumption it breaks, and preserve the exact failing artifact.
+  output_representation: >-
+    A minimal verified counterexample with the broken assumption identified, or a recorded search
+    with its coverage, budget, seeds, and stopping rule.
+
+expected_effect:
+  measurable_prediction: >-
+    Overbroad claims are narrowed or refuted by small diagnostic cases at lower cost than by
+    benchmark-style evaluation of the same claims.
+  outcome_measure: >-
+    Number of planted false claims detected per unit effort, compared with a sampling baseline over
+    the same object space.
+
+obligations:
+  - id: OB1
+    text: The claim and the object space are stated precisely before the search begins.
+  - id: OB2
+    text: >-
+      A reported counterexample is re-verified under the claim's registered semantics and the exact
+      artifact is preserved.
+  - id: OB3
+    text: >-
+      A negative search records the space covered, the budget, the seeds, and the stopping rule, and
+      no coverage is claimed beyond them.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      The counterexample exploits an implementation artifact outside the claim's intended scope.
+  - id: FM2
+    text: A failed search is read as proof that the claim holds.
+  - id: FM3
+    text: >-
+      The object space omits the cases in which the claim is actually false.
+
+validation:
+  discriminating_tests:
+    - >-
+      Plant known-false claims of varying subtlety and measure how often the search procedure finds
+      a counterexample, compared with sampling the same object space at equal budget.
+  baseline: >-
+    Benchmark-style sampling of the same object space under an equal budget.
+  falsification_condition: >-
+    Detection of planted false claims is no better than the sampling baseline at equal budget, by a
+    margin fixed before the comparison.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#counterexample
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Derived from the counterexample family; it has no exemplars or counterexamples on record.

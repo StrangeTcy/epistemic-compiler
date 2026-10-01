@@ -1,0 +1,143 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: local-to-global-boundary-contract
+version: 1
+name: Separate local validity, declared boundary compatibility, and global validity
+family: local_to_global
+status: candidate
+
+scope:
+  problem_classes:
+    - Tasks assembled from separately produced components (modules, agents, work packages) whose combined result must satisfy a requirement that no single component checks.
+  preconditions:
+    - The boundaries between components can be named and their shared content (data, conventions, ordering, state handoff) can be written down before the components are produced.
+    - A global requirement can be stated as a predicate that does not simply restate the boundary checks.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Components can pass their own checks while the assembled result may still fail, and the
+        components meet at identifiable interfaces.
+      requires_features:
+        - local_checks_pass_global_may_fail
+        - identifiable_subsystem_interfaces
+  diagnostic_questions:
+    - What boundary information must be preserved for local results to compose?
+    - What global predicate is not entailed by local validity alone?
+    - >-
+      Who owns the semantics of each shared boundary, and was it fixed before any component work
+      began?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A composition question posed as "can these local solutions solve the global task?", judged by
+    local checks alone.
+  operation: >-
+    Separate three relations and test each explicitly: (1) local validity of each component;
+    (2) compatibility on each declared boundary, against a canonical boundary schema fixed before
+    local work begins; (3) global validity, against a predicate evaluated independently of the
+    boundary checks. Record at which relation each failure occurs.
+  output_representation: >-
+    A mission-level boundary manifest (owner, schema, semantics, and compatibility relation for each
+    shared boundary) and three separately reported measurements: local validity, boundary
+    compatibility, and global validity.
+
+expected_effect:
+  measurable_prediction: >-
+    Among component tuples that pass all local checks, declaring and checking boundary
+    compatibility before composition lowers the global-validity failure rate relative to the same
+    decomposition without declared boundary checks.
+  outcome_measure: >-
+    Global-validity failure rate among locally valid tuples, per condition, on independently
+    specified tasks whose global predicate is not derived from the boundary contracts.
+
+obligations:
+  - id: OB1
+    text: >-
+      Boundary semantics are declared and frozen before local work begins; no component defines its
+      own shared boundary.
+  - id: OB2
+    text: >-
+      The global predicate is specified and evaluated independently of the boundary compatibility
+      checks, so that the comparison is not circular.
+  - id: OB3
+    text: >-
+      Local validity, boundary compatibility, and global validity are reported as three separate
+      measurements.
+  - id: OB4
+    text: >-
+      Any formal structure invoked (presheaf, sheaf, descent, cohomology) is justified separately;
+      otherwise the boundary declarations are described as engineering contracts.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      The boundary contract is arbitrary or incomplete, so compatibility checks pass while global
+      validity fails.
+  - id: FM2
+    text: >-
+      The contract, the checkers, and the global predicate are co-designed, which makes the
+      comparison circular.
+  - id: FM3
+    text: >-
+      Simpler baselines (pairwise contracts on a spanning structure, or an assume-guarantee check
+      around a cycle) capture most of the benefit, so the added structure is not the active
+      ingredient.
+  - id: FM4
+    text: >-
+      A formal label is attached to an engineering contract without defining the cover, coefficient
+      structure, cocycles, and equivalence relation that the label requires.
+
+validation:
+  discriminating_tests:
+    - >-
+      Matched decomposition with and without declared boundary contracts, on independently specified
+      tasks, with a global predicate that is not derived from the contracts.
+    - >-
+      Include a stronger simple baseline (pairwise contracts on a spanning tree plus a cycle-closing
+      check) so that any benefit of structure beyond pairwise contracts can be tested separately.
+  baseline: >-
+    The matched decomposition without declared boundary compatibility checks (local validity only).
+  falsification_condition: >-
+    No reduction in global-validity failure among locally valid tuples beyond a margin fixed before
+    execution, relative to the matched no-contract decomposition; or, for the claim that structure
+    beyond pairwise contracts matters, no margin over the stronger simple baseline.
+  counterexample_attempts: []
+
+exemplars:
+  - id: EX1
+    kind: bounded_pilot
+    ref: mission-01/claim_set.md
+    note: >-
+      Mission 01 Part B (claim C03): a deterministic enumeration of 162 constructed workspace
+      variants gave an orbit-failure fraction of 0.6111 for the Chart-Only checker and 0.0000 for the
+      checker arm historically named Sheaf-Cocycle. The generator, the predicates, and the oracle were
+      designed together, no independent agents ran, and the broad local-to-global question is
+      classified inconclusive_result. Descriptive arithmetic on a finite constructed set only.
+counterexamples:
+  - id: CX1
+    ref: mission-01/falsification/falsification_results.json
+    note: >-
+      FALS-03b: the registered 15 pp unconditional margin of the Sheaf-Cocycle arm over the
+      Circular-AG arm was not met (7.41 pp; the Circular-AG failure fraction was 0.0741), so on that
+      finite set a simpler circular assume-guarantee check accounted for most of the reduction
+      relative to Chart-Only (FM3). The conditional false-pass difference among accepted handoffs
+      (20.10 pp) is a separate metric and was retained.
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#local_to_global
+    - research_protocol/protocol.md
+    - mission-01/reviews/REV-01_methodological_review.md
+    - mission-01/claim_set.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written prospectively from the local_to_global family and the corrections recorded in REV-01.
+    Mission 01 is cited as a bounded pilot and as a source of one partial disconfirmation, not as
+    support for the strategy's effectiveness; it did not use this card.

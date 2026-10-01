@@ -1,0 +1,120 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: invariant-monotone-potential
+version: 1
+name: Monotone potential (one-directional quantity)
+family: invariant
+status: candidate
+
+scope:
+  problem_classes:
+    - Reachability or impossibility questions in which allowed operations only move in one direction under some ordering.
+  preconditions:
+    - A candidate potential with a declared order on its values can be evaluated on every state in scope.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        A reachability or impossibility question over allowed transitions, together with a specific
+        reason to suspect a monotone quantity.
+      requires_features:
+        - transition_system_reachability_question
+        - candidate_monotone_quantity_suspected
+  diagnostic_questions:
+    - >-
+      Do the allowed operations only accumulate, only consume, or otherwise only move in one
+      direction under some ordering?
+    - >-
+      Which potential Q, with which order on its values, never decreases (or never increases) under
+      any allowed operation?
+    - >-
+      Do all target states lie strictly on the unreachable side of the start value of Q?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A reachability question over a transition system with a suspicion that some quantity can only
+    move in one direction.
+  operation: >-
+    Define a potential Q with a declared order on its values and show that every operation schema
+    leaves Q no lower than before (or no higher, for a decreasing potential). Show that every target
+    state has Q strictly below Q(start) (or strictly above, respectively). Conclude that no target is
+    reachable.
+  output_representation: >-
+    A per-schema monotonicity argument, a declared order on Q-values, and evaluations of Q on the
+    start and target states, in place of a search over trajectories.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched problems with a valid monotone potential, the infeasibility argument is found
+    and verified with less effort than exhaustive search, without false infeasibility verdicts.
+  outcome_measure: >-
+    Effort to a verified infeasibility verdict versus the complete-search baseline, and the number
+    of false infeasibility verdicts on instances with known ground truth.
+
+obligations:
+  - id: OB1
+    text: >-
+      The order on Q-values is a genuine order (reflexive and transitive) and the direction of
+      monotonicity is the same for every operation schema; mixed directions are not accepted.
+  - id: OB2
+    text: >-
+      Monotonicity under each operation schema is argued for every instance of the schema, not
+      tested on sample transitions.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      One operation schema moves Q in the opposite direction and was overlooked, so the potential is
+      not monotone.
+  - id: FM2
+    text: >-
+      The potential is monotone but the targets are not strictly on the unreachable side of
+      Q(start); no contradiction follows.
+  - id: FM3
+    text: >-
+      A monotone argument gives a one-sided bound; it is mistaken for a characterisation of the
+      reachable set.
+
+validation:
+  discriminating_tests:
+    - >-
+      Plant instances in which one operation reverses the potential and check that the per-schema
+      argument fails on it.
+    - >-
+      Compare the verified verdicts with exhaustive search on enumerable instances.
+  baseline: >-
+    Exhaustive search, and the closed-predicate parent strategy applied without the monotonicity
+    heuristic, under the same instance budget.
+  falsification_condition: >-
+    The monotonicity argument yields an infeasibility verdict contradicted by an independent
+    search, or on trigger-matched instances it finds a verified separating potential no more often
+    or no more cheaply than the parent strategy, by a margin fixed before the comparison.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations:
+  - type: specializes
+    target: invariant-closed-predicate
+    rationale: >-
+      A monotone potential is the case in which the closed predicate is one-sided: Q(s) is at least
+      Q(start) in a declared order.
+    bindings:
+      P: >-
+        One-sided in a declared order: P(v) holds exactly when v is at least Q(start), or at most
+        Q(start) for a decreasing potential.
+      Q: A potential over the states together with a declared order on its values.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#invariant
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Covers the state-monotonicity variant named in the supplied reflection. It is a specialization
+    of the closed-predicate form, not of the equality form stated there.

@@ -1,0 +1,160 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: invariant-closed-predicate
+version: 1
+name: Closed-predicate invariant (reachability obstruction)
+family: invariant
+status: candidate
+
+scope:
+  problem_classes:
+    - Reachability or impossibility questions over an explicit set of allowed state transitions.
+  preconditions:
+    - The allowed transitions can be enumerated, or characterised by a finite set of schemas, within the stated scope.
+    - Start and target states can be described precisely enough to evaluate a quantity on them.
+
+# Open slots of this abstract schema. Specializing cards bind them (see relations of
+# invariant-conserved-quantity and invariant-monotone-potential).
+parameters:
+  - name: states
+    description: The state space, or the fragment of it that is relevant to the question.
+  - name: transitions
+    description: The complete set of allowed state-to-state operations, as explicit transitions or transition schemas.
+  - name: start
+    description: The initial state or states.
+  - name: target
+    description: The state or states whose reachability is in question.
+  - name: Q
+    description: A function from states to a value domain (a count, residue, balance, potential, or similar).
+  - name: P
+    description: A predicate on Q-values that is closed under every allowed transition.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        A reachability or impossibility question over allowed transitions, together with a specific
+        reason to suspect a conserved quantity.
+      requires_features:
+        - transition_system_reachability_question
+        - candidate_conserved_quantity_suspected
+    - id: TC2
+      text: >-
+        A reachability or impossibility question over allowed transitions, together with a specific
+        reason to suspect a monotone quantity.
+      requires_features:
+        - transition_system_reachability_question
+        - candidate_monotone_quantity_suspected
+    - id: TC3
+      text: >-
+        A reachability or impossibility question over allowed transitions with no suspected
+        quantity yet; the strategy is then a prompt to look for one before committing to
+        simulation or search.
+      requires_features:
+        - transition_system_reachability_question
+  diagnostic_questions:
+    - What quantity Q might be preserved or monotone under every allowed operation?
+    - Do the start state(s) and the target state(s) differ in Q, in the sense of the predicate P?
+    - Is the list of allowed operations complete, including rare, compound, or environment-induced moves?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A reachability question over a transition system, posed as a search over trajectories or as
+    a simulation of the system.
+  operation: >-
+    Propose Q and P such that P(Q(s)) holds for every start state s, P(Q(.)) is closed under every
+    allowed transition (if P(Q(s)) holds and s moves to s', then P(Q(s')) holds), and P(Q(t)) fails
+    for every target state t. Conclude that no target is reachable from the start. Verify closure
+    per transition schema by an argument over all instances of the schema, not by sampling
+    trajectories. If no (Q, P) is found, record the attempts; failing to find an invariant is not
+    evidence of reachability.
+  output_representation: >-
+    A finite verification obligation (closure over the transition schemas, plus evaluation on the
+    start and target states) in place of an open-ended trajectory search, or a recorded failure to
+    find such a Q and P.
+
+expected_effect:
+  measurable_prediction: >-
+    On problems that admit a separating (Q, P), establishing infeasibility needs verification work
+    proportional to the number of transition schemas rather than to the number of reachable states.
+  outcome_measure: >-
+    Verification effort (checks or wall-clock time) to establish infeasibility, compared with a
+    complete-search baseline, together with agreement of the verdict with ground truth where known.
+
+obligations:
+  - id: OB1
+    text: P(Q(s)) holds for every start state s.
+  - id: OB2
+    text: >-
+      For every allowed transition schema, P(Q(s)) implies P(Q(s')) for every instance s to s';
+      closure is argued for the whole schema, not sampled.
+  - id: OB3
+    text: P(Q(t)) fails for every target state t.
+  - id: OB4
+    text: >-
+      The transition set is complete for the stated scope: no unlisted, compound, or
+      environment-induced moves exist.
+
+failure_modes:
+  - id: FM1
+    text: >-
+      Incomplete transition model: an unlisted operation breaks closure, so the argument is
+      vacuous.
+  - id: FM2
+    text: >-
+      Q and P satisfy closure but do not separate start from target, so no contradiction is
+      obtained and the question remains open.
+  - id: FM3
+    text: >-
+      Closure is checked on typical transitions only and a rare transition violates it.
+  - id: FM4
+    text: >-
+      The real question is quantitative (cost, probability, latency) rather than feasibility, so an
+      invariant can bound the answer at most.
+  - id: FM5
+    text: >-
+      Failure to find an invariant is read as evidence that the target is reachable; reachability
+      needs a witness path.
+
+validation:
+  discriminating_tests:
+    - >-
+      Build known-infeasible and known-feasible reachability instances; check that a candidate
+      (Q, P) passes OB1-OB4 only on the infeasible ones, and that closure verification rejects the
+      same (Q, P) once an extra move is added to the transition set.
+    - >-
+      On instances small enough to enumerate, compare the verdict and the verification effort with
+      exhaustive search.
+  baseline: >-
+    Exhaustive or heuristic search over reachable states under the same instance budget.
+  falsification_condition: >-
+    A (Q, P) that passes OB1-OB4 admits a target state that an independent search reaches (the
+    obligations were insufficient), or the procedure does not reduce verification effort relative
+    to the baseline on trigger-matched instances by a margin fixed before the comparison.
+  counterexample_attempts: []
+
+exemplars:
+  - id: EX1
+    kind: textbook_illustration
+    ref: strategies/examples/mutilated-board.episode.yaml
+    note: >-
+      Illustrates the mechanism through its conserved-quantity specialization (colour balance on
+      the mutilated chessboard). Textbook mathematics; it carries no evidential weight for how
+      well retrieval or this card works on new problems.
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#invariant
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    The supplied strategy-library reflection states the equality form (seek Q with
+    Q(state_i) = Q(state_i+1) such that targets differ in Q). Monotone arguments need an
+    inequality, so this card states the closed-predicate form and treats equality as a
+    specialization. That the two forms are usefully one strategy is a hypothesis, not a result.

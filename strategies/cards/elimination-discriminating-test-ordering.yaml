@@ -1,0 +1,98 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: elimination-discriminating-test-ordering
+version: 1
+name: Order cheap discriminating tests to eliminate hypotheses
+family: elimination
+status: candidate
+
+scope:
+  problem_classes:
+    - Diagnosis or explanation problems with a small set of live candidates and tests whose cost can be estimated.
+  preconditions:
+    - Candidate hypotheses can be listed, and for each test the outcomes that would eliminate each candidate can be stated in advance.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Several candidates remain live and at least one inexpensive test can separate some of
+        them.
+      requires_features:
+        - competing_hypotheses_remain
+        - cheap_discriminating_test_available
+  diagnostic_questions:
+    - Which candidate explanations remain live, including a null or artifactual one?
+    - Which test removes the most plausible alternatives per unit cost?
+    - What outcome of each test would eliminate each candidate, and what could it not eliminate?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    An open-ended question ("figure out why this fails") investigated by unstructured exploration.
+  operation: >-
+    List the candidate hypotheses, including a null or artifactual one. For each candidate test,
+    state in advance which outcome eliminates which hypothesis and what the test cannot rule out.
+    Order the tests by expected eliminations per unit cost, run them in that order, and retire a
+    hypothesis only under its stated criterion.
+  output_representation: >-
+    An ordered test plan with a hypotheses-by-outcomes elimination table and a record of which
+    hypotheses were retired, retained, or left undecided.
+
+expected_effect:
+  measurable_prediction: >-
+    The number of live hypotheses falls faster per unit cost than under unstructured investigation.
+  outcome_measure: >-
+    Live hypotheses remaining as a function of cumulative cost, and the rate of false eliminations
+    where ground truth is eventually known.
+
+obligations:
+  - id: OB1
+    text: The outcomes that eliminate each hypothesis are stated before the test is run.
+  - id: OB2
+    text: The candidate set includes a null or artifactual hypothesis.
+  - id: OB3
+    text: >-
+      The scope of each test is stated, including what an observed result cannot eliminate.
+
+failure_modes:
+  - id: FM1
+    text: A test is cheap but does not discriminate between the live candidates.
+  - id: FM2
+    text: A result is over-interpreted and eliminates more than the test can support.
+  - id: FM3
+    text: >-
+      The true explanation is not in the candidate set, so elimination converges on a wrong
+      survivor.
+  - id: FM4
+    text: >-
+      Cost ordering reflects convenience rather than information, so cheap tests are run first
+      regardless of what they can separate.
+
+validation:
+  discriminating_tests:
+    - >-
+      Replay past investigations whose answer is now known, with and without the elimination plan,
+      and compare the number of tests to resolution and the false-elimination rate.
+  baseline: >-
+    Unstructured investigation order under an equal cost budget.
+  falsification_condition: >-
+    No reduction in cost to resolution on replayed or fresh trigger-matched investigations beyond a
+    margin fixed before the comparison, or false eliminations exceed a rate fixed before the
+    comparison.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#elimination
+    - research_protocol/strategy_ir.md
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Derived from the elimination family; it has no exemplars or counterexamples on record.
