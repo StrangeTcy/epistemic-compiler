@@ -1,0 +1,59 @@
+id: "WP-03"
+objective: >
+  Execute the Part A Bidirectional Oracle Audit on Stratum A1 (all 12 `REFERENCES`
+  environments: 5 Discovery + 7 previously uninspected Holdout environments) across
+  black-box-derived candidate sections (`no_op`, `plausible_wrong`, `transcription`,
+  `law_bypass_type0`, `law_bypass_type1`, `reference`, and >= 3 independent
+  `reference_alt` variants on target environments), measuring `M01`..`M04` and
+  executing `FALS-01` (`CTRL01`, `CTRL02`, `CTRL06`).
+supports_hypotheses: ["H0", "H1", "H2"]
+implements_requirements: ["R01", "R02", "R05"]
+
+local_chart:
+  chart_id: "U_3"
+  owned_paths:
+    - "tools/stratum_a1_audit.py"
+    - "mission-01/results/part_a_stratum_a1.json"
+
+restriction_maps:
+  - overlap_id: "U_3_cap_U_1"
+    target_package: "WP-01"
+    shared_contract_schema: "Every environment record includes its verified `blackbox_sha256` from `WP-01`."
+    invariant_assertion: "all(r['blackbox_sha256'] == hashes[r['env_id']]['blackbox_sha256'] for r in results)"
+  - overlap_id: "U_3_cap_U_2"
+    target_package: "WP-02"
+    shared_contract_schema: >
+      Every `law_bypass_type1` candidate must satisfy `TruthOracle == False` (truly
+      globally broken) and every `reference` / `reference_alt` candidate must satisfy
+      `TruthOracle == True` (truly globally valid).
+    invariant_assertion: >
+      `all(not r['variants']['law_bypass_type1']['truth_oracle']['passed'] for r in results) and
+       all(alt['truth_oracle']['passed'] for r in results for alt in r['variants']['reference_alt_list'])`
+  - overlap_id: "U_3_cap_U_7"
+    target_package: "WP-07"
+    shared_contract_schema: >
+      Summary metrics `{beta_A_glue_discovery, beta_A_glue_holdout, beta_A_glue_total,
+      beta_A_all_total, beta_B_glue_total, gamma_A_total, gamma_B_total, er_4var, er_6var}`
+    invariant_assertion: "0.0 <= beta_A_glue_total <= 1.0 and 0.0 <= gamma_B_total <= 1.0"
+
+gluing_compatibility_check: >
+  Verify all 12 Stratum A1 environments are evaluated at `seed=42` (`CTRL06`) and
+  that `TruthOracle` polarities hold 100% across all injected variants.
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+  - "mission-01/results/blackbox_hashes.json"
+  - "rl_eval_generator/tools/grader_b_and_truth_oracles.py"
+outputs:
+  - "rl_eval_generator/tools/stratum_a1_audit.py"
+  - "mission-01/results/part_a_stratum_a1.json"
+constraints:
+  - "For the 7 Holdout environments (`yaml_Anchor`, `numeric_Relu`, `optim_Step`, `quant_Calib`, `sched_Warmup`, `stream_Batch`, `lora_Scale`), `law_bypass_type1` and `reference_alt` candidates must be authored strictly from `prompt.md`, `visible_tests.py`, and patchable source files (`CTRL01`, `CTRL06`)."
+  - "Never pool Stratum A1 with Stratum A2 (`CTRL02`)."
+acceptance_tests: ["T01", "T05", "T06"]
+failure_modes:
+  - "Candidate patch failing to apply cleanly or violating `TruthOracle` polarity."
+handoff_contract: >
+  Writes `mission-01/results/part_a_stratum_a1.json` with complete per-environment
+  and per-slice (`Discovery` vs. `Holdout`) measurements.
+status: "pending"

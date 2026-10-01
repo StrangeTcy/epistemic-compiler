@@ -1,0 +1,42 @@
+id: "WP-06"
+objective: >
+  Implement and execute Part B Track B-Emp solo-chart gauge concentration analysis
+  ($\hat{\kappa}_e$, $\hat{g}_e$, `M07`, `H4`), Evaluator–Orchestrator Duality
+  Edge Co-Location ($\text{Jaccard}(E_J, E_O)$, `M08`, `H5`), and AST Predicate Count
+  & LOC Parsimony (`M09`, `CTRL07`) (`R04`).
+supports_hypotheses: ["H3", "H4", "H5"]
+implements_requirements: ["R04", "R06"]
+
+local_chart:
+  chart_id: "U_6"
+  owned_paths:
+    - "tools/gauge_and_parsimony_analysis.py"
+    - "mission-01/results/gauge_duality_parsimony.json"
+
+restriction_maps:
+  - overlap_id: "U_6_cap_U_5"
+    target_package: "WP-05"
+    shared_contract_schema: "Consumes `E_J`, `E_O`, and `gauge_orbits` from `mission-01/results/part_b_multichart_gluing.json`."
+    invariant_assertion: "0.0 <= jaccard_E_J_E_O <= 1.0 and all(k >= 1.0 / g for k, g in zip(kappa_hats, g_es))"
+  - overlap_id: "U_6_cap_U_7"
+    target_package: "WP-07"
+    shared_contract_schema: "Provides `M07` (`kappa_hat_e`, `g_hat_e`), `M08` (`jaccard_E_J_E_O`), and `M09` (`predicate_ratio`, `loc_ratio`) to `WP-07`."
+    invariant_assertion: "predicate_ratio > 0 and loc_ratio > 0"
+
+gluing_compatibility_check: >
+  `pytest -q tests/test_multichart_gluing_harness.py -k test_jaccard_and_ast_predicate_counter`
+
+inputs:
+  - "mission-01/results/part_b_multichart_gluing.json"
+  - "rl_eval_generator/tools/grader_b_and_truth_oracles.py"
+outputs:
+  - "rl_eval_generator/tools/gauge_and_parsimony_analysis.py"
+  - "mission-01/results/gauge_duality_parsimony.json"
+constraints:
+  - "Must clearly distinguish deterministic uniform gauge-orbit rates from empirical prior-weighted solo-chart rates (`CTRL04`, `C8`)."
+acceptance_tests: ["T04"]
+failure_modes:
+  - "Over-claiming ecological gauge diversity when canonical conventions dominate (`H4`, `ABORT-04`)."
+handoff_contract: >
+  Writes `mission-01/results/gauge_duality_parsimony.json` and passes `T04`.
+status: "pending"

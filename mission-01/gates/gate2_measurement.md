@@ -51,7 +51,8 @@
 ---
 
 ## 3. Gate 2 Decision Log
-- **Decision**: `PENDING HUMAN SIGN-OFF` (`APPROVE_AND_FREEZE` | `REVISE` | `ABORT`)
+- **Decision**: `APPROVE_AND_FREEZE` (`mission-01/spec/draft.yaml` frozen to `mission-01/spec/approved.yaml` and locked on `StrangeTcy/epistemic-compiler` prior to Part A/B execution and prior to inspecting the 7 Holdout `REFERENCES` environments)
 - **Action Upon Approval**: Copy `mission-01/spec/draft.yaml` to `mission-01/spec/approved.yaml`, commit and push to `StrangeTcy/epistemic-compiler` to lock the pre-registration Git SHA (`CTRL03`), and generate the bounded Work Packages (`mission-01/work_packages/WP-01..WP-07`) for **Gate 3**.
-- **Signed By**: _Awaiting Human Research Director_
-- **Timestamp**: _Pending_
+- **Signed By**: Human Research Director (`ask_user` Gate 2 sign-off)
+- **Timestamp**: `2026-10-01T16:28:00Z`
+

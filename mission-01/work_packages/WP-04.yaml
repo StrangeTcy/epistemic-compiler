@@ -1,0 +1,59 @@
+id: "WP-04"
+objective: >
+  Execute the Part A Bidirectional Oracle Audit on Stratum A2 (all 9 `compile_only`
+  `envs/cat_theo/*` environments) across black-box-derived candidate sections
+  (`no_op`, `plausible_wrong`, `transcription`, `law_bypass_type0`, `law_bypass_type1`,
+  `reference`, and >= 3 structurally independent `reference_alt` variants per
+  environment across >= 5 environments), measuring `M01`..`M04` and executing
+  `FALS-02` (`CTRL01`, `CTRL02`, `CR08`).
+supports_hypotheses: ["H0", "H1", "H2"]
+implements_requirements: ["R01", "R02", "R05"]
+
+local_chart:
+  chart_id: "U_4"
+  owned_paths:
+    - "tools/stratum_a2_audit.py"
+    - "mission-01/results/part_a_stratum_a2.json"
+
+restriction_maps:
+  - overlap_id: "U_4_cap_U_1"
+    target_package: "WP-01"
+    shared_contract_schema: "Every environment record includes its verified `blackbox_sha256` from `WP-01`."
+    invariant_assertion: "len(results) == 9 and all(r['stratum'] == 'A2_CompileOnly' for r in results)"
+  - overlap_id: "U_4_cap_U_2"
+    target_package: "WP-02"
+    shared_contract_schema: >
+      Every `law_bypass_type1` candidate satisfies `TruthOracle == False` and every
+      `reference_alt` candidate (3 per environment across all 9 environments = 27
+      independent `reference_alt` implementations) satisfies `TruthOracle == True`.
+    invariant_assertion: >
+      `all(not r['variants']['law_bypass_type1']['truth_oracle']['passed'] for r in results) and
+       all(len(r['variants']['reference_alt_list']) >= 3 and all(a['truth_oracle']['passed'] for a in r['variants']['reference_alt_list']) for r in results)`
+  - overlap_id: "U_4_cap_U_7"
+    target_package: "WP-07"
+    shared_contract_schema: >
+      Summary metrics `{beta_A_glue_a2, beta_A_all_a2, beta_B_glue_a2, gamma_A_a2,
+      gamma_B_a2, envs_with_systematic_type2_rejection}`
+    invariant_assertion: "0.0 <= gamma_B_a2 <= 0.05"
+
+gluing_compatibility_check: >
+  Verify all 9 Stratum A2 environments and all 27+ `reference_alt` implementations
+  pass `TruthOracle == True` while `law_bypass_type1` fails `TruthOracle == False`.
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+  - "mission-01/results/blackbox_hashes.json"
+  - "rl_eval_generator/tools/grader_b_and_truth_oracles.py"
+outputs:
+  - "rl_eval_generator/tools/stratum_a2_audit.py"
+  - "mission-01/results/part_a_stratum_a2.json"
+constraints:
+  - "Separate Type 0 (pointwise lookup table) from Type I-A/I-B/I-C (presheaf gluing bypass) per `P01-T-6`."
+  - "Test >= 3 structurally independent `reference_alt` implementations per environment across >= 5 environments per `CR08` and `FALS-02`."
+acceptance_tests: ["T01", "T06"]
+failure_modes:
+  - "`Grader B` false-rejecting a valid `reference_alt` implementation (`ABORT-02`)."
+handoff_contract: >
+  Writes `mission-01/results/part_a_stratum_a2.json` with complete Type 0, Type I,
+  and Type II measurements across all 9 `cat_theo` environments.
+status: "pending"

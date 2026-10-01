@@ -1,0 +1,52 @@
+id: "WP-01"
+objective: >
+  Implement the Black-Box Context Bundler (`CTRL01`, `R02`) and Bidirectional
+  Audit Result Schema (`R01`), computing deterministic SHA256 digests of the
+  agent-visible workspace (`prompt.md`, `visible_tests.py`, and patchable source
+  files — strictly excluding `judge.py`) across all 21 Part A environments.
+supports_hypotheses: ["H0", "H1", "H2"]
+implements_requirements: ["R01", "R02", "R06"]
+
+local_chart:
+  chart_id: "U_1"
+  owned_paths:
+    - "tools/blackbox_context_bundler.py"
+    - "mission-01/results/blackbox_hashes.json"
+    - "tests/test_bidirectional_audit_harness.py"
+
+restriction_maps:
+  - overlap_id: "U_1_cap_U_2"
+    target_package: "WP-02"
+    shared_contract_schema: >
+      JSON map `{env_id: {stratum: str, family: str, env_dir: str,
+      patchable_files: list[str], blackbox_sha256: str, judge_excluded: bool}}`
+    invariant_assertion: >
+      `len(env_map) == 21 and all(v['judge_excluded'] is True and len(v['blackbox_sha256']) == 64 for v in env_map.values())`
+  - overlap_id: "U_1_cap_U_3"
+    target_package: "WP-03"
+    shared_contract_schema: "12 Stratum A1 REFERENCES environment entries (5 Discovery + 7 Holdout)"
+    invariant_assertion: "sum(1 for v in env_map.values() if v['stratum'].startswith('A1_')) == 12"
+  - overlap_id: "U_1_cap_U_4"
+    target_package: "WP-04"
+    shared_contract_schema: "9 Stratum A2 compile_only cat_theo environment entries"
+    invariant_assertion: "sum(1 for v in env_map.values() if v['stratum'] == 'A2_CompileOnly') == 9"
+
+gluing_compatibility_check: >
+  `pytest -q tests/test_bidirectional_audit_harness.py -k "test_schema_and_polarity_on_synthetic_fixture or test_blackbox_context_sha256_excludes_judge"`
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+  - "rl_eval_generator/envs/registry.yaml"
+outputs:
+  - "rl_eval_generator/tools/blackbox_context_bundler.py"
+  - "mission-01/results/blackbox_hashes.json"
+constraints:
+  - "Must raise ValueError if `judge.py` is ever included in a black-box context bundle (`CTRL01`)."
+  - "Must not modify any existing environment files under `rl_eval_generator/envs/`."
+acceptance_tests: ["T01", "T02"]
+failure_modes:
+  - "Path resolution mismatch between `envs/cat_theo/sheaf/sheaf_physical_constraints` and flat `envs/` directories."
+handoff_contract: >
+  Emits `mission-01/results/blackbox_hashes.json` with verified SHA256 digests
+  for all 21 environments and passes `T01` and `T02`.
+status: "pending"

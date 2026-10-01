@@ -1,0 +1,48 @@
+id: "WP-02"
+objective: >
+  Implement the pre-registered `Grader B` restriction-map / gauge-invariant
+  relational auditor and the independent property-based Truth Oracles (>= 1,000
+  randomized inputs or exhaustive law checks per environment, sharing zero code
+  with `judge.py`) across all 21 Part A environments (`R01`, `CTRL03`, `CTRL06`, `CTRL08`).
+supports_hypotheses: ["H0", "H1", "H2"]
+implements_requirements: ["R01", "R06"]
+
+local_chart:
+  chart_id: "U_2"
+  owned_paths:
+    - "tools/grader_b_and_truth_oracles.py"
+
+restriction_maps:
+  - overlap_id: "U_2_cap_U_1"
+    target_package: "WP-01"
+    shared_contract_schema: "Consumes `env_id` and `env_dir` from `blackbox_hashes.json`"
+    invariant_assertion: "set(ORACLES.keys()) == set(json.load(open('mission-01/results/blackbox_hashes.json'))['environments'].keys())"
+  - overlap_id: "U_2_cap_U_3"
+    target_package: "WP-03"
+    shared_contract_schema: >
+      `evaluate_grader_b(env_id, workspace_dir) -> {passed: bool, score: float, checks: dict, predicate_count: int, loc: int}` and
+      `evaluate_truth_oracle(env_id, workspace_dir) -> {passed: bool, trials: int, failure_reason: str | None}`
+    invariant_assertion: "All 12 canonical `reference` patches in Stratum A1 score 1.0 on both `Grader B` and `TruthOracle` (`T05`)."
+  - overlap_id: "U_2_cap_U_4"
+    target_package: "WP-04"
+    shared_contract_schema: "Same `evaluate_grader_b` and `evaluate_truth_oracle` signature for all 9 Stratum A2 environments"
+    invariant_assertion: "All 9 canonical `reference` patches in Stratum A2 score 1.0 on both `Grader B` and `TruthOracle`."
+
+gluing_compatibility_check: >
+  `pytest -q tests/test_bidirectional_audit_harness.py -k test_independent_truth_oracle_accepts_all_reference_patches`
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+  - "mission-01/results/blackbox_hashes.json"
+outputs:
+  - "rl_eval_generator/tools/grader_b_and_truth_oracles.py"
+constraints:
+  - "`Grader B` and `TruthOracle` must evaluate only the final submitted code artifact (`CTRL08`), never trajectory logs."
+  - "`Grader B` must evaluate spec-admissible gauge equivalence classes (`G_spec`) rather than hardcoding a single un-specified gauge (`G_judge`), preventing Type II false rejections (`ABORT-02`)."
+acceptance_tests: ["T05"]
+failure_modes:
+  - "`Grader B` over-constraining a valid alternative gauge (`gamma_B > 0.05`, triggering `ABORT-02`)."
+handoff_contract: >
+  Provides deterministic `evaluate_grader_b` and `evaluate_truth_oracle` functions
+  for all 21 environments and passes `T05`.
+status: "pending"

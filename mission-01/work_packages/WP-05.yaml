@@ -1,0 +1,52 @@
+id: "WP-05"
+objective: >
+  Implement and execute Part B Track B-Mech (`R03`, `M05`, `M06`, `FALS-03` /
+  `FALS-03b`) across the 6 multi-chart environments (`rope`, `rd_state_carry`,
+  `rd_weight_tie`, `rd_adaptive_halting`, `compositional_optimizer`,
+  `sheaf_physical_constraints`), comparing all 5 orchestration protocols
+  (`Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG` [`L11`],
+  and `Sheaf-Cocycle`) over the enumerated local gauge orbits $\prod_{i=1}^3 \mathcal{G}(U_i)$,
+  and recording exact cycle holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$.
+supports_hypotheses: ["H0", "H3", "H5"]
+implements_requirements: ["R03", "R05", "R06"]
+
+local_chart:
+  chart_id: "U_5"
+  owned_paths:
+    - "tools/multichart_gluing_benchmark.py"
+    - "mission-01/results/part_b_multichart_gluing.json"
+    - "tests/test_multichart_gluing_harness.py"
+
+restriction_maps:
+  - overlap_id: "U_5_cap_U_6"
+    target_package: "WP-06"
+    shared_contract_schema: >
+      Per-environment nerve edges `E_all`, judge-unchecked edges `E_J`, chart-only
+      failure edges `E_O`, gauge orbit sizes `g_e`, and per-protocol failure rates
+      `{phi_chart, phi_tree, phi_upToGauge, phi_circularAG, phi_sheaf}` +
+      `holonomy_counts`.
+    invariant_assertion: >
+      `len(multichart_results) == 6 and all(set(r['protocols'].keys()) == {'Chart-Only', 'Pairwise-Tree', 'Pairwise-UpToGauge', 'Circular-AG', 'Sheaf-Cocycle'} for r in multichart_results)`
+  - overlap_id: "U_5_cap_U_7"
+    target_package: "WP-07"
+    shared_contract_schema: "Supplies `FALS-03` / `FALS-03b` separation metrics between `Sheaf-Cocycle`, `Pairwise-Tree`, and `Circular-AG`."
+    invariant_assertion: "all(0.0 <= v <= 1.0 for r in multichart_results for v in r['protocols'].values())"
+
+gluing_compatibility_check: >
+  `pytest -q tests/test_multichart_gluing_harness.py -k test_five_protocols_and_holonomy_on_synthetic_cycle`
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+outputs:
+  - "rl_eval_generator/tools/multichart_gluing_benchmark.py"
+  - "mission-01/results/part_b_multichart_gluing.json"
+  - "rl_eval_generator/tests/test_multichart_gluing_harness.py"
+constraints:
+  - "Every local chart section $s_i^{(c)} \\in \\mathcal{G}(U_i)$ must genuinely pass its local chart test $T(U_i)$ (`CTRL02`, `CTRL04`)."
+  - "Must include `Circular-AG` (`L11`) as an explicit comparator arm (`C5`, `P04-PW-5`)."
+acceptance_tests: ["T03"]
+failure_modes:
+  - "Conflating syntactic import errors with semantic gauge holonomy (`CTRL02`)."
+handoff_contract: >
+  Writes `mission-01/results/part_b_multichart_gluing.json` and passes `T03`.
+status: "pending"

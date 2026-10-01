@@ -1,0 +1,53 @@
+id: "WP-07"
+objective: >
+  Execute the consolidated Falsification Suite (`FALS-01`, `FALS-02`, `FALS-03` /
+  `FALS-03b`) (`R05`), compute exact Dual-Prior Bayesian posterior updates under
+  both $\pi_T$ (`P01-T-9`) and $\pi_S$ (`P03-S` §5), evaluate all abort conditions
+  (`ABORT-01`..`ABORT-05`), and populate `mission-01/falsification/falsification_results.json`
+  and `mission-01/gates/gate3_execution.md`.
+supports_hypotheses: ["H0", "H1", "H2", "H3", "H4", "H5"]
+implements_requirements: ["R05", "R06"]
+
+local_chart:
+  chart_id: "U_7"
+  owned_paths:
+    - "tools/run_falsification_suite.py"
+    - "mission-01/falsification/falsification_results.json"
+    - "mission-01/results/summary_metrics.json"
+    - "mission-01/gates/gate3_execution.md"
+
+restriction_maps:
+  - overlap_id: "U_7_cap_U_3_4_5_6"
+    target_package: "WP-03, WP-04, WP-05, WP-06"
+    shared_contract_schema: >
+      Aggregates `part_a_stratum_a1.json`, `part_a_stratum_a2.json`,
+      `part_b_multichart_gluing.json`, and `gauge_duality_parsimony.json` without
+      violating `CTRL02` (no unstratified pooling of A1 and A2).
+    invariant_assertion: >
+      `all(k in summary for k in ['M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07', 'M08', 'M09', 'M10', 'FALS-01', 'FALS-02', 'FALS-03', 'posterior_pi_T', 'posterior_pi_S', 'abort_triggers'])`
+
+gluing_compatibility_check: >
+  `pytest -q tests/test_scoring.py tests/test_generator.py tests/test_bidirectional_audit_harness.py tests/test_multichart_gluing_harness.py`
+
+inputs:
+  - "mission-01/spec/approved.yaml"
+  - "mission-01/results/part_a_stratum_a1.json"
+  - "mission-01/results/part_a_stratum_a2.json"
+  - "mission-01/results/part_b_multichart_gluing.json"
+  - "mission-01/results/gauge_duality_parsimony.json"
+  - "mission-01/friction_log.yaml"
+outputs:
+  - "rl_eval_generator/tools/run_falsification_suite.py"
+  - "mission-01/falsification/falsification_results.json"
+  - "mission-01/results/summary_metrics.json"
+  - "mission-01/gates/gate3_execution.md"
+constraints:
+  - "Must enforce max 3 falsification experiments and max 1 recursive round."
+  - "Must record any fired abort trigger (`ABORT-01`..`ABORT-05`) honestly and enforce its claim-ceiling downgrade automatically."
+acceptance_tests: ["T01", "T02", "T03", "T04", "T05", "T06"]
+failure_modes:
+  - "Silent suppression of negative results or triggered abort conditions (`C8`)."
+handoff_contract: >
+  Produces `mission-01/falsification/falsification_results.json`, `mission-01/results/summary_metrics.json`,
+  and `mission-01/gates/gate3_execution.md` for Human Gate 3 & Gate 4 review.
+status: "pending"
