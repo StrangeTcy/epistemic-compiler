@@ -50,4 +50,4 @@ failure_modes:
 handoff_contract: >
   Produces `mission-01/falsification/falsification_results.json`, `mission-01/results/summary_metrics.json`,
   and `mission-01/gates/gate3_execution.md` for Human Gate 3 & Gate 4 review.
-status: "pending"
+status: "completed"

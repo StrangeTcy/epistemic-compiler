@@ -1,0 +1,277 @@
+# Mission 01 — Real-Time Append-Only Friction Log
+# Schema & Controlled Vocabulary: ../research_protocol/instrumentation.md
+
+mission_id: "mission-01"
+timezone: "Europe/Moscow (+03:00)"
+started_at: "2026-10-01T15:38:00+03:00"
+
+friction_events:
+  - id: F-001
+    started_at: "2026-10-01T15:39:00+03:00"
+    resolved_at: "2026-10-01T15:41:00+03:00"
+    derived_duration_minutes: 2.0
+    stage: "bootstrap"
+    work_package: null
+    type: "missing_information"
+    category: "specification"
+    root_cause_id: "RC-01"
+    recurs_on: []
+    trigger: >
+      Bootstrap prompt instructed agent to inspect the existing `rl_eval_generator`
+      repository, but `/home/user` was empty at session start and the execution
+      mode for the 4 Council roles (external Arena models vs. single-session)
+      was unspecified.
+    root_cause_guess: >
+      Mission kickoff prompt did not include a pre-flight environment/repo mount
+      manifest or specify whether multi-model council steps are dispatched by
+      the human across external Arena tabs vs. simulated inside one container.
+    resolution: >
+      Issued structured clarification (`ask_user`) to confirm: (1) human-gated
+      bootstrap mode, (2) user will provide/upload `rl_eval_generator` next, and
+      (3) user will run the 4 Council prompts across external Arena models.
+    automatable: "yes"
+    automation_sketch: >
+      Add a pre-flight check to the mission kickoff template / CLI that verifies
+      target repo path existence, git commit hash, and council dispatch mode
+      (`external_arena` vs `local_api`) before starting Part III.
+
+  - id: F-002
+    started_at: "2026-10-01T15:44:00+03:00"
+    resolved_at: "2026-10-01T15:50:00+03:00"
+    derived_duration_minutes: 6.0
+    stage: "seed"
+    work_package: null
+    type: "missing_information"
+    category: "judgment"
+    root_cause_id: "RC-02"
+    recurs_on: []
+    trigger: >
+      Initial seed framing ("benchmark unit tests pass overfitting patches /
+      outcome grading misses execution flaws") collided with published prior work
+      (EvalPlus 2023, UTBoost ACL 2025, SWE-ABS 2026) and with the fact that
+      `rl_eval_generator/tools/instance_oracle_gate.py` already implements
+      `transcription` controls for `weird_machine/*`.
+    root_cause_guess: >
+      High-level research seeds written before inspecting the concrete repository
+      and literature default to first-order claims ("unit tests can be gamed")
+      rather than the second-order failure mode actually present in the codebase.
+    resolution: >
+      Inspected all 35 environments, `tools/instance_oracle_gate.py`, and
+      `env_runner.py:_submit`, and ran a pre-seed literature check. Reframed
+      `mission-01/seed.yaml` (`S01`) around the genuinely open second-order
+      phenomenon in `rl_eval_generator`: local projection / observability
+      insufficiency (`compositional_optimizer` 2-module `state_isolated` check
+      without multi-step associativity, `categorical_lenses` unanchored coordinate
+      swap, `stochastic_monad` vacuous right-identity, `sheaf_physical_constraints`
+      hidden 5:3 ratio vs. stated capacity spec).
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Cannot and should not be fully automated (selecting the non-trivial scientific
+      wedge is core research judgment), though a pre-seed repository + Mindcluster
+      retrieval scan (`scripts/retrieve_context.py`) can run automatically to surface
+      `L01..L12` before drafting `seed.yaml`.
+
+  - id: F-003
+    started_at: "2026-10-01T15:50:00+03:00"
+    resolved_at: "2026-10-01T15:54:00+03:00"
+    derived_duration_minutes: 4.0
+    stage: "seed"
+    work_package: null
+    type: "scope_creep"
+    category: "judgment"
+    root_cause_id: "RC-03"
+    recurs_on: []
+    trigger: >
+      Human introduced a second research seedling (S02: local-to-global composition
+      obstructions in multi-agent swarms vs. single frontier models / boundary-contract
+      orchestration) prior to running the Gate 1 Council.
+    root_cause_guess: >
+      Early-stage seed exploration surfaces related hypotheses across evaluation
+      (Dual A: what the evaluator observes) and multi-agent decomposition (Dual B:
+      what distributed agents construct).
+    resolution: >
+      Confirmed via `ask_user` to include both Dual A (evaluator boundary/projection
+      audit) and Dual B (multi-module decomposition with canonical boundary contracts)
+      in Mission 01 while tracking their distinct hypotheses (`H1..H2` for Dual A,
+      `H3..H4` for Dual B, `H5` for edge co-location).
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Conceptual scope selection at Stage 0 is irreducible human research director
+      judgment; however, the protocol enforces a hard freeze on `spec/approved.yaml`
+      at Gate 2 so later stages cannot pivot scope mid-flight.
+
+  - id: F-004
+    started_at: "2026-10-01T15:55:00+03:00"
+    resolved_at: "2026-10-01T15:58:00+03:00"
+    derived_duration_minutes: 3.0
+    stage: "council"
+    work_package: null
+    type: "tooling_failure"
+    category: "integration"
+    root_cause_id: "RC-01"
+    recurs_on: ["F-001"]
+    trigger: >
+      Human noted that `research_protocol/` and `mission-01/` existed only inside the
+      local sandbox workspace (`/home/user`), making it inconvenient to inspect,
+      version, and share across external Arena council/implementation sessions
+      without a GitHub repository.
+    root_cause_guess: >
+      Stateless multi-agent dispatch across separate Arena sessions lacks a shared
+      filesystem; GitHub is the natural artifact bus, but the sandbox starts without
+      a pre-configured GitHub remote or push token for new protocol artifacts.
+    resolution: >
+      Prepared standalone Git repository `/home/user/epistemic-compiler` and pushed
+      to `https://github.com/StrangeTcy/epistemic-compiler`.
+    automatable: "yes"
+    automation_sketch: >
+      V1 bootstrap script should automatically initialize and push every mission
+      directory (`research_protocol/` + `mission-XX/`) to a dedicated GitHub branch
+      so external Arena agents can `git clone` directly.
+
+  - id: F-005
+    started_at: "2026-10-01T16:10:00+03:00"
+    resolved_at: "2026-10-01T16:12:00+03:00"
+    derived_duration_minutes: 2.0
+    stage: "council"
+    work_package: null
+    type: "model_failure"
+    category: "specification"
+    root_cause_id: "RC-04"
+    recurs_on: []
+    trigger: >
+      External Council model running Prompt 2 (`P02-E`, Experimentalist) invented
+      9 non-existent environment names (`bandit_envs`, `frozen_lake_custom`,
+      `cartpole_constrained`, `bit_flip_sheaf`, `natural_transformation_logger`,
+      `monoidal_queue`, `adjunction_optimizer`, `curry_transformer`,
+      `kan_extension_search`) and a non-existent path (`rl_eval_generator/environments/`
+      instead of `envs/`), and omitted numeric priors $P(H_i)$ and conditional
+      likelihoods $P(O \mid H_i)$ from its decision table.
+    root_cause_guess: >
+      Some Arena council models lack live GitHub browsing or drop enumerated
+      identifiers in favor of plausible-sounding category-theory/RL names unless
+      a syntactic schema validator checks their output against `envs/registry.yaml`.
+    resolution: >
+      Preserved `P02-E`'s verbatim response in `mission-01/council/experimentalist.md`
+      and appended a Repository-Grounding Verification Note mapping the hallucinated
+      environment names back to the real environments in `envs/registry.yaml`.
+    automatable: "yes"
+    automation_sketch: >
+      Enforce `scripts/validate_ir.py` against `envs/registry.yaml` and `git ls-files`
+      to flag any non-existent identifier before Gate 1 synthesis.
+
+  - id: F-006
+    started_at: "2026-10-01T16:17:00+03:00"
+    resolved_at: "2026-10-01T16:22:00+03:00"
+    derived_duration_minutes: 5.0
+    stage: "gate1_question"
+    work_package: null
+    type: "ambiguous_acceptance"
+    category: "judgment"
+    root_cause_id: "RC-02"
+    recurs_on: ["F-002"]
+    trigger: >
+      Prior-Work Killer (`P04-PW`, Opus 5) and Skeptic (`P03-S`, Opus 4.7)
+      uncovered (1) a direct April 2025 arXiv collision (`L08`: Schmid,
+      arXiv:2504.17700, "Applied Sheaf Theory For Multi-agent AI/RL Systems:
+      A Prospectus"), (2) classical ownership of cyclic pairwise-vs-global
+      obstruction theorems (`L07`: Beeri et al. 1983; Abramsky et al. 2011/2015),
+      and (3) non-sheaf formal methods for cyclic dependencies (`L11`: Circular
+      Assume-Guarantee reasoning), while Theorist (`P01-T`) proved that genuine
+      sheaves require only pairwise gluing unless edge adapters carry non-trivial
+      gauge holonomy (`Pairwise-UpToGauge`).
+    root_cause_guess: >
+      Pre-council seed formulation (`S01`) claimed broad sheaf-theoretic framing
+      novelty before running the dedicated second-pass adversarial literature
+      and formal-methods collision search (`P04-PW`).
+    resolution: >
+      Human Research Director approved Gate 1 `REFRAME`: killed claims `K01`..`K05`,
+      bound citation/terminology rules `C1`..`C8`, elevated `N03` (Bidirectional
+      Type I Shortcut Certification + Type II Valid-Solution Rejection Oracle
+      Presheaf Audit) alongside `N01` (`H5`) and `N02` (`H3`/`H4`), expanded
+      Part A to 21 environments (12 `REFERENCES` Stratum A1 + 9 `compile_only`
+      Stratum A2), and locked Two-Track Part B.
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Compile role-specific context packs from `knowledge/` via `scripts/retrieve_context.py`
+      with explicit `NOVELTY THREATS` and `CONTRADICTORY EVIDENCE` sections prior to
+      Council execution.
+
+  - id: F-007
+    started_at: "2026-10-01T16:29:00+03:00"
+    resolved_at: "2026-10-01T16:31:00+03:00"
+    derived_duration_minutes: 2.0
+    stage: "package_compilation"
+    work_package: "WP-01"
+    type: "missing_interface"
+    category: "specification"
+    root_cause_id: "RC-04"
+    recurs_on: ["F-005"]
+    trigger: >
+      While implementing the `WP-01` programmatic check against
+      `envs/registry.yaml` and `tools/instance_oracle_gate.py:REFERENCES` prior
+      to running any experiments, discovered identifier drift from condensed
+      session memory (`sheaf_schema_sync` and `sheaf_invariant_gluing` exist in
+      `envs/cat_theo/sheaf/`, and the 12 `REFERENCES` keys in `instance_oracle_gate.py`
+      are `rd_state_carry`, `rope`, `moco`, `glyph`, `epistemic_games`,
+      `regex_state_machine`, `sql_fixed_point`, `css_state_machine`,
+      `categorical_lenses`, `spreadsheet_dataflow`, `template_interpreter`, and
+      `ci_dependency_graph`).
+    root_cause_guess: >
+      Relying on condensed conversation summaries for exact dictionary keys
+      instead of running a programmatic `registry.yaml` / `REFERENCES` parser
+      before drafting `spec/draft.yaml`.
+    resolution: >
+      Corrected `spec/draft.yaml`, `spec/approved.yaml`, and `WP-01..WP-07` to bind
+      directly to the programmatic keys of `tools/instance_oracle_gate.py:REFERENCES`
+      and `envs/registry.yaml`, and locked pre-registration commit `cbd4e4a` prior
+      to running any Holdout evaluation.
+    automatable: "yes"
+    automation_sketch: >
+      Enforce `scripts/validate_ir.py` as an automated pre-commit check verifying
+      all environment IDs against `envs/registry.yaml`.
+
+  - id: F-008
+    started_at: "2026-10-01T16:50:00+03:00"
+    resolved_at: "2026-10-01T16:58:00+03:00"
+    derived_duration_minutes: 8.0
+    stage: "gate3_execution"
+    work_package: null
+    type: "scientific_engineering_confusion"
+    category: "specification"
+    root_cause_id: "RC-03"
+    recurs_on: ["F-002", "F-003", "F-006"]
+    trigger: >
+      External methodological & mathematical review (`gpt 5.6 luna`) identified:
+      (1) `protocol.md` still contained pre-Gate-1 wording stating that an ordinary
+      sheaf can satisfy pairwise agreement on all overlaps yet lack a global section,
+      and allowed work packages to self-declare restriction maps instead of binding
+      to a mission-level canonical overlap contract; (2) `friction_log.yaml` used
+      mutable `recurrence_count`, manual `resolution_time_minutes`, and `Z` suffixes
+      on local `+03:00` timestamps, and `instrumentation.md` labeled single-mission
+      $\kappa$ "sublinearity" rather than "coordination efficiency"; (3) `rope`
+      multi-chart composition is cleanest when testing the organic pre-advance vs.
+      post-advance `position_offset()` convention and comparing Protocol A (local
+      signatures), Protocol B (canonical boundary contracts), and Protocol C (single
+      agent with global context); and (4) the Mindcluster should be compiled into
+      role-specific context views via `knowledge/` + `scripts/retrieve_context.py`
+      and validated via an executable IR validator (`scripts/validate_ir.py`).
+    root_cause_guess: >
+      While Gate 1 (`P01-T`, `P03-S`, `P04-PW`) updated `spec/approved.yaml`, the
+      upstream protocol docs (`protocol.md`, `instrumentation.md`, `README.md`) still
+      retained Stage 1 phrasing and lacked a machine-checked IR validator and
+      canonical overlap manifest (`overlaps.yaml`).
+    resolution: >
+      (1) Reframed `protocol.md` around `Local Validity -> Boundary Compatibility -> Global Validity`
+      using a Presheaf of Locally Admissible Artifacts ($\mathcal{P}: \mathcal{C}^{\text{op}} \to \mathbf{Set}$)
+      and Mission-Level Canonical Overlap Contracts (`mission-01/work_packages/overlaps.yaml`);
+      (2) Upgraded `instrumentation.md` and `friction_log.yaml` to strictly append-only
+      provenance (`root_cause_id`, `recurs_on`, `+03:00` offsets, derived duration,
+      and Coordination Efficiency $\kappa$); (3) Upgraded `rope` in `multichart_gluing_benchmark.py`
+      to test the organic pre-advance vs. post-advance `position_offset()` boundary
+      convention alongside the Protocol A / B / C (Astra-vs-Swarm) comparison; and
+      (4) Implemented `knowledge/` + `scripts/retrieve_context.py` and `scripts/validate_ir.py`.
+    automatable: "yes"
+    automation_sketch: >
+      Enforce `scripts/validate_ir.py` in CI to check append-only friction log
+      timestamps/vocabulary, canonical overlap contracts (`overlaps.yaml`), and
+      full $C \to H \to X \to M \to E$ provenance links on every commit.

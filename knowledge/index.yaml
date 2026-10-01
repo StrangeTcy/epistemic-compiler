@@ -1,0 +1,38 @@
+schema_version: 1
+knowledge_base_id: user-mindcluster
+status: populated_from_user_export_unverified
+nodes_file: nodes.yaml
+edges_file: edges.yaml
+sources_file: sources.yaml
+import_manifest_file: import_manifest.json
+import:
+  source_id: src-mindcluster-html-export-b84b483b
+  retrieved_at: '2026-10-01T22:38:21+03:00'
+  local_path: epistemic_research_graph(2).html
+  repository_commit: 2e3847aaf7310eb648c5e1edfab2cf02315a8127
+  git_blob_sha: b84b483b1a21bd0607e0c3521c9cfb92c3f8e4f1
+  sha256: e9f25e257d207cd1998e51eb7403b175706e435fe994375d4e7715fd3c42adf9
+  extraction_method: Parse literal JSON assigned to `const G=`; do not execute HTML/JavaScript.
+  node_count: 118
+  edge_count: 301
+  external_link_count: 76
+  source_record_count: 77
+  uncertain_edge_count: 21
+export_metadata_as_recorded:
+  last_verified: '2026-10-01'
+  source_control: primary sources preferred; secondary items explicitly marked
+  connectivity_definition: weak connectivity on the directed edge set
+  notes:
+  - GPT-6.1 Sol safety addendum is distinct from the withheld GPT-6.1 Astra report.
+  - Dots safety appendix explicitly identifies dots as powered by GPT-6 Astra.
+  - SynthID Bio is outside the core agent-evaluation cluster but connects through provenance.
+  - '2026-10-01 additions: SINGED, ToolFence, PrivacySkills, Jailbreak Context Lingers, Zvi White House Accord,
+    Anthropic robotics exposure, SynthID Bio; execution-path and authorization-fidelity concept nodes.'
+  - '2026-10-01 additions: Gemini 4 Argon launch claims and a separate vendor-claim/evaluation node; public capability
+    claims are marked uncertain pending independent testing.'
+notes:
+- The export self-reports its own verification date/criteria; these were not independently audited.
+- All external source links and graph summaries are unverified until checked against the linked sources.
+- Edges preserve the uploaded graph's semantic relations and uncertainty flags; edges are not source-backed factual
+  claims.
+- This import occurred after Mission 01 Gate 4; no Mindcluster context pack informed Mission 01.

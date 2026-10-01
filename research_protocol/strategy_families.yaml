@@ -1,0 +1,232 @@
+schema_version: 0.1
+status: draft_for_human_review
+registry_kind: proposed_strategy_families_not_validated_cards
+provenance:
+  origin: user_provided_strategy_library_reflection
+  epistemic_status: proposed
+  note: The descriptions below are candidate triggers and moves, not evidence of efficacy.
+families:
+  - id: representation
+    label: Representation
+    status: proposed_family
+    trigger:
+      conditions:
+        - The current encoding hides constraints, interfaces, or useful structure.
+      questions:
+        - What alternative representation would make the relevant structure explicit?
+    transformation: Re-encode or abstract the problem while recording information that must be preserved.
+    hypothesized_effect: Make constraints or structure visible and reduce direct problem complexity.
+    obligations:
+      - State which distinctions and information must be preserved by the new representation.
+    open_failure_modes:
+      - A lossy representation may erase a distinction needed for correctness.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: invariant
+    label: Invariant
+    status: proposed_family
+    trigger:
+      conditions:
+        - Many transitions are involved, but a conserved, monotone, or otherwise restricted quantity may constrain reachability.
+      questions:
+        - What quantity Q is preserved or monotone under the allowed operations?
+        - Do the initial and target states differ in Q?
+    transformation: Replace full trajectory analysis with a proof or test about a candidate invariant and the reachable states it permits.
+    hypothesized_effect: Rule out outcomes without simulating the entire system.
+    obligations:
+      - Verify preservation/monotonicity for every allowed transition in the stated scope.
+    open_failure_modes:
+      - An incomplete transition model can make a purported invariant irrelevant or false.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: asymmetry
+    label: Asymmetry
+    status: proposed_family
+    trigger:
+      conditions:
+        - Participants or investigator and target differ in information, access, cost, or capability.
+      questions:
+        - What is cheap to inspect or change for one side but expensive or unavailable to another?
+    transformation: Reframe the problem to use an available information, access, cost, or capability asymmetry.
+    hypothesized_effect: Reduce effort by avoiding the strongest or most symmetric version of the problem.
+    obligations:
+      - State which asymmetry is available and whether the problem permits relying on it.
+    open_failure_modes:
+      - The asymmetry may disappear in the intended deployment or make the result incomparable to a symmetric baseline.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: decomposition
+    label: Decomposition
+    status: proposed_family
+    trigger:
+      conditions:
+        - The task contains subsystems with identifiable interfaces or limited cross-boundary dependencies.
+      questions:
+        - Which dependencies cross the proposed boundaries?
+        - Are these boundaries real in the task, or imposed for convenience?
+    transformation: Split the problem along defensible boundaries and state cross-boundary information/contracts.
+    hypothesized_effect: Make subproblems tractable while retaining the dependencies needed for composition.
+    obligations:
+      - Record every cross-boundary dependency and how it is preserved.
+    open_failure_modes:
+      - A false boundary can hide coupling and produce locally valid but globally incompatible results.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: elimination
+    label: Elimination
+    status: proposed_family
+    trigger:
+      conditions:
+        - Several explanations or designs remain, and one or more cheap tests can distinguish them.
+      questions:
+        - Which test removes the most plausible alternatives per unit cost?
+        - What result would eliminate each candidate?
+    transformation: Order discriminating tests by cost and information value; retire hypotheses only under registered criteria.
+    hypothesized_effect: Replace open-ended speculation with a sequence of inexpensive hypothesis eliminations.
+    obligations:
+      - Predefine outcomes, test scope, and what an observed result can actually eliminate.
+    open_failure_modes:
+      - A test may be cheap but non-discriminating, or its result may be overinterpreted.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: constraint
+    label: Constraint
+    status: proposed_family
+    trigger:
+      conditions:
+        - The solution space is too large or underdetermined for direct search.
+      questions:
+        - Which constraints follow from the goal or interface, and which are only convenient assumptions?
+    transformation: Add justified constraints, then inspect how they reduce the solution space.
+    hypothesized_effect: Collapse an intractable search into a smaller, checkable space.
+    obligations:
+      - Show that each added constraint is licensed and does not exclude valid solutions of interest.
+    open_failure_modes:
+      - Overconstraint may make the problem easy by removing the cases the research question concerns.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: counterexample
+    label: Counterexample
+    status: proposed_family
+    trigger:
+      conditions:
+        - A proposed rule, explanation, or generalization has a concrete input/state space that can be searched.
+      questions:
+        - What is the smallest object that would make the explanation fail?
+        - Can the failure be minimized and traced to a specific assumption?
+    transformation: Construct, search for, and minimize an adversarial counterexample.
+    hypothesized_effect: Expose missing assumptions or kill an overbroad claim with a small diagnostic case.
+    obligations:
+      - Verify the counterexample under the registered semantics and preserve the exact failing artifact.
+    open_failure_modes:
+      - A synthetic counterexample may not apply to the intended scope or may exploit an accidental implementation detail.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: meta
+    label: Meta
+    status: proposed_family
+    trigger:
+      conditions:
+        - Difficulty may depend on rules, objectives, information access, timing, or decomposition assumed to be fixed.
+      questions:
+        - Which problem-formulation choices are actually constrained?
+        - What changes when one level up, the rules/objective/interface themselves become variables?
+    transformation: Move to a meta-level and inspect or alter the rules under which the problem is posed.
+    hypothesized_effect: Turn a hard instance into a simpler or strategically different problem.
+    obligations:
+      - Separate permitted rule changes from changes that invalidate the original question.
+    open_failure_modes:
+      - Changing the rules can solve a different problem while appearing to solve the original one.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: search
+    label: Search
+    status: proposed_family
+    trigger:
+      conditions:
+        - A finite or tractable candidate space exists and computation, enumeration, or parallelism is available.
+      questions:
+        - Can the space be enumerated or searched with a complete stopping condition?
+        - What cost or coverage limits apply?
+    transformation: Use systematic search, enumeration, or parallel candidate generation with explicit coverage and stopping criteria.
+    hypothesized_effect: Convert an intuitive open-ended task into a bounded computational procedure.
+    obligations:
+      - Record search space, coverage, randomization/seeds if applicable, budget, and stopping rule.
+    open_failure_modes:
+      - Search may miss solutions outside the encoded space or give false confidence from incomplete coverage.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: game
+    label: Game
+    status: proposed_family
+    trigger:
+      conditions:
+        - Multiple strategic actors have incentives, beliefs, information, or responses that affect outcomes.
+      questions:
+        - Who acts, what do they know, and how can each respond to the others?
+        - Which incentives or information structures are material?
+    transformation: Model the interaction as a strategic game or information problem, with explicit actors, actions, beliefs, and payoffs.
+    hypothesized_effect: Make strategic response and information asymmetry explicit rather than treating agents as independent functions.
+    obligations:
+      - Justify the actor, information, and payoff assumptions against the actual task.
+    open_failure_modes:
+      - An elegant game model may omit important dynamics or assign unsupported beliefs/payoffs.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: local_to_global
+    label: Local-to-global
+    status: proposed_family
+    trigger:
+      conditions:
+        - Local components can pass local checks while the composed/global result may still fail.
+      questions:
+        - What boundary information must be preserved for local results to compose?
+        - What global predicate is not entailed by local validity alone?
+    transformation: Separate local validity, declared boundary compatibility, and global validity; test each relation explicitly.
+    hypothesized_effect: Turn a vague composition question into interface and global-correctness measurements.
+    obligations:
+      - Define canonical boundary semantics before execution and independently test the global predicate.
+    open_failure_modes:
+      - The chosen boundary contract may be arbitrary, incomplete, or confused with a mathematical theorem.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection
+
+  - id: transformation
+    label: Transformation
+    status: proposed_family
+    trigger:
+      conditions:
+        - The problem resembles a well-understood problem after a candidate mapping.
+      questions:
+        - What map sends this problem to the known problem?
+        - Which assumptions and conclusions survive the mapping?
+    transformation: Construct a mapping to known machinery and transfer a solution only after checking mapping conditions.
+    hypothesized_effect: Reuse established techniques rather than solve the original formulation from scratch.
+    obligations:
+      - Prove or test that the mapping preserves the properties required for the intended conclusion.
+    open_failure_modes:
+      - Superficial resemblance may conceal a broken or non-property-preserving mapping.
+    exemplars: []
+    counterexamples: []
+    provenance: user_provided_design_reflection

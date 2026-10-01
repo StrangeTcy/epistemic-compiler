@@ -45,4 +45,4 @@ failure_modes:
 handoff_contract: >
   Provides deterministic `evaluate_grader_b` and `evaluate_truth_oracle` functions
   for all 21 environments and passes `T05`.
-status: "pending"
+status: "completed"

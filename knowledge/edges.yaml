@@ -1,0 +1,3914 @@
+edges:
+- id: mindcluster-edge-001
+  source: harsanyi-1967
+  target: belief-hierarchies
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[0]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-002
+  source: aumann-1976
+  target: common-knowledge
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[1]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-003
+  source: rubinstein-1989
+  target: common-knowledge
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[2]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-004
+  source: bernheim-1984
+  target: level-k
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[3]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-005
+  source: pearce-1984
+  target: level-k
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[4]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-006
+  source: camerer-ho-chong-2004
+  target: level-k
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[5]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-007
+  source: nagel-1995
+  target: level-k
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[6]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-008
+  source: aumann-brandenburger-1995
+  target: common-knowledge
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[7]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-009
+  source: carlsson-vandamme-1993
+  target: information-design
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[8]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-010
+  source: morris-shin-2003
+  target: information-design
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[9]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-011
+  source: spence-1973
+  target: signalling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[10]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-012
+  source: crawford-sobel-1982
+  target: signalling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[11]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-013
+  source: kamenica-gentzkow-2011
+  target: information-design
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[12]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-014
+  source: plaza-2007
+  target: dynamic-epistemic-logic
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[13]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-015
+  source: baltag-moss-solecki-1998
+  target: dynamic-epistemic-logic
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[14]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-016
+  source: trencsenyi-hypergame
+  target: hypergames
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[15]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-017
+  source: amongus-x
+  target: strategic-deception
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[16]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-018
+  source: mindgames
+  target: belief-hierarchies
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[17]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-019
+  source: beyond-sally-anne
+  target: belief-hierarchies
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[18]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-020
+  source: carlsson-vandamme-1993
+  target: harsanyi-1967
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[19]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-021
+  source: morris-shin-2003
+  target: carlsson-vandamme-1993
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[20]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-022
+  source: baltag-moss-solecki-1998
+  target: plaza-2007
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[21]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-023
+  source: kamenica-gentzkow-2011
+  target: signalling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[22]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-024
+  source: alon-2023
+  target: belief-state-shaping
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[23]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-025
+  source: alon-2023
+  target: strategic-deception
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[24]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-026
+  source: alon-2023
+  target: opponent-modelling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[25]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-027
+  source: dbos-2026
+  target: belief-state-shaping
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[26]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-028
+  source: dbos-2026
+  target: opponent-modelling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[27]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-029
+  source: dbos-2026
+  target: strategic-deception
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[28]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-030
+  source: nguyen-attention-2026
+  target: attention-manipulation
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[29]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-031
+  source: nguyen-attention-2026
+  target: information-design
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[30]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-032
+  source: potemkin-2026
+  target: information-environment-manipulation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[31]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-033
+  source: potemkin-2026
+  target: epistemic-drift
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[32]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-034
+  source: potemkin-2026
+  target: agent-evaluation
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[33]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-035
+  source: lying-with-truths-2026
+  target: cognitive-collusion
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[34]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-036
+  source: lying-with-truths-2026
+  target: belief-state-shaping
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[35]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-037
+  source: lying-with-truths-2026
+  target: information-environment-manipulation
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[36]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-038
+  source: belief-hierarchies
+  target: level-k
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[37]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-039
+  source: level-k
+  target: signalling
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[38]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-040
+  source: signalling
+  target: information-design
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[39]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-041
+  source: information-design
+  target: strategic-deception
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[40]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-042
+  source: strategic-deception
+  target: opponent-modelling
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[41]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-043
+  source: opponent-modelling
+  target: reflexive-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[42]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-044
+  source: reflexive-control
+  target: influence-operations
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[43]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-045
+  source: influence-operations
+  target: information-environment-manipulation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[44]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-046
+  source: information-environment-manipulation
+  target: epistemic-process-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[45]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-047
+  source: belief-state-shaping
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[46]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-048
+  source: attention-manipulation
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[47]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-049
+  source: epistemic-drift
+  target: epistemic-process-control
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[48]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-050
+  source: schelling-1960
+  target: reflexive-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[49]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-051
+  source: jervis-1976
+  target: perception-misperception
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[50]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-052
+  source: jervis-1976
+  target: reflexive-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[51]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-053
+  source: pelevin-bluebeard-2026
+  target: pelevin-mi13
+  relation: fictionalizes
+  source_relation: fictionalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[52]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-054
+  source: pelevin-mi13
+  target: influence-operations
+  relation: allegorizes
+  source_relation: allegorizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[53]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-055
+  source: pelevin-mi13
+  target: information-environment-manipulation
+  relation: allegorizes
+  source_relation: allegorizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[54]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-056
+  source: pelevin-snuff
+  target: influence-operations
+  relation: allegorizes
+  source_relation: allegorizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[55]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-057
+  source: gilbo-dezontologia
+  target: epistemic-process-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[56]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-058
+  source: gilbo-8uklad
+  target: reflexive-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[57]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-059
+  source: holo4-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[58]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-060
+  source: holo4-2026
+  target: long-horizon-reasoning
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[59]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-061
+  source: openshell-2026
+  target: policy-enforcement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[60]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-062
+  source: openshell-2026
+  target: monitorability
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[61]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-063
+  source: openshell-2026
+  target: agent-evaluation
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[62]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-064
+  source: provenanceguard-2026
+  target: provenance
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[63]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-065
+  source: provenanceguard-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[64]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-066
+  source: gpt61-sol-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[65]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-067
+  source: glm53-cyber-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[66]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-068
+  source: glm53-cyber-2026
+  target: policy-enforcement
+  relation: critiques
+  source_relation: critiques
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[67]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-069
+  source: openai-misalignment-framework-2026
+  target: agent-evaluation
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[68]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-070
+  source: potemkin-2026
+  target: agent-evaluation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[69]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-071
+  source: lying-with-truths-2026
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[70]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-072
+  source: alon-2023
+  target: signalling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[71]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-073
+  source: dbos-2026
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[72]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-074
+  source: provenanceguard-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[73]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-075
+  source: lewis-1969
+  target: signalling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[74]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-076
+  source: lewis-1969
+  target: common-knowledge
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[75]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-077
+  source: zhang-klevel
+  target: level-k
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[76]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-078
+  source: zhang-klevel
+  target: opponent-modelling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[77]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-079
+  source: harsanyi-1967
+  target: opponent-modelling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[78]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-080
+  source: aumann-1976
+  target: belief-hierarchies
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[79]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-081
+  source: rubinstein-1989
+  target: common-knowledge
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[80]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-082
+  source: bernheim-1984
+  target: opponent-modelling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[81]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-083
+  source: pearce-1984
+  target: opponent-modelling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[82]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-084
+  source: aumann-brandenburger-1995
+  target: belief-hierarchies
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[83]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-085
+  source: spence-1973
+  target: information-design
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[84]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-086
+  source: crawford-sobel-1982
+  target: information-design
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[85]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-087
+  source: nagel-1995
+  target: cognitive-hierarchy
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[86]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-088
+  source: camerer-ho-chong-2004
+  target: cognitive-hierarchy
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[87]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-089
+  source: trencsenyi-hypergame
+  target: opponent-modelling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[88]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-090
+  source: beyond-sally-anne
+  target: opponent-modelling
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[89]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-091
+  source: mindgames
+  target: level-k
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[90]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-092
+  source: amongus-x
+  target: opponent-modelling
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[91]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-093
+  source: reflexive-control
+  target: strategic-deception
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[92]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-094
+  source: reflexive-control
+  target: information-operations
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[93]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-095
+  source: lefebvre-reflexive
+  target: reflexive-control
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[94]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-096
+  source: lefebvre-reflexive
+  target: opponent-modelling
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[95]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-097
+  source: schelling-1960
+  target: strategic-reasoning
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[96]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-098
+  source: jervis-1976
+  target: opponent-modelling
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[97]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-099
+  source: zvi-hf-incidents-2026
+  target: strategic-deception
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[98]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-100
+  source: zvi-hf-incidents-2026
+  target: agent-evaluation
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[99]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-101
+  source: zvi-hf-incidents-2026
+  target: information-environment-manipulation
+  relation: reframes
+  source_relation: reframes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[100]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-102
+  source: af-fixed-weight-2026
+  target: agent-evaluation
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[101]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-103
+  source: af-fixed-weight-2026
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[102]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-104
+  source: af-fixed-weight-2026
+  target: information-environment-manipulation
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[103]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-105
+  source: sre-agent-benchmark-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[104]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-106
+  source: sre-agent-benchmark-2026
+  target: long-horizon-reasoning
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[105]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-107
+  source: sre-agent-benchmark-2026
+  target: tool-use
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[106]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-108
+  source: gpt61-sol-2026
+  target: agent-evaluation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[107]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-109
+  source: gpt61-sol-2026
+  target: tool-use
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[108]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-110
+  source: glm53-cyber-2026
+  target: agent-evaluation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[109]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-111
+  source: glm53-cyber-2026
+  target: strategic-deception
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[110]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-112
+  source: glm53-cyber-2026
+  target: open-weight-models
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[111]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-113
+  source: alon-2023
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[112]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-114
+  source: dbos-2026
+  target: epistemic-process-control
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[113]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-115
+  source: dbos-2026
+  target: belief-state-shaping
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[114]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-116
+  source: nguyen-attention-2026
+  target: rational-inattention
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[115]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-117
+  source: nguyen-attention-2026
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[116]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-118
+  source: potemkin-2026
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[117]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-119
+  source: lying-with-truths-2026
+  target: cognitive-collusion
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[118]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-120
+  source: lying-with-truths-2026
+  target: belief-state-shaping
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[119]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-121
+  source: lying-with-truths-2026
+  target: information-environment-manipulation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[120]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-122
+  source: hypergames
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[121]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-123
+  source: hypergames
+  target: opponent-modelling
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[122]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-124
+  source: monitorability
+  target: epistemic-process-control
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[123]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-125
+  source: monitorability
+  target: policy-enforcement
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[124]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-126
+  source: information-operations
+  target: information-environment-manipulation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[125]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-127
+  source: information-operations
+  target: strategic-deception
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[126]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-128
+  source: rational-inattention
+  target: attention-manipulation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[127]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-129
+  source: rational-inattention
+  target: information-design
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[128]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-130
+  source: perception-misperception
+  target: strategic-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[129]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-131
+  source: perception-misperception
+  target: opponent-modelling
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[130]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-132
+  source: pelevin-bluebeard-2026
+  target: attention-manipulation
+  relation: fictionalizes
+  source_relation: fictionalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[131]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-133
+  source: pelevin-snuff
+  target: information-operations
+  relation: allegorizes
+  source_relation: allegorizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[132]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-134
+  source: gilbo-dezontologia
+  target: information-environment-manipulation
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[133]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-135
+  source: gilbo-8uklad
+  target: information-operations
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[134]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-136
+  source: openai-misalignment-framework-2026
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[135]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-137
+  source: openai-misalignment-framework-2026
+  target: policy-enforcement
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[136]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-138
+  source: strategic-reasoning
+  target: level-k
+  relation: specializes
+  source_relation: specializes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[137]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-139
+  source: strategic-reasoning
+  target: opponent-modelling
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[138]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-140
+  source: open-weight-models
+  target: agent-evaluation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[139]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-141
+  source: open-weight-models
+  target: capability-measurement
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[140]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-142
+  source: capability-measurement
+  target: agent-evaluation
+  relation: generalizes
+  source_relation: generalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[141]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-143
+  source: capability-measurement
+  target: long-horizon-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[142]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-144
+  source: evaluation-variance
+  target: capability-measurement
+  relation: generalizes
+  source_relation: generalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[143]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-145
+  source: evaluation-variance
+  target: agent-evaluation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[144]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-146
+  source: safety-usefulness-tradeoff
+  target: agent-evaluation
+  relation: decomposes
+  source_relation: decomposes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[145]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-147
+  source: safety-usefulness-tradeoff
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[146]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-148
+  source: structural-reasoning
+  target: long-horizon-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[147]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-149
+  source: interpretability
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[148]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-150
+  source: openai-dots-2026
+  target: policy-enforcement
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[149]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-151
+  source: openai-dots-2026
+  target: safety-usefulness-tradeoff
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[150]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-152
+  source: identical-runs-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[151]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-153
+  source: identical-runs-2026
+  target: capability-measurement
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[152]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-154
+  source: identical-runs-2026
+  target: evaluation-variance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[153]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-155
+  source: identical-runs-2026
+  target: long-horizon-reasoning
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[154]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-156
+  source: wipebench-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[155]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-157
+  source: wipebench-2026
+  target: monitorability
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[156]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-158
+  source: wipebench-2026
+  target: safety-usefulness-tradeoff
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[157]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-159
+  source: wipebench-2026
+  target: provenance
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[158]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-160
+  source: workspacebench-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[159]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-161
+  source: workspacebench-2026
+  target: monitorability
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[160]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-162
+  source: workspacebench-2026
+  target: structural-reasoning
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[161]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-163
+  source: workspacebench-2026
+  target: interpretability
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[162]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-164
+  source: dynamic-epistemic-logic
+  target: common-knowledge
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[163]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-165
+  source: plaza-2007
+  target: common-knowledge
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[164]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-166
+  source: baltag-moss-solecki-1998
+  target: belief-hierarchies
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[165]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-167
+  source: zvi-astra61-pulled-2026
+  target: gpt61-sol-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[166]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-168
+  source: zvi-astra61-pulled-2026
+  target: scope-authorization-fidelity
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[167]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-169
+  source: zvi-astra61-pulled-2026
+  target: monitorability
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[168]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-170
+  source: zvi-astra61-pulled-2026
+  target: agent-evaluation
+  relation: reframes
+  source_relation: reframes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[169]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-171
+  source: zvi-astra61-pulled-2026
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[170]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-172
+  source: zvi-astra61-pulled-2026
+  target: openai-safety-cases-2026
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[171]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-173
+  source: openai-safety-cases-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[172]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-174
+  source: openai-safety-cases-2026
+  target: monitorability
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[173]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-175
+  source: openai-safety-cases-2026
+  target: policy-enforcement
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[174]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-176
+  source: openai-safety-cases-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[175]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-177
+  source: openai-safety-cases-2026
+  target: evaluation-gaming
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[176]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-178
+  source: openai-safety-cases-2026
+  target: evaluation-awareness
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[177]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-179
+  source: openai-safety-cases-2026
+  target: evaluation-variance
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[178]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-180
+  source: openai-safety-cases-2026
+  target: capability-measurement
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[179]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-181
+  source: aisi-astra-unsanctioned-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[180]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-182
+  source: aisi-astra-unsanctioned-2026
+  target: scope-authorization-fidelity
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[181]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-183
+  source: aisi-astra-unsanctioned-2026
+  target: evaluation-awareness
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[182]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-184
+  source: aisi-astra-unsanctioned-2026
+  target: strategic-deception
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[183]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-185
+  source: aisi-astra-unsanctioned-2026
+  target: monitorability
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[184]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-186
+  source: aisi-astra-unsanctioned-2026
+  target: long-horizon-reasoning
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[185]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-187
+  source: scope-authorization-fidelity
+  target: policy-enforcement
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[186]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-188
+  source: scope-authorization-fidelity
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[187]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-189
+  source: scope-authorization-fidelity
+  target: agent-evaluation
+  relation: specializes
+  source_relation: specializes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[188]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-190
+  source: scope-authorization-fidelity
+  target: long-horizon-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[189]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-191
+  source: evaluation-awareness
+  target: evaluation-gaming
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[190]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-192
+  source: evaluation-awareness
+  target: agent-evaluation
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[191]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-193
+  source: evaluation-awareness
+  target: monitorability
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[192]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-194
+  source: evaluation-gaming
+  target: agent-evaluation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[193]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-195
+  source: evaluation-gaming
+  target: strategic-deception
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[194]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-196
+  source: evaluation-gaming
+  target: information-environment-manipulation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[195]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-197
+  source: openai-dots-2026
+  target: scope-authorization-fidelity
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[196]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-198
+  source: gpt61-sol-2026
+  target: openai-safety-cases-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[197]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-199
+  source: zvi-rsi-paper-lead-2026
+  target: long-horizon-reasoning
+  relation: extends
+  source_relation: extends
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[198]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-200
+  source: zvi-rsi-paper-lead-2026
+  target: agent-evaluation
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[199]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-201
+  source: zvi-rsi-paper-lead-2026
+  target: strategic-reasoning
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[200]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-202
+  source: safa-frontier-ai-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[201]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-203
+  source: safa-frontier-ai-2026
+  target: capability-measurement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[202]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-204
+  source: safa-frontier-ai-2026
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[203]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-205
+  source: cognitive-collusion
+  target: belief-state-shaping
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[204]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-206
+  source: cognitive-collusion
+  target: strategic-deception
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[205]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-207
+  source: rubinstein-1989
+  target: belief-hierarchies
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[206]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-208
+  source: openai-dots-2026
+  target: long-horizon-reasoning
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[207]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-209
+  source: openai-dots-2026
+  target: scope-authorization-fidelity
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[208]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-210
+  source: openai-dots-2026
+  target: agent-evaluation
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[209]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-211
+  source: diffusion-controller-2026
+  target: control-over-generation-trajectory
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[210]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-212
+  source: diffusion-controller-2026
+  target: provenance
+  relation: extends
+  source_relation: extends
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[211]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-213
+  source: diffusion-controller-2026
+  target: epistemic-process-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[212]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-214
+  source: control-over-generation-trajectory
+  target: long-horizon-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[213]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-215
+  source: control-over-generation-trajectory
+  target: epistemic-process-control
+  relation: connects
+  source_relation: connects
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[214]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-216
+  source: watermarking-agent-drift-2026
+  target: stochastic-decision-drift
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[215]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-217
+  source: watermarking-agent-drift-2026
+  target: evaluation-variance
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[216]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-218
+  source: stochastic-decision-drift
+  target: evaluation-variance
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[217]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-219
+  source: stochastic-decision-drift
+  target: agent-evaluation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[218]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-220
+  source: openai-gpt61-sol-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[219]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-221
+  source: openai-dots-2026
+  target: monitorability
+  relation: reframes
+  source_relation: reframes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[220]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-222
+  source: openai-gpt61-astra-withheld-2026
+  target: scope-authorization-fidelity
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[221]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-223
+  source: openai-gpt61-astra-withheld-2026
+  target: strategic-deception
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[222]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-224
+  source: anthropic-glm53-cyber-2026
+  target: capability-measurement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[223]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-225
+  source: anthropic-glm53-cyber-2026
+  target: monitorability
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[224]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-226
+  source: state-tape-2026
+  target: provenance
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[225]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-227
+  source: traverse-2026
+  target: epistemic-drift
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[226]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-228
+  source: enterprisebench-2026
+  target: strategic-reasoning
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[227]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-229
+  source: benchmark-tool-contract-audit-2026
+  target: agent-evaluation
+  relation: critiques
+  source_relation: critiques
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[228]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-230
+  source: longharness-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[229]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-231
+  source: state-tape-2026
+  target: traverse-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[230]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-232
+  source: state-tape-2026
+  target: longharness-2026
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[231]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-233
+  source: traverse-2026
+  target: longharness-2026
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[232]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-234
+  source: enterprisebench-2026
+  target: longharness-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[233]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-235
+  source: benchmark-tool-contract-audit-2026
+  target: enterprisebench-2026
+  relation: provides-lens-on
+  source_relation: provides-lens-on
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[234]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-236
+  source: openai-dots-2026
+  target: openai-gpt61-astra-withheld-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[235]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-237
+  source: openai-gpt61-sol-2026
+  target: openai-gpt61-astra-withheld-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[236]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-238
+  source: openai-dots-safety-appendix-2026
+  target: scope-authorization-fidelity
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[237]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-239
+  source: openai-dots-safety-appendix-2026
+  target: long-horizon-reasoning
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[238]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-240
+  source: openai-dots-safety-appendix-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[239]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-241
+  source: openai-dots-safety-appendix-2026
+  target: policy-enforcement
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[240]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-242
+  source: openai-dots-safety-appendix-2026
+  target: openai-dots-2026
+  relation: applies
+  source_relation: applies
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[241]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-243
+  source: synthid-bio-2026
+  target: biological-provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[242]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-244
+  source: synthid-bio-2026
+  target: provenance
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[243]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-245
+  source: biological-provenance
+  target: provenance
+  relation: specializes
+  source_relation: specializes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[244]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-246
+  source: benchmark-tool-contract-audit-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[245]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-247
+  source: state-tape-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[246]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-248
+  source: traverse-2026
+  target: long-horizon-reasoning
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[247]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-249
+  source: longharness-2026
+  target: long-horizon-reasoning
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[248]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-250
+  source: gpt61-sol-2026
+  target: scope-authorization-fidelity
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[249]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-251
+  source: singed-2026
+  target: agent-evaluation
+  relation: critiques
+  source_relation: critiques
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[250]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-252
+  source: singed-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[251]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-253
+  source: singed-2026
+  target: execution-path-integrity
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[252]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-254
+  source: singed-2026
+  target: evaluation-gaming
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[253]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-255
+  source: singed-2026
+  target: long-horizon-reasoning
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[254]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-256
+  source: toolfence-2026
+  target: authorization-fidelity
+  relation: formalizes
+  source_relation: formalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[255]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-257
+  source: toolfence-2026
+  target: scope-authorization-fidelity
+  relation: extends
+  source_relation: extends
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[256]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-258
+  source: toolfence-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[257]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-259
+  source: toolfence-2026
+  target: policy-enforcement
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[258]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-260
+  source: toolfence-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[259]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-261
+  source: privacyskills-2026
+  target: authorization-fidelity
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[260]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-262
+  source: privacyskills-2026
+  target: information-environment-manipulation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[261]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-263
+  source: privacyskills-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[262]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-264
+  source: privacyskills-2026
+  target: opponent-modelling
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[263]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-265
+  source: jailbreak-context-lingers-2026
+  target: agent-evaluation
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[264]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-266
+  source: jailbreak-context-lingers-2026
+  target: policy-enforcement
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[265]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-267
+  source: jailbreak-context-lingers-2026
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[266]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-268
+  source: jailbreak-context-lingers-2026
+  target: epistemic-process-control
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[267]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-269
+  source: zvi-white-house-ai-safety-2026
+  target: openai-gpt61-astra-withheld-2026
+  relation: reframes
+  source_relation: reframes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[268]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-270
+  source: zvi-white-house-ai-safety-2026
+  target: agent-evaluation
+  relation: loosely-parallels
+  source_relation: loosely-parallels
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[269]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-271
+  source: anthropic-robots-2026
+  target: capability-measurement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[270]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-272
+  source: anthropic-robots-2026
+  target: evaluation-variance
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[271]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-273
+  source: execution-path-integrity
+  target: provenance
+  relation: specializes
+  source_relation: specializes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[272]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-274
+  source: execution-path-integrity
+  target: agent-evaluation
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[273]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-275
+  source: execution-path-integrity
+  target: monitorability
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[274]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-276
+  source: authorization-fidelity
+  target: scope-authorization-fidelity
+  relation: generalizes
+  source_relation: generalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[275]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-277
+  source: authorization-fidelity
+  target: policy-enforcement
+  relation: connects
+  source_relation: connects
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[276]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-278
+  source: authorization-fidelity
+  target: agent-evaluation
+  relation: specializes
+  source_relation: specializes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[277]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-279
+  source: gemini4-argon-2026
+  target: long-horizon-reasoning
+  relation: claims-about
+  source_relation: claims-about
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[278]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-280
+  source: gemini4-argon-2026
+  target: agent-evaluation
+  relation: requires-independent-evaluation
+  source_relation: requires-independent-evaluation
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[279]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-281
+  source: gemini4-argon-evaluation
+  target: gemini4-argon-2026
+  relation: describes
+  source_relation: describes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[280]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-282
+  source: gemini4-argon-evaluation
+  target: capability-measurement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[281]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-283
+  source: zvi-whitehouse-accord-2026
+  target: policy-enforcement
+  relation: describes
+  source_relation: describes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[282]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-284
+  source: zvi-whitehouse-accord-2026
+  target: agent-evaluation
+  relation: provides-lens-on
+  source_relation: provides-lens-on
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[283]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-285
+  source: zvi-whitehouse-accord-2026
+  target: safety-usefulness-tradeoff
+  relation: provides-lens-on
+  source_relation: provides-lens-on
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[284]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-286
+  source: terminal-bench-science-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[285]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-287
+  source: terminal-bench-science-2026
+  target: capability-measurement
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[286]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-288
+  source: terminal-bench-science-2026
+  target: long-horizon-reasoning
+  relation: empirically-tests
+  source_relation: empirically-tests
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[287]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-289
+  source: terminal-bench-science-2026
+  target: tool-use
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[288]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-290
+  source: terminal-bench-science-2026
+  target: execution-path-integrity
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[289]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-291
+  source: serge-bugfix-agent-2026
+  target: agent-evaluation
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[290]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-292
+  source: serge-bugfix-agent-2026
+  target: tool-use
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[291]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-293
+  source: serge-bugfix-agent-2026
+  target: execution-path-integrity
+  relation: provides-evidence-for
+  source_relation: provides-evidence-for
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[292]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-294
+  source: serge-bugfix-agent-2026
+  target: scope-authorization-fidelity
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[293]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-295
+  source: serge-bugfix-agent-2026
+  target: provenance
+  relation: operationalizes
+  source_relation: operationalizes
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[294]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-296
+  source: olmo-core-3-2026
+  target: open-weight-models
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[295]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-297
+  source: olmo-core-3-2026
+  target: capability-measurement
+  relation: provides-lens-on
+  source_relation: provides-lens-on
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[296]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-298
+  source: olmo-core-3-2026
+  target: tool-use
+  relation: implements
+  source_relation: implements
+  uncertain: false
+  epistemic_status: interpretive
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[297]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-299
+  source: olmo-core-3-2026
+  target: structural-reasoning
+  relation: provides-lens-on
+  source_relation: provides-lens-on
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[298]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-300
+  source: terminal-bench-science-2026
+  target: serge-bugfix-agent-2026
+  relation: contrasts-with
+  source_relation: contrasts-with
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[299]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.
+- id: mindcluster-edge-301
+  source: terminal-bench-science-2026
+  target: provenanceguard-2026
+  relation: shares-mechanism-with
+  source_relation: shares-mechanism-with
+  uncertain: true
+  epistemic_status: unverified
+  source_refs:
+  - src-mindcluster-html-export-b84b483b
+  import_provenance: epistemic_research_graph(2).html:const G.edges[300]
+  limitations:
+  - Directed relation copied from the uploaded graph; it is a graph annotation, not independent evidence for a factual
+    claim.

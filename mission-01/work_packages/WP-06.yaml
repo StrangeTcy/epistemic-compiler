@@ -39,4 +39,4 @@ failure_modes:
   - "Over-claiming ecological gauge diversity when canonical conventions dominate (`H4`, `ABORT-04`)."
 handoff_contract: >
   Writes `mission-01/results/gauge_duality_parsimony.json` and passes `T04`.
-status: "pending"
+status: "completed"

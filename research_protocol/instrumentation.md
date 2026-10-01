@@ -1,40 +1,50 @@
 # Research Process Instrumentation & Friction Protocol (V0)
 
-> **Purpose:** The manual execution of Mission 01 is itself an empirical experiment whose subject is the research coordination process. Its goal is to turn "vibes about what to automate" into a structured dataset (`mission-01/friction_log.yaml`) from which V1 tooling requirements are derived empirically.
+> **Purpose:** Manual execution can serve as a process-instrumentation pilot. A coordination-efficiency data point is reportable only when intervention coverage and timing are adequate; an incomplete log is not evidence of zero friction. The goal is to turn observations in `mission-01/friction_log.yaml` into tentative V1 tooling requirements without overstating the data.
 
 ---
 
 ## 1. Real-Time Friction Logging Rules
 
-1. **Log Immediately Upon Intervention:** Every time a human (or lead operator acting on a human gate/clarification) must intervene, clarify, repair an artifact, resolve a boundary collision, or supply missing context, an entry **must** be appended to `mission-01/friction_log.yaml` at the moment it occurs—never reconstructed from memory at the end of the run.
-2. **No Freeform Prose Notes:** Every entry must conform strictly to the YAML schema in Section 2 and use the Controlled Vocabulary in Section 3.
-3. **Update Recurrence Counts:** When a friction event shares the same underlying root cause and `type` as an earlier entry, increment `recurrence_count` (and reference the prior `F-XXX` ID in `root_cause_guess`) so recurring bottlenecks separate cleanly from one-off accidents.
+1. **Append at the event:** Record each human or lead-operator intervention when it occurs. Do not reconstruct unlogged events at the end of a mission; if a missing event is discovered later, record a separate data-quality note and mark the metric incomplete.
+2. **Append-only history:** Never edit an existing event to update recurrence. Give related events a shared `root_cause_id` and list earlier event IDs in the newer event's `recurs_on` field.
+3. **Honest timestamps:** Use ISO-8601 timestamps with an explicit offset (`+03:00`) or `Z` only for true UTC. An event timestamp is not automatically a start or finish time. Record `started_at` / `resolved_at` only when actually observed; otherwise use `null` and a `timestamp_quality` note. Never manufacture a duration to satisfy the schema.
+4. **Derived vs. legacy duration:** `derived_duration_minutes` is calculated only when both `started_at` and `resolved_at` are known. Keep an older manually reported duration in `legacy_reported_duration_minutes`, clearly marked as reported rather than derived.
+5. **No freeform-only records:** Each event must use the schema in Section 2 and exactly one primary `type` from Section 3.
 
 ---
 
 ## 2. Friction Log Schema (`mission-XX/friction_log.yaml`)
 
 ```yaml
+schema_version: 2
+mission_id: "mission-XX"
+timezone: "Europe/Moscow"
+mission_started_at: "2026-10-01T15:38:00+03:00"
 friction_events:
   - id: F-001
-    timestamp: "2026-10-01T15:40:00Z"
-    stage: "bootstrap" # See Section 3.1 for allowed stage values
-    work_package: null # WP-01 .. WP-NN, or null if pre/post package execution
-    type: "missing_information" # See Section 3.2 for Controlled Vocabulary
+    event_kind: "intervention" # intervention | resolution_update | data_quality_note
+    related_event_id: null # Required for resolution_update or data_quality_note
+    event_at: "2026-10-01T15:39:00+03:00" # When intervention was logged/observed
+    started_at: null # Populate only if observed
+    resolved_at: null # Populate only if observed
+    derived_duration_minutes: null # Only derive from observed start/end
+    legacy_reported_duration_minutes: 2 # Optional; preserve, don't mislabel as derived
+    timestamp_quality: "migrated_offset_inferred" # exact | approximate | migrated_offset_inferred | not_recorded
+    stage: "bootstrap"
+    work_package: null
+    type: "missing_information" # exactly one controlled type
     category: "specification" # specification | measurement | execution | integration | judgment
-    trigger: >
-      Concrete description of what blocked progress or prompted the intervention.
-    root_cause_guess: >
-      Why the protocol, seed, spec, or work-package contract failed to prevent this.
-    resolution: >
-      Exact action taken to unblock the step.
-    resolution_time_minutes: 3
-    recurrence_count: 1
+    root_cause_id: "RC-01"
+    recurs_on: []
+    trigger: "Concrete blocker or intervention trigger."
+    root_cause_guess: "Why upstream artifacts failed to prevent it."
+    resolution: "Exact action taken; do not list intended actions as completed."
     automatable: "likely" # yes | likely | unlikely | no_research_judgment
-    automation_sketch: >
-      Concrete description of the validator rule, schema field, or pre-flight check
-      that would eliminate this friction in V1 (or why it must remain human judgment).
+    automation_sketch: "Specific rule/tool or reason to preserve human judgment."
 ```
+
+**Migration rule:** When importing a legacy log, preserve the original entry text and timestamp in a versioned snapshot. For v2 records migrated before `event_kind` was introduced, absence of the field defaults to `intervention`; later resolution/data-quality records must set it explicitly. Any timezone interpretation or type mapping must be labelled as a migration inference. Historical `resolution_time_minutes` is not an observed interval; retain it as `legacy_reported_duration_minutes`, never relabel it as derived. If completeness is unknown, report intervention and time metrics as incomplete/lower-bound or not estimable.
 
 ---
 
@@ -85,34 +95,28 @@ Every friction event must be assigned **exactly one** primary `type` from this l
 
 ---
 
-## 4. Coordination Metrics & Anti-Goodharting Rules
+## 4. Coordination Efficiency Metrics & Anti-Goodharting Rules
 
-At the conclusion of Mission 01, compute and report the following metrics from `friction_log.yaml` and `work_packages/`:
+At the conclusion of a mission, calculate these metrics only if the friction log is known to be complete for the stated interval. Otherwise report logged counts as a lower bound and mark the per-package metrics `not_estimable`; never encode missing logging as zero.
 
-### 4.1 Primary Sublinearity Metrics
-Let $W_{\text{completed}}$ be the number of work packages that passed all engineering acceptance tests and integrated cleanly, $N_{\text{int}}$ be the total number of human interventions logged in `friction_log.yaml`, and $T_{\text{coord}}$ be the sum of `resolution_time_minutes` across all human interventions.
+### 4.1 Single-Mission Coordination Efficiency (Not a Scaling Claim)
+Let $W_{\text{completed}}$ be the number of packages that passed engineering acceptance and integrated cleanly; $N_{\text{int}}$ is the number of complete records with `event_kind: intervention` (excluding resolution updates/data-quality notes); and $T_{\text{coord}}$ is the sum of durations derived from observed start/end timestamps. Legacy reported durations must be shown separately.
 
 1. **Intervention Burden per Completed Package ($\kappa_{\text{intervention}}$):**
    $$\kappa_{\text{intervention}} = \frac{N_{\text{int}}}{W_{\text{completed}}}$$
-
 2. **Coordination Time per Completed Package ($\kappa_{\text{time}}$):**
    $$\kappa_{\text{time}} = \frac{T_{\text{coord}}\text{ (minutes)}}{W_{\text{completed}}}$$
 
+These are **coordination-efficiency** measures for one mission. A single mission cannot establish sublinear scaling. A future cross-mission scaling claim would require multiple comparable missions and a fit such as $T_{\text{human}}(W) \approx aW^\beta+c$ with uncertainty supporting $\beta<1$.
+
 ### 4.2 Diagnostic Breakdown Metrics
-Also report unconditionally:
-- **Total Human Interventions ($N_{\text{int}}$)** (broken down by `stage` and `type`)
-- **Total Human Coordination Time ($T_{\text{coord}}$)** in minutes
-- **Clarifications per Package:** $\frac{\text{count}(\texttt{type == clarification})}{W_{\text{completed}}}$
-- **Repaired Packages ($W_{\text{repaired}}$):** Number and fraction of work packages requiring manual `repair`
-- **Re-dispatched Packages ($W_{\text{redispatched}}$):** Number and fraction of work packages requiring `re-dispatch`
-- **Packages Blocked by Missing Spec ($W_{\text{blocked}}$):** Count of packages encountering `missing_interface`, `ambiguous_acceptance`, `dependency_error`, or `missing_information`
+Report, when the log is complete: total interventions by `stage` and `type`; observed and legacy-reported time separately; clarifications per completed package; packages repaired or re-dispatched; and packages blocked by `missing_interface`, `ambiguous_acceptance`, `dependency_error`, or `missing_information`. If the log is incomplete, annotate every count with the coverage limitation.
 
 ### 4.3 Anti-Goodharting Constraint (Fixed Granularity Rule)
-- **Prohibition:** You may **not** reduce $\kappa_{\text{intervention}}$ or $\kappa_{\text{time}}$ by artificially splitting a single coherent module into tiny trivial work packages (e.g., 30 one-function packages).
-- **Granularity Guardrail:**
-  1. Total work packages for Mission 01 must remain within $[5, 15]$.
-  2. Every work package must produce a standalone, testable artifact mapped to a distinct requirement (`Rxx`), measurement (`Mxx`), control (`CTRLxx`), or experimental run (`Exx`).
-  3. Always report raw totals ($N_{\text{int}}$ and $T_{\text{coord}}$) alongside $\kappa_{\text{intervention}}$ and $\kappa_{\text{time}}$.
+- Do not lower either $\kappa$ by splitting coherent modules into trivial packages.
+- Keep the package count within `[5, 15]` unless the mission's pre-registration explicitly justifies another range.
+- Each package must map to a distinct requirement, measurement, control, evidence item, or experimental run.
+- Always report raw counts, coverage/completeness, and time provenance alongside ratios.
 
 ---
 
@@ -130,20 +134,12 @@ To prevent sunk-cost continuation on a broken seed or non-discriminating experim
 
 ---
 
-## 6. Post-Mission Friction Analysis Protocol (Part XI)
+## 6. Post-Mission Friction Analysis Protocol
 
-Upon completing Gate 4 (or triggering an abort), analyze `mission-01/friction_log.yaml` before writing a single line of V1 infrastructure code:
+After the applicable human gate, analyze the friction log without rewriting prior events:
 
-1. **Aggregate Table:** Group all `F-XXX` entries by:
-   - `type` (13-class vocabulary)
-   - `category` (`specification`, `measurement`, `execution`, `integration`, `judgment`)
-   - `recurrence_count`
-   - `sum(resolution_time_minutes)`
-2. **Rank Top 3 Automation Targets:** Select the 3 recurring friction patterns with the highest product of recurrence and coordination time where `automatable` is `yes` or `likely`. For each target, document:
-   - `OBSERVED FRICTION`
-   - `EVIDENCE` (specific `F-XXX` IDs, timestamps, and package IDs)
-   - `WHY IT RECURRED`
-   - `PROPOSED AUTOMATION` (exact validator rule, schema constraint, or script)
-   - `EXPECTED REDUCTION IN HUMAN COORDINATION` ($\Delta N_{\text{int}}$ and $\Delta T_{\text{coord}}$)
-   - `WHY THIS SHOULD BE AUTOMATED`
-3. **Protect Research Judgment:** Explicitly list all friction events tagged `no_research_judgment` (e.g., choosing which hypothesis framing is scientifically deepest, deciding whether a claim ceiling is honest) and document why automating them prematurely would degrade research quality into polished-spec theater.
+1. Aggregate by `type`, `category`, `stage`, `root_cause_id`, and `recurs_on`.
+2. Sum only `derived_duration_minutes` from observed start/end timestamps. Report legacy manual durations in a separate column; do not combine them as if equally precise.
+3. State log coverage/completeness. If intervention logging was not complete in real time, report lower bounds and mark coordination ratios `not_estimable`.
+4. Rank candidate automation targets by observed recurrence and reliable duration evidence; do not derive priority from imputed time.
+5. Preserve events tagged `no_research_judgment` as human decisions, and document why premature automation could degrade research quality.

@@ -1,0 +1,162 @@
+{
+  "artifact_status": "post_run_reporting_addendum",
+  "interpretation_caveat": "These are model-based binomial intervals. The cohorts were fixed/fully enumerated rather than probability samples, so the rates are exact descriptive proportions for the named cohort; the intervals should not be read as design-based uncertainty or population generalization.",
+  "method": "95% Wilson score intervals using the pre-registered helper definition in tools/blackbox_context_bundler.py:wilson_ci_95",
+  "metrics": {
+    "beta_A_all_environment_level": {
+      "A1_Total": {
+        "ci_95_high": 0.448,
+        "ci_95_low": 0.047,
+        "count": 2,
+        "rate": 0.1667,
+        "total": 12
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.8112,
+        "ci_95_low": 0.2667,
+        "count": 5,
+        "rate": 0.5556,
+        "total": 9
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.5463,
+        "ci_95_low": 0.1719,
+        "count": 7,
+        "rate": 0.3333,
+        "total": 21
+      }
+    },
+    "beta_A_glue_environment_level": {
+      "A1_Discovery": {
+        "ci_95_high": 0.7923,
+        "ci_95_low": 0.0615,
+        "count": 1,
+        "rate": 0.3333,
+        "total": 3
+      },
+      "A1_Holdout": {
+        "ci_95_high": 0.2991,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 9
+      },
+      "A1_Total": {
+        "ci_95_high": 0.3539,
+        "ci_95_low": 0.0149,
+        "count": 1,
+        "rate": 0.0833,
+        "total": 12
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.7333,
+        "ci_95_low": 0.1888,
+        "count": 4,
+        "rate": 0.4444,
+        "total": 9
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.4509,
+        "ci_95_low": 0.1063,
+        "count": 5,
+        "rate": 0.2381,
+        "total": 21
+      }
+    },
+    "beta_B_glue_environment_level": {
+      "A1_Total": {
+        "ci_95_high": 0.2425,
+        "ci_95_low": 0.0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 12
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.2991,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 9
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.1546,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 21
+      }
+    },
+    "gamma_A_environment_level": {
+      "A1_Total": {
+        "ci_95_high": 0.2425,
+        "ci_95_low": 0.0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 12
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.7333,
+        "ci_95_low": 0.1888,
+        "count": 4,
+        "rate": 0.4444,
+        "total": 9
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.4,
+        "ci_95_low": 0.0767,
+        "count": 4,
+        "rate": 0.1905,
+        "total": 21
+      }
+    },
+    "gamma_A_variant_level": {
+      "A1_Total": {
+        "ci_95_high": 0.117,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 29
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.4468,
+        "ci_95_low": 0.1317,
+        "count": 7,
+        "rate": 0.2593,
+        "total": 27
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.2363,
+        "ci_95_low": 0.0619,
+        "count": 7,
+        "rate": 0.125,
+        "total": 56
+      }
+    },
+    "gamma_B_variant_level_constructed_oracle": {
+      "A1_Total": {
+        "ci_95_high": 0.117,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 29
+      },
+      "A2_CompileOnly": {
+        "ci_95_high": 0.1246,
+        "ci_95_low": 0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 27
+      },
+      "Pooled_21": {
+        "ci_95_high": 0.0642,
+        "ci_95_low": 0.0,
+        "count": 0,
+        "rate": 0.0,
+        "total": 56
+      }
+    }
+  },
+  "mission_id": "mission-01",
+  "oracle_caveat": "Grader B and TruthOracle share AUDIT_DISPATCH; the Grader B/TruthOracle zero rates are not independent validation.",
+  "pre_registration_commit_sha": "cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7"
+}

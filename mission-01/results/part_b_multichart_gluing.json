@@ -1,0 +1,4916 @@
+{
+  "work_package": "WP-05",
+  "track": "Track B-Mech (Deterministic Gauge-Orbit Enumeration)",
+  "controls_enforced": [
+    "CTRL02",
+    "CTRL04",
+    "C5",
+    "FALS-03",
+    "FALS-03b"
+  ],
+  "n_environments": 6,
+  "total_glued_workspaces_evaluated": 162,
+  "summary": {
+    "mean_phi_orbit_fraction": {
+      "Chart-Only": 0.6111,
+      "Pairwise-Tree": 0.1605,
+      "Pairwise-UpToGauge": 0.2963,
+      "Circular-AG": 0.0741,
+      "Sheaf-Cocycle": 0.0
+    },
+    "mean_conditional_fpr_given_accept": {
+      "Chart-Only": 0.6111,
+      "Pairwise-Tree": 0.3378,
+      "Pairwise-UpToGauge": 0.4501,
+      "Circular-AG": 0.201,
+      "Sheaf-Cocycle": 0.0
+    },
+    "delta_phi_chart_minus_sheaf": 0.6111,
+    "delta_phi_tree_minus_sheaf": 0.1605,
+    "delta_phi_uptogauge_minus_sheaf": 0.2963,
+    "delta_phi_circular_ag_minus_sheaf": 0.0741,
+    "delta_cond_fpr_tree_minus_sheaf": 0.3378,
+    "delta_cond_fpr_circular_ag_minus_sheaf": 0.201,
+    "total_hollow_cycle_failures_caught_by_sheaf_over_circular_ag": 12,
+    "envs_with_nonzero_holonomy": [
+      "rope",
+      "rd_state_carry",
+      "sheaf_schema_sync",
+      "sheaf_invariant_gluing",
+      "compositional_optimizer",
+      "sheaf_physical_constraints"
+    ]
+  },
+  "multichart_results": [
+    {
+      "env_id": "rope",
+      "difficulty_vector": "medium,medium,medium,medium,medium,medium,medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:precompute_freqs_cis",
+          "U_2:apply_rotary_emb",
+          "U_3:Attention.forward"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 14,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.4815,
+        "Pairwise-Tree": 0.1852,
+        "Pairwise-UpToGauge": 0.4815,
+        "Circular-AG": 0.037,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.4815,
+        "Pairwise-Tree": 0.2632,
+        "Pairwise-UpToGauge": 0.4815,
+        "Circular-AG": 0.0667,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 1.0,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 1.0,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 13,
+        "Pairwise-Tree": 5,
+        "Pairwise-UpToGauge": 13,
+        "Circular-AG": 1,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 19,
+        "Pairwise-UpToGauge": 27,
+        "Circular-AG": 15,
+        "Sheaf-Cocycle": 14
+      },
+      "holonomy_counts": {
+        "0": 14,
+        "1": 12,
+        "3": 1
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 13,
+      "non_zero_holonomy_under_circular_ag": 1,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        }
+      ]
+    },
+    {
+      "env_id": "rd_state_carry",
+      "difficulty_vector": "medium,medium,medium,medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:step_rd_kernel",
+          "U_2:window_A_serializer",
+          "U_3:window_B_handoff"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 5,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.8148,
+        "Pairwise-Tree": 0.0741,
+        "Pairwise-UpToGauge": 0.1481,
+        "Circular-AG": 0.037,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.8148,
+        "Pairwise-Tree": 0.4,
+        "Pairwise-UpToGauge": 0.4444,
+        "Circular-AG": 0.3333,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 0.6,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 0.4,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 22,
+        "Pairwise-Tree": 2,
+        "Pairwise-UpToGauge": 4,
+        "Circular-AG": 1,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 5,
+        "Pairwise-UpToGauge": 9,
+        "Circular-AG": 3,
+        "Sheaf-Cocycle": 5
+      },
+      "holonomy_counts": {
+        "0": 5,
+        "1": 3,
+        "2": 18,
+        "3": 1
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 4,
+      "non_zero_holonomy_under_circular_ag": 1,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_schema_sync",
+      "difficulty_vector": "medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:users_fk_chart",
+          "U_2:addresses_fk_chart",
+          "U_3:transactions_fk_chart"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 20,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.2593,
+        "Pairwise-Tree": 0.1111,
+        "Pairwise-UpToGauge": 0.2593,
+        "Circular-AG": 0.1481,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.2593,
+        "Pairwise-Tree": 0.1304,
+        "Pairwise-UpToGauge": 0.2593,
+        "Circular-AG": 0.1667,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 1.0,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 1.0,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 7,
+        "Pairwise-Tree": 3,
+        "Pairwise-UpToGauge": 7,
+        "Circular-AG": 4,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 23,
+        "Pairwise-UpToGauge": 27,
+        "Circular-AG": 24,
+        "Sheaf-Cocycle": 20
+      },
+      "holonomy_counts": {
+        "0": 20,
+        "3": 7
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 7,
+      "non_zero_holonomy_under_circular_ag": 4,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_invariant_gluing",
+      "difficulty_vector": "medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:normalize_chart",
+          "U_2:discretize_chart",
+          "U_3:compose_pipeline_chart"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 11,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.5926,
+        "Pairwise-Tree": 0.1481,
+        "Pairwise-UpToGauge": 0.2222,
+        "Circular-AG": 0.0741,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.5926,
+        "Pairwise-Tree": 0.2667,
+        "Pairwise-UpToGauge": 0.3529,
+        "Circular-AG": 0.1538,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 1.0,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 1.0,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 16,
+        "Pairwise-Tree": 4,
+        "Pairwise-UpToGauge": 6,
+        "Circular-AG": 2,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 15,
+        "Pairwise-UpToGauge": 17,
+        "Circular-AG": 13,
+        "Sheaf-Cocycle": 11
+      },
+      "holonomy_counts": {
+        "0": 11,
+        "2": 15,
+        "1": 1
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 6,
+      "non_zero_holonomy_under_circular_ag": 2,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": -1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 2,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -1,
+            "g_31": 0
+          },
+          "holonomy": 1,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.3333
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": -1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": -2,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": -1,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": 0,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 2,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -2,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 0,
+            "g_31": 2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 2,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": -1,
+            "g_31": 2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.3333
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -2,
+            "g_31": 2
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        }
+      ]
+    },
+    {
+      "env_id": "compositional_optimizer",
+      "difficulty_vector": "medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:linear_then_relu",
+          "U_2:relu_then_linear",
+          "U_3:shared_weight_verifier"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 8,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.7037,
+        "Pairwise-Tree": 0.2593,
+        "Pairwise-UpToGauge": 0.4074,
+        "Circular-AG": 0.0741,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.7037,
+        "Pairwise-Tree": 0.4667,
+        "Pairwise-UpToGauge": 0.5789,
+        "Circular-AG": 0.2,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 1.0,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 1.0,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 19,
+        "Pairwise-Tree": 7,
+        "Pairwise-UpToGauge": 11,
+        "Circular-AG": 2,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 15,
+        "Pairwise-UpToGauge": 19,
+        "Circular-AG": 10,
+        "Sheaf-Cocycle": 8
+      },
+      "holonomy_counts": {
+        "0": 8,
+        "2": 18,
+        "3": 1
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 11,
+      "non_zero_holonomy_under_circular_ag": 2,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.0
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_physical_constraints",
+      "difficulty_vector": "medium,medium",
+      "nerve": {
+        "charts": [
+          "U_1:switches_S1_S2",
+          "U_2:switch_S3",
+          "U_3:global_backbone"
+        ],
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "tree_edges": [
+          "e_12",
+          "e_23"
+        ],
+        "chord_edge": "e_31",
+        "g_e": {
+          "e_12": 3,
+          "e_23": 3,
+          "e_31": 3
+        }
+      },
+      "orbit_size": 27,
+      "n_globally_valid_sections": 5,
+      "all_local_chart_tests_pass": true,
+      "protocols": {
+        "Chart-Only": 0.8148,
+        "Pairwise-Tree": 0.1852,
+        "Pairwise-UpToGauge": 0.2593,
+        "Circular-AG": 0.0741,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_conditional_fpr": {
+        "Chart-Only": 0.8148,
+        "Pairwise-Tree": 0.5,
+        "Pairwise-UpToGauge": 0.5833,
+        "Circular-AG": 0.2857,
+        "Sheaf-Cocycle": 0.0
+      },
+      "protocols_valid_recall": {
+        "Chart-Only": 1.0,
+        "Pairwise-Tree": 1.0,
+        "Pairwise-UpToGauge": 1.0,
+        "Circular-AG": 1.0,
+        "Sheaf-Cocycle": 1.0
+      },
+      "protocol_false_accept_counts": {
+        "Chart-Only": 22,
+        "Pairwise-Tree": 5,
+        "Pairwise-UpToGauge": 7,
+        "Circular-AG": 2,
+        "Sheaf-Cocycle": 0
+      },
+      "protocol_total_accept_counts": {
+        "Chart-Only": 27,
+        "Pairwise-Tree": 10,
+        "Pairwise-UpToGauge": 12,
+        "Circular-AG": 7,
+        "Sheaf-Cocycle": 5
+      },
+      "holonomy_counts": {
+        "0": 5,
+        "2": 21,
+        "3": 1
+      },
+      "non_zero_holonomy_under_pairwise_uptogauge": 7,
+      "non_zero_holonomy_under_circular_ag": 2,
+      "orbit_evaluations": [
+        {
+          "tuple": [
+            0,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 2,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -1,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 1,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": -2,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": -1,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            0,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 2,
+            "g_23": 0,
+            "g_31": -2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 2,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -1,
+            "g_31": 1
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 0,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": true
+          },
+          "truth_oracle_passed": true,
+          "truth_oracle_score": 1.0
+        },
+        {
+          "tuple": [
+            1,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 1,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -2,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": -1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            1,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 1,
+            "g_23": 0,
+            "g_31": -1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 0,
+            "g_31": 2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            0,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -2,
+            "g_23": 2,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": -1,
+            "g_31": 2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 0,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            1,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": -1,
+            "g_23": 1,
+            "g_31": 0
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            0
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -2,
+            "g_31": 2
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": false,
+            "Pairwise-UpToGauge": false,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            1
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": -1,
+            "g_31": 1
+          },
+          "holonomy": 2,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": false,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        },
+        {
+          "tuple": [
+            2,
+            2,
+            2
+          ],
+          "local_chart_tests_passed": [
+            true,
+            true,
+            true
+          ],
+          "cocycle": {
+            "g_12": 0,
+            "g_23": 0,
+            "g_31": 0
+          },
+          "holonomy": 3,
+          "protocol_accepts": {
+            "Chart-Only": true,
+            "Pairwise-Tree": true,
+            "Pairwise-UpToGauge": true,
+            "Circular-AG": true,
+            "Sheaf-Cocycle": false
+          },
+          "truth_oracle_passed": false,
+          "truth_oracle_score": 0.6667
+        }
+      ]
+    }
+  ]
+}

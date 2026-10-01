@@ -1,0 +1,807 @@
+{
+  "experiment_id": "FALS-02",
+  "title": "Multi-Variant Type II Gauge-Freedom Audit (G_judge vs G_spec)",
+  "controls_enforced": [
+    "CTRL05",
+    "CR08",
+    "CF02"
+  ],
+  "total_environments": 21,
+  "total_reference_alt_variants_tested": 56,
+  "ctrl05_zero_syntax_or_import_errors": true,
+  "grader_a_total_rejected_variants": 7,
+  "grader_a_variant_rejection_rate": 0.125,
+  "grader_b_total_rejected_variants": 0,
+  "grader_b_variant_rejection_rate": 0.0,
+  "envs_with_any_type2_rejection": [
+    "functorial_augmentation",
+    "monadic_reward",
+    "sheaf_physical_constraints",
+    "sheaf_invariant_gluing"
+  ],
+  "envs_with_systematic_type2_rejection": [
+    "sheaf_physical_constraints",
+    "sheaf_invariant_gluing"
+  ],
+  "per_environment": [
+    {
+      "env_id": "rope",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "rd_state_carry",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 1,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "categorical_lenses",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "moco",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "glyph",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 1,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "epistemic_games",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 1,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [
+            "reported P(W1)=0.5 vs true 1/2 (0.5000); reported verdict='indistinguishable' vs true 'indistinguishable'; reported support='neither' vs true 'neither'; consistent=True; strict=True"
+          ],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "regex_state_machine",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 2,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "sql_fixed_point",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "css_state_machine",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "spreadsheet_dataflow",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "template_interpreter",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "ci_dependency_graph",
+      "stratum": "A1_REFERENCES",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "compositional_optimizer",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "functorial_augmentation",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 1,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.3333,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": true,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": false,
+          "grader_a_score": 0.416667,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "monadic_reward",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 1,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.3333,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": true,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": false,
+          "grader_a_score": 0.633333,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "neuro_symbolic_parser",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "semiring_unification",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_physical_constraints",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 3,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 1.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": true,
+      "any_type2_overconstraint": true,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": false,
+          "grader_a_score": 0.633333,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": false,
+          "grader_a_score": 0.633333,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": false,
+          "grader_a_score": 0.633333,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_schema_sync",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "sheaf_invariant_gluing",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 2,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.6667,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": true,
+      "any_type2_overconstraint": true,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": false,
+          "grader_a_score": 0.8,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": false,
+          "grader_a_score": 0.8,
+          "grader_a_failure_mode": "underfit",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    },
+    {
+      "env_id": "stochastic_monad",
+      "stratum": "A2_CompileOnly",
+      "n_alt_variants": 3,
+      "grader_a_rejected_count": 0,
+      "grader_b_rejected_count": 0,
+      "grader_a_rejection_rate": 0.0,
+      "grader_b_rejection_rate": 0.0,
+      "systematic_type2_overconstraint": false,
+      "any_type2_overconstraint": false,
+      "variants": [
+        {
+          "variant": "reference_alt_1",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_2",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        },
+        {
+          "variant": "reference_alt_3",
+          "grader_a_passed": true,
+          "grader_a_score": 1.0,
+          "grader_a_failure_mode": "pass",
+          "grader_a_notes": [],
+          "grader_b_passed": true,
+          "truth_oracle_passed": true
+        }
+      ]
+    }
+  ]
+}

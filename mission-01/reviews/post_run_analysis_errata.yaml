@@ -1,0 +1,71 @@
+mission_id: "mission-01"
+pre_registration_commit_sha: "cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7"
+status: "post_run_errata_preserving_original_artifacts"
+source_artifact: "mission-01/results/summary_metrics.json"
+errata:
+  M10:
+    original_output:
+      total_human_interventions: 0
+      kappa_intervention_total_per_wp: 0.0
+      kappa_intervention_execution_phase_per_wp: 0.0
+    correction:
+      status: "invalid_zero_and_not_estimable_from_incomplete_log"
+      reason: >
+        The migrated legacy friction log contains F-001..F-007; additional post-review work occurred,
+        and the execution history also includes code/test repairs. The real-time log was not complete,
+        so the total intervention count cannot be recovered without violating the no-reconstruction rule.
+      known_legacy_events: 7
+      legacy_reported_duration_minutes_sum: 24
+      duration_status: "manual legacy estimates only; no observed start/end pairs; not a derived duration"
+      corrected_total_interventions: null
+      corrected_total_coordination_minutes: null
+      corrected_kappa_intervention: null
+      corrected_kappa_time: null
+      reporting_rule: "Treat observed/known legacy entries as a lower bound; mark full M10 and kappa not estimable, never zero."
+  confidence_intervals:
+    required_by_registered_claim_ceiling: true
+    source_artifact: "mission-01/results/part_a_confidence_intervals_addendum.json"
+    status: "post_run_deterministic_reporting_addendum"
+    note: >
+      Wilson 95% intervals were computed from the recorded integer counts using the pre-registered
+      helper definition. Because the cohorts are fixed enumerations rather than probability samples,
+      the intervals are model-based and do not justify population generalization.
+  tests:
+    verified_combined_pytest_result: "17 passed"
+    exact_run_scope: "tests/test_scoring.py tests/test_generator.py tests/test_bidirectional_audit_harness.py tests/test_multichart_gluing_harness.py"
+    interpretation: >
+      The initial recorded run passed. A later rerun attempt in the current sandbox failed during test
+      collection because `torch` is unavailable (`ModuleNotFoundError`); it is not a new benchmark test
+      failure and no fresh pass is claimed. The 17 tests were not all restriction-map assertions and do
+      not prove mathematical sheaf gluing or real-agent integration.
+  M07:
+    original_output: "mission-01/results/gauge_duality_parsimony.json:M07_solo_chart_gauge_concentration"
+    status: "not_empirical_sample"
+    reason: >
+      tools/gauge_and_parsimony_analysis.py hard-codes SOLO_CHART_EMPIRICAL_SAMPLES as source constants
+      with 5 purported samples per task. No linked raw model completions, run IDs, or source records
+      substantiate those counts in this workspace. The reported concentration and prior-weighted rates
+      are deterministic calculations from hand-entered counts.
+    claim_rule: "Quarantine M07/H4 and do not call these ecological or solo-agent empirical observations."
+  M08:
+    original_output: "mission-01/results/gauge_duality_parsimony.json:M08_evaluator_orchestrator_duality"
+    status: "constructed_metadata_overlap_not_independent_measurement"
+    reason: >
+      tools/multichart_gluing_benchmark.py:NERVE_METADATA hard-codes E_J and E_O; M08 computes Jaccard
+      from those annotations. Jaccard 16/18 = 0.8889 is not an independently extracted empirical
+      evaluator/orchestrator co-location.
+    claim_rule: "Quarantine M08/H5 as an empirical finding; preserve the arithmetic as a metadata audit."
+  grader_b_truth_oracle_agreement:
+    original_output: "mission-01/results/part_a_stratum_a1.json and part_a_stratum_a2.json"
+    status: "agreement_by_implementation_design"
+    reason: >
+      tools/grader_b_and_truth_oracles.py:evaluate_grader_b calls evaluate_truth_oracle, which dispatches
+      the same AUDIT_DISPATCH function. The 170/170 agreement is not an independent validation of the
+      oracle's accuracy; only the comparison of existing judges with the constructed oracle remains.
+    claim_rule: "Do not call Grader B independently validated by the 170/170 agreement result."
+  part_b:
+    observed_workspaces: 162
+    interpretation: >
+      These were deterministic generated workspace/gauge-orbit cases evaluated by the implemented
+      benchmark predicates, not 162 independent LLM-agent executions and not the proposed A/B/C causal
+      comparison. Retain all raw numerical outputs, but use this scope statement in claims.

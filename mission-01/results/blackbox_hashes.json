@@ -1,0 +1,391 @@
+{
+  "mission_id": "mission-01",
+  "work_package": "WP-01",
+  "pre_registration_spec": "mission-01/spec/approved.yaml",
+  "seed": 42,
+  "total_environments": 21,
+  "stratum_counts": {
+    "A1_Discovery": 3,
+    "A1_Holdout": 9,
+    "A2_CompileOnly": 9
+  },
+  "environments": {
+    "rope": {
+      "env_id": "rope",
+      "stratum": "A1_Discovery",
+      "config_path": "envs/rope/config.yaml",
+      "difficulty_vector": "medium,medium,medium,medium,medium,medium,medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "attention.py",
+        "cache.py",
+        "eval.py",
+        "model.py",
+        "paper_excerpt.pdf",
+        "prompt.md",
+        "rope.py",
+        "train.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "rope.py",
+        "attention.py",
+        "cache.py"
+      ],
+      "blackbox_sha256": "297e285976956c83069dcbdc5a59e51b0a9711fa1e86b36d8c0c2acdeb4f663c",
+      "judge_excluded": true
+    },
+    "rd_state_carry": {
+      "env_id": "rd_state_carry",
+      "stratum": "A1_Discovery",
+      "config_path": "envs/recurrent_depth/state_carry/config.yaml",
+      "difficulty_vector": "medium,medium,medium,medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "recurrent_block.py",
+        "train.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "recurrent_block.py"
+      ],
+      "blackbox_sha256": "1ffd3a02615350d8420a0fa5b7ba32a06d30f3ca3d939c612c0210af2206a220",
+      "judge_excluded": true
+    },
+    "categorical_lenses": {
+      "env_id": "categorical_lenses",
+      "stratum": "A1_Discovery",
+      "config_path": "envs/cat_theo/categorical_lenses/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "lenses.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "lenses.py"
+      ],
+      "blackbox_sha256": "d699810c6143a05b579651f83954c48dd70ad1826aa6cbaf24baa6767e76f94b",
+      "judge_excluded": true
+    },
+    "moco": {
+      "env_id": "moco",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/moco/config.yaml",
+      "difficulty_vector": "medium,medium,medium,medium,medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "contrastive.py",
+        "dataset.py",
+        "eval.py",
+        "prompt.md",
+        "queue_ops.py",
+        "train.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "%%MODEL_FILE%%",
+        "queue_ops.py"
+      ],
+      "blackbox_sha256": "7cb62eb69426e4df52a9bd8ba55595613aa6abbeabb0c276c2f2e4e1abe1e8b4",
+      "judge_excluded": true
+    },
+    "glyph": {
+      "env_id": "glyph",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/glyph/config.yaml",
+      "difficulty_vector": "medium,medium,medium,medium,medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "dataset.py",
+        "model.py",
+        "prompt.md",
+        "train.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "dataset.py",
+        "model.py",
+        "train.py"
+      ],
+      "blackbox_sha256": "3d7996d2ba352cb13ebbe0ebf09c07f7420ea0bdea02242741cc7a38aaad6611",
+      "judge_excluded": true
+    },
+    "epistemic_games": {
+      "env_id": "epistemic_games",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/epistemic_games/config.yaml",
+      "difficulty_vector": "trap,ambiguous,solo,balanced,narrative",
+      "seed": 42,
+      "visible_files": [
+        "answer.py",
+        "task.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "answer.py"
+      ],
+      "blackbox_sha256": "99c564a92db33835c1f60fac036cc7cb8dda2c5552e0c8a1ca430b68c8109a56",
+      "judge_excluded": true
+    },
+    "regex_state_machine": {
+      "env_id": "regex_state_machine",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/regex_state_machine/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "regex_machine.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "regex_machine.py"
+      ],
+      "blackbox_sha256": "06ba8cfd7195879f8a6bb9a07047fc0a1f58661db072e351fcdeda9791944ffc",
+      "judge_excluded": true
+    },
+    "sql_fixed_point": {
+      "env_id": "sql_fixed_point",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/sql_fixed_point/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "query_module.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "query_module.py"
+      ],
+      "blackbox_sha256": "c0edf38f037b690cf8be0beda4bc3cb3c179c6b279396794043a9bb9f785807e",
+      "judge_excluded": true
+    },
+    "css_state_machine": {
+      "env_id": "css_state_machine",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/css_state_machine/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "css_logic.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "css_logic.py"
+      ],
+      "blackbox_sha256": "20313fcb8a2dbd4945aa7e9617861a9a9340fb2c4000aab6f6ccfcaa914af1b1",
+      "judge_excluded": true
+    },
+    "spreadsheet_dataflow": {
+      "env_id": "spreadsheet_dataflow",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/spreadsheet_dataflow/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "sheet_model.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "sheet_model.py"
+      ],
+      "blackbox_sha256": "56efb5fa843b397f100aee6d453d4e7dfa02a997ff89fd4761c0ecf45952c856",
+      "judge_excluded": true
+    },
+    "template_interpreter": {
+      "env_id": "template_interpreter",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/template_interpreter/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "template_machine.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "template_machine.py"
+      ],
+      "blackbox_sha256": "393d78a382e60f69ec76ce54fb9a552b1804d6735d7bead836348e3c890adf3e",
+      "judge_excluded": true
+    },
+    "ci_dependency_graph": {
+      "env_id": "ci_dependency_graph",
+      "stratum": "A1_Holdout",
+      "config_path": "envs/weird_machine/ci_dependency_graph/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "ci_machine.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "ci_machine.py"
+      ],
+      "blackbox_sha256": "e64d89c94a198cd66f09ed2c27b7bdbca8c4f4e094b86795a8f343be98c47e24",
+      "judge_excluded": true
+    },
+    "compositional_optimizer": {
+      "env_id": "compositional_optimizer",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/compositional_optimizer/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "optimizer.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "optimizer.py"
+      ],
+      "blackbox_sha256": "478c5e42fc46792ddbb265cd51b4763e16bccdc75265c19035a133e0b32c30a0",
+      "judge_excluded": true
+    },
+    "functorial_augmentation": {
+      "env_id": "functorial_augmentation",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/functorial_augmentation/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "dataset.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "dataset.py"
+      ],
+      "blackbox_sha256": "908e24f4b751a480b366868684b86410b5d8008a6932d01ef7d5cf05cf15ecd2",
+      "judge_excluded": true
+    },
+    "monadic_reward": {
+      "env_id": "monadic_reward",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/monadic_reward/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "agent_code.py",
+        "monad.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "agent_code.py"
+      ],
+      "blackbox_sha256": "021ccab84179608225b6cdb0fecf0f49d09b618d9eb3aa9d4f2c33ba011bdd0b",
+      "judge_excluded": true
+    },
+    "neuro_symbolic_parser": {
+      "env_id": "neuro_symbolic_parser",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/semiring/neuro_symbolic_parser/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "parser.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "parser.py"
+      ],
+      "blackbox_sha256": "a678e9a511591bca99504105391cb2866eac3c5e89a15af254eaceecb66ebc4e",
+      "judge_excluded": true
+    },
+    "semiring_unification": {
+      "env_id": "semiring_unification",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/semiring_unification/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "matrix_ops.py",
+        "prompt.md",
+        "semirings.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "semirings.py"
+      ],
+      "blackbox_sha256": "2cc75cf3a66614df26e44802c6e1584a9cef67b1a03f756991d90a7b4080017f",
+      "judge_excluded": true
+    },
+    "sheaf_physical_constraints": {
+      "env_id": "sheaf_physical_constraints",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/sheaf/sheaf_physical_constraints/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "prompt.md",
+        "route.py",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "route.py"
+      ],
+      "blackbox_sha256": "b5b8ea73f3d75a23e1e5076ca0902aa50fe50aa6c443ead1cbe80600b211946d",
+      "judge_excluded": true
+    },
+    "sheaf_schema_sync": {
+      "env_id": "sheaf_schema_sync",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/sheaf/sheaf_schema_sync/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "migration.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "migration.py"
+      ],
+      "blackbox_sha256": "71aadae63365bebd4c648ff85aa53dd77adfc206b2fb133a508ea9da66a71037",
+      "judge_excluded": true
+    },
+    "sheaf_invariant_gluing": {
+      "env_id": "sheaf_invariant_gluing",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/sheaf/sheaf_invariant_gluing/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "pipeline.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "pipeline.py"
+      ],
+      "blackbox_sha256": "650e1af50e3a57ca1fbb430ba2ff84c564d771ea0beea978ef70346dd4c0bec1",
+      "judge_excluded": true
+    },
+    "stochastic_monad": {
+      "env_id": "stochastic_monad",
+      "stratum": "A2_CompileOnly",
+      "config_path": "envs/cat_theo/stochastic_monad/config.yaml",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "visible_files": [
+        "monad.py",
+        "prompt.md",
+        "visible_tests.py"
+      ],
+      "patchable_files": [
+        "monad.py"
+      ],
+      "blackbox_sha256": "04b4c9b7f17b767b0990095111b388f02337265799df5df7bdb9e35830b456fb",
+      "judge_excluded": true
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "counts": {
+    "edge_relations": {
+      "allegorizes": 4,
+      "applies": 9,
+      "claims-about": 1,
+      "connects": 34,
+      "contrasts-with": 10,
+      "critiques": 3,
+      "decomposes": 1,
+      "describes": 2,
+      "empirically-tests": 28,
+      "extends": 60,
+      "fictionalizes": 2,
+      "formalizes": 40,
+      "generalizes": 3,
+      "implements": 11,
+      "loosely-parallels": 19,
+      "operationalizes": 46,
+      "provides-evidence-for": 12,
+      "provides-lens-on": 5,
+      "reframes": 4,
+      "requires-independent-evaluation": 1,
+      "shares-mechanism-with": 1,
+      "specializes": 5
+    },
+    "edges": 301,
+    "external_link_records": 76,
+    "node_types": {
+      "benchmark": 7,
+      "book": 3,
+      "concept": 45,
+      "fiction": 2,
+      "fictional-construct": 1,
+      "model": 3,
+      "paper": 36,
+      "project": 5,
+      "report": 16
+    },
+    "nodes": 118,
+    "source_records_including_html_export": 77,
+    "uncertain_edges": 21
+  },
+  "export_metadata_as_recorded": {
+    "connectivity_definition": "weak connectivity on the directed edge set",
+    "last_verified": "2026-10-01",
+    "notes": [
+      "GPT-6.1 Sol safety addendum is distinct from the withheld GPT-6.1 Astra report.",
+      "Dots safety appendix explicitly identifies dots as powered by GPT-6 Astra.",
+      "SynthID Bio is outside the core agent-evaluation cluster but connects through provenance.",
+      "2026-10-01 additions: SINGED, ToolFence, PrivacySkills, Jailbreak Context Lingers, Zvi White House Accord, Anthropic robotics exposure, SynthID Bio; execution-path and authorization-fidelity concept nodes.",
+      "2026-10-01 additions: Gemini 4 Argon launch claims and a separate vendor-claim/evaluation node; public capability claims are marked uncertain pending independent testing."
+    ],
+    "source_control": "primary sources preferred; secondary items explicitly marked"
+  },
+  "generated_file_sha256": {
+    "edges.yaml": "4f8242b7b37303dcb87361b7d8ab20c1233066563da31c310954b0a2539727fe",
+    "index.yaml": "65e44dcbe005e77b75764ebfba9c27f163b3d740436d772699d5e94dbd3bd9e7",
+    "nodes.yaml": "e0fc3be9b2401d481884916aaaff4e8e68c91647335f53911596b9bcd3578558",
+    "sources.yaml": "33830954bcd6574a4e5dc3fba4a7a1465835e907d3bb25b4e03e6e4c5dfe582a"
+  },
+  "input": {
+    "git_blob_sha": "b84b483b1a21bd0607e0c3521c9cfb92c3f8e4f1",
+    "local_path": "epistemic_research_graph(2).html",
+    "raw_url": "https://raw.githubusercontent.com/StrangeTcy/epistemic-compiler/main/epistemic_research_graph%282%29.html",
+    "repository_commit": "2e3847aaf7310eb648c5e1edfab2cf02315a8127",
+    "retrieved_at": "2026-10-01T22:38:21+03:00",
+    "sha256": "e9f25e257d207cd1998e51eb7403b175706e435fe994375d4e7715fd3c42adf9",
+    "title": "Epistemic & Strategic Research Graph — verified 2026-10-01 — updated 2026-10-01",
+    "url": "https://github.com/StrangeTcy/epistemic-compiler/blob/main/epistemic_research_graph%282%29.html"
+  },
+  "knowledge_base_id": "user-mindcluster",
+  "manifest_version": 1,
+  "validation": {
+    "directed_relations_unique": true,
+    "edge_endpoints_resolve": true,
+    "external_urls_fetched": false,
+    "html_or_javascript_executed": false,
+    "node_ids_unique": true
+  }
+}

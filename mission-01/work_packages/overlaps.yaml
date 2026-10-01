@@ -1,0 +1,159 @@
+# Mission 01 — Retrospective Canonical Overlap Contract Draft
+# Created AFTER WP-01..WP-07 execution in response to REV-01. This was NOT part of
+# the Gate-2 preregistration, was NOT instantiated by the executed WPs, and is NOT
+# evidence that Mission 01 used canonical contracts. It is a prospective draft only.
+
+mission_id: "mission-01"
+manifest_status: "retrospective_draft_not_used_in_locked_execution"
+prospective_use: "candidate boundary manifest for a revised/future mission; must be reviewed and frozen before execution"
+
+work_package_overlaps:
+  - overlap: "O12"
+    overlap_id: "U_1_cap_U_2"
+    left: "WP-01"
+    right: "WP-02"
+    boundary:
+      name: "blackbox_context_hash_manifest"
+      artifact_path: "mission-01/results/blackbox_hashes.json"
+      schema: "dict[env_id, {stratum, difficulty_vector, seed, visible_files, patchable_files, blackbox_sha256, judge_excluded}]"
+      semantics: "Deterministic SHA-256 of agent-visible workspace at seed=42 with judge.py strictly excluded (CTRL01)"
+    left_projection:
+      source: "tools/blackbox_context_bundler.py:bundle_all_environments()"
+    right_projection:
+      source: "tools/grader_b_and_truth_oracles.py:AUDIT_DISPATCH"
+    compatibility:
+      relation: "equal"
+      assertion: "len(hashes) == 21 and all(v['judge_excluded'] is True for v in hashes.values())"
+
+  - overlap: "O13"
+    overlap_id: "U_1_cap_U_3"
+    left: "WP-01"
+    right: "WP-03"
+    boundary:
+      name: "stratum_a1_blackbox_provenance"
+      artifact_path: "mission-01/results/part_a_stratum_a1.json"
+      schema: "list[{env_id, stratum, blackbox_sha256, variants}]"
+      semantics: "Every Stratum A1 evaluation record binds to the exact WP-01 blackbox_sha256 (CTRL01)"
+    left_projection:
+      source: "mission-01/results/blackbox_hashes.json"
+    right_projection:
+      source: "tools/stratum_a1_audit.py:run_stratum_a1_audit()"
+    compatibility:
+      relation: "equal"
+      assertion: "all(r['blackbox_sha256'] == hashes[r['env_id']]['blackbox_sha256'] for r in a1['results'])"
+
+  - overlap: "O14"
+    overlap_id: "U_1_cap_U_4"
+    left: "WP-01"
+    right: "WP-04"
+    boundary:
+      name: "stratum_a2_blackbox_provenance"
+      artifact_path: "mission-01/results/part_a_stratum_a2.json"
+      schema: "list[{env_id, stratum, blackbox_sha256, variants}]"
+      semantics: "Every Stratum A2 evaluation record binds to the exact WP-01 blackbox_sha256 (CTRL01)"
+    left_projection:
+      source: "mission-01/results/blackbox_hashes.json"
+    right_projection:
+      source: "tools/stratum_a2_audit.py:run_stratum_a2_audit()"
+    compatibility:
+      relation: "equal"
+      assertion: "all(r['blackbox_sha256'] == hashes[r['env_id']]['blackbox_sha256'] for r in a2['results'])"
+
+  - overlap: "O23"
+    overlap_id: "U_2_cap_U_3"
+    left: "WP-02"
+    right: "WP-03"
+    boundary:
+      name: "stratum_a1_oracle_polarity_contract"
+      artifact_path: "mission-01/results/part_a_stratum_a1.json"
+      schema: "{grader_b: {passed, score}, truth_oracle: {passed, score, checks}}"
+      semantics: "Every law_bypass_type1 variant must fail TruthOracle and every reference/reference_alt variant must pass TruthOracle (CTRL05, CTRL06)"
+    left_projection:
+      source: "tools/grader_b_and_truth_oracles.py:evaluate_truth_oracle()"
+    right_projection:
+      source: "tools/stratum_a1_audit.py:evaluate_single_variant()"
+    compatibility:
+      relation: "boolean_polarity_match"
+      assertion: "all(not r['variants']['law_bypass_type1']['truth_oracle']['passed'] for r in a1['results'])"
+
+  - overlap: "O24"
+    overlap_id: "U_2_cap_U_4"
+    left: "WP-02"
+    right: "WP-04"
+    boundary:
+      name: "stratum_a2_oracle_polarity_contract"
+      artifact_path: "mission-01/results/part_a_stratum_a2.json"
+      schema: "{grader_b: {passed, score}, truth_oracle: {passed, score, checks}}"
+      semantics: "Every law_bypass_type1 variant must fail TruthOracle and every reference/reference_alt variant must pass TruthOracle with zero syntax/import errors (CTRL05)"
+    left_projection:
+      source: "tools/grader_b_and_truth_oracles.py:evaluate_truth_oracle()"
+    right_projection:
+      source: "tools/stratum_a2_audit.py:evaluate_a2_variant()"
+    compatibility:
+      relation: "boolean_polarity_match"
+      assertion: "all(not r['variants']['law_bypass_type1']['truth_oracle']['passed'] for r in a2['results']) and fals02['ctrl05_zero_syntax_or_import_errors'] is True"
+
+  - overlap: "O56"
+    overlap_id: "U_5_cap_U_6"
+    left: "WP-05"
+    right: "WP-06"
+    boundary:
+      name: "nerve_edge_and_gauge_orbit_contract"
+      artifact_path: "mission-01/results/part_b_multichart_gluing.json"
+      schema: "{env_id, nerve: {E_all, E_J, E_O, g_e}, protocols, protocols_conditional_fpr, holonomy_counts}"
+      semantics: "Supplies nerve edges E_all, E_J, E_O and gauge orbit sizes g_e from WP-05 to WP-06"
+    left_projection:
+      source: "tools/multichart_gluing_benchmark.py:run_multichart_gluing_benchmark()"
+    right_projection:
+      source: "tools/gauge_and_parsimony_analysis.py:run_wp06_analysis()"
+    compatibility:
+      relation: "schema_and_probability_bounds"
+      assertion: "0.0 <= wp06['jaccard_E_J_E_O'] <= 1.0 and len(part_b['multichart_results']) == 6"
+
+  - overlap: "O3456_7"
+    overlap_id: "U_7_cap_U_3_4_5_6"
+    left: "WP-03, WP-04, WP-05, WP-06"
+    right: "WP-07"
+    boundary:
+      name: "stratified_evidence_synthesis_contract"
+      artifact_path: "mission-01/results/summary_metrics.json"
+      schema: "{M01..M10, FALS-01..03, posterior_pi_T, posterior_pi_S, abort_triggers}"
+      semantics: "Aggregates Stratum A1, Stratum A2, and Part B metrics without unstratified pooling (CTRL02)"
+    left_projection:
+      source: "mission-01/results/{part_a_stratum_a1,part_a_stratum_a2,part_b_multichart_gluing,gauge_duality_parsimony}.json"
+    right_projection:
+      source: "tools/run_falsification_suite.py:run_consolidated_synthesis()"
+    compatibility:
+      relation: "complete_metric_and_posterior_schema"
+      assertion: "all(k in summary for k in ['M01','M02','M03','M04','M05','M06','M07','M08','M09','M10','FALS-01','FALS-02','FALS-03','posterior_pi_T','posterior_pi_S','abort_triggers'])"
+
+benchmark_module_overlaps:
+  - overlap: "B_rope_12"
+    environment: "rope"
+    left_module: "envs/rope/files/rope.py (RotaryEmbedding.apply_rope)"
+    right_module: "envs/rope/files/attention.py (RotaryFeatureProjector.apply_chunk)"
+    boundary:
+      name: "rotary_chunk_position_offset"
+      schema: "int (0-based token index of first token in current streaming chunk)"
+      semantics: "offset passed to RotaryEmbedding.apply_rope(x, positions=None, offset=offset) must equal cumulative tokens seen BEFORE appending current chunk"
+    left_projection:
+      source: "Desired contract: apply_rope offset controls absolute position indices; current _angles() uses torch.arange(seq_len) and ignores offset, so this projection is not yet satisfied"
+    right_projection:
+      source: "Desired contract: RotaryFeatureProjector.apply_chunk reads cache.position_offset() BEFORE cache.append(x.shape[1]); current code hardcodes offset=0"
+    compatibility:
+      relation: "pre_advance_offset_equality"
+
+  - overlap: "B_rope_23"
+    environment: "rope"
+    left_module: "envs/rope/files/attention.py (RotaryFeatureProjector.apply_chunk)"
+    right_module: "cache.py (PositionCache)"
+    boundary:
+      name: "cache_read_vs_advance_ordering"
+      schema: "tuple[position_offset() -> int, append(chunk_len: int) -> None]"
+      semantics: "position_offset() returns pre-chunk cumulative token count; append(chunk_len) advances tokens_seen by chunk_len AFTER offset is read"
+    left_projection:
+      source: "RotaryFeatureProjector.apply_chunk: read cache.position_offset() BEFORE cache.append(x.shape[1]); current implementation instead hardcodes offset=0"
+    right_projection:
+      source: "envs/rope/files/cache.py: position_offset() and append() define the shared state contract; current file contains placeholders"
+    compatibility:
+      relation: "read_before_advance_invariant"

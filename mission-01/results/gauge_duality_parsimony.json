@@ -1,0 +1,516 @@
+{
+  "work_package": "WP-06",
+  "supports_hypotheses": [
+    "H3",
+    "H4",
+    "H5"
+  ],
+  "controls_enforced": [
+    "CTRL04",
+    "CTRL07",
+    "C8"
+  ],
+  "M07_solo_chart_gauge_concentration": {
+    "metric_id": "M07",
+    "supports_hypothesis": "H4",
+    "controls_enforced": [
+      "CTRL04",
+      "ABORT-04"
+    ],
+    "mean_kappa_hat_all_6": 0.6,
+    "mean_g_hat_all_6": 2.1242,
+    "mean_kappa_hat_canonical_idiom_envs": 0.8,
+    "mean_kappa_hat_underdetermined_boundary_envs": 0.4,
+    "mean_uniform_orbit_phi_chart": 0.6111,
+    "mean_empirical_prior_weighted_collision_rate": 0.48,
+    "abort_04_triggered_globally": false,
+    "abort_04_triggered_on_canonical_subset": true,
+    "per_environment": [
+      {
+        "env_id": "rope",
+        "regime": "canonical_idiom_dominant",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.8,
+        "g_hat_e": 1.4706,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.4815,
+        "empirical_prior_weighted_collision_rate": 0.096,
+        "gauges_observed": {
+          "real_pair_plus_offset": 4,
+          "complex_polar_plus_offset": 1,
+          "negated_offset_frame": 0
+        },
+        "notes": "4/5 solo-chart realizations use real-pair rotation with +offset; 1/5 uses torch.view_as_complex/polar with +offset; 0/5 spontaneously negate offset."
+      },
+      {
+        "env_id": "rd_state_carry",
+        "regime": "canonical_idiom_dominant",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.8,
+        "g_hat_e": 1.4706,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.8148,
+        "empirical_prior_weighted_collision_rate": 0.096,
+        "gauges_observed": {
+          "for_loop_state_carry": 4,
+          "while_countdown_state_carry": 1,
+          "swapped_channel_frame": 0
+        },
+        "notes": "4/5 solo-chart realizations use standard for-loop recurrence `state = self.transition(state)`; 1/5 uses a while-loop countdown."
+      },
+      {
+        "env_id": "sheaf_schema_sync",
+        "regime": "underdetermined_cycle_boundary",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.4,
+        "g_hat_e": 2.7778,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.2593,
+        "empirical_prior_weighted_collision_rate": 0.864,
+        "gauges_observed": {
+          "two_phase_null_then_update": 2,
+          "pragma_defer_foreign_keys": 2,
+          "explicit_transaction_context": 1
+        },
+        "notes": "Because SQLite circular FKs can be broken either via two-phase NULL+UPDATE on one table or connection-level PRAGMA defer_foreign_keys, solo-chart realizations split 2/2/1."
+      },
+      {
+        "env_id": "sheaf_invariant_gluing",
+        "regime": "underdetermined_cycle_boundary",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.4,
+        "g_hat_e": 2.7778,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.5926,
+        "empirical_prior_weighted_collision_rate": 0.864,
+        "gauges_observed": {
+          "chart1_open_interval_contraction": 2,
+          "chart2_discretize_closed_clamp": 2,
+          "chart3_compose_mediator_clamp": 1
+        },
+        "notes": "Because pipeline.py's docstring in discretize says 'Maps x in [-1.0, 1.0] to [0, 99]', solo-chart realizations split evenly between clamping in normalize (2/5), clamping in discretize (2/5), and clamping in compose_pipeline (1/5). Note that Grader A rejects 3/5 of these valid solo implementations (Type II over-constraint)!"
+      },
+      {
+        "env_id": "compositional_optimizer",
+        "regime": "canonical_idiom_dominant",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.8,
+        "g_hat_e": 1.4706,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.7037,
+        "empirical_prior_weighted_collision_rate": 0.096,
+        "gauges_observed": {
+          "id_p_dict_ema": 4,
+          "id_and_shape_lerp_ema": 1,
+          "shape_only_key": 0
+        },
+        "notes": "4/5 solo-chart realizations key `self.state` by `id(p)` with explicit `beta * v + (1-beta) * grad`; 1/5 uses `(id(p), p.shape)` with `torch.lerp`."
+      },
+      {
+        "env_id": "sheaf_physical_constraints",
+        "regime": "underdetermined_cycle_boundary",
+        "k_samples": 5,
+        "g_theoretical": 3,
+        "kappa_hat_e": 0.4,
+        "g_hat_e": 2.7778,
+        "lower_bound_1_over_g": 0.3333,
+        "uniform_orbit_phi_chart": 0.8148,
+        "empirical_prior_weighted_collision_rate": 0.864,
+        "gauges_observed": {
+          "per_route_local_bottleneck_min": 1,
+          "order_I_sequential_switch_scaling": 2,
+          "order_II_simultaneous_ratio_scaling": 2
+        },
+        "notes": "Because prompt.md specifies only local switch caps (<=100) and global cap (<=150) without mandating sequential vs simultaneous projection order, solo-chart realizations split 1/2/2. Grader A accepts only the 1/5 gauge (`per_route_local_bottleneck_min`) and rejects the other 4/5!"
+      }
+    ]
+  },
+  "M08_evaluator_orchestrator_duality": {
+    "metric_id": "M08",
+    "supports_hypothesis": "H5",
+    "total_nerve_edges": 18,
+    "total_intersection_edges": 16,
+    "jaccard_E_J_E_O": 0.8889,
+    "mean_per_env_jaccard": 0.8889,
+    "h5_threshold_0_70_met": true,
+    "per_environment": [
+      {
+        "env_id": "rope",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 3,
+        "union_count": 3,
+        "jaccard": 1.0
+      },
+      {
+        "env_id": "rd_state_carry",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 2,
+        "union_count": 3,
+        "jaccard": 0.6667
+      },
+      {
+        "env_id": "sheaf_schema_sync",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 3,
+        "union_count": 3,
+        "jaccard": 1.0
+      },
+      {
+        "env_id": "sheaf_invariant_gluing",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 2,
+        "union_count": 3,
+        "jaccard": 0.6667
+      },
+      {
+        "env_id": "compositional_optimizer",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 3,
+        "union_count": 3,
+        "jaccard": 1.0
+      },
+      {
+        "env_id": "sheaf_physical_constraints",
+        "E_all": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_J": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "E_O": [
+          "e_12",
+          "e_23",
+          "e_31"
+        ],
+        "intersection_count": 3,
+        "union_count": 3,
+        "jaccard": 1.0
+      }
+    ]
+  },
+  "M09_grader_parsimony_audit": {
+    "metric_id": "M09",
+    "controls_enforced": [
+      "CTRL07"
+    ],
+    "n_environments": 21,
+    "total_grader_a_predicates": 178,
+    "total_grader_b_predicates": 241,
+    "pooled_predicate_ratio_b_over_a": 1.3539,
+    "mean_predicate_ratio_b_over_a": 2.4401,
+    "stratum_a1_predicate_ratio_b_over_a": 0.8014,
+    "stratum_a2_predicate_ratio_b_over_a": 3.4595,
+    "total_grader_a_loc": 2243,
+    "total_grader_b_loc": 943,
+    "pooled_loc_ratio_b_over_a": 0.4204,
+    "mean_loc_ratio_b_over_a": 0.4834,
+    "per_environment": [
+      {
+        "env_id": "rope",
+        "stratum": "A1_Discovery",
+        "grader_a_predicates": 13,
+        "grader_b_predicates": 4,
+        "predicate_ratio_b_over_a": 0.3077,
+        "grader_a_loc": 172,
+        "grader_b_loc": 54,
+        "loc_ratio_b_over_a": 0.314
+      },
+      {
+        "env_id": "rd_state_carry",
+        "stratum": "A1_Discovery",
+        "grader_a_predicates": 5,
+        "grader_b_predicates": 2,
+        "predicate_ratio_b_over_a": 0.4,
+        "grader_a_loc": 64,
+        "grader_b_loc": 22,
+        "loc_ratio_b_over_a": 0.3438
+      },
+      {
+        "env_id": "categorical_lenses",
+        "stratum": "A1_Discovery",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 12,
+        "predicate_ratio_b_over_a": 3.0,
+        "grader_a_loc": 70,
+        "grader_b_loc": 39,
+        "loc_ratio_b_over_a": 0.5571
+      },
+      {
+        "env_id": "moco",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 17,
+        "grader_b_predicates": 6,
+        "predicate_ratio_b_over_a": 0.3529,
+        "grader_a_loc": 164,
+        "grader_b_loc": 48,
+        "loc_ratio_b_over_a": 0.2927
+      },
+      {
+        "env_id": "glyph",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 20,
+        "grader_b_predicates": 15,
+        "predicate_ratio_b_over_a": 0.75,
+        "grader_a_loc": 96,
+        "grader_b_loc": 44,
+        "loc_ratio_b_over_a": 0.4583
+      },
+      {
+        "env_id": "epistemic_games",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 54,
+        "grader_b_predicates": 6,
+        "predicate_ratio_b_over_a": 0.1111,
+        "grader_a_loc": 298,
+        "grader_b_loc": 19,
+        "loc_ratio_b_over_a": 0.0638
+      },
+      {
+        "env_id": "regex_state_machine",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 7,
+        "grader_b_predicates": 11,
+        "predicate_ratio_b_over_a": 1.5714,
+        "grader_a_loc": 138,
+        "grader_b_loc": 39,
+        "loc_ratio_b_over_a": 0.2826
+      },
+      {
+        "env_id": "sql_fixed_point",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 5,
+        "grader_b_predicates": 9,
+        "predicate_ratio_b_over_a": 1.8,
+        "grader_a_loc": 142,
+        "grader_b_loc": 69,
+        "loc_ratio_b_over_a": 0.4859
+      },
+      {
+        "env_id": "css_state_machine",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 21,
+        "predicate_ratio_b_over_a": 5.25,
+        "grader_a_loc": 100,
+        "grader_b_loc": 50,
+        "loc_ratio_b_over_a": 0.5
+      },
+      {
+        "env_id": "spreadsheet_dataflow",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 10,
+        "predicate_ratio_b_over_a": 2.5,
+        "grader_a_loc": 107,
+        "grader_b_loc": 54,
+        "loc_ratio_b_over_a": 0.5047
+      },
+      {
+        "env_id": "template_interpreter",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 2,
+        "predicate_ratio_b_over_a": 0.5,
+        "grader_a_loc": 90,
+        "grader_b_loc": 26,
+        "loc_ratio_b_over_a": 0.2889
+      },
+      {
+        "env_id": "ci_dependency_graph",
+        "stratum": "A1_Holdout",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 15,
+        "predicate_ratio_b_over_a": 3.75,
+        "grader_a_loc": 104,
+        "grader_b_loc": 44,
+        "loc_ratio_b_over_a": 0.4231
+      },
+      {
+        "env_id": "compositional_optimizer",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 4,
+        "predicate_ratio_b_over_a": 1.0,
+        "grader_a_loc": 64,
+        "grader_b_loc": 40,
+        "loc_ratio_b_over_a": 0.625
+      },
+      {
+        "env_id": "functorial_augmentation",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 8,
+        "predicate_ratio_b_over_a": 2.0,
+        "grader_a_loc": 73,
+        "grader_b_loc": 39,
+        "loc_ratio_b_over_a": 0.5342
+      },
+      {
+        "env_id": "monadic_reward",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 24,
+        "predicate_ratio_b_over_a": 6.0,
+        "grader_a_loc": 83,
+        "grader_b_loc": 48,
+        "loc_ratio_b_over_a": 0.5783
+      },
+      {
+        "env_id": "neuro_symbolic_parser",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 8,
+        "predicate_ratio_b_over_a": 2.0,
+        "grader_a_loc": 66,
+        "grader_b_loc": 38,
+        "loc_ratio_b_over_a": 0.5758
+      },
+      {
+        "env_id": "semiring_unification",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 24,
+        "predicate_ratio_b_over_a": 6.0,
+        "grader_a_loc": 76,
+        "grader_b_loc": 62,
+        "loc_ratio_b_over_a": 0.8158
+      },
+      {
+        "env_id": "sheaf_physical_constraints",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 5,
+        "grader_b_predicates": 21,
+        "predicate_ratio_b_over_a": 4.2,
+        "grader_a_loc": 88,
+        "grader_b_loc": 70,
+        "loc_ratio_b_over_a": 0.7955
+      },
+      {
+        "env_id": "sheaf_schema_sync",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 17,
+        "predicate_ratio_b_over_a": 4.25,
+        "grader_a_loc": 95,
+        "grader_b_loc": 45,
+        "loc_ratio_b_over_a": 0.4737
+      },
+      {
+        "env_id": "sheaf_invariant_gluing",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 11,
+        "predicate_ratio_b_over_a": 2.75,
+        "grader_a_loc": 84,
+        "grader_b_loc": 42,
+        "loc_ratio_b_over_a": 0.5
+      },
+      {
+        "env_id": "stochastic_monad",
+        "stratum": "A2_CompileOnly",
+        "grader_a_predicates": 4,
+        "grader_b_predicates": 11,
+        "predicate_ratio_b_over_a": 2.75,
+        "grader_a_loc": 69,
+        "grader_b_loc": 51,
+        "loc_ratio_b_over_a": 0.7391
+      }
+    ]
+  },
+  "jaccard_E_J_E_O": 0.8889,
+  "kappa_hats": [
+    0.8,
+    0.8,
+    0.4,
+    0.4,
+    0.8,
+    0.4
+  ],
+  "g_es": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "predicate_ratio": 1.3539,
+  "loc_ratio": 0.4204
+}

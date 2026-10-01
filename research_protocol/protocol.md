@@ -1,6 +1,12 @@
-# Research Production Protocol (V0 — Manual Execution & Epistemic IR)
+# Research Production Protocol (V0 — Protocol-Defined Research IR & Human-Gated Execution)
 
-> **Core Principle:** V0 is not software infrastructure. It is a typed, provenance-preserving **Intermediate Representation (IR) for research** paired with an explicit **human-gated execution protocol**. Software automation is prohibited until one complete research cycle has been executed manually and instrumented via `instrumentation.md`.
+> **Core Principle:** V0 is a **protocol-defined research IR**, not yet a machine-enforced typed IR. It consists of provenance conventions, schemas in this document, and a four-gate human process. No `validate_ir.py`, general-purpose orchestration engine, dispatcher, or agent runtime is part of V0. The light-weight `scripts/retrieve_context.py` is an optional deterministic knowledge-view compiler; it does not validate research claims or automate judgment.
+>
+> **Protocol amendment note:** The methodological clarification below was added after Mission 01 execution in response to `REV-01`. It applies prospectively; it does **not** rewrite the Gate 2-locked `spec/approved.yaml`, the pre-registration commit, council record, or already produced results.
+>
+> **Methodological Thesis (Question, Not Premise):** *Local validity does not necessarily compose into global validity.* Whether in benchmark evaluation (Dual A: what an evaluator observes locally) or in multi-agent decomposition (Dual B: what distributed agents construct locally), a study may test whether missing boundary semantics are associated with local-to-global failure along:
+> $$\text{Local Validity} \longrightarrow \text{Boundary Compatibility} \longrightarrow \text{Global Validity}.$$
+> Presheaves ($\mathcal{P}: \mathcal{C}^{\text{op}} \to \mathbf{Set}$), descent data / gauge holonomy ($g_{31}g_{23}g_{12} \neq 1$), assume-guarantee contracts, and relational joins are **candidate formalisms**, not premises. In an ordinary sheaf $\mathcal{F}$, sections on a cover that agree on every overlap glue uniquely by the sheaf axiom. Therefore “pairwise agreement on all overlaps but no global section” is not a valid ordinary-sheaf counterexample. Empirical local-to-global failures must instead specify the actual structure involved (e.g., a presheaf family failing a canonical boundary-compatibility condition, or a descent problem with explicitly defined transition maps and non-trivial cycle holonomy). Do not call an observed interface mismatch a Čech cohomology class unless the relevant cover, coefficient structure, cocycles, coboundaries, and equivalence relation are formally defined.
 
 ---
 
@@ -44,6 +50,7 @@ All council outputs, critiques, specs, and work packages must preserve explicit 
 - `A01`, `A02`, ...: Explicit background assumptions
 - `U01`, `U02`, ...: Unresolved disagreements between council members
 - `L01`, `L02`, ...: Prior-work / literature items
+- `X01`, `X02`, ...: Registered experiment/run conditions and execution records (must bind to a `WP-XX`, measurements, seeds/conditions, and produced evidence)
 - `M01`, `M02`, ...: Measurements
 - `O01`, `O02`, ...: Candidate observation outcomes in the Decision Table
 - `CF01`, `CF02`, ...: Confounds
@@ -54,10 +61,13 @@ All council outputs, critiques, specs, and work packages must preserve explicit 
 
 ---
 
-## 3. Pipeline Architecture & The Four Human Gates
+## 3. Pipeline Architecture, Mindcluster Retrieval & The Four Human Gates
 
 ```text
-mission-XX/seed.yaml
+Global Mindcluster Knowledge Graph (knowledge/: nodes, edges, sources; if supplied)
+    │
+    ▼  scripts/retrieve_context.py (--seed, --hops 2, --roles)
+mission-XX/seed.yaml  +  Compiled Role Context Packs (mission-XX/context/*.md)
     │
     ▼
 Adversarial Council (Theorist, Experimentalist, Skeptic, Prior-Work Killer)
@@ -81,7 +91,9 @@ Cross-Critique & Draft Spec (spec/draft.yaml)
 ═══════════════════════════════════════════════════════════════
     │
     ▼
-Approved Research Spec (spec/approved.yaml) ──► Work Packages (work_packages/WP-*.yaml)
+Approved Research Spec (spec/approved.yaml)
+    ──► Canonical Overlap Contracts (work_packages/overlaps.yaml)
+    ──► Bounded Work Packages (work_packages/WP-*.yaml)
     │
     ▼
 ═══════════════════════════════════════════════════════════════
@@ -156,26 +168,27 @@ mission-XX/claim_set.md + Bootstrap Friction Analysis
 ---
 
 ### GATE 3 — EXECUTION (`gates/gate3_execution.md`)
-**Purpose:** Verify that `spec/approved.yaml` has been compiled into 5–15 bounded, minimally coupled work packages (`work_packages/WP-*.yaml`) modeled as local charts $U_i$ of a cover $X = \bigcup_i U_i$, with explicit **Restriction Maps** $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$ on every overlap so stateless coding agents can produce locally valid sections $s_i \in \mathcal{F}(U_i)$ that are guaranteed to glue into a global section $s \in \mathcal{F}(X)$.
+**Purpose:** Verify that `spec/approved.yaml` has been compiled into 5–15 bounded work packages with explicit ownership, dependencies, mission-level boundary contracts, and outcome-neutral engineering tests. Work packages may be represented as local views for analysis, but contract compatibility does not by itself establish a sheaf or guarantee scientific global validity.
 
 - **Inputs:**
-  - `spec/approved.yaml`
+  - Gate-2-frozen `spec/approved.yaml`
+  - Mission-level `work_packages/overlaps.yaml`, frozen before execution
   - Work package files `work_packages/WP-01.yaml` ... `WP-NN.yaml`
 - **Required Artifacts:**
-  - Completed `gates/gate3_execution.md` containing the structural validation checklist, overlap restriction-map matrix, and dependency/parallelism map.
+  - Completed `gates/gate3_execution.md` containing the structural validation checklist, canonical boundary-contract matrix (or an explicit statement that no frozen manifest existed), dependency/parallelism map, and test outputs.
 - **Acceptance Conditions:**
   1. **Bounded Count:** Between 5 and 15 work packages total.
   2. **Complete Traceability:** Every `WP-XX` cites the specific `Mxx`, `CTRLxx`, or `Rxx` it implements, and every required Evidence item `Exx` in `spec/approved.yaml` is produced by at least one `WP-XX`.
-  3. **Explicit Local Charts (`allowed_files`):** Each `WP-XX` defines its local domain $U_i$ (`allowed_files` it may create/modify and `read_only_inputs`). No two parallel work packages modify the same file.
-  4. **Explicit Restriction Maps on Overlaps (`restriction_maps`):** Whenever two packages `WP-i` and `WP-j` share an interface, data artifact, or semantic convention ($U_i \cap U_j \neq \emptyset$), both packages must explicitly declare the **restriction map** $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$—specifying not just syntactic types, but **gauge conventions** (e.g., coordinate ordering, seed offset, normalization/clamping order, dict schema keys, error semantics) and a deterministic **gluing compatibility check** ($\rho_{ij}(s_i) == \rho_{ji}(s_j)$).
-  5. **Outcome-Neutral Acceptance Tests:** Every `WP-XX` includes runnable `engineering_acceptance_tests` that verify local section validity ($s_i \in \mathcal{F}(U_i)$) and boundary restriction compliance ($\rho_{ij}(s_i)$) without asserting which scientific hypothesis wins.
+  3. **Explicit Ownership:** Each `WP-XX` defines owned paths and read-only inputs. No two parallel work packages modify the same file.
+  4. **Mission-Level Canonical Boundary Contracts:** Before execution, the mission owner freezes every shared boundary in `work_packages/overlaps.yaml`, including schema, semantics, producer/consumer projections, compatibility relation, and deterministic check. WPs may instantiate a contract but may not invent or redefine its semantics. The manifest is an engineering contract; calling it a mathematical restriction map requires separate formal justification.
+  5. **Outcome-Neutral Acceptance Tests:** Every `WP-XX` includes runnable engineering tests verifying its contract and ability to represent admissible positive and negative outcomes, without asserting which scientific hypothesis wins.
 - **Failure Conditions:**
-  - Implicit interfaces ("use the output format from WP-02" without defining the restriction map $\rho_{ij}$ on $U_i \cap U_j$).
-  - Unfixed gauge degrees of freedom on overlaps (where two agents can each pass their local acceptance tests on $U_i$ and $U_j$ while picking incompatible conventions on $U_i \cap U_j$).
+  - Implicit interfaces or agent-defined shared semantics.
+  - Missing or nondeterministic compatibility checks for declared shared interfaces.
   - Overlapping write boundaries across concurrent packages.
   - Acceptance tests that test the scientific hypothesis rather than engineering correctness.
 - **If Gate 3 Fails:**
-  - Refactor the offending `WP-XX.yaml` definitions and restriction-map contracts before dispatching any agent. Log every structural repair in `friction_log.yaml`.
+  - Pause execution. Contract/schema repairs are logged as amendments and may require re-registration; never imply a post-hoc manifest existed during a locked run.
 
 ---
 
@@ -318,55 +331,64 @@ Must contain:
 - `abort_conditions` (`ABORT-01..ABORT-nn`)
 - `deliverables`
 
-### 4.4 Work Package Schema (`work_packages/WP-XX.yaml` — Sheaf Chart & Restriction IR)
-Each work package `WP-i` is modeled as a local chart $U_i$ over the mission problem space $X = \bigcup_i U_i$. To prevent local sections $s_i \in \mathcal{F}(U_i)$ from failing to glue globally ($s \in \mathcal{F}(X)$), every package must explicitly declare its **restriction maps** $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$ onto shared overlaps with neighboring packages `WP-j`:
+### 4.4 Canonical Overlap Contracts (`work_packages/overlaps.yaml`) & Work Package Schema (`work_packages/WP-XX.yaml`)
+
+**Architectural Rule (Mission-Level Boundary Ownership):** Individual work packages must **never** invent or self-declare the semantics of their own shared boundaries. Before package execution, define all cross-package boundaries in `work_packages/overlaps.yaml`. These are canonical engineering projections from package-owned artifacts into shared interface objects. A presheaf interpretation is optional and must be separately justified; the manifest itself does not establish one:
+
+```yaml
+overlaps:
+  - overlap: O12
+    left: WP-01
+    right: WP-02
+    boundary:
+      name: blackbox_context_hash_manifest
+      artifact_path: "mission-01/results/blackbox_hashes.json"
+      schema: "dict[env_id, {blackbox_sha256, visible_files, patchable_files, judge_excluded}]"
+      semantics: "Deterministic SHA-256 of agent-visible workspace excluding judge.py (CTRL01)"
+    left_projection:
+      source: "tools/blackbox_context_bundler.py:bundle_all_environments()"
+    right_projection:
+      source: "tools/grader_b_and_truth_oracles.py:OUT_HASHES_PATH"
+    compatibility:
+      relation: "equal"
+      verification_command: "pytest -q tests/test_bidirectional_audit_harness.py -k test_blackbox_isolation_and_hash_verification"
+```
+
+For operational planning, a work package may be denoted by a local view $U_i$; this notation does not assert that the collection forms a topological cover or sheaf. Each WP references (rather than defines) its assigned canonical overlaps from `overlaps.yaml`:
 
 ```yaml
 id: WP-01
 title: "<Short imperative title>"
-purpose: "<1-2 sentence description of the local section s_i in F(U_i) this package constructs>"
+purpose: "<1-2 sentence description of the artifact this package produces>"
 research_requirements_served:
   hypotheses: ["H1", "H0"]
   measurements: ["M01"]
   controls: ["CTRL01"]
   evidence_produced: ["E01"]
 local_chart:
-  chart_id: U_01
-  allowed_files:
+  chart_id: U_1
+  owned_paths:
     - "<Explicit whitelist of file paths this agent is permitted to create/edit>"
-  read_only_files:
-    - "<Files in U_01 the agent may inspect but MUST NOT modify>"
-dependencies:
-  hard_dependencies: []
-  decoupled_via_restriction_map: ["OVERLAP-01-02"]
-can_run_in_parallel_with: ["WP-02", "WP-03"]
-restriction_maps:
-  - overlap_id: OVERLAP-01-02
-    neighbor_package: WP-02
-    boundary_artifacts: ["<Shared file/schema/function on U_01 ∩ U_02>"]
-    syntactic_signature: |
-      <Exact function signatures, class methods, CLI flags, and JSON/YAML schemas>
-    semantic_gauge_conventions:
-      - "<Explicit choice of gauge/convention on the overlap: e.g., 0-indexed vs 1-indexed,
-          coordinate ordering, seed offset, clamping-before-scaling vs scaling-before-clamping>"
-    gluing_compatibility_check:
-      command: "pytest tests/test_gluing_01_02.py"
-      condition: "Verifies rho_12(s_1) == rho_21(s_2) on U_01 ∩ U_02"
+canonical_overlaps_instantiated: ["O12", "O13", "O14"]
+boundary_contracts_instantiated:
+  - overlap_id: "O12"
+    shared_contract_ref: "work_packages/overlaps.yaml#O12"
+    compatibility_test: "<Deterministic test named by the frozen contract>"
 engineering_acceptance_tests:
   - id: T01-1
     type: engineering_only # NEVER scientific outcome
-    scope: local_section # local_section | boundary_restriction
+    scope: artifact_or_boundary # artifact | boundary_contract
     command: "pytest tests/test_wp01.py"
     assertions:
-      - "<Deterministic invariant 1 verifying s_1 in F(U_01)>"
+      - "<Deterministic invariant verifying the produced artifact>"
       - "<Verify both positive and negative trajectory/patch fixtures are scored as specified>"
 scientific_relevance: |
-  <Why this local section and its boundary restrictions are necessary to discriminate H1 vs H0>
+  <Why this artifact and its frozen boundary contracts are necessary for measurement of H1 vs H0>
 expected_evidence:
   - id: E01
     path: "mission-01/results/..."
 failure_conditions:
-  - "<When the local section s_1 or its restriction rho_1j(s_1) is rejected>"
+  - "<When the artifact or a referenced boundary contract fails its engineering check>"
 ```
 
 ### 4.5 Executable Falsification Budget & Schema (`falsification/`)

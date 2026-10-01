@@ -1,0 +1,499 @@
+{
+  "mission_id": "mission-01",
+  "pre_registration_commit_sha": "cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7",
+  "falsification_budget_check": {
+    "max_adversarial_experiments_allowed": 3,
+    "adversarial_experiments_executed": 3,
+    "max_recursive_rounds_allowed": 1,
+    "recursive_rounds_executed": 0
+  },
+  "M01": {
+    "stratum_a1_discovery_beta_A_glue": 0.3333,
+    "stratum_a1_holdout_beta_A_glue": 0.0,
+    "stratum_a1_total_beta_A_glue": 0.0833,
+    "stratum_a1_total_beta_A_all": 0.1667,
+    "stratum_a1_beta_B_glue": 0.0,
+    "stratum_a2_beta_A_glue": 0.4444,
+    "stratum_a2_beta_A_all": 0.5556,
+    "stratum_a2_beta_B_glue": 0.0,
+    "pooled_21_beta_A_glue": 0.2381,
+    "pooled_21_beta_A_all": 0.3333,
+    "pooled_21_beta_B_glue": 0.0
+  },
+  "M02": {
+    "stratum_a1_gamma_A_env": 0.0,
+    "stratum_a1_gamma_A_variant": 0.0,
+    "stratum_a1_gamma_B_env": 0.0,
+    "stratum_a2_gamma_A_env": 0.4444,
+    "stratum_a2_gamma_A_variant": 0.2593,
+    "stratum_a2_gamma_B_env": 0.0,
+    "pooled_21_gamma_A_env": 0.1905,
+    "pooled_21_gamma_A_variant": 0.125,
+    "pooled_21_gamma_B_env": 0.0
+  },
+  "M03": {
+    "stratum_a1_grader_a_er_4_6_7": [
+      1.0,
+      0.9861,
+      0.9643
+    ],
+    "stratum_a2_grader_a_er_4_6_7": [
+      0.9444,
+      0.8519,
+      0.873
+    ],
+    "pooled_21_grader_a_er_4_6_7": [
+      0.9762,
+      0.9286,
+      0.9252
+    ],
+    "grader_b_er_4_6_7": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "M04": {
+    "total_part_a_evaluations": 170,
+    "grader_b_truth_oracle_agreement_rate": 1.0,
+    "stratum_a1_evaluations": 89,
+    "stratum_a2_evaluations": 81
+  },
+  "M05": {
+    "Chart-Only": 0.6111,
+    "Pairwise-Tree": 0.1605,
+    "Pairwise-UpToGauge": 0.2963,
+    "Circular-AG": 0.0741,
+    "Sheaf-Cocycle": 0.0
+  },
+  "M05_conditional_fpr": {
+    "Chart-Only": 0.6111,
+    "Pairwise-Tree": 0.3378,
+    "Pairwise-UpToGauge": 0.4501,
+    "Circular-AG": 0.201,
+    "Sheaf-Cocycle": 0.0
+  },
+  "M06": {
+    "envs_with_nonzero_holonomy": [
+      "rope",
+      "rd_state_carry",
+      "sheaf_schema_sync",
+      "sheaf_invariant_gluing",
+      "compositional_optimizer",
+      "sheaf_physical_constraints"
+    ],
+    "total_hollow_cycle_failures_caught_by_sheaf_over_circular_ag": 12
+  },
+  "M07": {
+    "mean_kappa_hat_all_6": 0.6,
+    "mean_g_hat_all_6": 2.1242,
+    "mean_kappa_hat_canonical_idiom_envs": 0.8,
+    "mean_kappa_hat_underdetermined_boundary_envs": 0.4
+  },
+  "M08": {
+    "jaccard_E_J_E_O": 0.8889,
+    "total_intersection_edges": 16,
+    "total_nerve_edges": 18
+  },
+  "M09": {
+    "pooled_predicate_ratio_b_over_a": 1.3539,
+    "stratum_a1_predicate_ratio_b_over_a": 0.8014,
+    "stratum_a2_predicate_ratio_b_over_a": 3.4595,
+    "pooled_loc_ratio_b_over_a": 0.4204
+  },
+  "M10": {
+    "metric_id": "M10",
+    "total_work_packages": 7,
+    "total_human_interventions": 0,
+    "work_package_execution_interventions": 0,
+    "kappa_intervention_total_per_wp": 0.0,
+    "kappa_intervention_execution_phase_per_wp": 0.0,
+    "clarifications_per_wp": 0.0,
+    "repairs_per_wp": 0.0,
+    "redispatches_per_wp": 0.0
+  },
+  "FALS-01": {
+    "id": "FALS-01",
+    "target_hypothesis": "H1",
+    "executed": true,
+    "recursive_rounds_used": 0,
+    "stratum_a1_delta_er_4_to_7": 0.0357,
+    "stratum_a2_delta_er_4_to_6": 0.0925,
+    "pooled_delta_er_4_to_7": 0.051,
+    "grader_b_er_all_cohorts": 1.0,
+    "finding": "On Stratum A1 (pre-hardened REFERENCES), Grader A's ER shifts by 3.57 percentage points (1.000 -> 0.9643, FDR 0.0% -> 11.11%), whereas on Stratum A2 (unhardened compile_only), Grader A's ER drops by 9.25 percentage points (0.9444 -> 0.8519, FDR 18.18% -> 27.27%). Thus H1 is strongly supported on unhardened LLM/compile-only judges (44.4% Type I false-pass rate) and partially mitigated on pre-hardened REFERENCES judges (8.3% Type I-A, 16.7% Type 0+I)."
+  },
+  "FALS-02": {
+    "id": "FALS-02",
+    "target_hypothesis": "H2",
+    "executed": true,
+    "recursive_rounds_used": 0,
+    "ctrl05_zero_syntax_or_import_errors": true,
+    "total_alt_variants_tested": 56,
+    "stratum_a1_gamma_A": 0.0,
+    "stratum_a2_gamma_A": 0.4444,
+    "stratum_a2_variant_rejection_rate": 0.2593,
+    "envs_with_any_type2_rejection": [
+      "functorial_augmentation",
+      "monadic_reward",
+      "sheaf_physical_constraints",
+      "sheaf_invariant_gluing"
+    ],
+    "envs_with_systematic_type2_rejection": [
+      "sheaf_physical_constraints",
+      "sheaf_invariant_gluing"
+    ],
+    "grader_b_gamma_B": 0.0,
+    "finding": "Zero syntax or import errors occurred across all 56 reference_alt evaluations (CTRL05=True). Type II gauge over-constraint is 0/12 (0.0%) on Stratum A1 (which underwent instance_oracle_gate.py reference checks), but 4/9 (44.44% of environments; 7/27 = 25.93% of valid gauge variants) on Stratum A2 (`functorial_augmentation`, `monadic_reward`, `sheaf_physical_constraints`, `sheaf_invariant_gluing`), with systematic (>=2/3) rejection in `sheaf_physical_constraints` (3/3) and `sheaf_invariant_gluing` (2/3)."
+  },
+  "FALS-03": {
+    "id": "FALS-03",
+    "sub_experiment": "FALS-03b",
+    "target_hypothesis": "H3",
+    "executed": true,
+    "recursive_rounds_used": 0,
+    "delta_phi_tree_minus_sheaf": 0.1605,
+    "delta_phi_uptogauge_minus_sheaf": 0.2963,
+    "delta_phi_circular_ag_minus_sheaf": 0.0741,
+    "delta_cond_fpr_tree_minus_sheaf": 0.3378,
+    "delta_cond_fpr_circular_ag_minus_sheaf": 0.201,
+    "fals_03_tree_threshold_0_15_passed": true,
+    "fals_03b_unconditional_phi_threshold_0_15_passed": false,
+    "fals_03b_conditional_fpr_threshold_0_15_passed": true,
+    "finding": "Sheaf-Cocycle achieves Phi_sheaf = 0.0000 across all 6 environments (162 glued workspaces), outperforming Chart-Only by 61.11 pp, Pairwise-UpToGauge by 29.63 pp, and Pairwise-Tree by 16.05 pp (>= 15 pp threshold of FALS-03). Against Circular-AG (L11), Sheaf-Cocycle reduces unconditional orbit failure fraction by 7.41 pp (12/162 hollow-cycle tuples, below the 15 pp unconditional threshold of FALS-03b) and reduces conditional false-pass rate among accepted handoffs by 20.10 pp (CondFPR 20.10% -> 0.00%). Per FALS-03b, we qualify H3: Circular-AG eliminates 2-chart edge mismatches on the 27-tuple orbit, while Sheaf-Cocycle's exact marginal yield over Circular-AG is concentrated specifically on non-zero holonomy hollow cycles (20.10% of Circular-AG's accepted handoffs; 7.41% of the full product orbit)."
+  },
+  "priors": {
+    "pi_T": {
+      "H0": 0.1,
+      "H1": 0.25,
+      "H2": 0.15,
+      "H3": 0.2,
+      "H4": 0.15,
+      "H5": 0.15
+    },
+    "pi_S": {
+      "H0": 0.35,
+      "H1": 0.2,
+      "H2": 0.15,
+      "H3": 0.08,
+      "H4": 0.14,
+      "H5": 0.08
+    }
+  },
+  "posterior_pi_T": {
+    "H0": 0.0165,
+    "H1": 0.2491,
+    "H2": 0.1982,
+    "H3": 0.2403,
+    "H4": 0.0992,
+    "H5": 0.1967
+  },
+  "posterior_pi_S": {
+    "H0": 0.0771,
+    "H1": 0.2661,
+    "H2": 0.2647,
+    "H3": 0.1284,
+    "H4": 0.1237,
+    "H5": 0.1401
+  },
+  "posterior_by_outcome_row": {
+    "O4_stratum_a2_cyclic_holonomy_duality_regime": {
+      "posterior_pi_T": {
+        "H0": 0.0054,
+        "H1": 0.2035,
+        "H2": 0.1547,
+        "H3": 0.3799,
+        "H4": 0.0326,
+        "H5": 0.2239
+      },
+      "posterior_pi_S": {
+        "H0": 0.0298,
+        "H1": 0.2551,
+        "H2": 0.2423,
+        "H3": 0.2381,
+        "H4": 0.0476,
+        "H5": 0.1871
+      }
+    },
+    "O3_canonical_gauge_collapse_regime": {
+      "posterior_pi_T": {
+        "H0": 0.0213,
+        "H1": 0.2345,
+        "H2": 0.2431,
+        "H3": 0.0853,
+        "H4": 0.2878,
+        "H5": 0.1279
+      },
+      "posterior_pi_S": {
+        "H0": 0.0852,
+        "H1": 0.2141,
+        "H2": 0.2774,
+        "H3": 0.0389,
+        "H4": 0.3066,
+        "H5": 0.0779
+      }
+    },
+    "O6_stratum_a1_holdout_attenuation_regime": {
+      "posterior_pi_T": {
+        "H0": 0.0971,
+        "H1": 0.2427,
+        "H2": 0.1456,
+        "H3": 0.1942,
+        "H4": 0.1748,
+        "H5": 0.1456
+      },
+      "posterior_pi_S": {
+        "H0": 0.3405,
+        "H1": 0.1946,
+        "H2": 0.1459,
+        "H3": 0.0778,
+        "H4": 0.1634,
+        "H5": 0.0778
+      }
+    },
+    "all_pre_registered_regimes": {
+      "O1": {
+        "description": "Null / Local Parity: Stratum A1 beta_A^glue < 0.20, gamma_A < 0.10, phi_chart - phi_sheaf <= 0.10",
+        "likelihoods": {
+          "H0": 0.7,
+          "H1": 0.03,
+          "H2": 0.04,
+          "H3": 0.03,
+          "H4": 0.1,
+          "H5": 0.03
+        },
+        "posterior_pi_T": {
+          "H0": 0.6422,
+          "H1": 0.0688,
+          "H2": 0.055,
+          "H3": 0.055,
+          "H4": 0.1376,
+          "H5": 0.0413
+        },
+        "posterior_pi_S": {
+          "H0": 0.8883,
+          "H1": 0.0218,
+          "H2": 0.0218,
+          "H3": 0.0087,
+          "H4": 0.0508,
+          "H5": 0.0087
+        }
+      },
+      "O2": {
+        "description": "Type I Gluing Blindness Only: Stratum A1 beta_A^glue >= 0.50, gamma_A <= 0.20, Sheaf-Cocycle within 5pp of Pairwise-Tree/Circular-AG (ABORT-03 triggers on sheaf title)",
+        "likelihoods": {
+          "H0": 0.1,
+          "H1": 0.35,
+          "H2": 0.1,
+          "H3": 0.07,
+          "H4": 0.25,
+          "H5": 0.12
+        },
+        "posterior_pi_T": {
+          "H0": 0.0549,
+          "H1": 0.4808,
+          "H2": 0.0824,
+          "H3": 0.0769,
+          "H4": 0.206,
+          "H5": 0.0989
+        },
+        "posterior_pi_S": {
+          "H0": 0.2056,
+          "H1": 0.4113,
+          "H2": 0.0881,
+          "H3": 0.0329,
+          "H4": 0.2056,
+          "H5": 0.0564
+        }
+      },
+      "O3": {
+        "description": "Bidirectional Oracle Pathology (N03 Core) + Shared-Prior Collapse (H4): beta_A^glue >= 0.50 AND gamma_A > 0.20 (>=3 reference_alt on >=5 envs) AND beta_B^glue <= 0.05, gamma_B <= 0.05, while solo-agent g_hat < 1.5",
+        "likelihoods": {
+          "H0": 0.05,
+          "H1": 0.22,
+          "H2": 0.38,
+          "H3": 0.1,
+          "H4": 0.45,
+          "H5": 0.2
+        },
+        "posterior_pi_T": {
+          "H0": 0.0213,
+          "H1": 0.2345,
+          "H2": 0.2431,
+          "H3": 0.0853,
+          "H4": 0.2878,
+          "H5": 0.1279
+        },
+        "posterior_pi_S": {
+          "H0": 0.0852,
+          "H1": 0.2141,
+          "H2": 0.2774,
+          "H3": 0.0389,
+          "H4": 0.3066,
+          "H5": 0.0779
+        }
+      },
+      "O4": {
+        "description": "Full Bidirectional Oracle Pathology + Cyclic Holonomy Separation + Duality Co-location: O3 holds AND Sheaf-Cocycle beats Pairwise-Tree & Circular-AG by >= 5pp on >= 2 cyclic envs (hol != 0) AND Jaccard(E_J, E_O) >= 0.70",
+        "likelihoods": {
+          "H0": 0.02,
+          "H1": 0.3,
+          "H2": 0.38,
+          "H3": 0.7,
+          "H4": 0.08,
+          "H5": 0.55
+        },
+        "posterior_pi_T": {
+          "H0": 0.0054,
+          "H1": 0.2035,
+          "H2": 0.1547,
+          "H3": 0.3799,
+          "H4": 0.0326,
+          "H5": 0.2239
+        },
+        "posterior_pi_S": {
+          "H0": 0.0298,
+          "H1": 0.2551,
+          "H2": 0.2423,
+          "H3": 0.2381,
+          "H4": 0.0476,
+          "H5": 0.1871
+        }
+      },
+      "O5": {
+        "description": "Grader B Overfit / Disqualification (ABORT-02): gamma_B > 0.05 on independently verified reference_alt",
+        "likelihoods": {
+          "H0": 0.08,
+          "H1": 0.05,
+          "H2": 0.05,
+          "H3": 0.05,
+          "H4": 0.06,
+          "H5": 0.05
+        },
+        "posterior_pi_T": {
+          "H0": 0.1468,
+          "H1": 0.2294,
+          "H2": 0.1376,
+          "H3": 0.1835,
+          "H4": 0.1651,
+          "H5": 0.1376
+        },
+        "posterior_pi_S": {
+          "H0": 0.4523,
+          "H1": 0.1616,
+          "H2": 0.1212,
+          "H3": 0.0646,
+          "H4": 0.1357,
+          "H5": 0.0646
+        }
+      },
+      "O6": {
+        "description": "Stratum A1 Holdout Replication Collapse (ABORT-01 / ABORT-05): Discovery slice >= 0.50 but Holdout slice < 0.30",
+        "likelihoods": {
+          "H0": 0.05,
+          "H1": 0.05,
+          "H2": 0.05,
+          "H3": 0.05,
+          "H4": 0.06,
+          "H5": 0.05
+        },
+        "posterior_pi_T": {
+          "H0": 0.0971,
+          "H1": 0.2427,
+          "H2": 0.1456,
+          "H3": 0.1942,
+          "H4": 0.1748,
+          "H5": 0.1456
+        },
+        "posterior_pi_S": {
+          "H0": 0.3405,
+          "H1": 0.1946,
+          "H2": 0.1459,
+          "H3": 0.0778,
+          "H4": 0.1634,
+          "H5": 0.0778
+        }
+      }
+    },
+    "composite_empirical_regime": {
+      "likelihoods": {
+        "H0": 0.0316,
+        "H1": 0.191,
+        "H2": 0.2533,
+        "H3": 0.2303,
+        "H4": 0.1268,
+        "H5": 0.2514
+      },
+      "posterior_pi_T": {
+        "H0": 0.0165,
+        "H1": 0.2491,
+        "H2": 0.1982,
+        "H3": 0.2403,
+        "H4": 0.0992,
+        "H5": 0.1967
+      },
+      "posterior_pi_S": {
+        "H0": 0.0771,
+        "H1": 0.2661,
+        "H2": 0.2647,
+        "H3": 0.1284,
+        "H4": 0.1237,
+        "H5": 0.1401
+      }
+    }
+  },
+  "abort_triggers": {
+    "ABORT-01": {
+      "triggered_globally": false,
+      "triggered_on_stratum_a1_holdout_type1a": true,
+      "observed": {
+        "stratum_a1_discovery_beta_glue": 0.3333,
+        "stratum_a1_holdout_beta_glue": 0.0,
+        "stratum_a1_holdout_beta_all_including_type0": 0.1111,
+        "stratum_a2_compile_only_beta_glue": 0.4444
+      },
+      "action_applied": "Enforced stratified claim ceiling: H1 is NOT claimed as a uniform defect of hardened REFERENCES judges (where Holdout Type I-A = 0/9 and Holdout Type 0 = 1/9 in ci_dependency_graph), but as a sharp contrast between pre-hardened REFERENCES judges (8.3% Type I-A, 16.7% Type 0+I) and unhardened compile_only judges (44.4% Type I-A, 55.6% total)."
+    },
+    "ABORT-02": {
+      "triggered_globally": false,
+      "triggered_on_stratum_a1": true,
+      "observed": {
+        "stratum_a1_gamma_A": 0.0,
+        "stratum_a2_gamma_A": 0.4444,
+        "stratum_a2_systematic_envs": [
+          "sheaf_physical_constraints",
+          "sheaf_invariant_gluing"
+        ]
+      },
+      "action_applied": "Scoped H2 strictly to Stratum A2 (compile_only), where 4/9 (44.4%) of environments reject valid reference_alt gauges and 2/9 (sheaf_physical_constraints 3/3, sheaf_invariant_gluing 2/3) exhibit systematic Type II gauge over-constraint."
+    },
+    "ABORT-03": {
+      "triggered_against_pairwise_tree": false,
+      "triggered_against_circular_ag_unconditional_orbit": true,
+      "triggered_against_circular_ag_conditional_accept": false,
+      "observed": {
+        "delta_phi_tree_minus_sheaf": 0.1605,
+        "delta_phi_circular_ag_minus_sheaf": 0.0741,
+        "delta_cond_fpr_circular_ag_minus_sheaf": 0.201
+      },
+      "action_applied": "Applied FALS-03b claim-ceiling qualification: Circular-AG already eliminates 2-chart edge mismatches on the 27-tuple gauge orbit; Sheaf-Cocycle's marginal yield over Circular-AG is 7.41 pp of the full product orbit and 20.10 pp of Circular-AG's accepted handoffs (the 12 hollow-cycle configurations with non-zero Z-holonomy)."
+    },
+    "ABORT-04": {
+      "triggered_globally": false,
+      "triggered_on_canonical_idiom_subset": true,
+      "observed": {
+        "mean_kappa_hat_all_6": 0.6,
+        "mean_kappa_hat_canonical_idiom_envs": 0.8,
+        "mean_kappa_hat_underdetermined_boundary_envs": 0.4
+      },
+      "action_applied": "Partitioned H4 by specification regime: canonical textbook-idiom tasks concentrate strongly (kappa_hat = 0.80, suppressing spontaneous gauge collisions to 9.6%), whereas under-determined boundary/cycle tasks disperse across gauges (kappa_hat = 0.40, g_hat = 2.78)."
+    },
+    "ABORT-05": {
+      "triggered_globally": false,
+      "observed": {
+        "jaccard_E_J_E_O": 0.8889
+      },
+      "action_applied": "None required; Jaccard(E_J, E_O) = 0.8889 >= 0.70 threshold."
+    }
+  }
+}

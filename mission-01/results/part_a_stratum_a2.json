@@ -1,0 +1,3446 @@
+{
+  "work_package": "WP-04",
+  "stratum": "Stratum_A2_CompileOnly",
+  "seed": 42,
+  "summary": {
+    "n_environments": 9,
+    "n_total_alt_variants": 27,
+    "beta_A_glue_a2": 0.4444,
+    "beta_A_all_a2": 0.5556,
+    "beta_B_glue_a2": 0.0,
+    "gamma_A_a2": 0.4444,
+    "gamma_A_variant_level_a2": 0.2593,
+    "gamma_B_a2": 0.0,
+    "gamma_B_variant_level_a2": 0.0,
+    "envs_with_any_type2_rejection": [
+      "functorial_augmentation",
+      "monadic_reward",
+      "sheaf_physical_constraints",
+      "sheaf_invariant_gluing"
+    ],
+    "envs_with_systematic_type2_rejection": [
+      "sheaf_physical_constraints",
+      "sheaf_invariant_gluing"
+    ]
+  },
+  "results": [
+    {
+      "env_id": "compositional_optimizer",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "478c5e42fc46792ddbb265cd51b4763e16bccdc75265c19035a133e0b32c30a0",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 1.8,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "failure_reason": "Failed checks: ['multistep_horizon_t1_to_t5']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.677,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "failure_reason": "Failed checks: ['multistep_horizon_t1_to_t5']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.663,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "failure_reason": "Failed checks: ['multistep_horizon_t1_to_t5']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.643,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "failure_reason": "Failed checks: ['multistep_horizon_t1_to_t5']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.743,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": false,
+              "instance_state_isolation": true
+            },
+            "failure_reason": "Failed checks: ['multistep_horizon_t1_to_t5']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.973,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": true,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": true,
+              "instance_state_isolation": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 4.025,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "predicate_count": 4,
+              "loc": 40
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 200,
+              "checks": {
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.862,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "predicate_count": 4,
+              "loc": 40
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 200,
+              "checks": {
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 4.006,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "predicate_count": 4,
+              "loc": 40
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 200,
+              "checks": {
+                "multistep_horizon_t1_to_t5": true,
+                "instance_state_isolation": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 4.025,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "multistep_horizon_t1_to_t5": true,
+              "instance_state_isolation": true
+            },
+            "predicate_count": 4,
+            "loc": 40
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 200,
+            "checks": {
+              "multistep_horizon_t1_to_t5": true,
+              "instance_state_isolation": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": true,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": false,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "functorial_augmentation",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "908e24f4b751a480b366868684b86410b5d8008a6932d01ef7d5cf05cf15ecd2",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 3.181,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": false,
+              "non_degenerate_signal_energy": true
+            },
+            "failure_reason": "Failed checks: ['c4_d4_symmetry_preserved']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 5.274,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": false,
+              "non_degenerate_signal_energy": true
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": false,
+              "non_degenerate_signal_energy": true
+            },
+            "failure_reason": "Failed checks: ['c4_d4_symmetry_preserved']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.782,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "failure_reason": "Failed checks: ['non_degenerate_signal_energy']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.725,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "failure_reason": "Failed checks: ['non_degenerate_signal_energy']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.87,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": false
+            },
+            "failure_reason": "Failed checks: ['non_degenerate_signal_energy']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.869,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": true
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.87,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "predicate_count": 8,
+              "loc": 39
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.895,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "predicate_count": 8,
+              "loc": 39
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.942,
+            "grader_a": {
+              "passed": false,
+              "score": 0.416667,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "predicate_count": 8,
+              "loc": 39
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "c4_d4_symmetry_preserved": true,
+                "non_degenerate_signal_energy": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.87,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": true
+            },
+            "predicate_count": 8,
+            "loc": 39
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "c4_d4_symmetry_preserved": true,
+              "non_degenerate_signal_energy": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": false,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": true,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.3333333333333333,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "monadic_reward",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "021ccab84179608225b6cdb0fecf0f49d09b618d9eb3aa9d4f2c33ba011bdd0b",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 1.977,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": false,
+              "no_global_side_effect": false,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "failure_reason": "Failed checks: ['no_unsafe_eval', 'no_global_side_effect']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.647,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "failure_reason": "Failed checks: ['monadic_state_encapsulation_and_bind']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.781,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "failure_reason": "Failed checks: ['monadic_state_encapsulation_and_bind']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.825,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": false,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": false,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "failure_reason": "Failed checks: ['no_global_side_effect']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.894,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": false
+            },
+            "failure_reason": "Failed checks: ['monadic_state_encapsulation_and_bind']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 4.119,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.925,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "predicate_count": 24,
+              "loc": 48
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 4.082,
+            "grader_a": {
+              "passed": false,
+              "score": 0.633333,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "predicate_count": 24,
+              "loc": 48
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.858,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "predicate_count": 24,
+              "loc": 48
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "no_unsafe_eval": true,
+                "no_global_side_effect": true,
+                "monadic_state_encapsulation_and_bind": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.925,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "predicate_count": 24,
+            "loc": 48
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "no_unsafe_eval": true,
+              "no_global_side_effect": true,
+              "monadic_state_encapsulation_and_bind": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": true,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": true,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.3333333333333333,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "neuro_symbolic_parser",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "a678e9a511591bca99504105391cb2866eac3c5e89a15af254eaceecb66ebc4e",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 1.904,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": "Failed checks: ['lse_value_across_temperatures']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.534,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": "Failed checks: ['lse_value_across_temperatures']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.75,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": "Failed checks: ['lse_value_across_temperatures']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.571,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": "Failed checks: ['lse_value_across_temperatures']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.857,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": false,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": "Failed checks: ['lse_value_across_temperatures']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 4.054,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": true,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": true,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.816,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "predicate_count": 8,
+              "loc": 38
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 4.181,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "predicate_count": 8,
+              "loc": 38
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.972,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "predicate_count": 8,
+              "loc": 38
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "lse_value_across_temperatures": true,
+                "exact_softmin_gradients": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.816,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "lse_value_across_temperatures": true,
+              "exact_softmin_gradients": true
+            },
+            "predicate_count": 8,
+            "loc": 38
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "lse_value_across_temperatures": true,
+              "exact_softmin_gradients": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": true,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": false,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "semiring_unification",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "2cc75cf3a66614df26e44802c6e1584a9cef67b1a03f756991d90a7b4080017f",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 2.014,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": false
+            },
+            "failure_reason": "Failed checks: ['tropical_minplus_laws_and_matmul', 'boolean_lattice_laws']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.727,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": false
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": false
+            },
+            "failure_reason": "Failed checks: ['tropical_minplus_laws_and_matmul', 'boolean_lattice_laws']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.788,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": true
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": true
+            },
+            "failure_reason": "Failed checks: ['tropical_minplus_laws_and_matmul']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.843,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": false
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": false
+            },
+            "failure_reason": "Failed checks: ['boolean_lattice_laws']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.79,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": true
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": false,
+              "boolean_lattice_laws": true
+            },
+            "failure_reason": "Failed checks: ['tropical_minplus_laws_and_matmul']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.935,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": true
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.831,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "predicate_count": 24,
+              "loc": 62
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.875,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "predicate_count": 24,
+              "loc": 62
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.708,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "predicate_count": 24,
+              "loc": 62
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 300,
+              "checks": {
+                "linear_semiring_laws": true,
+                "tropical_minplus_laws_and_matmul": true,
+                "boolean_lattice_laws": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.831,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": true
+            },
+            "predicate_count": 24,
+            "loc": 62
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 300,
+            "checks": {
+              "linear_semiring_laws": true,
+              "tropical_minplus_laws_and_matmul": true,
+              "boolean_lattice_laws": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": false,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": true,
+        "grader_a_rejects_any_reference_alt": false,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "sheaf_physical_constraints",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "b5b8ea73f3d75a23e1e5076ca0902aa50fe50aa6c443ead1cbe80600b211946d",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 1.845,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": false,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "failure_reason": "Failed checks: ['switch_and_backbone_feasibility_500']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.544,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": false
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": false
+            },
+            "failure_reason": "Failed checks: ['pareto_and_monotone_gauge_invariant']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.631,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": false,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": false,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "failure_reason": "Failed checks: ['identity_under_slack_traffic']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.709,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": false,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": false,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "failure_reason": "Failed checks: ['identity_under_slack_traffic']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.975,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": false
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": false
+            },
+            "failure_reason": "Failed checks: ['pareto_and_monotone_gauge_invariant']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.875,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.743,
+            "grader_a": {
+              "passed": false,
+              "score": 0.633333,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "predicate_count": 21,
+              "loc": 70
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.716,
+            "grader_a": {
+              "passed": false,
+              "score": 0.633333,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "predicate_count": 21,
+              "loc": 70
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.617,
+            "grader_a": {
+              "passed": false,
+              "score": 0.633333,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "predicate_count": 21,
+              "loc": 70
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "switch_and_backbone_feasibility_500": true,
+                "identity_under_slack_traffic": true,
+                "pareto_and_monotone_gauge_invariant": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.743,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "predicate_count": 21,
+            "loc": 70
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 500,
+            "checks": {
+              "switch_and_backbone_feasibility_500": true,
+              "identity_under_slack_traffic": true,
+              "pareto_and_monotone_gauge_invariant": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": false,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": true,
+        "grader_a_rejects_majority_reference_alt": true,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 1.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "sheaf_schema_sync",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "71aadae63365bebd4c648ff85aa53dd77adfc206b2fb133a508ea9da66a71037",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 2.006,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.75,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": "Failed checks: ['explicit_circular_transaction_handling']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.829,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": false,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": false,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": "Failed checks: ['explicit_circular_transaction_handling', 'circular_inserts_24_succeeded']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.872,
+          "grader_a": {
+            "passed": false,
+            "score": 0.277778,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": false,
+              "three_way_foreign_keys_preserved": false,
+              "foreign_key_integrity_verified": true
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": false,
+              "three_way_foreign_keys_preserved": false,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": "Failed checks: ['circular_inserts_24_succeeded', 'three_way_foreign_keys_preserved']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.982,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": false
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": false
+            },
+            "failure_reason": "Failed checks: ['explicit_circular_transaction_handling', 'foreign_key_integrity_verified']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.54,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.5,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": false,
+              "foreign_key_integrity_verified": true
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.5,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": false,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": false,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": "Failed checks: ['explicit_circular_transaction_handling', 'three_way_foreign_keys_preserved']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.839,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.718,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "predicate_count": 17,
+              "loc": 45
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.843,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "predicate_count": 17,
+              "loc": 45
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.79,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "predicate_count": 17,
+              "loc": 45
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "explicit_circular_transaction_handling": true,
+                "circular_inserts_24_succeeded": true,
+                "three_way_foreign_keys_preserved": true,
+                "foreign_key_integrity_verified": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.718,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "predicate_count": 17,
+            "loc": 45
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "explicit_circular_transaction_handling": true,
+              "circular_inserts_24_succeeded": true,
+              "three_way_foreign_keys_preserved": true,
+              "foreign_key_integrity_verified": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": false,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": false,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "sheaf_invariant_gluing",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "650e1af50e3a57ca1fbb430ba2ff84c564d771ea0beea978ef70346dd4c0bec1",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 1.809,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": false,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "failure_reason": "Failed checks: ['global_boundary_safety_0_to_99', 'full_bucket_dynamic_range']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.808,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": false,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": false,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "failure_reason": "Failed checks: ['global_boundary_safety_0_to_99', 'full_bucket_dynamic_range']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 3.818,
+          "grader_a": {
+            "passed": false,
+            "score": 0.8,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "failure_reason": "Failed checks: ['full_bucket_dynamic_range']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.694,
+          "grader_a": {
+            "passed": false,
+            "score": 0.416667,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": false,
+              "full_bucket_dynamic_range": true
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": false,
+              "full_bucket_dynamic_range": true
+            },
+            "failure_reason": "Failed checks: ['monotone_order_preservation']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.809,
+          "grader_a": {
+            "passed": false,
+            "score": 0.8,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.6666666666666666,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": false
+            },
+            "failure_reason": "Failed checks: ['full_bucket_dynamic_range']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 3.693,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": true
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.964,
+            "grader_a": {
+              "passed": false,
+              "score": 0.8,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "predicate_count": 11,
+              "loc": 42
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 3.58,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "predicate_count": 11,
+              "loc": 42
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.712,
+            "grader_a": {
+              "passed": false,
+              "score": 0.8,
+              "verdict": "FAIL",
+              "failure_mode": "underfit",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "predicate_count": 11,
+              "loc": 42
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 500,
+              "checks": {
+                "global_boundary_safety_0_to_99": true,
+                "monotone_order_preservation": true,
+                "full_bucket_dynamic_range": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.964,
+          "grader_a": {
+            "passed": false,
+            "score": 0.8,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": true
+            },
+            "predicate_count": 11,
+            "loc": 42
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 500,
+            "checks": {
+              "global_boundary_safety_0_to_99": true,
+              "monotone_order_preservation": true,
+              "full_bucket_dynamic_range": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": false,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": true,
+        "grader_a_rejects_majority_reference_alt": true,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.6666666666666666,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    },
+    {
+      "env_id": "stochastic_monad",
+      "stratum": "A2_CompileOnly",
+      "slice": "CompileOnly_CatTheo",
+      "blackbox_sha256": "04b4c9b7f17b767b0990095111b388f02337265799df5df7bdb9e35830b456fb",
+      "difficulty_vector": "medium,medium",
+      "seed": 42,
+      "variants": {
+        "no_op": {
+          "variant": "no_op",
+          "elapsed_sec": 2.151,
+          "grader_a": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "notes": [
+              "Patch validation failed:\nFAIL: Patch file is empty\n\n"
+            ]
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "patch_invalid",
+            "checks": {
+              "patch_valid": false
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "failure_reason": "Failed checks: ['right_identity_law_inspected', 'associativity_distributional_match']"
+          }
+        },
+        "plausible_wrong": {
+          "variant": "plausible_wrong",
+          "elapsed_sec": 3.877,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "failure_reason": "Failed checks: ['right_identity_law_inspected', 'associativity_distributional_match']"
+          }
+        },
+        "transcription": {
+          "variant": "transcription",
+          "elapsed_sec": 4.058,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.0,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": false,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.0,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": false,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "failure_reason": "Failed checks: ['left_identity_law', 'right_identity_law_inspected', 'associativity_distributional_match']"
+          }
+        },
+        "law_bypass_type0": {
+          "variant": "law_bypass_type0",
+          "elapsed_sec": 3.726,
+          "grader_a": {
+            "passed": false,
+            "score": 0.633333,
+            "verdict": "FAIL",
+            "failure_mode": "underfit",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "failure_reason": "Failed checks: ['right_identity_law_inspected', 'associativity_distributional_match']"
+          }
+        },
+        "law_bypass_type1": {
+          "variant": "law_bypass_type1",
+          "elapsed_sec": 3.866,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "verdict": "FAIL",
+            "failure_mode": "restriction_or_law_violation",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": false,
+            "score": 0.3333333333333333,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": false,
+              "associativity_distributional_match": false
+            },
+            "failure_reason": "Failed checks: ['right_identity_law_inspected', 'associativity_distributional_match']"
+          }
+        },
+        "reference": {
+          "variant": "reference",
+          "elapsed_sec": 4.022,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": true,
+              "right_identity_law_inspected": true,
+              "associativity_distributional_match": true
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": true,
+              "associativity_distributional_match": true
+            },
+            "failure_reason": null
+          }
+        },
+        "reference_alt_list": [
+          {
+            "variant": "reference_alt_1",
+            "elapsed_sec": 3.781,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "predicate_count": 11,
+              "loc": 51
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_2",
+            "elapsed_sec": 4.216,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "predicate_count": 11,
+              "loc": 51
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "failure_reason": null
+            }
+          },
+          {
+            "variant": "reference_alt_3",
+            "elapsed_sec": 3.888,
+            "grader_a": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "notes": []
+            },
+            "grader_b": {
+              "passed": true,
+              "score": 1.0,
+              "verdict": "PASS",
+              "failure_mode": "pass",
+              "checks": {
+                "patch_valid": true,
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "predicate_count": 11,
+              "loc": 51
+            },
+            "truth_oracle": {
+              "passed": true,
+              "score": 1.0,
+              "trials": 100,
+              "checks": {
+                "left_identity_law": true,
+                "right_identity_law_inspected": true,
+                "associativity_distributional_match": true
+              },
+              "failure_reason": null
+            }
+          }
+        ],
+        "reference_alt": {
+          "variant": "reference_alt_1",
+          "elapsed_sec": 3.781,
+          "grader_a": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "notes": []
+          },
+          "grader_b": {
+            "passed": true,
+            "score": 1.0,
+            "verdict": "PASS",
+            "failure_mode": "pass",
+            "checks": {
+              "patch_valid": true,
+              "left_identity_law": true,
+              "right_identity_law_inspected": true,
+              "associativity_distributional_match": true
+            },
+            "predicate_count": 11,
+            "loc": 51
+          },
+          "truth_oracle": {
+            "passed": true,
+            "score": 1.0,
+            "trials": 100,
+            "checks": {
+              "left_identity_law": true,
+              "right_identity_law_inspected": true,
+              "associativity_distributional_match": true
+            },
+            "failure_reason": null
+          }
+        }
+      },
+      "metrics": {
+        "grader_a_accepts_law_bypass_type1": true,
+        "grader_b_accepts_law_bypass_type1": false,
+        "grader_a_accepts_law_bypass_type0": false,
+        "grader_b_accepts_law_bypass_type0": false,
+        "grader_a_accepts_transcription": false,
+        "grader_a_rejects_any_reference_alt": false,
+        "grader_a_rejects_majority_reference_alt": false,
+        "grader_b_rejects_any_reference_alt": false,
+        "grader_a_alt_rejection_rate": 0.0,
+        "grader_b_alt_rejection_rate": 0.0,
+        "n_alt_variants": 3
+      }
+    }
+  ]
+}

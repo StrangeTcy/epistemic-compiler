@@ -56,4 +56,4 @@ failure_modes:
 handoff_contract: >
   Writes `mission-01/results/part_a_stratum_a2.json` with complete Type 0, Type I,
   and Type II measurements across all 9 `cat_theo` environments.
-status: "pending"
+status: "completed"

@@ -49,4 +49,4 @@ failure_modes:
 handoff_contract: >
   Emits `mission-01/results/blackbox_hashes.json` with verified SHA256 digests
   for all 21 environments and passes `T01` and `T02`.
-status: "pending"
+status: "completed"

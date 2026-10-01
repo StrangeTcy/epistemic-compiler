@@ -1,0 +1,393 @@
+{
+  "experiment_id": "FALS-01",
+  "title": "FDR & Effective Resolution Cohort-Composition Sensitivity Analysis",
+  "controls_enforced": [
+    "CTRL02",
+    "CF01"
+  ],
+  "stratum_a1_references": {
+    "n_environments": 12,
+    "grader_a": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 12,
+        "fn": 0,
+        "tn": 36,
+        "n_evaluations": 48
+      },
+      "cohort_6var": {
+        "effective_resolution": 0.9861,
+        "fdr": 0.04,
+        "false_positive_rate": 0.0208,
+        "false_negative_rate": 0.0,
+        "fp": 1,
+        "tp": 24,
+        "fn": 0,
+        "tn": 47,
+        "n_evaluations": 72
+      },
+      "cohort_7var": {
+        "effective_resolution": 0.9643,
+        "fdr": 0.1111,
+        "false_positive_rate": 0.05,
+        "false_negative_rate": 0.0,
+        "fp": 3,
+        "tp": 24,
+        "fn": 0,
+        "tn": 57,
+        "n_evaluations": 84
+      },
+      "delta_er_4_to_6": 0.0139,
+      "delta_er_4_to_7": 0.0357
+    },
+    "grader_b": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 12,
+        "fn": 0,
+        "tn": 36,
+        "n_evaluations": 48
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 24,
+        "fn": 0,
+        "tn": 48,
+        "n_evaluations": 72
+      },
+      "cohort_7var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 24,
+        "fn": 0,
+        "tn": 60,
+        "n_evaluations": 84
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0
+    }
+  },
+  "stratum_a1_discovery": {
+    "n_environments": 3,
+    "grader_a": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 3,
+        "fn": 0,
+        "tn": 9,
+        "n_evaluations": 12
+      },
+      "cohort_6var": {
+        "effective_resolution": 0.9444,
+        "fdr": 0.1429,
+        "false_positive_rate": 0.0833,
+        "false_negative_rate": 0.0,
+        "fp": 1,
+        "tp": 6,
+        "fn": 0,
+        "tn": 11,
+        "n_evaluations": 18
+      },
+      "cohort_7var": {
+        "effective_resolution": 0.9048,
+        "fdr": 0.25,
+        "false_positive_rate": 0.1333,
+        "false_negative_rate": 0.0,
+        "fp": 2,
+        "tp": 6,
+        "fn": 0,
+        "tn": 13,
+        "n_evaluations": 21
+      },
+      "delta_er_4_to_6": 0.0556,
+      "delta_er_4_to_7": 0.0952
+    },
+    "grader_b": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 3,
+        "fn": 0,
+        "tn": 9,
+        "n_evaluations": 12
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 6,
+        "fn": 0,
+        "tn": 12,
+        "n_evaluations": 18
+      },
+      "cohort_7var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 6,
+        "fn": 0,
+        "tn": 15,
+        "n_evaluations": 21
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0
+    }
+  },
+  "stratum_a1_holdout": {
+    "n_environments": 9,
+    "grader_a": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 9,
+        "fn": 0,
+        "tn": 27,
+        "n_evaluations": 36
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 18,
+        "fn": 0,
+        "tn": 36,
+        "n_evaluations": 54
+      },
+      "cohort_7var": {
+        "effective_resolution": 0.9841,
+        "fdr": 0.0526,
+        "false_positive_rate": 0.0222,
+        "false_negative_rate": 0.0,
+        "fp": 1,
+        "tp": 18,
+        "fn": 0,
+        "tn": 44,
+        "n_evaluations": 63
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0159
+    },
+    "grader_b": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 9,
+        "fn": 0,
+        "tn": 27,
+        "n_evaluations": 36
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 18,
+        "fn": 0,
+        "tn": 36,
+        "n_evaluations": 54
+      },
+      "cohort_7var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 18,
+        "fn": 0,
+        "tn": 45,
+        "n_evaluations": 63
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0
+    }
+  },
+  "stratum_a2_compile_only": {
+    "n_environments": 9,
+    "grader_a": {
+      "cohort_4var": {
+        "effective_resolution": 0.9444,
+        "fdr": 0.1818,
+        "false_positive_rate": 0.0741,
+        "false_negative_rate": 0.0,
+        "fp": 2,
+        "tp": 9,
+        "fn": 0,
+        "tn": 25,
+        "n_evaluations": 36
+      },
+      "cohort_6var": {
+        "effective_resolution": 0.8519,
+        "fdr": 0.2727,
+        "false_positive_rate": 0.1667,
+        "false_negative_rate": 0.1111,
+        "fp": 6,
+        "tp": 16,
+        "fn": 2,
+        "tn": 30,
+        "n_evaluations": 54
+      },
+      "cohort_7var": {
+        "effective_resolution": 0.873,
+        "fdr": 0.2727,
+        "false_positive_rate": 0.1333,
+        "false_negative_rate": 0.1111,
+        "fp": 6,
+        "tp": 16,
+        "fn": 2,
+        "tn": 39,
+        "n_evaluations": 63
+      },
+      "delta_er_4_to_6": 0.0925,
+      "delta_er_4_to_7": 0.0714
+    },
+    "grader_b": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 9,
+        "fn": 0,
+        "tn": 27,
+        "n_evaluations": 36
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 18,
+        "fn": 0,
+        "tn": 36,
+        "n_evaluations": 54
+      },
+      "cohort_7var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 18,
+        "fn": 0,
+        "tn": 45,
+        "n_evaluations": 63
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0
+    }
+  },
+  "pooled_all_21": {
+    "n_environments": 21,
+    "grader_a": {
+      "cohort_4var": {
+        "effective_resolution": 0.9762,
+        "fdr": 0.087,
+        "false_positive_rate": 0.0317,
+        "false_negative_rate": 0.0,
+        "fp": 2,
+        "tp": 21,
+        "fn": 0,
+        "tn": 61,
+        "n_evaluations": 84
+      },
+      "cohort_6var": {
+        "effective_resolution": 0.9286,
+        "fdr": 0.1489,
+        "false_positive_rate": 0.0833,
+        "false_negative_rate": 0.0476,
+        "fp": 7,
+        "tp": 40,
+        "fn": 2,
+        "tn": 77,
+        "n_evaluations": 126
+      },
+      "cohort_7var": {
+        "effective_resolution": 0.9252,
+        "fdr": 0.1837,
+        "false_positive_rate": 0.0857,
+        "false_negative_rate": 0.0476,
+        "fp": 9,
+        "tp": 40,
+        "fn": 2,
+        "tn": 96,
+        "n_evaluations": 147
+      },
+      "delta_er_4_to_6": 0.0476,
+      "delta_er_4_to_7": 0.051
+    },
+    "grader_b": {
+      "cohort_4var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 21,
+        "fn": 0,
+        "tn": 63,
+        "n_evaluations": 84
+      },
+      "cohort_6var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 42,
+        "fn": 0,
+        "tn": 84,
+        "n_evaluations": 126
+      },
+      "cohort_7var": {
+        "effective_resolution": 1.0,
+        "fdr": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "fp": 0,
+        "tp": 42,
+        "fn": 0,
+        "tn": 105,
+        "n_evaluations": 147
+      },
+      "delta_er_4_to_6": 0.0,
+      "delta_er_4_to_7": 0.0
+    }
+  }
+}

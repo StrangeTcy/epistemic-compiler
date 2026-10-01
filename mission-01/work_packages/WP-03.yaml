@@ -56,4 +56,4 @@ failure_modes:
 handoff_contract: >
   Writes `mission-01/results/part_a_stratum_a1.json` with complete per-environment
   and per-slice (`Discovery` vs. `Holdout`) measurements.
-status: "pending"
+status: "completed"
