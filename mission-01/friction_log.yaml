@@ -159,6 +159,45 @@ friction_events:
       and `git ls-files`, rejecting or annotating any hallucinated identifiers
       before Gate 1 synthesis.
 
+  - id: F-006
+    timestamp: "2026-10-01T16:22:00Z"
+    stage: "gate1"
+    work_package: null
+    type: "weak_claim_ceiling"
+    category: "judgment"
+    trigger: >
+      Prior-Work Killer (`P04-PW`, Opus 5) and Skeptic (`P03-S`, Opus 4.7)
+      uncovered (1) a direct April 2025 arXiv collision (`L08`: Schmid,
+      arXiv:2504.17700, "Applied Sheaf Theory For Multi-agent AI/RL Systems:
+      A Prospectus"), (2) classical ownership of cyclic pairwise-vs-global
+      obstruction theorems (`L07`: Beeri et al. 1983; Abramsky et al. 2011/2015),
+      and (3) non-sheaf formal methods for cyclic dependencies (`L11`: Circular
+      Assume-Guarantee reasoning), while Theorist (`P01-T`) proved that genuine
+      sheaves require only pairwise gluing unless edge adapters carry non-trivial
+      gauge holonomy (`Pairwise-UpToGauge`).
+    root_cause_guess: >
+      Pre-council seed formulation (`S01`) claimed broad sheaf-theoretic framing
+      novelty before running the dedicated second-pass adversarial literature
+      and formal-methods collision search (`P04-PW`).
+    resolution: >
+      Human Research Director approved Gate 1 `REFRAME`: killed claims `K01`..`K05`,
+      bound citation/terminology rules `C1`..`C8`, elevated `N03` (Bidirectional
+      Type I Shortcut Certification + Type II Valid-Solution Rejection Oracle
+      Presheaf Audit) to primary novelty wedge alongside `N01` (Evaluator-as-Presheaf
+      duality `H5`) and `N02` (Marginal yield over `Circular-AG` + gauge concentration
+      `H4`), expanded Part A to 21 environments (all 12 `REFERENCES` as Stratum A1
+      including 7 uninspected holdout environments + 9 `compile_only` `cat_theo`
+      as Stratum A2), and locked Two-Track Part B.
+    resolution_time_minutes: 5
+    recurrence_count: 1
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Selecting the surviving novelty wedge (`N03` + `N01` + `N02`) and locking
+      the claim ceiling at Gate 1 requires human research judgment, though the
+      multi-field prior-work collision scan (`P04-PW`) should always run with
+      mandatory web/arXiv retrieval prior to drafting Gate 1.
+
+
 
 
 

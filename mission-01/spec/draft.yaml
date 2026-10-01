@@ -1,0 +1,578 @@
+# Mission 01 — Draft Research Specification (Pre-Gate 2 Sign-Off)
+# Schema: ../research_protocol/protocol.md (Section 4.3)
+# Upon Human Gate 2 approval, this file is frozen and copied to `mission-01/spec/approved.yaml`
+# with its Git commit SHA locked as the pre-registration anchor (`CTRL03`).
+
+mission_id: "mission-01"
+seed_ref: "S01"
+status: "draft_awaiting_gate2"
+reframed_title: >
+  Bidirectional Oracle Auditing and Compositional Gluing in Agent Benchmark Judges:
+  Measuring Type I Shortcut Certification, Type II Valid-Solution Rejection, and
+  Multi-Chart Holonomy
+
+# 1. Surviving Novelty Wedges & Killed Claims (Gate 1 Sign-Off)
+novelty_wedges:
+  - id: "N03"
+    role: "primary"
+    provenance: ["P04-PW", "P01-T-2", "P01-T-8", "P03-S-1"]
+    statement: >
+      Bidirectional Oracle Presheaf Audit: simultaneous measurement of (i) Type I
+      shortcut certification (globally non-gluable local sections scoring 1.0) and
+      (ii) Type II valid-solution rejection (independently verified correct global
+      sections in alternative gauges rejected because `judge.py` over-anchors a
+      spec-unanchored convention $G_{\text{judge}} \subsetneq G_{\text{spec}}$) on
+      the same environment cohort.
+  - id: "N01"
+    role: "secondary_conditional"
+    provenance: ["P04-PW", "P01-T-3", "P01-T-7"]
+    statement: >
+      Evaluator-as-Presheaf Duality: modeling the benchmark evaluator (`judge.py`)
+      rather than the agent policy (`L08`) as a presheaf of local assertions over a
+      task cover, and testing whether judge unchecked overlap edges $E_J$ co-locate
+      with multi-chart gluing failure edges $E_O$ (`H5`: $\text{Jaccard}(E_J, E_O) \ge 0.70$).
+  - id: "N02"
+    role: "secondary_empirical"
+    provenance: ["P04-PW", "P01-T-5", "P01-T-7", "P03-S-1"]
+    statement: >
+      Quantitative measurement of the marginal global-gluing failure reduction across
+      `Chart-Only` -> `Pairwise-Tree` -> `Pairwise-UpToGauge` -> `Circular-AG` (`L11`) ->
+      `Sheaf-Cocycle`, paired with measurement of solo-chart gauge concentration
+      $\hat{\kappa}_e$ / $\hat{g}$ (`H4`, including negative-result reporting per `C8`).
+
+killed_claims:
+  - id: "K01"
+    killed_by: ["L01", "L02", "L03", "L05"]
+    forbidden_claim: "That unit-test / judge insufficiency or false-PASS certification in coding benchmarks is a new discovery."
+  - id: "K02"
+    killed_by: ["L06", "L07", "L08"]
+    forbidden_claim: >
+      That pairwise consistency != global consistency on cyclic covers (witnessed by
+      H^1) is a novel mathematical theorem, or that we are the first to propose
+      applying sheaf cohomology to multi-agent AI/RL systems (published in Schmid,
+      April 2025, arXiv:2504.17700).
+  - id: "K03"
+    killed_by: ["L10", "L12"]
+    forbidden_claim: "That explicit interface contracts or standardized inter-module/inter-agent interfaces are a new methodological proposal."
+  - id: "K04"
+    killed_by: ["L11"]
+    forbidden_claim: "That cyclic module dependencies defeat contract-based verification and therefore require sheaf cohomology (Circular Assume-Guarantee rules handle cycles soundly)."
+  - id: "K05"
+    killed_by: ["L04", "L05"]
+    forbidden_claim: "That adding a 5th/6th variant to a mutation-adequacy oracle gate or replacing pointwise probes with relational/metamorphic checks is novel apparatus."
+
+citation_and_framing_rules:
+  C1: "First paragraph of prior work must cite L01 (EvalPlus), L02 (UTBoost), L08 (Schmid 2025, arXiv:2504.17700), and L12a (MAST)."
+  C2: "Every first use of sheaf, presheaf, restriction map, coboundary, or H^1 must cite L06/L07/L08 as imported formalism."
+  C3: "Forbidden phrases: 'novel mathematical framework', 'new theoretical lens', 'first to apply sheaf theory to AI agents', 'cyclic dependencies require sheaf cohomology'."
+  C4: "Include verbatim acknowledgement of Fagin et al. (1982), Beeri et al. (1983) [L07] and Abramsky & Brandenburger (2011), Abramsky et al. (2015) [L07]."
+  C5: "Part B must include Circular-AG (L11) as an explicit comparator arm alongside Pairwise-Tree, Pairwise-UpToGauge, and Sheaf-Cocycle."
+  C6: "Do not cite SWE-ABS without a resolvable arXiv/DOI; cite L01, L02, L03 instead."
+  C7: "Paper title/abstract may not claim sheaf cohomology unless ABORT-01 is cleared and Sheaf-Cocycle beats Circular-AG (FALS-03b)."
+  C8: "If ecological gauge diversity g_hat < 1.5 (H4 holds), report as a primary negative finding of N02."
+
+# 2. Hypotheses (H0..H5)
+hypotheses:
+  - id: "H0"
+    provenance: ["P01-T-7", "P03-S-2"]
+    statement: >
+      (Null — Local & Pointwise Sufficiency): Existing `judge.py` evaluators in
+      `rl_eval_generator` exhibit both low Type I gluing blindness ($\beta_A^{\text{glue}} < 0.20$
+      on Stratum A1 `REFERENCES`) and low Type II valid-solution rejection ($\gamma_A < 0.10$),
+      and multi-chart `Chart-Only` composition matches `Sheaf-Cocycle` within 10 percentage points.
+    falsification_condition: >
+      Rejected if $\beta_A^{\text{glue}} \ge 0.20$ on Stratum A1 OR $\gamma_A \ge 0.20$
+      OR ($\varphi_{\text{chart}} - \varphi_{\text{sheaf}} > 0.10$).
+
+  - id: "H1"
+    provenance: ["P01-T-6", "P03-S-1", "P04-PW"]
+    statement: >
+      (Type I Oracle Gluing Blindness — N01/N03): Under black-box spec-only candidate
+      construction (`CTRL01`), local-projection `judge.py` evaluators (`Grader A`)
+      certify globally non-gluable Type I sections (`Type I-A` temporal horizon
+      truncation, `Type I-B` unanchored gauge, `Type I-C` hollow-cycle holonomy —
+      strictly excluding `Type 0` lookup tables) as `PASS (score = 1.0)` in
+      $\beta_A^{\text{glue}} \ge 50\%$ of audited environments (reported separately
+      for Stratum A1 `REFERENCES` [Discovery vs. Holdout] and Stratum A2 `compile_only`),
+      whereas pre-registered `Grader B` restriction-map checks reduce $\beta_B^{\text{glue}}$
+      to $\le 5\%$.
+    falsification_condition: >
+      Falsified at headline level (`ABORT-01`) if Stratum A1 $\beta_A^{\text{glue}} < 0.50$,
+      or if $\beta_B^{\text{glue}} > 0.05$.
+
+  - id: "H2"
+    provenance: ["P01-T-2", "P01-T-8", "P03-S-1", "P04-PW"]
+    statement: >
+      (Type II Oracle Presheaf Inconsistency / Valid-Solution Rejection — N03 Primary Wedge):
+      Point-probed `judge.py` evaluators over-anchor spec-unanchored gauges
+      ($G_{\text{judge}} \subsetneq G_{\text{spec}}$), falsely rejecting independently
+      verified `reference_alt` valid global sections ($\gamma_A > 0.20$ across the
+      cohort, and $\ge 60\%$ rejection across $\ge 3$ independent `reference_alt`
+      variants per environment on affected environments), whereas pre-registered
+      `Grader B` achieves $\gamma_B \le 0.05$ (`ABORT-02`).
+    falsification_condition: >
+      Falsified if $\gamma_A \le 0.20$ across the cohort, or downgraded from
+      "systematic" to "case-study anecdote" if fewer than 5 environments exhibit
+      Type II rejection across $\ge 3$ independent `reference_alt` variants (`CR08`),
+      or disqualified (`ABORT-02`) if $\gamma_B > 0.05$.
+
+  - id: "H3"
+    provenance: ["P01-T-5", "P03-S-1", "P04-PW-5"]
+    statement: >
+      (Multi-Chart Cycle Holonomy vs. Spanning-Tree & Circular-AG Contracts — N02):
+      On multi-chart tasks with non-trivial gauge group $\mathcal{G}$ and closed
+      3-cycles (`rope`, `rd_state_carry`, `rd_weight_tie`, `rd_adaptive_halting`,
+      `compositional_optimizer`, `sheaf_physical_constraints`), `Chart-Only`,
+      `Pairwise-Tree`, and `Pairwise-UpToGauge` admit non-zero holonomy
+      ($\operatorname{hol}(\gamma) \neq 0$, failure rate $\ge 20\%$), and explicit
+      zero-cocycle / holonomy enforcement (`Sheaf-Cocycle`) reduces global gluing
+      failure to $< 5\%$ while beating `Pairwise-Tree` and `Circular-AG` (`L11`) by
+      $\ge 5$ percentage points on $\ge 2$ cyclic environments at $\le$ constraint
+      predicate count (`CTRL07`).
+    falsification_condition: >
+      Falsified (`ABORT-03`) if `Pairwise-Tree` or `Circular-AG` comes within 5
+      percentage points of `Sheaf-Cocycle` on $> 80\%$ of multi-chart environments.
+
+  - id: "H4"
+    provenance: ["P01-T-7", "P03-S-1", "P04-PW"]
+    statement: >
+      (Ecological Shared-Prior Gauge Collapse — N02 Negative-Result Alternative):
+      Independent solo-chart completions concentrate on a single canonical convention
+      per overlap ($\hat{g} < 1.5$, $\hat{\kappa}_e = \sum_c \hat{p}_{e,c}^2 > 0.75$),
+      so ecological `Chart-Only` gluing failure is significantly lower than the
+      uniform combinatorial baseline $1 - \prod_e (1/g_e)$.
+    falsification_condition: >
+      Falsified if empirical solo-chart completions exhibit $\hat{g} \ge 1.5$ and
+      $\hat{\kappa}_e \le 0.65$ across multi-chart overlaps.
+
+  - id: "H5"
+    provenance: ["P01-T-7", "P04-PW"]
+    statement: >
+      (Evaluator–Orchestrator Duality Co-Location — N01): Across multi-chart tasks,
+      the set of overlap edges $E_J$ where `judge.py` fails to enforce restriction
+      compatibility co-locates with the set of overlap edges $E_O$ where `Chart-Only`
+      gauge orbits fail to glue ($\text{Jaccard}(E_J, E_O) \ge 0.70$).
+    falsification_condition: >
+      Falsified if $\text{Jaccard}(E_J, E_O) < 0.50$.
+
+# 3. Environment Cohort (21 Stratified Environments in Part A; 6 Multi-Chart Tasks in Part B)
+environment_cohort:
+  stratum_A1_references:
+    description: "All 12 environments in tools/instance_oracle_gate.py:REFERENCES (Oracle-Gated)"
+    discovery_slice:
+      - "rope"
+      - "rd_state_carry"
+      - "rd_weight_tie"
+      - "rd_adaptive_halting"
+      - "categorical_lenses"
+    holdout_slice:
+      - "yaml_Anchor"
+      - "numeric_Relu"
+      - "optim_Step"
+      - "quant_Calib"
+      - "sched_Warmup"
+      - "stream_Batch"
+      - "lora_Scale"
+  stratum_A2_compile_only:
+    description: "All 9 compile_only environments in envs/cat_theo/ (Reported strictly separately per CTRL02)"
+    environments:
+      - "compositional_optimizer"
+      - "functorial_augmentation"
+      - "monadic_reward"
+      - "neuro_symbolic_parser"
+      - "probabilistic_monad"
+      - "relational_join_adjunction"
+      - "semiring_unification"
+      - "sheaf_physical_constraints"
+      - "stochastic_monad"
+  part_B_multichart_tasks:
+    - id: "rope"
+      charts: ["rope.py", "attention.py", "cache.py"]
+      nerve_topology: "Hollow 3-cycle K_3 (U_12, U_23, U_31)"
+      gauge_group: "Z_2 (interleaved vs split-half) x Z_2 (dim vs dim//2 inv_freq) x Z (chunk offset phase)"
+    - id: "rd_state_carry"
+      charts: ["recurrent_block.py", "recurrent_Stack.py", "prelude_coda_Wrapper.py"]
+      nerve_topology: "3-chart recurrent depth pipeline with step-index & state-reset cycle"
+      gauge_group: "Z_2 (0-based vs 1-based step_idx) x Z_2 (carry vs zero-init state)"
+    - id: "rd_weight_tie"
+      charts: ["tied_Block.py", "adapter_Bank.py", "depth_Model.py"]
+      nerve_topology: "3-chart weight-tied recurrent core + step-indexed adapter bank"
+      gauge_group: "Z_2 (shared vs cloned core weights) x Z_k (step-adapter indexing)"
+    - id: "rd_adaptive_halting"
+      charts: ["halting_Gate.py", "ponder_Loss.py", "adaptive_Model.py"]
+      nerve_topology: "3-chart ACT halting probability accumulation & remainder distribution"
+      gauge_group: "Z_2 (inclusive vs exclusive halting threshold) x R_+ (ponder remainder normalization)"
+    - id: "compositional_optimizer"
+      charts: ["optimizer_step1", "optimizer_step2", "chained_update_composition"]
+      nerve_topology: "Temporal 3-chart horizon cover ([0,1], [1,2], instance-isolation)"
+      gauge_group: "Z_2 (stateless vs stateful buffer) x Z_2 (class-shared vs instance-local dict)"
+    - id: "sheaf_physical_constraints"
+      charts: ["switch_S1_AC", "switch_S2_AB", "switch_S3_BC"]
+      nerve_topology: "Closed 3-switch triangle K_3 with global backbone constraint A+B+C <= 150"
+      gauge_group: "S_3 / non-commutative projection order {clamp-then-scale (5:3), proportional (2:1), max-min fair (1:1)}"
+
+# 4. Operationalized Scientific Measurements (M01..M10)
+measurements:
+  - id: "M01"
+    name: "Stratified Type I Gluing False-Certification Rate (beta_A^glue & beta_B^glue)"
+    formula: >
+      Fraction of environments in Stratum A1 (Discovery, Holdout, Total) and
+      Stratum A2 where a black-box-constructed Type I section (`law_bypass_type1`,
+      violating a restriction map $\rho_{ij}$ or gauge anchor while excluding Type 0
+      pointwise lookup tables) is certified `PASS (score = 1.0)` by Grader A vs. Grader B.
+    supports_hypotheses: ["H0", "H1"]
+
+  - id: "M02"
+    name: "Total False-Certification Rate Including Type 0 Pointwise Lookups (beta_A^all & beta_B^all)"
+    formula: >
+      Fraction of environments where either a Type 0 (pointwise input lookup) or
+      Type I (gluing/gauge bypass) section is certified `PASS (score = 1.0)` by
+      Grader A vs. Grader B (`P01-T-6`).
+    supports_hypotheses: ["H0", "H1"]
+
+  - id: "M03"
+    name: "Type II Valid-Solution False-Rejection Rate (gamma_A & gamma_B)"
+    formula: >
+      Fraction of independently verified valid global sections in alternative
+      spec-admissible gauges (`reference_alt`, >= 3 independent implementations per
+      tested environment verified on >= 1,000 random inputs by an independent
+      property-based truth oracle) rejected (`score < 1.0` or `passed == False`)
+      by Grader A vs. Grader B (`N03`, `FALS-02`).
+    supports_hypotheses: ["H0", "H2"]
+
+  - id: "M04"
+    name: "Oracle Gate Escape Rate (ER_4var vs. ER_6var)"
+    formula: >
+      Fraction of environments where `tools/instance_oracle_gate.py` (4-variant:
+      `no_op`, `plausible_wrong`, `transcription`, `reference`) certifies the
+      instance as valid while `law_bypass_type1` or `reference_alt` fails its
+      expected polarity under the extended 6-variant bidirectional audit.
+    supports_hypotheses: ["H1", "H2"]
+
+  - id: "M05"
+    name: "Multi-Chart Protocol Gluing Failure Rates (phi_chart, phi_tree, phi_upToGauge, phi_circularAG, phi_sheaf)"
+    formula: >
+      Fraction of locally passing chart-section tuples $(s_1, s_2, s_3)$ that fail
+      the global specification $T_S(X)$ under five orchestration regimes:
+      (1) `Chart-Only`, (2) `Pairwise-Tree` (spanning tree $U_{12}, U_{23}$),
+      (3) `Pairwise-UpToGauge` (all 3 edges up to unanchored gauge adapters $g_{ij}$),
+      (4) `Circular-AG` (`L11` mutually assumed step/boundary invariants without
+      cocycle holonomy check), and (5) `Sheaf-Cocycle` ($\delta^0(\{s_i\}) = 0$ and
+      $\operatorname{hol}(\gamma) = \mathrm{id}$).
+    supports_hypotheses: ["H0", "H3"]
+
+  - id: "M06"
+    name: "Empirical Cech 1-Cocycle / Cycle Holonomy Distribution (hol(gamma))"
+    formula: >
+      Distribution of cycle holonomy $\operatorname{hol}(\gamma) = g_{12} g_{23} g_{31}$
+      (specifically integer position shift $\operatorname{pos}_{\text{chunked}} - \operatorname{pos}_{\text{full}} \in \mathbb{Z}$
+      in `rope` and step/allocation discrepancy in `rd_*` and `sheaf_physical_constraints`)
+      among tuples satisfying all local and spanning-tree / up-to-gauge pairwise checks (`P01-T-9`).
+    supports_hypotheses: ["H3"]
+
+  - id: "M07"
+    name: "Solo-Chart Gauge Concentration & Diversity (kappa_hat_e & g_hat)"
+    formula: >
+      Empirical collision probability $\hat{\kappa}_e = \sum_{c \in \mathcal{G}(e)} \hat{p}_{e,c}^2$
+      and effective gauge number $\hat{g}_e = 1 / \hat{\kappa}_e$ across solo-chart
+      completions, compared against uniform combinatorial baseline $1 / g_e$ (`H4`, `N02`).
+    supports_hypotheses: ["H3", "H4"]
+
+  - id: "M08"
+    name: "Evaluator–Orchestrator Edge Co-Location (Jaccard(E_J, E_O))"
+    formula: >
+      $\text{Jaccard}(E_J, E_O) = |E_J \cap E_O| / |E_J \cup E_O|$, where $E_J$ is
+      the set of nerve overlap edges unchecked or gauge-unanchored by `Grader A`
+      and $E_O$ is the set of overlap edges where `Chart-Only` sections fail to glue (`H5`).
+    supports_hypotheses: ["H5"]
+
+  - id: "M09"
+    name: "Constraint Parsimony Ratio (Delta_Pred & Delta_LOC)"
+    formula: >
+      Ratio of predicate count and lines of code (LOC) between `Grader B` /
+      sheaf restriction maps $\rho_{ij}$ and a flat pairwise contract suite achieving
+      equivalent discrimination (`CR06`, `CTRL07`).
+    supports_hypotheses: ["H3"]
+
+  - id: "M10"
+    name: "Protocol Coordination Burden (kappa_intervention & kappa_time)"
+    formula: >
+      Human intervention rate and human time fraction across Mission 01 work packages,
+      logged in `mission-01/friction_log.yaml` per `research_protocol/instrumentation.md`.
+    supports_hypotheses: []
+
+# 5. Calibrated Decision Table (Dual-Prior Preservation: Theorist pi_T & Skeptic pi_S)
+decision_table:
+  note: >
+    Per `research_protocol/protocol.md` §2.3 (No Averaging Rule) and `UD04`, we preserve
+    both the Theorist prior vector $\pi_T$ (`P01-T-9`, EIG = 0.67 bits) and the
+    Skeptic hostile prior vector $\pi_S$ (`P03-S` §5, EIG = 0.52 bits). Any headline
+    claim at Gate 4 must achieve posterior superiority under both priors.
+  theorist_prior_pi_T:
+    H0: 0.10
+    H1: 0.25
+    H2: 0.15
+    H3: 0.20
+    H4: 0.15
+    H5: 0.15
+  skeptic_prior_pi_S:
+    H0: 0.35
+    H1: 0.20
+    H2: 0.15
+    H3: 0.08
+    H4_or_Residual: 0.22
+  observation_regimes:
+    - id: "O1"
+      description: "Null / Local Parity: Stratum A1 beta_A^glue < 0.20, gamma_A < 0.10, phi_chart - phi_sheaf <= 0.10"
+      likelihood_given_H: {H0: 0.70, H1: 0.03, H2: 0.04, H3: 0.03, H4: 0.10, H5: 0.03}
+    - id: "O2"
+      description: "Type I Gluing Blindness Only: Stratum A1 beta_A^glue >= 0.50, gamma_A <= 0.20, Sheaf-Cocycle within 5pp of Pairwise-Tree/Circular-AG (ABORT-03 triggers on sheaf title)"
+      likelihood_given_H: {H0: 0.10, H1: 0.35, H2: 0.10, H3: 0.07, H4: 0.25, H5: 0.12}
+    - id: "O3"
+      description: "Bidirectional Oracle Pathology (N03 Core) + Shared-Prior Collapse (H4): beta_A^glue >= 0.50 AND gamma_A > 0.20 (>=3 reference_alt on >=5 envs) AND beta_B^glue <= 0.05, gamma_B <= 0.05, while solo-agent g_hat < 1.5"
+      likelihood_given_H: {H0: 0.05, H1: 0.22, H2: 0.38, H3: 0.10, H4: 0.45, H5: 0.20}
+    - id: "O4"
+      description: "Full Bidirectional Oracle Pathology + Cyclic Holonomy Separation + Duality Co-location: O3 holds AND Sheaf-Cocycle beats Pairwise-Tree & Circular-AG by >= 5pp on >= 2 cyclic envs (hol != 0) AND Jaccard(E_J, E_O) >= 0.70"
+      likelihood_given_H: {H0: 0.02, H1: 0.30, H2: 0.38, H3: 0.70, H4: 0.08, H5: 0.55}
+    - id: "O5"
+      description: "Grader B Overfit / Disqualification (ABORT-02): gamma_B > 0.05 on independently verified reference_alt"
+      likelihood_given_H: {H0: 0.08, H1: 0.05, H2: 0.05, H3: 0.05, H4: 0.06, H5: 0.05}
+    - id: "O6"
+      description: "Stratum A1 Holdout Replication Collapse (ABORT-01 / ABORT-05): Discovery slice >= 0.50 but Holdout slice < 0.30"
+      likelihood_given_H: {H0: 0.05, H1: 0.05, H2: 0.05, H3: 0.05, H4: 0.06, H5: 0.05}
+  expected_information_gain_bits:
+    pi_T: 0.67
+    pi_S: 0.52
+
+# 6. Confound & Circularity Controls (CTRL01..CTRL08)
+controls:
+  - id: "CTRL01"
+    mitigates: "CF01 (White-Box Exploit Crafting)"
+    specification: >
+      All `law_bypass_type1` and `reference_alt` patches must be derived strictly
+      from black-box task specifications (`prompt.md`, `visible_tests.py`, and
+      workspace source files), without inspecting `judge.py` constants. Each candidate
+      carries a logged SHA256 of the black-box context bundle.
+  - id: "CTRL02"
+    mitigates: "CF02 (compile_only Dilution)"
+    specification: >
+      Strict stratified reporting of Stratum A1 (12 `REFERENCES` environments, further
+      split into 5 Discovery + 7 uninspected Holdout environments) and Stratum A2
+      (9 `compile_only` `cat_theo` environments). Never pool A1 and A2 into an
+      unstratified headline percentage.
+  - id: "CTRL03"
+    mitigates: "CF03 (Post-Hoc Grader B Fit)"
+    specification: >
+      Pre-register `mission-01/spec/approved.yaml` and the restriction-map invariants
+      for `Grader B` with a locked Git commit SHA on `StrangeTcy/epistemic-compiler`
+      prior to executing the Part A and Part B evaluation runs.
+  - id: "CTRL04"
+    mitigates: "CF04 (Uniform-Random Gauge Combinatorics)"
+    specification: >
+      Explicitly separate Track B-Mech (deterministic evaluation over the Cartesian
+      product of gauge orbits $\prod_i \mathcal{G}(U_i)$) from Track B-Emp (empirical
+      solo-chart gauge concentration $\hat{\kappa}_e$ / $\hat{g}$), and never attribute
+      combinatorial uniform-mix failure rates to LLM agent behavior.
+  - id: "CTRL05"
+    mitigates: "CF05 (Pairwise == Sheaf Collapse) & L11 (Circular-AG)"
+    specification: >
+      Include both `Pairwise-Tree`, `Pairwise-UpToGauge`, and `Circular-AG` (`L11`)
+      as explicit comparators against `Sheaf-Cocycle`. Strike sheaf cohomology from
+      any headline claim if `Sheaf-Cocycle` fails to beat `Pairwise-Tree` and
+      `Circular-AG` by >= 5pp on >= 2 cyclic environments (`ABORT-03`).
+  - id: "CTRL06"
+    mitigates: "CF06 (REFERENCES Curation Contamination)"
+    specification: >
+      Evaluate all 7 previously uninspected `REFERENCES` environments (`yaml_Anchor`,
+      `numeric_Relu`, `optim_Step`, `quant_Calib`, `sched_Warmup`, `stream_Batch`,
+      `lora_Scale`) as an uncontaminated Holdout Slice alongside the 5 Discovery
+      `REFERENCES` environments, and validate every `reference_alt` with an independent
+      property-based truth oracle over >= 1,000 randomized inputs.
+  - id: "CTRL07"
+    mitigates: "CF07 (Constraint-Count Inflation)"
+    specification: >
+      Measure and report predicate count and LOC of `Grader B` / $\rho_{ij}$ restriction
+      checks vs. flat pairwise contract suites (`M09`).
+  - id: "CTRL08"
+    mitigates: "CF08 (Trajectory-Narration Penalty)"
+    specification: >
+      `Grader B` and all restriction-map checks operate strictly on the final submitted
+      code artifact; episode trajectory / scratchpad logs are inadmissible to pass/fail
+      grading.
+
+# 7. Engineering Requirements (R01..R06) & Outcome-Neutral Acceptance Tests (T01..T06)
+engineering_requirements:
+  - id: "R01"
+    description: >
+      Implement an independent property-based Truth Oracle & Bidirectional Audit
+      Harness (`tools/bidirectional_oracle_audit.py`) that evaluates `Grader A`
+      (`judge.py`) and pre-registered `Grader B` (restriction-map auditor) across
+      all 21 Part A environments (12 Stratum A1 `REFERENCES` + 9 Stratum A2 `cat_theo`)
+      on 6 patch variants (`no_op`, `plausible_wrong`, `transcription`, `law_bypass_type0`,
+      `law_bypass_type1`, `reference`, and $\ge 3$ `reference_alt` variants on Type II
+      target environments).
+  - id: "R02"
+    description: >
+      Enforce black-box context hashing (`CTRL01`): compute and record the SHA256
+      digest of the agent-visible workspace (`prompt.md`, `visible_tests.py`, and
+      patchable source files, excluding `judge.py`) for every audited environment.
+  - id: "R03"
+    description: >
+      Implement the Multi-Chart Gluing & Holonomy Benchmark (`tools/multichart_gluing_benchmark.py`)
+      supporting all 5 orchestration regimes (`Chart-Only`, `Pairwise-Tree`,
+      `Pairwise-UpToGauge`, `Circular-AG`, `Sheaf-Cocycle`) across the 6 multi-chart
+      environments (`rope`, `rd_state_carry`, `rd_weight_tie`, `rd_adaptive_halting`,
+      `compositional_optimizer`, `sheaf_physical_constraints`), computing exact
+      cycle holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$ and edge sets $E_J, E_O$.
+  - id: "R04"
+    description: >
+      Implement the Solo-Chart Gauge Concentration & Constraint Parsimony Analyzer
+      (`tools/gauge_and_parsimony_analysis.py`) computing $\hat{\kappa}_e$, $\hat{g}_e$,
+      $\text{Jaccard}(E_J, E_O)$, and predicate/LOC parsimony (`M07`, `M08`, `M09`).
+  - id: "R05"
+    description: >
+      Implement the Executable Falsification Suite (`tools/run_falsification_suite.py`)
+      executing `FALS-01`, `FALS-02`, and `FALS-03` (`FALS-03b` `Circular-AG`) and
+      emitting machine-readable JSON/CSV artifacts under `mission-01/results/` and
+      `mission-01/falsification/`.
+  - id: "R06"
+    description: >
+      Maintain deterministic execution (`seed=42`, `CTRL05`/`CTRL06`) and preserve
+      all existing repository unit tests (`pytest tests/test_scoring.py tests/test_generator.py`).
+
+acceptance_tests:
+  # STRICT INVARIANT (Section 2.1): Every Txx below is 100% OUTCOME-NEUTRAL.
+  # None of T01..T06 assert that H1, H2, H3, H4, or H5 holds empirically.
+  - id: "T01"
+    verifies: "R01"
+    test_command: "pytest -q tests/test_bidirectional_audit_harness.py -k test_schema_and_polarity_on_synthetic_fixture"
+    outcome_neutral_criteria: >
+      Verifies on a synthetic toy fixture that `bidirectional_oracle_audit.py`
+      correctly records pass/fail booleans, computes $\beta^{\text{glue}}, \beta^{\text{all}}, \gamma$
+      with exact Wilson 95% confidence intervals, and outputs valid JSON matching
+      the schema—regardless of whether real environment error rates are 0% or 100%.
+  - id: "T02"
+    verifies: "R02"
+    test_command: "pytest -q tests/test_bidirectional_audit_harness.py -k test_blackbox_context_sha256_excludes_judge"
+    outcome_neutral_criteria: >
+      Verifies that the black-box context bundler (`CTRL01`) throws a hard error
+      if `judge.py` is present in the bundle and produces deterministic SHA256
+      hashes across all 21 environments.
+  - id: "T03"
+    verifies: "R03"
+    test_command: "pytest -q tests/test_multichart_gluing_harness.py -k test_five_protocols_and_holonomy_on_synthetic_cycle"
+    outcome_neutral_criteria: >
+      Verifies on a synthetic 3-node toy graph with known $\mathbb{Z}_3$ edge shifts
+      that `Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG`, and
+      `Sheaf-Cocycle` filter tuples according to their mathematical definitions and
+      compute integer holonomy $\operatorname{hol}(\gamma)$ accurately.
+  - id: "T04"
+    verifies: "R04"
+    test_command: "pytest -q tests/test_multichart_gluing_harness.py -k test_jaccard_and_ast_predicate_counter"
+    outcome_neutral_criteria: >
+      Verifies that the AST predicate/LOC counter (`CTRL07`) and $\hat{\kappa}_e$ /
+      $\text{Jaccard}(E_J, E_O)$ calculators return exact values on synthetic inputs.
+  - id: "T05"
+    verifies: "R05"
+    test_command: "pytest -q tests/test_bidirectional_audit_harness.py -k test_independent_truth_oracle_accepts_all_reference_patches"
+    outcome_neutral_criteria: >
+      Verifies that the canonical `reference` patches across all 12 `REFERENCES`
+      environments pass `Grader A`, `Grader B`, and the independent property-based
+      truth oracle (`score == 1.0`).
+  - id: "T06"
+    verifies: "R06"
+    test_command: "pytest -q tests/test_scoring.py tests/test_generator.py"
+    outcome_neutral_criteria: >
+      Verifies zero regression on existing `rl_eval_generator` test suites.
+
+# 8. Executable Falsification Plan (Max 3 Experiments, Max 1 Recursive Round)
+falsification_plan:
+  max_experiments: 3
+  max_recursive_rounds: 1
+  experiments:
+    - id: "FALS-01"
+      attacks: "H1"
+      provenance: ["P03-S-1", "CR03", "CR07"]
+      design: >
+        Execute the black-box-derived Type I gluing audit separately on the 12
+        Stratum A1 `REFERENCES` environments (comparing the 5 Discovery environments
+        against the 7 previously uninspected Holdout environments) and the 9
+        Stratum A2 `compile_only` environments, strictly excluding Type 0 lookup
+        bypasses from $\beta_A^{\text{glue}}$.
+      survival_threshold: >
+        Stratum A1 $\beta_A^{\text{glue}} \ge 0.50$ AND Holdout slice $\beta_A^{\text{glue}} \ge 0.30$
+        AND $\beta_B^{\text{glue}} \le 0.05$. Otherwise trigger `ABORT-01` or `ABORT-05`.
+
+    - id: "FALS-02"
+      attacks: "H2 and Grader B Overfit"
+      provenance: ["P03-S-1", "CR08", "P01-T-8", "P04-PW"]
+      design: >
+        Construct $\ge 3$ structurally independent `reference_alt` valid global
+        sections per environment across $\ge 5$ environments (verified on $\ge 1,000$
+        randomized inputs by independent property-based truth oracles that share
+        zero code with `judge.py`), and score all `reference_alt` variants under
+        both `Grader A` (`judge.py`) and pre-registered `Grader B`.
+      survival_threshold: >
+        For `Grader B`: false rejection $\gamma_B \le 0.05$ across all independently
+        verified `reference_alt` variants (`ABORT-02` if $\gamma_B > 0.05$). For `H2`:
+        `Grader A` rejects $\ge 60\%$ of valid alternative gauges on affected environments
+        across $\ge 5$ environments (otherwise downgrade `H2` from "systematic" to
+        "case-study environments").
+
+    - id: "FALS-03"
+      attacks: "H3 and the Sheaf Framing (Pairwise-Tree & Circular-AG Sufficiency + Parsimony)"
+      provenance: ["P03-S-1", "CR01", "CR06", "P04-PW-5", "P01-T-5"]
+      design: >
+        Compare `Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG` (`L11`),
+        and `Sheaf-Cocycle` across all 6 multi-chart environments (`rope`, `rd_state_carry`,
+        `rd_weight_tie`, `rd_adaptive_halting`, `compositional_optimizer`,
+        `sheaf_physical_constraints`), measuring both global gluing failure rates,
+        integer holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$, solo-chart gauge
+        concentration $\hat{\kappa}_e$ (`H4`), and AST predicate/LOC parsimony (`CTRL07`).
+      survival_threshold: >
+        `Sheaf-Cocycle` must beat `Pairwise-Tree` and `Circular-AG` by $\ge 5$ percentage
+        points on $\ge 2$ cyclic environments with non-trivial holonomy $\operatorname{hol}(\gamma) \neq 0$
+        at $\le$ predicate count; otherwise trigger `ABORT-03` (strip sheaf cohomology
+        from title/abstract and report as Multi-Interface Contract Audit).
+
+# 9. Mandatory Claim Ceiling & Abort Conditions
+claim_ceiling: >
+  Mission 01 may claim, at maximum, that within the audited 21-environment subset
+  of `StrangeTcy/rl_eval_generator` (reported strictly stratified across the 12
+  `REFERENCES` environments in Stratum A1 [split into 5 Discovery and 7 Holdout]
+  and the 9 `compile_only` `cat_theo` environments in Stratum A2) and under
+  black-box spec-only candidate construction (`CTRL01`), existing point-probed and
+  subspace-projected evaluators (`Grader A`) exhibit a measured Bidirectional Oracle
+  Error profile: certifying globally non-gluable Type I sections at rate
+  $\beta_A^{\text{glue}}$ (95% CI) while falsely rejecting independently verified
+  valid global sections in alternative spec-admissible gauges (`reference_alt`) at
+  rate $\gamma_A$ (95% CI); and that pre-registered restriction-map and gauge-invariant
+  relational checks (`Grader B`) reduce these rates to $\beta_B^{\text{glue}}$ and
+  $\gamma_B$. On the 6 multi-chart environments, Mission 01 may report the exact
+  gluing failure and integer holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$ across
+  `Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG` (`L11`), and
+  `Sheaf-Cocycle` over the enumerated gauge orbits, alongside the bounded solo-chart
+  gauge concentration $\hat{\kappa}_e$ (`H4`). Any headline claim of cohomological
+  lift beyond pairwise or circular assume-guarantee contracts is admissible if and
+  only if `FALS-03` demonstrates $\ge 5$pp separation between `Sheaf-Cocycle` and
+  both `Pairwise-Tree` and `Circular-AG` on $\ge 2$ environments.
+
+cannot_justify:
+  - "Cannot claim mathematical novelty for sheaf theory, restriction maps, or Cech cohomology (`K02`, `L06`, `L07`), nor claim to be the first to propose sheaf cohomology for multi-agent AI/RL systems (`L08`: Schmid, April 2025, arXiv:2504.17700)."
+  - "Cannot pool Stratum A1 (`REFERENCES`) and Stratum A2 (`compile_only`) into a single unstratified headline percentage (`CTRL02`), nor conflate Type 0 lookup tables with Type I gluing bypasses (`P01-T-6`)."
+  - "Cannot claim that uniform combinatorial gauge-mixing failure rates ($1 - \prod_e (1/g_e)$) represent ecological multi-agent LLM failure rates (`CTRL04`); ecological rates are bounded by measured solo-chart gauge concentration $\hat{\kappa}_e$ (`H4`, `C8`)."
+  - "Cannot retain 'sheaf cohomology' or 'cocycle' in the paper title/abstract if `Sheaf-Cocycle` fails to beat `Pairwise-Tree` and `Circular-AG` (`L11`) by >= 5pp on >= 2 environments (`ABORT-03`, `C7`)."
+  - "Cannot claim `H2` (Type II valid-solution rejection) is systematic across the benchmark unless demonstrated across >= 3 independent `reference_alt` implementations on >= 5 environments (`CR08`, `FALS-02`)."
+  - "Cannot cite `SWE-ABS` without a resolvable primary arXiv/DOI identifier (`C6`)."
+
+abort_conditions:
+  - id: "ABORT-01"
+    condition: "Stratum A1 `REFERENCES` Type I gluing blindness beta_A^glue < 0.50 -> H1 headline falsified; report negative/partial Stratum A1 result and restrict primary positive claim to N03 Type II / Stratum A2."
+  - id: "ABORT-02"
+    condition: "Grader B false-rejection rate gamma_B > 0.05 on independently verified `reference_alt` solutions -> Grader B disqualified as overfit; must be revised and re-evaluated."
+  - id: "ABORT-03"
+    condition: "`Pairwise-Tree` or `Circular-AG` (`L11`) comes within 5pp of `Sheaf-Cocycle` on >= 80% of multi-chart environments -> strike sheaf/cohomology from title and abstract (`C7`) and report as Multi-Interface Contract Audit."
+  - id: "ABORT-04"
+    condition: "Solo-chart gauge diversity g_hat < 1.5 (kappa_hat_e > 0.75) on > 50% of multi-chart overlaps -> H4 (Shared-Prior Collapse) confirmed; report ecological gauge convergence as a primary negative result per `C8`."
+  - id: "ABORT-05"
+    condition: "Stratum A1 Holdout Slice (7 previously uninspected `REFERENCES` environments) exhibits beta_A^glue < 0.30 -> selection bias confirmed (`CR07`); downgrade H1 to case studies on the Discovery slice."

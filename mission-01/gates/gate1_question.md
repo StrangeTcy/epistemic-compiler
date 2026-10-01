@@ -56,6 +56,7 @@ To sign off on **Gate 1** and advance immediately to **Gate 2 (`mission-01/gates
 ---
 
 ## 4. Gate 1 Decision Log
-- **Decision**: `PENDING HUMAN SIGN-OFF` (`PASS` | `REFRAME` | `ABORT`)
-- **Signed By**: _Awaiting Human Research Director_
-- **Timestamp**: _Pending_
+- **Decision**: `REFRAME` (Approved to proceed to Gate 2 under `N03` + `N01` + `N02` framing, `C1`–`C8` and `K01`–`K05` constraints, 21-environment stratified Part A cohort [12 `REFERENCES` in Stratum A1 including 7 uninspected holdout environments + 9 `compile_only` `cat_theo` in Stratum A2], and Two-Track Part B [Deterministic Gauge-Holonomy including `Circular-AG` comparator + Bounded Empirical Sample])
+- **Signed By**: Human Research Director (`ask_user` Gate 1 sign-off)
+- **Timestamp**: `2026-10-01T16:22:00Z`
+
