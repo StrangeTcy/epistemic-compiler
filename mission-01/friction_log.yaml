@@ -197,6 +197,47 @@ friction_events:
       multi-field prior-work collision scan (`P04-PW`) should always run with
       mandatory web/arXiv retrieval prior to drafting Gate 1.
 
+  - id: F-007
+    timestamp: "2026-10-01T16:31:00Z"
+    stage: "decomposition"
+    work_package: "WP-01"
+    type: "wrong_assumption"
+    category: "specification"
+    trigger: >
+      While implementing the `WP-01` programmatic check against
+      `envs/registry.yaml` and `tools/instance_oracle_gate.py:REFERENCES` prior
+      to running any experiments, discovered two identifier drifts introduced
+      from condensed session memory: (1) the 12 `REFERENCES` keys in
+      `tools/instance_oracle_gate.py` are `rd_state_carry`, `rope`, `moco`,
+      `glyph`, `epistemic_games`, `regex_state_machine`, `sql_fixed_point`,
+      `css_state_machine`, `categorical_lenses`, `spreadsheet_dataflow`,
+      `template_interpreter`, and `ci_dependency_graph` (3 Discovery + 9 Holdout,
+      rather than placeholder names written before re-reading `instance_oracle_gate.py`);
+      and (2) `sheaf_schema_sync` and `sheaf_invariant_gluing` DO exist in
+      `envs/cat_theo/sheaf/` (meaning `P02-E` hallucinated 9 environment names,
+      not 11, and all 3 sheaf environments in `envs/cat_theo/sheaf/` are available
+      for Part A and Part B).
+    root_cause_guess: >
+      Relying on condensed conversation summaries for exact dictionary keys
+      instead of running a programmatic `registry.yaml` / `REFERENCES` parser
+      before drafting `spec/draft.yaml`.
+    resolution: >
+      Corrected `spec/draft.yaml`, `spec/approved.yaml`, `WP-01..WP-05`, and the
+      `F-005` note to bind directly to the programmatic keys of
+      `tools/instance_oracle_gate.py:REFERENCES` (3 Discovery + 9 uninspected
+      Holdout environments) and `envs/registry.yaml` (including `sheaf_schema_sync`
+      and `sheaf_invariant_gluing`), and updated the pre-registration Git SHA
+      prior to inspecting any Holdout environment or running any evaluation.
+    resolution_time_minutes: 2
+    recurrence_count: 1
+    automatable: "yes"
+    automation_sketch: >
+      Run `python3 -c "import yaml, tools.instance_oracle_gate ..."` as an
+      automated pre-commit hook on `spec/draft.yaml` so every environment ID in
+      `environment_cohort` is verified against `envs/registry.yaml` and
+      `tools/instance_oracle_gate.py:REFERENCES` before Gate 2 presentation.
+
+
 
 
 

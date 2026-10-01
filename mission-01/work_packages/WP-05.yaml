@@ -2,7 +2,7 @@ id: "WP-05"
 objective: >
   Implement and execute Part B Track B-Mech (`R03`, `M05`, `M06`, `FALS-03` /
   `FALS-03b`) across the 6 multi-chart environments (`rope`, `rd_state_carry`,
-  `rd_weight_tie`, `rd_adaptive_halting`, `compositional_optimizer`,
+  `sheaf_schema_sync`, `sheaf_invariant_gluing`, `compositional_optimizer`,
   `sheaf_physical_constraints`), comparing all 5 orchestration protocols
   (`Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG` [`L11`],
   and `Sheaf-Cocycle`) over the enumerated local gauge orbits $\prod_{i=1}^3 \mathcal{G}(U_i)$,

@@ -24,7 +24,7 @@ restriction_maps:
       `len(env_map) == 21 and all(v['judge_excluded'] is True and len(v['blackbox_sha256']) == 64 for v in env_map.values())`
   - overlap_id: "U_1_cap_U_3"
     target_package: "WP-03"
-    shared_contract_schema: "12 Stratum A1 REFERENCES environment entries (5 Discovery + 7 Holdout)"
+    shared_contract_schema: "12 Stratum A1 REFERENCES environment entries (3 Discovery + 9 Holdout)"
     invariant_assertion: "sum(1 for v in env_map.values() if v['stratum'].startswith('A1_')) == 12"
   - overlap_id: "U_1_cap_U_4"
     target_package: "WP-04"

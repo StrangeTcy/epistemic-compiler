@@ -1,7 +1,7 @@
 id: "WP-03"
 objective: >
   Execute the Part A Bidirectional Oracle Audit on Stratum A1 (all 12 `REFERENCES`
-  environments: 5 Discovery + 7 previously uninspected Holdout environments) across
+  environments: 3 Discovery + 9 previously uninspected Holdout environments) across
   black-box-derived candidate sections (`no_op`, `plausible_wrong`, `transcription`,
   `law_bypass_type0`, `law_bypass_type1`, `reference`, and >= 3 independent
   `reference_alt` variants on target environments), measuring `M01`..`M04` and
@@ -48,7 +48,7 @@ outputs:
   - "rl_eval_generator/tools/stratum_a1_audit.py"
   - "mission-01/results/part_a_stratum_a1.json"
 constraints:
-  - "For the 7 Holdout environments (`yaml_Anchor`, `numeric_Relu`, `optim_Step`, `quant_Calib`, `sched_Warmup`, `stream_Batch`, `lora_Scale`), `law_bypass_type1` and `reference_alt` candidates must be authored strictly from `prompt.md`, `visible_tests.py`, and patchable source files (`CTRL01`, `CTRL06`)."
+  - "For the 9 Holdout environments (`moco`, `glyph`, `epistemic_games`, `regex_state_machine`, `sql_fixed_point`, `css_state_machine`, `spreadsheet_dataflow`, `template_interpreter`, `ci_dependency_graph`), `law_bypass_type1` and `reference_alt` candidates must be authored strictly from `prompt.md`, `visible_tests.py`, and patchable source files (`CTRL01`, `CTRL06`)."
   - "Never pool Stratum A1 with Stratum A2 (`CTRL02`)."
 acceptance_tests: ["T01", "T05", "T06"]
 failure_modes:

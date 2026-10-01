@@ -123,7 +123,7 @@ hypotheses:
     statement: >
       (Multi-Chart Cycle Holonomy vs. Spanning-Tree & Circular-AG Contracts — N02):
       On multi-chart tasks with non-trivial gauge group $\mathcal{G}$ and closed
-      3-cycles (`rope`, `rd_state_carry`, `rd_weight_tie`, `rd_adaptive_halting`,
+      3-cycles (`rope`, `rd_state_carry`, `sheaf_schema_sync`, `sheaf_invariant_gluing`,
       `compositional_optimizer`, `sheaf_physical_constraints`), `Chart-Only`,
       `Pairwise-Tree`, and `Pairwise-UpToGauge` admit non-zero holonomy
       ($\operatorname{hol}(\gamma) \neq 0$, failure rate $\ge 20\%$), and explicit
@@ -164,28 +164,28 @@ environment_cohort:
     discovery_slice:
       - "rope"
       - "rd_state_carry"
-      - "rd_weight_tie"
-      - "rd_adaptive_halting"
       - "categorical_lenses"
     holdout_slice:
-      - "yaml_Anchor"
-      - "numeric_Relu"
-      - "optim_Step"
-      - "quant_Calib"
-      - "sched_Warmup"
-      - "stream_Batch"
-      - "lora_Scale"
+      - "moco"
+      - "glyph"
+      - "epistemic_games"
+      - "regex_state_machine"
+      - "sql_fixed_point"
+      - "css_state_machine"
+      - "spreadsheet_dataflow"
+      - "template_interpreter"
+      - "ci_dependency_graph"
   stratum_A2_compile_only:
-    description: "All 9 compile_only environments in envs/cat_theo/ (Reported strictly separately per CTRL02)"
+    description: "9 compile_only environments in envs/cat_theo/ including all 3 sheaf environments (Reported strictly separately per CTRL02)"
     environments:
       - "compositional_optimizer"
       - "functorial_augmentation"
       - "monadic_reward"
       - "neuro_symbolic_parser"
-      - "probabilistic_monad"
-      - "relational_join_adjunction"
       - "semiring_unification"
       - "sheaf_physical_constraints"
+      - "sheaf_schema_sync"
+      - "sheaf_invariant_gluing"
       - "stochastic_monad"
   part_B_multichart_tasks:
     - id: "rope"
@@ -193,17 +193,17 @@ environment_cohort:
       nerve_topology: "Hollow 3-cycle K_3 (U_12, U_23, U_31)"
       gauge_group: "Z_2 (interleaved vs split-half) x Z_2 (dim vs dim//2 inv_freq) x Z (chunk offset phase)"
     - id: "rd_state_carry"
-      charts: ["recurrent_block.py", "recurrent_Stack.py", "prelude_coda_Wrapper.py"]
-      nerve_topology: "3-chart recurrent depth pipeline with step-index & state-reset cycle"
-      gauge_group: "Z_2 (0-based vs 1-based step_idx) x Z_2 (carry vs zero-init state)"
-    - id: "rd_weight_tie"
-      charts: ["tied_Block.py", "adapter_Bank.py", "depth_Model.py"]
-      nerve_topology: "3-chart weight-tied recurrent core + step-indexed adapter bank"
-      gauge_group: "Z_2 (shared vs cloned core weights) x Z_k (step-adapter indexing)"
-    - id: "rd_adaptive_halting"
-      charts: ["halting_Gate.py", "ponder_Loss.py", "adaptive_Model.py"]
-      nerve_topology: "3-chart ACT halting probability accumulation & remainder distribution"
-      gauge_group: "Z_2 (inclusive vs exclusive halting threshold) x R_+ (ponder remainder normalization)"
+      charts: ["recurrent_block.py", "train.py", "visible_tests.py"]
+      nerve_topology: "3-chart recurrent depth pipeline with step-index & state-carry loop"
+      gauge_group: "Z_2 (0-based vs 1-based step_idx) x Z_2 (state carry vs x re-injection)"
+    - id: "sheaf_schema_sync"
+      charts: ["local_schema_U1", "local_schema_U2", "local_schema_U3"]
+      nerve_topology: "3-chart distributed schema overlap cycle in envs/cat_theo/sheaf/sheaf_schema_sync"
+      gauge_group: "Key/type isomorphism & restriction compatibility on pairwise overlaps"
+    - id: "sheaf_invariant_gluing"
+      charts: ["chart_1_section", "chart_2_section", "chart_3_section"]
+      nerve_topology: "3-chart boundary invariant gluing cycle in envs/cat_theo/sheaf/sheaf_invariant_gluing"
+      gauge_group: "Boundary phase / offset cocycle condition across overlapping charts"
     - id: "compositional_optimizer"
       charts: ["optimizer_step1", "optimizer_step2", "chained_update_composition"]
       nerve_topology: "Temporal 3-chart horizon cover ([0,1], [1,2], instance-isolation)"
@@ -359,7 +359,7 @@ controls:
     mitigates: "CF02 (compile_only Dilution)"
     specification: >
       Strict stratified reporting of Stratum A1 (12 `REFERENCES` environments, further
-      split into 5 Discovery + 7 uninspected Holdout environments) and Stratum A2
+      split into 3 Discovery + 9 uninspected Holdout environments) and Stratum A2
       (9 `compile_only` `cat_theo` environments). Never pool A1 and A2 into an
       unstratified headline percentage.
   - id: "CTRL03"
@@ -385,11 +385,12 @@ controls:
   - id: "CTRL06"
     mitigates: "CF06 (REFERENCES Curation Contamination)"
     specification: >
-      Evaluate all 7 previously uninspected `REFERENCES` environments (`yaml_Anchor`,
-      `numeric_Relu`, `optim_Step`, `quant_Calib`, `sched_Warmup`, `stream_Batch`,
-      `lora_Scale`) as an uncontaminated Holdout Slice alongside the 5 Discovery
-      `REFERENCES` environments, and validate every `reference_alt` with an independent
-      property-based truth oracle over >= 1,000 randomized inputs.
+      Evaluate all 9 previously uninspected `REFERENCES` environments (`moco`, `glyph`,
+      `epistemic_games`, `regex_state_machine`, `sql_fixed_point`, `css_state_machine`,
+      `spreadsheet_dataflow`, `template_interpreter`, `ci_dependency_graph`) as an
+      uncontaminated Holdout Slice alongside the 3 Discovery `REFERENCES` environments,
+      and validate every `reference_alt` with an independent property-based truth
+      oracle over >= 1,000 randomized inputs.
   - id: "CTRL07"
     mitigates: "CF07 (Constraint-Count Inflation)"
     specification: >
@@ -423,9 +424,10 @@ engineering_requirements:
       Implement the Multi-Chart Gluing & Holonomy Benchmark (`tools/multichart_gluing_benchmark.py`)
       supporting all 5 orchestration regimes (`Chart-Only`, `Pairwise-Tree`,
       `Pairwise-UpToGauge`, `Circular-AG`, `Sheaf-Cocycle`) across the 6 multi-chart
-      environments (`rope`, `rd_state_carry`, `rd_weight_tie`, `rd_adaptive_halting`,
-      `compositional_optimizer`, `sheaf_physical_constraints`), computing exact
-      cycle holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$ and edge sets $E_J, E_O$.
+      environments (`rope`, `rd_state_carry`, `sheaf_schema_sync`,
+      `sheaf_invariant_gluing`, `compositional_optimizer`, `sheaf_physical_constraints`),
+      computing exact cycle holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$ and
+      edge sets $E_J, E_O$.
   - id: "R04"
     description: >
       Implement the Solo-Chart Gauge Concentration & Constraint Parsimony Analyzer
@@ -527,7 +529,7 @@ falsification_plan:
       design: >
         Compare `Chart-Only`, `Pairwise-Tree`, `Pairwise-UpToGauge`, `Circular-AG` (`L11`),
         and `Sheaf-Cocycle` across all 6 multi-chart environments (`rope`, `rd_state_carry`,
-        `rd_weight_tie`, `rd_adaptive_halting`, `compositional_optimizer`,
+        `sheaf_schema_sync`, `sheaf_invariant_gluing`, `compositional_optimizer`,
         `sheaf_physical_constraints`), measuring both global gluing failure rates,
         integer holonomy $\operatorname{hol}(\gamma) \in \mathbb{Z}$, solo-chart gauge
         concentration $\hat{\kappa}_e$ (`H4`), and AST predicate/LOC parsimony (`CTRL07`).
@@ -560,12 +562,12 @@ claim_ceiling: >
   both `Pairwise-Tree` and `Circular-AG` on $\ge 2$ environments.
 
 cannot_justify:
-  - "Cannot claim mathematical novelty for sheaf theory, restriction maps, or Cech cohomology (`K02`, `L06`, `L07`), nor claim to be the first to propose sheaf cohomology for multi-agent AI/RL systems (`L08`: Schmid, April 2025, arXiv:2504.17700)."
-  - "Cannot pool Stratum A1 (`REFERENCES`) and Stratum A2 (`compile_only`) into a single unstratified headline percentage (`CTRL02`), nor conflate Type 0 lookup tables with Type I gluing bypasses (`P01-T-6`)."
-  - "Cannot claim that uniform combinatorial gauge-mixing failure rates ($1 - \prod_e (1/g_e)$) represent ecological multi-agent LLM failure rates (`CTRL04`); ecological rates are bounded by measured solo-chart gauge concentration $\hat{\kappa}_e$ (`H4`, `C8`)."
-  - "Cannot retain 'sheaf cohomology' or 'cocycle' in the paper title/abstract if `Sheaf-Cocycle` fails to beat `Pairwise-Tree` and `Circular-AG` (`L11`) by >= 5pp on >= 2 environments (`ABORT-03`, `C7`)."
-  - "Cannot claim `H2` (Type II valid-solution rejection) is systematic across the benchmark unless demonstrated across >= 3 independent `reference_alt` implementations on >= 5 environments (`CR08`, `FALS-02`)."
-  - "Cannot cite `SWE-ABS` without a resolvable primary arXiv/DOI identifier (`C6`)."
+  - 'Cannot claim mathematical novelty for sheaf theory, restriction maps, or Cech cohomology (`K02`, `L06`, `L07`), nor claim to be the first to propose sheaf cohomology for multi-agent AI/RL systems (`L08`: Schmid, April 2025, arXiv:2504.17700).'
+  - 'Cannot pool Stratum A1 (`REFERENCES`) and Stratum A2 (`compile_only`) into a single unstratified headline percentage (`CTRL02`), nor conflate Type 0 lookup tables with Type I gluing bypasses (`P01-T-6`).'
+  - 'Cannot claim that uniform combinatorial gauge-mixing failure rates ($1 - \prod_e (1/g_e)$) represent ecological multi-agent LLM failure rates (`CTRL04`); ecological rates are bounded by measured solo-chart gauge concentration $\hat{\kappa}_e$ (`H4`, `C8`).'
+  - 'Cannot retain "sheaf cohomology" or "cocycle" in the paper title/abstract if `Sheaf-Cocycle` fails to beat `Pairwise-Tree` and `Circular-AG` (`L11`) by >= 5pp on >= 2 environments (`ABORT-03`, `C7`).'
+  - 'Cannot claim `H2` (Type II valid-solution rejection) is systematic across the benchmark unless demonstrated across >= 3 independent `reference_alt` implementations on >= 5 environments (`CR08`, `FALS-02`).'
+  - 'Cannot cite `SWE-ABS` without a resolvable primary arXiv/DOI identifier (`C6`).'
 
 abort_conditions:
   - id: "ABORT-01"

@@ -96,13 +96,13 @@ precise_research_question: |
      gluing without requiring post-hoc orchestrator repair loops?
 
 why_it_might_be_true:
-  - "Combinatorial Gauge Divergence on Overlaps: If each chart $U_i$ admits $g \ge 2$ locally valid gauge choices (e.g., adjacent vs. split complex pairing in `rope.py`, 0-based vs. chunk-incremented offset in `cache.py`, pre- vs. post-append offset read in `attention.py`), independent local sections pass 100% of local chart tests on $U_i$ while succeeding globally with probability only $g^{-(k-1)}$."
-  - "Non-Trivial Čech 1-Cocycles ($\check{H}^1 \neq 0$): In cyclic 3-chart systems (e.g., circular foreign keys `users` $\to$ `addresses` $\to$ `transactions` $\to$ `users`, or 3 overlapping switches $S_1(A+C), S_2(A+B), S_3(B+C)$), sections can satisfy every local test on $U_i$ and even pairwise syntax checks on $U_i \cap U_j$, yet fail simultaneous 3-way global consistency."
+  - "Combinatorial Gauge Divergence on Overlaps: If each chart $U_i$ admits $g \\ge 2$ locally valid gauge choices (e.g., adjacent vs. split complex pairing in `rope.py`, 0-based vs. chunk-incremented offset in `cache.py`, pre- vs. post-append offset read in `attention.py`), independent local sections pass 100% of local chart tests on $U_i$ while succeeding globally with probability only $g^{-(k-1)}$."
+  - "Non-Trivial Čech 1-Cocycles ($\\check{H}^1 \\neq 0$): In cyclic 3-chart systems (e.g., circular foreign keys `users` $\\to$ `addresses` $\\to$ `transactions` $\\to$ `users`, or 3 overlapping switches $S_1(A+C), S_2(A+B), S_3(B+C)$), sections can satisfy every local test on $U_i$ and even pairwise syntax checks on $U_i \\cap U_j$, yet fail simultaneous 3-way global consistency."
   - "Chart-Restricted Judges: Existing `cat_theo` judges check equations on a single chart $U_1$ ($t=1$ step in `compositional_optimizer`, $T=1.0$ in `neuro_symbolic_parser`, unanchored `view` in `categorical_lenses`), making them blind to gluing failures across charts."
 
 what_would_surprise_us:
   - "Production judges (`judge.py`) in `rl_eval_generator` already reject >90% of Black-Box locally valid, globally broken (`law_bypass`) patches."
-  - "In multi-chart tasks (`rope` and multi-chart `sheaf` tasks), locally valid sections $s_i \in \mathcal{F}(U_i)$ produced without overlap restriction maps $\rho_{ij}$ spontaneously glue into a valid global section $s \in \mathcal{F}(X)$ $>80\%$ of the time."
+  - "In multi-chart tasks (`rope` and multi-chart `sheaf` tasks), locally valid sections $s_i \\in \\mathcal{F}(U_i)$ produced without overlap restriction maps $\\rho_{ij}$ spontaneously glue into a valid global section $s \\in \\mathcal{F}(X)$ $>80\\%$ of the time."
   - "Adding explicit Restriction-Map contracts (`restriction_maps` in `protocol.md`) does not reduce integration conflicts or gluing failures compared to standard prose task descriptions."
 
 candidate_hypotheses:
@@ -143,7 +143,7 @@ candidate_hypotheses:
 
 known_alternatives:
   - "Observed judge blind spots (`H1`) could be dismissed as unfinished `compile_only` environments unless demonstrated on BOTH already-certified `REFERENCES` environments (`categorical_lenses`, `rope`, `rd_state_carry`) and `compile_only` environments (`cat_theo/*`)."
-  - "Gluing failures in multi-chart tasks (`H3`) could be caused by simple syntax/import mismatches rather than semantic/cohomological gauge obstructions unless we control for syntactic interface compatibility (Condition B: identical function signatures and types on $U_i \cap U_j$)."
+  - "Gluing failures in multi-chart tasks (`H3`) could be caused by simple syntax/import mismatches rather than semantic/cohomological gauge obstructions unless we control for syntactic interface compatibility (Condition B: identical function signatures and types on $U_i \\cap U_j$)."
 
 possible_experiment: |
   Execute a two-part empirical study inside `rl_eval_generator`:
@@ -177,7 +177,7 @@ possible_experiment: |
 
 known_unknowns:
   - "What fraction of `law_bypass` sections arise strictly under Black-Box access (reading only `prompt.md` and `visible_tests.py`) vs. White-Box judge inspection?"
-  - "In how many multi-chart tasks can we construct a genuine **3-way $\check{H}^1$ cocycle obstruction** (where all 3 local sections $s_1, s_2, s_3$ are valid AND pairwise overlaps $(s_1,s_2)$ and $(s_2,s_3)$ or even all 3 local pairwise projections look compatible, yet no global section exists)?"
+  - "In how many multi-chart tasks can we construct a genuine **3-way $\\check{H}^1$ cocycle obstruction** (where all 3 local sections $s_1, s_2, s_3$ are valid AND pairwise overlaps $(s_1,s_2)$ and $(s_2,s_3)$ or even all 3 local pairwise projections look compatible, yet no global section exists)?"
   - "Does encoding `restriction_maps` in Mission 01's own work packages (`WP-01..WP-NN`) measurably eliminate `integration_conflict` events in `mission-01/friction_log.yaml`?"
 
 likely_confounds:
@@ -186,7 +186,7 @@ likely_confounds:
   - id: CF02
     description: "Compile-Only vs. Gated Selection Bias (testing only unvalidated `compile_only` environments)."
   - id: CF03
-    description: "Syntactic vs. Semantic Gluing Confusion (if local sections fail to glue merely because of a typo in a function name rather than a semantic gauge/restriction mismatch on $U_i \cap U_j$)."
+    description: "Syntactic vs. Semantic Gluing Confusion (if local sections fail to glue merely because of a typo in a function name rather than a semantic gauge/restriction mismatch on $U_i \\cap U_j$)."
   - id: CF04
     description: "Circular Auditor Definition (if `Grader B` is tailored post-hoc to the constructed `law_bypass` patches rather than derived from `prompt.md`'s mathematical laws)."
 
@@ -245,4 +245,4 @@ candidate_claim_ceiling:
     - "Cannot claim live multi-model swarm failure rates beyond the solver/agent protocols actually executed in Mission 01."
 
 possible_future_research_on_failure:
-  - "If H1 and H3 hold, Mission 02 runs live multi-model Arena swarms vs. single frontier models vs. Restriction-Map Orchestration on the newly certified multi-chart sheaf benchmark suite, measuring token cost, $\kappa$, and global solve rate."
+  - "If H1 and H3 hold, Mission 02 runs live multi-model Arena swarms vs. single frontier models vs. Restriction-Map Orchestration on the newly certified multi-chart sheaf benchmark suite, measuring token cost, $\\kappa$, and global solve rate."
