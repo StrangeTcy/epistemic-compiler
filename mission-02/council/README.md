@@ -38,6 +38,10 @@ f668ecf81a355a52c73daae656e88605fb9f5777d3ec1292b31e0c9ebcccc6f0  prompts/01_the
 2. The `game`-family candidate cards are authored from the graph leads and the primary literature, and frozen (card versions and content hashes in `mission-02/freeze/`) in a later commit, **before any Council response is stored in this repository**. The Council does not see the cards in this round, so the instance-family design cannot be tuned to them.
 3. Responses are then stored unedited, and the cross-critique and Gate 1 follow.
 
+## Material received after these prompts were written
+
+On 2026-10-02 the user supplied an earlier dialogue and Arena round on the same topic. The compiler had not seen it when it wrote the seed, these prompts or the five `game` cards, and the prompts do not contain it. It proposes a different instance family from the one in the seed. Whether and how to bring it into the Council round is an open decision, recorded with a verification table in `../sources/2026-09-29_arena_round_note.md`.
+
 ## What this round can and cannot tell us
 
 It collects the opinions of a few anonymous models, each told to attack the framing first. The prompts were written to avoid the leading framing that Mission 01's review found, and every role is asked to flag wording that still leads, but nothing here proves they do not. A Council response is a proposal or a critique, not evidence. Where a role cites literature without having read it, it is asked to say so, and the Prior-Work Killer is asked to verify the seed's leads and audit the evidence pack.

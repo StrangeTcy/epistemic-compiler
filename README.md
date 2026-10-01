@@ -48,6 +48,7 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 │   ├── seed.yaml               # S02: higher-order epistemic-game instances and a registered strategy-pack comparison (kickoff)
 │   ├── council/                # Round-1 prompts for the four roles and run instructions; no responses collected yet
 │   ├── context/                # Evidence digest and retrieval manifest
+│   ├── sources/                # Notes on user-supplied background material (unverified claims flagged)
 │   └── freeze/                 # Hashes of the frozen game-family cards and features
 └── mission-01/
     ├── seed.yaml               # Historical pre-registration seed; inaccurate statements are documented in REV-01
