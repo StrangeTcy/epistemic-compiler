@@ -1,0 +1,219 @@
+seed_id: S03
+title: "Does matching a transformation strategy to a task's structure matter? A matched/mismatched strategy-card comparison on two hardened task families"
+
+repo_context: |
+  Written 2026-10-02 by a research-director pass over both repositories. This is a NEW proposal. Mission 01
+  is frozen and is not reopened. `mission-02/` on this branch is a different, unrun proposal (design of an
+  epistemic-games instance family); this seed does not depend on it.
+
+  What exists, checked against the files on 2026-10-02:
+  - Strategy IR v0.2 draft: 13 candidate cards (all agent-proposed and unreviewed), a 25-feature vocabulary,
+    `scripts/validate_ir.py` (structure only) and `scripts/retrieve_strategies.py` (deterministic matching).
+    The empirical gate in `research_protocol/strategy_ir.md` section 10 has never been run. Nothing shows
+    that any card helps.
+  - `rl_eval_generator` (main, e1b038a): 34 registry entries (its README and Mission 01's seed say 35;
+    their own 12 + 22 adds to 34), of which 12 have a hardened behavioural reference judge. `arena.py run` plays one agent episode per call. The agent must answer with one JSON action and
+    "not explain". The system prompt is a fixed module constant. History is trimmed from the oldest message
+    after the system prompt once it exceeds 28,000 characters; each observation is clipped at 12,000.
+    Provider token usage is logged per response. The host builds the submitted patch only from allowlisted
+    files, so scratch files do not invalidate a run. `tools/instance_oracle_gate.py` validates each instance
+    with no-op, plausible-wrong, transcription and reference variants and fingerprints it, and the campaign
+    refuses an instance whose actual reset differs from the fingerprint.
+  - The Atria campaign settings: provider atria, model Atria-Dawn-Preview, temperature 1.0, top_p 0.95, 20
+    steps, 8192 tokens, reasoning mode "provider_default_uncontrolled", concurrency 1.
+  - No real model results are committed in `rl_eval_generator`: `runs/` holds five-case rehearsal smoke runs.
+    Baseline pass rates on any environment are unknown.
+  - Mission 01's judge audit of the candidate environments (bounded evidence: fixed seed, hand-built bypass
+    variants, oracle not independently adjudicated): for moco, regex_state_machine, sql_fixed_point,
+    css_state_machine, spreadsheet_dataflow and template_interpreter, 0 of 5 designated bypass variants were
+    accepted and no reference alternative was rejected. ci_dependency_graph accepted a bypass (Type 0).
+
+  What the candidate environments withhold from the agent (read from their prompts):
+  - moco: states the symptom (loss decreases, linear probe near chance) and that "at least two bugs" exist
+    across two files. It does not state the causes. Axes add red herrings, a symptom mask and weak visible tests.
+  - The five weird-machine environments: state the target computation and the substrate outright (for example
+    "implement one step of Rule 110 using regular-expression substitutions"). The visible test is minimal; the
+    hidden judge is randomized and broader (the SQL prompt itself lists cycles, self-loops and disconnected
+    components as requirements that the visible test does not exercise).
+
+intuition: |
+  Suspicions to be attacked, not findings.
+  1. A strong researcher's repertoire may matter because it lets them pick the transformation that fits the
+     structure of the problem in front of them. If so, a card should help where its trigger holds and not
+     where it does not.
+  2. Much of what looks like strategy may be generic care. Any structured, relevant-sounding advice might
+     help, or hurt through added context and spent steps.
+  3. In these environments the bottlenecks differ. In ML debugging the cause is hidden and red herrings
+     exist (diagnosis). In the weird-machine tasks the target is stated and the visible tests are minimal
+     (untested generalization). Different transformations may address them.
+
+precise_research_question: |
+  For a fixed agent runtime, on hardened environments whose structure was characterized blind, does injecting
+  the strategy card selected by trigger match raise strict pass rate more than injecting a card whose trigger
+  does not hold, and more than length-matched generic working-method advice or nothing?
+
+  Primary estimand. S = 1/2 [ (own - other) in family 1 + (own - other) in family 2 ], differences paired by
+  instance. Two frozen cards, `elimination-discriminating-test-ordering` (E) and
+  `counterexample-minimal-failure` (C), are each the "own" card for one family and the "other" card for the
+  other. Card quality and family susceptibility therefore cancel in S.
+
+  Prerequisite (Stage 0, no solver spend). Can independent blind characterizers apply the feature vocabulary
+  reliably enough that "own" and "other" mean something?
+
+why_it_might_be_true:
+  - "A diagnosis-hidden task rewards listing competing causes and running a discriminating diagnostic before patching; patching the first plausible cause is the failure that moco's red herrings and symptom mask are built to induce."
+  - "Where the visible test is minimal and the hidden test is broader, an agent that stops when the visible test passes can fail the hidden one; a deliberate search for violating inputs targets exactly that gap."
+  - "The two cards are domain-neutral and were written on 2026-10-01 before these task prompts were read, so a benefit would not be a leaked domain hint."
+  - "moco varies trigger-relevant structure by construction (distractors, symptom_mask, visible_tests axes), so a dose-response prediction is testable."
+
+what_would_surprise_us:
+  - "Own, other and generic arms are indistinguishable (the cards add nothing beyond added text)."
+  - "The direct arm is at floor or ceiling in either family."
+  - "Agent behaviour does not change when a card is present (no uptake)."
+  - "A deliberate partial domain hint does not raise the pass rate (the apparatus cannot detect an effect)."
+  - "Both blind characterizers match both cards to both families (the cards do not discriminate)."
+  - "The other-family card helps as much as the own card."
+  - "The own card does worse than no card."
+
+candidate_hypotheses:
+  - id: H0
+    name: "Null / artifactual: no effect beyond added text"
+    statement: >-
+      Pass rates under the own-card, other-card and generic arms are indistinguishable once window pressure and
+      run order are accounted for, so S is zero and any difference from the direct arm is produced by added
+      text and a workflow nudge, not by the card's structural content.
+  - id: H1
+    name: "Trigger-specific transformation value"
+    statement: >-
+      S is at least the margin fixed at Gate 2 (proposed 0.15), and the own-card arm beats the generic arm: a
+      card helps where its trigger holds more than where it does not, and more than content-neutral advice.
+  - id: H2
+    name: "Generic structured advice"
+    statement: >-
+      Own and other cards both beat generic advice and direct solving by a similar amount, so S is near zero.
+      Structured content helps, but selection by trigger adds nothing.
+  - id: H3
+    name: "Cost exceeds benefit"
+    statement: >-
+      The own-card arm does worse than direct solving because the added block consumes steps (budget 20) and
+      history window (28,000 characters) that the card's advice does not repay.
+  - id: H4
+    name: "No behavioural uptake"
+    statement: >-
+      The agent's observable behaviour does not change with the card (pre-edit diagnostics, self-authored
+      checks), so no outcome difference can be attributed to the transformation. A null under H4 says
+      nothing about strategy value.
+
+known_alternatives:
+  - "Test one card against controls with no crossover. Cheaper, but cannot separate relevant advice from structural matching."
+  - "Let the agent choose from a menu of all cards (self-selection) and compare with trigger-matched selection."
+  - "Build a purpose-made synthetic family with planted structure. Cleaner control, but not the existing tasks."
+  - "Run Stage 0 alone as the whole mission: characterization reliability is the cheapest test of the IR's weakest link."
+  - "Re-run Mission 01's boundary-contract comparison. Excluded by instruction."
+
+possible_experiment: |
+  Initial sketch. The Council may restructure it; the frozen margin, sample size and analysis are fixed at Gate 2.
+
+  Stage 0 (characterization, no solver spend). For the 12 hardened environments, two independent characterizers
+  who see only the feature vocabulary and each environment's agent-visible text (rendered prompt, file list,
+  tool list, visible test) write problem states with evidence. They never see the cards, the judge, the axes or
+  results. A feature counts as present or absent only if both agree; otherwise it is unknown. The matcher runs on
+  the consensus. "Own" means matched; "other" means blocked by a consensus absence. Gate: ABORT-01.
+
+  Stage 1 (pilot, disjoint seeds, about 12 instances per family). Arms A direct, B generic, C own, D other, and
+  P (partial domain hint, pilot only). Purpose: baseline pass rates (headroom), behavioural uptake, sensitivity
+  of the apparatus, calls and time per episode, variance for sizing. Gates: ABORT-03, ABORT-04, ABORT-05.
+
+  Stage 2 (registered comparison). Arms A to D. Family 1 is moco. Family 2 is the weird-machine environments
+  that the Stage 0 consensus assigns to C. About 100 instance-runs per arm per family (power in DESIGN.md).
+  Each instance is played under all four arms in random order; the arm text is appended to the system prompt;
+  nothing else differs. Outcome: strict judge pass. No interim efficacy analysis.
+
+  Arms, exactly. A: unchanged system prompt. B: system prompt plus a content-neutral working-method block of
+  the same length and wrapper as a card block. C: plus the card block of the own card. D: plus the card block
+  of the other card. Card blocks are rendered by one deterministic function from the frozen card files.
+
+known_unknowns:
+  - "Baseline pass rates for Atria-Dawn-Preview on moco and the weird-machine tasks."
+  - "Whether the model changes behaviour in response to a card block at all."
+  - "What blind characterizers will say; the compiler's own non-blind expectation is recorded in candidate_measurements.yaml."
+  - "Whether the failures of the direct arm are strategy-addressable or are substrate-knowledge failures."
+  - "Provider calls and wall time per episode (the sizing assumes about 15 calls)."
+  - "Whether the provider reports reasoning tokens."
+  - "Whether a second model is available for replication."
+  - "The share of sampled vectors that pass the instance-oracle gate."
+
+likely_confounds:
+  - id: CF01
+    description: "Added text, length and verbosity of the block."
+  - id: CF02
+    description: "Generic structured advice ('be careful', 'test more') rather than a specific transformation."
+  - id: CF03
+    description: "Workflow nudges that change step usage inside the 20-step budget."
+  - id: CF04
+    description: "One card is simply better advice than the other."
+  - id: CF05
+    description: "History-window pressure: the block consumes part of the 28,000-character window, which only the direct arm does not pay."
+  - id: CF06
+    description: "Provider and time drift, rate limits, ordering of arms."
+  - id: CF07
+    description: "Sampling variance at temperature 1.0 with uncontrolled reasoning mode."
+  - id: CF08
+    description: "Characterization circularity or unreliability: assignment chosen by the experimenter, or a vague vocabulary."
+  - id: CF09
+    description: "Ground-truth defects: judge or instance faults, including the known gate-blocked vectors."
+  - id: CF10
+    description: "Insensitivity: floor or ceiling, or a model that cannot use advice."
+  - id: CF11
+    description: "Domain leakage: card or generic text carrying environment-specific hints, so 'relevance' masquerades as 'structure'."
+  - id: CF12
+    description: "Semantic overlap of the two cards (both amount to 'work more carefully'), which shrinks S and makes a null ambiguous."
+  - id: CF13
+    description: "One model, one provider mode, one wording per card."
+  - id: CF14
+    description: "Forking paths: the pair of cards, families, margin or metric chosen after seeing data. The pair and families were chosen by the compiler after reading the prompts, which is a disclosed degree of freedom."
+
+relevant_prior_work:
+  # Existence and abstracts were seen via web search on 2026-10-02; full texts were NOT read.
+  - id: L01
+    citation: "Zhou et al., 'Self-Discover: Large Language Models Self-Compose Reasoning Structures' (arXiv:2402.03620)"
+    relationship: "The model composes task-specific reasoning structures from atomic modules and is reported to outperform some inference-heavy baselines. Differs in who selects (the model, not a trigger matcher). Whether that difference matters is what the crossover tests."
+  - id: L02
+    citation: "Yang et al., 'Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models' (arXiv:2406.04271)"
+    relationship: "Retrieves high-level thought templates from a meta-buffer by similarity to a distilled problem. Close collision with retrieval of procedural knowledge; it does not report a matched-versus-mismatched template control (unchecked)."
+  - id: L03
+    citation: "Duan et al., 'GTBench' (arXiv:2402.12348)"
+    relationship: "Reports that advanced reasoning methods such as CoT and ToT do not always help on game-theoretic tasks. A reminder that prompt-level methods can fail to help or hurt."
+  - id: L04
+    citation: "Pezeshkpour and Hruschka (arXiv:2308.11483); Zheng et al., 'Large Language Models Are Not Robust Multiple Choice Selectors' (ICLR 2024)"
+    relationship: "Outcomes shift with prompt format and option order irrespective of content. Motivates CF01 and the length-matched, same-wrapper controls."
+  - id: L05
+    citation: "Agent skill-library and experience-memory systems (leads only, none checked)"
+    relationship: "The Prior-Work Killer is asked to find the closest work that tests whether a retrieved procedure helps more than a mismatched one."
+  - id: L06
+    citation: "mission-01/reviews/REV-01_methodological_review.md; mission-01/gates/gate3_execution.md"
+    relationship: "Internal. Source of the lessons carried into this design (no number without a raw artifact, no oracle that shares code with its subject, incomplete real-time logs) and of the bounded judge-audit evidence cited above."
+
+candidate_claim_ceiling:
+  max_justifiable_claim: |
+    For the Atria-Dawn-Preview runtime at the campaign's settings, on moco instances and on the weird-machine
+    environments assigned by the Stage 0 consensus, sampled by the registered rule, with the two frozen card
+    texts: the paired difference in strict pass rate between the own-card and other-card arms (S), the
+    own-card arm against the generic and direct arms, and the measured behavioural uptake, each with its
+    interval. Nothing else.
+  cannot_justify:
+    - "That any card is validated or should be promoted. Promotion is human-gated and one comparison does not meet the evidence policy in strategy_ir.md section 7."
+    - "That trigger-matched retrieval works in general, on other models, tasks, cards or wordings."
+    - "That the 12-family ontology or the feature vocabulary is right. Stage 0 reports usability on 12 environments only."
+    - "Anything about the agent's internal reasoning. Uptake is behavioural, never self-reported."
+    - "That the cards beat a domain-specific hint. The pilot hint arm is a sensitivity check, not a comparator."
+    - "That effects smaller than the registered margin are absent. At the planned size a null rules out only effects of at least the margin."
+    - "Anything about sheaf gluing, boundary contracts, agent coordination, or the epistemic-games family."
+
+possible_future_research_on_failure:
+  - "If Stage 0 fails (ABORT-01): the vocabulary or the characterization protocol is the finding. Revise the vocabulary against the disagreements and re-register; do not spend solver budget."
+  - "If the apparatus is insensitive (ABORT-03, ABORT-04): choose other families by the same rule, or make the tasks harder; do not report 'no effect'."
+  - "If there is no uptake (ABORT-05): test whether a stronger instruction format changes behaviour before testing value."
+  - "If H2 holds: drop the retrieval claim; the library is a set of structured prompts."
+  - "If the null is informative: stop extension as strategy_ir.md section 10 requires; cards stay candidate or are retired."
+  - "If H1 holds: replicate on a second model and a third family (rope is reserved) before any card leaves candidate."

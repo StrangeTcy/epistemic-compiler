@@ -1,0 +1,341 @@
+{
+ "assumptions": {
+  "deltas_examined": [
+   0.1,
+   0.15
+  ],
+  "family_2_cells": 45,
+  "tau_card_by_cell_interaction_sd": 0.08,
+  "tau_cell_probability_sd": 0.2,
+  "test": "normal approximation, cluster-robust standard error, two-sided 95%"
+ },
+ "n_sims_per_config": 2000,
+ "reading": {
+  "p_detect": "probability the 95% interval for S excludes zero on the positive side",
+  "p_rule_out_<delta>": "probability the 95% interval's upper end falls below delta, i.e. effects of at least delta are ruled out (an informative null)"
+ },
+ "results": [
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.029,
+   "p_rule_out_0.10": 0.326,
+   "p_rule_out_0.15": 0.616,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.099,
+   "p_rule_out_0.10": 0.13,
+   "p_rule_out_0.15": 0.347,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.286,
+   "p_rule_out_0.10": 0.03,
+   "p_rule_out_0.15": 0.131,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.539,
+   "p_rule_out_0.10": 0.007,
+   "p_rule_out_0.15": 0.038,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.034,
+   "p_rule_out_0.10": 0.425,
+   "p_rule_out_0.15": 0.752,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.129,
+   "p_rule_out_0.10": 0.164,
+   "p_rule_out_0.15": 0.433,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.383,
+   "p_rule_out_0.10": 0.041,
+   "p_rule_out_0.15": 0.169,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.679,
+   "p_rule_out_0.10": 0.005,
+   "p_rule_out_0.15": 0.047,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.029,
+   "p_rule_out_0.10": 0.639,
+   "p_rule_out_0.15": 0.935,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.184,
+   "p_rule_out_0.10": 0.227,
+   "p_rule_out_0.15": 0.672,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.585,
+   "p_rule_out_0.10": 0.031,
+   "p_rule_out_0.15": 0.257,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.888,
+   "p_rule_out_0.10": 0.003,
+   "p_rule_out_0.15": 0.049,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.023,
+   "p_rule_out_0.10": 0.811,
+   "p_rule_out_0.15": 0.987,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.248,
+   "p_rule_out_0.10": 0.317,
+   "p_rule_out_0.15": 0.836,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.74,
+   "p_rule_out_0.10": 0.043,
+   "p_rule_out_0.15": 0.357,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.974,
+   "p_rule_out_0.10": 0.001,
+   "p_rule_out_0.15": 0.051,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.025,
+   "p_rule_out_0.10": 0.908,
+   "p_rule_out_0.15": 0.999,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.328,
+   "p_rule_out_0.10": 0.403,
+   "p_rule_out_0.15": 0.918,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.838,
+   "p_rule_out_0.10": 0.041,
+   "p_rule_out_0.15": 0.473,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.3,
+   "p_detect": 0.994,
+   "p_rule_out_0.10": 0.002,
+   "p_rule_out_0.15": 0.059,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.022,
+   "p_rule_out_0.10": 0.275,
+   "p_rule_out_0.15": 0.536,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.1,
+   "p_rule_out_0.10": 0.107,
+   "p_rule_out_0.15": 0.296,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.27,
+   "p_rule_out_0.10": 0.026,
+   "p_rule_out_0.15": 0.113,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.518,
+   "p_rule_out_0.10": 0.006,
+   "p_rule_out_0.15": 0.03,
+   "runs_per_arm_per_family": 40,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.029,
+   "p_rule_out_0.10": 0.371,
+   "p_rule_out_0.15": 0.687,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.133,
+   "p_rule_out_0.10": 0.127,
+   "p_rule_out_0.15": 0.377,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.357,
+   "p_rule_out_0.10": 0.028,
+   "p_rule_out_0.15": 0.134,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.684,
+   "p_rule_out_0.10": 0.002,
+   "p_rule_out_0.15": 0.028,
+   "runs_per_arm_per_family": 60,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.034,
+   "p_rule_out_0.10": 0.558,
+   "p_rule_out_0.15": 0.888,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.188,
+   "p_rule_out_0.10": 0.2,
+   "p_rule_out_0.15": 0.593,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.565,
+   "p_rule_out_0.10": 0.026,
+   "p_rule_out_0.15": 0.188,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.878,
+   "p_rule_out_0.10": 0.001,
+   "p_rule_out_0.15": 0.03,
+   "runs_per_arm_per_family": 100,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.026,
+   "p_rule_out_0.10": 0.73,
+   "p_rule_out_0.15": 0.974,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.237,
+   "p_rule_out_0.10": 0.26,
+   "p_rule_out_0.15": 0.763,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.742,
+   "p_rule_out_0.10": 0.026,
+   "p_rule_out_0.15": 0.263,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.961,
+   "p_rule_out_0.10": 0.002,
+   "p_rule_out_0.15": 0.03,
+   "runs_per_arm_per_family": 150,
+   "true_S": 0.15
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.022,
+   "p_rule_out_0.10": 0.854,
+   "p_rule_out_0.15": 0.995,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.0
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.332,
+   "p_rule_out_0.10": 0.32,
+   "p_rule_out_0.15": 0.855,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.05
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.838,
+   "p_rule_out_0.10": 0.029,
+   "p_rule_out_0.15": 0.359,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.1
+  },
+  {
+   "baseline_pass_rate": 0.5,
+   "p_detect": 0.993,
+   "p_rule_out_0.10": 0.001,
+   "p_rule_out_0.15": 0.041,
+   "runs_per_arm_per_family": 200,
+   "true_S": 0.15
+  }
+ ],
+ "script": "mission-03/analysis/power_simulation.py",
+ "seed": 20261002
+}

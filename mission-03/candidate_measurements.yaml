@@ -1,0 +1,201 @@
+# Candidate measurement and decision table for Mission 03 (seed S03).
+#
+# STATUS: candidate, written before any Council round. It is a proposal for Gates 1 and 2 to attack, not a
+# locked spec. The margin, the sample size and the analysis script are fixed at Gate 2, before any Stage 2
+# episode exists. Nothing has been run. No posterior-shaped numbers appear: REV-01 section 6 showed why
+# invented likelihoods mislead.
+
+status: candidate_pre_council
+seed: S03
+frozen_inputs_required_before_stage_2:
+  - "the two card files (id, version, sha256) and the rendered arm texts (sha256)"
+  - "the characterization consensus manifest from Stage 0"
+  - "the instance sampling rule, the sampled instance list with oracle-gate results and fingerprints"
+  - "the analysis script (sha256), the margin, the sample size"
+
+compiler_expectation_non_blind:
+  note: >-
+    Recorded before Stage 0 so that the blind outcome can be compared with it. The compiler has read the task
+    prompts and the cards, so this is an expectation, not a measurement. If blind characterization disagrees,
+    the registered consensus rule governs, and the disagreement is reported as a finding about the vocabulary.
+  moco: "E matched (competing causes, cheap diagnostics available); C blocked or unknown"
+  weird_machines: "C matched if characterizers treat the agent's artifact as a claim over a searchable input space; E blocked (the target is stated, nothing competes)"
+  other_hardened_environments: "no card matched on most; epistemic_games matches the game family only; rope matches E and the interface cards"
+
+margins_and_sizing:
+  margin_delta: 0.15
+  margin_status: "proposed; a human decision at Gate 2. The smallest effect that would justify extending the library."
+  proposed_runs_per_arm_per_family: 100
+  budget_limited_fallback: 60
+  source_of_numbers: "mission-03/analysis/power_table.json (reproducible; see power_simulation.py for every assumption)"
+  at_100_runs: "true S = 0.15 detected with probability about 0.88; true S = 0.10 about 0.57-0.59; if S = 0, effects of at least 0.15 ruled out with probability about 0.89-0.94"
+  at_60_runs: "true S = 0.15 detected about 0.68; true S = 0.10 about 0.36-0.38; effects of at least 0.15 ruled out under S = 0 about 0.69-0.75"
+  at_200_runs: "true S = 0.10 detected about 0.84"
+  consequence: >-
+    A binary outcome cannot reliably detect a structure-specific effect smaller than about 12-15 points at an
+    affordable size. A null at 100 runs does not exclude an effect of 5-10 points. The pilot may reveal that the
+    graded judge score has lower paired variance than pass/fail; if so, the primary metric may be switched once,
+    by a rule fixed at Gate 2, using pilot data that never enter the Stage 2 analysis.
+  estimated_episodes: "pilot about 120 (2 families x 12 instances x 5 arms); Stage 2 about 800 (2 x 100 x 4); calls per episode assumed about 15 and measured in the pilot"
+
+measurements:
+  - id: M01
+    name: "Strict pass"
+    definition: "Judge verdict PASS (score >= 0.85 and the anti-gaming check passed) in the final submission of an episode. A run with no submission, an API failure after retries, or a controller error counts as a failure and is never dropped."
+    role: primary
+    source: "episode result written by the existing runner"
+  - id: M02
+    name: "Judge score"
+    definition: "The judge's continuous score (raw accuracy or check fraction) for the same submission."
+    role: secondary; candidate replacement for M01 only under the Gate 2 rule above
+  - id: M03
+    name: "Judge failure mode"
+    definition: "The judge's failure_mode label. Coarse: most model failures end as `underfit`. `overfit_visible_tests` means the anti-gaming check failed, not 'passed visible, failed hidden'."
+    role: secondary
+  - id: M04
+    name: "Trace-derived failure class"
+    definition: >-
+      Rule-based, from the episode trace, no human grading: no_submit; step_budget_exhausted; invalid_action_loop
+      (three or more consecutive invalid actions); visible_pass_hidden_fail (the last visible-test run printed
+      a pass and the final verdict is FAIL); edit_before_any_diagnostic (first write or patch precedes any
+      read-only action); off_reference_edit (the patch changes only files the reference patch does not).
+    role: secondary; the first mechanism-level evidence
+  - id: M05
+    name: "Behavioural uptake"
+    definition: >-
+      Per episode, from the trace only. Elimination: count of read-only diagnostic actions and of distinct
+      diagnostic commands before the first write or patch, and the step index of the first write. Counterexample:
+      whether the agent ran a self-authored check before submitting (a shell command containing an enumeration
+      or loop construct, or a scratch script outside the allowlisted files). Generic: visible-test runs after the
+      last edit. Never self-reported.
+    role: gate (ABORT-05) and mediation evidence (FALS-03)
+  - id: M06
+    name: "Cost"
+    definition: "Provider input and output tokens from logged usage (and reasoning tokens if reported), provider calls, steps used, retries, wall seconds, and window pressure (replay of the runner's history trimming over the trace)."
+    role: secondary; also the covariate for CF03 and CF05
+  - id: M07
+    name: "Characterization reliability"
+    definition: "Cohen's kappa between the two blind characterizers on each feature the two cards use; agreement of the matched/blocked assignment per environment."
+    role: gate (ABORT-01)
+  - id: M08
+    name: "Instance validity"
+    definition: "Share of sampled vectors that pass the instance-oracle gate; reset fingerprint equality at episode start."
+    role: gate (ABORT-02)
+  - id: M09
+    name: "Apparatus sensitivity"
+    definition: "Pilot pass-rate difference between the partial-hint arm P and the direct arm A, per family."
+    role: gate (ABORT-04)
+  - id: M10
+    name: "Moderator: trigger intensity"
+    definition: "S and Own - Other within moco, by the distractors and symptom_mask levels of the sampled vector."
+    role: pre-registered sign prediction (the own-card benefit does not decrease with either level); exploratory
+
+controls:
+  - {id: CTRL01, name: "Direct arm A", rules_out: [CF10], note: "Unchanged system prompt. Also supplies baseline rates for the headroom gate."}
+  - {id: CTRL02, name: "Generic length-matched arm B", rules_out: [CF01, CF02, CF03], note: "Same wrapper and length band as a card block (within 10% of the mean of the two card blocks), content-neutral working-method text: no hypotheses, no input search."}
+  - {id: CTRL03, name: "Other-card arm D", rules_out: [CF01, CF04], note: "A real card, same wrapper and length band, whose trigger the consensus declares absent."}
+  - {id: CTRL04, name: "Symmetric crossover", rules_out: [CF04], note: "Each card is own once and other once, so card quality and family susceptibility cancel in S."}
+  - {id: CTRL05, name: "Pairing and randomization", rules_out: [CF06, CF07], note: "Every instance runs under all four arms back to back in a seeded random order; instances are interleaved across the run."}
+  - {id: CTRL06, name: "System-prompt placement and window-pressure covariate", rules_out: [CF05], note: "The block lives in the system prompt (a message in the history would be trimmed away). Window pressure is recorded and used as a covariate."}
+  - {id: CTRL07, name: "Blind characterization with a pre-registered assignment rule", rules_out: [CF08], note: "Characterizers never see the cards, the judge, the axes or results; a feature is present or absent only if both agree."}
+  - {id: CTRL08, name: "Instance-oracle gate and fingerprint", rules_out: [CF09], note: "No instance is played unless the gate passed and the actual reset matches the fingerprint."}
+  - {id: CTRL09, name: "Positive-control hint arm P (pilot only)", rules_out: [CF10], note: "A true, partial, domain-specific hint. If it does not move the pass rate the apparatus cannot see effects."}
+  - {id: CTRL10, name: "Leak audit", rules_out: [CF11], note: "Lexical overlap check of card, generic and wrapper text against task text and judge; no environment-specific content."}
+  - {id: CTRL11, name: "Freeze before data", rules_out: [CF14], note: "Cards, arm texts, assignment, instance list, analysis script and margin are hashed before Stage 2; pilot data are excluded from Stage 2."}
+
+abort_conditions:
+  - id: ABORT-01
+    stage: 0
+    condition: "Kappa below 0.6 on any trigger feature used by E or C, or no consensus own/other assignment for moco, or for fewer than 3 of the 5 weird-machine environments."
+    consequence: "Stop. The characterization step is not usable on these tasks; the disagreements are the finding. No solver budget is spent."
+  - id: ABORT-02
+    stage: 1
+    condition: "Fewer than 80% of sampled vectors pass the instance-oracle gate in a family, or any reset fingerprint mismatch."
+    consequence: "Resample once by the same rule; if it persists, stop: the ground truth is not trustworthy enough."
+  - id: ABORT-03
+    stage: 1
+    condition: "Direct-arm pass rate outside [0.20, 0.80] in a family (at least 24 pilot runs)."
+    consequence: "Re-select that family by the same rule or stop. The result would be uninformative, not negative."
+  - id: ABORT-04
+    stage: 1
+    condition: "Partial-hint arm P exceeds the direct arm A by less than 0.15 in a family."
+    consequence: "Stop. The apparatus cannot detect an effect there."
+  - id: ABORT-05
+    stage: 1
+    condition: "Own-card uptake marker (M05) exceeds the direct arm's by less than 15 points or 1.5 times in a family."
+    consequence: "Stop. The agent does not change behaviour with the card, so a null would say nothing about strategy value (H4)."
+  - id: ABORT-06
+    stage: 2
+    condition: "Provider call ceiling reached."
+    consequence: "Pause without an interim efficacy analysis; report the partial run as partial."
+
+analysis_plan:
+  primary: >-
+    S with a 95% cluster bootstrap interval (10,000 resamples, fixed seed). Clusters: the instance for moco;
+    the agent-visible (environment, vector) cell for the weird machines, because their prompts do not change
+    with the seed. Differences are paired within instance. Strict pass is the outcome.
+  secondary: >-
+    Own - Generic, Own - Direct, Generic - Direct, Other - Direct, per family and pooled, with the same
+    intervals; M02 versions; M04 failure-class shares by arm; M06 cost by arm. Reported as estimates, with
+    no multiplicity adjustment and no claim from any single one.
+  excluded_from_analysis: "Nothing is excluded after the fact. Runs are dropped only by the rules above (gate failures before play)."
+  sensitivity: >-
+    Re-estimate S adjusting for window pressure and token use (CF03, CF05); re-estimate dropping each
+    weird-machine environment (FALS-02).
+
+decision_regimes:
+  note: "Qualitative. 'supports' and 'consistent with' are statements about regimes, not probabilities."
+  O1:
+    observation: "CI lower bound of S above 0, CI lower bound of Own - Generic above 0, uptake above the direct arm, leave-one-out signs all positive."
+    supports: [H1]
+    inconsistent_with: [H0, H2, H4]
+    meaning_for_ir: "Trigger-matched selection added value for this runtime and these two cards. In scope only."
+    next: "Replicate on a second model and on rope (reserved) before any card leaves candidate. Human review of both cards. Do not extend the library at scale."
+  O2:
+    observation: "S interval spans 0; Own and Other both beat Generic and Direct by a similar amount."
+    supports: [H2]
+    meaning_for_ir: "Structured advice helps; trigger specificity not shown."
+    next: "Treat the library as structured prompts. Stop work on trigger-selection machinery."
+  O3:
+    observation: "CI upper bound of S below the margin, and of Own - Generic below the margin."
+    supports: [H0]
+    meaning_for_ir: "Effects at least the margin are ruled out at this size for this runtime."
+    next: "Stop extension as strategy_ir.md section 10 requires. Cards stay candidate or are retired. A smaller effect is not excluded."
+  O4:
+    observation: "Own arm below Direct arm with the CI upper bound below 0."
+    supports: [H3]
+    meaning_for_ir: "The block costs more than it returns within 20 steps and the window."
+    next: "New registration with a lighter block or a larger step budget; not an extension of this one."
+  O5:
+    observation: "S interval spans both 0 and the margin."
+    supports: []
+    meaning_for_ir: "Inconclusive at this size."
+    next: "One pre-registered extension to 150 or 200 runs only if the pilot variance predicted it would resolve; otherwise stop. No peeking."
+  O6:
+    observation: "Own > Other, but Own is no better than Generic and Other is worse than Generic."
+    supports: [H0]
+    meaning_for_ir: "Mismatched advice hurts; matched advice does not help beyond a neutral nudge."
+    next: "Report as such. The transformation content added nothing."
+  O7:
+    observation: "Any of ABORT-01 to ABORT-05 triggered."
+    supports: []
+    meaning_for_ir: "Uninformative about strategy value. State which prerequisite failed."
+    next: "Per the consequence of the abort condition."
+
+falsification:
+  note: "Executable after the main run, at most three, one round (protocol section 4.5)."
+  tests:
+    - id: FALS-01
+      name: "Label-permutation null"
+      procedure: "Permute arm labels within each instance 10,000 times and recompute S. H1 requires the observed S above the 97.5th percentile."
+      guards_against: "Analysis artifacts and clustering errors."
+    - id: FALS-02
+      name: "Leave-one-environment-out"
+      procedure: "Recompute S dropping each weird-machine environment in turn. H1 requires S positive in every drop-one analysis."
+      guards_against: "One environment driving the result."
+    - id: FALS-03
+      name: "Mediation falsifier"
+      procedure: "Split episodes by whether the own-card uptake marker is above the direct arm's median. If the own-card advantage is as large or larger in the low-uptake half, the benefit is not flowing through the transformation. Post-treatment split: exploratory."
+      guards_against: "Crediting the transformation for an advice or noise effect."
+
+claim_ceiling: "See candidate_claim_ceiling in seed.yaml; it is the binding text."

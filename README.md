@@ -8,11 +8,12 @@
 - Pre-registration lock: `cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7`.
 - Initial combined target-repository test run: **17 passed** (historical); a later repeat could not collect two harness modules because the resumed sandbox lacked `torch`, so no fresh target-suite pass is claimed. The 17 tests verify listed engineering behavior, not mathematical gluing proofs.
 - Post-Gate-4 Mindcluster importer/retriever checks: **9 passed** (`tests/test_import_mindcluster_html.py` + `tests/test_retrieve_context.py`), including graph integrity, provenance, uncertainty preservation, and candidate-link rendering.
-- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). A further test (`tests/test_mission_02_freeze.py`) checks that the frozen Mission 02 cards and features are unchanged. The full suite (`python -m pytest`) is **159 passed** at the time of writing. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
+- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). Further tests check that the frozen Mission 02 cards and features are unchanged (`tests/test_mission_02_freeze.py`) and that the Mission 03 proposal is internally consistent and its power table reproduces (`tests/test_mission_03_proposal.py`). The full suite (`python -m pytest`) is **163 passed** at the time of writing. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
 - Mission 01 has **human approval through Gate 4 as a bounded diagnostic**. The user accepted `accept_bounded_record` at Gate 3 and approved C01–C03 at Gate 4; the broad local-to-global / agent-coordination question is classified `inconclusive_result`. See `mission-01/gates/` and `mission-01/claim_set.md`.
 - Preserve the locked spec and raw results. Do not infer a general sheaf theorem, cohomology class, real-agent contract benefit, or Astra-vs-swarm advantage from this run. Part B is a deterministic enumerated compatibility stress test, not a comparison of independent LLM agents.
 - The Gate 2 decision-table update outputs are quarantined as exploratory, not calibrated Bayesian posteriors. Mission 01 coordination-efficiency metrics are not estimable from the incomplete real-time friction log.
 - Mission 02 (started 2026-10-02) is at its **kickoff**: `mission-02/seed.yaml`, an evidence digest and four Council prompts exist, and **no Council response has been collected**. It asks what a higher-order epistemic-game instance family needs for independently checkable ground truth, and registers a comparison of trigger-matched strategy packs against controls. Nothing in it has been run. Its seed lists published work on dynamic-epistemic-logic benchmarks for LLMs and on strategy and template retrieval as collisions to be checked, not as open ground.
+- Mission 03 is a **proposal** (`mission-03/`, 2026-10-02): a matched/mismatched comparison of two strategy cards on two hardened task families, gated by a blind-characterization stage and a pilot. Nothing has been run. `mission-03/DESIGN.md` states what was checked and what was not, and why it is recommended before Mission 02.
 
 ## Architecture Boundary & Pilot Lessons (Prospective)
 
@@ -44,12 +45,19 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 ├── tests/test_validate_ir.py
 ├── tests/test_retrieve_strategies.py
 ├── tests/test_mission_02_freeze.py # Change-detector for the frozen Mission 02 cards and features
+├── tests/test_mission_03_proposal.py # Traceability of the Mission 03 proposal and reproducibility of its power table
 ├── mission-02/
 │   ├── seed.yaml               # S02: higher-order epistemic-game instances and a registered strategy-pack comparison (kickoff)
 │   ├── council/                # Round-1 prompts for the four roles and run instructions; no responses collected yet
 │   ├── context/                # Evidence digest and retrieval manifest
 │   ├── sources/                # Notes on user-supplied background material (unverified claims flagged)
 │   └── freeze/                 # Hashes of the frozen game-family cards and features
+├── mission-03/
+│   ├── seed.yaml               # S03: does matching a strategy to a task's structure matter? (proposal; nothing run)
+│   ├── DESIGN.md               # Design note: question, evidence, comparison, kill attempts, power, decisions for a human
+│   ├── candidate_measurements.yaml # Measurements, controls, stop conditions, decision regimes, falsification tests (candidate)
+│   ├── work_packages/          # Candidate work packages (pre-Gate 2)
+│   └── analysis/               # Reproducible power simulation and its output
 └── mission-01/
     ├── seed.yaml               # Historical pre-registration seed; inaccurate statements are documented in REV-01
     ├── council/                # Four completed role responses and original prompts

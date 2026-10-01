@@ -1,0 +1,125 @@
+# Candidate work packages for Mission 03. Pre-Gate 2: full WP-XX.yaml files (protocol section 4.4) are written
+# after Gate 2 freezes the spec. Each package traces to a hypothesis, measurement, control or abort condition
+# (protocol rule 2: no orphan engineering). Engineering tests never assert a scientific outcome.
+
+lessons_applied_from_mission_01:
+  - "Every number in a claim is produced by the registered analysis script from raw episode artifacts that are retained and hashed. No hand-entered counts, no hard-coded metadata (REV-01 section 5)."
+  - "No oracle shares code with its subject. Ground truth is the environment's existing judge plus the instance-oracle gate; nothing new is introduced as an oracle (REV-01 section 5)."
+  - "The friction log is append-only from the first action (research_protocol/instrumentation.md); provider outages and manual interventions are logged as they happen (REV-01 section 6)."
+  - "No posterior-shaped numbers in the decision table (REV-01 section 6)."
+
+work_packages:
+  - id: WP-01
+    title: "Arm injection into the runner"
+    repo: rl_eval_generator
+    stage: 1
+    purpose: "Append an arm text to the runner's system prompt, record it, and change nothing when absent."
+    serves: {hypotheses: [H0, H1, H2, H3], measurements: [M06], controls: [CTRL05, CTRL06]}
+    owned_paths: ["arena/episode.py", "arena.py", "tests/test_arm_injection.py"]
+    acceptance:
+      - "With no addendum file the messages sent to the provider are byte-identical to the current runner's, for a recorded episode."
+      - "With an addendum, the text is in the system message and survives history trimming for an episode long enough to trigger trimming."
+      - "The manifest records the addendum's sha256 and an arm id."
+      - "The number of trimming events per episode is recorded (or reproducible from the trace)."
+    fallback: "A wrapper outside the repository that sets arena.episode.SYSTEM_PROMPT before the run, documented as depending on that internal."
+    failure_conditions: ["Baseline behaviour changes when no addendum is given."]
+    human_needed: false
+
+  - id: WP-02
+    title: "Blind characterization and assignment manifest"
+    repo: epistemic-compiler
+    stage: 0
+    purpose: "Produce problem states for the 12 hardened environments from two independent blind characterizers, compute agreement, run the matcher, and write the own/other assignment."
+    serves: {hypotheses: [H1, H2], measurements: [M07], controls: [CTRL07], aborts: [ABORT-01]}
+    owned_paths: ["mission-03/characterization/**", "tests/test_mission_03_characterization.py"]
+    acceptance:
+      - "Each characterizer's input is generated from the rendered environment (prompt, file list, tool list, visible test) plus the feature vocabulary and its diagnostic questions, and contains no card text, judge code, axis names or results (checked by a test over the generated inputs)."
+      - "Every returned problem state passes scripts/validate_ir.py in strict mode."
+      - "The consensus rule (present or absent only if both agree, else unknown) and Cohen's kappa are computed by tested code on synthetic fixtures with known answers."
+      - "scripts/retrieve_strategies.py is run on each consensus state and the assignment (matched, blocked, unknown per card per environment) is written to a manifest with hashes."
+    human_needed: "Dispatch of the two characterizer sessions (arena or API); the compiler agent does the rest."
+    failure_conditions: ["A characterizer saw a card or a result.", "A returned state fails validation and is silently repaired instead of re-requested."]
+
+  - id: WP-03
+    title: "Arm texts, leak audit and freeze"
+    repo: epistemic-compiler
+    stage: 1
+    purpose: "Render the card blocks, the generic block and the pilot hints deterministically; audit length and leakage; freeze by hash."
+    serves: {hypotheses: [H0, H1, H2], controls: [CTRL02, CTRL03, CTRL10, CTRL11]}
+    owned_paths: ["mission-03/arms/**", "tests/test_mission_03_arms.py"]
+    acceptance:
+      - "One function renders a card block from a card file; the same wrapper is used for the generic block; output is deterministic."
+      - "Both card blocks and the generic block lie within 10% of their mean length in characters."
+      - "The leak audit reports no environment-specific token shared between any arm text and any task text or judge (a test with a planted leak fails)."
+      - "The freeze file lists the card files (id, version, sha256) and the arm text hashes, with a change-detector test like tests/test_mission_02_freeze.py."
+    human_needed: "Review of the generic block and the pilot hints; the cards themselves are not edited."
+    failure_conditions: ["A card file is edited to make blocks fit.", "The generic block contains hypotheses or input-search instructions."]
+
+  - id: WP-04
+    title: "Instance set, gate runs and run schedule"
+    repo: rl_eval_generator
+    stage: 1
+    purpose: "Sample vectors by the registered rule, run the instance-oracle gate, record exclusions and fingerprints, and write the randomized block schedule."
+    serves: {measurements: [M08], controls: [CTRL05, CTRL08], aborts: [ABORT-02]}
+    owned_paths: ["mission-03/instances/**"]
+    acceptance:
+      - "The sampling rule is seeded and reproduces the same list."
+      - "Known gate-blocked vectors in experiments/atria_campaign.yaml are excluded and listed."
+      - "Every played instance has a passed gate record and a fingerprint; a reset that differs is refused by the existing check."
+      - "The schedule assigns, for every instance, a seeded random order of the four arms and interleaves instances."
+    human_needed: "Running the gate locally (Docker)."
+    failure_conditions: ["An instance is played without a gate record."]
+
+  - id: WP-05
+    title: "Trace metrics"
+    repo: epistemic-compiler
+    stage: 1
+    purpose: "Extract M04, M05 and M06 from episode traces by rules, with no human grading."
+    serves: {measurements: [M04, M05, M06], controls: [CTRL06], aborts: [ABORT-05]}
+    owned_paths: ["mission-03/analysis/trace_metrics.py", "tests/test_mission_03_trace_metrics.py"]
+    acceptance:
+      - "Synthetic traces with known answers give the expected failure class and uptake values for each rule, including a trace that triggers history trimming."
+      - "A replay of the runner's trimming over a recorded trace reproduces the recorded message count, or WP-01 supplies the counter."
+    failure_conditions: ["A rule depends on the agent's prose; the agent is told not to explain."]
+
+  - id: WP-06
+    title: "Pilot"
+    repo: both
+    stage: 1
+    purpose: "Run the pilot on seeds disjoint from Stage 2 and report baseline rates, uptake, sensitivity, cost and variance."
+    serves: {hypotheses: [H3, H4], measurements: [M01, M05, M06, M09], controls: [CTRL01, CTRL09], aborts: [ABORT-03, ABORT-04, ABORT-05]}
+    owned_paths: ["mission-03/pilot/**"]
+    acceptance:
+      - "A pilot report states, per family, the direct pass rate, the uptake difference, the hint effect, calls and seconds per episode, and the paired variance, and states which abort conditions fired."
+      - "The Stage 2 size is recomputed from the pilot variance with analysis/power_simulation.py."
+      - "No pilot episode appears in Stage 2."
+    human_needed: "Running the episodes and keeping the friction log."
+    failure_conditions: ["Pilot data are used in the Stage 2 analysis."]
+
+  - id: WP-07
+    title: "Registered analysis script"
+    repo: epistemic-compiler
+    stage: 2
+    purpose: "The one script that turns raw episode artifacts into every reported number."
+    serves: {hypotheses: [H0, H1, H2, H3], measurements: [M01, M02, M03, M10], falsification: [FALS-01, FALS-02, FALS-03]}
+    owned_paths: ["mission-03/analysis/analyze.py", "tests/test_mission_03_analysis.py"]
+    acceptance:
+      - "On synthetic data with a planted S the estimate recovers it; on data with S = 0 the interval excludes zero in about 5% of runs."
+      - "Cluster definitions follow the analysis plan (instance for moco, environment-vector cell for the weird machines)."
+      - "The permutation, leave-one-out and uptake-split tests are implemented as specified."
+      - "The script's sha256 is recorded in the freeze file before Stage 2."
+    failure_conditions: ["A number in a claim is not reproducible from the retained artifacts by this script."]
+
+  - id: WP-08
+    title: "Stage 2 run"
+    repo: both
+    stage: 2
+    purpose: "Execute the registered comparison with raw artifacts retained and an append-only friction log."
+    serves: {hypotheses: [H0, H1, H2, H3, H4], measurements: [M01, M02, M03, M04, M05, M06, M10], controls: [CTRL01, CTRL02, CTRL03, CTRL04, CTRL05, CTRL06, CTRL08, CTRL11], aborts: [ABORT-06]}
+    owned_paths: ["mission-03/results/**", "mission-03/friction_log.yaml"]
+    acceptance:
+      - "Raw traces and model responses are retained and hashed; the results file is generated by WP-07 only."
+      - "No interim efficacy analysis is performed or recorded."
+      - "Provider outages and manual interventions appear in the friction log with real timestamps."
+    human_needed: "Running the episodes and the log."
+    failure_conditions: ["The friction log is filled in afterwards.", "An episode is dropped for any reason other than the pre-play gates."]
