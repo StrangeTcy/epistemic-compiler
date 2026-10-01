@@ -1,0 +1,20 @@
+# Retrieval view of mission-02/seed.yaml, used ONLY as the query for scripts/retrieve_context.py.
+#
+# Why this file exists: run directly on seed.yaml, the v0 lexical retriever selected 5 of the 22
+# epistemic-game-theory nodes named in seed L08 and filled the rest of its 30 slots with generic
+# agent-benchmark nodes. Long prose in a seed is scored word by word, so common words ("agents",
+# "information", "public") outweighed the specific vocabulary, and hyphenated ids such as
+# "aumann-1976" cannot match the node text "Aumann". This view keeps only concept vocabulary.
+#
+# It is a curated query, not a neutral projection of the seed. The selection it produces is a set of
+# leads. The retriever script itself is unchanged.
+seed_id: S02
+title: >-
+  epistemic game theory, common knowledge, higher-order beliefs, belief hierarchies, mutual knowledge,
+  level-k reasoning, cognitive hierarchy, rationalizability, dynamic epistemic logic, public
+  announcement, signalling, Bayesian persuasion, information design, strategic deception, cognitive
+  collusion, evaluation awareness
+precise_research_question: >-
+  Aumann, Brandenburger, Bernheim, Pearce, Baltag, Lewis, Schelling, Spence, Crawford, Kamenica,
+  Gentzkow, Rubinstein, Plaza; opponent modelling; theory of mind; belief manipulation; reflexive
+  control; benchmark validity; judge audit; evaluation variance
