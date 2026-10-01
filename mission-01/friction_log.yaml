@@ -123,5 +123,42 @@ friction_events:
       so external Arena agents can `git clone -b mission-XX <repo_url>` directly
       as their work-package input contract.
 
+  - id: F-005
+    timestamp: "2026-10-01T16:12:00Z"
+    stage: "council"
+    work_package: null
+    type: "interface_mismatch"
+    category: "specification"
+    trigger: >
+      External Council model running Prompt 2 (`P02-E`, Experimentalist) invented
+      11 non-existent environment names (`bandit_envs`, `frozen_lake_custom`,
+      `cartpole_constrained`, `bit_flip_sheaf`, `sheaf_schema_sync`,
+      `sheaf_invariant_gluing`, `natural_transformation_logger`, `monoidal_queue`,
+      `adjunction_optimizer`, `curry_transformer`, `kan_extension_search`) and a
+      non-existent path (`rl_eval_generator/environments/` instead of `envs/`),
+      despite all 14 real environment names being listed verbatim in
+      `02_experimentalist_prompt.md`, and omitted numeric priors $P(H_i)$ and
+      conditional likelihoods $P(O \mid H_i)$ from its decision table.
+    root_cause_guess: >
+      Some Arena council models lack live GitHub browsing or drop enumerated
+      identifiers in favor of plausible-sounding category-theory/RL names unless
+      a hard syntactic schema validator checks their output against the repo's
+      actual `envs/registry.yaml`.
+    resolution: >
+      Preserved `P02-E`'s verbatim response in `mission-01/council/experimentalist.md`
+      and appended a Repository-Grounding Verification Note mapping the 11
+      hallucinated environment names back to the 14 real environments in
+      `seed.yaml` and flagging the `CTRL01` Type 0 vs. Type I conflation and
+      missing $P(O \mid H_i)$ table for Cross-Critique (`CRxx`).
+    resolution_time_minutes: 2
+    recurrence_count: 1
+    automatable: "yes"
+    automation_sketch: >
+      Add an automated council-response linter that checks every referenced
+      environment ID and file path in a council response against `envs/registry.yaml`
+      and `git ls-files`, rejecting or annotating any hallucinated identifiers
+      before Gate 1 synthesis.
+
+
 
 
