@@ -1,8 +1,10 @@
 # Research Production Protocol (V0 — Protocol-Defined Research IR & Human-Gated Execution)
 
-> **Core Principle:** V0 is a **protocol-defined research IR**, not yet a machine-enforced typed IR. It consists of provenance conventions, schemas in this document, and a four-gate human process. No `validate_ir.py`, general-purpose orchestration engine, dispatcher, or agent runtime is part of V0. The light-weight `scripts/retrieve_context.py` is an optional deterministic knowledge-view compiler; it does not validate research claims or automate judgment.
+> **Core Principle:** V0 is a **protocol-defined research IR**, not yet a machine-enforced typed IR. It consists of provenance conventions, schemas in this document, and a four-gate human process. No general-purpose orchestration engine, dispatcher, or agent runtime is part of V0, and no script validates seeds, specs, decision tables, work packages, or claim sets: those remain protocol-defined and human-gated. `scripts/validate_ir.py` exists but checks **Strategy IR artifacts only** (strategy cards, problem states, episodes; see `strategy_ir.md`), and only their structure and record consistency. The light-weight `scripts/retrieve_context.py` is an optional deterministic knowledge-view compiler, and `scripts/retrieve_strategies.py` an optional deterministic strategy matcher; neither validates research claims or automates judgment.
 >
 > **Protocol amendment note:** The methodological clarification below was added after Mission 01 execution in response to `REV-01`. It applies prospectively; it does **not** rewrite the Gate 2-locked `spec/approved.yaml`, the pre-registration commit, council record, or already produced results.
+>
+> **Strategy IR amendment note:** the optional problem-characterization and strategy-pack step in §3 was added after Mission 01 (Strategy IR v0.2 draft). It applies prospectively, changes none of the four Gates, and does not alter Mission 01, the Gate 2-locked spec, or any recorded result. Mission 01 did not use it.
 >
 > **Methodological Thesis (Question, Not Premise):** *Local validity does not necessarily compose into global validity.* Whether in benchmark evaluation (Dual A: what an evaluator observes locally) or in multi-agent decomposition (Dual B: what distributed agents construct locally), a study may test whether missing boundary semantics are associated with local-to-global failure along:
 > $$\text{Local Validity} \longrightarrow \text{Boundary Compatibility} \longrightarrow \text{Global Validity}.$$
@@ -58,6 +60,7 @@ All council outputs, critiques, specs, and work packages must preserve explicit 
 - `WP-01`, `WP-02`, ...: Bounded engineering/execution work packages
 - `FALS-01`, `FALS-02`, `FALS-03`: Post-experiment executable falsification tests
 - `F-001`, `F-002`, ...: Real-time friction log entries (`friction_log.yaml`)
+- `<strategy_id>` (kebab-case, e.g. `invariant-conserved-quantity`), `PS-...` (problem state), `EP-...` (episode), `APP-...` (strategy application): Strategy IR identifiers; a reference to a strategy must carry its `version` (see `strategy_ir.md`)
 
 ---
 
@@ -68,6 +71,9 @@ Global Mindcluster Knowledge Graph (knowledge/: nodes, edges, sources; if suppli
     │
     ▼  scripts/retrieve_context.py (--seed, --hops 2, --roles)
 mission-XX/seed.yaml  +  Compiled Role Context Packs (mission-XX/context/*.md)
+    │
+    ▼  (optional, prospective) problem characterization → scripts/retrieve_strategies.py
+mission-XX/problem_state.yaml  +  Candidate Strategy Pack (mission-XX/context/strategies.md)
     │
     ▼
 Adversarial Council (Theorist, Experimentalist, Skeptic, Prior-Work Killer)
@@ -116,6 +122,19 @@ Raw Results (results/) ──► Executable Falsification (falsification/, max 3
     ▼
 mission-XX/claim_set.md + Bootstrap Friction Analysis
 ```
+
+---
+
+### Optional step: problem characterization and strategy pack (Strategy IR v0.2 draft)
+
+Before the Council, a mission **may** characterize its problem and retrieve candidate problem transformations. The step is optional, is not checked by any Gate, and Mission 01 did not use it. The full schema and rules are in `strategy_ir.md`; the library is in `strategies/`.
+
+1. A human, or an agent whose name is recorded in `asserted_by`, writes `mission-XX/problem_state.yaml`. Each declared feature (and each declared absence) carries evidence; an undeclared feature is *unknown*, not absent. `scripts/validate_ir.py` checks structure only.
+2. `scripts/retrieve_strategies.py --problem mission-XX/problem_state.yaml --out mission-XX/context` compares the declared features with each card's trigger conditions and writes `strategies.md` plus a manifest. It refuses to run on an invalid library or state.
+3. The pack is untrusted reference data, like the compiled context packs. A match is a hypothesis about applicability; no match is not evidence that no strategy applies. Cards are `candidate` and, unless marked otherwise, agent-proposed and unreviewed.
+4. A Council proposal that relies on a strategy cites `strategy_id` and `version`, quotes its trigger evidence, and carries the card's obligations into its measurement design. A strategy match gives a hypothesis no credibility, and the requirement for a null or artifactual hypothesis (`H0`) is unchanged.
+5. An attempt to apply a strategy is recorded as an episode (`strategy_ir.md`, section 6). An episode's `outcome` is a record, not evidence that the strategy works. A claim that a strategy helped is a scientific claim and goes through the same Measurement, Evidence, and Claim Ceiling controls and Gate 4 as any other.
+6. Promoting a card beyond `candidate` is a human decision (`strategy_ir.md`, section 7). No script does it.
 
 ---
 
