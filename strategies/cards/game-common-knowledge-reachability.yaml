@@ -1,0 +1,127 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: game-common-knowledge-reachability
+version: 1
+name: Test common knowledge by reachability, not by finitely many "knows that" steps
+family: game
+status: candidate
+
+scope:
+  problem_classes:
+    - Questions about whether a fact is common knowledge, or about outcomes that depend on nested knowledge, in a situation with a finite list of possible worlds.
+  preconditions:
+    - The possible worlds can be listed, and what each agent can and cannot tell apart is stated.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Several agents observe different information, the question depends on nested knowledge or on
+        common knowledge, and the possible worlds can be enumerated.
+      requires_features:
+        - agents_observe_different_information
+        - higher_order_knowledge_question
+        - enumerable_candidate_space
+  diagnostic_questions:
+    - For each agent, which worlds can it not tell apart from each actual world?
+    - Does the question ask about common knowledge (every finite level), or about a named finite level of "knows that"?
+    - Is the structure of who can distinguish what itself something all agents know?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A chain of "A knows that B knows that ..." statements checked one level at a time.
+  operation: >-
+    Write the possible worlds and, for each agent, which worlds it cannot tell apart. From the actual
+    world, follow every step to a world some agent considers possible, then every step from there,
+    and so on, collecting every world reached. The fact is common knowledge exactly when it holds in
+    all of them. Count levels as follows: level 1 is "everyone knows it", level 2 is "everyone knows
+    that everyone knows it", and so on. If the nearest world where the fact fails is k steps away,
+    levels 1 to k-1 hold and level k is the first to fail. If the question names a finite level,
+    check that level only.
+  output_representation: >-
+    The set of worlds reachable from the actual world, the verdict on the fact, and, if it fails,
+    the shortest chain to a world where it fails and the level at which it first fails.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched instances where the move is valid, strict correctness against ground truth is
+    higher than under length-matched generic advice, by a margin fixed before the comparison.
+  outcome_measure: >-
+    Strict correctness against independently computed ground truth, reported separately for
+    instances where the trigger is present and the move valid, present and invalid, and absent.
+
+obligations:
+  - id: OB1
+    text: >-
+      What each agent can tell apart is taken from what it observes according to the task. Where
+      agents cannot be mistaken, each agent's can't-tell-apart relation is an equivalence relation. If
+      agents can be mistaken (belief, not knowledge), say so and count only chains of one or more
+      steps, without assuming the actual world is among those an agent considers possible.
+  - id: OB2
+    text: >-
+      The structure itself (who can distinguish which worlds) is known to all agents. If an agent could
+      be unaware of another agent's information or existence, a single structure does not represent
+      the situation and the world list must be enlarged.
+  - id: OB3
+    text: The fact tested is a property of the worlds in the list and refers to nothing outside it.
+  - id: OB4
+    text: >-
+      The question is read for what it asks: common knowledge means every finite level, and a named
+      level means only that level.
+
+failure_modes:
+  - id: FM1
+    text: Checking two or three levels of "knows that" and concluding that the fact is common knowledge.
+  - id: FM2
+    text: >-
+      Treating "it was announced" as "everyone knows that everyone heard it" without checking that the
+      announcement was public.
+  - id: FM3
+    text: >-
+      Treating a long finite chain of confirmations, or near certainty, as common knowledge. Arbitrarily
+      many confirmations over an unreliable channel still leave common knowledge unattained.
+  - id: FM4
+    text: >-
+      Leaving out worlds that some agent considers possible, which makes facts look more widely known
+      than they are.
+  - id: FM5
+    text: Counting the first level of "everyone knows" as level zero or level two, so the failing level is off by one.
+
+validation:
+  discriminating_tests:
+    - >-
+      The registered comparison in mission-02/seed.yaml (Q-B): the trigger-matched pack against a
+      length-matched generic-prose control, a random-card control and no added text, on instances
+      where the trigger is present and the move valid, present and invalid, and absent.
+  baseline: >-
+    Length-matched generic advice that is not trigger-matched, and no added text.
+  falsification_condition: >-
+    No improvement over the length-matched and random-card controls by the margin fixed at Gate 2 on
+    trigger-present, move-valid instances, or a higher wrong-answer rate than the controls on
+    instances where the move is invalid.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#game
+    - knowledge/nodes.yaml#aumann-1976
+    - knowledge/nodes.yaml#common-knowledge
+    - knowledge/nodes.yaml#lewis-1969
+    - knowledge/nodes.yaml#rubinstein-1989
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written by the compiler agent on 2026-10-02. The reachability characterization (a fact is common
+    knowledge at a world exactly when it holds on the meet's cell containing that world, computed by
+    reachability) and the assumption that the information structure is itself common knowledge were
+    checked against search-result excerpts attributing them to Aumann (1976) on 2026-10-02; the
+    original paper was not read. FM3 refers to Rubinstein's electronic mail game (1989), checked the
+    same way. The graph nodes above are bibliographic entries only. Frozen for Mission 02 before any
+    Council response existed (mission-02/freeze); the Council did not see it.

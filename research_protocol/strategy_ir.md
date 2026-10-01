@@ -207,7 +207,7 @@ This gate has not been run. The tests in this repository check that the tools be
 
 No dispatcher, agent runtime, planner, DAG engine, automatic strategy selection or composition, embedding or semantic retrieval, promotion engine, strategy learning, persistent agent society, or UI. No claim that a strategy library creates general intelligence or "impossible" capabilities. Mission 01 is frozen and is not reinterpreted or re-registered by this IR; its results appear only as a `bounded_pilot` exemplar and one counterexample on a single candidate card, and nothing here supports a sheaf theorem or an agent-coordination benefit.
 
-Known gaps: six of the twelve families have no card yet (`asymmetry`, `constraint`, `game`, `representation`, `search`, `transformation`), and a "bottleneck" move in the supplied reflection maps to no family and has no card.
+Known gaps: five of the twelve families have no card yet (`asymmetry`, `constraint`, `representation`, `search`, `transformation`); the `game` family has five narrow cards written for Mission 02 (`strategies/README.md`); and a "bottleneck" move in the supplied reflection maps to no family and has no card.
 
 ## 12. Changes from 0.1
 

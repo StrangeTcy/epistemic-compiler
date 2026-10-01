@@ -13,6 +13,7 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+CARD_COUNT = len(list((PROJECT_ROOT / "strategies" / "cards").glob("*.yaml")))  # every card file must be accounted for
 
 from scripts.retrieve_strategies import (  # noqa: E402
     MANIFEST_NAME,
@@ -82,6 +83,7 @@ def _make_root(tmp_path: Path) -> Path:
         "mission-01/claim_set.md",
         "mission-01/reviews/REV-01_methodological_review.md",
         "mission-01/falsification/falsification_results.json",
+        "knowledge/nodes.yaml",  # cited by the game-family cards' source_refs
     ):
         (root / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(PROJECT_ROOT / rel, root / rel)
@@ -182,7 +184,7 @@ def test_mutilated_board_matches_the_specialization_first_and_flags_the_open_and
     assert "elimination-discriminating-test-ordering" in manifest["not_retrieved"]
     assert "local-to-global-boundary-contract" in manifest["not_retrieved"]
     accounted = len(manifest["matched"]) + len(manifest["open"]) + len(manifest["not_retrieved"])
-    assert accounted == manifest["library"]["card_count"] == 8
+    assert accounted == manifest["library"]["card_count"] == CARD_COUNT
 
 
 def test_boundary_state_matches_the_decomposition_and_local_to_global_cards(tmp_path: Path) -> None:
@@ -341,7 +343,7 @@ def test_declared_features_that_no_card_uses_are_reported_as_a_coverage_gap(tmp_
     manifest = retrieve_strategies(_standalone(tmp_path, ("strategic_actors", REACH)), tmp_path / "out")
     assert manifest["declared_features_no_card_uses"] == ["strategic_actors"]
     assert "The library has nothing to offer on those" in (tmp_path / "out" / PACK_NAME).read_text(encoding="utf-8")
-    assert "game" in manifest["families_without_cards"]
+    assert "asymmetry" in manifest["families_without_cards"]  # a family that still has no card
 
 
 # --------------------------------------------------------------------------------------------

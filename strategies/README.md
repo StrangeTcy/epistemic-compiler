@@ -23,6 +23,11 @@
 | `elimination-discriminating-test-ordering` | elimination | |
 | `counterexample-minimal-failure` | counterexample | |
 | `meta-unfix-assumptions` | meta | |
+| `game-public-announcement-world-elimination` | game | possible-worlds update on public events, including silence; excluded when communication is not public or not reliable. Frozen for Mission 02 |
+| `game-common-knowledge-reachability` | game | common knowledge by reachability rather than a finite chain of "knows that". `composes_with` the card above. Frozen for Mission 02 |
+| `game-policy-likelihood-identifiability` | game | read likelihoods from a stated behaviour policy and test identifiability. Written after reading the v0 judge's taxonomy, so close to an answer hint on v0-like instances. Frozen for Mission 02 |
+| `game-iterated-strict-dominance` | game | iterated elimination of strictly dominated strategies under common belief in rationality; excluded when payoffs are private. `alternative_to` the card below. Frozen for Mission 02 |
+| `game-level-k-recursion` | game | level-k behaviour computed upward from a specified level-0. Frozen for Mission 02 |
 
 ### Episodes
 
@@ -97,8 +102,9 @@ Promotion is a human decision and is not done by any script. The validator only 
 
 ## Coverage and known gaps
 
-- **8 cards cover 6 of the 12 families.** There is no card yet for `asymmetry`, `constraint`, `game`, `representation`, `search`, or `transformation`. A problem characterized only by those families' features will get no matches, and a short or empty list reflects the library's size, not the problem.
-- **6 of the 15 vocabulary features are used by no card trigger yet:** `capability_or_access_asymmetry`, `enumerable_candidate_space`, `oversized_or_underdetermined_solution_space`, `representation_hides_structure`, `resembles_known_problem_under_mapping`, `strategic_actors`.
+- **13 cards cover 7 of the 12 families.** There is no card yet for `asymmetry`, `constraint`, `representation`, `search`, or `transformation`. A problem characterized only by those families' features will get no matches, and a short or empty list reflects the library's size, not the problem.
+- **7 of the 25 vocabulary features are used by no card trigger yet:** `capability_or_access_asymmetry`, `communication_not_public_or_not_reliable`, `oversized_or_underdetermined_solution_space`, `payoffs_privately_known`, `representation_hides_structure`, `resembles_known_problem_under_mapping`, `strategic_actors`. Two of them (`communication_not_public_or_not_reliable`, `payoffs_privately_known`) appear only in exclusion conditions.
+- **The five `game` cards are narrow.** They were written for the Mission 02 comparison (`../mission-02/seed.yaml`, `../mission-02/freeze/`) and cover possible-worlds updates, common knowledge, stated-policy inference, iterated dominance and level-k recursion. There is no card for signalling or persuasion, equilibrium selection, or sequential games. Their ten trigger and exclusion features (the last ten in the vocabulary) are agent-proposed. A problem that declares only `strategic_actors` matches none of them.
 - A "bottleneck" move in the supplied design discussion corresponds to no family and has no card.
 - The invariant parent is stated in closed-predicate form: exact conservation is a specialization (equality), and a monotone argument needs an inequality, so "seek a preserved quantity" would be too narrow for the general card.
 - Whether collapsing the invariant variants into one parameterised card is useful is a hypothesis the schema permits and does not test. The empirical gate in the spec (section 10) has not been run.

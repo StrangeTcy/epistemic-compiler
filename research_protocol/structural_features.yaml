@@ -13,6 +13,11 @@ provenance:
     research_protocol/strategy_ir.md, section 4). The invariant family's single trigger is
     split into a reachability question plus separate conserved/monotone suspicions so that
     specializations of one strategy can be told apart.
+
+    The last ten features (the epistemic-structure group, from agents_observe_different_information
+    on) were added on 2026-10-02 by the compiler agent for the game-family cards frozen for
+    Mission 02. They refine the game family's single trigger and are NOT restatements of it. They
+    are agent-proposed, unreviewed, and have no validation beyond the structural checks.
 features:
   - id: representation_hides_structure
     label: Representation hides structure
@@ -162,3 +167,100 @@ features:
       What map sends this problem to the known one, and which assumptions and conclusions survive
       the mapping?
     derived_from_family: transformation
+
+  # --- Epistemic-structure group (added 2026-10-02 for the Mission 02 game-family cards) ---
+  - id: agents_observe_different_information
+    label: Agents observe different information
+    description: >-
+      Several agents each observe different parts of the situation, so what an agent knows
+      depends on what it was able to observe.
+    diagnostic_question: >-
+      For each agent, what can it observe and what can it not observe, according to the task text?
+    derived_from_family: game
+
+  - id: public_events_change_what_agents_know
+    label: Public events change what agents know
+    description: >-
+      Statements, observable actions, or conspicuous failures to act are available to all agents
+      and change what each of them can rule out.
+    diagnostic_question: >-
+      Which events does every agent perceive, in what order, and does each agent know that the
+      others perceived them?
+    derived_from_family: game
+
+  - id: higher_order_knowledge_question
+    label: Higher-order knowledge question
+    description: >-
+      The answer depends on what agents know about what other agents know, or on whether something
+      is common knowledge, and not only on what each agent knows directly.
+    diagnostic_question: >-
+      Does the question ask about nested knowledge ("A knows that B knows ..."), about common
+      knowledge, or about an outcome that depends on such nesting?
+    derived_from_family: game
+
+  - id: communication_not_public_or_not_reliable
+    label: Communication not public or not reliable
+    description: >-
+      Some message or observation reaches only some agents, or its source may be mistaken or may
+      be misleading.
+    diagnostic_question: >-
+      Does every agent receive every message and know that the others did, and can the source of
+      any message be wrong or lying?
+    derived_from_family: game
+
+  - id: observations_chosen_by_agents_with_hidden_types
+    label: Observations chosen by agents with hidden types
+    description: >-
+      The evidence to interpret is an action or statement chosen by an agent whose type, state, or
+      incentive is hidden from the observer.
+    diagnostic_question: >-
+      Who produced the observation, what about them is hidden, and what could they have said or
+      done instead?
+    derived_from_family: game
+
+  - id: behaviour_policies_specified
+    label: Behaviour policies specified
+    description: >-
+      For each live hypothesis the task states how the observed agent would act (a table, a rule,
+      or a distribution), so likelihoods can be read from the task rather than guessed.
+    diagnostic_question: >-
+      Does the task give the probability of each observable action under each hypothesis, or a
+      rule that fixes it?
+    derived_from_family: game
+
+  - id: explicit_payoff_structure
+    label: Explicit payoff structure
+    description: >-
+      Each actor's options and the payoffs that result from every combination of choices are
+      stated.
+    diagnostic_question: >-
+      Can every actor's payoff be computed for every combination of choices from the task text
+      alone?
+    derived_from_family: game
+
+  - id: rationality_commonly_assumed
+    label: Rationality commonly assumed
+    description: >-
+      The task states or clearly implies that each actor is rational, that each believes the others
+      are, and so on.
+    diagnostic_question: >-
+      Does the task say that rationality is common knowledge or common belief, or does it describe
+      bounded or specified behaviour instead?
+    derived_from_family: game
+
+  - id: bounded_reasoning_levels_specified
+    label: Bounded reasoning levels specified
+    description: >-
+      Behaviour is described as the product of reasoning levels, with stated behaviour at the
+      lowest level.
+    diagnostic_question: >-
+      Does the task define the lowest level's behaviour and say which level each actor reasons at?
+    derived_from_family: game
+
+  - id: payoffs_privately_known
+    label: Payoffs privately known
+    description: >-
+      Some actor's payoffs or type are known to that actor and not to the others.
+    diagnostic_question: >-
+      Does any actor know something about payoffs or types that the others do not?
+    derived_from_family: game

@@ -1,0 +1,138 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: game-iterated-strict-dominance
+version: 1
+name: Eliminate strictly dominated strategies iteratively when rationality is commonly assumed
+family: game
+status: candidate
+
+scope:
+  problem_classes:
+    - Finite games with stated payoffs for every player, where the task asks what players will or can do given that all are rational and know that the others are.
+  preconditions:
+    - Every player's payoff is stated for every combination of choices, and the payoffs are known to all players.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Actors have explicit payoffs for every combination of choices, and rationality is stated or
+        clearly implied to be common among them.
+      requires_features:
+        - explicit_payoff_structure
+        - rationality_commonly_assumed
+  diagnostic_questions:
+    - Can every player's payoff be computed for every combination of choices from the task text alone?
+    - Does the task say that rationality is common knowledge or common belief?
+    - Does any player know something about payoffs or types that the others do not?
+  exclusion_conditions:
+    - id: XC1
+      text: >-
+        Some player's payoffs or type are private information, so the game is not one of complete
+        information and the elimination below is not justified as written.
+      excluded_by_features:
+        - payoffs_privately_known
+
+transformation:
+  input_representation: >-
+    A game described in words or as a payoff table, reasoned about by guessing what each player will
+    do.
+  operation: >-
+    Write each player's strategies and every player's payoff for each combination. Remove, for any
+    player, a strategy that is strictly worse than some other strategy, or than some mixture of that
+    player's other strategies, whatever the opponents choose among the strategies still remaining.
+    Rewrite the reduced game and repeat until nothing more can be removed. The survivors are the
+    strategies consistent with common belief in rationality: for two players exactly the rationalizable
+    strategies, and for three or more players the same set when conjectures about opponents may be
+    correlated. Use strict dominance. If weak dominance is used, say so, because the survivors can
+    then depend on the order of removal.
+  output_representation: >-
+    The sequence of reduced games and the set of surviving strategies for each player.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched instances where the move is valid, strict correctness against ground truth is
+    higher than under length-matched generic advice, by a margin fixed before the comparison.
+  outcome_measure: >-
+    Strict correctness against independently computed ground truth, reported separately for
+    instances where the trigger is present and the move valid, present and invalid, and absent.
+
+obligations:
+  - id: OB1
+    text: >-
+      Every player's payoff is stated for every combination of choices, and the payoffs are known to
+      all players.
+  - id: OB2
+    text: >-
+      The task states or clearly implies that rationality is common belief. Without that, removing
+      dominated strategies is not justified.
+  - id: OB3
+    text: >-
+      Dominance is tested against mixtures of the remaining strategies as well as against single
+      strategies.
+  - id: OB4
+    text: >-
+      Only strict dominance is used unless the task asks otherwise. If weak dominance is used, the
+      order of removal is stated.
+  - id: OB5
+    text: >-
+      Each reduced game is written down before the next round, and dominance is tested within the
+      reduced game, not within the original.
+  - id: OB6
+    text: >-
+      The answer does not claim that the survivors form an equilibrium. If an equilibrium is asked
+      for, it is checked separately.
+
+failure_modes:
+  - id: FM1
+    text: Weakly dominated strategies are removed and a unique answer is claimed regardless of order.
+  - id: FM2
+    text: A strategy that is strictly dominated only by a mixture is left in.
+  - id: FM3
+    text: The surviving strategies are reported as a Nash equilibrium.
+  - id: FM4
+    text: Dominance is tested against the original game instead of the reduced one.
+  - id: FM5
+    text: The method is applied when some player's payoffs or type are private information.
+
+validation:
+  discriminating_tests:
+    - >-
+      The registered comparison in mission-02/seed.yaml (Q-B): the trigger-matched pack against a
+      length-matched generic-prose control, a random-card control and no added text, on instances
+      where the trigger is present and the move valid, present and invalid, and absent.
+  baseline: >-
+    Length-matched generic advice that is not trigger-matched, and no added text.
+  falsification_condition: >-
+    No improvement over the length-matched and random-card controls by the margin fixed at Gate 2 on
+    trigger-present, move-valid instances, or a higher wrong-answer rate than the controls on
+    instances where the move is invalid.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations:
+  - type: alternative_to
+    target: game-level-k-recursion
+    rationale: >-
+      This card assumes that rationality is common belief; the level-k card assumes bounded reasoning
+      from a stated lowest level. The task's stated assumptions decide which applies.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#game
+    - knowledge/nodes.yaml#bernheim-1984
+    - knowledge/nodes.yaml#pearce-1984
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written by the compiler agent on 2026-10-02. The relationships it relies on were checked against
+    search-result excerpts on 2026-10-02 (the sources were not read in full): rationalizability
+    (Bernheim 1984; Pearce 1984) coincides with iterated elimination of strictly dominated strategies
+    in two-player finite games, and for three or more players with correlated conjectures (correlated
+    rationalizability); with independent conjectures it can be smaller. Order independence holds for
+    strict dominance and not for weak dominance. The graph nodes above are bibliographic entries only.
+    Frozen for Mission 02 before any Council response existed (mission-02/freeze); the Council did
+    not see it.

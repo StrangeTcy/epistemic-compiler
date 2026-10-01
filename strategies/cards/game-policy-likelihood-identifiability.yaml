@@ -1,0 +1,125 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: game-policy-likelihood-identifiability
+version: 1
+name: Read likelihoods from the stated behaviour policy, and test identifiability, before inferring a hidden type
+family: game
+status: candidate
+
+scope:
+  problem_classes:
+    - Inference problems in which an agent of hidden type produces an action or statement, the task states how each type would act, and the question asks what the observation shows about the type.
+  preconditions:
+    - The task states, for each live hypothesis, the probability of each observable action (a table, a rule, or a distribution).
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        The evidence is an action chosen by an agent whose type is hidden, and the task states how each
+        type would act.
+      requires_features:
+        - observations_chosen_by_agents_with_hidden_types
+        - behaviour_policies_specified
+  diagnostic_questions:
+    - Who produced the observation, and what about them is hidden?
+    - Does the task give the probability of each possible action under each hypothesis?
+    - Is a prior over the hypotheses stated, and is the list of hypotheses complete?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A story about an agent who might be one of several types, with an observed action interpreted
+    through how the story characterizes the types.
+  operation: >-
+    Treat each hypothesis as a stated behaviour policy. Read the probability of the observed action
+    under each hypothesis from the stated policy, not from adjectives in the story. First test
+    identifiability: if every live hypothesis gives the observed action the same probability, the
+    observation carries no information and the posterior equals the prior, and the answer should say
+    so. Otherwise combine the stated prior with those probabilities by Bayes' rule in exact
+    arithmetic, and report how strongly the probabilities separate the hypotheses (their ratio). Do
+    not add reasoning about what a deceiver would do beyond what the stated policy already says.
+  output_representation: >-
+    A table of hypotheses with prior, probability of the observed action, and posterior, and an
+    explicit statement of whether the observation is informative and how strongly.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched instances where the move is valid, strict correctness against ground truth is
+    higher than under length-matched generic advice, by a margin fixed before the comparison.
+  outcome_measure: >-
+    Strict correctness against independently computed ground truth, reported separately for
+    instances where the trigger is present and the move valid, present and invalid, and absent.
+
+obligations:
+  - id: OB1
+    text: >-
+      The probability of the observed action under each hypothesis is given by the task. If it is not,
+      this card does not apply, because the likelihoods would be assumptions.
+  - id: OB2
+    text: >-
+      The prior is stated, or an explicit assumption is declared, and it appears in the answer,
+      including when the likelihoods are equal.
+  - id: OB3
+    text: The hypotheses listed are all the live hypotheses the task allows, and the posteriors sum to one.
+  - id: OB4
+    text: >-
+      Equality of likelihoods is tested exactly. A small difference is reported as weak evidence, not
+      as no evidence.
+  - id: OB5
+    text: >-
+      Each table is read in the right direction: the probability of the action given the hypothesis,
+      not of the hypothesis given the action.
+
+failure_modes:
+  - id: FM1
+    text: The agent's type is read from the story's wording instead of from the stated policy.
+  - id: FM2
+    text: Deception is assumed present or absent without support from the stated policy.
+  - id: FM3
+    text: The prior is dropped when the likelihoods are equal.
+  - id: FM4
+    text: Confidence is reported when the likelihoods are equal.
+  - id: FM5
+    text: A probability is read in the wrong direction.
+  - id: FM6
+    text: A small difference in likelihoods is reported as no information, or a large one as certainty.
+
+validation:
+  discriminating_tests:
+    - >-
+      The registered comparison in mission-02/seed.yaml (Q-B): the trigger-matched pack against a
+      length-matched generic-prose control, a random-card control and no added text, on instances
+      where the trigger is present and the move valid, present and invalid, and absent.
+  baseline: >-
+    Length-matched generic advice that is not trigger-matched, and no added text.
+  falsification_condition: >-
+    No improvement over the length-matched and random-card controls by the margin fixed at Gate 2 on
+    trigger-present, move-valid instances, or a higher wrong-answer rate than the controls on
+    instances where the move is invalid.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations: []
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#game
+    - knowledge/nodes.yaml#harsanyi-1967
+    - knowledge/nodes.yaml#opponent-modelling
+    - knowledge/nodes.yaml#strategic-deception
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written by the compiler agent on 2026-10-02. DISCLOSURE (CF02, CF06 in mission-02/seed.yaml): the
+    author had read the v0 epistemic_games core and judge before writing this card, and the failure
+    modes above overlap with the judge's failure-mode taxonomy by construction. The identifiability
+    rule is also the property that v0's "ambiguous" evidence level tests directly, so on v0-like
+    instances this card is close to an answer hint. Agreement between this card and the judge's labels
+    is not independent evidence, and a gain on v0-like instances should not be read as a gain on
+    higher-order instances. The graph nodes above are bibliographic entries or placeholders only; no
+    source was read for this card. Frozen for Mission 02 before any Council response existed
+    (mission-02/freeze); the Council did not see it.

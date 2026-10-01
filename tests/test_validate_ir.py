@@ -131,7 +131,7 @@ def test_validation_does_not_mutate_its_inputs() -> None:
 
 def test_library_contains_the_expected_artifacts() -> None:
     kinds = sorted(d.data.get("ir_kind", "family_registry") for d in _library())
-    assert kinds.count("strategy_card") == 8
+    assert kinds.count("strategy_card") == len(list((PROJECT_ROOT / "strategies" / "cards").glob("*.yaml")))
     assert kinds.count("episode") == 2
     assert kinds.count("feature_vocabulary") == 1
 
@@ -520,6 +520,7 @@ def _make_root(tmp_path: Path) -> Path:
         "mission-01/claim_set.md",
         "mission-01/reviews/REV-01_methodological_review.md",
         "mission-01/falsification/falsification_results.json",
+        "knowledge/nodes.yaml",  # cited by the game-family cards' source_refs
     ):
         (root / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(PROJECT_ROOT / rel, root / rel)
@@ -529,7 +530,7 @@ def _make_root(tmp_path: Path) -> Path:
 def test_cli_passes_on_a_clean_tree(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["--root", str(_make_root(tmp_path))]) == 0
     out = capsys.readouterr().out
-    assert "documents=12 errors=0 warnings=0 -> ok" in out
+    assert f"documents={len(_library())} errors=0 warnings=0 -> ok" in out
     assert "does not show that a strategy works" in out
 
 
@@ -558,7 +559,7 @@ def test_cli_validates_extra_paths_against_the_library(tmp_path: Path, capsys: p
     doc = _valid_state()
     state.write_text(json.dumps(doc), encoding="utf-8")  # JSON is valid YAML
     assert main(["--root", str(root), str(state)]) == 0
-    assert "documents=13" in capsys.readouterr().out
+    assert f"documents={len(_library()) + 1}" in capsys.readouterr().out  # the library plus the extra state
     doc["features"][0]["feature"] = "not_in_vocabulary"
     state.write_text(json.dumps(doc), encoding="utf-8")
     assert main(["--root", str(root), str(state)]) == 1
@@ -568,4 +569,4 @@ def test_cli_validates_extra_paths_against_the_library(tmp_path: Path, capsys: p
 def test_cli_json_report_is_machine_readable(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["--root", str(_make_root(tmp_path)), "--json"]) == 0
     report = json.loads(capsys.readouterr().out)
-    assert report == {"documents": 12, "errors": 0, "warnings": 0, "issues": []}
+    assert report == {"documents": len(_library()), "errors": 0, "warnings": 0, "issues": []}

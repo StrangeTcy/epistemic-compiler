@@ -1,0 +1,121 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: game-level-k-recursion
+version: 1
+name: Compute level-k behaviour upward from a specified level-0
+family: game
+status: candidate
+
+scope:
+  problem_classes:
+    - Games with stated payoffs in which the task describes actors as reasoning to a bounded depth, with stated behaviour at the lowest level, and asks what an actor at a given level does.
+  preconditions:
+    - Payoffs, the lowest level's behaviour, the level asked about, and any tie-breaking rule are stated.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Actors have explicit payoffs and are described as reasoning at bounded levels with stated
+        behaviour at the lowest level.
+      requires_features:
+        - explicit_payoff_structure
+        - bounded_reasoning_levels_specified
+  diagnostic_questions:
+    - Does the task define the lowest level's behaviour exactly, and say which level each actor reasons at?
+    - Are the payoffs stated for every combination of choices?
+    - Is there a tie-breaking rule, and does the task ask about one level or a mixture of levels?
+  exclusion_conditions: []
+
+transformation:
+  input_representation: >-
+    A game in which the solver reasons about opponents informally.
+  operation: >-
+    Take the lowest level's behaviour exactly as the task states it. Compute level 1 as the best
+    response to level 0, level 2 as the best response to level 1, and so on up to the level asked
+    about, each time against the behaviour of the level immediately below only, and applying the
+    task's tie-breaking rule. If the task describes a mixture of lower levels, best-respond to that
+    mixture, using the stated weights renormalized over the levels below the one being computed unless
+    the task says otherwise. Answer with the behaviour of the level asked about and show each level's
+    action.
+  output_representation: >-
+    The action (or distribution) of each level from 0 to the level asked about, and the answer for
+    that level.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched instances where the move is valid, strict correctness against ground truth is
+    higher than under length-matched generic advice, by a margin fixed before the comparison.
+  outcome_measure: >-
+    Strict correctness against independently computed ground truth, reported separately for
+    instances where the trigger is present and the move valid, present and invalid, and absent.
+
+obligations:
+  - id: OB1
+    text: >-
+      The lowest level's behaviour is stated in the task (a fixed action, a uniform random choice, a
+      truthful report, and so on). It is not chosen by the solver.
+  - id: OB2
+    text: >-
+      Each level responds only to the level immediately below it, or to the stated mixture of lower
+      levels, and not to equilibrium play or to the actual population.
+  - id: OB3
+    text: >-
+      Payoffs and the tie-breaking rule are stated. If ties arise and no rule is stated, the answer
+      is not determined and the answer says so.
+  - id: OB4
+    text: The level asked about is read from the task and is not assumed to be the most sophisticated one.
+  - id: OB5
+    text: Each level's action is written out, so the chain of best responses can be checked.
+
+failure_modes:
+  - id: FM1
+    text: Opponents are assumed fully rational or at equilibrium when the task specifies bounded levels.
+  - id: FM2
+    text: A convenient lowest-level behaviour (for example uniform random) replaces the one the task states.
+  - id: FM3
+    text: The answer responds to the wrong level, off by one.
+  - id: FM4
+    text: Iterated dominance or equilibrium reasoning is substituted for the stated level structure.
+  - id: FM5
+    text: The recursion stops early or continues past the level asked about.
+
+validation:
+  discriminating_tests:
+    - >-
+      The registered comparison in mission-02/seed.yaml (Q-B): the trigger-matched pack against a
+      length-matched generic-prose control, a random-card control and no added text, on instances
+      where the trigger is present and the move valid, present and invalid, and absent.
+  baseline: >-
+    Length-matched generic advice that is not trigger-matched, and no added text.
+  falsification_condition: >-
+    No improvement over the length-matched and random-card controls by the margin fixed at Gate 2 on
+    trigger-present, move-valid instances, or a higher wrong-answer rate than the controls on
+    instances where the move is invalid.
+  counterexample_attempts: []
+
+exemplars: []
+counterexamples: []
+
+relations:
+  - type: alternative_to
+    target: game-iterated-strict-dominance
+    rationale: >-
+      The level-k card assumes bounded reasoning from a stated lowest level; the dominance card assumes
+      common belief in rationality. The task's stated assumptions decide which applies.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#game
+    - knowledge/nodes.yaml#level-k
+    - knowledge/nodes.yaml#cognitive-hierarchy
+    - knowledge/nodes.yaml#camerer-ho-chong-2004
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written by the compiler agent on 2026-10-02 from its own knowledge of level-k and cognitive-hierarchy
+    models. No source was checked for this card, and the graph nodes above are a concept placeholder, a
+    concept summary and a bibliographic entry. The mixture-of-levels sentence follows the usual
+    cognitive-hierarchy formulation from memory and has not been verified. Frozen for Mission 02
+    before any Council response existed (mission-02/freeze); the Council did not see it.

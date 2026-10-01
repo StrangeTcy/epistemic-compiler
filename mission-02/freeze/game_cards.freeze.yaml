@@ -1,0 +1,75 @@
+freeze_id: M02-FREEZE-1
+frozen_on: 2026-10-02
+mission: mission-02
+
+purpose: >-
+  Record the exact text of the game-family candidate cards, and of the ten vocabulary features
+  they use, as authored before any Mission 02 Council response existed in this repository, so that
+  the later comparison (seed Q-B) cannot be said to have used cards tuned to the family design that
+  the Council produces.
+
+status: >-
+  Frozen, candidate, agent-proposed and unreviewed. Freezing is bookkeeping about authorship order.
+  It does not validate the cards, and nothing here shows that any of them helps.
+
+authorship: >-
+  Written by the compiler agent (the AI agent working in this repository) on 2026-10-02. No human has
+  reviewed them.
+
+not_shown_to: >-
+  The Mission 02 Council in round 1. The prompt hashes are in mission-02/council/README.md; the
+  prompts contain the seed and the evidence digest and none of these cards.
+
+ordering_evidence: >-
+  The kickoff commit (seed, retrieval view, digest, four prompts) precedes the commit that adds this
+  file and the cards, and both precede any stored Council response. Check with git log.
+
+what_the_author_had_read_before_writing:
+  - "The v0 epistemic_games core and judge, including the failure-mode taxonomy. Card game-policy-likelihood-identifiability overlaps that taxonomy by construction and is close to an answer hint on v0-like instances."
+  - "The evidence digest (a reading list; most nodes carry no description text)."
+  - "Search-result excerpts, not full texts, for: the reachability characterization of common knowledge (Aumann 1976), Rubinstein's electronic mail game, and the relation between rationalizability and iterated strict dominance (Bernheim 1984; Pearce 1984; correlated rationalizability). Nothing else was checked against a source."
+
+rules_after_freeze: >-
+  A change to a frozen card or feature means bumping the card's version and adding a new freeze
+  entry (M02-FREEZE-2 and so on) that records what changed and why. An entry made after any Council
+  response was stored must say so and be marked post_council: those cards can no longer be described
+  as written without sight of the Council's design. tests/test_mission_02_freeze.py fails on any
+  silent edit. It is a change-detector on purpose.
+
+cards:
+  - strategy_id: game-public-announcement-world-elimination
+    version: 1
+    file: strategies/cards/game-public-announcement-world-elimination.yaml
+    sha256: d3fc721e0058a7eda4a7255e3fc90e63e42063386fb8302ce680ec0944548c41
+  - strategy_id: game-common-knowledge-reachability
+    version: 1
+    file: strategies/cards/game-common-knowledge-reachability.yaml
+    sha256: 62668e2bc5ce03c3868e094a4101b4503f0798278daf655d03628d38c31fa010
+  - strategy_id: game-policy-likelihood-identifiability
+    version: 1
+    file: strategies/cards/game-policy-likelihood-identifiability.yaml
+    sha256: 2ec5b15eee4474a54ced3fbb93ccc14c0442d95d24688288c685c25b0cbc8bfb
+  - strategy_id: game-iterated-strict-dominance
+    version: 1
+    file: strategies/cards/game-iterated-strict-dominance.yaml
+    sha256: 02b98df6c073d68cfce661c2a23d82aa4b86a3b4b3c519b062c11dd109ed130f
+  - strategy_id: game-level-k-recursion
+    version: 1
+    file: strategies/cards/game-level-k-recursion.yaml
+    sha256: e1f8663a2f0f3c7233c1a592d4b43e30f040d009732ceeaa19e27e46bee720cf
+
+features:   # sha256 of each feature entry as canonical JSON (sorted keys, compact separators); file: research_protocol/structural_features.yaml
+  agents_observe_different_information: 51ec5cde480ac6700def3726d268d7c796356b9aec1a4074a5977acb118d02aa
+  public_events_change_what_agents_know: 949f1b4cb0d317a35953576dca4713598bc443ca6c0fa1946db2263404246255
+  higher_order_knowledge_question: c81e4ef58d8e2af55cc7eb96b0dfc5ed7ff1d189c1a4cf6cc5157a1f766d9c5c
+  communication_not_public_or_not_reliable: 49cbf14b35b2ec6c09bc93c336811ca763eece3810ff7ead90f7b4ea4cac4b23
+  observations_chosen_by_agents_with_hidden_types: a116411130285c736d37d0130f24fc6581e9eff989681df619152dffe14897b8
+  behaviour_policies_specified: 6b64753249dad40654e5d6aebad4a097ae814f7a8a3f2f4694bd394925d16ff9
+  explicit_payoff_structure: 94f27a558212459fa26e088704cf0f16bbd1796e08e9ba4219b976a3d10a5e47
+  rationality_commonly_assumed: 193a6a9fd570e775fba5627f0e81854f8736bd8300770e0c68e20aa5493fa59a
+  bounded_reasoning_levels_specified: 136997bcdf9b3180f78771fbdb6ff072a498a33f4563ad4e5dee9e5027f9a87d
+  payoffs_privately_known: a340182c5bdf6f31d98f2729573ab917218198a7f374ba62cda59f12fa8da457
+
+not_frozen:
+  - "The other eight cards, the family registry, and the first fifteen vocabulary features. They predate Mission 02 and may change under the ordinary rules."
+  - "Which cards or features the registered comparison will use. That is fixed at Gate 2."

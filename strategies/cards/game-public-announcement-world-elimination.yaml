@@ -1,0 +1,147 @@
+ir_kind: strategy_card
+schema_version: "0.2"
+strategy_id: game-public-announcement-world-elimination
+version: 1
+name: Update an explicit possible-worlds model on each public event, including silence
+family: game
+status: candidate
+
+scope:
+  problem_classes:
+    - Puzzles and inference problems in which several agents see different things and publicly perceived events (announcements, actions, or conspicuous inaction) happen in sequence.
+  preconditions:
+    - The possible worlds can be listed, each agent's observations are stated, and each event is perceived by all agents and is true.
+
+trigger:
+  structural_conditions:
+    - id: TC1
+      text: >-
+        Several agents observe different information, publicly perceived events occur in
+        sequence, and the possible worlds can be enumerated.
+      requires_features:
+        - agents_observe_different_information
+        - public_events_change_what_agents_know
+        - enumerable_candidate_space
+  diagnostic_questions:
+    - For each agent, what can it observe and what can it not observe?
+    - Which events does every agent perceive, in what order, and is each one true?
+    - Does the task state how agents behave once they know something (for example, that they act as soon as they know)?
+  exclusion_conditions:
+    - id: XC1
+      text: >-
+        A message or observation reaches only some agents, or its source may be mistaken or may
+        mislead. Deleting worlds as if every agent learned the event misrepresents what each agent
+        learns.
+      excluded_by_features:
+        - communication_not_public_or_not_reliable
+
+transformation:
+  input_representation: >-
+    A narrative about who knows what and what has been said or done, reasoned about verbally and
+    agent by agent.
+  operation: >-
+    List the possible worlds. For each agent, group the worlds it cannot tell apart, using only what
+    that agent observes. Then take each public event in order and delete every world in which the
+    event would not have happened: for an announcement, the worlds where it is false; for a failure
+    to act, the worlds where some agent would have acted because it knew, according to the stated
+    behaviour rule. Each agent's groups shrink to the surviving worlds. After every deletion read
+    off what each agent knows: it knows a fact when the fact holds in every surviving world it cannot
+    tell from the actual one. Answer from the model at the round the question names.
+  output_representation: >-
+    The list of worlds after each event, each agent's groups, and the answer read off the model at
+    the named round.
+
+expected_effect:
+  measurable_prediction: >-
+    On trigger-matched instances where the move is valid, strict correctness against ground truth is
+    higher than under length-matched generic advice, by a margin fixed before the comparison.
+  outcome_measure: >-
+    Strict correctness against independently computed ground truth, reported separately for
+    instances where the trigger is present and the move valid, present and invalid, and absent.
+
+obligations:
+  - id: OB1
+    text: >-
+      The world list contains every combination consistent with the stated common information, and
+      excludes nothing because a story makes it seem unlikely.
+  - id: OB2
+    text: >-
+      Each agent's groups come only from what that agent observes according to the task, not from
+      what the solver knows.
+  - id: OB3
+    text: >-
+      Every event used as an update is perceived by all agents, each agent knows that the others
+      perceived it, and it is true. If any of these fails, the card does not apply as written.
+  - id: OB4
+    text: >-
+      Events are applied in the stated order, and a failure to act is treated as an event only when
+      the task's behaviour rule makes it informative; the rule is used exactly as stated.
+  - id: OB5
+    text: >-
+      The model after each event is written down, so each intermediate claim about who knows what
+      can be checked.
+
+failure_modes:
+  - id: FM1
+    text: Silence or inaction is treated as carrying no information although it eliminates worlds.
+  - id: FM2
+    text: >-
+      "Everyone knows p" is treated as "p is common knowledge", or the reverse, when the answer
+      depends on the difference.
+  - id: FM3
+    text: A message that only some agents received is treated as public, or a public one as private.
+  - id: FM4
+    text: >-
+      A statement by an agent who may be mistaken or lying is treated as true and public, so worlds
+      are deleted that should remain.
+  - id: FM5
+    text: The world list is incomplete, or too large to track by hand and no abstraction is made explicit.
+  - id: FM6
+    text: The round at which an agent first knows something is off by one.
+
+validation:
+  discriminating_tests:
+    - >-
+      The registered comparison in mission-02/seed.yaml (Q-B): the trigger-matched pack against a
+      length-matched generic-prose control, a random-card control and no added text, on instances
+      where the trigger is present and the move valid, present and invalid, and absent.
+  baseline: >-
+    Length-matched generic advice that is not trigger-matched, and no added text.
+  falsification_condition: >-
+    No improvement over the length-matched and random-card controls by the margin fixed at Gate 2 on
+    trigger-present, move-valid instances, or a higher wrong-answer rate than the controls on
+    instances where the move is invalid.
+  counterexample_attempts: []
+
+exemplars:
+  - id: EX1
+    kind: textbook_illustration
+    ref: https://aclanthology.org/2023.findings-emnlp.303.pdf
+    note: >-
+      The muddy-children puzzle as it appears in the MindGames paper (seed L01): a standard
+      illustration of updating on a public announcement and on public silence. It is not a recorded
+      application of this card and carries no evidential weight for it.
+counterexamples: []
+
+relations:
+  - type: composes_with
+    target: game-common-knowledge-reachability
+    rationale: >-
+      The world list and each agent's groups built here are the input that the reachability test
+      needs, when the question is about common knowledge after the updates.
+
+provenance:
+  origin: agent-proposed
+  source_refs:
+    - research_protocol/strategy_families.yaml#game
+    - knowledge/nodes.yaml#baltag-moss-solecki-1998
+    - knowledge/nodes.yaml#plaza-2007
+    - knowledge/nodes.yaml#dynamic-epistemic-logic
+  episode_refs: []
+  review_status: unreviewed
+  notes: >-
+    Written by the compiler agent on 2026-10-02 from its own knowledge of public-announcement
+    semantics in dynamic epistemic logic. The graph nodes above are bibliographic entries only (no
+    description text), and no source was read in full for this card. Frozen for Mission 02 before any
+    Council response existed (mission-02/freeze); the Council did not see it. No exemplar here is a
+    recorded application.
