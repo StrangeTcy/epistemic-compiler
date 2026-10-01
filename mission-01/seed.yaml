@@ -1,0 +1,248 @@
+seed_id: S01
+title: "Local-Section Validity vs. Global Sheaf Gluing in Multi-Module Agent Evaluation and Orchestration"
+
+repo_context:
+  repository: "https://github.com/StrangeTcy/rl_eval_generator"
+  head_commit: "e1b038a (main) / ffc7739 (origin/arena/01a0f473-rl-eval-generator)"
+  architecture_summary: |
+    `rl_eval_generator` contains 35 procedurally parameterized ML, category-theoretic
+    (`envs/cat_theo/*`, 17 envs including the 3-env `sheaf/*` subfamily: `sheaf_schema_sync`,
+    `sheaf_invariant_gluing`, `sheaf_physical_constraints`), recurrent-depth (`rd_*`, 3 envs),
+    weird-machine (`weird_machine/*`, 6 envs), trajectory-semantics (`ts_*`, 3 envs),
+    epistemic (`epistemic_games`, 1 env), and multi-file ML debugging (`glyph`, `batchnorm_ema`,
+    `moco`, `rope`, 4 envs) tasks.
+    
+    Pre-flight validation in `tools/instance_oracle_gate.py` grades up to 4 patch variants
+    (`no_op`, `plausible_wrong`, `transcription`, `reference`) through `env_runner.py:_submit`.
+    Currently only 12/35 environments are in `REFERENCES` (only 6 have `transcription`);
+    22/35 environments (including 16/17 `cat_theo/*` and all 3 `sheaf/*` environments) run
+    under `judge_guarantee=compile_only` in `experiments/atria_campaign.yaml`.
+    
+    Inspecting the repository through a **sheaf-theoretic lens** (where a task or codebase
+    $X = \bigcup_{i \in I} U_i$ is covered by local views/charts $U_i$, local implementations
+    or test passes are local sections $s_i \in \mathcal{F}(U_i)$, and boundary interfaces /
+    relational laws are restriction maps $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$)
+    reveals that **Evaluator Blind Spots (S01)** and **Multi-Agent / Multi-Module Gluing
+    Failures (S02)** are exact mathematical duals of the same phenomenon:
+    
+      $$\forall i,\; s_i \in \mathcal{F}(U_i) \quad \not\Longrightarrow \quad \exists s \in \mathcal{F}(X) \text{ s.t. } s|_{U_i} = s_i$$
+    
+    Specifically, we observe two concrete manifestations in `rl_eval_generator`:
+    1. **The Evaluator Dual (Chart-Only Judges Certify Non-Gluable Local Sections as `PASS`):**
+       Many hidden judges (`envs/*/files/judge.py`) evaluate local sections $s|_{U_i}$ on isolated
+       charts $U_i$ without checking restriction compatibility $\rho_{ij}(s_i) = \rho_{ji}(s_j)$
+       on overlaps $U_i \cap U_j$:
+       - `compositional_optimizer`: Checks chart $U_1$ ($t=1$ step), ignoring the temporal
+         overlap $U_1 \cap U_2$ (momentum state handoff $v_1 \mapsto v_2$). A stateless patch
+         (`return (1-beta)*grad`) is locally valid on $U_1$ and scores `1.0 (PASS)` while
+         failing temporal gluing across $t \ge 2$.
+       - `categorical_lenses` (already certified in `REFERENCES`!): Checks the internal lens
+         equations on $U_{\text{laws}}$ without checking the overlap $U_{\text{laws}} \cap U_{\text{coord}}$
+         (`view(s) == s[0]`). A coordinate-flipped section (`view(s)->s[1]`, `update(s,a)->(s[0],a)`)
+         passes all 3 checks (`score = 1.0, PASS`).
+       - `sheaf_physical_constraints`: The judge's own oracle has an **internal presheaf
+         gluing contradiction**: Check 2 enforces ratio `5:3` (`62.5 / 37.5`, clamping
+         `120 -> 100` on $U_{\text{local}}$ before scaling on $U_{\text{switch}}$), which
+         **rejects** a globally consistent proportional sheaf section (`120:60 = 2:1 -> 66.67 / 33.33`)
+         while **accepting** a 3-point lookup table (`score = 1.0`).
+       - `stochastic_monad`, `monadic_reward`, `neuro_symbolic_parser`, `semiring_unification`:
+         Check isolated point charts while omitting Kleisli associativity, temperature
+         scaling overlaps, or general tuple domains.
+    2. **The Agent / Swarm Dual (Locally Valid Module Patches That Fail Global Gluing):**
+       - In multi-file environments (`rope`: `rope.py` [$U_1$], `attention.py` [$U_2$],
+         `cache.py` [$U_3$]; `moco`: `model.py` [$U_1$], `queue_ops.py` [$U_2$]; `batchnorm_ema`:
+         `model.py` [$U_1$], `train.py` [$U_2$]) and in the `sheaf/*` subfamily (`sheaf_schema_sync`,
+         `sheaf_invariant_gluing`, `sheaf_physical_constraints`), each local chart $U_i$ admits
+         multiple locally valid sections $s_i \in \mathcal{F}(U_i)$ corresponding to different
+         **gauge conventions** (e.g., inclusive vs. exclusive offset indexing, pre-update vs.
+         post-update cache increment, adjacent `(2k, 2k+1)` vs. half-split `(k, k+d/2)` rotary
+         pairing, clamping-before-scaling vs. scaling-before-clamping).
+       - When parallel agents (or local-view repairs) solve $U_1, U_2, U_3$ independently—or
+         even with pairwise syntactic type checks—they produce locally valid sections
+         $(s_1, s_2, s_3) \in \prod_i \mathcal{F}(U_i)$ that **pass every local unit test on
+         $U_i$** yet **fail global gluing** ($\rho_{ij}(s_i) \neq \rho_{ji}(s_j)$ or non-zero
+         3-way cyclic holonomy in $\check{H}^1(\mathcal{U}, \mathcal{F})$).
+       - Moreover, `rl_eval_generator`'s current `sheaf/*` tasks (`migration.py`, `pipeline.py`,
+         `route.py`) are single-file tasks where one agent edits one file, meaning they do not
+         yet expose true multi-chart local-to-global gluing obstructions!
+
+intuition: |
+  Both benchmark evaluation failures and multi-agent swarm inefficiencies stem from the same
+  structural omission: **confusing a tuple of locally valid sections $(s_1, \dots, s_k) \in \prod_i \mathcal{F}(U_i)$
+  with a globally glued section $s \in \mathcal{F}(X)$**.
+  - On the **evaluation side**, if a judge only probes isolated charts $U_i$ without testing
+    restriction compatibility $\rho_{ij}(s_i) = \rho_{ji}(s_j)$ across temporal, coordinate,
+    or parameter overlaps, a "Degenerate Section" (`law_bypass`) that is locally valid on the
+    probed chart $U_i$ but globally inconsistent on $X$ receives `score = 1.0 (PASS)`.
+  - On the **agent/swarm side**, if a multi-module problem $X = \bigcup_i U_i$ has gauge degrees
+    of freedom on overlaps $U_i \cap U_j$ (or 3-way cyclic dependencies $U_1 \cap U_2, U_2 \cap U_3, U_3 \cap U_1$),
+    naive parallel decomposition produces locally passing sections $s_i \in \mathcal{F}(U_i)$
+    that systematically fail to glue ($\check{H}^1$ obstruction), whereas either (a) a single
+    model reasoning over the global cover $X$ or (b) a **Sheaf Restriction-Map Protocol**
+    that explicitly fixes $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$ on
+    overlaps achieves high global gluing accuracy at a fraction of the coordination cost.
+
+precise_research_question: |
+  1. **Evaluator Gluing Audit (Dual A):** Across `rl_eval_generator`'s relational and multi-module
+     environments, what fraction of production judges (`judge.py`) and 4-variant oracle gates
+     (`instance_oracle_gate.py`) certify **Locally Valid, Globally Non-Gluable Sections (`law_bypass`)**
+     as `PASS (score = 1.0)` because they omit overlap restriction checks $\rho_{ij}(s_i) = \rho_{ji}(s_j)$?
+  2. **Multi-Agent / Multi-Chart Gluing Obstruction (Dual B):** On multi-chart tasks $X = \bigcup_{i=1}^k U_i$
+     with deliberate gauge/cocycle obstructions on overlaps $U_i \cap U_j$ (e.g., 3-module `rope`
+     and multi-chart `sheaf_*` tasks), how often do locally valid sections $(s_1, \dots, s_k)$
+     generated under **Naive Local Decomposition** (chart $U_i$ + local tests only) vs.
+     **Syntactic Interface Decomposition** (type signatures only) fail global gluing ($\delta(\{s_i\}) \neq 0$),
+     and does specifying explicit **Sheaf Restriction Maps ($\rho_{ij}$)** restore global
+     gluing without requiring post-hoc orchestrator repair loops?
+
+why_it_might_be_true:
+  - "Combinatorial Gauge Divergence on Overlaps: If each chart $U_i$ admits $g \ge 2$ locally valid gauge choices (e.g., adjacent vs. split complex pairing in `rope.py`, 0-based vs. chunk-incremented offset in `cache.py`, pre- vs. post-append offset read in `attention.py`), independent local sections pass 100% of local chart tests on $U_i$ while succeeding globally with probability only $g^{-(k-1)}$."
+  - "Non-Trivial Čech 1-Cocycles ($\check{H}^1 \neq 0$): In cyclic 3-chart systems (e.g., circular foreign keys `users` $\to$ `addresses` $\to$ `transactions` $\to$ `users`, or 3 overlapping switches $S_1(A+C), S_2(A+B), S_3(B+C)$), sections can satisfy every local test on $U_i$ and even pairwise syntax checks on $U_i \cap U_j$, yet fail simultaneous 3-way global consistency."
+  - "Chart-Restricted Judges: Existing `cat_theo` judges check equations on a single chart $U_1$ ($t=1$ step in `compositional_optimizer`, $T=1.0$ in `neuro_symbolic_parser`, unanchored `view` in `categorical_lenses`), making them blind to gluing failures across charts."
+
+what_would_surprise_us:
+  - "Production judges (`judge.py`) in `rl_eval_generator` already reject >90% of Black-Box locally valid, globally broken (`law_bypass`) patches."
+  - "In multi-chart tasks (`rope` and multi-chart `sheaf` tasks), locally valid sections $s_i \in \mathcal{F}(U_i)$ produced without overlap restriction maps $\rho_{ij}$ spontaneously glue into a valid global section $s \in \mathcal{F}(X)$ $>80\%$ of the time."
+  - "Adding explicit Restriction-Map contracts (`restriction_maps` in `protocol.md`) does not reduce integration conflicts or gluing failures compared to standard prose task descriptions."
+
+candidate_hypotheses:
+  - id: H0
+    name: "Null / Local Validity Implies Global Gluing"
+    statement: >
+      Local chart validation (`visible_tests.py` + current `judge.py` + 4-variant oracle gate)
+      and standard syntactic module interfaces are already sufficient: locally valid sections
+      $s_i \in \mathcal{F}(U_i)$ rarely (<10%) fail global gluing on $X$, and Black-Box
+      `law_bypass` sections rarely (<10%) pass production judges.
+  - id: H1
+    name: "Evaluator Gluing Blindness (Chart-Projected Judges Certify Non-Gluable Sections)"
+    statement: >
+      Because current relational judges evaluate properties on isolated charts $U_i$ rather than
+      checking restriction maps $\rho_{ij}(s_i) = \rho_{ji}(s_j)$ across temporal, coordinate,
+      and parameter overlaps, Black-Box locally valid / globally inconsistent sections
+      (`law_bypass`) achieve `score = 1.0 (PASS)` in $\ge 50\%$ of audited environments
+      (including environments passing the 4-variant `instance_oracle_gate.py`), while failing
+      an Overlap/Restriction-Aware Judge (`Grader B`).
+  - id: H2
+    name: "Judge Internal Presheaf Contradiction (Type II Rejection of Globally Valid Sections)"
+    statement: >
+      Judges whose point checks encode incompatible local assumptions (e.g., `sheaf_physical_constraints`
+      requiring local clamping before switch-level proportional scaling `5:3`) actively reject
+      globally coherent sheaf sections (`reference_alt` proportional allocation `2:1`),
+      exhibiting simultaneous Type I (certifying lookup shortcuts) and Type II (rejecting
+      valid global sections) errors.
+  - id: H3
+    name: "Multi-Chart Gluing Obstruction & Restriction-Map Rescue"
+    statement: >
+      On multi-chart tasks $X = \bigcup_{i=1}^k U_i$ with gauge degrees of freedom or cyclic
+      3-way overlaps ($U_1 \cap U_2, U_2 \cap U_3, U_3 \cap U_1$), tuples of locally valid
+      sections $(s_1, \dots, s_k) \in \prod_i \mathcal{F}(U_i)$ that pass 100% of local chart
+      tests fail global gluing at high rates (>60%) under Naive Local Decomposition and
+      Pairwise Syntactic Interfaces, whereas enforcing explicit **Sheaf Restriction Maps**
+      ($\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$ fixing overlap gauge
+      invariants) reduces global gluing failure to <5%.
+
+known_alternatives:
+  - "Observed judge blind spots (`H1`) could be dismissed as unfinished `compile_only` environments unless demonstrated on BOTH already-certified `REFERENCES` environments (`categorical_lenses`, `rope`, `rd_state_carry`) and `compile_only` environments (`cat_theo/*`)."
+  - "Gluing failures in multi-chart tasks (`H3`) could be caused by simple syntax/import mismatches rather than semantic/cohomological gauge obstructions unless we control for syntactic interface compatibility (Condition B: identical function signatures and types on $U_i \cap U_j$)."
+
+possible_experiment: |
+  Execute a two-part empirical study inside `rl_eval_generator`:
+  
+  **Experiment Part A (Evaluator Gluing Audit across $N \ge 12$ Environments):**
+  - Test 5 section families (`no_op`, `plausible_wrong`, `transcription`, `law_bypass_blackbox`
+    [locally valid on chart $U_1$, globally broken on $U_1 \cap U_2$], and `reference_causal` +
+    `reference_alt`) against **Grader A (Production `judge.py`)** and **Grader B (Restriction-Map
+    & Counterfactual Gluing Auditor)**.
+  - Quantify the False Certification Rate ($\text{FCR}_{\text{BB}}$) of `Grader A`, the 4-Variant
+    Gate Escape Rate, the Valid-Global-Section Rejection Rate (`H2`), and upgrade `tools/instance_oracle_gate.py`
+    to a **5-Variant Sheaf Oracle Gate**.
+  
+  **Experiment Part B (Multi-Chart Local-to-Global Gluing Obstruction Benchmark):**
+  - Across multi-chart tasks $X = U_1 \cup U_2 \cup U_3$ in `rl_eval_generator` (including
+    3-file `rope` [`rope.py`, `attention.py`, `cache.py`] and multi-chart decompositions of
+    `sheaf_schema_sync`, `sheaf_physical_constraints`, `sheaf_invariant_gluing`, and
+    `compositional_optimizer`), construct explicit local chart test suites $T(U_i)$, pairwise
+    overlap checks $T(U_i \cap U_j)$, and global section checks $T(X)$.
+  - Evaluate three decomposition protocols across all gauge combinations / solver dispatches:
+      1. **Naive Local Decomposition (`Chart-Only`):** Each local section $s_i$ is constrained
+         only by local chart tests $T(U_i)$ and syntactic signatures.
+      2. **Pairwise Edge Check (`Pairwise-Only`):** Local sections satisfy $T(U_i)$ and
+         pairwise compatibility on $(U_1 \cap U_2)$ and $(U_2 \cap U_3)$, leaving the cyclic
+         closing edge $(U_3 \cap U_1)$ or global constraint uncertified ($\check{H}^1$ cocycle trap).
+      3. **Sheaf Restriction-Map Protocol (`Restriction-Aware`):** Each work package exposes
+         its explicit restriction map $\rho_{ij}(s_i) \in \mathcal{F}(U_i \cap U_j)$ and passes
+         the coboundary equality check $\delta^0(\{s_i\}) = 0$ across all overlaps.
+  - Measure Local Pass Rate, Pairwise Pass Rate, Global Gluing Pass Rate, and Re-dispatch /
+    Integration Burden ($\kappa$).
+
+known_unknowns:
+  - "What fraction of `law_bypass` sections arise strictly under Black-Box access (reading only `prompt.md` and `visible_tests.py`) vs. White-Box judge inspection?"
+  - "In how many multi-chart tasks can we construct a genuine **3-way $\check{H}^1$ cocycle obstruction** (where all 3 local sections $s_1, s_2, s_3$ are valid AND pairwise overlaps $(s_1,s_2)$ and $(s_2,s_3)$ or even all 3 local pairwise projections look compatible, yet no global section exists)?"
+  - "Does encoding `restriction_maps` in Mission 01's own work packages (`WP-01..WP-NN`) measurably eliminate `integration_conflict` events in `mission-01/friction_log.yaml`?"
+
+likely_confounds:
+  - id: CF01
+    description: "White-Box Oracle Leakage when constructing locally valid / globally broken (`law_bypass`) sections."
+  - id: CF02
+    description: "Compile-Only vs. Gated Selection Bias (testing only unvalidated `compile_only` environments)."
+  - id: CF03
+    description: "Syntactic vs. Semantic Gluing Confusion (if local sections fail to glue merely because of a typo in a function name rather than a semantic gauge/restriction mismatch on $U_i \cap U_j$)."
+  - id: CF04
+    description: "Circular Auditor Definition (if `Grader B` is tailored post-hoc to the constructed `law_bypass` patches rather than derived from `prompt.md`'s mathematical laws)."
+
+relevant_prior_work:
+  - id: L01
+    citation: "Liu et al. (2023), 'EvalPlus' (NeurIPS 2023); Yu et al. (2025), 'UTBoost' (ACL 2025); SWE-ABS (2026)"
+    relationship: >
+      Establish test-suite insufficiency and mutation-based false-positive detection in single-function
+      (HumanEval) and issue-patch (SWE-bench) benchmarks. Do not formulate multi-module repair or
+      law-based evaluation in terms of sheaf restriction maps or $\check{H}^1$ gluing obstructions.
+  - id: L02
+    citation: "Curry (2014), 'Sheaves, Cosheaves and Applications'; Abramsky & Brandenburger (2011), 'The Sheaf-Theoretic Structure of Non-Locality and Contextuality'"
+    relationship: >
+      Foundational mathematical framework showing that families of locally consistent sections
+      can fail to glue globally when $\check{H}^1(\mathcal{U}, \mathcal{F}) \neq 0$ (contextuality /
+      holonomy obstructions). Applied to quantum contextuality, constraint satisfaction, and
+      sensor networks, but not operationalized as an evaluation/orchestration benchmark for LLM
+      coding agents.
+  - id: L03
+    citation: "Hansen & Ghrist (2019), 'Toward a Spectral Theory of Cellular Sheaves'; Bodnar et al. (2022), 'Neural Sheaf Diffusion'"
+    relationship: >
+      Applies cellular sheaves and the sheaf Laplacian $L_{\mathcal{F}} = \delta^T \delta$ to measure
+      disagreement $\sum_{e=(i,j)} \|\rho_{ie} s_i - \rho_{je} s_j\|^2$ across graph nodes in GNNs.
+      Provides the exact mathematical operator (coboundary defect $\delta(\{s_i\})$) that we adapt
+      to discrete code/state interfaces on overlaps $U_i \cap U_j$.
+  - id: L04
+    citation: "Cemri et al. (2025), 'Why Do Multi-Agent LLM Systems Fail?' (MAST taxonomy)"
+    relationship: >
+      Empirical taxonomy of failure modes in multi-agent LLM frameworks (e.g., ChatDev, MetaGPT,
+      AutoGen), noting specification drift, inter-agent misalignment, and verification gaps.
+      Descriptive/taxonomic rather than constructing controlled local-to-global sheaf gluing
+      obstruction benchmarks or formal restriction-map compilers.
+  - id: L05
+    citation: "Redwood Research / Greenblatt et al. (2024-2025), AI Control, Monitorability, and Sabotage in Multi-Agent/Research Workflows"
+    relationship: >
+      Highlights that subtle cross-component incompatibilities or reward-hacked local checks can
+      defeat naive monitors and orchestrators—directly motivating restriction-map verification.
+
+candidate_claim_ceiling:
+  max_justifiable_claim: |
+    In `rl_eval_generator`, both evaluator false positives (`law_bypass` patches scoring 1.0)
+    and multi-module local-solver integration failures are quantitatively explained by **missing
+    restriction-map verification on chart overlaps $U_i \cap U_j$**:
+    (1) Chart-restricted judges (`judge.py`) and 4-variant oracle gates certify Black-Box
+        locally valid / globally non-gluable sections as `PASS` in $X\%$ of audited environments
+        (and reject valid global sections in $Y\%$ due to internal oracle presheaf contradictions);
+    (2) In multi-chart tasks with gauge degrees of freedom or 3-way cyclic overlaps, locally
+        valid sections $s_i \in \mathcal{F}(U_i)$ that pass 100% of local chart tests and
+        syntactic signatures fail global gluing at rate $Z\%$ unless coordinated through explicit
+        restriction maps $\rho_{ij}: \mathcal{F}(U_i) \to \mathcal{F}(U_i \cap U_j)$; and
+    (3) Enforcing a 5-variant Sheaf Oracle Gate and explicit restriction-map contracts eliminates
+        these false certifications and gluing failures deterministically.
+  cannot_justify:
+    - "Cannot claim that frontier models internally represent category-theoretic sheaves in their weights."
+    - "Cannot claim that multi-agent LLM swarms are universally inferior to single models across all tasks (only that naive decomposition without overlap restriction maps incurs predictable gluing failure on non-trivial covers)."
+    - "Cannot claim live multi-model swarm failure rates beyond the solver/agent protocols actually executed in Mission 01."
+
+possible_future_research_on_failure:
+  - "If H1 and H3 hold, Mission 02 runs live multi-model Arena swarms vs. single frontier models vs. Restriction-Map Orchestration on the newly certified multi-chart sheaf benchmark suite, measuring token cost, $\kappa$, and global solve rate."

@@ -1,0 +1,127 @@
+# Mission 01 — Real-Time Friction Log
+# Schema & Controlled Vocabulary: ../research_protocol/instrumentation.md
+
+mission_id: "mission-01"
+started_at: "2026-10-01T15:38:00Z"
+
+friction_events:
+  - id: F-001
+    timestamp: "2026-10-01T15:39:00Z"
+    stage: "bootstrap"
+    work_package: null
+    type: "missing_information"
+    category: "specification"
+    trigger: >
+      Bootstrap prompt instructed agent to inspect the existing `rl_eval_generator`
+      repository, but `/home/user` was empty at session start and the execution
+      mode for the 4 Council roles (external Arena models vs. single-session)
+      was unspecified.
+    root_cause_guess: >
+      Mission kickoff prompt did not include a pre-flight environment/repo mount
+      manifest or specify whether multi-model council steps are dispatched by
+      the human across external Arena tabs vs. simulated inside one container.
+    resolution: >
+      Issued structured clarification (`ask_user`) to confirm: (1) human-gated
+      bootstrap mode, (2) user will provide/upload `rl_eval_generator` next, and
+      (3) user will run the 4 Council prompts across external Arena models.
+    resolution_time_minutes: 2
+    recurrence_count: 1
+    automatable: "yes"
+    automation_sketch: >
+      Add a pre-flight check to the mission kickoff template / CLI that verifies
+      target repo path existence, git commit hash, and council dispatch mode
+      (`external_arena` vs `local_api`) before starting Part III.
+
+  - id: F-002
+    timestamp: "2026-10-01T15:46:00Z"
+    stage: "seed"
+    work_package: null
+    type: "missing_information"
+    category: "judgment"
+    trigger: >
+      Initial seed framing ("benchmark unit tests pass overfitting patches /
+      outcome grading misses execution flaws") collided with published prior work
+      (EvalPlus 2023, UTBoost ACL 2025, SWE-ABS 2026) and with the fact that
+      `rl_eval_generator/tools/instance_oracle_gate.py` already implements
+      `transcription` controls for `weird_machine/*`.
+    root_cause_guess: >
+      High-level research seeds written before inspecting the concrete repository
+      and literature default to first-order claims ("unit tests can be gamed")
+      rather than the second-order failure mode actually present in the codebase.
+    resolution: >
+      Inspected all 35 environments, `tools/instance_oracle_gate.py`, and
+      `env_runner.py:_submit`, and ran a pre-seed literature check. Reframed
+      `mission-01/seed.yaml` (`S01`) around the genuinely open second-order
+      phenomenon in `rl_eval_generator`: **Degenerate Algebraic Witnesses (`law_bypass`)**
+      in subspace-projected relational/law judges (`compositional_optimizer` $t=1$
+      horizon truncation, `categorical_lenses` unanchored coordinate swap,
+      `stochastic_monad` vacuous right-identity, `sheaf_physical_constraints`
+      5:3 derivation-path conflict) plus episode-to-judge trajectory erasure.
+    resolution_time_minutes: 6
+    recurrence_count: 1
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Cannot and should not be fully automated (selecting the non-trivial scientific
+      wedge is core research judgment), though a pre-seed repository + arXiv/Semantic
+      Scholar collision scan can be run automatically to surface `L01..L05` before
+      drafting `seed.yaml`.
+
+  - id: F-003
+    timestamp: "2026-10-01T15:52:00Z"
+    stage: "seed"
+    work_package: null
+    type: "scope_creep"
+    category: "judgment"
+    trigger: >
+      Human introduced a second research seedling (S02: Sheaf-theoretic local-to-global
+      gluing obstructions in multi-agent swarms vs. single frontier models / restriction-map
+      orchestration) prior to running the Gate 1 Council.
+    root_cause_guess: >
+      Early-stage seed exploration naturally surfaces deeper mathematical unifications
+      (realizing that evaluator blind spots on subspace projections [S01] and multi-agent
+      local-patch incompatibility [S02] are dual instances of non-gluable local sections
+      $s_i \in \mathcal{F}(U_i)$ where restriction maps $\rho_{ij}(s_i) \neq \rho_{ji}(s_j)$).
+    resolution: >
+      Confirmed via `ask_user` to unify S01 and S02 into a single coherent Mission 01
+      seed ("Local-Section Validity vs. Global Sheaf Gluing in Multi-Module Agent Evaluation
+      and Orchestration"), upgraded `protocol.md` Work-Package interfaces to explicit
+      Restriction Maps ($\rho_{ij}$), and regenerated `seed.yaml` + the 4 Council prompts.
+    resolution_time_minutes: 4
+    recurrence_count: 1
+    automatable: "no_research_judgment"
+    automation_sketch: >
+      Conceptual unification across seeds at Stage 0 is irreducible human research
+      director judgment. However, the protocol should enforce a hard freeze on `seed.yaml`
+      once Gate 1 is signed off so later stages cannot pivot scope mid-flight.
+
+  - id: F-004
+    timestamp: "2026-10-01T15:57:00Z"
+    stage: "council"
+    work_package: null
+    type: "tooling_failure"
+    category: "integration"
+    trigger: >
+      Human noted that `research_protocol/` and `mission-01/` exist only inside this
+      agent's local sandbox workspace (`/home/user`), making it inconvenient to
+      inspect, version, and share across external Arena council/implementation
+      sessions without a GitHub repository.
+    root_cause_guess: >
+      Stateless multi-agent dispatch across separate Arena sessions lacks a shared
+      filesystem; GitHub is the natural artifact bus, but the sandbox starts without
+      a pre-configured GitHub remote or push token for new protocol artifacts.
+    resolution: >
+      Prepared committed Git repository structure (both as a standalone repo and
+      as a branch inside `rl_eval_generator`) and prompted human for preferred
+      GitHub target (new repo vs. branch on `StrangeTcy/rl_eval_generator`) and
+      push authorization.
+    resolution_time_minutes: 3
+    recurrence_count: 1
+    automatable: "yes"
+    automation_sketch: >
+      V1 bootstrap script should automatically initialize and push every mission
+      directory (`research_protocol/` + `mission-XX/`) to a dedicated GitHub branch
+      so external Arena agents can `git clone -b mission-XX <repo_url>` directly
+      as their work-package input contract.
+
+
+
