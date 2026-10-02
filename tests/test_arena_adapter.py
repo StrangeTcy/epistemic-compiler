@@ -6,9 +6,10 @@ import re
 from pathlib import Path
 
 import pytest
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 
 from runtime.browser.sites.arena import ArenaAdapter
-from runtime.models import JobSpec, MissionSpec, WaitingForHuman
+from runtime.models import JobSpec, MissionSpec, RetryableJobError, WaitingForHuman
 
 
 class EmptyLocator:
@@ -182,6 +183,11 @@ class FakePage:
         self.closed = True
 
 
+class NavigationTimeoutPage(FakePage):
+    async def goto(self, url):
+        raise PlaywrightTimeoutError("transient navigation timeout")
+
+
 class FakeBrowser:
     def __init__(self, page):
         self.page = page
@@ -253,6 +259,17 @@ def test_direct_submits_once_and_preserves_visible_response_verbatim(tmp_path):
     assert result.metadata["outer_code_fence_removed"] is False
     assert result.metadata["user_label_lines_removed"] == []
     assert context.job_state["submission_state"] == "submitted"
+
+
+def test_navigation_timeout_is_explicitly_safe_to_retry_before_submission(tmp_path):
+    page = NavigationTimeoutPage()
+    context = FakeContext(tmp_path)
+
+    with pytest.raises(RetryableJobError, match="before prompt interaction"):
+        asyncio.run(ArenaAdapter().execute(context, FakeBrowser(page)))
+
+    assert page.send_clicks == 0
+    assert page.closed
 
 
 def test_resume_of_submitted_job_never_clicks_send_again(tmp_path):

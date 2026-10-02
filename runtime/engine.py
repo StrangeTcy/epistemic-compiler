@@ -22,6 +22,7 @@ from runtime.models import (
     JobExecutor,
     JobSpec,
     MissionSpec,
+    RetryableJobError,
     WaitingForHuman,
 )
 
@@ -807,6 +808,8 @@ async def _execute_one(
     ) as exc:  # Persist the failure and let independent DAG siblings continue.
         ended_at = utc_now()
         error = {"type": type(exc).__name__, "message": str(exc)[:2000]}
+        if isinstance(exc, RetryableJobError):
+            error["retryable"] = True
         job_state["error"] = error
         provenance.update({"status": "failed", "ended_at": ended_at, "error": error})
         _atomic_json(job_dir / "provenance.json", provenance)
@@ -887,7 +890,29 @@ def _reset_for_resume(
     *,
     retry_failed: bool,
     announce: Callable[[dict[str, Any]], None] | None,
+    resume_waiting_for_human: bool = True,
+    retry_job_ids: set[str] | None = None,
+    retry_blocked: bool = False,
 ) -> None:
+    retry_job_ids = retry_job_ids or set()
+    unknown_retry_jobs = retry_job_ids - set(state["jobs"])
+    if unknown_retry_jobs:
+        raise MissionValidationError(
+            "retry_job_ids contains unknown jobs: "
+            + ", ".join(sorted(unknown_retry_jobs))
+        )
+    unsafe_retry_jobs = {
+        job_id
+        for job_id in retry_job_ids
+        if state["jobs"][job_id].get("status") != "failed"
+        or not state["jobs"][job_id].get("error", {}).get("retryable", False)
+    }
+    if unsafe_retry_jobs:
+        raise MissionValidationError(
+            "retry_job_ids may name only failed jobs marked retryable: "
+            + ", ".join(sorted(unsafe_retry_jobs))
+        )
+
     for job_id, job_state in state["jobs"].items():
         status = job_state["status"]
         if status == "running":
@@ -903,23 +928,50 @@ def _reset_for_resume(
                 reason=job_state["error"]["message"],
                 announce=announce,
             )
-        status = job_state["status"]
-        if status == "waiting_for_human":
+            # A previously running job is distinct from a human-paused job: it is
+            # safe to resume because the adapter checks persisted interaction state
+            # before it can submit anything again.
             _transition(
                 run_dir,
                 state,
                 job_id,
                 "queued",
-                reason="resuming saved job state",
+                reason="resuming interrupted job; adapter will inspect saved interaction state",
                 announce=announce,
             )
-        elif retry_failed and status in {"failed", "blocked"}:
+            continue
+        if status == "waiting_for_human":
+            if resume_waiting_for_human:
+                _transition(
+                    run_dir,
+                    state,
+                    job_id,
+                    "queued",
+                    reason="explicitly resuming saved human-paused job",
+                    announce=announce,
+                )
+            continue
+        if status == "failed" and (retry_failed or job_id in retry_job_ids):
+            reason = (
+                "explicit retry requested"
+                if retry_failed
+                else "bounded retry of an explicitly retryable failure"
+            )
             _transition(
                 run_dir,
                 state,
                 job_id,
                 "queued",
-                reason="explicit retry requested",
+                reason=reason,
+                announce=announce,
+            )
+        elif status == "blocked" and (retry_failed or retry_blocked):
+            _transition(
+                run_dir,
+                state,
+                job_id,
+                "queued",
+                reason="retrying after a dependency retry",
                 announce=announce,
             )
 
@@ -964,6 +1016,9 @@ async def run_mission(
     *,
     resume_dir: str | Path | None = None,
     retry_failed: bool = False,
+    retry_job_ids: set[str] | None = None,
+    retry_blocked: bool = False,
+    resume_waiting_for_human: bool = True,
     max_parallel: int = 1,
     executor: JobExecutor | None = None,
     announce: Callable[[dict[str, Any]], None] | None = _event_printer,
@@ -971,6 +1026,8 @@ async def run_mission(
     """Run or resume a mission. Completed jobs are immutable and never repeated."""
     if max_parallel < 1 or max_parallel > 16:
         raise ValueError("max_parallel must be between 1 and 16")
+    if not resume_dir and (retry_job_ids or retry_blocked or not resume_waiting_for_human):
+        raise ValueError("retry/resume controls require an existing resume_dir")
     spec = load_mission(mission_path)
     run_dir, state = _prepare_run(spec, Path(resume_dir) if resume_dir else None)
     lock_path = _acquire_run_lock(run_dir)
@@ -981,7 +1038,13 @@ async def run_mission(
             # if another runner finished between our initial path lookup and lock.
             run_dir, state = _prepare_run(spec, run_dir)
             _reset_for_resume(
-                run_dir, state, retry_failed=retry_failed, announce=announce
+                run_dir,
+                state,
+                retry_failed=retry_failed,
+                announce=announce,
+                resume_waiting_for_human=resume_waiting_for_human,
+                retry_job_ids=retry_job_ids,
+                retry_blocked=retry_blocked,
             )
         if executor is None:
             from runtime.executor import BrowserSiteExecutor

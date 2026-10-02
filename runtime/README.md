@@ -70,6 +70,36 @@ python -m playwright install chromium
 
 This selects a separate `chromium-arena` automation profile. Return to installed Chrome with `$env:EPISTEMIC_BROWSER_CHANNEL = 'chrome'` (or clear the variable, since `chrome` is the default). No `executable_path` override is used.
 
+## One-shot execution, unattended worker, and authentication
+
+These are three separate operations:
+
+1. **One-time interactive authentication:** `python scripts/browser_login.py arena` opens the headed, dedicated Chrome profile. The user signs in manually; the script does not automate Google or Arena authentication.
+2. **One-shot execution:** `python scripts/run_mission.py path/to/mission.yaml` executes/resumes that explicit mission once and exits. It is the direct command for testing a single run.
+3. **Unattended local worker:** `python scripts/worker.py` continuously polls the local inbox and delegates all DAG scheduling/execution to the existing engine. It reuses the same persistent browser profile and sleeps when the inbox has no runnable work.
+
+The worker watches only `.yaml`/`.yml` files placed directly in the gitignored `runtime/queue/` directory; it does not scan or execute `examples/`, including the inert campaign example. Put only explicitly approved mission YAML and its referenced prompt/input files there. A new file is noticed on the next poll. Existing run state is matched by mission id and YAML content hash; completed jobs are not repeated after worker restart. The queue file stays in place and an unchanged completed mission is idempotently skipped; use a fresh mission id for a deliberately new run. For example:
+
+```powershell
+# One deterministic scan: process currently runnable work, then exit.
+python scripts/worker.py --once
+
+# Keep polling; Ctrl+C records active jobs for safe inspection/resume and stops.
+python scripts/worker.py --poll-interval 30 --max-parallel 2 --max-retries 2 --site arena
+```
+
+Useful options include `--queue-dir`, `--once`, `--poll-interval`, `--max-parallel`, `--max-retries`, and `--site` (`--provider` is an alias; Arena is the only currently supported site). `--once` also applies the bounded retry policy before exiting. The default policy allows two additional attempts (three attempts total) for failures explicitly marked safe to retry—currently, Playwright navigation timeouts before any prompt interaction—with exponential backoff capped at 60 seconds. Ambiguous UI, CAPTCHA/login, and response-completion uncertainty remain `waiting_for_human` and are never retried automatically. The existing engine continues independent DAG jobs when another job is waiting for a person.
+
+A worker leaves `waiting_for_human` unchanged so it remains externally recoverable. After manually resolving the condition, use the one-shot runner to explicitly resume that run. It will process the saved DAG state; on its next poll the worker reconciles that state and never duplicates completed jobs:
+
+```powershell
+python scripts/run_mission.py path/to/mission.yaml --resume runtime/runs/mission-name/exact-run-id
+```
+
+Replace both paths with the mission YAML and run directory shown by `inspect_run.py`.
+
+The worker uses `runtime/queue/.worker.lock` to prevent duplicate local workers. On an unclean termination, inspect the recorded PID before removing a stale lock. This is a single-machine queue process, not a distributed daemon, cloud service, or agent swarm; it does not create/approve missions or make research decisions. **Unattended Arena execution has not been live-verified.**
+
 ## General setup and manual login
 
 On macOS/Linux, the equivalent setup is:
@@ -127,15 +157,15 @@ The Direct adapter currently expects one unique chat textbox, a uniquely identif
 
 ## Verification
 
-Deterministic tests cover mission execution and browser channel/profile configuration through fake Playwright objects; they do not contact Arena or Google. Run them with:
+Deterministic tests cover mission execution, worker queue/retry/resume behavior, and browser channel/profile configuration through fake Playwright objects; they do not contact Arena or Google. Run them with:
 
 ```bash
 python -m pip install -r requirements-dev.txt
-python -m pytest -q tests/test_browser_config.py tests/test_runtime_engine.py tests/test_arena_adapter.py
+python -m pytest -q tests/test_browser_config.py tests/test_worker.py tests/test_runtime_engine.py tests/test_arena_adapter.py
 ```
 
-A green test suite does not verify that Chrome is installed/discovered on a particular Windows host, that Google/Arena permits interactive login in the new profile, or that Arena's live DOM/accessibility tree matches the adapter.
+A green test suite does not verify that Chrome is installed/discovered on a particular Windows host, that Google/Arena permits interactive login in the new profile, that unattended worker operation succeeds, or that Arena's live DOM/accessibility tree matches the adapter.
 
 ### Latest smoke attempt (2026-10-02; before Chrome channel support)
 
-A temporary, harmless `arena-smoke-test` mission (`Reply with exactly: RUNTIME_OK`, no file inputs) exercised the real runner entry point. At that time, the default was Playwright's bundled Chromium; the job reached `queued -> running` and failed in `BrowserController.start` because the Chromium executable was absent (`chromium-1243/.../chrome`). The earlier `playwright install chromium` attempt failed with TLS `ECONNRESET` from `cdn.playwright.dev`. The browser never opened, no request reached Arena, no prompt was submitted, and no response artifact was produced. The new installed-Chrome channel is covered only by deterministic mocked configuration tests so far: **no live Google login, Chrome launch, Arena request, or selector has been verified.**
+A temporary, harmless `arena-smoke-test` mission (`Reply with exactly: RUNTIME_OK`, no file inputs) exercised the real runner entry point. At that time, the default was Playwright's bundled Chromium; the job reached `queued -> running` and failed in `BrowserController.start` because the Chromium executable was absent (`chromium-1243/.../chrome`). The earlier `playwright install chromium` attempt failed with TLS `ECONNRESET` from `cdn.playwright.dev`. The browser never opened, no request reached Arena, no prompt was submitted, and no response artifact was produced. The installed-Chrome channel and local worker are covered only by deterministic mocked configuration/engine tests so far: **no live Google login, Chrome launch, unattended worker session, Arena request, or selector has been verified.**

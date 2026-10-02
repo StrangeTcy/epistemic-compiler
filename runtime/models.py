@@ -59,6 +59,10 @@ class ExecutionResult:
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
+class RetryableJobError(Exception):
+    """A known transient failure that is safe to retry without duplicating a side effect."""
+
+
 class WaitingForHuman(Exception):
     """A UI or workflow condition needs a person; do not guess or retry blindly."""
 

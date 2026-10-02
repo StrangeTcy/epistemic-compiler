@@ -8,3 +8,6 @@ runtime/runs/
 
 # Dedicated persistent browser profiles contain local authenticated site state.
 runtime/browser_profiles/
+
+# Local worker inbox and its lock are machine-local operational state.
+runtime/queue/

@@ -16,8 +16,15 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
+
 from runtime.browser.browser import BrowserController, BrowserPage
-from runtime.models import ExecutionResult, JobContext, WaitingForHuman
+from runtime.models import (
+    ExecutionResult,
+    JobContext,
+    RetryableJobError,
+    WaitingForHuman,
+)
 
 ARENA_DIRECT_URL = "https://arena.ai/text/direct"
 
@@ -71,7 +78,15 @@ class ArenaAdapter:
                     stage="saved_url_invalid",
                     extra={"saved_url": target_url},
                 )
-            await page.goto(target_url)
+            try:
+                await page.goto(target_url)
+            except PlaywrightTimeoutError as exc:
+                # Navigation happens before any new prompt submission. Retrying this
+                # specific timeout is safe; ambiguous interaction failures instead
+                # remain waiting_for_human.
+                raise RetryableJobError(
+                    f"Arena navigation timed out before prompt interaction: {exc}"
+                ) from exc
             await self._record_progress(context, page, stage="page_opened")
             body = await page.body_text()
             await self._check_human_gates(context, page, body, stage="page_opened")
