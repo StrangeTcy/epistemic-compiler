@@ -5,7 +5,7 @@ The compiler's running notes on each response as it is stored: how it conforms t
 | Role | Stored | File | Format | Checked claims |
 | :--- | :--- | :--- | :--- | :--- |
 | Theorist (P01-T) | 2026-10-02 | `theorist.md` | sections 1 to 9 of 10; section 10 absent and not declared cut; 4,261 words against a 3,500 guide | the 3 claims that could be checked all hold |
-| Experimentalist (P02-E) | not yet | | | |
+| Experimentalist (P02-E), two samples | 2026-10-02 | `experimentalist.a.md` ("opus 4.6"), `experimentalist.b.md` ("fable 5.1") | all 10 sections in both; 3,630 and 3,674 words against a 3,500 guide; b's section 1 heading is glued to a preceding sentence | the claims that could be checked hold; both responses' power figures are slightly optimistic |
 | Skeptic (P03-S) | not yet | | | |
 | Prior-Work Killer (P04-PW) | not yet | | | |
 
@@ -36,3 +36,48 @@ Missing for every stored response so far: the arena mode, the model name as the 
 - One voice, not corroboration: the Theorist's doubts about Q-B's design are consistent with the case in `mission-03/DESIGN.md` for testing the Strategy IR's central claim on existing tasks first.
 
 **Open.** The other three responses; the arena metadata; the Pearce/Bernheim correction in the source graph.
+
+## Experimentalist (P02-E), two samples
+
+Two answers to the same prompt arrived together: **a** is labelled "opus 4.6" and **b** "fable 5.1" (the user's labels; each response self-reports "Claude", which is not reliable). Neither saw the other, or the Theorist.
+
+**Conformance.** Both have the header lines and all ten required sections, and neither shows the insertion artifact seen in the Theorist's text.
+- **a:** 3,630 words, though it states "about 3,400, nothing cut". Tags: [V] x1, [S] x2. Mints E-M01 to E-M05, E-CTRL01 to 06, E-T01 to 08, E-O01 to 05.
+- **b:** 3,674 words; declares what it cut (a numeric power table, F2 construction detail, a tolerance spec). Tags: [S] x4, [R] x1. Mints E-M01 to 05, E-CTRL01 to 10, E-T01 to 09, E-O01 to 10 and one new confound, E-CF12. Its section 1 heading sits on the same line as a preceding sentence ("...independent verifier.## 1. Kill attempt"), so a strict parser would miss it.
+
+**Checked on 2026-10-02.**
+1. **b's named repository exists.** `sileod/llm-theory-of-mind` is public, Apache-2.0, last pushed 2026-07-03, with a small generator (`src/`: about 600 lines across three files). The Hugging Face dataset `sileod/mindgames` exists: 18.6k rows (train 11.2k, validation 3.73k, test 3.73k), with an `smcdel_problem` field, 2 to 4 agents, 0 to 4 announcements, hypothesis depth 0 to 1, and a trained-classifier difficulty score.
+2. **a's [V] claim is real.** Its MindGames quote is verbatim from that repository's README.
+3. **A reuse cost neither response mentions.** The generator labels each problem by POSTing it to a third-party SMCDEL web service (`https://tools.malv.in/smcdelweb/check`) with browser-spoofed headers. An independent, reproducible verifier would need a local SMCDEL install, or the dataset's shipped specifications and labels, not the generator's web call.
+4. **Power figures, recomputed with the exact McNemar test** under the assumptions both state (baseline 0.45, effect 0.15, correlation 0.3, so discordance 0.364). 133 instances give 80% power. a's "about 105" gives 68%; a's "about 65% at 80 instances" is 54%; a's "about 80% for 20 points at 80 instances" holds (81%); a's "above 25 points at 17 pairs" is true but understated (even 40 points reaches only 69%). b's "100 to 130 instances" is close to 133; its "about 40% at 48 pairs" is 33%; its "25 points needs 40 to 50" is 50 and "about 80% at 48 pairs" is 79%; its Wilson half-width at 12 trials is 0.25, not 0.27. Both are slightly optimistic. Neither conclusion changes.
+5. **b misattributes a source.** It says the control prose comes from "the strategy_ir.md 'generic explicit model' wording". That phrase is not in `strategy_ir.md`; it is the seed's H3 text. The Council saw only section 10 of the spec.
+6. **a is internally inconsistent.** Section 2 plans 2 solvers x about 66 instances (396 dispatches); section 5 plans 1 solver x 133 instances (399).
+
+**Not checked.** Both responses' recalled claims about prompting effects; L02 and GTBench quotes (a's match the abstracts seen earlier in this project); b's proposed nonsense lexicon, classifier thresholds and 24-paste test-retest subset (nobody has built them).
+
+**Where the two agree.**
+- **Scale:** 60 pastes cannot decide H1 to H3. They can only check for floor and ceiling and exercise the pipeline. 400 pastes give modest power.
+- **Registration:** one primary solver, three primary arms (P, L, N), random cards dropped (a) or secondary (b), and one primary contrast, P minus L on S1, paired by instance.
+- **Design details:** schema-level characterization; an independent verifier and a MindGames cross-check; leakage audits; opaque ids and a sealed key; a pilot with a floor/ceiling rule; "uninformative" kept distinct from "null".
+- **The gate text:** both fault it for naming no primary contrast, no sample size, and no headroom or verifier precondition.
+
+**Where they differ.**
+- **Solver channel.** a makes at least one API solver a condition ("without it session variance alone can mask or fabricate any effect"). b keeps arena paste and adds controls for it: a test-retest subset, a pack-only leak probe, framing rotation, a surface-feature classifier, a tool-use declaration.
+- **Margin.** a recommends 12 points; b fixes 15.
+- **Extras.** a adds a staleness clause for the gate. b adds a point a does not make: **for a fixed schema every S1 instance receives the same pack, so retrieval contributes no variance; the registered Q-B compares one fixed paragraph with another, a prompt A/B and not a test of the Strategy IR.**
+
+**What they ask of the seed** (for Gate 1; none applied):
+1. Name one primary contrast (P minus L on S1) and fix a minimum sample size and a margin.
+2. Make headroom (H5) and independent verification (H4) preconditions in the gate, with an "uninformative" outcome distinct from a null.
+3. Characterize at the schema level, and say that this tests obligations, not characterization.
+4. Use at least one API-driven solver (a), or add test-retest and session controls (b).
+5. Merge H0 and H3, since a P/L/N design cannot tell them apart (b).
+6. Disclose who wrote the control prose, not only the cards.
+
+**Compiler observations.**
+- **b's retrieval point is the one that matters most** and is the same concern that shaped `mission-03/DESIGN.md`: trigger selection can only be tested by applying a card where its trigger does and does not hold.
+- **Mission 03's channel.** It uses the existing API-driven runner, which is a's condition (c).
+- **On S2.** Both treat S2 as something that can be planted mechanically. Neither notes that, with the frozen cards, a private announcement would fire card A's exclusion; the Theorist's concern applies. b's rule that a card whose method cannot be made mechanical gets no S2 cell is compatible with the Theorist's proposal.
+- **On obligations.** b's seventh critique is accurate for the IR as built: obligations are prose shown to the solver, and the validator checks only recorded statuses, so only the solver's response to prose can be tested.
+
+**Open.** The Skeptic and Prior-Work Killer responses; the arena metadata; whether to adopt a local SMCDEL install for the verifier.
