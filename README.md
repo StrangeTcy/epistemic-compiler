@@ -14,7 +14,7 @@
 - The Gate 2 decision-table update outputs are quarantined as exploratory, not calibrated Bayesian posteriors. Mission 01 coordination-efficiency metrics are not estimable from the incomplete real-time friction log.
 - Mission 02 (started 2026-10-02) is at its **kickoff**: `mission-02/seed.yaml`, an evidence digest and four Council prompts exist, and **three of four Council roles have been stored** (the Theorist; the Experimentalist with two samples; the Prior-Work Killer with two samples); the cross-critique and Gate 1 wait for the Skeptic. It asks what a higher-order epistemic-game instance family needs for independently checkable ground truth, and registers a comparison of trigger-matched strategy packs against controls. Nothing in it has been run. Its seed lists published work on dynamic-epistemic-logic benchmarks for LLMs and on strategy and template retrieval as collisions to be checked, not as open ground. `mission-02/sources/` also stores, verbatim, a 2026-10-02 revised Arena instruction (GPT-5.6 Luna) that made epistemic games a core research domain; Mission 04 is its first execution.
 - Mission 03 is a **proposal** (`mission-03/`, 2026-10-02): a matched/mismatched comparison of two strategy cards on two hardened task families, gated by a blind-characterization stage and a pilot. Nothing has been run. `mission-03/DESIGN.md` states what was checked and what was not, and why it is recommended before Mission 02. Two human decisions are recorded in `mission-03/decisions/` (margin 0.15; pilot on Atria-Dawn-Preview alone).
-- Mission 04 is a **proposal** (`mission-04/`, 2026-10-02): do frontier models treat deep private confirmation chains as public announcements? A parameterized decision family (public vs lossy-chain delivery, facts held fixed) with a deterministic exact oracle, comprehension controls and registered falsification variants. Pre-Council; nothing run; the runtime repository is absent from this workspace, so its additions to `rl_eval_generator` are specifications. `mission-01/harvest.md` carries the durable Mission 01 methods it reuses.
+- Mission 04 is a **proposal** (`mission-04/`, 2026-10-02): do frontier models treat deep private confirmation chains as public announcements? A parameterized decision family (public vs lossy-chain delivery, facts held fixed) with a deterministic exact oracle, comprehension controls and registered falsification variants. Pre-Council; nothing run; the runtime repository is absent from this workspace, so its additions to `rl_eval_generator` are specifications. The Council round is ready to run: four role prompts with hashes are in `mission-04/council/`. `mission-01/harvest.md` carries the durable Mission 01 methods it reuses.
 
 ## Architecture Boundary & Pilot Lessons (Prospective)
 
@@ -62,7 +62,8 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 ├── mission-04/
 │   ├── seed.yaml               # S04: common-knowledge neglect under finite confirmation chains (proposal; nothing run)
 │   ├── design.md               # Formal environment, arms, oracle spec, falsification variants, claim ceiling
-│   └── context/                # Compiled Mindcluster role packs for the future Council round
+│   ├── context/                # Compiled Mindcluster role packs (retrieval id 2f65c211684ee6ec)
+│   └── council/                # Round-1 prompts for the four roles and run instructions; no responses collected yet
 └── mission-01/
     ├── seed.yaml               # Historical pre-registration seed; inaccurate statements are documented in REV-01
     ├── council/                # Four completed role responses and original prompts
