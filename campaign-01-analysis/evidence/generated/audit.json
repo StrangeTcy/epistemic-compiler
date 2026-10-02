@@ -1,0 +1,263 @@
+{
+  "archive": {
+    "archive_bytes": 6698206,
+    "archive_ref": "origin/main:atria-campaign-state-62.zip",
+    "archive_sha256": "e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd",
+    "campaign_ref_is_campaign_repository_commit": true,
+    "campaign_ref_member": "d7357092493f311f649a0742889b301d796911b5",
+    "git_blob_sha1": "c1c416cdee773cffab7fbf5a1cc01b8c8c2fd8a3",
+    "member_count": 2968,
+    "member_inventory_csv": "archive_inventory.csv",
+    "root_member_count": 20
+  },
+  "campaign": {
+    "all_run_repository_commit": "d7357092493f311f649a0742889b301d796911b5",
+    "analysis_family_label_overrides": {
+      "epistemic_games": "epistemic_games"
+    },
+    "campaign_progress_episodes_completed": 194,
+    "campaign_progress_episodes_total": 194,
+    "campaign_report_aggregate_note": "report per judge_guarantee bucket only; compile_only verdicts are exploratory and excluded from any validated aggregate",
+    "campaign_report_compile_only_disclaimer": "compile_only rows are graded by judges without a behavioral reference on that exact instance; they do not carry the exact-instance oracle guarantee and must not be read as validated model verdicts",
+    "campaign_report_provider_outage_counter": {
+      "last_backoff_seconds": 600.0,
+      "last_case_id": "ts_trajectory__witness_status=broken_representation=reflective__seed-0",
+      "retries": 8,
+      "updated_at": "2026-10-02T13:50:29.966376Z",
+      "waited_seconds": 3300.0
+    },
+    "campaign_status_report": "completed",
+    "case_id_set_matches_manifest": true,
+    "compile_only_cases": 122,
+    "exact_instance_oracle_cases": 72,
+    "execution_mode": "paid",
+    "explicit_omission_case_ids_known_gate_blocked": [
+      "glyph__architecture=easy_optimizer=hard_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0",
+      "glyph__architecture=easy_optimizer=medium_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0",
+      "moco__naming=hard_distractors=easy_queue_math=easy_temperature=easy_visible_tests=easy_symptom_mask=easy__seed-0",
+      "moco__naming=medium_distractors=easy_queue_math=easy_temperature=easy_visible_tests=easy_symptom_mask=easy__seed-0",
+      "glyph__architecture=hard_optimizer=easy_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0",
+      "glyph__architecture=easy_optimizer=easy_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=hard__seed-0",
+      "glyph__architecture=easy_optimizer=easy_red_herring=hard_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0"
+    ],
+    "explicit_omission_case_ids_unsupported_modality": [
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=hard_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=medium_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=hard_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=medium_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=hard_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=medium_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=hard_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=medium_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=hard_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=medium_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=hard_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=medium_investigation_difficulty=easy_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=hard_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=medium_symptom_mask=easy__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=hard__seed-0",
+      "rope__paper_clarity=easy_implementation_style=easy_notation_mismatch=easy_visible_tests=easy_hidden_context=easy_interaction_depth=easy_investigation_difficulty=easy_symptom_mask=medium__seed-0"
+    ],
+    "explicit_omission_count_known_gate_blocked": 7,
+    "explicit_omission_count_unsupported_modality": 17,
+    "explicit_omission_total": 24,
+    "finished_at": "2026-10-02T14:44:58.180991Z",
+    "instance_oracle_case_status_counts": {
+      "passed": 72
+    },
+    "intent_provider": "atria",
+    "known_gate_blocked_calibration_classes": {
+      "glyph__architecture=easy_optimizer=easy_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=hard__seed-0": "negative_control_is_not_a_negative_control",
+      "glyph__architecture=easy_optimizer=easy_red_herring=hard_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0": "reference_does_not_solve_its_own_instance",
+      "glyph__architecture=easy_optimizer=hard_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0": "reference_exists_per_environment_not_per_vector",
+      "glyph__architecture=easy_optimizer=medium_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0": "reference_exists_per_environment_not_per_vector",
+      "glyph__architecture=hard_optimizer=easy_red_herring=easy_visible_tests=easy_data_clue=easy_symptom_mask=easy__seed-0": "negative_control_is_not_a_negative_control",
+      "moco__naming=hard_distractors=easy_queue_math=easy_temperature=easy_visible_tests=easy_symptom_mask=easy__seed-0": "oracle_assumes_easy_layout",
+      "moco__naming=medium_distractors=easy_queue_math=easy_temperature=easy_visible_tests=easy_symptom_mask=easy__seed-0": "oracle_assumes_easy_layout"
+    },
+    "known_gate_blocked_case_count": 7,
+    "known_gate_blocked_disposition": "omitted_before_provider_access",
+    "max_steps": 20,
+    "max_tokens_per_call": 8192,
+    "mode_summary": {
+      "behavioral_reference": {
+        "performance_eligible_fails": 16,
+        "performance_eligible_passes": 56,
+        "performance_eligible_rows": 72,
+        "recorded_fails": 16,
+        "recorded_passes": 56,
+        "recorded_rows": 72
+      },
+      "compile_only": {
+        "performance_eligible_fails": 45,
+        "performance_eligible_passes": 75,
+        "performance_eligible_rows": 120,
+        "recorded_fails": 47,
+        "recorded_passes": 75,
+        "recorded_rows": 122
+      }
+    },
+    "model": "Atria-Dawn-Preview",
+    "omitted_unsupported_case_count": 17,
+    "omitted_unsupported_environments": [
+      "rope"
+    ],
+    "oracle_preflight_behavioral_reference_details": {
+      "epistemic_games": {
+        "behavioral_reference_executed": true,
+        "reference_behavior": "public_bayes_oracle",
+        "reference_self_test": "passed"
+      }
+    },
+    "oracle_preflight_behavioral_reference_environments": [
+      "epistemic_games"
+    ],
+    "oracle_preflight_status_counts": {
+      "not_configured": 33,
+      "passed": 1
+    },
+    "performance_eligible_case_count": 192,
+    "performance_eligible_pass_rate_descriptive_mixed_modes": 0.6822916666666666,
+    "performance_eligible_verdict_counts": {
+      "FAIL": 61,
+      "PASS": 131
+    },
+    "provider": "atria",
+    "provider_calls_before_gate_omissions": 0,
+    "provider_failure_case_count_from_final_result_notes": 2,
+    "provider_failure_case_ids_from_final_result_notes": [
+      "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0",
+      "ts_trajectory__witness_status=broken_representation=reflective__seed-0"
+    ],
+    "provider_failure_case_notes": {
+      "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0": [
+        "provider transient failure after bounded retries"
+      ],
+      "ts_trajectory__witness_status=broken_representation=reflective__seed-0": [
+        "provider transient failure after bounded retries"
+      ]
+    },
+    "provider_outage_case_id_named_by_campaign_report": "ts_trajectory__witness_status=broken_representation=reflective__seed-0",
+    "raw_verdict_counts": {
+      "FAIL": 63,
+      "PASS": 131
+    },
+    "reasoning_enabled_config": false,
+    "recorded_at": "2026-09-29T13:34:39.345679Z",
+    "recorded_results_plus_reported_omissions": 218,
+    "recorded_track_label_mismatch_case_ids": [
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=narrative__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=skewed_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=solo_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=strong_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=weak_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=trap_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0"
+    ],
+    "registry_environment_count": 34,
+    "repository_dirty_at_run": true,
+    "result_status_counts": {
+      "scored": 194
+    },
+    "selected_case_count_manifest": 194,
+    "selected_case_count_results": 194,
+    "selected_environment_count": 33,
+    "started_at": "2026-09-29T14:12:43.150826Z",
+    "telemetry_run_id": "atria-9d331786ca57daa51d6cc87b",
+    "temperature": 1.0,
+    "text_only_selected_case_count": 194,
+    "text_only_unsupported_selected_case_count": 0,
+    "top_p": 0.95,
+    "wall_elapsed_seconds": 261135.030165
+  },
+  "config_hash_audit": {
+    "config_hash_matches": 33,
+    "config_hash_mismatches": [],
+    "config_paths_checked": 33,
+    "generator_source_path_argument": "/tmp/rl_eval_generator_base",
+    "selected_unique_config_paths": 33
+  },
+  "execution_and_usage": {
+    "additional_run_directories_over_one_per_case": 74,
+    "all_run_completion_tokens_from_successful_responses": 569277,
+    "all_run_embedded_attempt_log_rows": 4443,
+    "all_run_prompt_tokens_from_successful_responses": 8877965,
+    "all_run_reasoning_tokens_reported_in_usage": 325785,
+    "all_run_response_rows_with_reasoning_content": 2710,
+    "all_run_successful_response_rows": 4061,
+    "all_run_total_tokens_from_successful_responses": 9447242,
+    "all_run_unique_turn_ids_summed_by_run": 4023,
+    "api_cost_or_spend": "not present in the exported archive",
+    "api_errors_jsonl_error_type_counts_all_runs": {
+      "http_error": 171,
+      "provider_error": 18,
+      "provider_transient": 57,
+      "success": 4061,
+      "timeout": 576
+    },
+    "api_errors_jsonl_record_count_all_runs": 4883,
+    "archived_run_directory_count": 268,
+    "archived_run_manifest_elapsed_seconds_sum_all_attempt_runs": 135653.441995,
+    "archived_run_manifest_elapsed_seconds_sum_selected_runs": 80605.94137399999,
+    "attempt_counter_reconciliation": "Counters have different scopes and do not reconcile from archived per-run manifests/JSONL; report each source separately.",
+    "campaign_progress_http_attempts": 6412,
+    "final_result_vs_final_json_mismatches": [],
+    "final_run_completion_tokens_from_successful_responses": 514333,
+    "final_run_prompt_tokens_from_successful_responses": 8159188,
+    "final_run_successful_response_rows": 3538,
+    "final_run_total_tokens_from_successful_responses": 8673521,
+    "final_run_unique_turn_ids_summed_by_case": 3500,
+    "run_directories_for_all_provider_failure_cases": 41,
+    "run_directories_for_campaign_report_provider_case": 39,
+    "runs_per_selected_case_histogram": {
+      "1": 168,
+      "2": 16,
+      "3": 7,
+      "39": 1,
+      "4": 2
+    },
+    "suite_checkpoint_http_attempts_total": 6172,
+    "suite_checkpoint_http_attempts_unknown_upper_bound_total": 240,
+    "suite_checkpoint_reported_attempts_plus_unknown": 6412,
+    "suite_result_elapsed_seconds_max": 1945.064,
+    "suite_result_elapsed_seconds_mean": 427.3557371134021,
+    "suite_result_elapsed_seconds_median": 334.079,
+    "suite_result_elapsed_seconds_min": 27.686,
+    "suite_result_elapsed_seconds_p95_nearest_rank": 1029.117,
+    "suite_result_elapsed_seconds_sum": 82907.01300000005,
+    "sum_run_manifest_http_attempts_used": 4778,
+    "sum_selected_final_manifest_http_attempts_used": 3869,
+    "sum_selected_suite_result_http_attempts": 4319
+  },
+  "failure_taxonomy_all_recorded_failures": {
+    "invalid_action": 4,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  },
+  "failure_taxonomy_performance_eligible": {
+    "invalid_action": 2,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  },
+  "generated_tables": [
+    "archive_inventory.csv",
+    "campaign_exclusions.csv",
+    "case_results.csv",
+    "run_attempts.csv",
+    "trace_index.csv",
+    "failure_details.csv",
+    "environment_summary.csv",
+    "track_summary.csv",
+    "analysis_family_summary.csv",
+    "axis_summary.csv",
+    "failure_taxonomy.csv",
+    "config_hash_audit.csv"
+  ]
+}

@@ -1,0 +1,25 @@
+# Experimentalist — separate analysis
+
+## Reconstructed design
+
+The raw ZIP is the authority. It contains 2,968 members, records 194/194 selected case IDs as scored across 33 of 34 registered environments, and explicitly lists 17 `rope` omissions for unsupported provider modality plus 7 pre-provider gate exclusions for known calibration failures. The archive therefore names 218 scored-or-omitted candidate IDs. The case result manifest agrees with the suite checkpoint, and selected final JSON verdict/score/failure labels match the checkpoint rows. The run used Atria-Dawn-Preview in paid mode, 20 maximum steps, 8,192 max tokens per call, temperature 1, top-p .95, and a recorded `reasoning_enabled=false` flag; no spend/cost record is present.
+
+The result is a one-case-per-selected-ID sweep at seed 0, with many environments using a one-factor substitution around an all-easy point. There are no independent environment-level replications. Repeated archived run directories (268 total for 194 selected cases) are retries/restarts/superseded runs, not independent seed replicates. Most axes are thus identifiable as local descriptions, not as population treatment effects. In addition, the clean source comparator shows several category axes with no reference in the task/judge templates. `compositional_optimizer` has both advertised axes unreferenced: the prompt, starter file, visible test, and judge use the same `MomentumStep` task. The five observed outcomes there—three passes and two failures—are better read as variable model/tool attempts on the same template than as a difficulty response curve, subject to the dirty-source caveat.
+
+## Denominators and score modes
+
+The raw checkpoint records 131 PASS/63 FAIL. The campaign report lists one long provider outage, on the reflective broken-witness `ts_trajectory` case. But a scan of all final judge JSONs finds the same terminal provider-transient note on a `sheaf_physical_constraints` case. Excluding any final row that explicitly attributes its terminal failure to bounded provider transients gives 192 cases, 131 PASS/61 FAIL. Excluding only the report-listed case gives 193/131/62. Keep all three counts visible because the report's tracker and final-output notes disagree.
+
+The 192-row performance set contains 72 `behavioral_reference` cases (56/16) and 120 `compile_only` cases (75/45). The campaign report itself says compile-only results are exploratory and excluded from validated aggregates. `instance_oracles.json` includes 72 per-instance no-op/plausible-wrong/reference calibrations; the environment-level `oracle_preflight.json` behavioral self-test is separately configured and passed only for `epistemic_games`. Do not collapse those records into “the whole suite had a validated oracle.”
+
+The recorded `ml_debugging` track has 37 cases because it includes the 7 epistemic-game answers. `analysis_family_summary.csv` preserves the original label in `case_results.csv` but groups the epistemic task separately, leaving 30 ML-debugging rows: BatchNorm 0/11, Glyph 0/8, and MoCo 9/11. This label error changes a family narrative, not the individual outputs.
+
+## Axis results worth preserving
+
+The regex state-machine contrast is especially sharp: at the easy class name, strings of lengths 32, 128, and 512 all pass; at length 32 the two other class names fail due to output-length expansion. However, the hard surface variant adds an implementation-performance note. CSS's easy-surface results are fail/validator-fail/pass over 3/4/5 bits, while its fixed three-bit surface sweep is fail/pass/pass. SQL passes across surface labels at six-node depth but its 12-node case is a syntax-validation failure and its 25-node case passes. Spreadsheet cases pass across all selected surface and length cells. These are five points per environment, one per selected contrast, not replicated estimates. The hidden axis is often input size, not a shared latent “reasoning depth.”
+
+The adaptive-halting recurrence-depth sweep is easy source-invalid, medium pass, hard pass; the easy failure is an indentation error. It should not be interpreted as an inverse difficulty effect. Several other scalar differences are similarly attributable to empty patch files, disallowed imports, malformed action JSON, or runtime errors.
+
+## Measurement changes needed
+
+Before another sweep: (1) compile an axis-to-rendered-file diff and block any level whose expected intervention changes no agent-visible or judge-visible file; (2) record the exact dirty diff and hashes of all rendered prompts, starter files, visible tests, judges, and helpers; (3) separate provider termination from invalid tool action in result schemas and include every such case in the campaign report; (4) preserve one canonical counter for HTTP requests while retaining per-layer raw counters; (5) present score modes and per-case artifacts alongside any aggregate; and (6) run at least two or more independent sampling seeds per cell if effect language is desired. A future factorial/blocked design can estimate interactions; this campaign cannot retrospectively do so.

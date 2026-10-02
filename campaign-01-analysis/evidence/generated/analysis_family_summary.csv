@@ -1,0 +1,7 @@
+analysis_family,recorded_cases,performance_eligible_cases,passes_performance_set,fails_performance_set,pass_rate_performance_set,provider_failure_exclusions,recorded_behavioral_reference,recorded_compile_only,behavioral_reference_n,behavioral_reference_passes,behavioral_reference_fails,compile_only_n,compile_only_passes,compile_only_fails
+category_theoretic_compositional,85,84,57,27,0.6785714285714286,1,5,80,5,4,1,79,53,26
+epistemic_games,7,7,7,0,1.0,0,7,0,7,7,0,0,0,0
+ml_debugging,30,30,9,21,0.3,0,19,11,19,9,10,11,0,11
+recurrent_depth_behavioral,33,33,31,2,0.9393939393939394,0,11,22,11,11,0,22,20,2
+trajectory_solver_synthesis,9,8,2,6,0.25,1,0,9,0,0,0,8,2,6
+weird_machine,30,30,25,5,0.8333333333333334,0,30,0,30,25,5,0,0,0

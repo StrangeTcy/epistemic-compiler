@@ -1,0 +1,28 @@
+# Prior-Work Killer — separate analysis
+
+## Novelty verdict
+
+The strong novelty claims should be killed. “Controlled perturbation,” “multi-scenario evaluation,” “epistemic reasoning benchmark,” “higher-order belief/deception,” and “passing tests can misstate code correctness” all have substantial prior art. The archive's defensible contribution is narrower: a reproducible, row-linked audit of one paid run of Atria-Dawn-Preview on this particular `rl_eval_generator` snapshot, plus source-grounded evidence that some nominal task axes and judge descriptions may not match the intended manipulation. That is a cohort-specific empirical artifact and benchmark-engineering diagnosis, not a new theory or a new evaluation paradigm.
+
+## Prior work that bounds the claims
+
+1. **Broad coverage and multiple metrics are established benchmark principles.** HELM (Liang et al., TMLR 2023) explicitly selects a broad scenario set and measures accuracy, calibration, robustness, fairness, bias, toxicity, and efficiency, with standardized conditions and released prompts/completions. Therefore POST-01/04 cannot claim novelty for “a capability map” or for refusing to collapse every metric into one number. This campaign's incremental difference is its code-repair tasks, exact artifacts, and one-model controlled-case layout; its telemetry and judge-mode heterogeneity are much weaker than a standardized multi-model, multi-metric comparison. [HELM](https://arxiv.org/abs/2211.09110)
+
+2. **Controlled variable changes are established.** VarBench (Qian et al., Findings of EMNLP 2024) samples new values for variables in benchmark items to create fresh cases, evaluates four datasets, and reports five sampled runs/seeds for variable-based experiments. A one-seed, one-case-per-level covering design is not a new controlled-perturbation method. The current archive may reveal useful local nonmonotonicity, but its causal evidence is weaker than a repeated, explicitly variable-controlled experiment. [VarBench](https://aclanthology.org/2024.findings-emnlp.946/)
+
+3. **Epistemic-logic and ToM task design are not new.** MindGames (Sileo & Lernould, Findings of EMNLP 2023) uses dynamic epistemic logic to isolate and generate controlled problems, then verbalizes them in natural language. Hi-ToM (Wu et al., Findings of EMNLP 2023) explicitly targets higher-order recursive belief reasoning and includes a deception mechanism. BigToM (Gandhi et al., NeurIPS 2023 Datasets and Benchmarks) uses causal templates and controls to generate ToM evaluations. These works make it especially important to state that this archive's `epistemic_games` v0 uses stipulated behavioral likelihoods and Bayes' rule; it does not outperform or replace recursive ToM benchmarks. Its 7/7 result is a small exact-case observation, not novelty in epistemic evaluation. [MindGames](https://aclanthology.org/2023.findings-emnlp.303/) · [Hi-ToM](https://aclanthology.org/2023.findings-emnlp.717/) · [BigToM](https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and_Benchmarks.pdf)
+
+4. **Test-based code-agent scores already have known validity limits.** Wang, Pradel, and Liu's empirical SWE-bench study (“Are ‘Solved Issues’ in SWE-bench Really Solved Correctly?”) reports that 7.8% of plausible patches counted as correct by the studied SWE-bench validation failed the full developer test suite, and it uses differential patch testing to identify further behavioral discrepancies. This is not evidence that the current campaign's judges are wrong; it is prior evidence that a test pass is bounded by the tests that ran. Here the local concern is more direct: the archive itself labels 122 rows compile-only, and source audit finds prompt/judge mismatches and empty patches. [Study and DOI](https://dl.acm.org/doi/10.1145/3744916.3764576)
+
+## What might still be new, and how narrow it must remain
+
+The following are potential *specific observations*, not validated novelty claims:
+
+- In this one archived Atria run, the regex Rule 110 cases pass at three tested string lengths under one class name and fail at the two other class names at the easy length. The axis also changes an implementation hint, and there is one model run per cell. The pattern may be new for this exact model/task, but it cannot support a general surface-versus-depth principle.
+- Seven generated epistemic cases receive exact answers under the specified policy tables. Similar task-generation principles exist in MindGames, Hi-ToM, and BigToM; the result is a narrow provider/task observation, not the first evidence of Bayesian or strategic reasoning.
+- The source snapshot's placeholder scan identifies category controls with no environment-file reference, while the campaign logs repeated empty-patch and provider-terminal events. That is a potentially useful audit result for this generator snapshot. It is not yet proof that the same dirty source was executed, and it does not establish prevalence outside this repository.
+- The per-artifact retry and reasoning-metadata disagreements are concrete provenance defects in this ZIP. They merit generator/runtime repair; they are not a model capability result.
+
+## Required novelty language
+
+Every post should avoid “first,” “demonstrates a new capability,” “proves recursive reasoning,” “solves category theory,” and “surface deception beats hidden depth” unless a separate literature review and replicated experiment warrant them. Better wording: “In the archived run,” “for these selected instances,” “the source comparator shows,” and “this motivates a replicated follow-up.” The benchmark engineering proposals are actionable; their effectiveness remains an experiment, not an observed result.
