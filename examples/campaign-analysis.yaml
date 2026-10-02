@@ -1,0 +1,66 @@
+# Runtime/DAG example only. This was not executed during implementation.
+# The Atria archive is intentionally not copied or inspected here. The archive
+# is not present in this checkout; do not run this mission until campaign analysis
+# is explicitly authorized and the input has been staged locally.
+mission_id: campaign-01-analysis
+type: post_experiment_analysis
+
+inputs:
+  atria_campaign_archive: ../atria-campaign-state-56.zip
+
+defaults:
+  site: arena
+  profile: arena
+  # Current Arena Direct UI label; this is a router label, not a guaranteed
+  # underlying provider/model identity. Replace with an available exact label
+  # when reproducible model selection is required.
+  model: Max
+  timeout_seconds: 600
+
+jobs:
+  - job_id: evidence_ingest
+    role: evidence_ingest
+    prompt_artifact: prompts/campaign-analysis/evidence_ingest.md
+    input_artifacts:
+      - mission:atria_campaign_archive
+    dependencies: []
+    site: arena
+    output_artifact: artifacts/jobs/evidence_ingest/response.md
+
+  # These Council jobs are siblings: once evidence_ingest completes, they can
+  # run independently (e.g. with --max-parallel 4) in separate browser tabs.
+  - job_id: theorist
+    role: theorist
+    prompt_artifact: prompts/campaign-analysis/theorist.md
+    input_artifacts:
+      - job:evidence_ingest:response
+    dependencies: [evidence_ingest]
+    site: arena
+    output_artifact: artifacts/jobs/theorist/response.md
+
+  - job_id: experimentalist
+    role: experimentalist
+    prompt_artifact: prompts/campaign-analysis/experimentalist.md
+    input_artifacts:
+      - job:evidence_ingest:response
+    dependencies: [evidence_ingest]
+    site: arena
+    output_artifact: artifacts/jobs/experimentalist/response.md
+
+  - job_id: skeptic
+    role: skeptic
+    prompt_artifact: prompts/campaign-analysis/skeptic.md
+    input_artifacts:
+      - job:evidence_ingest:response
+    dependencies: [evidence_ingest]
+    site: arena
+    output_artifact: artifacts/jobs/skeptic/response.md
+
+  - job_id: prior_work_killer
+    role: prior_work_killer
+    prompt_artifact: prompts/campaign-analysis/prior_work_killer.md
+    input_artifacts:
+      - job:evidence_ingest:response
+    dependencies: [evidence_ingest]
+    site: arena
+    output_artifact: artifacts/jobs/prior_work_killer/response.md

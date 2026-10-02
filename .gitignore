@@ -1,4 +1,7 @@
 __pycache__/
-*.pyc
+*.py[cod]
 .pytest_cache/
 .venv/
+
+# Local run artifacts may contain prompts, inputs, responses, and screenshots.
+runtime/runs/

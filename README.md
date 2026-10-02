@@ -8,7 +8,7 @@
 - Pre-registration lock: `cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7`.
 - Initial combined target-repository test run: **17 passed** (historical); a later repeat could not collect two harness modules because the resumed sandbox lacked `torch`, so no fresh target-suite pass is claimed. The 17 tests verify listed engineering behavior, not mathematical gluing proofs.
 - Post-Gate-4 Mindcluster importer/retriever checks: **9 passed** (`tests/test_import_mindcluster_html.py` + `tests/test_retrieve_context.py`), including graph integrity, provenance, uncertainty preservation, and candidate-link rendering.
-- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). Further tests check that the frozen Mission 02 cards and features are unchanged (`tests/test_mission_02_freeze.py`), that the Mission 03 proposal is internally consistent and its power table reproduces (`tests/test_mission_03_proposal.py`), and that the Mission 04 seed follows the protocol schema and its harvest cites existing evidence (`tests/test_mission_04_seed.py`). The full suite (`python -m pytest`) is **167 passed** at the time of writing. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
+- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). Further tests check that the frozen Mission 02 cards and features are unchanged (`tests/test_mission_02_freeze.py`), that the Mission 03 proposal is internally consistent and its power table reproduces (`tests/test_mission_03_proposal.py`), and that the Mission 04 seed follows the protocol schema and its harvest cites existing evidence (`tests/test_mission_04_seed.py`). The full suite (`python -m pytest`) was **167 passed** before the runtime addition; it is now **180 passed** (`python -m pytest -q`, 2026-10-02), including deterministic runtime tests against a fake browser/site boundary. No live Arena selectors have been verified. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
 - Mission 01 has **human approval through Gate 4 as a bounded diagnostic**. The user accepted `accept_bounded_record` at Gate 3 and approved C01–C03 at Gate 4; the broad local-to-global / agent-coordination question is classified `inconclusive_result`. See `mission-01/gates/` and `mission-01/claim_set.md`.
 - Preserve the locked spec and raw results. Do not infer a general sheaf theorem, cohomology class, real-agent contract benefit, or Astra-vs-swarm advantage from this run. Part B is a deterministic enumerated compatibility stress test, not a comparison of independent LLM agents.
 - The Gate 2 decision-table update outputs are quarantined as exploratory, not calibrated Bayesian posteriors. Mission 01 coordination-efficiency metrics are not estimable from the incomplete real-time friction log.
@@ -18,7 +18,7 @@
 
 ## Architecture Boundary & Pilot Lessons (Prospective)
 
-The intended product boundary is a research-control layer above a replaceable agent runtime—not a hand-built swarm runtime. V0 provides the research-memory schema/retriever, mission design conventions, provenance, human gates, and validation/claim controls; it does **not** provide persistent agents, dispatch, a DAG runtime, automatic delegation, or a research-factory framework. Do not expand runtime machinery without a separately justified need.
+The intended product boundary is a research-control layer above a replaceable agent runtime—not a hand-built swarm runtime. The protocol provides research-memory/schema conventions, provenance, human gates, and validation/claim controls. The optional `runtime/` addition is a deliberately small local executor for explicit YAML job DAGs through a persistent browser profile; it is infrastructure, not a new research framework. It adds no provider APIs, persistent agents, automatic delegation, generic swarm/memory machinery, truth validator, or automatic gate decisions. It has not altered `research_protocol/protocol.md` or any frozen mission artifact.
 
 A draft Strategy IR (v0.2) separates procedural problem transformations from declarative Mindcluster memory and from runtime execution. It consists of a schema, thirteen **agent-proposed, unreviewed `candidate`** cards (five of them, in the `game` family, written for Mission 02), two **illustrative** episodes, a structural validator, and a deterministic trigger matcher. There is still no automatic strategy selector, application engine, or promotion mechanism, and nothing yet shows that any strategy helps: the empirical gate that would decide whether to extend it (`research_protocol/strategy_ir.md`, section 10) has not been run. See `research_protocol/strategy_ir.md` and `strategies/README.md`.
 
@@ -41,6 +41,20 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 ├── scripts/retrieve_context.py # Deterministic lexical + graph-hop context compiler (no vector DB)
 ├── scripts/validate_ir.py      # Structural validator for Strategy IR artifacts only (not seeds, specs, or claim sets)
 ├── scripts/retrieve_strategies.py # Deterministic trigger matcher -> strategies.md + manifest; selects and applies nothing
+├── runtime/                     # Optional local YAML DAG runner, browser boundary, Arena Direct adapter
+│   ├── engine.py                # Resumable scheduler, artifact snapshots, hashes, state and per-job provenance
+│   ├── models.py                # Typed mission/job, result, context, and human-wait records
+│   ├── schema.yaml              # Structural mission YAML schema and persisted status vocabulary
+│   ├── requirements.txt         # PyYAML and Playwright runtime dependencies
+│   ├── browser/                 # Generic persistent Playwright controller; site-specific adapter lives beneath it
+│   ├── executor.py              # Browser/site adapter registry (Arena UI only; no API provider)
+│   └── README.md                # Setup, manual login, run/resume/inspect and live-UI limits
+├── examples/campaign-analysis.yaml # Inert runtime-only DAG; placeholder prompts; not authorized/executed
+├── scripts/run_mission.py       # Run/resume one local mission YAML
+├── scripts/browser_login.py     # Open a persistent profile for manual authentication
+├── scripts/inspect_run.py       # Inspect status/provenance index for one saved run
+├── tests/test_runtime_engine.py
+├── tests/test_arena_adapter.py
 ├── tests/test_import_mindcluster_html.py
 ├── tests/test_retrieve_context.py
 ├── tests/test_validate_ir.py
