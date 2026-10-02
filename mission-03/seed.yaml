@@ -85,7 +85,7 @@ candidate_hypotheses:
   - id: H1
     name: "Trigger-specific transformation value"
     statement: >-
-      S is at least the margin fixed at Gate 2 (proposed 0.15), and the own-card arm beats the generic arm: a
+      S is at least the margin fixed at Gate 2 (0.15, human-confirmed 2026-10-02 in decisions/human_decisions.yaml), and the own-card arm beats the generic arm: a
       card helps where its trigger holds more than where it does not, and more than content-neutral advice.
   - id: H2
     name: "Generic structured advice"

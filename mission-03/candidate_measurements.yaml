@@ -24,7 +24,7 @@ compiler_expectation_non_blind:
 
 margins_and_sizing:
   margin_delta: 0.15
-  margin_status: "proposed; a human decision at Gate 2. The smallest effect that would justify extending the library."
+  margin_status: "confirmed 0.15 by the human on 2026-10-02 (decisions/human_decisions.yaml, HD-1a); frozen by hash at Gate 2 per CTRL11. The smallest effect that would justify extending the library."
   proposed_runs_per_arm_per_family: 100
   budget_limited_fallback: 60
   source_of_numbers: "mission-03/analysis/power_table.json (reproducible; see power_simulation.py for every assumption)"

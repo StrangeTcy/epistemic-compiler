@@ -1,0 +1,37 @@
+decision_id: M03-HD-1
+recorded_on: 2026-10-02
+mission: mission-03
+decided_by: >-
+  The repository owner (human), confirming the compiler's recommendation, in conversation on
+  2026-10-02. The compiler agent records this; it did not make the decision.
+status: >-
+  Recorded. This is not a pre-registration and not a freeze: per CTRL11 in
+  candidate_measurements.yaml, the margin, sample size, instance list, arm texts and analysis
+  script are hashed at Gate 2, before Stage 2. Nothing here replaces that.
+context: >-
+  DESIGN.md section 9 lists the decisions only a human can make. Two of them were proposed by the
+  compiler and confirmed unchanged. The proposal itself has not been through Gate 1 (the Council
+  attack on the proposal) yet; these confirmations do not shorten that step.
+
+decisions:
+  - id: HD-1a
+    question: "The margin for the primary contrast S: 0.15 or 0.10?"
+    value: "0.15"
+    basis: >-
+      DESIGN.md section 6 and analysis/power_table.json: 0.15 is the smallest round margin for
+      which 100 runs per arm per family give about a 90% chance of a decision either way
+      (detect 0.88 if the effect is real; rule out 0.89 to 0.94 if it is not). At 0.10 the same
+      budget detects only about 0.57.
+  - id: HD-1b
+    question: "Does the pilot run on Atria-Dawn-Preview alone, or with a second model?"
+    value: "Atria-Dawn-Preview alone"
+    basis: >-
+      A second model in the pilot doubles cost before any gate has spoken, and the pilot's job is
+      apparatus checks (ABORT-02 to ABORT-05), which are runtime-specific. Per DESIGN.md section 7,
+      a second model belongs to the replication branch of a positive result, which would be a new
+      decision.
+
+not_decided_here:
+  - "Runs per arm per family: 100 or 60. The design proposes 100 (DESIGN.md section 6); still a human decision at Gate 2."
+  - "Whether rope joins as a replication family."
+  - "Who dispatches the two blind characterizers for Stage 0."

@@ -1,6 +1,6 @@
 # Mission 03 proposal: does matching a strategy to a task's structure matter?
 
-**Status.** Pre-Council proposal, written 2026-10-02. Nothing has been run and no model was called. Facts about the two repositories were checked against their files on that date; what was not checked is marked *unknown*. Files: `seed.yaml` (protocol seed), `candidate_measurements.yaml` (measurements, controls, stop conditions, decision regimes, falsification tests), `work_packages/candidates.yaml`, `analysis/power_simulation.py` with `power_table.json`.
+**Status.** Pre-Council proposal, written 2026-10-02. Nothing has been run and no model was called. Two human decisions were recorded on 2026-10-02 (`decisions/human_decisions.yaml`): margin 0.15, pilot on Atria-Dawn-Preview alone. Facts about the two repositories were checked against their files on that date; what was not checked is marked *unknown*. Files: `seed.yaml` (protocol seed), `candidate_measurements.yaml` (measurements, controls, stop conditions, decision regimes, falsification tests), `work_packages/candidates.yaml`, `analysis/power_simulation.py` with `power_table.json`.
 
 ## 0. In short
 
@@ -158,6 +158,6 @@ Eight candidates in `work_packages/candidates.yaml`: WP-01 arm injection in the 
 ## 9. Relationship to mission-02, and decisions for a human
 
 - `mission-02/` (unrun) designs an epistemic-games family and gates strategy packs on it. This mission does not depend on it and tests the IR's central claim on tasks that already exist, so it should go first. Mission-02's frozen `game` cards are unused here. The directory is called `mission-03` only because `mission-02/` already exists on this branch, with a freeze record that tests protect.
-- **Decisions only a human can make:** the margin (0.15 proposed); 100 or 60 runs per arm; Atria-Dawn-Preview alone or a second model; whether rope joins as a replication family; who dispatches the two characterizers.
+- **Decisions only a human can make:** the margin; 100 or 60 runs per arm; Atria-Dawn-Preview alone or a second model; whether rope joins as a replication family; who dispatches the two characterizers. Two were confirmed on 2026-10-02 (`decisions/human_decisions.yaml`, M03-HD-1): the margin is **0.15** (HD-1a) and the pilot runs on **Atria-Dawn-Preview alone** (HD-1b), with a second model reserved to the replication branch of a positive result as a new decision. Confirmations are not a Gate 2 freeze. Still open: 100 or 60 runs per arm (the design proposes 100); rope as a replication family; who dispatches the two characterizers.
 - **Gate 1 should attack:** the choice of the two cards and the two families (a disclosed degree of freedom); the generic block's text; the claim that E and C are structurally distinct; the margin; the uptake rules.
 - **Not verified:** any model behaviour; baseline pass rates; the instance-gate pass rate for sampled vectors; calls and time per episode; whether the provider reports reasoning tokens; the blind characterization result. Mission 01's judge audit is bounded evidence of ground truth, not proof.
