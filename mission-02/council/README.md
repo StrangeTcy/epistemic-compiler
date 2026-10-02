@@ -1,6 +1,6 @@
 # Mission 02: running the Council round
 
-**Status (2026-10-02): prompts are ready; nothing has been run. No Council response exists yet.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9). This round is paused, not discarded.
+**Status (2026-10-02): one of four responses is stored (Theorist, `theorist.md`); the other three are outstanding. `intake_log.md` records how each stored response was checked.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9). This round is paused, not discarded.
 
 Mission 02 asks two linked questions (see `../seed.yaml`): Q-A, what a higher-order epistemic-game instance family needs so that its ground truth is independently checkable; and Q-B, whether trigger-matched strategy packs improve solving, with the comparison's design constraints registered in the seed. Mission 01 is frozen and is not reopened.
 
