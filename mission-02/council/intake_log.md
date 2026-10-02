@@ -7,7 +7,7 @@ The compiler's running notes on each response as it is stored: how it conforms t
 | Theorist (P01-T) | 2026-10-02 | `theorist.md` | sections 1 to 9 of 10; section 10 absent and not declared cut; 4,261 words against a 3,500 guide | the 3 claims that could be checked all hold |
 | Experimentalist (P02-E), two samples | 2026-10-02 | `experimentalist.a.md` ("opus 4.6"), `experimentalist.b.md` ("fable 5.1") | all 10 sections in both; 3,630 and 3,674 words against a 3,500 guide; b's section 1 heading is glued to a preceding sentence | the claims that could be checked hold; both responses' power figures are slightly optimistic |
 | Skeptic (P03-S) | not yet | | | |
-| Prior-Work Killer (P04-PW) | not yet | | | |
+| Prior-Work Killer (P04-PW), two samples | 2026-10-02 | `prior_work_killer.a.md` ("fable 5"), `prior_work_killer.b.md` ("gpt 6 luna max") | all 7 sections in both; a has a duplicated header block glued to search narration | not yet checked |
 
 Missing for every stored response so far: the arena mode, the model name as the arena displayed it, the session time, and whether tools were present. The response's own header is self-reported and unreliable.
 
@@ -81,3 +81,16 @@ Two answers to the same prompt arrived together: **a** is labelled "opus 4.6" an
 - **On obligations.** b's seventh critique is accurate for the IR as built: obligations are prose shown to the solver, and the validator checks only recorded statuses, so only the solver's response to prose can be tested.
 
 **Open.** The Skeptic and Prior-Work Killer responses; the arena metadata; whether to adopt a local SMCDEL install for the verifier.
+
+## Prior-Work Killer (P04-PW), two samples
+
+Two answers to the same prompt arrived together: **a** is labelled "fable 5" (self-reports Claude) and **b** "gpt 6 luna max" (self-reports ChatGPT). Neither saw the other or any other role. Stored verbatim on 2026-10-02; checking of their claims is pending.
+
+**First reading (not checked).**
+- **Verdicts:** both REFRAME Q-A (reuse MindGames/SMCDEL; the residue is behaviour generated from explicit utilities/policies). On Q-B, a says PROCEED (narrowed) and b says REFRAME.
+- **Coverage:** a ran 5 searches and leaves L02, L04, L05, L07, L08 unchecked; b reports L01 to L07 checked, L08 unchecked.
+- **b's strongest new item:** TRS ("Thinking with Reasoning Skills", ACL 2026 Industry), trigger-retrieved cards with `Trigger / Do / Avoid / Check / Risk` fields. a does not cite it, which weakens a's Q-B PROCEED. b also asks for a with/without-obligations arm and a distinct generic-modelling control for H3.
+- **a's distinctive items:** ExploreToM, DEL-ToM, AutoToM, ToM-LM, MCMAS/DEMO/MCK, and a recalled ([R]) bibliographic audit flagging suspect identifiers on `aumann-1976`, `baltag-moss-solecki-1998`, `camerer-ho-chong-2004`, `rubinstein-1989` and the Plaza dating. Both repeat the Bernheim/Pearce duplicate JSTOR link already found by the Theorist.
+- **Disagreements to check:** Hi-ToM author order (a: He first in the ACL PDF; b: Wu first); ExploreToM accuracy figures (a notes 0%/9% vs 5% across versions).
+
+**Open.** Verify TRS, L02 and the [R] identifier flags; the arena metadata; the Skeptic response.
