@@ -1,6 +1,6 @@
 # Council round 1: intake log
 
-The compiler's running notes on each response as it is stored: how it conforms to the required output format, which of its checkable claims were checked and how, and what it asks of the seed and design. This is the compiler's reading. It is not part of the Council record, and it decides nothing. All four roles are in; the cross-critique and a **draft** Gate 1 are stored. Gate 1 remains unapproved pending human review. Responses are stored unedited as `<role>.md`, with a provenance header that is marked as not part of the response.
+The compiler's running notes on each response as it is stored: how it conforms to the required output format, which of its checkable claims were checked and how, and what it asks of the seed and design. This is the compiler's reading. It is not part of the Council record, and it decides nothing. All four roles are in; the cross-critique and a **draft** Gate 1 are stored. The user selected HOLD after reviewing the draft; Mission 04 is paused, Gate 1 remains unapproved, and Gate 2 is unauthorized. Responses are stored unedited as `<role>.md`, with a provenance header that is marked as not part of the response.
 
 | Role | Stored | File | Format | Checked claims |
 | :--- | :--- | :--- | :--- | :--- |

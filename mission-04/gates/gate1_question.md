@@ -2,7 +2,7 @@
 
 - **Mission:** `mission-04`
 - **Seed:** `S04`, currently titled *“Common-knowledge neglect: do frontier models treat deep private confirmation chains as public announcements?”*
-- **Status:** **Draft for human review — NOT approved.** Recommended disposition: **REFRAME**. This file does not authorize Gate 2, experiment implementation, model calls, or seed/design edits.
+- **Status:** **Draft retained under user-directed HOLD — NOT approved.** Recommended disposition remains **REFRAME**, but no reframed direction was selected. Gate 2, experiment implementation, model calls, and seed/design edits are not authorized.
 - **Inputs audited:** `../seed.yaml`, `../design.md`; all four Council roles (Theorist a/b, Experimentalist, Skeptic, Prior-Work Killer); `../critiques/cross_critique.md`; `../council/intake_log.md`; `../../research_protocol/protocol.md` §3.1; `../../mission-01/gates/gate1_question.md` as an artifact-format example.
 
 ## 1. Decision summary
@@ -80,9 +80,11 @@ Pause for additional prior-work/runtime verification, or close S04 if none of th
 **Requested:** choose A, B, C, or D from §4; optionally state the claim ceiling and whether the proposed reframing matches the original research intent. If choosing a reframe, this is not yet approval of the final Gate 1: the revised formal question, oracle, competing hypotheses, and targeted prior-work search must be returned for review.
 
 - **Draft recommendation:** `REFRAME` (choose one direction; no current v1 pass).
-- **Human verdict:** `PENDING`.
-- **Chosen direction:** `PENDING`.
+- **Human verdict:** `HOLD` (the user selected option D, then clarified “pause/hold” in the follow-up decision).
+- **Chosen direction:** `NONE`; A/B/C were not selected.
+- **Mission status:** `PAUSED` pending further user direction.
 - **Gate 2 authorization:** `NOT AUTHORIZED`.
+- **Decision date:** `2026-10-02` (Arena decision UI; no time supplied).
 - **Seed/design changes:** none made.
 - **Model runs:** none made.
 - **Mission 02 / Mission 03:** untouched. Atria campaign analysis remains deferred and separate.
