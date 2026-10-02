@@ -1,6 +1,6 @@
 # Mission 04: running the Council round
 
-**Status (2026-10-02): prompts committed; Theorist samples a/b, Experimentalist and Skeptic responses stored; Prior-Work Killer response is outstanding.** Responses are stored here as `<role>.md` (`.a`/`.b` when a session shows two side-by-side answers) and logged in `intake_log.md`. Mission 04 asks whether frontier models treat deep private confirmation chains as public announcements (`../seed.yaml`, S04). Mission 01 stays frozen; Mission 02 is paused with its own round outstanding; neither is reopened by this one.
+**Status (2026-10-02): prompts committed; all four Council roles are now represented (two independent Theorist samples); responses stored.** The compiler's intake audit is in `intake_log.md`; cross-critique and Gate 1 are the next planned artifacts. Responses are stored here as `<role>.md` (`.a`/`.b` when a session shows two side-by-side answers). Mission 04 asks whether frontier models treat deep private confirmation chains as public announcements (`../seed.yaml`, S04). Mission 01 stays frozen; Mission 02 is paused with its own round outstanding; neither is reopened by this one.
 
 ## What to paste
 
