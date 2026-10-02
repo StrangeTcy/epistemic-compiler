@@ -1,0 +1,174 @@
+seed_id: S04
+title: "Common-knowledge neglect: do frontier models treat deep private confirmation chains as public announcements?"
+
+repo_context: |
+  The rl_eval_generator runtime repository is NOT present in this workspace (its directory is an empty
+  placeholder); nothing below was checked against it on 2026-10-02. What is known here comes from
+  mission-02/sources/2026-09-29_arena_round_note.md section 3 (verified there against that repository's
+  main branch e1b038a): it has an arena with provider plumbing, deterministic artifact logging, an
+  instance-oracle gate pattern, and hardened judges on a registry of environments. This seed specifies a
+  NEW environment family to be added there (epistemic_depth), plus the oracle, config schema, variants,
+  metrics, docs and tests for it. Mission 01's frozen results demonstrate the judge-hardening method to
+  reuse (mission-01/harvest.md); its scientific claims are not reused. The Strategy IR artifacts
+  (research_protocol/strategy_ir.md, strategies/cards/), including the five frozen game cards in
+  mission-02/freeze/game_cards.freeze.yaml, are secondary research objects here (SEVENTH of the brief).
+
+intuition: |
+  The mindcluster in knowledge/ carries a sharp, under-tested contrast. On one side, the common-knowledge
+  cluster (nodes common-knowledge, aumann-1976, rubinstein-1989, baltag-moss-solecki-1998,
+  lewis-1969; edges 002, 003, 008, 076, 081, 164, 207) says that "everyone knows, and everyone knows
+  that everyone knows, ..." is a different epistemic object from "everyone has privately seen a long
+  chain of confirmations". Rubinstein's electronic mail game (node rubinstein-1989; graph edge
+  rubinstein-1989 -- empirically-tests --> common-knowledge) is the canonical result: with any finite
+  message chain, however long, the unique equilibrium of the coordination game collapses away from the
+  action that common knowledge of the signal would support. On the other side, the AI-relevant nodes
+  (evaluation-awareness, belief-state-shaping, epistemic-process-control, lying-with-truths-2026,
+  potemkin-2026) are about agents whose beliefs are manipulated, not about whether frontier models even
+  represent the public/private distinction.
+
+  The intuition is that language models, trained on text where "many confirmations" and "publicly known"
+  are near-synonyms, will treat a deep private chain as if it were a public announcement: they will take
+  the action that is correct under common knowledge and wrong under finite-depth private evidence. A
+  shallower-but-different alternative is that they iterate higher-order reasoning to some finite depth
+  and fail only past it. Both are falsifiable, and the two make different dose-response predictions.
+
+precise_research_question: |
+  For a fixed agent runtime, on a parameterized family of two-player coordination instances in which the
+  factual content (signal, protocol, payoffs) is held exactly fixed while the DELIVERY of the signal
+  varies between (a) a public announcement and (b) a private confirmation chain of sampled depth k with
+  loss probability epsilon, does the model's choice track the oracle's action (computed by exact
+  Bayesian iterated-dominance on the finite epistemic model), or does it treat condition (b) like
+  condition (a)? Operationalized: the gap between chain-arm accuracy and public-arm accuracy on
+  instances where the oracle actions differ, and the shape of the model's empirical cutoff depth versus
+  the oracle's cutoff, across seen and unseen (k, epsilon, payoff) parameters and cover stories.
+
+why_it_might_be_true:
+  - "Textual priors conflate evidence strength with publicity: in training text, heavily corroborated claims are discussed as if publicly established, so 'deep private chain' may map onto 'common knowledge' representations. [R]"
+  - "Higher-order belief iteration is expensive in tokens and fragile; models may substitute the heuristic 'if I have seen many confirmations, my partner must know too', which is exactly the public-arm policy. [R]"
+  - "Existing game benchmarks (GTBench, LLM-Coordination, TMGBench; see relevant_prior_work) give models natural-language games but never manipulate delivery structure with facts fixed, so no training pressure selects for the distinction. [S]"
+  - "The distinction is invisible to next-token loss: a corpus that never labels publicity as such gives no supervision for it. [R]"
+
+what_would_surprise_us:
+  - "Models track the oracle's cutoff depth across seen AND unseen (k, epsilon, payoff) variants and across rephrased cover stories: genuine finite epistemic computation, not pattern use."
+  - "Models fail the public arm or the fact-only comprehension controls: then the phenomenon is comprehension, not epistemics, and the family becomes a reading diagnostic."
+  - "The chain-vs-public gap disappears under length-matched padding: then it was surface length, not epistemic structure (H0 wins)."
+  - "Performance flips with the cover story while the epistemic model is held fixed: surface memorization of a known game, not reasoning about the described one."
+
+candidate_hypotheses:
+  - id: H0
+    name: "Null / surface hypothesis"
+    statement: >-
+      Choices are insensitive to delivery structure once transcript length, numerals and wording are
+      matched; the apparent public-vs-chain difference is explained by surface features, and all arms
+      behave alike on length-matched padded variants.
+  - id: H1
+    name: "Common-knowledge neglect"
+    statement: >-
+      On instances where the oracle actions differ by arm, models take the public-arm (common-knowledge)
+      action in the private-chain arm at a rate far above the oracle's prescription, while the public arm
+      and comprehension controls stay near ceiling; the chain-arm empirical cutoff depth is close to the
+      public arm's, not to the oracle's.
+  - id: H2
+    name: "Bounded iteration depth"
+    statement: >-
+      Models iterate higher-order inference to a finite depth d* >= 1: accuracy degrades gradually with
+      required depth and the dose-response curve is graded (or step-shaped at an interior depth), rather
+      than jumping to the public-arm policy; they pass intermediate-depth instances where H1 predicts
+      public-like behaviour.
+  - id: H3
+    name: "Comprehension / arithmetic artifact"
+    statement: >-
+      Chain-arm errors are downstream of misreading the transcript (wrong depth, wrong direction,
+      arithmetic slip), detectable on fact-only and first-order-belief controls and largely removable by
+      an explicit type-space scaffold; there is no specifically epistemic failure.
+
+known_alternatives:
+  - "The model represents the epistemic model correctly but the rendered prompt is ambiguous; errors are a rendering fault, not a reasoning fault (addressed by prompt-variant FALS and by a scaffold arm)."
+  - "Safety or role-play priors attached to words like 'attack' bias choices; actions are therefore rendered as abstract labels and cover stories vary (CF05)."
+  - "Memorized solutions to classic games (email game, muddy children) drive behaviour; unseen parameters and novel cover stories address this (CF08)."
+  - "Temperature noise alone; addressed by per-instance repetition and paired intervals, not by point estimates."
+
+possible_experiment: |
+  A parameterized environment family epistemic_depth in rl_eval_generator. Each instance fixes: payoff
+  profile P, chain budget k, loss probability epsilon, and a sampled delivery history h; the oracle
+  (deterministic Python over the finite epistemic model) computes the correct action in two delivery
+  arms: PUBLIC (signal on a common board) and CHAIN(k, epsilon, h). Arms with identical epistemic model
+  but different cover story, plus length-matched PADDED, fact-only COMPREHENSION and first-order BELIEF
+  controls, are generated from the same sampler. The agent sees one rendered episode (protocol
+  description, transcript, decision request) and returns a structured action and an optional reported
+  probability. Primary outcome: strict correctness versus the oracle action, paired by instance across
+  arms; primary contrast: chain minus public on the stratum where oracle actions differ, plus the
+  empirical versus theoretical cutoff depth. Pilot (about 12 instances per arm) gates floor/ceiling and
+  apparatus sensitivity; the registered run fixes sizes, seeds, texts and analysis before any Stage 2
+  spend. See mission-04/design.md for the full design, falsification experiments FALS-01 to FALS-03,
+  and the claim ceiling.
+
+known_unknowns:
+  - "Baseline pass rates on any arm for any runtime: none exist; floor/ceiling is a pilot question."
+  - "Whether any frontier model has seen the electronic mail game or global-games constructions in training, and at what frequency."
+  - "Whether reported probabilities (secondary measure) calibrate better than choices, or decorrelate from them."
+  - "The cost per episode and the provider's reasoning-token behaviour at the campaign's settings."
+  - "Whether the rl_eval_generator arena supports single-decision episodes without a live partner; the design assumes a transcript-rendered v1 and defers live protocol play to v3 (design.md section 10)."
+  - "Exact current contents of the rl_eval_generator repository (absent from this workspace)."
+
+likely_confounds:
+  - id: CF01
+    description: "Transcript length and verbosity, not epistemic structure, drive differences (chain transcripts are longer)."
+  - id: CF02
+    description: "Numeracy or arithmetic failure in counting depth or applying epsilon, masquerading as epistemic failure."
+  - id: CF03
+    description: "Cover-story familiarity: the email-game text or similar puzzles in training data provide memorized answers."
+  - id: CF04
+    description: "Prompt-position and formatting effects on the structured decision output."
+  - id: CF05
+    description: "Wording effects (e.g. connotations of 'attack'); mitigated by abstract action labels, but residual wording confounds remain."
+  - id: CF06
+    description: "Sampling noise at temperature > 0; single-sample per instance conflates model noise with model belief."
+  - id: CF07
+    description: "Parser or judge artifacts: a malformed structured answer scored as a strategic error."
+  - id: CF08
+    description: "Memorization of the specific parameterization rather than rule use; mitigated by unseen (k, epsilon, payoff) variants."
+
+relevant_prior_work:
+  - id: L01
+    citation: "Rubinstein (1989), The Electronic Mail Game; knowledge/ node rubinstein-1989, edges 003, 081, 207."
+    relationship: "Mechanism source: finite confirmation chains do not substitute for common knowledge. Supplies the game form; says nothing about LLMs. [R]"
+  - id: L02
+    citation: "Baltag, Moss & Solecki (1998), The Logic of Public Announcements, Common Knowledge, and Private Suspicions; knowledge/ node baltag-moss-solecki-1998."
+    relationship: "Formal semantics for public vs private updates used to define the arms; note the graph's identifier flags from the mission-02 prior-work audit still apply. [R]"
+  - id: L03
+    citation: "LLM-Coordination benchmark, Findings of NAACL 2025 (aclanthology.org/2025.findings-naacl.448)."
+    relationship: "Pure-coordination games with scaffolded agents and QA edge cases; no delivery-structure manipulation, facts not held fixed across epistemic conditions. Gap remains. [S]"
+  - id: L04
+    citation: "TMGBench and 'Strategic Reasoning in Large Language Models' (openreview.net/pdf?id=3SIgzUk0Yd, 2026); GameBench (arXiv:2406.06613); GTBench (arXiv:2402.12348, verified at [V] level in mission-02's prior_work_killer.b.md)."
+    relationship: "Game-play batteries over canonical games (PD, ultimatum, poker, ten games); they measure play quality, never the public/private delivery contrast with an exact oracle. Gap remains. [S] for TMGBench/GameBench entries."
+  - id: L05
+    citation: "MultiAgent-Bench, ACL 2025 (aclanthology.org/2025.acl-long.421); 'Communication Enables Cooperation in LLM Agents' (arXiv:2510.05748); lechmazur/elimination_game (2026)."
+    relationship: "Multi-agent coordination quality, communication-vs-curriculum, and social deduction with public/private chats; all confound partner behaviour with epistemic representation, and score with LLM judges or tournament outcomes rather than exact oracles. Gap remains. [S]"
+  - id: L06
+    citation: "MindGames (Findings of EMNLP 2023, verified [V] in mission-02's prior_work_killer.b.md); Hi-ToM (Findings of EMNLP 2023, verified [V] there)."
+    relationship: "DEL-generated puzzle QA and higher-order ToM questions; closest existing family, but question-answering about stories, not payoff-based decisions under manipulated delivery. Gap remains. [V]"
+  - id: L07
+    citation: "Carlsson & van Damme (1993) and Morris & Robins (global games); Aumann (1976), knowledge/ node aumann-1976."
+    relationship: "Alternative formalizations of the public-vs-private discontinuity; cited as mechanism backup, not as AI evaluation. [R]"
+
+candidate_claim_ceiling:
+  max_justifiable_claim: |
+    For the tested runtimes and parameter ranges, choice behaviour on the epistemic_depth family deviates
+    from the exact-oracle prescription on private-chain instances in the direction of the public-arm
+    action, by a registered margin, with comprehension controls near ceiling, the gap surviving
+    length-matched padding and at least one unseen-parameter and one novel-cover-story variant. That is a
+    runtime-specific, family-specific behavioural finding about delivery-structure sensitivity.
+  cannot_justify:
+    - "Any claim that models lack 'common knowledge' as an internal representation; the measurements are behavioural."
+    - "Any claim about multi-agent deployments, long-horizon agents, or tasks outside this family."
+    - "Any claim that all or most frontier models show the effect, beyond the runtimes actually tested."
+    - "Any claim about training causes (next-token loss, corpus statistics); why_it_might_be_true is speculation flagged [R]."
+    - "Any claim of mathematical novelty about the email game, public-announcement logic, or global games."
+    - "Any claim that the oracle's solution concept is the only defensible one; it is a registered choice."
+
+possible_future_research_on_failure:
+  - "If H1 is falsified because models track the oracle cutoff including unseen variants: the family is a positive-capability instrument; next seed is the depth frontier (find d* per model family) and transfer to live protocol play."
+  - "If H0 wins (padding kills the gap): the family becomes a controlled length/numeracy diagnostic; next seed is surface-robustness of strategic prompts generally."
+  - "If H3 wins (comprehension): next seed is transcript-faithfulness: can models state the epistemic model before deciding, and does eliciting it change the choice?"
+  - "If H2 wins (graded depth): next seed measures d* across model scale and reasoning budgets, and whether strategy cards like game-public-announcement-world-elimination shift d* (connects to the mission-03 trigger-matching design)."

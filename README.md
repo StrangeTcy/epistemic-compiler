@@ -8,12 +8,13 @@
 - Pre-registration lock: `cbd4e4a081d0b5b1af8a062b6cdf5c4a4ac7d4e7`.
 - Initial combined target-repository test run: **17 passed** (historical); a later repeat could not collect two harness modules because the resumed sandbox lacked `torch`, so no fresh target-suite pass is claimed. The 17 tests verify listed engineering behavior, not mathematical gluing proofs.
 - Post-Gate-4 Mindcluster importer/retriever checks: **9 passed** (`tests/test_import_mindcluster_html.py` + `tests/test_retrieve_context.py`), including graph integrity, provenance, uncertainty preservation, and candidate-link rendering.
-- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). Further tests check that the frozen Mission 02 cards and features are unchanged (`tests/test_mission_02_freeze.py`) and that the Mission 03 proposal is internally consistent and its power table reproduces (`tests/test_mission_03_proposal.py`). The full suite (`python -m pytest`) is **163 passed** at the time of writing. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
+- Strategy IR v0.2 draft checks: **149 passed** (`tests/test_validate_ir.py`: 113; `tests/test_retrieve_strategies.py`: 36). Further tests check that the frozen Mission 02 cards and features are unchanged (`tests/test_mission_02_freeze.py`), that the Mission 03 proposal is internally consistent and its power table reproduces (`tests/test_mission_03_proposal.py`), and that the Mission 04 seed follows the protocol schema and its harvest cites existing evidence (`tests/test_mission_04_seed.py`). The full suite (`python -m pytest`) is **167 passed** at the time of writing. These tests show that the validator and the matcher behave as specified (structural rules, three-valued matching, failing closed on invalid input). They say nothing about whether any strategy helps.
 - Mission 01 has **human approval through Gate 4 as a bounded diagnostic**. The user accepted `accept_bounded_record` at Gate 3 and approved C01–C03 at Gate 4; the broad local-to-global / agent-coordination question is classified `inconclusive_result`. See `mission-01/gates/` and `mission-01/claim_set.md`.
 - Preserve the locked spec and raw results. Do not infer a general sheaf theorem, cohomology class, real-agent contract benefit, or Astra-vs-swarm advantage from this run. Part B is a deterministic enumerated compatibility stress test, not a comparison of independent LLM agents.
 - The Gate 2 decision-table update outputs are quarantined as exploratory, not calibrated Bayesian posteriors. Mission 01 coordination-efficiency metrics are not estimable from the incomplete real-time friction log.
-- Mission 02 (started 2026-10-02) is at its **kickoff**: `mission-02/seed.yaml`, an evidence digest and four Council prompts exist, and **two of four Council roles have been stored** (the Theorist, and the Experimentalist with two samples); the cross-critique and Gate 1 wait for the Skeptic and the Prior-Work Killer. It asks what a higher-order epistemic-game instance family needs for independently checkable ground truth, and registers a comparison of trigger-matched strategy packs against controls. Nothing in it has been run. Its seed lists published work on dynamic-epistemic-logic benchmarks for LLMs and on strategy and template retrieval as collisions to be checked, not as open ground.
-- Mission 03 is a **proposal** (`mission-03/`, 2026-10-02): a matched/mismatched comparison of two strategy cards on two hardened task families, gated by a blind-characterization stage and a pilot. Nothing has been run. `mission-03/DESIGN.md` states what was checked and what was not, and why it is recommended before Mission 02.
+- Mission 02 (started 2026-10-02) is at its **kickoff**: `mission-02/seed.yaml`, an evidence digest and four Council prompts exist, and **three of four Council roles have been stored** (the Theorist; the Experimentalist with two samples; the Prior-Work Killer with two samples); the cross-critique and Gate 1 wait for the Skeptic. It asks what a higher-order epistemic-game instance family needs for independently checkable ground truth, and registers a comparison of trigger-matched strategy packs against controls. Nothing in it has been run. Its seed lists published work on dynamic-epistemic-logic benchmarks for LLMs and on strategy and template retrieval as collisions to be checked, not as open ground. `mission-02/sources/` also stores, verbatim, a 2026-10-02 revised Arena instruction (GPT-5.6 Luna) that made epistemic games a core research domain; Mission 04 is its first execution.
+- Mission 03 is a **proposal** (`mission-03/`, 2026-10-02): a matched/mismatched comparison of two strategy cards on two hardened task families, gated by a blind-characterization stage and a pilot. Nothing has been run. `mission-03/DESIGN.md` states what was checked and what was not, and why it is recommended before Mission 02. Two human decisions are recorded in `mission-03/decisions/` (margin 0.15; pilot on Atria-Dawn-Preview alone).
+- Mission 04 is a **proposal** (`mission-04/`, 2026-10-02): do frontier models treat deep private confirmation chains as public announcements? A parameterized decision family (public vs lossy-chain delivery, facts held fixed) with a deterministic exact oracle, comprehension controls and registered falsification variants. Pre-Council; nothing run; the runtime repository is absent from this workspace, so its additions to `rl_eval_generator` are specifications. `mission-01/harvest.md` carries the durable Mission 01 methods it reuses.
 
 ## Architecture Boundary & Pilot Lessons (Prospective)
 
@@ -58,6 +59,10 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 │   ├── candidate_measurements.yaml # Measurements, controls, stop conditions, decision regimes, falsification tests (candidate)
 │   ├── work_packages/          # Candidate work packages (pre-Gate 2)
 │   └── analysis/               # Reproducible power simulation and its output
+├── mission-04/
+│   ├── seed.yaml               # S04: common-knowledge neglect under finite confirmation chains (proposal; nothing run)
+│   ├── design.md               # Formal environment, arms, oracle spec, falsification variants, claim ceiling
+│   └── context/                # Compiled Mindcluster role packs for the future Council round
 └── mission-01/
     ├── seed.yaml               # Historical pre-registration seed; inaccurate statements are documented in REV-01
     ├── council/                # Four completed role responses and original prompts
@@ -67,7 +72,8 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
     ├── results/                # Generated audit, benchmark, and summary artifacts
     ├── falsification/          # WP-07 falsification output
     ├── reviews/                # Post-run review, migration snapshots, and analysis errata
-    └── gates/                  # Human Gate packets; Gate 4 approves the bounded claim set
+    ├── gates/                  # Human Gate packets; Gate 4 approves the bounded claim set
+    └── harvest.md              # Durable evidence-backed methods carried forward (written 2026-10-02)
 ```
 
 ## Mindcluster Retrieval (Prospective)
