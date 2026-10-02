@@ -14,16 +14,38 @@ from pathlib import Path
 from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_HOME = (
-    Path(os.environ.get("XDG_DATA_HOME", str(Path.home() / ".local" / "share")))
-    .expanduser()
-    .resolve()
-)
-PROFILE_ROOT = DATA_HOME / "epistemic-compiler" / "browser_profiles" / PROJECT_ROOT.name
-if PROFILE_ROOT.resolve().is_relative_to(PROJECT_ROOT):
-    raise RuntimeError(
-        "persistent browser profiles must be stored outside the repository"
-    )
+# This is a dedicated Playwright automation profile, never Chrome's normal user
+# profile. The directory is ignored by Git because it can contain authenticated
+# site state (including cookies).
+PROFILE_ROOT = PROJECT_ROOT / "runtime" / "browser_profiles"
+DEFAULT_BROWSER_CHANNEL = "chrome"
+BROWSER_CHANNEL_ENV = "EPISTEMIC_BROWSER_CHANNEL"
+
+
+def resolve_browser_channel(channel: str | None = None) -> str:
+    """Resolve the configured Playwright browser channel.
+
+    ``chrome`` uses the installed stable Chrome through Playwright's
+    branded-browser support. ``chromium`` deliberately omits Playwright's
+    ``channel`` argument and uses its downloaded Chromium build, preserving the
+    original backend.
+    """
+    selected = channel
+    if selected is None:
+        selected = os.environ.get(BROWSER_CHANNEL_ENV) or DEFAULT_BROWSER_CHANNEL
+    if not isinstance(selected, str):
+        raise ValueError("browser channel must be a string")
+    selected = selected.strip().lower()
+    if not selected:
+        selected = DEFAULT_BROWSER_CHANNEL
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]{0,63}", selected):
+        raise ValueError("browser channel must be a simple Playwright channel name")
+    return selected
+
+
+def playwright_channel(channel: str) -> str | None:
+    """Return the channel argument; ``None`` selects bundled Playwright Chromium."""
+    return None if channel == "chromium" else channel
 
 
 class BrowserStartupError(RuntimeError):
@@ -165,24 +187,28 @@ class BrowserPage:
 
 
 class BrowserController:
-    """One persistent Chromium profile shared by one or more site-adapter pages."""
+    """One persistent, isolated browser profile shared by site-adapter pages."""
 
     def __init__(
         self,
         profile_id: str,
         *,
         profile_root: Path = PROFILE_ROOT,
+        channel: str | None = None,
         headless: bool = False,
         timeout_ms: int = 15_000,
     ) -> None:
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", profile_id):
             raise ValueError("profile_id must be a simple filesystem-safe identifier")
         self.profile_id = profile_id
-        self.profile_path = (profile_root.expanduser() / profile_id).resolve()
-        if self.profile_path.is_relative_to(PROJECT_ROOT):
-            raise ValueError(
-                "persistent browser profiles must be stored outside the repository"
-            )
+        self.browser_channel = resolve_browser_channel(channel)
+        self.playwright_channel = playwright_channel(self.browser_channel)
+        self.profile_root = profile_root.expanduser().resolve()
+        self.profile_path = (
+            self.profile_root / f"{self.browser_channel}-{profile_id}"
+        ).resolve()
+        if self.profile_path.parent != self.profile_root:
+            raise ValueError("persistent browser profile path escaped its configured root")
         self.headless = headless
         self.timeout_ms = timeout_ms
         self._playwright: Any | None = None
@@ -198,19 +224,24 @@ class BrowserController:
             try:
                 from playwright.async_api import async_playwright
             except ImportError as exc:
-                raise BrowserStartupError(
-                    "Playwright is not installed. Install runtime/requirements.txt and run "
-                    "`python -m playwright install chromium`."
-                ) from exc
+                message = "Playwright is not installed. Install runtime/requirements.txt."
+                if self.browser_channel == "chromium":
+                    message += " Then run `python -m playwright install chromium`."
+                raise BrowserStartupError(message) from exc
             self.profile_path.mkdir(parents=True, exist_ok=True)
             try:
                 self._playwright = await async_playwright().start()
+                launch_options: dict[str, Any] = {
+                    "user_data_dir": str(self.profile_path),
+                    "headless": self.headless,
+                    "viewport": None,
+                    "accept_downloads": True,
+                }
+                if self.playwright_channel is not None:
+                    launch_options["channel"] = self.playwright_channel
                 self._context = (
                     await self._playwright.chromium.launch_persistent_context(
-                        user_data_dir=str(self.profile_path),
-                        headless=self.headless,
-                        viewport=None,
-                        accept_downloads=True,
+                        **launch_options
                     )
                 )
                 self._context.set_default_timeout(self.timeout_ms)
@@ -218,8 +249,15 @@ class BrowserController:
                 if self._playwright is not None:
                     await self._playwright.stop()
                     self._playwright = None
+                hint = (
+                    " Install Playwright's bundled Chromium with `python -m playwright install chromium` "
+                    "if EPISTEMIC_BROWSER_CHANNEL=chromium is selected."
+                    if self.browser_channel == "chromium"
+                    else " Verify that the selected local browser channel is installed."
+                )
                 raise BrowserStartupError(
-                    f"Could not launch Chromium with profile {self.profile_id!r}: {exc}"
+                    f"Could not launch browser channel {self.browser_channel!r} "
+                    f"with persistent profile {self.profile_path}: {exc}.{hint}"
                 ) from exc
 
     async def new_page(self) -> BrowserPage:

@@ -2,22 +2,91 @@
 
 This is a narrow, optional execution utility for the existing compiler. It runs an explicit YAML job DAG through a local persistent Playwright browser profile. It does not define research questions, score evidence, approve gates, revise the protocol, or replace the protocol's human decisions. It has no provider/API adapter; the first site adapter is Arena Direct.
 
-## Setup
+## Browser channel and profile
 
-```bash
-python -m venv .venv
-. .venv/bin/activate                 # Windows: .venv\Scripts\activate
-python -m pip install -r runtime/requirements.txt
+The default browser channel is `chrome`. Playwright launches the installed stable Google Chrome through its branded-browser support (`channel="chrome"`); the default workflow does **not** require Playwright's downloaded Chromium. The `EPISTEMIC_BROWSER_CHANNEL` environment variable configures the channel for both the login helper and mission runner. Set it to `chromium` to retain/use Playwright's bundled Chromium instead; that option requires `python -m playwright install chromium`. Other Playwright channel names are passed through unchanged.
+
+Each channel/profile pair gets a separate persistent automation profile. With the default channel and profile id `arena`, the directory is `runtime/browser_profiles/chrome-arena/`. It is gitignored because it contains local authenticated site state, including cookies. **This is not your normal Chrome profile.** Do not point the runner at Chrome's regular `User Data` directory, sync this automation profile, or commit/copy it. `browser_login.py arena` and a mission whose site/profile defaults to `arena` resolve to the same directory, so a manually authenticated session can persist between those commands.
+
+## Windows setup and smoke workflow
+
+1. Verify that the Google Chrome desktop application (stable channel) is installed. The runner asks Playwright for channel `chrome`; it does not need a downloaded Playwright Chromium executable.
+2. From the repository root, create and activate a virtual environment, then install the runtime packages in PowerShell:
+
+   ```powershell
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   python -m pip install -r runtime/requirements.txt
+   ```
+
+3. Open the dedicated, headed Chrome automation profile:
+
+   ```powershell
+   python scripts/browser_login.py arena
+   ```
+
+   Complete Google/Arena sign-in or any verification **manually** in that browser window. No Google login is automated. Press Enter in the terminal when finished; the browser closes and saves the session in the separate `runtime/browser_profiles/chrome-arena/` profile. The user's normal Chrome profile is not opened or modified.
+
+4. Create a harmless throwaway smoke mission and its prompt file in a temporary directory. The runner requires a `role` and a `prompt_artifact`; prompts are files rather than an inline `prompt` field:
+
+   ```powershell
+   $smokeDir = Join-Path $env:TEMP 'arena-smoke-test'
+   New-Item -ItemType Directory -Force $smokeDir | Out-Null
+
+   @'
+   mission_id: arena-smoke-test
+   jobs:
+     - id: smoke
+       role: smoke
+       site: arena
+       model: Max
+       prompt_artifact: arena-smoke-prompt.md
+   '@ | Set-Content -Encoding ascii (Join-Path $smokeDir 'mission.yaml')
+
+   'Reply with exactly: RUNTIME_OK' | Set-Content -Encoding ascii (Join-Path $smokeDir 'arena-smoke-prompt.md')
+   ```
+
+5. From the repository root, run the mission. **`scripts/run_mission.py` is the browser-backed mission runner; `browser_login.py` only bootstraps the manual login profile.**
+
+   ```powershell
+   python scripts/run_mission.py (Join-Path $smokeDir 'mission.yaml')
+   ```
+
+   The runner prints the run directory. Paste that path when prompted to inspect it:
+
+   ```powershell
+   $runPath = Read-Host 'Paste the run directory printed by run_mission.py'
+   python scripts/inspect_run.py $runPath
+   ```
+
+The mission runner reuses the same `chrome-arena` profile by default. If you set `EPISTEMIC_BROWSER_CHANNEL` or pass a different profile id to `browser_login.py`, use the same channel/profile for the mission. If Google/Arena shows a CAPTCHA, security warning, or other login ambiguity, stop for manual handling; do not automate or bypass the login.
+
+For example, to explicitly use Playwright's bundled Chromium instead of installed Chrome, set the channel **before both login and run** and install its browser binary:
+
+```powershell
+$env:EPISTEMIC_BROWSER_CHANNEL = 'chromium'
 python -m playwright install chromium
 ```
 
-Open the Arena profile and authenticate or complete verification manually:
+This selects a separate `chromium-arena` automation profile. Return to installed Chrome with `$env:EPISTEMIC_BROWSER_CHANNEL = 'chrome'` (or clear the variable, since `chrome` is the default). No `executable_path` override is used.
+
+## General setup and manual login
+
+On macOS/Linux, the equivalent setup is:
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r runtime/requirements.txt
+```
+
+The default channel is still installed `chrome`; no `playwright install chromium` step is needed unless `EPISTEMIC_BROWSER_CHANNEL=chromium` is selected. Open the Arena profile and authenticate manually with:
 
 ```bash
 python scripts/browser_login.py arena
 ```
 
-The persistent profile is stored outside the repository under `${XDG_DATA_HOME:-~/.local/share}/epistemic-compiler/browser_profiles/epistemic-compiler/<profile-id>/` and remains on the local machine between runs. It contains the browser's site session data, so do not copy or share it. The runner never reads or prints passwords, cookies, or tokens. If the browser needs login or CAPTCHA verification during a job, the job becomes `waiting_for_human`; use `inspect_run.py` to find the saved URL, reopen it with `python scripts/browser_login.py arena --url 'https://arena.ai/…'`, complete verification manually, close the window with Enter, then resume. The URL option rejects non-HTTPS or non-Arena hosts and embedded credentials. For an ambiguous submit control, inspect the saved prompt/input snapshot and only manually submit if that is explicitly intended; the persisted ambiguous-submission marker prevents a second automatic send.
+The helper is headed and uses the persistent profile described above. It never reads or prints passwords, cookies, or tokens. If the browser needs login or CAPTCHA verification during a job, the job becomes `waiting_for_human`; use `inspect_run.py` to find the saved URL, reopen it with `python scripts/browser_login.py arena --url 'https://arena.ai/…'`, complete verification manually, close the window with Enter, then resume. The URL option rejects non-HTTPS or non-Arena hosts and embedded credentials. For an ambiguous submit control, inspect the saved prompt/input snapshot and only manually submit if that is explicitly intended; the persisted ambiguous-submission marker prevents a second automatic send.
 
 For a headless local run after manual login, set `EPISTEMIC_BROWSER_HEADLESS=1`. Visible mode is the default and is preferable while checking the UI.
 
@@ -58,15 +127,15 @@ The Direct adapter currently expects one unique chat textbox, a uniquely identif
 
 ## Verification
 
-Deterministic tests use a fake executor/browser boundary and do not contact Arena. Run them with:
+Deterministic tests cover mission execution and browser channel/profile configuration through fake Playwright objects; they do not contact Arena or Google. Run them with:
 
 ```bash
 python -m pip install -r requirements-dev.txt
-python -m pytest -q tests/test_runtime_engine.py tests/test_arena_adapter.py
+python -m pytest -q tests/test_browser_config.py tests/test_runtime_engine.py tests/test_arena_adapter.py
 ```
 
-A green test suite does not verify Arena's live DOM/accessibility tree or guarantee UI behavior for your account.
+A green test suite does not verify that Chrome is installed/discovered on a particular Windows host, that Google/Arena permits interactive login in the new profile, or that Arena's live DOM/accessibility tree matches the adapter.
 
-### Latest smoke attempt (2026-10-02)
+### Latest smoke attempt (2026-10-02; before Chrome channel support)
 
-A temporary, harmless `arena-smoke-test` mission (`Reply with exactly: RUNTIME_OK`, no file inputs) exercised the real runner entry point. It reached `queued -> running` and failed in `BrowserController.start` because the Playwright Chromium executable was absent (`chromium-1243/.../chrome`). The earlier `playwright install chromium` attempt failed with TLS `ECONNRESET` from `cdn.playwright.dev`. The browser never opened, no request reached Arena, no prompt was submitted, and no response artifact was produced. **There is still zero live evidence for Arena selectors or response extraction.** The real adapter should be exercised cautiously in a signed-in local browser once Chromium is available; stop and report if CAPTCHA, login, unexpected model, upload restrictions, or ambiguous UI appears.
+A temporary, harmless `arena-smoke-test` mission (`Reply with exactly: RUNTIME_OK`, no file inputs) exercised the real runner entry point. At that time, the default was Playwright's bundled Chromium; the job reached `queued -> running` and failed in `BrowserController.start` because the Chromium executable was absent (`chromium-1243/.../chrome`). The earlier `playwright install chromium` attempt failed with TLS `ECONNRESET` from `cdn.playwright.dev`. The browser never opened, no request reached Arena, no prompt was submitted, and no response artifact was produced. The new installed-Chrome channel is covered only by deterministic mocked configuration tests so far: **no live Google login, Chrome launch, Arena request, or selector has been verified.**

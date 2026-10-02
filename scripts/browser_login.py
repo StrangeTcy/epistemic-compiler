@@ -43,10 +43,13 @@ async def _login(site: str, profile: str, target_url: str) -> int:
             f"Opened {parsed.scheme}://{parsed.netloc}{parsed.path} using persistent profile {profile!r}."
         )
         print(
-            "Authenticate or complete any site verification manually in the Chromium window."
+            f"Browser channel: {browser.browser_channel}; automation profile: {browser.profile_path}"
         )
         print(
-            "The script does not inspect or print credentials; Chromium stores site session data in this local profile for reuse."
+            "Authenticate or complete any site verification manually in the browser window."
+        )
+        print(
+            "The script does not inspect or print credentials; the browser stores site session data in this separate local profile for reuse."
         )
         try:
             await asyncio.to_thread(

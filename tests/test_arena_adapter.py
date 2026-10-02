@@ -7,7 +7,6 @@ from pathlib import Path
 
 import pytest
 
-from runtime.browser.browser import PROJECT_ROOT, BrowserController
 from runtime.browser.sites.arena import ArenaAdapter
 from runtime.models import JobSpec, MissionSpec, WaitingForHuman
 
@@ -230,15 +229,6 @@ class FakeContext:
             self.job_state.update(values)
 
         self.update_progress = update
-
-
-def test_persistent_profiles_cannot_be_created_inside_the_repository(tmp_path):
-    with pytest.raises(ValueError, match="outside the repository"):
-        BrowserController(
-            "arena", profile_root=PROJECT_ROOT / "runtime" / "browser_profiles"
-        )
-    controller = BrowserController("arena", profile_root=tmp_path)
-    assert controller.profile_path.is_relative_to(tmp_path)
 
 
 def test_adapter_accepts_only_https_arena_hosts():
