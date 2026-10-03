@@ -1,0 +1,66 @@
+# POST-02 editorial blueprint
+
+*Compiler-authored synthesis of the two separately preserved Critic candidates (Grok 4.3 and Opus 5.5). The workflow has one Editorial Critic response slot; this document fills that slot and is not a verbatim answer from either model. Recommendations and disagreements below are resolved against the supplied evidence packet and target-site style material. The two raw candidates remain separate records with their original model labels.*
+
+## Proposed thesis
+
+The seven selected `epistemic_games` cases were scored as correct Bayesian updates under two stipulated behavioral policies. They show that Atria-Dawn-Preview returned the credited posterior, evidence verdict, and supported-world label on these seven seed-0 items—including the case where an uninformative observation leaves a skewed prior at 3/5. The inspected clean comparator supplies the likelihoods; this result does not test whether the model can construct those policies recursively, and it does not reveal the internal procedure the model used. Keep that positive but narrow reading beside the dirty-source and one-seed limits.
+
+A useful organizing distinction is three questions: **Does the observation discriminate between the worlds? Which world has the higher posterior? Who supplied the likelihoods?** The task judges the first two outputs from specified inputs. Its inspected implementation supplies the likelihood table; the archive cannot establish what the model did internally.
+
+## Opening strategy
+
+Open on the division of labor in a Bayesian update, then use the credited skewed-prior case immediately to make the distinction concrete: World 1 has posterior 3/5 and is the more-supported world, while the evidence verdict is still “indistinguishable.” Pose the three questions before explaining the arithmetic. By roughly the first 200 words, state that the inspected clean comparator supplies the likelihood table and describes v0 as not implementing a fully recursive level-k engine with utilities and recursive belief updates. Put the source caveat in the same passage: the campaign repository is recorded dirty; 33/33 selected configuration hashes match the clean comparator, but that match does not prove byte-for-byte identity of executed task, judge, helper, or other code. Treat executed-source identity as unresolved, not “probably the same.” Then give the positive result in one sentence: all seven selected cases received score 1.0 with the posterior, verdict, supported-world, consistency, and provenance checks credited as correct.
+
+This combines the concrete tension of the 3/5 opening with the division-of-labor framing. Avoid Writer A’s longer hypothetical setup and avoid score-led reporting before the reader knows what was being checked. Do not reuse either writer’s opening prose. A title direction such as “The Likelihoods Came With the Task” or “Using a Speaker’s Policy Is Not Building One” is available; choose a fresh final title rather than either Writer draft’s title.
+
+## Section sequence and examples
+
+1. **The three fields ask three different questions.** Explain the distinction between likelihood ratio, posterior preference, and supported-world label. Keep the 3/5 ambiguous/skewed-prior case as the first worked example: equal likelihoods give a likelihood ratio of 1, so the observation leaves the prior where it was; the posterior can favor World 1 while the evidence remains indistinguishable. Do not imply that posterior preference means the observation favored that world.
+
+2. **Use one compact result table.** Four representative rows are enough: ambiguous/balanced; ambiguous/skewed; strong/balanced; weak/balanced. Show posterior, verdict, and most-supported world. The recorded values are 1/2, 3/5, 1/15, and 92/177. The corresponding credited labels are indistinguishable/neither; indistinguishable/World 1; distinguishable/World 2; and weakly distinguishable/World 1. The result record displays 0.519774 for the last posterior, credited against the exact reference fraction 92/177; do not call every displayed answer “full-precision exact.” Keep the word “derived” beside any odds computed from posterior values and priors. Avoid an “implied likelihood ratio” column unless its direction is carefully defined; the table does not need one.
+
+   If mentioning the other balanced ambiguous variants, limit the statement to recorded fields: the narrative-framing, solo-presentation, and trap-scenario variants also returned 1/2, indistinguishable, neither. The case table records the trap scenario with `bare_table` framing. Do not invent or describe its story content, call it a narrative-framing case, or claim it tested a misleading narrative cue. The narrative-framing case is a single selected cell; its pass does not establish that framing has no effect.
+
+3. **Where did the likelihoods come from?** State the construct boundary using the inspected clean comparator’s own description: Bayesian inference over two specified behavioral policies, presented through genuine-versus-strategic narratives; v0 does not implement the fully recursive level-k engine described above. The task supplies the likelihood table. This isolates the update and makes the scored problem well-specified; it also limits what a correct posterior establishes. A passing output does not show that the model did, or could not, reason recursively. Avoid claims about the model’s private procedure, such as “nobody in the loop recursively modeled anybody.”
+
+   A diagram is optional, not required. If a compact diagram is retained, label its stages accurately—policy-generation mechanism, supplied likelihoods, prior/update, scored outputs—and mark the recursive mechanism as absent from the inspected v0 comparator. A prose explanation is safer if the diagram risks implying that the model was the sole actor in the update or that the archive exposes internal reasoning.
+
+4. **What the seven results do and do not show.** State the selection boundary beside the result: seven behavioral-reference cases, one seed (seed-0), one model/configuration, and sparse one-factor substitutions rather than replications, an interaction grid, or a population estimate. There is one selected solo-presentation case, one narrative-framing case, and one skewed-prior case. The environment-level public Bayesian-oracle self-test was recorded as passed; it is separate from the exact-instance judgments, is not an eighth answer, and says nothing about the model’s procedure. One sentence may clarify that these seven are behavioral-reference results, not compile-only probes. Do not add the campaign-wide failure taxonomy, provider exclusions, or denominator accounting: those do not explain these seven passes. The raw `ml_debugging` track label and semantic regrouping can be omitted; if needed for context, explain the editorial regrouping in one sentence without rewriting the archived label.
+
+5. **What a recursive test would require.** Present this only as a proposed follow-up, not as an experiment already performed. Keep the seven supplied-policy cases as a calibration layer. For a separate recursive layer, define base policies, utilities, information available to each player, move/observer alternation, belief-update rules, and how these generate public actions. The model should predict policies or action distributions, derive observation likelihoods, then update; score policy reconstruction separately from posterior accuracy so cancelling errors cannot hide a wrong speaker model. Use multiple seeds and unseen policy/likelihood cases, while ensuring the task still defines enough structure for a unique answer. Conflicting narrative cues may be a proposed stress test, not a description of what the current trap case did.
+
+   Briefly link the distinct precedents already in the supplied packet: [MindGames](https://aclanthology.org/2023.findings-emnlp.303/) uses dynamic epistemic logic; [Hi-ToM](https://aclanthology.org/2023.findings-emnlp.717/) targets higher-order recursive beliefs and deception; [BigToM](https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and-Benchmarks.pdf) uses causal templates for social-reasoning items. Explain that they concern distinct constructs; this is a targeted precedent check, not validation of the campaign or an exhaustive novelty claim. Do not import HELM or VarBench from POST-01.
+
+6. **Close on the 3/5 answer.** State the narrow positive license—correct outputs on these seven selected Bayesian updates under stipulated policies—and the non-licenses: policy construction, recursive opponent modelling, general theory of mind, causal effects of presentation/framing, a difficulty scale, model rankings, or conclusions about the model’s hidden reasoning.
+
+## Reconciled recommendations and factual corrections
+
+- The first Critic favors retaining the blunt “fuckingly” phrasing as voice. The second flags it and recommends removal, but incorrectly attributes profanity to the F-04 finding record. The supplied finding record contains no such profanity; those insertions occur in Writer A’s supplied article. The site guide describes profanity as an emphatic exception, not a required style marker. Omit it from the final article; do not characterize it as evidence contamination or repeat it as a voice cue. The Critic candidate itself also contains a profane proposed heading; do not carry that into the final article.
+- Preserve Writer A and Writer B exactly in their separate response files. Writer A’s response includes an outer Markdown code fence; remove only that wrapper when composing Jekyll article prose. Writer B’s prior-work sentence has blank reference names/links; repair the final article using the verified packet links above, not by silently altering the preserved response.
+- The trap case is recorded as scenario `trap` with `bare_table` framing. The response files and result fields do not license a claim about its narrative content or the designers’ intent. Describe only recorded levels and outputs, or omit it.
+- “Exact posterior” refers to the judge’s reference value/credit, not necessarily a literal fraction printed by the model. For example, the reported 0.519774 is credited against 92/177. Say “credited against the exact reference fraction” when precision matters.
+- Do not say the evidence proves the model did not reason recursively. The task implementation does not require policy construction; observed outputs do not reveal the model’s internal route.
+- Do not repeat unsupported claims that the selected cells demonstrate robustness across axes, that the task measured a general strategic capability, or that matching configs proves executed-source identity.
+
+## Public-site and manuscript requirements
+
+- Use Jekyll frontmatter with only `title`, `date: 2026-10-03`, and `layout: post`; put `{% include mathjax.html %}` immediately after the closing frontmatter, then the exact byline `*by <span class="icon-self">StrangeTcy</span>*`, then the `<dl class="epistemic-status">` fields in the order Original ideas, Synthesis, Prose, Certainty, Importance.
+- Attribute the actual role-separated Arena writing process accurately in the Prose field. Do not invent a personal research anecdote, imply independent authorial contributors, or name model labels in public prose.
+- Use short, argumentative `##` headings and airy paragraphs. No `Introduction` heading, internal paths, hashes, claim IDs, evidence tags, or workflow labels. No surrounding Markdown fence. Use MathJax with blank lines around display equations; avoid literal `|` within table math.
+- Keep prior-work links at the point of use. Avoid “first” or exhaustive novelty claims. Do not include POST-01 references, unrelated family totals, a campaign-wide failure taxonomy, or a public leaderboard.
+- Aim for the supplied style target of 1,800–2,800 words without padding. End with an explicit statement of what the seven results do and do not license.
+
+## Final-writer checklist
+
+- [ ] The supplied likelihood table and lack of a recursive level-k engine are stated early, with the dirty-source/comparator limitation adjacent.
+- [ ] The three questions remain distinct: observation discrimination, posterior ranking, and source of likelihoods.
+- [ ] The 3/5 case is explained without treating “indistinguishable” and “World 1 more supported” as contradictory.
+- [ ] Results and labels match the selected case records; numerical precision is described accurately.
+- [ ] Seven seed-0 behavioral-reference cases are not generalized to populations, replicated cells, causal effects, or a difficulty scale.
+- [ ] The oracle preflight is separate from per-case judgments and from the model’s internal procedure.
+- [ ] No unseen trap/narrative story content or claims about intent are invented.
+- [ ] The follow-up is clearly proposed, specified well enough to have a unique answer, and separately scores policy construction and posterior updating.
+- [ ] MindGames, Hi-ToM, and BigToM are linked as scoped precedents; no novelty claim is made.
+- [ ] No profanity, corrupted-evidence claim, broken reference placeholders, or article-sized code fence reaches the final prose.
+- [ ] Jekyll, byline, epistemic-status, attribution, and length conventions are followed.
