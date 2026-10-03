@@ -40,9 +40,9 @@
     "valid": true
   },
   "post_id": "POST-01",
-  "run_id": "campaign-01-post-production-20261003T213133Z-b10007ef",
+  "run_id": "campaign-01-post-production-20261003T214119Z-11eeb5de",
   "schema_version": 1,
-  "scope_note": "POST-01 passed local validation. POST-02 Writer A/B prompts are now persisted as the next human handoff; no POST-02 responses have been ingested.",
+  "scope_note": "POST-01 passed local validation and remains unapproved/unexported. POST-02 Writer A/B responses are pair-ingested; POST-02 editorial critic is now waiting for a human response.",
   "selected_action": "reconcile",
   "selected_response": {
     "model_label_used_for_ingest": "Compiler-reconciled draft from user-selected Grok 4.5 and Opus 4.7 candidates",

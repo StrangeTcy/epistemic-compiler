@@ -1,36 +1,32 @@
 {
-  "browser_ui_submission_attempted": false,
-  "identical_writer_prompts": true,
-  "next_job_id": "post02_editorial_critic",
-  "next_stage": "editorial_critic",
+  "critic_job_id": "post02_editorial_critic",
   "next_stage_status": "waiting_for_human",
   "post_id": "POST-02",
   "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
-  "run_id": "campaign-01-post-production-20261003T214119Z-11eeb5de",
-  "schema_version": 1,
-  "stage": "battle_writer_pair",
-  "status": "completed",
-  "workflow_id": "campaign-01-post-production",
-  "writers": [
+  "response_preservation_notes": [
+    "Writer A’s supplied Markdown fence is preserved in the saved response body.",
+    "Writer B’s prior-work sentence contained blank reference labels in the supplied text; it is preserved unchanged for Critic review."
+  ],
+  "responses": [
     {
       "expected_response_artifact": "artifacts/jobs/post02_battle_writer_a/response.md",
       "job_id": "post02_battle_writer_a",
       "model_label": "opus 4.8",
-      "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
       "response_sha256": "3ac8cd843bb523c5a39d05152c18d0af4c4c6ab998f68cc6c7bb44fa0419e884",
       "role": "battle_writer_a",
-      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_prompt.md",
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_response.md"
     },
     {
       "expected_response_artifact": "artifacts/jobs/post02_battle_writer_b/response.md",
       "job_id": "post02_battle_writer_b",
       "model_label": "gpt 6 sol max",
-      "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
       "response_sha256": "f2d8c118e0714b8e45c8728892b4318daf8052b3b28e43815f12c33feb06e9fe",
       "role": "battle_writer_b",
-      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_prompt.md",
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_response.md"
     }
-  ]
+  ],
+  "run_id": "campaign-01-post-production-20261003T214119Z-11eeb5de",
+  "schema_version": 1,
+  "stage": "battle_writer_pair",
+  "workflow_id": "campaign-01-post-production"
 }
