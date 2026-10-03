@@ -3,9 +3,10 @@
   "critic_status": "completed",
   "following_job_id": "post02_final_writer",
   "following_stage": "final_writer",
-  "following_stage_status": "waiting_for_human",
+  "following_stage_status": "completed",
   "next_stage_status": "completed",
   "post_id": "POST-02",
+  "post_validator_status": "completed",
   "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
   "response_preservation_notes": [
     "Writer A’s supplied Markdown fence is preserved in the saved response body.",
@@ -29,8 +30,9 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T215942Z-1fcb3f67",
+  "run_id": "campaign-01-post-production-20261003T223705Z-03e9265c",
   "schema_version": 1,
   "stage": "battle_writer_pair",
+  "validation_revision_status": "waiting_for_human",
   "workflow_id": "campaign-01-post-production"
 }

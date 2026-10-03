@@ -1,6 +1,7 @@
 {
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
+  "final_writer_job_status": "completed",
   "ingested_response": {
     "job_id": "post02_editorial_critic",
     "model_label_used_for_ingest": "Compiler synthesis of supplied Critic candidates: grok 4.3 + opus 5.5",
@@ -10,7 +11,7 @@
   },
   "next_job_id": "post02_final_writer",
   "next_stage": "final_writer",
-  "next_stage_status": "waiting_for_human",
+  "next_stage_status": "completed",
   "pair_ingest_supported_for_critic_job": false,
   "post_id": "POST-02",
   "raw_candidate_responses": [
@@ -27,9 +28,11 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_editorial_critic_candidate_b_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T215942Z-1fcb3f67",
+  "run_id": "campaign-01-post-production-20261003T223705Z-03e9265c",
   "schema_version": 1,
   "stage": "editorial_critic_candidates",
   "status": "compiler_synthesis_ingested",
+  "validation_revision_job_id": "post02_validation_revision",
+  "validation_revision_status": "waiting_for_human",
   "workflow_id": "campaign-01-post-production"
 }
