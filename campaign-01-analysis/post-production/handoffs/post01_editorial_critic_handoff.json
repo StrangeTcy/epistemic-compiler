@@ -1,6 +1,5 @@
 {
-  "arena_response_model_label": "opus 4.8",
-  "created_at": "2026-10-03T20:41:42+00:00",
+  "created_at": "2026-10-03T20:42:01+00:00",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -155,7 +154,7 @@
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-01/evidence/failure_taxonomy.csv"
     }
   ],
-  "expected_response_artifact": "artifacts/jobs/post01_battle_writer_b/response.md",
+  "expected_response_artifact": "artifacts/jobs/post01_editorial_critic/response.md",
   "input_renderings": [
     {
       "reference": "job:post01_prepare_post:response",
@@ -233,6 +232,18 @@
         }
       ],
       "source_sha256": "df336be278a34547e17b7fd8094bc981ade9154f0262bc681743eaec2fb3746f"
+    },
+    {
+      "reference": "job:post01_battle_writer_a:response",
+      "rendered_sha256": "1487cb4192f795635fe3e8013be006e10095d0fffcc87dfd7da180399283821d",
+      "source_renderings": [],
+      "source_sha256": "1487cb4192f795635fe3e8013be006e10095d0fffcc87dfd7da180399283821d"
+    },
+    {
+      "reference": "job:post01_battle_writer_b:response",
+      "rendered_sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d",
+      "source_renderings": [],
+      "source_sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d"
     }
   ],
   "inputs": [
@@ -243,23 +254,36 @@
       "size_bytes": 43111,
       "snapshot_path": "inputs/files/df336be278a34547-response.md",
       "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T204142Z-6c443159/artifacts/jobs/post01_prepare_post/response.md"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post01_battle_writer_a:response",
+      "sha256": "1487cb4192f795635fe3e8013be006e10095d0fffcc87dfd7da180399283821d",
+      "size_bytes": 15917,
+      "snapshot_path": "inputs/files/1487cb4192f79563-response.md",
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T204142Z-6c443159/artifacts/jobs/post01_battle_writer_a/response.md"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "job:post01_battle_writer_b:response",
+      "sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d",
+      "size_bytes": 13353,
+      "snapshot_path": "inputs/files/d6d6a559f073488a-response.md",
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T204142Z-6c443159/artifacts/jobs/post01_battle_writer_b/response.md"
     }
   ],
-  "job_id": "post01_battle_writer_b",
-  "next_stage": "editorial_critic",
+  "job_id": "post01_editorial_critic",
+  "next_stage": "final_writer",
   "post_id": "POST-01",
-  "prompt_sha256": "f2dd7b1eb9692559779fc1594c6c0339997f4396625da7d842d90cbc93de0a81",
-  "prompt_to_paste": "artifacts/jobs/post01_battle_writer_b/prompt_to_paste.md",
-  "response_sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d",
-  "role": "battle_writer_b",
+  "prompt_sha256": "13047f0a6e776f9cf77ebbfcdf2c489ae66bc368a20e48904efa44c975b1d61d",
+  "prompt_to_paste": "artifacts/jobs/post01_editorial_critic/prompt_to_paste.md",
+  "role": "editorial_critic",
   "run_id": "campaign-01-post-production-20261003T204142Z-6c443159",
   "schema_version": 1,
-  "stage": "battle_writer_b",
-  "template_prompt_artifact": "prompts/writer.md",
-  "template_prompt_sha256": "37b3c9f568d45d55c16c237a25b49e33ff8535819c9be246223e5479fafa4913",
+  "stage": "editorial_critic",
+  "template_prompt_artifact": "prompts/critic.md",
+  "template_prompt_sha256": "50576f5e676351f4883a85b283638c1128c9b9009f6614e394e3869860c17d85",
   "workflow_id": "campaign-01-post-production",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-01_writer_b_prompt.md",
-  "workspace_prompt_copy_sha256": "f2dd7b1eb9692559779fc1594c6c0339997f4396625da7d842d90cbc93de0a81",
-  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_writer_b_response.md",
-  "workspace_response_copy_sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d"
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_prompt.md",
+  "workspace_prompt_copy_sha256": "13047f0a6e776f9cf77ebbfcdf2c489ae66bc368a20e48904efa44c975b1d61d"
 }
