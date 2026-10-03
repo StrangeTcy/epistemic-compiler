@@ -1,9 +1,8 @@
 {
-  "critic_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_prompt.md",
-  "critic_prompt_sha256": "13047f0a6e776f9cf77ebbfcdf2c489ae66bc368a20e48904efa44c975b1d61d",
-  "expected_critic_response_artifact": "artifacts/jobs/post01_editorial_critic/response.md",
-  "next_job_id": "post01_editorial_critic",
-  "next_stage": "editorial_critic",
+  "critic_job_id": "post01_editorial_critic",
+  "critic_status": "completed",
+  "next_job_id": "post01_final_writer",
+  "next_stage": "final_writer",
   "next_stage_status": "waiting_for_human",
   "pair_ingest_model_label": "Arena side-by-side: Writer A=fable 5.1; Writer B=opus 4.8",
   "post_id": "POST-01",
@@ -26,7 +25,7 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_writer_b_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T204142Z-6c443159",
+  "run_id": "campaign-01-post-production-20261003T205139Z-3d3bf7f1",
   "schema_version": 1,
   "stage": "battle_writer_pair",
   "workflow_id": "campaign-01-post-production"

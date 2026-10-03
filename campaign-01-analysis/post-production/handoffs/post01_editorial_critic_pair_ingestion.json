@@ -1,0 +1,38 @@
+{
+  "article_approval_or_export_performed": false,
+  "critic_prompt_sha256": "13047f0a6e776f9cf77ebbfcdf2c489ae66bc368a20e48904efa44c975b1d61d",
+  "expected_final_writer_response_artifact": "artifacts/jobs/post01_final_writer/response.md",
+  "final_writer_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_prompt.md",
+  "final_writer_prompt_sha256": "ca7eb486ab8f9db860922adeb37bb90add7ea5788da201291df613015482c302",
+  "ingested_response": {
+    "job_id": "post01_editorial_critic",
+    "model_label_used_for_ingest": "Compiler synthesis of supplied Critic candidates: gpt 6 luna max + grok 4.5",
+    "response_provenance": "Compiler-authored synthesis of two separately preserved Battle Critic candidates; neither raw candidate was represented as the single workflow response.",
+    "response_sha256": "3aa7a703da258fba9f4a1775719947cf3688de4ea3bf36fd3cc01ebe1413293a",
+    "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_compiler_blueprint.md"
+  },
+  "next_job_id": "post01_final_writer",
+  "next_stage": "final_writer",
+  "next_stage_status": "waiting_for_human",
+  "pair_ingest_supported_for_critic_job": false,
+  "post_id": "POST-01",
+  "raw_candidate_responses": [
+    {
+      "candidate": "critic_candidate_b",
+      "model_label": "grok 4.5",
+      "normalization_note": "Removed one trailing space after a bullet heading; substantive text and formatting are otherwise preserved.",
+      "response_sha256": "a93cd7a2068e78c27294523ce045c5fbb6574c4728f9a6cad86ea57bbb51af22",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_candidate_b_response.md"
+    },
+    {
+      "candidate": "critic_candidate_a",
+      "model_label": "gpt 6 luna max",
+      "response_sha256": "40b5d452a5cb512a42ac7285f24b7c2a322803649a19d776af87a99c538d56b2",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_candidate_a_response.md"
+    }
+  ],
+  "run_id": "campaign-01-post-production-20261003T205139Z-3d3bf7f1",
+  "schema_version": 1,
+  "stage": "editorial_critic_candidates",
+  "workflow_id": "campaign-01-post-production"
+}
