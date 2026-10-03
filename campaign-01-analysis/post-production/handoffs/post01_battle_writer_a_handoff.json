@@ -1,6 +1,6 @@
 {
   "arena_response_model_label": "fable 5.1",
-  "created_at": "2026-10-03T21:18:29+00:00",
+  "created_at": "2026-10-03T21:31:33+00:00",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -242,7 +242,7 @@
       "sha256": "df336be278a34547e17b7fd8094bc981ade9154f0262bc681743eaec2fb3746f",
       "size_bytes": 43111,
       "snapshot_path": "inputs/files/df336be278a34547-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T211829Z-b3a0b0b6/artifacts/jobs/post01_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T213133Z-b10007ef/artifacts/jobs/post01_prepare_post/response.md"
     }
   ],
   "job_id": "post01_battle_writer_a",
@@ -252,7 +252,7 @@
   "prompt_to_paste": "artifacts/jobs/post01_battle_writer_a/prompt_to_paste.md",
   "response_sha256": "1487cb4192f795635fe3e8013be006e10095d0fffcc87dfd7da180399283821d",
   "role": "battle_writer_a",
-  "run_id": "campaign-01-post-production-20261003T211829Z-b3a0b0b6",
+  "run_id": "campaign-01-post-production-20261003T213133Z-b10007ef",
   "schema_version": 1,
   "stage": "battle_writer_a",
   "template_prompt_artifact": "prompts/writer.md",

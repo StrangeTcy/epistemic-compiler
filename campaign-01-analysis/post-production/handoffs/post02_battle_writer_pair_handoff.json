@@ -1,0 +1,29 @@
+{
+  "browser_ui_submission_attempted": false,
+  "identical_writer_prompts": true,
+  "next_stage": "editorial_critic",
+  "post_id": "POST-02",
+  "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
+  "recommended_use": "Paste either identical prompt once in Battle and preserve both returned responses separately; provide the two model labels with the responses.",
+  "run_id": "campaign-01-post-production-20261003T213133Z-b10007ef",
+  "schema_version": 1,
+  "stage": "battle_writer_pair",
+  "status": "waiting_for_human",
+  "workflow_id": "campaign-01-post-production",
+  "writers": [
+    {
+      "expected_response_artifact": "artifacts/jobs/post02_battle_writer_a/response.md",
+      "job_id": "post02_battle_writer_a",
+      "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
+      "role": "battle_writer_a",
+      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_prompt.md"
+    },
+    {
+      "expected_response_artifact": "artifacts/jobs/post02_battle_writer_b/response.md",
+      "job_id": "post02_battle_writer_b",
+      "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
+      "role": "battle_writer_b",
+      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_prompt.md"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "created_at": "2026-10-03T21:31:34+00:00",
+  "expanded_source_inputs": [
+    {
+      "attachment_index": 0,
+      "reference": "mission:source_draft_POST-02",
+      "sha256": "eeea2454b3b15e67568a54efc9f1ddd2e3b06e560be15f5fac1a6a78e6903964",
+      "size_bytes": 5377,
+      "snapshot_path": "inputs/files/eeea2454b3b15e67-source_draft.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/source_draft.md"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "mission:house_style",
+      "sha256": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+      "size_bytes": 12397,
+      "snapshot_path": "inputs/files/590b57b503361c4a-house_style.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/shared/house_style.md"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "mission:style_reference_material",
+      "sha256": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+      "size_bytes": 19939,
+      "snapshot_path": "inputs/files/bd5b755d0b5f308d-style_reference_material.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/shared/style_reference_material.md"
+    },
+    {
+      "attachment_index": 3,
+      "reference": "mission:references",
+      "sha256": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0",
+      "size_bytes": 3532,
+      "snapshot_path": "inputs/files/54a35af7db803d8c-references.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/shared/references.md"
+    },
+    {
+      "attachment_index": 4,
+      "reference": "mission:campaign_provenance",
+      "sha256": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9",
+      "size_bytes": 13690,
+      "snapshot_path": "inputs/files/3d0f3255143366c9-campaign_provenance.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/shared/campaign_provenance.md"
+    },
+    {
+      "attachment_index": 5,
+      "reference": "mission:workflow_input_manifest",
+      "sha256": "15409d70ae25020b8327d9f102956b7cb288b470e594682095655eb7ca05a158",
+      "size_bytes": 28349,
+      "snapshot_path": "inputs/files/15409d70ae25020b-workflow_input_manifest.json",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/shared/workflow_input_manifest.json"
+    },
+    {
+      "attachment_index": 6,
+      "reference": "mission:trace_rows_POST-02",
+      "sha256": "40abbbb39f0b435e9e77e79f50202460a7db4834cd887477d7b845a6e84d0ce9",
+      "size_bytes": 5619,
+      "snapshot_path": "inputs/files/40abbbb39f0b435e-trace_rows.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/trace_rows.csv"
+    },
+    {
+      "attachment_index": 7,
+      "reference": "mission:relevant_findings_POST-02",
+      "sha256": "0cd1bb194592dc77e92fce37bf1730470d98aa2c74618dd7210caebf192b7f1d",
+      "size_bytes": 23469,
+      "snapshot_path": "inputs/files/0cd1bb194592dc77-relevant_findings.json",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/relevant_findings.json"
+    },
+    {
+      "attachment_index": 8,
+      "reference": "mission:evidence_extract_POST-02",
+      "sha256": "b276f9e3564eb7cb8e3a016684dffa58763ac6252de85e7840941f553a58a8dc",
+      "size_bytes": 1501,
+      "snapshot_path": "inputs/files/b276f9e3564eb7cb-evidence_extract.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence_extract.md"
+    },
+    {
+      "attachment_index": 9,
+      "reference": "mission:limitations_POST-02",
+      "sha256": "7fcc58d4ce9331cf23a1a2d1f143627110749b0f6dc2245a36a33af51c7f6bd6",
+      "size_bytes": 1376,
+      "snapshot_path": "inputs/files/7fcc58d4ce9331cf-limitations.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/limitations.md"
+    },
+    {
+      "attachment_index": 10,
+      "reference": "mission:source_audit_POST-02",
+      "sha256": "168935bd41f48a2c281a43aa4c6a5d83ef78e8d89c4e86f1098b264adf691beb",
+      "size_bytes": 5098,
+      "snapshot_path": "inputs/files/168935bd41f48a2c-source_audit_excerpt.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/source_audit_excerpt.md"
+    },
+    {
+      "attachment_index": 11,
+      "reference": "mission:evidence_analysis_family_summary_POST-02",
+      "sha256": "30c966fff429a3d634ef6eca92b3e167af55ceee459176ffe9b758381d6d86ee",
+      "size_bytes": 387,
+      "snapshot_path": "inputs/files/30c966fff429a3d6-analysis_family_summary.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/analysis_family_summary.csv"
+    },
+    {
+      "attachment_index": 12,
+      "reference": "mission:evidence_axis_summary_POST-02",
+      "sha256": "ef2e3448ac367023c5705cd38bad376f03ee81092ff7abf3c73cafa11e8c2fd3",
+      "size_bytes": 11547,
+      "snapshot_path": "inputs/files/ef2e3448ac367023-axis_summary.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/axis_summary.csv"
+    },
+    {
+      "attachment_index": 13,
+      "reference": "mission:evidence_case_results_POST-02",
+      "sha256": "d3f6e76008fdbdf2e85f5959a366aae6a53a7fd8004fd98bab0dcfdd086860d6",
+      "size_bytes": 10078,
+      "snapshot_path": "inputs/files/d3f6e76008fdbdf2-selected_case_results.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/selected_case_results.csv"
+    },
+    {
+      "attachment_index": 14,
+      "reference": "mission:evidence_environment_summary_POST-02",
+      "sha256": "a29d015640d99e171cb2a861df5759b23503073e204bf690d8d72be8dfb7df76",
+      "size_bytes": 383,
+      "snapshot_path": "inputs/files/a29d015640d99e17-environment_summary.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/environment_summary.csv"
+    },
+    {
+      "attachment_index": 15,
+      "reference": "mission:evidence_failure_taxonomy_POST-02",
+      "sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "size_bytes": 6231,
+      "snapshot_path": "inputs/files/49155e9c8f1d8bfb-failure_taxonomy.csv",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/failure_taxonomy.csv"
+    }
+  ],
+  "expected_response_artifact": "artifacts/jobs/post02_battle_writer_a/response.md",
+  "input_renderings": [
+    {
+      "reference": "job:post02_prepare_post:response",
+      "rendered_sha256": "4200e56c197412fb6c904b7c7094fc68fb5e0c826a8aa10969f28464e6a86825",
+      "source_renderings": [
+        {
+          "reference": "mission:source_draft_POST-02",
+          "rendered_sha256": "acd957cf7449309f82c9bd4b1a7e1491d68a6a499aba7cdd2210fe813ae8be5e",
+          "source_sha256": "eeea2454b3b15e67568a54efc9f1ddd2e3b06e560be15f5fac1a6a78e6903964"
+        },
+        {
+          "reference": "mission:house_style",
+          "rendered_sha256": "3d5b7ccaefb1983b86aae0b92e9a634d2927bf21c8040769de4fcf1bd1af71cd",
+          "source_sha256": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973"
+        },
+        {
+          "reference": "mission:style_reference_material",
+          "rendered_sha256": "ab6260bde7bc2d8c35224efb927dc757b30411b02c460f5c334ce792e50274f8",
+          "source_sha256": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4"
+        },
+        {
+          "reference": "mission:references",
+          "rendered_sha256": "a47fc0d765e234888274c117686d048720ff446203ab3fa49c157bafc9312aa8",
+          "source_sha256": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0"
+        },
+        {
+          "reference": "mission:trace_rows_POST-02",
+          "rendered_sha256": "2324a801d51ead461fb2d962213eada535b938f189edc92900de35792ce6a423",
+          "source_sha256": "40abbbb39f0b435e9e77e79f50202460a7db4834cd887477d7b845a6e84d0ce9"
+        },
+        {
+          "reference": "mission:relevant_findings_POST-02",
+          "rendered_sha256": "40ffe397ecf500600a416b35e871d101e25443a671566eee76bdfb10ab04e91e",
+          "source_sha256": "0cd1bb194592dc77e92fce37bf1730470d98aa2c74618dd7210caebf192b7f1d"
+        },
+        {
+          "reference": "mission:evidence_extract_POST-02",
+          "rendered_sha256": "b1f18fc5b56446429645f80a557acdc0724885c08f5f486b399794c8db01b92c",
+          "source_sha256": "b276f9e3564eb7cb8e3a016684dffa58763ac6252de85e7840941f553a58a8dc"
+        },
+        {
+          "reference": "mission:limitations_POST-02",
+          "rendered_sha256": "b5e81d5692a6bfbf41a9eb3cf48bf4d2e3882616db8f3356b3775d41325e5586",
+          "source_sha256": "7fcc58d4ce9331cf23a1a2d1f143627110749b0f6dc2245a36a33af51c7f6bd6"
+        },
+        {
+          "reference": "mission:source_audit_POST-02",
+          "rendered_sha256": "658479c8ad4a7e61829da64302a8417448e35435c1b81f040cb0966291082464",
+          "source_sha256": "168935bd41f48a2c281a43aa4c6a5d83ef78e8d89c4e86f1098b264adf691beb"
+        },
+        {
+          "reference": "mission:evidence_analysis_family_summary_POST-02",
+          "rendered_sha256": "7a760d05b68c06da4b292c6d605e1eee8ec428a76990b4f0443a43ff069ab770",
+          "source_sha256": "30c966fff429a3d634ef6eca92b3e167af55ceee459176ffe9b758381d6d86ee"
+        },
+        {
+          "reference": "mission:evidence_axis_summary_POST-02",
+          "rendered_sha256": "e9b4820d30b96e4584120f64b373924db85ac1b0151dbd475bb24b379564cb0f",
+          "source_sha256": "ef2e3448ac367023c5705cd38bad376f03ee81092ff7abf3c73cafa11e8c2fd3"
+        },
+        {
+          "reference": "mission:evidence_case_results_POST-02",
+          "rendered_sha256": "ed866423d860ab58658cbfbbdf9b25122a017c898a26f378e2d26aa0194343b8",
+          "source_sha256": "d3f6e76008fdbdf2e85f5959a366aae6a53a7fd8004fd98bab0dcfdd086860d6"
+        },
+        {
+          "reference": "mission:evidence_environment_summary_POST-02",
+          "rendered_sha256": "51dc35de1f6e6c762469bce8dc64f233bc3908e992ecd0c347bb6a3c15564d37",
+          "source_sha256": "a29d015640d99e171cb2a861df5759b23503073e204bf690d8d72be8dfb7df76"
+        },
+        {
+          "reference": "mission:evidence_failure_taxonomy_POST-02",
+          "rendered_sha256": "379b2b331fd20d910a3cbf6277cf82680f95fd19c160fc8042c8b3fd5f9d12b5",
+          "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+        }
+      ],
+      "source_sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d"
+    }
+  ],
+  "inputs": [
+    {
+      "attachment_index": 0,
+      "reference": "job:post02_prepare_post:response",
+      "sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d",
+      "size_bytes": 40407,
+      "snapshot_path": "inputs/files/7260ac159609bf6c-response.md",
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261003T213133Z-b10007ef/artifacts/jobs/post02_prepare_post/response.md"
+    }
+  ],
+  "job_id": "post02_battle_writer_a",
+  "next_stage": "editorial_critic",
+  "post_id": "POST-02",
+  "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
+  "prompt_to_paste": "artifacts/jobs/post02_battle_writer_a/prompt_to_paste.md",
+  "role": "battle_writer_a",
+  "run_id": "campaign-01-post-production-20261003T213133Z-b10007ef",
+  "schema_version": 1,
+  "stage": "battle_writer_a",
+  "template_prompt_artifact": "prompts/writer.md",
+  "template_prompt_sha256": "37b3c9f568d45d55c16c237a25b49e33ff8535819c9be246223e5479fafa4913",
+  "workflow_id": "campaign-01-post-production",
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_prompt.md",
+  "workspace_prompt_copy_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308"
+}
