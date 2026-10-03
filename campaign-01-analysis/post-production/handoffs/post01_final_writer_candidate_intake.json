@@ -1,0 +1,42 @@
+{
+  "article_approval_or_export_performed": false,
+  "candidate_responses": [
+    {
+      "candidate": "final_writer_candidate_grok_4_5",
+      "model_label": "grok 4.5",
+      "outer_markdown_fence_preserved": false,
+      "response_sha256": "1b60bc1c4940e3e088a85ca0d884445ed4f9f0c8125ed5024c664636b2a2573f",
+      "review_flags": [
+        "Uses the repeated distinctive “fuckingly” wording despite the Critic blueprint’s explicit instruction to remove it.",
+        "Describes all 20 underfit rows as plain behavioral misses although 17 of 20 are compile-only; needs qualification.",
+        "First-person authorship/process assertions in the epistemic-status block need author confirmation."
+      ],
+      "whitespace_token_count_including_wrapper": 2090,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_candidate_grok_4_5_response.md"
+    },
+    {
+      "candidate": "final_writer_candidate_opus_4_7",
+      "model_label": "opus 4.7",
+      "outer_markdown_fence_preserved": true,
+      "response_sha256": "ed368dffa6d85aeeb8e6a23f689409fed5d014d1d9a1abd166e81a5a03828872",
+      "review_flags": [
+        "Uses the repeated distinctive “fuckingly” wording despite the Critic blueprint’s explicit instruction to remove it.",
+        "Describes all 20 underfit rows as cases judged against target behavior although 17 of 20 are compile-only; needs qualification.",
+        "First-person origin and process assertions in the epistemic-status block need author confirmation."
+      ],
+      "whitespace_token_count_including_wrapper": 2614,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_candidate_opus_4_7_response.md"
+    }
+  ],
+  "expected_response_artifact": "artifacts/jobs/post01_final_writer/response.md",
+  "final_writer_job_id": "post01_final_writer",
+  "final_writer_job_status": "waiting_for_human",
+  "final_writer_prompt_sha256": "ca7eb486ab8f9db860922adeb37bb90add7ea5788da201291df613015482c302",
+  "pair_ingest_supported_for_final_writer_job": false,
+  "post_id": "POST-01",
+  "run_id": "campaign-01-post-production-20261003T211305Z-0e50e650",
+  "schema_version": 1,
+  "stage": "final_writer_candidate_intake",
+  "workflow_action": "Preserve both candidates; do not ingest either into the single final_writer slot until the user selects a base or requests a reconciled revision.",
+  "workflow_id": "campaign-01-post-production"
+}
