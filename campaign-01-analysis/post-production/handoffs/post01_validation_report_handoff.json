@@ -1,0 +1,18 @@
+{
+  "article_approval_or_export_performed": false,
+  "errors": [],
+  "final_writer_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_reconciled_response.md",
+  "final_writer_response_sha256": "49f05b299ca6493077321c45c162adcc80cfb9e9b10d73ff45381a03239ba936",
+  "post_id": "POST-01",
+  "report_sha256": "ccb93090a210a424571e9b282f3326f99b99635d7e712c79c90c0b8e32f21c2f",
+  "revision_response_matches_final_writer_response": true,
+  "run_id": "campaign-01-post-production-20261003T211829Z-b3a0b0b6",
+  "schema_version": 1,
+  "valid": true,
+  "validator_jobs": [
+    "post01_post_validator",
+    "post01_validation_revision_validator"
+  ],
+  "workflow_id": "campaign-01-post-production",
+  "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-01_validation_report.json"
+}

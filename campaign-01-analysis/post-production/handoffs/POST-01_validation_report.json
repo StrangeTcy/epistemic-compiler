@@ -1,0 +1,1541 @@
+{
+  "checks": {
+    "frontmatter": true,
+    "html_tag_balance": true,
+    "independent_replication_overclaim": true,
+    "internal_provenance_leakage": true,
+    "jekyll_layout_include_author": true,
+    "markdown_fences_and_links": true,
+    "numeric_claim_traceability": true,
+    "numerical_claim_literals": true,
+    "post_specific_overclaim_and_caveats": true
+  },
+  "date": "2026-10-03",
+  "errors": [],
+  "evidence_input_sha256": {
+    "mission:campaign_provenance": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9",
+    "mission:evidence_analysis_family_summary_POST-01": "70e97ffa64a7ffe1be655cf943269d7e2cc4aa45d0242155b26b1aaa42a5207c",
+    "mission:evidence_axis_summary_POST-01": "fba9921f214994cd0b017b8d914d1460eb744046dca161ee2878b3a0b4d27c45",
+    "mission:evidence_campaign_exclusions_POST-01": "3300ad90064458a38b1166bd9f5b3c840fa690604c2219cbc3129a3207b92542",
+    "mission:evidence_campaign_scope_POST-01": "a6212933369f324049fd0732a97b290d9ec17469d7ed106bd9c5267778cde4da",
+    "mission:evidence_case_results_POST-01": "5e5e2860e67c1f43ef0c4bee92033cf3242a6f12730250478792efe799577ff8",
+    "mission:evidence_environment_summary_POST-01": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806",
+    "mission:evidence_extract_POST-01": "d026738cb3b3b5b287aa2398d4d0453503499e14adb3da43863bbfec2862f436",
+    "mission:evidence_failure_details_POST-01": "ba98a1663167e2ae4e7721916d5e328028d05cebfd14b817c5f51af05e5c15d7",
+    "mission:evidence_failure_taxonomy_POST-01": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+    "mission:house_style": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+    "mission:limitations_POST-01": "a93d3511cb78ce0ee32bf7adeefa0bc2581a0515c525f59c70fd515201d20bc0",
+    "mission:references": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0",
+    "mission:relevant_findings_POST-01": "cb67218edc108c03d96edee664ed6a64e3369a6cd361892dfd089dff188c1905",
+    "mission:source_audit_POST-01": "d5d54c278bf2bae34a5d397475ec9b166fcbb3ec8cb323bf174f2367142ea060",
+    "mission:source_draft_POST-01": "aef9c8b2e8be7221367a684d65b6767e86077795f4e8d661324d43359fb27e0a",
+    "mission:style_reference_material": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+    "mission:trace_rows_POST-01": "ee9db593124edb5c94b597317a9ca08448691f422e2ce38eb27d129bea9b867e",
+    "mission:workflow_input_manifest": "15409d70ae25020b8327d9f102956b7cb288b470e594682095655eb7ca05a158"
+  },
+  "numeric_literals_checked": [
+    "0",
+    "0.416667",
+    "1",
+    "1.0",
+    "10",
+    "11",
+    "12",
+    "120",
+    "128",
+    "131",
+    "15",
+    "16",
+    "17",
+    "192",
+    "193",
+    "194",
+    "2",
+    "20",
+    "24",
+    "25",
+    "3",
+    "31",
+    "32",
+    "33",
+    "34",
+    "4",
+    "45",
+    "5",
+    "512",
+    "56",
+    "6",
+    "61",
+    "62",
+    "63",
+    "66",
+    "7",
+    "72",
+    "75",
+    "8",
+    "9"
+  ],
+  "post_id": "POST-01",
+  "schema_version": 1,
+  "slug": "a-red-square-is-not-one-result",
+  "spelled_quantitative_counts_checked": [
+    "1",
+    "2",
+    "3"
+  ],
+  "suggested_jekyll_filename": "2026-10-03-a-red-square-is-not-one-result.md",
+  "title": "A Red Square Is Not One Result",
+  "trace_row_ids_loaded": [
+    "POST-01-C01",
+    "POST-01-C02",
+    "POST-01-C03",
+    "POST-01-C04",
+    "POST-01-C05",
+    "POST-01-C06",
+    "POST-01-C07",
+    "POST-01-C08",
+    "POST-01-C09"
+  ],
+  "traceability_audit": {
+    "mapped_numeric_claim_sentences": [
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "131",
+              "192",
+              "193",
+              "194"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "192",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "192",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "192",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "131",
+          "192",
+          "193",
+          "194",
+          "3"
+        ],
+        "sentence": "The same numerator appears three times: 131 out of 194, 131 out of 193, and 131 out of 192."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "Without those details, a red cell is not one result, and “hard” is not one scale."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "131",
+              "194",
+              "63"
+            ]
+          }
+        ],
+        "numbers": [
+          "131",
+          "194",
+          "63"
+        ],
+        "sentence": "The raw checkpoint contains 194 scored selected results: 131 PASS and 63 FAIL."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "24"
+            ]
+          }
+        ],
+        "numbers": [
+          "24"
+        ],
+        "sentence": "The archive separately accounts for 24 cases that never became scored results."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "194"
+            ]
+          }
+        ],
+        "numbers": [
+          "194"
+        ],
+        "sentence": "Two of the 194 scored results carry final notes attributing the terminal failure to provider transients after bounded retries."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "The campaign-level outage counter names one episode; an archive audit found a second final result with the same kind of terminal note."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "131",
+              "194",
+              "63"
+            ]
+          }
+        ],
+        "numbers": [
+          "131",
+          "194",
+          "63"
+        ],
+        "sentence": "| Raw checkpoint | 131 / 194 | 63 | All scored selected results |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "131",
+              "193",
+              "62"
+            ]
+          }
+        ],
+        "numbers": [
+          "131",
+          "193",
+          "62"
+        ],
+        "sentence": "| Exclude only the report-listed transient | 131 / 193 | 62 | The campaign report’s single listed episode removed |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "131",
+              "192",
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "192",
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "192",
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "192",
+              "61"
+            ]
+          }
+        ],
+        "numbers": [
+          "131",
+          "192",
+          "61"
+        ],
+        "sentence": "| Exclude both provider-coded terminal rows | 131 / 192 | 61 | A performance-analysis sensitivity set |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "192"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C02",
+            "finding_ids": "F-01;F-04",
+            "matched_numbers": [
+              "120",
+              "16",
+              "45",
+              "56",
+              "72",
+              "75"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "192"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "192"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "120",
+              "16",
+              "192",
+              "45",
+              "56",
+              "72",
+              "75"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "120",
+              "16",
+              "45",
+              "56",
+              "72",
+              "75"
+            ]
+          }
+        ],
+        "numbers": [
+          "120",
+          "16",
+          "192",
+          "45",
+          "56",
+          "72",
+          "75"
+        ],
+        "sentence": "After those two provider-coded rows are set aside, the 192-case performance set combines 72 cases with an instance-specific behavioral reference (56 PASS / 16 FAIL) and 120 compile-only cases (75 PASS / 45 FAIL)."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C02",
+            "finding_ids": "F-01;F-04",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "33"
+            ]
+          }
+        ],
+        "numbers": [
+          "33"
+        ],
+        "sentence": "All 33 selected configuration hashes match a clean comparator of the recorded commit, which is evidence about those configurations."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          }
+        ],
+        "numbers": [
+          "128",
+          "32",
+          "512"
+        ],
+        "sentence": "Its “hidden depth” axis is input-string length: 32, 128, or 512 characters."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "32",
+              "34",
+              "66"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "32"
+            ]
+          }
+        ],
+        "numbers": [
+          "32",
+          "34",
+          "66"
+        ],
+        "sentence": "Hold the input at 32 characters and sweep the surface label, however, and the medium and hard cases fail: the recorded output lengths are 34 and 66 rather than 32."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "0.416667",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "0.416667",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "0.416667",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C08",
+            "finding_ids": "F-17",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "0.416667",
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "0.416667",
+          "3",
+          "4",
+          "5"
+        ],
+        "sentence": "At easy surface, the selected cases over 3, 4, and 5 bits yield a partial score of 0.416667, a source-validation rejection because the submission imported a disallowed  , and a pass."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2"
+        ],
+        "sentence": "The surface-label sweep at fixed three-bit input produces a failure followed by two passes."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C08",
+            "finding_ids": "F-17",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "3",
+          "5"
+        ],
+        "sentence": "Its 3/5 environment total therefore hides different things: partial credit, a validator stop, and behavioral outcomes."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "12",
+              "25",
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "12",
+              "25",
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "12",
+              "25",
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "12",
+              "25",
+              "6"
+            ]
+          }
+        ],
+        "numbers": [
+          "12",
+          "25",
+          "6"
+        ],
+        "sentence": "At easy surface, lengths 6 and 25 pass; the 12-node case stops at source validation because of an unterminated triple-quoted string."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "61"
+            ]
+          }
+        ],
+        "numbers": [
+          "61"
+        ],
+        "sentence": "The 61 eligible failures also separate into terminal labels."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "63"
+            ]
+          }
+        ],
+        "numbers": [
+          "63"
+        ],
+        "sentence": "The two provider-coded failures remain in the raw 63 but are outside this taxonomy:"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "24",
+              "9"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "9"
+            ]
+          }
+        ],
+        "numbers": [
+          "15",
+          "24",
+          "9"
+        ],
+        "sentence": "|   (empty patch) | 24 | 9 / 15 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "17"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "20",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "20",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "20",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "17",
+          "20",
+          "3"
+        ],
+        "sentence": "|   | 20 | 3 / 17 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "10",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "10",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "10",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "10",
+          "3",
+          "7"
+        ],
+        "sentence": "|   | 10 | 3 / 7 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "0",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "0",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "0",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "0",
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "0",
+          "3"
+        ],
+        "sentence": "|   | 3 | 0 / 3 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "0",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "0",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "0",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "0",
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "0",
+          "2"
+        ],
+        "sentence": "|   | 2 | 0 / 2 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "2"
+        ],
+        "sentence": "|   | 2 | 1 / 1 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "17"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "20"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "20"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "20"
+            ]
+          }
+        ],
+        "numbers": [
+          "17",
+          "20"
+        ],
+        "sentence": "The 20 rows labeled   are closer to the familiar picture of an attempted solution missing a score threshold, but the judge split matters: 17 of those rows are compile-only and only three carry a behavioral reference."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "20"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "20"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "20"
+            ]
+          }
+        ],
+        "numbers": [
+          "20"
+        ],
+        "sentence": "Calling all 20 proven behavioral misses would overstate what the judge could establish."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1.0"
+            ]
+          }
+        ],
+        "numbers": [
+          "1.0"
+        ],
+        "sentence": "Both rows labeled   have a trusted score of 1.0 and notes about a missing required file; the MoCo record names  ."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C01",
+            "finding_ids": "F-02;F-03",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C02",
+            "finding_ids": "F-01;F-04",
+            "matched_numbers": [
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "2",
+              "33"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "2",
+              "31",
+              "33",
+              "8"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "2",
+              "31",
+              "33",
+              "8"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "2",
+              "31",
+              "33",
+              "8"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "2",
+              "31",
+              "33",
+              "8"
+            ]
+          }
+        ],
+        "numbers": [
+          "2",
+          "31",
+          "33",
+          "8"
+        ],
+        "sentence": "The recurrent-depth family records 31 passes in 33 eligible cases; trajectory/synthesis records 2 in 8."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "11",
+              "9"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "11",
+              "9"
+            ]
+          }
+        ],
+        "numbers": [
+          "11",
+          "9"
+        ],
+        "sentence": "Recurrent depth itself mixes   at 11/11 under behavioral reference,   at 11/11 under compile-only, and   at 9/11 under compile-only."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "0"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "0",
+              "11",
+              "8",
+              "9"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "8"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "11",
+              "8",
+              "9"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "0",
+              "8"
+            ]
+          }
+        ],
+        "numbers": [
+          "0",
+          "11",
+          "8",
+          "9"
+        ],
+        "sentence": "The three ML-debugging environments make the same point in another direction:   is 0/11 under compile-only,   is 0/8 under behavioral reference, and MoCo is 9/11 under behavioral reference, including the missing-file row."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "It would separate labels from class names and performance hints, run more than one seed per cell, and report outcomes split by judge guarantee and stopping layer."
+      }
+    ],
+    "unmapped_numeric_claim_sentences": []
+  },
+  "unsupported_numeric_literals": [],
+  "unsupported_spelled_quantitative_counts": [],
+  "valid": true,
+  "warnings": [],
+  "word_count": 1782
+}

@@ -30,12 +30,26 @@
   ],
   "expected_response_artifact": "artifacts/jobs/post01_final_writer/response.md",
   "final_writer_job_id": "post01_final_writer",
-  "final_writer_job_status": "waiting_for_human",
+  "final_writer_job_status": "completed",
   "final_writer_prompt_sha256": "ca7eb486ab8f9db860922adeb37bb90add7ea5788da201291df613015482c302",
   "pair_ingest_supported_for_final_writer_job": false,
+  "post01_status": "completed_through_local_validation",
+  "post01_validation": {
+    "report_copy": "campaign-01-analysis/post-production/handoffs/POST-01_validation_report.json",
+    "report_sha256": "ccb93090a210a424571e9b282f3326f99b99635d7e712c79c90c0b8e32f21c2f",
+    "valid": true
+  },
   "post_id": "POST-01",
-  "run_id": "campaign-01-post-production-20261003T211305Z-0e50e650",
+  "run_id": "campaign-01-post-production-20261003T211829Z-b3a0b0b6",
   "schema_version": 1,
+  "scope_note": "The workflow also queued POST-02 writers after POST-01 validation; no POST-02 responses were ingested or edited.",
+  "selected_action": "reconcile",
+  "selected_response": {
+    "model_label_used_for_ingest": "Compiler-reconciled draft from user-selected Grok 4.5 and Opus 4.7 candidates",
+    "response_provenance": "Compiler-authored reconciliation of the user-selected Grok 4.5 and Opus 4.7 candidate articles.",
+    "response_sha256": "49f05b299ca6493077321c45c162adcc80cfb9e9b10d73ff45381a03239ba936",
+    "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_reconciled_response.md"
+  },
   "stage": "final_writer_candidate_intake",
   "workflow_action": "Preserve both candidates; do not ingest either into the single final_writer slot until the user selects a base or requests a reconciled revision.",
   "workflow_id": "campaign-01-post-production"

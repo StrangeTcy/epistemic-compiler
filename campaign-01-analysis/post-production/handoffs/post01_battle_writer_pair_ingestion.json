@@ -3,7 +3,7 @@
   "critic_status": "completed",
   "next_job_id": "post01_final_writer",
   "next_stage": "final_writer",
-  "next_stage_status": "waiting_for_human",
+  "next_stage_status": "completed_through_validation",
   "pair_ingest_model_label": "Arena side-by-side: Writer A=fable 5.1; Writer B=opus 4.8",
   "post_id": "POST-01",
   "prompt_sha256": "f2dd7b1eb9692559779fc1594c6c0339997f4396625da7d842d90cbc93de0a81",
@@ -25,7 +25,7 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_writer_b_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T211305Z-0e50e650",
+  "run_id": "campaign-01-post-production-20261003T211829Z-b3a0b0b6",
   "schema_version": 1,
   "stage": "battle_writer_pair",
   "workflow_id": "campaign-01-post-production"

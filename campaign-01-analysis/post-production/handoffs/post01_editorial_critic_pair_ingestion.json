@@ -13,7 +13,7 @@
   },
   "next_job_id": "post01_final_writer",
   "next_stage": "final_writer",
-  "next_stage_status": "waiting_for_human",
+  "next_stage_status": "completed_through_validation",
   "pair_ingest_supported_for_critic_job": false,
   "post_id": "POST-01",
   "raw_candidate_responses": [
@@ -31,7 +31,7 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_candidate_a_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T211305Z-0e50e650",
+  "run_id": "campaign-01-post-production-20261003T211829Z-b3a0b0b6",
   "schema_version": 1,
   "stage": "editorial_critic_candidates",
   "workflow_id": "campaign-01-post-production"
