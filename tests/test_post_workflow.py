@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 from runtime import engine
-from runtime.post_production import _normalize_cross_review, validate_article
+from runtime.post_production import _audit_numeric_claim_traceability, _normalize_cross_review, validate_article
 from scripts import post_workflow
 
 
@@ -125,9 +125,17 @@ def test_start_waits_for_pair_then_critic_and_preserves_ingest(mission):
         assert "mission:source_draft_POST-01" in expanded
         assert expanded["mission:source_draft_POST-01"]["sha256"]
         prompt = (run_dir / handoff["prompt_to_paste"]).read_text(encoding="utf-8")
-        assert "verbatim content from actual StrangeTcy posts" in prompt
+        assert len(prompt) < 32_768
+        assert "verbatim excerpts from actual StrangeTcy posts" in prompt
         assert "The benchmark’s “hard” is not one difficulty scale" in prompt
         assert "The Diagram Is the Spec" in prompt
+        assert "A unit test says:" in prompt
+        assert "Most benchmarks hand the agent its context for free." in prompt
+        assert "The first formalisation was wrong." in prompt
+        assert "POST_PRODUCTION_VALIDATOR_METADATA" not in prompt
+        expanded = handoff["input_renderings"][0]["source_renderings"]
+        style_rendering = next(row for row in expanded if row["reference"] == "mission:style_reference_material")
+        assert len(style_rendering["source_sha256"]) == len(style_rendering["rendered_sha256"]) == 64
 
     engine.ingest_human_response(
         run_dir,
@@ -168,11 +176,59 @@ def test_start_waits_for_pair_then_critic_and_preserves_ingest(mission):
     critic_prompt = (run_dir / critic_handoff["prompt_to_paste"]).read_text(encoding="utf-8")
     packet_size = (run_dir / resumed["jobs"]["post01_prepare_post"]["output_artifact"]).stat().st_size
     assert len(critic_prompt) < packet_size + 20_000
-    assert "Rendered message SHA-256" in critic_prompt
+    assert "Rendered message SHA-256" not in critic_prompt
+    critic_renderings = critic_handoff["input_renderings"][0]["source_renderings"]
+    assert any(row["reference"] == "mission:style_reference_material" for row in critic_renderings)
+    assert "Actual StrangeTcy reference-post excerpts" in critic_prompt
     assert "Writer A response" in critic_prompt
     assert "Writer B response" in critic_prompt
     assert (run_dir / job_a["interaction"]["handoff_json"]).is_file()
     assert (run_dir / "artifacts/jobs/post01_battle_writer_a/human_ingestion.json").is_file()
+
+
+def test_compact_trace_rows_follow_numeric_support_through_finding_records():
+    trace_rows = [
+        {"post_id": "POST-01", "claim_id": "POST-01-C01", "finding_ids": "F-02"}
+    ]
+    findings = [
+        {
+            "id": "F-02",
+            "claim": "The campaign report records scored selected cases.",
+            "quantitative_result": "194 scored cases; 131 PASS / 63 FAIL raw, and 131 PASS / 61 FAIL among 192 eligible cases.",
+            "limitations": ["Provider transients are a sensitivity exclusion."],
+        }
+    ]
+    audit = _audit_numeric_claim_traceability(
+        "The archive contains 194 scored cases.", trace_rows, findings
+    )
+    assert audit["unmapped_numeric_claim_sentences"] == []
+    assert audit["mapped_numeric_claim_sentences"][0]["candidate_trace_rows"][0]["claim_id"] == "POST-01-C01"
+
+
+def test_numeric_traceability_includes_linked_selected_case_details():
+    trace_rows = [
+        {"post_id": "POST-01", "claim_id": "POST-01-C03", "finding_ids": "F-06;F-10"}
+    ]
+    findings = [
+        {
+            "id": "F-06",
+            "claim": "Selected regex outcomes differ across levels.",
+            "quantitative_result": "At easy surface, lengths 32, 128, and 512 pass; medium/hard labels at length 32 fail.",
+            "limitations": ["One seed per cell."],
+        }
+    ]
+    failure_rows = [
+        {"environment": "regex_state_machine", "condition": "surface=medium", "judge": "behavioral_reference", "score": "0.208333", "failure": "underfit", "detail": "length mismatch: input 32, output 34"},
+        {"environment": "regex_state_machine", "condition": "surface=hard", "judge": "behavioral_reference", "score": "0.208333", "failure": "underfit", "detail": "length mismatch: input 32, output 66"},
+    ]
+    audit = _audit_numeric_claim_traceability(
+        "At length 32, the medium and hard outputs are 34 and 66 characters.",
+        trace_rows,
+        findings,
+        failure_rows,
+    )
+    candidate = audit["mapped_numeric_claim_sentences"][0]["candidate_trace_rows"][0]
+    assert set(candidate["matched_numbers"]) >= {"32", "34", "66"}
 
 
 def test_validator_flags_numeric_and_recursive_tom_overclaims():

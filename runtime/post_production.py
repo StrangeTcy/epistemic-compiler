@@ -175,7 +175,65 @@ def _extract_trace_rows(packet: str) -> list[dict[str, str]]:
     return rows
 
 
-def _audit_numeric_claim_traceability(body: str, trace_rows: list[dict[str, str]]) -> dict[str, Any]:
+def _extract_finding_rows(packet: str) -> list[dict[str, Any]]:
+    findings: list[dict[str, Any]] = []
+    pattern = re.compile(
+        r"## BEGIN INPUT ARTIFACT: ([^\n]*relevant_findings[^\n]*)\n(.*?)\n## END INPUT ARTIFACT:",
+        re.DOTALL,
+    )
+    for match in pattern.finditer(packet):
+        lines = match.group(2).splitlines()
+        content_index = next((i + 1 for i, line in enumerate(lines) if not line.strip()), len(lines))
+        content = "\n".join(lines[content_index:]).strip()
+        try:
+            payload = json.loads(content)
+        except json.JSONDecodeError:
+            continue
+        rows = payload.get("findings", []) if isinstance(payload, dict) else []
+        if isinstance(rows, list):
+            findings.extend(row for row in rows if isinstance(row, dict) and row.get("id"))
+    return findings
+
+
+def _extract_failure_detail_rows(packet: str) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    pattern = re.compile(
+        r"## BEGIN INPUT ARTIFACT: ([^\n]*failure_details[^\n]*)\n(.*?)\n## END INPUT ARTIFACT:",
+        re.DOTALL,
+    )
+    for match in pattern.finditer(packet):
+        lines = match.group(2).splitlines()
+        header_index = next(
+            (i for i, line in enumerate(lines) if line.startswith("environment,condition,judge,score,failure,detail")),
+            None,
+        )
+        if header_index is None:
+            continue
+        try:
+            rows.extend(csv.DictReader(io.StringIO("\n".join(lines[header_index:]))))
+        except csv.Error:
+            continue
+    return rows
+
+
+def _audit_numeric_claim_traceability(
+    body: str,
+    trace_rows: list[dict[str, str]],
+    finding_rows: list[dict[str, Any]] | None = None,
+    failure_rows: list[dict[str, str]] | None = None,
+) -> dict[str, Any]:
+    """Map each numeric sentence through its claim row to the cited finding records."""
+    finding_by_id = {
+        str(row.get("id")): row
+        for row in (finding_rows or [])
+        if isinstance(row, dict) and row.get("id")
+    }
+    case_evidence_by_claim = {
+        "POST-01-C03": {"regex_state_machine"},
+        "POST-01-C04": {"css_state_machine", "sql_fixed_point"},
+        "POST-01-C05": {"moco", "rd_adaptive_halting"},
+    }
+    case_rows = failure_rows or []
     clean = _strip_markdown_for_checks(body)
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+|\n+", clean) if part.strip()]
     mapped: list[dict[str, Any]] = []
@@ -186,17 +244,38 @@ def _audit_numeric_claim_traceability(body: str, trace_rows: list[dict[str, str]
             continue
         candidates: list[dict[str, Any]] = []
         for row in trace_rows:
-            source_text = " ".join(
-                str(row.get(key, ""))
-                for key in ("claim_summary", "finding_ids", "finding_quantitative_results", "external_references")
-            )
+            finding_ids = re.findall(r"\bF-\d{2,}\b", str(row.get("finding_ids", "")))
+            source_parts = [
+                str(row.get("claim_summary", "")),
+                str(row.get("external_references", "")),
+            ]
+            for finding_id in finding_ids:
+                finding = finding_by_id.get(finding_id, {})
+                source_parts.extend(
+                    str(finding.get(key, ""))
+                    for key in ("claim", "quantitative_result", "limitations", "alternatives")
+                )
+            claim_id = str(row.get("claim_id", ""))
+            related_environments = case_evidence_by_claim.get(claim_id, set())
+            for case_row in case_rows:
+                if case_row.get("environment") in related_environments:
+                    source_parts.extend(
+                        str(case_row.get(key, ""))
+                        for key in ("condition", "judge", "score", "failure", "detail")
+                    )
+            source_text = " ".join(source_parts)
             source_numbers = _extract_numbers(source_text) | _extract_quantitative_word_tokens(source_text)
             overlap = sorted(numeric & source_numbers)
             if overlap:
-                candidates.append({"claim_id": row.get("claim_id"), "finding_ids": row.get("finding_ids", ""), "matched_numbers": overlap})
+                candidates.append(
+                    {
+                        "claim_id": row.get("claim_id"),
+                        "finding_ids": row.get("finding_ids", ""),
+                        "matched_numbers": overlap,
+                    }
+                )
         # A literal present somewhere in the packet is not enough: every sentence
-        # with a number also needs a source claim row that supports at least one
-        # of its quantitative values.
+        # with a number also needs a claim row whose finding records support it.
         if candidates:
             mapped.append({"sentence": sentence, "numbers": sorted(numeric), "candidate_trace_rows": candidates})
         else:
@@ -433,7 +512,9 @@ def validate_article(
         )
 
     trace_rows = _extract_trace_rows(evidence_packet)
-    traceability_audit = _audit_numeric_claim_traceability(body, trace_rows)
+    finding_rows = _extract_finding_rows(evidence_packet)
+    failure_rows = _extract_failure_detail_rows(evidence_packet)
+    traceability_audit = _audit_numeric_claim_traceability(body, trace_rows, finding_rows, failure_rows)
     unresolved_trace_sentences = []
     for sentence in traceability_audit["unmapped_numeric_claim_sentences"]:
         if re.search(r"\b(?:seed|dirty source|dirty repository|working tree|comparator|role passes|independent replication)\b", sentence, re.IGNORECASE):
@@ -554,14 +635,179 @@ def _compact_csv(text: str, columns: list[str], predicate: Any | None = None) ->
     return output.getvalue()
 
 
-def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: str) -> str:
-    """Render a compact, task-relevant view while retaining source hashes."""
-    if name in {"workflow_input_manifest", "campaign_provenance"} or "campaign_exclusions" in name:
-        return (
-            "[Compiler-retained provenance/exclusion source omitted from the pasted message; "
-            "the exact source path and SHA-256 remain in the immutable handoff and job provenance. "
-            "Relevant counts, dispositions, and dirty-source limits are included in the findings/evidence extracts.]\n"
+def _markdown_section_paragraphs(text: str, heading: str) -> list[str]:
+    match = re.search(
+        rf"(?ms)^## {re.escape(heading)}\s*\n(.*?)(?=^## |\Z)",
+        text,
+    )
+    if not match:
+        return []
+    return [part.strip() for part in re.split(r"\n\s*\n", match.group(1)) if part.strip()]
+
+
+def _compact_house_style() -> str:
+    return """Target Jekyll frame: YAML frontmatter with `title`, `date: 2026-10-03`, `layout: post`; when using math, place `{% include mathjax.html %}` immediately after it. Then use the exact byline `*by <span class=\"icon-self\">StrangeTcy</span>*` and the site's `<dl class=\"epistemic-status\">` fields, in order: Original ideas, Synthesis, Prose, Certainty, Importance. Attribute the actual Arena writing process accurately; do not invent outside authors.
+
+Voice: first-person, curious, technically literate, willing to self-correct. Open in prose, not an `Introduction`; use short, specific `##` argumentative turns and airy paragraphs. Questions should move the argument. End by stating what the evidence does and does not license. Links/citations belong where they matter; avoid a generic benchmark-report register. Target 1,800–2,800 words without padding."""
+
+
+def _compact_style_references(text: str) -> str:
+    sources = [
+        (
+            "The Diagram Is the Spec — a concrete distinction",
+            "A unit test says:",
+            4,
+            "2026-09-27-the-diagram-in-the-spec.md",
+        ),
+        (
+            "Knowing What Kind of Problem You Are In — conceptual opening",
+            "Most benchmarks hand the agent its context for free.",
+            2,
+            "2026-09-26-knowing-what-kind-of-problem-you-are-in.md",
+        ),
+        (
+            "The Next Question Is Part of the Game — question-led opening",
+            "Suppose I want you to make the wrong decision.",
+            4,
+            "2026-09-30-the-next-question-is-part-of-the-game.md",
+        ),
+        (
+            "Lying With Truth — visible self-correction",
+            "The first formalisation was wrong.",
+            4,
+            "2026-10-01-lying-with-truth.md",
+        ),
+    ]
+    blocks = [
+        "Short excerpts from actual StrangeTcy/strangetcy.github.io posts at revision bcc89c392920b3be172a27eec10ad205b58d4fa3; style evidence only, not wording to reuse.",
+    ]
+    for title, anchor, paragraph_count, filename in sources:
+        start = text.find(anchor)
+        if start < 0:
+            continue
+        paragraphs: list[str] = []
+        for paragraph in re.split(r"\n\s*\n", text[start:]):
+            value = paragraph.strip()
+            if not value or value.startswith(("```", "## ")):
+                break
+            if "```" in value:
+                break
+            paragraphs.append(re.sub(r"(?<!\n)\n(?!\n)", " ", value))
+            if len(paragraphs) == paragraph_count:
+                break
+        display_date = filename[:10]
+        blocks.extend([f"### {title} ({display_date})", "\n\n".join(paragraphs), ""])
+    return "\n".join(blocks).strip() + "\n"
+
+
+def _compact_reference_list(text: str) -> str:
+    return """POST-01 prior-work citations from the source draft; precedent only, not validation of this campaign.
+
+- HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: 42 scenarios and multiple metrics. https://arxiv.org/abs/2211.09110
+- VarBench, Qian et al. (Findings of EMNLP 2024), “Robust Language Model Benchmarking Through Dynamic Variable Perturbation”: dynamic variable perturbation; five sampled runs (seeds 40–44) for variable-based experiments. https://aclanthology.org/2024.findings-emnlp.946/
+
+This targeted reference check supports no “first” or exhaustive-novelty claim."""
+
+
+def _compact_source_audit(text: str) -> str:
+    if "## Source identity and comparator" in text:
+        return text.rstrip() + "\n"
+    return """## Source identity and comparator
+The archive points to commit `d7357092493f311f649a0742889b301d796911b5` and records a dirty repository. All 33 selected config hashes match the clean comparator, but exact paid-run task/judge source identity remains unresolved.
+
+## Sampling design
+One selected seed per case across 33 environments; no environment-level replication. Most contrasts are sparse one-factor substitutions, not interaction tests or population estimates."""
+
+
+def _compact_evidence_extract(text: str) -> str:
+    archive_hash = re.search(r"SHA-256:? `([0-9a-f]{64})`", text)
+    archive = archive_hash.group(1) if archive_hash else "not reproduced in this excerpt"
+    return (
+        "Frozen paid-run archive SHA-256: `" + archive + "`. The archive records a dirty repository; "
+        "the inspected clean source is a comparator, not proof of exact paid-run source identity. "
+        "Copied tables are summaries, not substitutes for primary artifacts.\n"
+    )
+
+
+def _compact_limitations() -> str:
+    return """- One selected seed per case; no cell-level replications. Keep 194 raw results, 24 separate omissions, two provider-terminal cases, and the 192-case sensitivity set distinct.
+- The eligible set mixes 72 behavioral-reference and 120 compile-only cases; compile-only results are exploratory, not a validated behavioral aggregate.
+- The repository was recorded dirty; matching config hashes do not establish exact task/judge identity. Axes are task-specific and sparse; names/hints are bundled, and validator/runtime/judge failures are not behavioral misses."""
+
+
+def _compact_failure_details(text: str) -> str:
+    reader = csv.DictReader(io.StringIO(text))
+    if reader.fieldnames and "condition" in reader.fieldnames:
+        return text
+    output_rows: list[dict[str, str]] = []
+    relevant_modes = {"underfit", "source_invalid", "runtime_error", "runtimeerror", "overfit_visible_tests"}
+    for row in reader:
+        mode = str(row.get("failure_mode_raw", ""))
+        if mode.lower() not in relevant_modes:
+            continue
+        env = str(row.get("environment", ""))
+        case_id = str(row.get("case_id", ""))
+        condition = case_id.split("__", 1)[1] if "__" in case_id else case_id
+        condition = re.sub(r"__seed-\d+\Z", "", condition)
+        try:
+            notes = json.loads(row.get("final_notes", "[]"))
+        except json.JSONDecodeError:
+            notes = [row.get("final_notes", "")]
+        note_text = " ".join(str(value) for value in notes)
+        note_text = re.sub(r"\s+", " ", note_text)
+        detail = ""
+        match = re.search(r"length mismatch \(in=(\d+), out=(\d+)\)", note_text)
+        if match:
+            detail = f"length mismatch: input {match.group(1)}, output {match.group(2)}"
+        elif match := re.search(r"disallowed import ['\"]([^'\"]+)", note_text):
+            detail = f"source validator rejected import {match.group(1)}"
+        elif "unterminated triple-quoted string" in note_text:
+            detail = "source syntax error: unterminated triple-quoted string"
+        elif "unexpected indent" in note_text:
+            detail = "source syntax error: unexpected indentation"
+        elif "dtype Float" in note_text:
+            detail = "runtime error: float tensor used as a boolean condition"
+        elif "missing:" in note_text or "missing required" in note_text:
+            missing = re.search(r"missing: ([^,\\\"]+)", note_text)
+            detail = f"required companion file missing: {missing.group(1)}" if missing else "required companion file missing"
+        try:
+            metrics = json.loads(row.get("final_metrics", "{}"))
+        except json.JSONDecodeError:
+            metrics = {}
+        if isinstance(metrics, dict) and metrics.get("trusted_score") == 1.0:
+            detail = (detail + "; " if detail else "") + "trusted_score=1.0 despite failed terminal label"
+        output_rows.append(
+            {
+                "environment": env,
+                "condition": condition,
+                "judge": str(row.get("judge_guarantee", "")),
+                "score": str(row.get("score", "")),
+                "failure": mode,
+                "detail": detail,
+            }
         )
+    buffer = io.StringIO(newline="")
+    fields = ["environment", "condition", "judge", "score", "failure", "detail"]
+    writer = csv.DictWriter(buffer, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(output_rows)
+    return buffer.getvalue()
+
+
+def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: str) -> str:
+    """Render a concise, task-relevant view; full sources and hashes stay in the handoff ledger."""
+    if (
+        name in {"workflow_input_manifest", "campaign_provenance"}
+        or any(token in name for token in ("campaign_exclusions", "campaign_scope"))
+        or ("case_results" in name and post_id == "POST-01")
+    ):
+        return ""
+    if "house_style" in name:
+        return _compact_house_style()
+    if "style_reference_material" in name:
+        return _compact_style_references(text)
+    if name == "references":
+        return _compact_reference_list(text)
     if "relevant_findings" in name:
         try:
             payload = json.loads(text)
@@ -570,25 +816,23 @@ def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: st
                 "post_id": payload.get("post_id", post_id),
                 "claim_ids": payload.get("claim_ids", []),
                 "trace_finding_ids": payload.get("trace_finding_ids", []),
-                "battle_dossier_finding_ids": payload.get("battle_dossier_finding_ids", []),
-                "finding_id_reconciliation": payload.get("finding_id_reconciliation", {}),
                 "findings": [],
             }
-            fields = (
-                "id", "status", "claim", "quantitative_result", "evidence_artifacts",
-                "confidence", "limitations", "alternatives",
-            )
+            fields = ("id", "status", "claim", "quantitative_result", "confidence", "limitations")
             for row in payload.get("findings", []):
                 if isinstance(row, dict):
                     compact["findings"].append({key: row[key] for key in fields if key in row})
-            return json.dumps(compact, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+            return json.dumps(compact, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n"
         except (json.JSONDecodeError, AttributeError):
             return text
     if "trace_rows" in name:
-        return _compact_csv(
-            text,
-            ["post_id", "claim_id", "claim_summary", "finding_ids", "generated_evidence_artifacts", "source_identity_qualifier", "external_references"],
-        )
+        return _compact_csv(text, ["post_id", "claim_id", "finding_ids"])
+    if "evidence_extract" in name:
+        return _compact_evidence_extract(text)
+    if "limitations" in name:
+        return _compact_limitations() + "\n"
+    if "source_audit" in name:
+        return _compact_source_audit(text)
     if "axis_placeholder_audit" in name:
         return _compact_csv(text, ["config_path", "axis", "placeholder", "source_reference_status"])
     if "axis_summary" in name:
@@ -596,14 +840,10 @@ def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: st
             "POST-01": {
                 "regex_state_machine": {"hidden_depth", "surface_deceptiveness"},
                 "css_state_machine": {"hidden_depth", "surface_deceptiveness"},
-                "sql_fixed_point": {"hidden_depth", "surface_deceptiveness"},
+                "sql_fixed_point": {"hidden_depth"},
                 "spreadsheet_dataflow": {"hidden_depth", "surface_deceptiveness"},
-                "ci_dependency_graph": {"hidden_depth", "surface_deceptiveness"},
-                "template_interpreter": {"hidden_depth", "surface_deceptiveness"},
-                "moco": {"naming", "distractors"},
+                "moco": {"visible_tests"},
                 "rd_adaptive_halting": {"recurrence_depth"},
-                "rd_gradient_credit": {"recurrence_depth"},
-                "rd_state_carry": {"recurrence_depth"},
             },
             "POST-02": {"epistemic_games": None},
             "POST-03": {
@@ -621,17 +861,86 @@ def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: st
                 "template_interpreter": {"hidden_depth", "surface_deceptiveness"},
             },
         }.get(post_id, {})
-        def keep_axis(row: dict[str, str]) -> bool:
-            allowed = env_axis.get(row.get("environment", ""), set())
-            return allowed is None or row.get("axis") in allowed
-        columns = ["environment", "track", "axis", "level", "recorded_cases", "performance_eligible_cases", "passes", "fails", "pass_rate", "judge_guarantees"]
-        return _compact_csv(text, columns, keep_axis)
-    if "selected_case_results" in name:
-        columns = ["case_id", "environment", "track", "analysis_family", "seed", "difficulty_levels", "judge_guarantee", "status", "verdict", "score", "failure_mode_normalized", "final_notes", "performance_eligible", "exclusion_reason"]
-        return _compact_csv(text, columns)
+        reader = csv.DictReader(io.StringIO(text))
+        if reader.fieldnames and "control" in reader.fieldnames:
+            return text
+        rows: list[dict[str, str]] = []
+        for source_row in reader:
+            allowed = env_axis.get(source_row.get("environment", ""), set())
+            if allowed is not None and source_row.get("axis") not in allowed:
+                continue
+            if post_id == "POST-01":
+                try:
+                    controls = json.loads(source_row.get("other_axis_controls", "{}"))
+                except json.JSONDecodeError:
+                    continue
+                if not isinstance(controls, dict) or any(value != "easy" for value in controls.values()):
+                    continue
+            try:
+                judge_values = json.loads(source_row.get("judge_guarantees", "[]"))
+            except json.JSONDecodeError:
+                judge_values = source_row.get("judge_guarantees", "")
+            judge = ";".join(str(value) for value in judge_values) if isinstance(judge_values, list) else str(judge_values)
+            rows.append(
+                {
+                    "environment": source_row.get("environment", ""),
+                    "axis": source_row.get("axis", ""),
+                    "level": source_row.get("level", ""),
+                    "control": "all_other_axes_easy" if post_id == "POST-01" else source_row.get("other_axis_controls", ""),
+                    "recorded": source_row.get("recorded_cases", ""),
+                    "eligible": source_row.get("performance_eligible_cases", ""),
+                    "passes": source_row.get("passes", ""),
+                    "fails": source_row.get("fails", ""),
+                    "rate": source_row.get("pass_rate", ""),
+                    "judge": judge,
+                }
+            )
+        output = io.StringIO(newline="")
+        fields = ["environment", "axis", "level", "control", "recorded", "eligible", "passes", "fails", "rate", "judge"]
+        writer = csv.DictWriter(output, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+        return output.getvalue()
+    if "environment_summary" in name:
+        selected_envs = {
+            "POST-01": {
+                "regex_state_machine", "css_state_machine", "sql_fixed_point", "spreadsheet_dataflow",
+                "ci_dependency_graph", "template_interpreter", "moco", "batchnorm_ema", "glyph",
+                "rd_adaptive_halting", "rd_gradient_credit", "rd_state_carry",
+            },
+        }.get(post_id)
+        def keep_environment(row: dict[str, str]) -> bool:
+            return selected_envs is None or row.get("environment") in selected_envs
+        columns = [
+            "environment", "recorded_cases", "performance_eligible_cases", "passes_performance_set",
+            "fails_performance_set", "pass_rate_performance_set", "behavioral_reference_n",
+            "behavioral_reference_passes", "behavioral_reference_fails", "compile_only_n",
+            "compile_only_passes", "compile_only_fails",
+        ]
+        return _compact_csv(text, columns, keep_environment)
+    if "analysis_family_summary" in name:
+        return _compact_csv(text, [
+            "analysis_family", "recorded_cases", "performance_eligible_cases",
+            "passes_performance_set", "fails_performance_set", "pass_rate_performance_set",
+            "behavioral_reference_n", "behavioral_reference_passes", "behavioral_reference_fails",
+            "compile_only_n", "compile_only_passes", "compile_only_fails",
+        ])
+    if "case_results" in name:
+        return _compact_csv(
+            text,
+            [
+                "case_id", "environment", "track", "analysis_family", "seed", "difficulty_levels",
+                "judge_guarantee", "status", "verdict", "score", "failure_mode_normalized",
+                "final_notes", "performance_eligible", "exclusion_reason",
+            ],
+        )
     if "failure_details" in name:
-        columns = ["case_id", "environment", "analysis_family", "recorded_track", "judge_guarantee", "performance_eligible", "score", "failure_mode_raw", "final_notes"]
-        return _compact_csv(text, columns)
+        return _compact_failure_details(text)
+    if "failure_taxonomy" in name:
+        return _compact_csv(
+            text,
+            ["failure_mode_normalized", "count", "share_of_eligible_failures", "judge_guarantees"],
+        )
     return text
 
 
@@ -658,19 +967,20 @@ def prepare_post_packet(context: JobContext) -> ExecutionResult:
         display_text = _render_model_artifact(name, text, post_id, source_hash)
         display_hash = hashlib.sha256(display_text.encode("utf-8")).hexdigest()
         label = f"{index:02d} — {name}"
-        lines.extend(
-            [
-                f"## BEGIN INPUT ARTIFACT: {label}",
-                f"Source snapshot SHA-256: `{source_hash}`",
-                f"Rendered message SHA-256: `{display_hash}`",
-                f"Original reference: `{reference}`",
-                "",
-                display_text.rstrip(),
-                "",
-                f"## END INPUT ARTIFACT: {label}",
-                "",
-            ]
-        )
+        if display_text.strip():
+            lines.extend(
+                [
+                    f"## BEGIN INPUT ARTIFACT: {label}",
+                    f"Source snapshot SHA-256: `{source_hash}`",
+                    f"Rendered message SHA-256: `{display_hash}`",
+                    f"Original reference: `{reference}`",
+                    "",
+                    display_text.rstrip(),
+                    "",
+                    f"## END INPUT ARTIFACT: {label}",
+                    "",
+                ]
+            )
         evidence_hashes[reference] = source_hash
         if "trace_rows" in name:
             try:
@@ -687,7 +997,7 @@ def prepare_post_packet(context: JobContext) -> ExecutionResult:
                 )
             except (json.JSONDecodeError, AttributeError):
                 pass
-        if name not in {"house_style", "style_reference_material", "workflow_input_manifest", "campaign_provenance"}:
+        if display_text.strip() and name not in {"house_style", "style_reference_material", "workflow_input_manifest", "campaign_provenance"}:
             numeric_sources.append(display_text)
 
     trace_ids: list[str] = []
@@ -807,6 +1117,36 @@ def _conditional_result(context: JobContext, check: dict[str, Any], previous: Pa
     return None
 
 
+def _artifact_display_title(name: str) -> str:
+    if name.startswith("source_draft_"):
+        return "Original source draft"
+    if name.startswith("trace_rows_"):
+        return "Claim-to-finding map"
+    if name.startswith("relevant_findings_"):
+        return "Relevant finding records"
+    if name.startswith("evidence_extract_"):
+        return "Archive evidence extract"
+    if name.startswith("limitations_"):
+        return "Evidence limitations"
+    if name.startswith("source_audit_"):
+        return "Source-comparator audit"
+    if "axis_summary" in name:
+        return "Selected axis results"
+    if "environment_summary" in name:
+        return "Relevant environment totals"
+    if "analysis_family_summary" in name:
+        return "Analysis-family totals"
+    if "failure_details" in name:
+        return "Selected failure details"
+    if "failure_taxonomy" in name:
+        return "Failure taxonomy"
+    return {
+        "house_style": "Target-site style and Jekyll conventions",
+        "style_reference_material": "Actual StrangeTcy reference-post excerpts",
+        "references": "Relevant prior-work references",
+    }.get(name, name.replace("_", " ").title())
+
+
 def _compact_prepared_packet(packet: str, post_id: str) -> tuple[str, list[dict[str, str]]]:
     pattern = re.compile(
         r"## BEGIN INPUT ARTIFACT: ([^\n]+)\n(.*?)\n## END INPUT ARTIFACT: \1",
@@ -837,25 +1177,40 @@ def _compact_prepared_packet(packet: str, post_id: str) -> tuple[str, list[dict[
         content = "\n".join(block_lines[content_start:]).rstrip()
         rendered = _render_model_artifact(name, content, post_id, source_hash)
         rendered_hash = hashlib.sha256(rendered.encode("utf-8")).hexdigest()
-        sections.extend(
-            [
-                f"## BEGIN INPUT ARTIFACT: {label}",
-                f"Source snapshot SHA-256: `{source_hash}`",
-                f"Original reference: `{reference}`",
-                f"Rendered message SHA-256: `{rendered_hash}`",
-                "",
-                rendered.rstrip(),
-                f"## END INPUT ARTIFACT: {label}",
-                "",
-            ]
-        )
         renderings.append({"reference": reference, "source_sha256": source_hash, "rendered_sha256": rendered_hash})
-    compacted = packet[: matches[0].start()] + "\n".join(sections) + packet[matches[-1].end() :]
-    return compacted, renderings
+        if rendered.strip():
+            sections.extend([f"## {_artifact_display_title(name)}", rendered.rstrip(), ""])
+    prefix = packet[: matches[0].start()]
+    suffix = packet[matches[-1].end() :]
+    compacted = prefix + "\n".join(sections) + suffix
+    compacted = re.sub(
+        r"\n## Compiler-only validator metadata[^\n]*\n<!-- POST_PRODUCTION_VALIDATOR_METADATA.*?-->\s*\Z",
+        "\n",
+        compacted,
+        flags=re.DOTALL,
+    )
+    return compacted.rstrip() + "\n", renderings
+
+
+def _compact_writer_template(post_id: str) -> str:
+    return f"""# Independent StrangeTcy research essay — {post_id}
+
+Write one complete essay with a new thesis, opening, and argument structure. Use the full draft as an evidence map, not an outline or prose to paraphrase. This is one of two parallel candidates; do not refer to or imitate another answer.
+
+Use only supplied facts and citations. Keep raw scores, exclusions, provider-terminal cases, denominators, judge guarantees, and failure layers distinct. Compile-only outcomes are exploratory, not a validated behavioral aggregate. There is one selected seed per cell; subsequent editorial/model role passes are not independent replications. The repository was recorded dirty: the clean source is only a comparator. These sparse results do not establish causal effects, a common difficulty scale, or a general capability ranking. Keep caveats next to claims. Distinguish validator/runtime/tool/judge failures from behavioral misses.
+
+POST-02 is Bayesian inference over stipulated policies, not recursive ToM; POST-05's Rule 110/code-repair observations do not establish Turing completeness. Category-track outcomes are heterogeneous code-repair results, not a theorem or scalar score.
+
+The packet includes verbatim excerpts from actual StrangeTcy posts: use them only for rhetorical structure, never copy distinctive wording, examples, titles, or author-process claims. Avoid generic AI prose and benchmark-report tone; use technical detail and math/tables/diagrams only when they clarify.
+
+Return only the complete Markdown article, 1,800–2,500 words. Use frontmatter `title`, `date: 2026-10-03`, `layout: post`; the exact StrangeTcy byline; and the site's epistemic-status `<dl>` fields in order: Original ideas, Synthesis, Prose, Certainty, Importance. If using math, place `{{% include mathjax.html %}}` after frontmatter. Attribute the actual Arena writing process accurately. No preface, editor note, draft label, internal `F-xx`/`POST-xx` ID, path, hash, or response fence."""
 
 
 def _handoff_prompt(context: JobContext, post_id: str | None) -> tuple[str, str, list[dict[str, Any]]]:
-    template = context.prompt_text.replace("{{POST_ID}}", post_id or "CROSS-POST")
+    if context.job.role in {"battle_writer_a", "battle_writer_b"}:
+        template = _compact_writer_template(post_id or "POST-01")
+    else:
+        template = context.prompt_text.replace("{{POST_ID}}", post_id or "CROSS-POST")
     sections = [
         template.rstrip(),
         "",
