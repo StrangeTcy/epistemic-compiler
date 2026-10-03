@@ -1,0 +1,2 @@
+analysis_family,recorded_cases,performance_eligible_cases,passes_performance_set,fails_performance_set,pass_rate_performance_set,provider_failure_exclusions,recorded_behavioral_reference,recorded_compile_only,behavioral_reference_n,behavioral_reference_passes,behavioral_reference_fails,compile_only_n,compile_only_passes,compile_only_fails
+weird_machine,30,30,25,5,0.8333333333333334,0,30,0,30,25,5,0,0,0

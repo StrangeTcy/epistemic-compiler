@@ -1,0 +1,3 @@
+# Targeted validator repair — {{POST_ID}}
+
+The attached local-validator report identifies specific public-copy defects. Repair only those defects while keeping the evidence boundaries intact. The source draft/evidence packet and exact current article are attached. Do not broaden claims, invent facts, change the article merely to imitate the draft, or expose internal trace IDs. Return only the complete corrected Jekyll Markdown article with its frontmatter, include, and site signature. If a reported check appears to be a false positive, make the smallest public-copy adjustment that resolves it without weakening the caveat; the revised response is validated again locally.

@@ -1,0 +1,555 @@
+{
+  "battle_dossier_finding_ids": [
+    "F-01",
+    "F-06",
+    "F-10",
+    "F-14",
+    "F-15",
+    "F-17",
+    "F-18"
+  ],
+  "claim_ids": [
+    "POST-05-C01",
+    "POST-05-C02",
+    "POST-05-C03",
+    "POST-05-C04",
+    "POST-05-C05",
+    "POST-05-C06",
+    "POST-05-C07",
+    "POST-05-C08",
+    "POST-05-C09"
+  ],
+  "existing_battle_dossier": {
+    "findings": [
+      {
+        "alternatives": [
+          "A different archive or a corrupted local copy could produce a misleading inventory if its hash were not verified.",
+          "A dirty working tree could have changed task/judge files without changing the selected config hashes."
+        ],
+        "claim": "The selected archive is a completed paid Atria-Dawn-Preview campaign tied to source commit d7357092493f311f649a0742889b301d796911b5; the archive records the campaign repository as dirty.",
+        "confidence": "HIGH for archive identity, config-hash comparison, and recorded dirty flag; MEDIUM for source-snapshot association because the comparator is outside the ZIP.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/audit.json#/archive",
+          "campaign-01-analysis/evidence/generated/config_hash_audit.csv",
+          "campaign-01-analysis/evidence/generated/archive_inventory.csv",
+          "archive root: campaign_ref.txt",
+          "archive root: pilot_manifest.json",
+          "archive root: campaign_intent.json"
+        ],
+        "falsifiers": [
+          "Re-hashing the designated origin/main ZIP yields a different SHA-256 or blob identity.",
+          "Recomputing any one of the 33 selected config hashes against the named clean source commit yields a mismatch."
+        ],
+        "follow_up_requirements": [
+          "Archive the exact dirty diff or hash a complete rendered source bundle per case in any future run.",
+          "Keep the source comparator revision and hash table alongside the campaign artifact."
+        ],
+        "id": "F-01",
+        "limitations": [
+          "Config equality is not byte-for-byte proof that all task, visible-test, judge, or helper code used in paid runs matches the clean snapshot.",
+          "The config comparison source path is an external /tmp snapshot and is not bundled as source code."
+        ],
+        "novelty": "No scientific novelty claim; this is provenance and reproducibility groundwork.",
+        "quantitative_result": "ZIP SHA-256 e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd; 2,968 members; 33/33 selected config hashes match the clean comparator snapshot.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "Sampling variation at temperature 1.0 can produce different outcomes across one-run cells.",
+          "Class-name substitutions, hints, source validation, and other unrecorded dirty-source changes can explain differences.",
+          "A hard level may alter multiple effective properties or leave an axis unimplemented."
+        ],
+        "claim": "Selected nominal-axis outcomes are heterogeneous and sometimes nonmonotone; the archived `easy`/`medium`/`hard` labels do not form a common calibrated scalar difficulty scale.",
+        "confidence": "HIGH for these observed case outcomes; LOW for any causal effect of a nominal axis.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/axis_summary.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv",
+          "source comparator configs in evidence/source_implementation_audit.md"
+        ],
+        "falsifiers": [
+          "Repeated randomized runs with semantically equivalent stimuli show no stable response pattern.",
+          "Rendered prompt/judge hashes show the presumed axis did not change or changed additional confounds."
+        ],
+        "follow_up_requirements": [
+          "Verify rendered diffs for every axis level and reject unused axes.",
+          "Run repeated seeds with matched names/hints and independent task instances.",
+          "Use task-specific size labels instead of a shared nominal difficulty vocabulary."
+        ],
+        "id": "F-06",
+        "limitations": [
+          "One selected case/seed per cell and no cell-level replications.",
+          "Many comparisons are one-factor contrasts around a single baseline, not full factorial designs.",
+          "Axis names such as hidden_depth map to different quantities in different environments."
+        ],
+        "novelty": "No methodological novelty claim; at most a task/model-specific response pattern.",
+        "quantitative_result": "Examples: regex at easy surface passes at lengths 32/128/512, while medium/hard surface labels fail at length 32; CSS at easy surface scores 0.416667/0/1.0 over 3/4/5 bits (the middle row is source-invalid); SQL at easy surface passes at graph-chain lengths 6 and 25 but has a source-invalid length-12 case; moco visible-test levels are pass/fail/pass.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "Class-name cues, the hard-level performance note, sampling at temperature 1.0, source validation, or hidden-source differences may drive the observed cells.",
+          "The `hidden_depth` axis denotes different input-size proxies rather than a common measure of reasoning depth."
+        ],
+        "claim": "The weird_machine track shows task-specific successes and failures under regex, CSS, SQL, spreadsheet, CI, and template tasks; the controlled surface/depth pattern is especially sharp in regex but confounded and unreplicated.",
+        "confidence": "HIGH for the selected case outcomes; LOW for generalized surface/depth causality.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/environment_summary.csv",
+          "campaign-01-analysis/evidence/generated/axis_summary.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv",
+          "archive: episodes/<regex_case>/<selected_run>/final.json",
+          "source comparator: envs/weird_machine/regex_state_machine/config.yaml, files/prompt.md, files/judge.py",
+          "source comparator: envs/weird_machine/css_state_machine/config.yaml and files/judge.py",
+          "source comparator: envs/weird_machine/sql_fixed_point/config.yaml and files/judge.py"
+        ],
+        "falsifiers": [
+          "Repeated matched-name/hint trials fail to reproduce the regex contrast.",
+          "Rendered workspace/task hashes show the hypothesized axis did not change as expected."
+        ],
+        "follow_up_requirements": [
+          "Separate names, hints, and input-size manipulations in a factorial design.",
+          "Replicate across seeds and independently generated inputs.",
+          "Report exact judge checks and failure layers per case."
+        ],
+        "id": "F-10",
+        "limitations": [
+          "One run per selected cell, no seed-level replication, and only a sparse design.",
+          "The regex surface manipulation bundles class name and an extra hard-level hint.",
+          "CSS and SQL selected failures include source-validation errors."
+        ],
+        "novelty": "No general computational-substrate claim; only a cohort/task-specific observation.",
+        "quantitative_result": "25/30 eligible PASS overall. Regex 3/5; CSS 3/5; SQL 4/5; spreadsheet 5/5; CI dependency graph 5/5; template interpreter 5/5. At easy regex surface, all 3 string lengths pass; at easy string length, the other 2 class-name variants fail.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "An unarchived dirty-source change, external generator behavior, or indirect runtime key use could implement a control not apparent from the clean file scan.",
+          "Some axes may be metadata-only labels rather than intended interventions."
+        ],
+        "claim": "The category-track source comparator indicates several advertised axes were not implemented in the environment templates, so nominal coverage can overstate the number of distinct interventions.",
+        "confidence": "HIGH for no direct reference in the inspected clean source files; MEDIUM for the claim about executed paid cases because the recorded repository was dirty.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/axis_placeholder_audit.csv",
+          "campaign-01-analysis/evidence/audit_config_axes.py",
+          "campaign-01-analysis/evidence/source_implementation_audit.md#nominal-axes-with-no-source-template-reference-in-the-category-comparator",
+          "campaign-01-analysis/evidence/generated/config_hash_audit.csv"
+        ],
+        "falsifiers": [
+          "A rendered-task diff or recovered dirty source shows the axis values altered the agent task or judge despite no clean-template reference."
+        ],
+        "follow_up_requirements": [
+          "Add an axis linter that verifies each level changes a declared agent-visible or judge-visible artifact.",
+          "Save per-level rendered diffs and block campaigns on no-op controls."
+        ],
+        "id": "F-14",
+        "limitations": [
+          "The static scan does not execute generation or compare every rendered task bundle.",
+          "Only selected configurations were scanned; unsupported and gate-blocked cases were not model-run."
+        ],
+        "novelty": "Potentially useful in-repository benchmark QA, not a general scientific finding.",
+        "quantitative_result": "The static scan finds ten no-reference control/variable axes across nine category environments, including both axes in compositional_optimizer; details are in axis_placeholder_audit.csv and source_implementation_audit.md.",
+        "status": "INFERRED"
+      },
+      {
+        "alternatives": [
+          "The benchmark author may intend the judge as a deliberately narrow proxy rather than a full implementation of the prompt claim.",
+          "Visible tests/starter-code defaults can reveal some otherwise unstated expectations to the model."
+        ],
+        "claim": "The inspected source comparator contains task/judge mismatches that materially limit interpretation of category-family pass rates.",
+        "confidence": "HIGH for line-level source-comparator observations; MEDIUM for executed-run attribution due dirty source.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/source_implementation_audit.md#category-theoreticcompositional-track",
+          "source comparator: envs/cat_theo/compositional_optimizer/files/prompt.md:5-8 and files/judge.py:40-83",
+          "source comparator: envs/cat_theo/sheaf/sheaf_physical_constraints/files/prompt.md:5-11 and files/judge.py:45-100",
+          "source comparator: envs/cat_theo/categorical_lenses/files/prompt.md:5-14, files/judge.py:32-60, files/visible_tests.py:3-5"
+        ],
+        "falsifiers": [
+          "A recovered executed source snapshot changes the cited prompt, visible tests, or judge so the mismatch disappears.",
+          "A formal task specification makes the narrower judge criteria explicit and intended."
+        ],
+        "follow_up_requirements": [
+          "Align prompts, visible tests, judges, and reference implementations before score interpretation.",
+          "Test valid alternatives and adversarial counterexamples with an independent oracle."
+        ],
+        "id": "F-15",
+        "limitations": [
+          "These audit examples do not prove that every category task is under-specified.",
+          "The lens visible test partly anchors the first-coordinate convention even though the hidden judge does not assert it directly."
+        ],
+        "novelty": "No mathematical-theory novelty; this is task/judge contract QA.",
+        "quantitative_result": "Compositional optimizer prompt promises nested associativity/multiple steps while judge checks shape and one state-isolation chain; physical constraints judge enforces an unstated 5:3 ratio; categorical-lens hidden judge checks laws but does not itself assert coordinate-zero view, while the visible test does.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "The exact combination of this generator, model, tasks, and archive may be under-studied; the current search did not establish global precedence or uniqueness."
+        ],
+        "claim": "The cited prior work already covers broad multi-scenario/multi-metric evaluation, variable perturbation, controlled epistemic-logic tasks, recursive ToM/deception, causal-template ToM generation, and test-coverage limits in code-agent evaluation.",
+        "confidence": "HIGH for the cited paper abstracts/metadata and the narrow precedent summaries; LOW for any exhaustive novelty conclusion.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/sources/references.md",
+          "HELM: https://arxiv.org/abs/2211.09110",
+          "VarBench: https://aclanthology.org/2024.findings-emnlp.946/",
+          "MindGames: https://aclanthology.org/2023.findings-emnlp.303/",
+          "Hi-ToM: https://aclanthology.org/2023.findings-emnlp.717/",
+          "BigToM: https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and_Benchmarks.pdf",
+          "SWE-bench study: https://dl.acm.org/doi/10.1145/3744916.3764576"
+        ],
+        "falsifiers": [
+          "A broader, reproducible literature review finds no prior work covering a specific narrowly worded contribution."
+        ],
+        "follow_up_requirements": [
+          "If making a novelty claim, conduct a systematic related-work search and define the comparison set, task scope, and method precisely."
+        ],
+        "id": "F-17",
+        "limitations": [
+          "This is a targeted prior-work check, not a systematic literature review.",
+          "External prior-work findings do not directly establish correctness or error in the current archive."
+        ],
+        "novelty": "No broad novelty claim survives; only a cohort-specific empirical audit may be distinctive.",
+        "quantitative_result": "HELM reports 42 scenarios and multiple metrics; VarBench applies dynamic variable perturbation and five seeds for variable-based experiments; MindGames uses dynamic epistemic logic; Hi-ToM studies higher-order recursive beliefs/deception; BigToM uses causal templates; the SWE-bench empirical study reports 7.8% of plausible patches counted correct failing the full developer test suite in its studied setting.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "The difference may be sampling noise from one seed at temperature 1.0.",
+          "The names, performance note, input length, or hidden-source differences may interact; the current design cannot identify a dominant factor."
+        ],
+        "claim": "In this particular regex task and model run, surface class names or the hard-level performance hint may have influenced the two failures more than the tested input-string length; this is an untested hypothesis, not an inferred causal effect.",
+        "confidence": "LOW; deliberately speculative.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/axis_summary.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv",
+          "source comparator: envs/weird_machine/regex_state_machine/config.yaml",
+          "source comparator: envs/weird_machine/regex_state_machine/files/prompt.md"
+        ],
+        "falsifiers": [
+          "Matched multi-seed trials show no stable effect of class-name/hint changes at fixed size.",
+          "A separate size-only experiment produces a larger reproducible effect than surface changes."
+        ],
+        "follow_up_requirements": [
+          "Run the E2 factorial follow-up with independent seeds and generated equivalent inputs.",
+          "Predefine the primary contrast and report behavioral, patch-validity, and source/runtime outcomes separately."
+        ],
+        "id": "F-18",
+        "limitations": [
+          "Only five selected rows from one model/configuration; no repeated seed per cell.",
+          "Surface label bundles class-name changes and an added hard-level hint.",
+          "The clean comparator is not proven identical to the dirty paid-run source."
+        ],
+        "novelty": "No novelty or general weird-machine claim; a hypothesis to guide a controlled follow-up.",
+        "quantitative_result": "At easy surface, selected lengths 32, 128, and 512 all pass. At string length 32, the medium and hard surface variants fail with output lengths 34 and 66. The hard prompt adds a performance note.",
+        "status": "SPECULATIVE"
+      }
+    ],
+    "schema_version": 1
+  },
+  "finding_id_reconciliation": {
+    "battle_dossier_not_in_trace_rows": [
+      "F-15"
+    ],
+    "trace_rows_not_in_battle_dossier": [
+      "F-09",
+      "F-16"
+    ]
+  },
+  "findings": [
+    {
+      "alternatives": [
+        "A different archive or a corrupted local copy could produce a misleading inventory if its hash were not verified.",
+        "A dirty working tree could have changed task/judge files without changing the selected config hashes."
+      ],
+      "claim": "The selected archive is a completed paid Atria-Dawn-Preview campaign tied to source commit d7357092493f311f649a0742889b301d796911b5; the archive records the campaign repository as dirty.",
+      "confidence": "HIGH for archive identity, config-hash comparison, and recorded dirty flag; MEDIUM for source-snapshot association because the comparator is outside the ZIP.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/audit.json#/archive",
+        "campaign-01-analysis/evidence/generated/config_hash_audit.csv",
+        "campaign-01-analysis/evidence/generated/archive_inventory.csv",
+        "archive root: campaign_ref.txt",
+        "archive root: pilot_manifest.json",
+        "archive root: campaign_intent.json"
+      ],
+      "falsifiers": [
+        "Re-hashing the designated origin/main ZIP yields a different SHA-256 or blob identity.",
+        "Recomputing any one of the 33 selected config hashes against the named clean source commit yields a mismatch."
+      ],
+      "follow_up_requirements": [
+        "Archive the exact dirty diff or hash a complete rendered source bundle per case in any future run.",
+        "Keep the source comparator revision and hash table alongside the campaign artifact."
+      ],
+      "id": "F-01",
+      "limitations": [
+        "Config equality is not byte-for-byte proof that all task, visible-test, judge, or helper code used in paid runs matches the clean snapshot.",
+        "The config comparison source path is an external /tmp snapshot and is not bundled as source code."
+      ],
+      "novelty": "No scientific novelty claim; this is provenance and reproducibility groundwork.",
+      "quantitative_result": "ZIP SHA-256 e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd; 2,968 members; 33/33 selected config hashes match the clean comparator snapshot.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Sampling variation at temperature 1.0 can produce different outcomes across one-run cells.",
+        "Class-name substitutions, hints, source validation, and other unrecorded dirty-source changes can explain differences.",
+        "A hard level may alter multiple effective properties or leave an axis unimplemented."
+      ],
+      "claim": "Selected nominal-axis outcomes are heterogeneous and sometimes nonmonotone; the archived `easy`/`medium`/`hard` labels do not form a common calibrated scalar difficulty scale.",
+      "confidence": "HIGH for these observed case outcomes; LOW for any causal effect of a nominal axis.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/axis_summary.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "source comparator configs in evidence/source_implementation_audit.md"
+      ],
+      "falsifiers": [
+        "Repeated randomized runs with semantically equivalent stimuli show no stable response pattern.",
+        "Rendered prompt/judge hashes show the presumed axis did not change or changed additional confounds."
+      ],
+      "follow_up_requirements": [
+        "Verify rendered diffs for every axis level and reject unused axes.",
+        "Run repeated seeds with matched names/hints and independent task instances.",
+        "Use task-specific size labels instead of a shared nominal difficulty vocabulary."
+      ],
+      "id": "F-06",
+      "limitations": [
+        "One selected case/seed per cell and no cell-level replications.",
+        "Many comparisons are one-factor contrasts around a single baseline, not full factorial designs.",
+        "Axis names such as hidden_depth map to different quantities in different environments."
+      ],
+      "novelty": "No methodological novelty claim; at most a task/model-specific response pattern.",
+      "quantitative_result": "Examples: regex at easy surface passes at lengths 32/128/512, while medium/hard surface labels fail at length 32; CSS at easy surface scores 0.416667/0/1.0 over 3/4/5 bits (the middle row is source-invalid); SQL at easy surface passes at graph-chain lengths 6 and 25 but has a source-invalid length-12 case; moco visible-test levels are pass/fail/pass.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Some patch or source-validation errors may be partly induced by the action interface, patch validator, or task constraints rather than the underlying task concept.",
+        "An empty final patch may follow model termination, tool failure, or an unobserved serialization issue; the final artifact alone does not isolate cause."
+      ],
+      "claim": "The scalar PASS/FAIL and failure-mode labels conceal materially different terminal events, including empty patches, source-validation failures, runtime failures, malformed actions, provider transients, and missing required companion files.",
+      "confidence": "HIGH for terminal notes/metrics and counts; MEDIUM for mapping those terminal labels to latent reasoning failures.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "archive: episodes/<case>/<selected_run>/final.json",
+        "archive: episodes/<case>/<selected_run>/submission.patch",
+        "archive: episodes/<case>/<selected_run>/trace.jsonl"
+      ],
+      "falsifiers": [
+        "Reinspection of the linked final patches or judge metrics contradicts the empty-patch/missing-file classifications.",
+        "A separately validated adjudication reclassifies the failure modes with independent evidence."
+      ],
+      "follow_up_requirements": [
+        "Separate submission/patch, source-validation, action-protocol, infrastructure, runtime, and behavioral-test failure states.",
+        "Audit taxonomy labels against judge notes before publishing them.",
+        "Report score, trusted score, failed checks, and raw patch hash for each failure class."
+      ],
+      "id": "F-09",
+      "limitations": [
+        "`failure_mode` is a campaign/judge label; it is not a validated taxonomy of cognitive mechanisms.",
+        "The `overfit_visible_tests` label does not match the recorded notes in two cases."
+      ],
+      "novelty": "Failure-layer separation is a useful reporting correction, not a novel theory of model failure.",
+      "quantitative_result": "Among 192 eligible cases, 61 fails: 24 patch_invalid (all empty patches), 20 underfit, 10 source_invalid, 3 runtime_error, 2 invalid_action, and 2 overfit_visible_tests. The latter two are labeled overfit but have trusted_score=1.0 and missing required-file notes. Two provider-coded final rows are outside this taxonomy denominator.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Class-name cues, the hard-level performance note, sampling at temperature 1.0, source validation, or hidden-source differences may drive the observed cells.",
+        "The `hidden_depth` axis denotes different input-size proxies rather than a common measure of reasoning depth."
+      ],
+      "claim": "The weird_machine track shows task-specific successes and failures under regex, CSS, SQL, spreadsheet, CI, and template tasks; the controlled surface/depth pattern is especially sharp in regex but confounded and unreplicated.",
+      "confidence": "HIGH for the selected case outcomes; LOW for generalized surface/depth causality.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/environment_summary.csv",
+        "campaign-01-analysis/evidence/generated/axis_summary.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "archive: episodes/<regex_case>/<selected_run>/final.json",
+        "source comparator: envs/weird_machine/regex_state_machine/config.yaml, files/prompt.md, files/judge.py",
+        "source comparator: envs/weird_machine/css_state_machine/config.yaml and files/judge.py",
+        "source comparator: envs/weird_machine/sql_fixed_point/config.yaml and files/judge.py"
+      ],
+      "falsifiers": [
+        "Repeated matched-name/hint trials fail to reproduce the regex contrast.",
+        "Rendered workspace/task hashes show the hypothesized axis did not change as expected."
+      ],
+      "follow_up_requirements": [
+        "Separate names, hints, and input-size manipulations in a factorial design.",
+        "Replicate across seeds and independently generated inputs.",
+        "Report exact judge checks and failure layers per case."
+      ],
+      "id": "F-10",
+      "limitations": [
+        "One run per selected cell, no seed-level replication, and only a sparse design.",
+        "The regex surface manipulation bundles class name and an extra hard-level hint.",
+        "CSS and SQL selected failures include source-validation errors."
+      ],
+      "novelty": "No general computational-substrate claim; only a cohort/task-specific observation.",
+      "quantitative_result": "25/30 eligible PASS overall. Regex 3/5; CSS 3/5; SQL 4/5; spreadsheet 5/5; CI dependency graph 5/5; template interpreter 5/5. At easy regex surface, all 3 string lengths pass; at easy string length, the other 2 class-name variants fail.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "An unarchived dirty-source change, external generator behavior, or indirect runtime key use could implement a control not apparent from the clean file scan.",
+        "Some axes may be metadata-only labels rather than intended interventions."
+      ],
+      "claim": "The category-track source comparator indicates several advertised axes were not implemented in the environment templates, so nominal coverage can overstate the number of distinct interventions.",
+      "confidence": "HIGH for no direct reference in the inspected clean source files; MEDIUM for the claim about executed paid cases because the recorded repository was dirty.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/axis_placeholder_audit.csv",
+        "campaign-01-analysis/evidence/audit_config_axes.py",
+        "campaign-01-analysis/evidence/source_implementation_audit.md#nominal-axes-with-no-source-template-reference-in-the-category-comparator",
+        "campaign-01-analysis/evidence/generated/config_hash_audit.csv"
+      ],
+      "falsifiers": [
+        "A rendered-task diff or recovered dirty source shows the axis values altered the agent task or judge despite no clean-template reference."
+      ],
+      "follow_up_requirements": [
+        "Add an axis linter that verifies each level changes a declared agent-visible or judge-visible artifact.",
+        "Save per-level rendered diffs and block campaigns on no-op controls."
+      ],
+      "id": "F-14",
+      "limitations": [
+        "The static scan does not execute generation or compare every rendered task bundle.",
+        "Only selected configurations were scanned; unsupported and gate-blocked cases were not model-run."
+      ],
+      "novelty": "Potentially useful in-repository benchmark QA, not a general scientific finding.",
+      "quantitative_result": "The static scan finds ten no-reference control/variable axes across nine category environments, including both axes in compositional_optimizer; details are in axis_placeholder_audit.csv and source_implementation_audit.md.",
+      "status": "INFERRED"
+    },
+    {
+      "alternatives": [
+        "The benchmark author may intend the judge as a deliberately narrow proxy rather than a full implementation of the prompt claim.",
+        "Visible tests/starter-code defaults can reveal some otherwise unstated expectations to the model."
+      ],
+      "claim": "The inspected source comparator contains task/judge mismatches that materially limit interpretation of category-family pass rates.",
+      "confidence": "HIGH for line-level source-comparator observations; MEDIUM for executed-run attribution due dirty source.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/source_implementation_audit.md#category-theoreticcompositional-track",
+        "source comparator: envs/cat_theo/compositional_optimizer/files/prompt.md:5-8 and files/judge.py:40-83",
+        "source comparator: envs/cat_theo/sheaf/sheaf_physical_constraints/files/prompt.md:5-11 and files/judge.py:45-100",
+        "source comparator: envs/cat_theo/categorical_lenses/files/prompt.md:5-14, files/judge.py:32-60, files/visible_tests.py:3-5"
+      ],
+      "falsifiers": [
+        "A recovered executed source snapshot changes the cited prompt, visible tests, or judge so the mismatch disappears.",
+        "A formal task specification makes the narrower judge criteria explicit and intended."
+      ],
+      "follow_up_requirements": [
+        "Align prompts, visible tests, judges, and reference implementations before score interpretation.",
+        "Test valid alternatives and adversarial counterexamples with an independent oracle."
+      ],
+      "id": "F-15",
+      "limitations": [
+        "These audit examples do not prove that every category task is under-specified.",
+        "The lens visible test partly anchors the first-coordinate convention even though the hidden judge does not assert it directly."
+      ],
+      "novelty": "No mathematical-theory novelty; this is task/judge contract QA.",
+      "quantitative_result": "Compositional optimizer prompt promises nested associativity/multiple steps while judge checks shape and one state-isolation chain; physical constraints judge enforces an unstated 5:3 ratio; categorical-lens hidden judge checks laws but does not itself assert coordinate-zero view, while the visible test does.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "A future benchmark calibration could establish a common latent trait or comparable judge behavior, but none is present in this archive."
+      ],
+      "claim": "The most defensible synthesis is a descriptive map of task-specific result and failure patterns, not a scalar measure of general reasoning capability.",
+      "confidence": "HIGH as a reporting recommendation; MEDIUM as a theoretical interpretation.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+        "campaign-01-analysis/evidence/generated/environment_summary.csv",
+        "campaign-01-analysis/evidence/generated/axis_summary.csv",
+        "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+        "campaign-01-analysis/evidence/source_implementation_audit.md"
+      ],
+      "falsifiers": [
+        "A replicated, calibrated multi-task study demonstrates measurement invariance and a reliable common latent score across judge modes."
+      ],
+      "follow_up_requirements": [
+        "Validate judges independently, define common scoring semantics, and estimate repeatability before comparing family-level capability."
+      ],
+      "id": "F-16",
+      "limitations": [
+        "The archive measures one model/provider/configuration, with one seed per selected instance and mixed grading modes.",
+        "The same model may have different sampling variance across environments and retries."
+      ],
+      "novelty": "No general capability or latent-trait claim.",
+      "quantitative_result": "Family counts range from 2/8 eligible PASS in trajectory synthesis to 31/33 in recurrent depth, while judge guarantees, task sizes, no-op axes, and failure modes vary; no common score calibration is demonstrated.",
+      "status": "INFERRED"
+    },
+    {
+      "alternatives": [
+        "The exact combination of this generator, model, tasks, and archive may be under-studied; the current search did not establish global precedence or uniqueness."
+      ],
+      "claim": "The cited prior work already covers broad multi-scenario/multi-metric evaluation, variable perturbation, controlled epistemic-logic tasks, recursive ToM/deception, causal-template ToM generation, and test-coverage limits in code-agent evaluation.",
+      "confidence": "HIGH for the cited paper abstracts/metadata and the narrow precedent summaries; LOW for any exhaustive novelty conclusion.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/sources/references.md",
+        "HELM: https://arxiv.org/abs/2211.09110",
+        "VarBench: https://aclanthology.org/2024.findings-emnlp.946/",
+        "MindGames: https://aclanthology.org/2023.findings-emnlp.303/",
+        "Hi-ToM: https://aclanthology.org/2023.findings-emnlp.717/",
+        "BigToM: https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and_Benchmarks.pdf",
+        "SWE-bench study: https://dl.acm.org/doi/10.1145/3744916.3764576"
+      ],
+      "falsifiers": [
+        "A broader, reproducible literature review finds no prior work covering a specific narrowly worded contribution."
+      ],
+      "follow_up_requirements": [
+        "If making a novelty claim, conduct a systematic related-work search and define the comparison set, task scope, and method precisely."
+      ],
+      "id": "F-17",
+      "limitations": [
+        "This is a targeted prior-work check, not a systematic literature review.",
+        "External prior-work findings do not directly establish correctness or error in the current archive."
+      ],
+      "novelty": "No broad novelty claim survives; only a cohort-specific empirical audit may be distinctive.",
+      "quantitative_result": "HELM reports 42 scenarios and multiple metrics; VarBench applies dynamic variable perturbation and five seeds for variable-based experiments; MindGames uses dynamic epistemic logic; Hi-ToM studies higher-order recursive beliefs/deception; BigToM uses causal templates; the SWE-bench empirical study reports 7.8% of plausible patches counted correct failing the full developer test suite in its studied setting.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The difference may be sampling noise from one seed at temperature 1.0.",
+        "The names, performance note, input length, or hidden-source differences may interact; the current design cannot identify a dominant factor."
+      ],
+      "claim": "In this particular regex task and model run, surface class names or the hard-level performance hint may have influenced the two failures more than the tested input-string length; this is an untested hypothesis, not an inferred causal effect.",
+      "confidence": "LOW; deliberately speculative.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/axis_summary.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "source comparator: envs/weird_machine/regex_state_machine/config.yaml",
+        "source comparator: envs/weird_machine/regex_state_machine/files/prompt.md"
+      ],
+      "falsifiers": [
+        "Matched multi-seed trials show no stable effect of class-name/hint changes at fixed size.",
+        "A separate size-only experiment produces a larger reproducible effect than surface changes."
+      ],
+      "follow_up_requirements": [
+        "Run the E2 factorial follow-up with independent seeds and generated equivalent inputs.",
+        "Predefine the primary contrast and report behavioral, patch-validity, and source/runtime outcomes separately."
+      ],
+      "id": "F-18",
+      "limitations": [
+        "Only five selected rows from one model/configuration; no repeated seed per cell.",
+        "Surface label bundles class-name changes and an added hard-level hint.",
+        "The clean comparator is not proven identical to the dirty paid-run source."
+      ],
+      "novelty": "No novelty or general weird-machine claim; a hypothesis to guide a controlled follow-up.",
+      "quantitative_result": "At easy surface, selected lengths 32, 128, and 512 all pass. At string length 32, the medium and hard surface variants fail with output lengths 34 and 66. The hard prompt adds a performance note.",
+      "status": "SPECULATIVE"
+    }
+  ],
+  "post_id": "POST-05",
+  "schema_version": 1,
+  "trace_finding_ids": [
+    "F-01",
+    "F-06",
+    "F-09",
+    "F-10",
+    "F-14",
+    "F-16",
+    "F-17",
+    "F-18"
+  ]
+}

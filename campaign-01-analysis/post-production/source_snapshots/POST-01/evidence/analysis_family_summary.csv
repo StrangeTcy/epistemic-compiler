@@ -1,0 +1,4 @@
+analysis_family,recorded_cases,performance_eligible_cases,passes_performance_set,fails_performance_set,pass_rate_performance_set,provider_failure_exclusions,recorded_behavioral_reference,recorded_compile_only,behavioral_reference_n,behavioral_reference_passes,behavioral_reference_fails,compile_only_n,compile_only_passes,compile_only_fails
+ml_debugging,30,30,9,21,0.3,0,19,11,19,9,10,11,0,11
+recurrent_depth_behavioral,33,33,31,2,0.9393939393939394,0,11,22,11,11,0,22,20,2
+weird_machine,30,30,25,5,0.8333333333333334,0,30,0,30,25,5,0,0,0

@@ -1,0 +1,1 @@
+Local compiler stage: require five final validator reports marked valid; create an internal export manifest with each public article's title/date/slug, immutable runtime artifact path and hash, source trace-row IDs, and validation report path. Do not copy into a Jekyll repository, commit, or push.

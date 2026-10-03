@@ -1,0 +1,882 @@
+mission_id: campaign-01-post-production
+type: campaign-post-production
+inputs:
+  house_style: source_snapshots/shared/house_style.md
+  style_reference_material: source_snapshots/shared/style_reference_material.md
+  references: source_snapshots/shared/references.md
+  campaign_provenance: source_snapshots/shared/campaign_provenance.md
+  source_draft_POST-01: source_snapshots/POST-01/source_draft.md
+  trace_rows_POST-01: source_snapshots/POST-01/trace_rows.csv
+  relevant_findings_POST-01: source_snapshots/POST-01/relevant_findings.json
+  evidence_extract_POST-01: source_snapshots/POST-01/evidence_extract.md
+  limitations_POST-01: source_snapshots/POST-01/limitations.md
+  source_audit_POST-01: source_snapshots/POST-01/source_audit_excerpt.md
+  evidence_case_results_POST-01: source_snapshots/POST-01/evidence/selected_case_results.csv
+  evidence_environment_summary_POST-01: source_snapshots/POST-01/evidence/environment_summary.csv
+  evidence_analysis_family_summary_POST-01: source_snapshots/POST-01/evidence/analysis_family_summary.csv
+  evidence_failure_taxonomy_POST-01: source_snapshots/POST-01/evidence/failure_taxonomy.csv
+  evidence_axis_summary_POST-01: source_snapshots/POST-01/evidence/axis_summary.csv
+  evidence_campaign_exclusions_POST-01: source_snapshots/POST-01/evidence/campaign_exclusions.csv
+  evidence_failure_details_POST-01: source_snapshots/POST-01/evidence/failure_details.csv
+  evidence_campaign_scope_POST-01: source_snapshots/POST-01/evidence/campaign_scope.json
+  source_draft_POST-02: source_snapshots/POST-02/source_draft.md
+  trace_rows_POST-02: source_snapshots/POST-02/trace_rows.csv
+  relevant_findings_POST-02: source_snapshots/POST-02/relevant_findings.json
+  evidence_extract_POST-02: source_snapshots/POST-02/evidence_extract.md
+  limitations_POST-02: source_snapshots/POST-02/limitations.md
+  source_audit_POST-02: source_snapshots/POST-02/source_audit_excerpt.md
+  evidence_case_results_POST-02: source_snapshots/POST-02/evidence/selected_case_results.csv
+  evidence_environment_summary_POST-02: source_snapshots/POST-02/evidence/environment_summary.csv
+  evidence_analysis_family_summary_POST-02: source_snapshots/POST-02/evidence/analysis_family_summary.csv
+  evidence_failure_taxonomy_POST-02: source_snapshots/POST-02/evidence/failure_taxonomy.csv
+  evidence_axis_summary_POST-02: source_snapshots/POST-02/evidence/axis_summary.csv
+  source_draft_POST-03: source_snapshots/POST-03/source_draft.md
+  trace_rows_POST-03: source_snapshots/POST-03/trace_rows.csv
+  relevant_findings_POST-03: source_snapshots/POST-03/relevant_findings.json
+  evidence_extract_POST-03: source_snapshots/POST-03/evidence_extract.md
+  limitations_POST-03: source_snapshots/POST-03/limitations.md
+  source_audit_POST-03: source_snapshots/POST-03/source_audit_excerpt.md
+  evidence_case_results_POST-03: source_snapshots/POST-03/evidence/selected_case_results.csv
+  evidence_environment_summary_POST-03: source_snapshots/POST-03/evidence/environment_summary.csv
+  evidence_analysis_family_summary_POST-03: source_snapshots/POST-03/evidence/analysis_family_summary.csv
+  evidence_failure_taxonomy_POST-03: source_snapshots/POST-03/evidence/failure_taxonomy.csv
+  evidence_axis_summary_POST-03: source_snapshots/POST-03/evidence/axis_summary.csv
+  evidence_axis_placeholder_audit_POST-03: source_snapshots/POST-03/evidence/axis_placeholder_audit.csv
+  evidence_track_summary_POST-03: source_snapshots/POST-03/evidence/track_summary.csv
+  source_draft_POST-04: source_snapshots/POST-04/source_draft.md
+  trace_rows_POST-04: source_snapshots/POST-04/trace_rows.csv
+  relevant_findings_POST-04: source_snapshots/POST-04/relevant_findings.json
+  evidence_extract_POST-04: source_snapshots/POST-04/evidence_extract.md
+  limitations_POST-04: source_snapshots/POST-04/limitations.md
+  source_audit_POST-04: source_snapshots/POST-04/source_audit_excerpt.md
+  evidence_case_results_POST-04: source_snapshots/POST-04/evidence/selected_case_results.csv
+  evidence_environment_summary_POST-04: source_snapshots/POST-04/evidence/environment_summary.csv
+  evidence_analysis_family_summary_POST-04: source_snapshots/POST-04/evidence/analysis_family_summary.csv
+  evidence_failure_taxonomy_POST-04: source_snapshots/POST-04/evidence/failure_taxonomy.csv
+  evidence_campaign_exclusions_POST-04: source_snapshots/POST-04/evidence/campaign_exclusions.csv
+  evidence_failure_details_POST-04: source_snapshots/POST-04/evidence/failure_details.csv
+  evidence_campaign_scope_POST-04: source_snapshots/POST-04/evidence/campaign_scope.json
+  source_draft_POST-05: source_snapshots/POST-05/source_draft.md
+  trace_rows_POST-05: source_snapshots/POST-05/trace_rows.csv
+  relevant_findings_POST-05: source_snapshots/POST-05/relevant_findings.json
+  evidence_extract_POST-05: source_snapshots/POST-05/evidence_extract.md
+  limitations_POST-05: source_snapshots/POST-05/limitations.md
+  source_audit_POST-05: source_snapshots/POST-05/source_audit_excerpt.md
+  evidence_case_results_POST-05: source_snapshots/POST-05/evidence/selected_case_results.csv
+  evidence_environment_summary_POST-05: source_snapshots/POST-05/evidence/environment_summary.csv
+  evidence_analysis_family_summary_POST-05: source_snapshots/POST-05/evidence/analysis_family_summary.csv
+  evidence_failure_taxonomy_POST-05: source_snapshots/POST-05/evidence/failure_taxonomy.csv
+  evidence_axis_summary_POST-05: source_snapshots/POST-05/evidence/axis_summary.csv
+  evidence_failure_details_POST-05: source_snapshots/POST-05/evidence/failure_details.csv
+  evidence_campaign_scope_POST-05: source_snapshots/POST-05/evidence/campaign_scope.json
+  workflow_input_manifest: source_snapshots/shared/workflow_input_manifest.json
+defaults:
+  site: local
+  timeout_seconds: 300
+jobs:
+- id: post01_prepare_post
+  role: prepare_post
+  site: local
+  prompt_artifact: prompts/local_prepare_post.md
+  input_artifacts:
+  - mission:source_draft_POST-01
+  - mission:house_style
+  - mission:style_reference_material
+  - mission:references
+  - mission:campaign_provenance
+  - mission:workflow_input_manifest
+  - mission:trace_rows_POST-01
+  - mission:relevant_findings_POST-01
+  - mission:evidence_extract_POST-01
+  - mission:limitations_POST-01
+  - mission:source_audit_POST-01
+  - mission:evidence_analysis_family_summary_POST-01
+  - mission:evidence_axis_summary_POST-01
+  - mission:evidence_campaign_exclusions_POST-01
+  - mission:evidence_campaign_scope_POST-01
+  - mission:evidence_case_results_POST-01
+  - mission:evidence_environment_summary_POST-01
+  - mission:evidence_failure_details_POST-01
+  - mission:evidence_failure_taxonomy_POST-01
+  dependencies: []
+  output_artifact: artifacts/jobs/post01_prepare_post/response.md
+  timeout_seconds: 300
+- id: post01_battle_writer_a
+  role: battle_writer_a
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_battle_writer_a/response.md
+  timeout_seconds: 300
+- id: post01_battle_writer_b
+  role: battle_writer_b
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_battle_writer_b/response.md
+  timeout_seconds: 300
+- id: post01_editorial_critic
+  role: editorial_critic
+  site: manual
+  prompt_artifact: prompts/critic.md
+  input_artifacts:
+  - job:post01_prepare_post:response
+  - job:post01_battle_writer_a:response
+  - job:post01_battle_writer_b:response
+  dependencies:
+  - post01_prepare_post
+  - post01_battle_writer_a
+  - post01_battle_writer_b
+  output_artifact: artifacts/jobs/post01_editorial_critic/response.md
+  timeout_seconds: 300
+- id: post01_final_writer
+  role: final_writer
+  site: manual
+  prompt_artifact: prompts/final_writer.md
+  input_artifacts:
+  - job:post01_prepare_post:response
+  - job:post01_battle_writer_a:response
+  - job:post01_battle_writer_b:response
+  - job:post01_editorial_critic:response
+  dependencies:
+  - post01_prepare_post
+  - post01_battle_writer_a
+  - post01_battle_writer_b
+  - post01_editorial_critic
+  output_artifact: artifacts/jobs/post01_final_writer/response.md
+  timeout_seconds: 300
+- id: post01_post_validator
+  role: post_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post01_final_writer:response
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_final_writer
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_post_validator/response.md
+  timeout_seconds: 300
+- id: post01_validation_revision
+  role: validation_revision
+  site: manual
+  prompt_artifact: prompts/validation_revision.md
+  input_artifacts:
+  - job:post01_post_validator:response
+  - job:post01_final_writer:response
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_post_validator
+  - post01_final_writer
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_validation_revision/response.md
+  timeout_seconds: 300
+- id: post01_validation_revision_validator
+  role: validation_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post01_validation_revision:response
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_validation_revision
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_validation_revision_validator/response.md
+  timeout_seconds: 300
+- id: post02_prepare_post
+  role: prepare_post
+  site: local
+  prompt_artifact: prompts/local_prepare_post.md
+  input_artifacts:
+  - mission:source_draft_POST-02
+  - mission:house_style
+  - mission:style_reference_material
+  - mission:references
+  - mission:campaign_provenance
+  - mission:workflow_input_manifest
+  - mission:trace_rows_POST-02
+  - mission:relevant_findings_POST-02
+  - mission:evidence_extract_POST-02
+  - mission:limitations_POST-02
+  - mission:source_audit_POST-02
+  - mission:evidence_analysis_family_summary_POST-02
+  - mission:evidence_axis_summary_POST-02
+  - mission:evidence_case_results_POST-02
+  - mission:evidence_environment_summary_POST-02
+  - mission:evidence_failure_taxonomy_POST-02
+  dependencies:
+  - post01_validation_revision_validator
+  output_artifact: artifacts/jobs/post02_prepare_post/response.md
+  timeout_seconds: 300
+- id: post02_battle_writer_a
+  role: battle_writer_a
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_battle_writer_a/response.md
+  timeout_seconds: 300
+- id: post02_battle_writer_b
+  role: battle_writer_b
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_battle_writer_b/response.md
+  timeout_seconds: 300
+- id: post02_editorial_critic
+  role: editorial_critic
+  site: manual
+  prompt_artifact: prompts/critic.md
+  input_artifacts:
+  - job:post02_prepare_post:response
+  - job:post02_battle_writer_a:response
+  - job:post02_battle_writer_b:response
+  dependencies:
+  - post02_prepare_post
+  - post02_battle_writer_a
+  - post02_battle_writer_b
+  output_artifact: artifacts/jobs/post02_editorial_critic/response.md
+  timeout_seconds: 300
+- id: post02_final_writer
+  role: final_writer
+  site: manual
+  prompt_artifact: prompts/final_writer.md
+  input_artifacts:
+  - job:post02_prepare_post:response
+  - job:post02_battle_writer_a:response
+  - job:post02_battle_writer_b:response
+  - job:post02_editorial_critic:response
+  dependencies:
+  - post02_prepare_post
+  - post02_battle_writer_a
+  - post02_battle_writer_b
+  - post02_editorial_critic
+  output_artifact: artifacts/jobs/post02_final_writer/response.md
+  timeout_seconds: 300
+- id: post02_post_validator
+  role: post_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post02_final_writer:response
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_final_writer
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_post_validator/response.md
+  timeout_seconds: 300
+- id: post02_validation_revision
+  role: validation_revision
+  site: manual
+  prompt_artifact: prompts/validation_revision.md
+  input_artifacts:
+  - job:post02_post_validator:response
+  - job:post02_final_writer:response
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_post_validator
+  - post02_final_writer
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_validation_revision/response.md
+  timeout_seconds: 300
+- id: post02_validation_revision_validator
+  role: validation_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post02_validation_revision:response
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_validation_revision
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_validation_revision_validator/response.md
+  timeout_seconds: 300
+- id: post03_prepare_post
+  role: prepare_post
+  site: local
+  prompt_artifact: prompts/local_prepare_post.md
+  input_artifacts:
+  - mission:source_draft_POST-03
+  - mission:house_style
+  - mission:style_reference_material
+  - mission:references
+  - mission:campaign_provenance
+  - mission:workflow_input_manifest
+  - mission:trace_rows_POST-03
+  - mission:relevant_findings_POST-03
+  - mission:evidence_extract_POST-03
+  - mission:limitations_POST-03
+  - mission:source_audit_POST-03
+  - mission:evidence_analysis_family_summary_POST-03
+  - mission:evidence_axis_placeholder_audit_POST-03
+  - mission:evidence_axis_summary_POST-03
+  - mission:evidence_case_results_POST-03
+  - mission:evidence_environment_summary_POST-03
+  - mission:evidence_failure_taxonomy_POST-03
+  - mission:evidence_track_summary_POST-03
+  dependencies:
+  - post02_validation_revision_validator
+  output_artifact: artifacts/jobs/post03_prepare_post/response.md
+  timeout_seconds: 300
+- id: post03_battle_writer_a
+  role: battle_writer_a
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_battle_writer_a/response.md
+  timeout_seconds: 300
+- id: post03_battle_writer_b
+  role: battle_writer_b
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_battle_writer_b/response.md
+  timeout_seconds: 300
+- id: post03_editorial_critic
+  role: editorial_critic
+  site: manual
+  prompt_artifact: prompts/critic.md
+  input_artifacts:
+  - job:post03_prepare_post:response
+  - job:post03_battle_writer_a:response
+  - job:post03_battle_writer_b:response
+  dependencies:
+  - post03_prepare_post
+  - post03_battle_writer_a
+  - post03_battle_writer_b
+  output_artifact: artifacts/jobs/post03_editorial_critic/response.md
+  timeout_seconds: 300
+- id: post03_final_writer
+  role: final_writer
+  site: manual
+  prompt_artifact: prompts/final_writer.md
+  input_artifacts:
+  - job:post03_prepare_post:response
+  - job:post03_battle_writer_a:response
+  - job:post03_battle_writer_b:response
+  - job:post03_editorial_critic:response
+  dependencies:
+  - post03_prepare_post
+  - post03_battle_writer_a
+  - post03_battle_writer_b
+  - post03_editorial_critic
+  output_artifact: artifacts/jobs/post03_final_writer/response.md
+  timeout_seconds: 300
+- id: post03_post_validator
+  role: post_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post03_final_writer:response
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_final_writer
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_post_validator/response.md
+  timeout_seconds: 300
+- id: post03_validation_revision
+  role: validation_revision
+  site: manual
+  prompt_artifact: prompts/validation_revision.md
+  input_artifacts:
+  - job:post03_post_validator:response
+  - job:post03_final_writer:response
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_post_validator
+  - post03_final_writer
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_validation_revision/response.md
+  timeout_seconds: 300
+- id: post03_validation_revision_validator
+  role: validation_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post03_validation_revision:response
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_validation_revision
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_validation_revision_validator/response.md
+  timeout_seconds: 300
+- id: post04_prepare_post
+  role: prepare_post
+  site: local
+  prompt_artifact: prompts/local_prepare_post.md
+  input_artifacts:
+  - mission:source_draft_POST-04
+  - mission:house_style
+  - mission:style_reference_material
+  - mission:references
+  - mission:campaign_provenance
+  - mission:workflow_input_manifest
+  - mission:trace_rows_POST-04
+  - mission:relevant_findings_POST-04
+  - mission:evidence_extract_POST-04
+  - mission:limitations_POST-04
+  - mission:source_audit_POST-04
+  - mission:evidence_analysis_family_summary_POST-04
+  - mission:evidence_campaign_exclusions_POST-04
+  - mission:evidence_campaign_scope_POST-04
+  - mission:evidence_case_results_POST-04
+  - mission:evidence_environment_summary_POST-04
+  - mission:evidence_failure_details_POST-04
+  - mission:evidence_failure_taxonomy_POST-04
+  dependencies:
+  - post03_validation_revision_validator
+  output_artifact: artifacts/jobs/post04_prepare_post/response.md
+  timeout_seconds: 300
+- id: post04_battle_writer_a
+  role: battle_writer_a
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_battle_writer_a/response.md
+  timeout_seconds: 300
+- id: post04_battle_writer_b
+  role: battle_writer_b
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_battle_writer_b/response.md
+  timeout_seconds: 300
+- id: post04_editorial_critic
+  role: editorial_critic
+  site: manual
+  prompt_artifact: prompts/critic.md
+  input_artifacts:
+  - job:post04_prepare_post:response
+  - job:post04_battle_writer_a:response
+  - job:post04_battle_writer_b:response
+  dependencies:
+  - post04_prepare_post
+  - post04_battle_writer_a
+  - post04_battle_writer_b
+  output_artifact: artifacts/jobs/post04_editorial_critic/response.md
+  timeout_seconds: 300
+- id: post04_final_writer
+  role: final_writer
+  site: manual
+  prompt_artifact: prompts/final_writer.md
+  input_artifacts:
+  - job:post04_prepare_post:response
+  - job:post04_battle_writer_a:response
+  - job:post04_battle_writer_b:response
+  - job:post04_editorial_critic:response
+  dependencies:
+  - post04_prepare_post
+  - post04_battle_writer_a
+  - post04_battle_writer_b
+  - post04_editorial_critic
+  output_artifact: artifacts/jobs/post04_final_writer/response.md
+  timeout_seconds: 300
+- id: post04_post_validator
+  role: post_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post04_final_writer:response
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_final_writer
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_post_validator/response.md
+  timeout_seconds: 300
+- id: post04_validation_revision
+  role: validation_revision
+  site: manual
+  prompt_artifact: prompts/validation_revision.md
+  input_artifacts:
+  - job:post04_post_validator:response
+  - job:post04_final_writer:response
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_post_validator
+  - post04_final_writer
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_validation_revision/response.md
+  timeout_seconds: 300
+- id: post04_validation_revision_validator
+  role: validation_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post04_validation_revision:response
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_validation_revision
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_validation_revision_validator/response.md
+  timeout_seconds: 300
+- id: post05_prepare_post
+  role: prepare_post
+  site: local
+  prompt_artifact: prompts/local_prepare_post.md
+  input_artifacts:
+  - mission:source_draft_POST-05
+  - mission:house_style
+  - mission:style_reference_material
+  - mission:references
+  - mission:campaign_provenance
+  - mission:workflow_input_manifest
+  - mission:trace_rows_POST-05
+  - mission:relevant_findings_POST-05
+  - mission:evidence_extract_POST-05
+  - mission:limitations_POST-05
+  - mission:source_audit_POST-05
+  - mission:evidence_analysis_family_summary_POST-05
+  - mission:evidence_axis_summary_POST-05
+  - mission:evidence_campaign_scope_POST-05
+  - mission:evidence_case_results_POST-05
+  - mission:evidence_environment_summary_POST-05
+  - mission:evidence_failure_details_POST-05
+  - mission:evidence_failure_taxonomy_POST-05
+  dependencies:
+  - post04_validation_revision_validator
+  output_artifact: artifacts/jobs/post05_prepare_post/response.md
+  timeout_seconds: 300
+- id: post05_battle_writer_a
+  role: battle_writer_a
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_battle_writer_a/response.md
+  timeout_seconds: 300
+- id: post05_battle_writer_b
+  role: battle_writer_b
+  site: manual
+  prompt_artifact: prompts/writer.md
+  input_artifacts:
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_battle_writer_b/response.md
+  timeout_seconds: 300
+- id: post05_editorial_critic
+  role: editorial_critic
+  site: manual
+  prompt_artifact: prompts/critic.md
+  input_artifacts:
+  - job:post05_prepare_post:response
+  - job:post05_battle_writer_a:response
+  - job:post05_battle_writer_b:response
+  dependencies:
+  - post05_prepare_post
+  - post05_battle_writer_a
+  - post05_battle_writer_b
+  output_artifact: artifacts/jobs/post05_editorial_critic/response.md
+  timeout_seconds: 300
+- id: post05_final_writer
+  role: final_writer
+  site: manual
+  prompt_artifact: prompts/final_writer.md
+  input_artifacts:
+  - job:post05_prepare_post:response
+  - job:post05_battle_writer_a:response
+  - job:post05_battle_writer_b:response
+  - job:post05_editorial_critic:response
+  dependencies:
+  - post05_prepare_post
+  - post05_battle_writer_a
+  - post05_battle_writer_b
+  - post05_editorial_critic
+  output_artifact: artifacts/jobs/post05_final_writer/response.md
+  timeout_seconds: 300
+- id: post05_post_validator
+  role: post_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post05_final_writer:response
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_final_writer
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_post_validator/response.md
+  timeout_seconds: 300
+- id: post05_validation_revision
+  role: validation_revision
+  site: manual
+  prompt_artifact: prompts/validation_revision.md
+  input_artifacts:
+  - job:post05_post_validator:response
+  - job:post05_final_writer:response
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_post_validator
+  - post05_final_writer
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_validation_revision/response.md
+  timeout_seconds: 300
+- id: post05_validation_revision_validator
+  role: validation_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post05_validation_revision:response
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_validation_revision
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_validation_revision_validator/response.md
+  timeout_seconds: 300
+- id: cross_post_prepare
+  role: prepare_cross_post
+  site: local
+  prompt_artifact: prompts/cross_post_prepare.md
+  input_artifacts:
+  - mission:style_reference_material
+  - mission:house_style
+  - job:post01_validation_revision:response
+  - mission:relevant_findings_POST-01
+  - mission:evidence_extract_POST-01
+  - mission:limitations_POST-01
+  - job:post02_validation_revision:response
+  - mission:relevant_findings_POST-02
+  - mission:evidence_extract_POST-02
+  - mission:limitations_POST-02
+  - job:post03_validation_revision:response
+  - mission:relevant_findings_POST-03
+  - mission:evidence_extract_POST-03
+  - mission:limitations_POST-03
+  - job:post04_validation_revision:response
+  - mission:relevant_findings_POST-04
+  - mission:evidence_extract_POST-04
+  - mission:limitations_POST-04
+  - job:post05_validation_revision:response
+  - mission:relevant_findings_POST-05
+  - mission:evidence_extract_POST-05
+  - mission:limitations_POST-05
+  dependencies:
+  - post01_validation_revision_validator
+  - post01_validation_revision
+  - post02_validation_revision_validator
+  - post02_validation_revision
+  - post03_validation_revision_validator
+  - post03_validation_revision
+  - post04_validation_revision_validator
+  - post04_validation_revision
+  - post05_validation_revision_validator
+  - post05_validation_revision
+  output_artifact: artifacts/jobs/cross_post_prepare/response.md
+  timeout_seconds: 300
+- id: cross_post_editor
+  role: cross_post_editor
+  site: manual
+  prompt_artifact: prompts/cross_post_editor.md
+  input_artifacts:
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/cross_post_editor/response.md
+  timeout_seconds: 300
+- id: cross_post_review_router
+  role: cross_post_review_router
+  site: local
+  prompt_artifact: prompts/cross_post_router.md
+  input_artifacts:
+  - job:cross_post_editor:response
+  dependencies:
+  - cross_post_editor
+  output_artifact: artifacts/jobs/cross_post_review_router/response.md
+  timeout_seconds: 300
+- id: post01_cross_post_revision
+  role: cross_post_revision
+  site: manual
+  prompt_artifact: prompts/cross_post_revision.md
+  input_artifacts:
+  - job:cross_post_review_router:response
+  - job:post01_validation_revision:response
+  - job:post01_prepare_post:response
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_review_router
+  - post01_validation_revision_validator
+  - post01_validation_revision
+  - post01_prepare_post
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/post01_cross_post_revision/response.md
+  timeout_seconds: 300
+- id: post01_cross_post_revision_validator
+  role: cross_post_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post01_cross_post_revision:response
+  - job:post01_prepare_post:response
+  dependencies:
+  - post01_cross_post_revision
+  - post01_prepare_post
+  output_artifact: artifacts/jobs/post01_cross_post_revision_validator/response.md
+  timeout_seconds: 300
+- id: post02_cross_post_revision
+  role: cross_post_revision
+  site: manual
+  prompt_artifact: prompts/cross_post_revision.md
+  input_artifacts:
+  - job:cross_post_review_router:response
+  - job:post02_validation_revision:response
+  - job:post02_prepare_post:response
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_review_router
+  - post02_validation_revision_validator
+  - post02_validation_revision
+  - post02_prepare_post
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/post02_cross_post_revision/response.md
+  timeout_seconds: 300
+- id: post02_cross_post_revision_validator
+  role: cross_post_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post02_cross_post_revision:response
+  - job:post02_prepare_post:response
+  dependencies:
+  - post02_cross_post_revision
+  - post02_prepare_post
+  output_artifact: artifacts/jobs/post02_cross_post_revision_validator/response.md
+  timeout_seconds: 300
+- id: post03_cross_post_revision
+  role: cross_post_revision
+  site: manual
+  prompt_artifact: prompts/cross_post_revision.md
+  input_artifacts:
+  - job:cross_post_review_router:response
+  - job:post03_validation_revision:response
+  - job:post03_prepare_post:response
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_review_router
+  - post03_validation_revision_validator
+  - post03_validation_revision
+  - post03_prepare_post
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/post03_cross_post_revision/response.md
+  timeout_seconds: 300
+- id: post03_cross_post_revision_validator
+  role: cross_post_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post03_cross_post_revision:response
+  - job:post03_prepare_post:response
+  dependencies:
+  - post03_cross_post_revision
+  - post03_prepare_post
+  output_artifact: artifacts/jobs/post03_cross_post_revision_validator/response.md
+  timeout_seconds: 300
+- id: post04_cross_post_revision
+  role: cross_post_revision
+  site: manual
+  prompt_artifact: prompts/cross_post_revision.md
+  input_artifacts:
+  - job:cross_post_review_router:response
+  - job:post04_validation_revision:response
+  - job:post04_prepare_post:response
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_review_router
+  - post04_validation_revision_validator
+  - post04_validation_revision
+  - post04_prepare_post
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/post04_cross_post_revision/response.md
+  timeout_seconds: 300
+- id: post04_cross_post_revision_validator
+  role: cross_post_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post04_cross_post_revision:response
+  - job:post04_prepare_post:response
+  dependencies:
+  - post04_cross_post_revision
+  - post04_prepare_post
+  output_artifact: artifacts/jobs/post04_cross_post_revision_validator/response.md
+  timeout_seconds: 300
+- id: post05_cross_post_revision
+  role: cross_post_revision
+  site: manual
+  prompt_artifact: prompts/cross_post_revision.md
+  input_artifacts:
+  - job:cross_post_review_router:response
+  - job:post05_validation_revision:response
+  - job:post05_prepare_post:response
+  - job:cross_post_prepare:response
+  dependencies:
+  - cross_post_review_router
+  - post05_validation_revision_validator
+  - post05_validation_revision
+  - post05_prepare_post
+  - cross_post_prepare
+  output_artifact: artifacts/jobs/post05_cross_post_revision/response.md
+  timeout_seconds: 300
+- id: post05_cross_post_revision_validator
+  role: cross_post_revision_validator
+  site: local
+  prompt_artifact: prompts/post_validator.md
+  input_artifacts:
+  - job:post05_cross_post_revision:response
+  - job:post05_prepare_post:response
+  dependencies:
+  - post05_cross_post_revision
+  - post05_prepare_post
+  output_artifact: artifacts/jobs/post05_cross_post_revision_validator/response.md
+  timeout_seconds: 300
+- id: final_post_set_assembler
+  role: final_post_set_assembler
+  site: local
+  prompt_artifact: prompts/final_post_set_assembler.md
+  input_artifacts:
+  - job:post01_cross_post_revision:response
+  - job:post01_cross_post_revision_validator:response
+  - job:post02_cross_post_revision:response
+  - job:post02_cross_post_revision_validator:response
+  - job:post03_cross_post_revision:response
+  - job:post03_cross_post_revision_validator:response
+  - job:post04_cross_post_revision:response
+  - job:post04_cross_post_revision_validator:response
+  - job:post05_cross_post_revision:response
+  - job:post05_cross_post_revision_validator:response
+  dependencies:
+  - post01_cross_post_revision_validator
+  - post02_cross_post_revision_validator
+  - post03_cross_post_revision_validator
+  - post04_cross_post_revision_validator
+  - post05_cross_post_revision_validator
+  - post01_cross_post_revision
+  - post02_cross_post_revision
+  - post03_cross_post_revision
+  - post04_cross_post_revision
+  - post05_cross_post_revision
+  output_artifact: artifacts/jobs/final_post_set_assembler/response.md
+  timeout_seconds: 300

@@ -1,0 +1,1 @@
+Local compiler stage: parse the cross-post editor's strict JSON, normalize all five post decisions, reject unknown/duplicate post IDs or malformed requests, and produce a deterministic revision plan. Do not reinterpret or silently discard issues.

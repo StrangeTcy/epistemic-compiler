@@ -1,0 +1,88 @@
+{
+  "archive": {
+    "archive_ref": "origin/main:atria-campaign-state-62.zip",
+    "archive_sha256": "e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd",
+    "member_count": 2968
+  },
+  "campaign": {
+    "campaign_progress_episodes_completed": 194,
+    "campaign_progress_episodes_total": 194,
+    "campaign_status_report": "completed",
+    "compile_only_cases": 122,
+    "exact_instance_oracle_cases": 72,
+    "explicit_omission_count_known_gate_blocked": 7,
+    "explicit_omission_count_unsupported_modality": 17,
+    "explicit_omission_total": 24,
+    "known_gate_blocked_disposition": "omitted_before_provider_access",
+    "max_steps": 20,
+    "max_tokens_per_call": 8192,
+    "mode_summary": {
+      "behavioral_reference": {
+        "performance_eligible_fails": 16,
+        "performance_eligible_passes": 56,
+        "performance_eligible_rows": 72,
+        "recorded_fails": 16,
+        "recorded_passes": 56,
+        "recorded_rows": 72
+      },
+      "compile_only": {
+        "performance_eligible_fails": 45,
+        "performance_eligible_passes": 75,
+        "performance_eligible_rows": 120,
+        "recorded_fails": 47,
+        "recorded_passes": 75,
+        "recorded_rows": 122
+      }
+    },
+    "omitted_unsupported_case_count": 17,
+    "performance_eligible_case_count": 192,
+    "performance_eligible_pass_rate_descriptive_mixed_modes": 0.6822916666666666,
+    "performance_eligible_verdict_counts": {
+      "FAIL": 61,
+      "PASS": 131
+    },
+    "provider_failure_case_count_from_final_result_notes": 2,
+    "provider_failure_case_ids_from_final_result_notes": [
+      "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0",
+      "ts_trajectory__witness_status=broken_representation=reflective__seed-0"
+    ],
+    "raw_verdict_counts": {
+      "FAIL": 63,
+      "PASS": 131
+    },
+    "reasoning_enabled_config": false,
+    "recorded_results_plus_reported_omissions": 218,
+    "recorded_track_label_mismatch_case_ids": [
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=narrative__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=skewed_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=solo_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=strong_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=weak_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=trap_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0"
+    ],
+    "registry_environment_count": 34,
+    "repository_dirty_at_run": true,
+    "selected_case_count_manifest": 194,
+    "selected_case_count_results": 194,
+    "selected_environment_count": 33,
+    "temperature": 1.0,
+    "top_p": 0.95
+  },
+  "failure_taxonomy_all_recorded_failures": {
+    "invalid_action": 4,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  },
+  "failure_taxonomy_performance_eligible": {
+    "invalid_action": 2,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  }
+}

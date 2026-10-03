@@ -15,7 +15,7 @@ from runtime.models import JobExecutor, MissionSpec
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUEUE_ROOT = PROJECT_ROOT / "runtime" / "queue"
-SUPPORTED_SITES = frozenset({"arena"})
+SUPPORTED_SITES = frozenset({"arena", "local", "manual"})
 MISSION_SUFFIXES = frozenset({".yaml", ".yml"})
 MAX_RETRY_DELAY_SECONDS = 60.0
 
@@ -33,8 +33,9 @@ class LocalMissionWorker:
 
     Only YAML files placed directly in ``queue_dir`` are eligible. Existing run
     state is matched by mission id and content hash; completed jobs are never
-    submitted again. Human-paused jobs stay paused until an explicit one-shot
-    ``run_mission.py --resume`` operation requeues them.
+    submitted again. Local deterministic jobs and durable manual handoffs share
+    the same engine. Model-response handoffs remain paused until immutable
+    ingestion; the worker does not submit prompts or invent responses.
     """
 
     def __init__(

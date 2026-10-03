@@ -1,0 +1,141 @@
+{
+  "api_cost_or_spend": "not present in the exported archive",
+  "archive": {
+    "archive_ref": "origin/main:atria-campaign-state-62.zip",
+    "archive_sha256": "e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd",
+    "member_count": 2968
+  },
+  "campaign": {
+    "campaign_progress_episodes_completed": 194,
+    "campaign_progress_episodes_total": 194,
+    "campaign_status_report": "completed",
+    "compile_only_cases": 122,
+    "exact_instance_oracle_cases": 72,
+    "explicit_omission_count_known_gate_blocked": 7,
+    "explicit_omission_count_unsupported_modality": 17,
+    "explicit_omission_total": 24,
+    "known_gate_blocked_disposition": "omitted_before_provider_access",
+    "max_steps": 20,
+    "max_tokens_per_call": 8192,
+    "mode_summary": {
+      "behavioral_reference": {
+        "performance_eligible_fails": 16,
+        "performance_eligible_passes": 56,
+        "performance_eligible_rows": 72,
+        "recorded_fails": 16,
+        "recorded_passes": 56,
+        "recorded_rows": 72
+      },
+      "compile_only": {
+        "performance_eligible_fails": 45,
+        "performance_eligible_passes": 75,
+        "performance_eligible_rows": 120,
+        "recorded_fails": 47,
+        "recorded_passes": 75,
+        "recorded_rows": 122
+      }
+    },
+    "omitted_unsupported_case_count": 17,
+    "performance_eligible_case_count": 192,
+    "performance_eligible_pass_rate_descriptive_mixed_modes": 0.6822916666666666,
+    "performance_eligible_verdict_counts": {
+      "FAIL": 61,
+      "PASS": 131
+    },
+    "provider_failure_case_count_from_final_result_notes": 2,
+    "provider_failure_case_ids_from_final_result_notes": [
+      "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0",
+      "ts_trajectory__witness_status=broken_representation=reflective__seed-0"
+    ],
+    "raw_verdict_counts": {
+      "FAIL": 63,
+      "PASS": 131
+    },
+    "reasoning_enabled_config": false,
+    "recorded_results_plus_reported_omissions": 218,
+    "recorded_track_label_mismatch_case_ids": [
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=balanced_framing=narrative__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=paired_prior=skewed_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=ambiguous_presentation=solo_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=strong_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=report_evidence=weak_presentation=paired_prior=balanced_framing=bare_table__seed-0",
+      "epistemic_games__scenario=trap_evidence=ambiguous_presentation=paired_prior=balanced_framing=bare_table__seed-0"
+    ],
+    "registry_environment_count": 34,
+    "repository_dirty_at_run": true,
+    "selected_case_count_manifest": 194,
+    "selected_case_count_results": 194,
+    "selected_environment_count": 33,
+    "temperature": 1.0,
+    "top_p": 0.95
+  },
+  "execution_and_usage": {
+    "additional_run_directories_over_one_per_case": 74,
+    "all_run_completion_tokens_from_successful_responses": 569277,
+    "all_run_embedded_attempt_log_rows": 4443,
+    "all_run_prompt_tokens_from_successful_responses": 8877965,
+    "all_run_reasoning_tokens_reported_in_usage": 325785,
+    "all_run_response_rows_with_reasoning_content": 2710,
+    "all_run_successful_response_rows": 4061,
+    "all_run_total_tokens_from_successful_responses": 9447242,
+    "all_run_unique_turn_ids_summed_by_run": 4023,
+    "api_cost_or_spend": "not present in the exported archive",
+    "api_errors_jsonl_error_type_counts_all_runs": {
+      "http_error": 171,
+      "provider_error": 18,
+      "provider_transient": 57,
+      "success": 4061,
+      "timeout": 576
+    },
+    "api_errors_jsonl_record_count_all_runs": 4883,
+    "archived_run_directory_count": 268,
+    "archived_run_manifest_elapsed_seconds_sum_all_attempt_runs": 135653.441995,
+    "archived_run_manifest_elapsed_seconds_sum_selected_runs": 80605.94137399999,
+    "attempt_counter_reconciliation": "Counters have different scopes and do not reconcile from archived per-run manifests/JSONL; report each source separately.",
+    "campaign_progress_http_attempts": 6412,
+    "final_result_vs_final_json_mismatches": [],
+    "final_run_completion_tokens_from_successful_responses": 514333,
+    "final_run_prompt_tokens_from_successful_responses": 8159188,
+    "final_run_successful_response_rows": 3538,
+    "final_run_total_tokens_from_successful_responses": 8673521,
+    "final_run_unique_turn_ids_summed_by_case": 3500,
+    "run_directories_for_all_provider_failure_cases": 41,
+    "run_directories_for_campaign_report_provider_case": 39,
+    "runs_per_selected_case_histogram": {
+      "1": 168,
+      "2": 16,
+      "3": 7,
+      "39": 1,
+      "4": 2
+    },
+    "suite_checkpoint_http_attempts_total": 6172,
+    "suite_checkpoint_http_attempts_unknown_upper_bound_total": 240,
+    "suite_checkpoint_reported_attempts_plus_unknown": 6412,
+    "suite_result_elapsed_seconds_max": 1945.064,
+    "suite_result_elapsed_seconds_mean": 427.3557371134021,
+    "suite_result_elapsed_seconds_median": 334.079,
+    "suite_result_elapsed_seconds_min": 27.686,
+    "suite_result_elapsed_seconds_p95_nearest_rank": 1029.117,
+    "suite_result_elapsed_seconds_sum": 82907.01300000005,
+    "sum_run_manifest_http_attempts_used": 4778,
+    "sum_selected_final_manifest_http_attempts_used": 3869,
+    "sum_selected_suite_result_http_attempts": 4319
+  },
+  "failure_taxonomy_all_recorded_failures": {
+    "invalid_action": 4,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  },
+  "failure_taxonomy_performance_eligible": {
+    "invalid_action": 2,
+    "overfit_visible_tests": 2,
+    "patch_invalid": 24,
+    "runtime_error": 3,
+    "source_invalid": 10,
+    "underfit": 20
+  }
+}

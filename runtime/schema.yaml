@@ -4,8 +4,10 @@ $comment: >-
   Structural schema for mission YAML. The runner validates this shape directly,
   then performs semantic checks for dependency references/cycles, artifact paths,
   unique outputs and resumable state. Artifact references are mission:<input_id>,
-  job:<job_id>:response, or a path relative to the mission YAML. Persisted job
-  statuses are queued, running, completed, failed, blocked, waiting_for_human.
+  job:<job_id>:response, or a path relative to the mission YAML. Runtime sites may
+  be browser-backed (arena), local deterministic role executors, or manual human
+  handoffs; manual model-response jobs remain waiting until immutable ingestion.
+  Persisted job statuses are queued, running, completed, failed, blocked, waiting_for_human.
 type: object
 additionalProperties: false
 required: [mission_id, jobs]

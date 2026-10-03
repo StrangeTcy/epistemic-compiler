@@ -34,7 +34,7 @@ EVENT_FILE = "events.jsonl"
 _ALLOWED_TRANSITIONS: dict[str, set[str]] = {
     "queued": {"running", "failed", "blocked", "waiting_for_human"},
     "running": {"completed", "failed", "blocked", "waiting_for_human"},
-    "waiting_for_human": {"queued"},
+    "waiting_for_human": {"queued", "completed"},
     "failed": {"queued"},
     "blocked": {"queued"},
     "completed": set(),
@@ -360,6 +360,25 @@ def _atomic_bytes(path: Path, data: bytes) -> None:
     os.replace(temp, path)
 
 
+
+def _write_once(path: Path, data: bytes) -> None:
+    """Create an artifact without ever replacing an earlier response."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        descriptor = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o644)
+    except FileExistsError as exc:
+        raise FileExistsError(f"immutable artifact already exists: {path}") from exc
+    try:
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(data)
+            stream.flush()
+            os.fsync(stream.fileno())
+    except Exception:
+        path.unlink(missing_ok=True)
+        raise
+
+
+
 def _append_event(run_dir: Path, event: dict[str, Any]) -> None:
     path = run_dir / EVENT_FILE
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -643,6 +662,12 @@ def _make_context(
             "stage",
             "model_selected",
             "attachments_verified",
+            "handoff_kind",
+            "handoff_json",
+            "prompt_to_paste",
+            "expected_response_artifact",
+            "post_id",
+            "next_stage",
         ):
             if key in updates:
                 job_state[key] = updates[key]
@@ -752,6 +777,12 @@ async def _execute_one(
             "stage",
             "model_selected",
             "attachments_verified",
+            "handoff_kind",
+            "handoff_json",
+            "prompt_to_paste",
+            "expected_response_artifact",
+            "post_id",
+            "next_stage",
         ):
             if key in interaction_updates:
                 job_state[key] = interaction_updates[key]
@@ -855,6 +886,167 @@ def _release_run_lock(lock_path: Path) -> None:
     lock_path.unlink(missing_ok=True)
 
 
+
+def ingest_human_response(
+    run_dir: str | Path,
+    job_id: str,
+    response_path: str | Path | bytes,
+    *,
+    model_label: str | None = None,
+) -> dict[str, Any]:
+    """Ingest one saved Battle response into its waiting job exactly once.
+
+    The human-provided file is copied byte-for-byte to the job's declared output
+    artifact. Neither that response nor its ingestion record can be overwritten.
+    The waiting job is then transitioned to completed so the ordinary DAG
+    scheduler can resume its dependents.
+    """
+    run_path = Path(run_dir).expanduser().resolve()
+    state_path = run_path / STATE_FILE
+    if not state_path.is_file():
+        raise FileNotFoundError(f"run state not found: {state_path}")
+    lock_path = _acquire_run_lock(run_path)
+    try:
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        if job_id not in state.get("jobs", {}):
+            raise MissionValidationError(f"unknown job in run: {job_id}")
+        job_state = state["jobs"][job_id]
+        if job_state.get("status") != "waiting_for_human":
+            raise MissionValidationError(
+                f"job {job_id!r} is {job_state.get('status')!r}, not waiting_for_human"
+            )
+        interaction = job_state.get("interaction", {})
+        if interaction.get("handoff_kind") != "model_response":
+            raise MissionValidationError(
+                f"job {job_id!r} is not waiting for a model response"
+            )
+        handoff_relative = interaction.get("handoff_json")
+        expected_output = job_state.get("output_artifact")
+        if not isinstance(handoff_relative, str) or not isinstance(expected_output, str):
+            raise MissionValidationError("handoff metadata is incomplete")
+        handoff_path = _safe_run_directory(Path(handoff_relative), run_path)
+        if not handoff_path.is_file():
+            raise FileNotFoundError(f"handoff record not found: {handoff_path}")
+        handoff = json.loads(handoff_path.read_text(encoding="utf-8"))
+        if handoff.get("job_id") != job_id:
+            raise MissionValidationError("handoff job_id does not match run state")
+        if handoff.get("expected_response_artifact") != expected_output:
+            raise MissionValidationError(
+                "handoff response artifact does not match run state"
+            )
+        prompt_relative = handoff.get("prompt_to_paste")
+        prompt_hash = handoff.get("prompt_sha256")
+        if not isinstance(prompt_relative, str) or not isinstance(prompt_hash, str):
+            raise MissionValidationError("handoff prompt metadata is incomplete")
+        prompt_path = _safe_run_directory(Path(prompt_relative), run_path)
+        if not prompt_path.is_file() or sha256_file(prompt_path) != prompt_hash:
+            raise MissionValidationError("saved handoff prompt is missing or changed")
+
+        if isinstance(response_path, bytes):
+            source_label = "<stdin>"
+            response_bytes = response_path
+        else:
+            source = Path(response_path).expanduser().resolve()
+            if not source.is_file():
+                raise FileNotFoundError(f"response file not found: {source}")
+            source_label = str(source)
+            response_bytes = source.read_bytes()
+        if not response_bytes or len(response_bytes) > 20 * 1024 * 1024:
+            raise MissionValidationError(
+                "response must be non-empty and no larger than 20 MiB"
+            )
+        try:
+            response_text = response_bytes.decode("utf-8")
+        except UnicodeDecodeError as exc:
+            raise MissionValidationError("response must be UTF-8 text") from exc
+        if not response_text.strip():
+            raise MissionValidationError("response must contain non-whitespace text")
+
+        output_path = _safe_run_directory(Path(expected_output), run_path)
+        job_dir = output_path.parent
+        ingest_path = job_dir / "human_ingestion.json"
+        if output_path.exists() or ingest_path.exists():
+            raise MissionValidationError(
+                "response artifact already exists; human responses are immutable"
+            )
+        response_hash = sha256_bytes(response_bytes)
+        ingested_at = utc_now()
+        ingestion = {
+            "schema_version": 1,
+            "ingested_at": ingested_at,
+            "method": "post_workflow_cli",
+            "run_id": state.get("run_id"),
+            "mission_id": state.get("mission_id"),
+            "job_id": job_id,
+            "role": job_state.get("role"),
+            "post_id": interaction.get("post_id"),
+            "source_path": source_label,
+            "source_sha256": response_hash,
+            "response_artifact": expected_output,
+            "response_sha256": response_hash,
+            "prompt_to_paste": prompt_relative,
+            "prompt_sha256": prompt_hash,
+            "model_label": (model_label or "").strip() or None,
+            "input_artifacts": job_state.get("input_records", []),
+            "expanded_source_inputs": handoff.get("expanded_source_inputs", []),
+        }
+        _write_once(output_path, response_bytes)
+        _write_once(
+            ingest_path,
+            (json.dumps(ingestion, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8"),
+        )
+
+        provenance_path = job_dir / "provenance.json"
+        provenance = (
+            json.loads(provenance_path.read_text(encoding="utf-8"))
+            if provenance_path.is_file()
+            else {}
+        )
+        provenance.update(
+            {
+                "status": "completed",
+                "ended_at": ingested_at,
+                "response_sha256": response_hash,
+                "response_origin": {
+                    "type": "human_ingested_external_model_response",
+                    "model_label": ingestion["model_label"],
+                    "ingestion_record": str(ingest_path.relative_to(run_path)),
+                },
+                "human_ingestion": ingestion,
+            }
+        )
+        _atomic_json(provenance_path, provenance)
+        job_state.update(
+            {
+                "response_sha256": response_hash,
+                "model_observed": ingestion["model_label"],
+                "human_ingestion": str(ingest_path.relative_to(run_path)),
+            }
+        )
+        job_state.pop("error", None)
+        _transition(
+            run_path,
+            state,
+            job_id,
+            "completed",
+            reason=f"human response ingested; sha256={response_hash}",
+        )
+        state["run_status"] = _summary(state)
+        _persist_state(run_path, state)
+        return {
+            "run_dir": str(run_path),
+            "run_id": state.get("run_id"),
+            "job_id": job_id,
+            "response_artifact": str(output_path),
+            "response_sha256": response_hash,
+            "human_ingestion": ingestion,
+            "run_status": state["run_status"],
+        }
+    finally:
+        _release_run_lock(lock_path)
+
+
+
 def _prepare_run(
     spec: MissionSpec, resume_dir: Path | None
 ) -> tuple[Path, dict[str, Any]]:
@@ -941,7 +1133,9 @@ def _reset_for_resume(
             )
             continue
         if status == "waiting_for_human":
-            if resume_waiting_for_human:
+            handoff_kind = job_state.get("interaction", {}).get("handoff_kind")
+            # A saved model-response handoff awaits human input; never resubmit it.
+            if resume_waiting_for_human and handoff_kind != "model_response":
                 _transition(
                     run_dir,
                     state,

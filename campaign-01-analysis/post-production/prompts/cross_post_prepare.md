@@ -1,0 +1,1 @@
+Local compiler stage: combine the five individually validated public articles, the five relevant finding/evidence dossiers, house-style rules, and actual style-reference excerpts once. Preserve all input snapshots and hashes. Do not revise posts or publish files.

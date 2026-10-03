@@ -1,0 +1,3 @@
+# Targeted cross-post revision — {{POST_ID}}
+
+The series reviewer requested the attached, limited correction. The full validated five-post series, source/evidence packet for this post, and current article are attached. Revise only the target article enough to resolve the stated cross-post conflict/repetition; retain its distinct conceptual role, strong material, Jekyll conventions, citations, and all evidence limits. Do not rewrite other posts, add unsupported results, or leak internal IDs. Return only the complete target article as valid Jekyll Markdown. It will be run through the local validator again.

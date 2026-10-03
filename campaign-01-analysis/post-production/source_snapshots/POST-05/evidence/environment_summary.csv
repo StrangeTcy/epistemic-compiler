@@ -1,0 +1,7 @@
+environment,recorded_cases,performance_eligible_cases,passes_performance_set,fails_performance_set,pass_rate_performance_set,provider_failure_exclusions,recorded_behavioral_reference,recorded_compile_only,behavioral_reference_n,behavioral_reference_passes,behavioral_reference_fails,compile_only_n,compile_only_passes,compile_only_fails
+ci_dependency_graph,5,5,5,0,1.0,0,5,0,5,5,0,0,0,0
+css_state_machine,5,5,3,2,0.6,0,5,0,5,3,2,0,0,0
+regex_state_machine,5,5,3,2,0.6,0,5,0,5,3,2,0,0,0
+spreadsheet_dataflow,5,5,5,0,1.0,0,5,0,5,5,0,0,0,0
+sql_fixed_point,5,5,4,1,0.8,0,5,0,5,4,1,0,0,0
+template_interpreter,5,5,5,0,1.0,0,5,0,5,5,0,0,0,0

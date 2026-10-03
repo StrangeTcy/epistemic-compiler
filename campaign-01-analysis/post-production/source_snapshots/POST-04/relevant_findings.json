@@ -1,0 +1,678 @@
+{
+  "battle_dossier_finding_ids": [
+    "F-02",
+    "F-03",
+    "F-04",
+    "F-05",
+    "F-09",
+    "F-12",
+    "F-13",
+    "F-16",
+    "F-17"
+  ],
+  "claim_ids": [
+    "POST-04-C01",
+    "POST-04-C02",
+    "POST-04-C03",
+    "POST-04-C04",
+    "POST-04-C05",
+    "POST-04-C06",
+    "POST-04-C07",
+    "POST-04-C08",
+    "POST-04-C09"
+  ],
+  "existing_battle_dossier": {
+    "findings": [
+      {
+        "alternatives": [
+          "The 218 total is the union of scored IDs and the two report omission lists, not an independently executed 218-row result table."
+        ],
+        "claim": "The campaign report records 194 scored selected cases and 24 separate pre-scoring omissions; the case manifest and result checkpoint contain the same 194 case IDs.",
+        "confidence": "HIGH.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/audit.json#/campaign",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "campaign-01-analysis/evidence/generated/campaign_exclusions.csv",
+          "archive root: campaign_report.json#/campaign_omissions",
+          "archive root: campaign_report.json#/known_gate_blocked_omissions",
+          "archive root: pilot_manifest.json",
+          "archive root: suite_checkpoint.json"
+        ],
+        "falsifiers": [
+          "A duplicate or overlap between the two omission lists and the scored manifest.",
+          "A mismatch between the case IDs in pilot_manifest.json and suite_checkpoint.json."
+        ],
+        "follow_up_requirements": [
+          "Make the planned, selected, omitted, and scored case sets separate first-class machine-readable records.",
+          "Report exclusion reason, disposition, and provider calls for every omitted case."
+        ],
+        "id": "F-02",
+        "limitations": [
+          "The 7 gate-blocked and 17 unsupported cases have no model score and must not be counted as failures or passes.",
+          "A complete unfiltered planned-design file is not required to reproduce this report-level union."
+        ],
+        "novelty": "No scientific novelty claim; records coverage and exclusion scope.",
+        "quantitative_result": "194/194 selected results have status scored across 33 environments; 17 rope cases are omitted for unsupported provider input modality and 7 cases are omitted before provider access for known calibration failures; 218 case IDs are recorded as scored or explicitly omitted.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "The campaign may define an outage episode more narrowly than any individual provider-transient error, in which case 131/193 matches its one named outage but leaves the second terminal provider-coded result mixed into FAIL.",
+          "The sheaf transient could be treated as an inconclusive infrastructure/model interaction rather than a scoreable model failure."
+        ],
+        "claim": "Two final selected results, not just the one named in the campaign-level outage counter, explicitly attribute their terminal failure to provider transients after bounded retries.",
+        "confidence": "HIGH that both final notes exist; MEDIUM that every terminal provider-coded row should be excluded from model-performance analysis, because the official campaign counter tracks only one episode.",
+        "evidence_artifacts": [
+          "archive root: campaign_report.json#/provider_outage",
+          "archive root: suite_checkpoint.json#/results",
+          "archive: episodes/sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0/*/final.json",
+          "archive: episodes/ts_trajectory__witness_status=broken_representation=reflective__seed-0/*/final.json",
+          "archive: matching selected-run api_errors.jsonl members",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv"
+        ],
+        "falsifiers": [
+          "The exact phrase is absent from one of the two final.json files or is attached to a different case/run.",
+          "A verified terminal model submission for the sheaf row shows that the provider note was not causal to its final failure."
+        ],
+        "follow_up_requirements": [
+          "Separate provider/network termination from invalid model action in the result schema.",
+          "Have campaign_report aggregate every final result note and provide per-case outage/retry scope.",
+          "Preserve raw and sensitivity denominators in any post."
+        ],
+        "id": "F-03",
+        "limitations": [
+          "The raw row remains scored and its raw failure label is retained; the 192 denominator is an explicit analysis exclusion, not a rewritten campaign report.",
+          "API error events also include transient retries that recovered; only final-result terminal notes define these two exclusions."
+        ],
+        "novelty": "A case-level reporting inconsistency in this archive; not a general provider-reliability result.",
+        "quantitative_result": "Raw checkpoint: 131 PASS / 63 FAIL among 194. Removing only report-listed ts_trajectory gives 131/193 PASS and 62 FAIL. Removing both final-note provider cases gives 131/192 PASS and 61 FAIL.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "Per-instance calibration records may provide useful evidence about specific validators even where a row is labelled compile_only; the archive's group-level disclaimer still applies.",
+          "Behavioral_reference should not be equated with an independent external oracle; the instance preflight can share judge code paths."
+        ],
+        "claim": "The campaign contains two materially different scoring-guarantee groups, and the report excludes compile-only results from a validated aggregate.",
+        "confidence": "HIGH for the labels, counts, and report disclaimer.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/audit.json#/campaign/mode_summary",
+          "campaign-01-analysis/evidence/generated/environment_summary.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "archive root: campaign_report.json#/aggregate_note",
+          "archive root: campaign_report.json#/compile_only_disclaimer",
+          "archive root: instance_oracles.json",
+          "archive root: oracle_preflight.json"
+        ],
+        "falsifiers": [
+          "A re-read of campaign_report.json or the per-case guarantee fields yields different counts or no compile-only disclaimer."
+        ],
+        "follow_up_requirements": [
+          "Always publish per-mode counts and a calibration/preflight description.",
+          "Use explicit labels for judge family, exact-instance reference availability, and independent validation status."
+        ],
+        "id": "F-04",
+        "limitations": [
+          "Only epistemic_games has an environment-level public_bayes_oracle behavioral self-test recorded as executed/passed.",
+          "The exact-instance per-case calibration and environment-level oracle preflight are separate mechanisms."
+        ],
+        "novelty": "No novelty claim; this is an interpretation constraint on campaign totals.",
+        "quantitative_result": "Raw: 72 behavioral_reference rows with 56 PASS/16 FAIL; 122 compile_only rows with 75 PASS/47 FAIL. After excluding both provider-coded terminal rows, compile_only is 120 rows with 75 PASS/45 FAIL; behavioral_reference remains 72 with 56/16.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "The track could denote campaign ordering or execution infrastructure rather than scientific task family. No archive field documents such a dual meaning."
+        ],
+        "claim": "The archive assigns all seven epistemic_games cases to the recorded ml_debugging track, although the inspected task core implements symbolic Bayesian inference.",
+        "confidence": "HIGH for recorded label; HIGH that task semantics are symbolic Bayesian inference in the comparator; MEDIUM for whether the recorded grouping was intentionally multi-purpose.",
+        "evidence_artifacts": [
+          "archive root: suite_checkpoint.json#/results/<epistemic_games_case>/track",
+          "campaign-01-analysis/evidence/generated/track_summary.csv",
+          "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "source comparator: envs/epistemic_games/files/core.py:18-34"
+        ],
+        "falsifiers": [
+          "Campaign documentation showing that `ml_debugging` intentionally includes epistemic_games as a stable cross-family grouping.",
+          "A different archived environment implementation for epistemic_games."
+        ],
+        "follow_up_requirements": [
+          "Validate environment-to-track mappings against task metadata before aggregation.",
+          "Store conceptual family separately from execution track."
+        ],
+        "id": "F-05",
+        "limitations": [
+          "The analysis_family override is an explicit editorial regrouping; the raw track is preserved unchanged.",
+          "A dirty source tree limits claims about the exact executed task code."
+        ],
+        "novelty": "A data-labeling correction in this campaign, not a model result.",
+        "quantitative_result": "Recorded track summary: ml_debugging 37 cases, 16 PASS/21 FAIL. Source-semantic regrouping: 30 ML-debugging cases, 9 PASS/21 FAIL; epistemic_games separate at 7/7 PASS.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "Some patch or source-validation errors may be partly induced by the action interface, patch validator, or task constraints rather than the underlying task concept.",
+          "An empty final patch may follow model termination, tool failure, or an unobserved serialization issue; the final artifact alone does not isolate cause."
+        ],
+        "claim": "The scalar PASS/FAIL and failure-mode labels conceal materially different terminal events, including empty patches, source-validation failures, runtime failures, malformed actions, provider transients, and missing required companion files.",
+        "confidence": "HIGH for terminal notes/metrics and counts; MEDIUM for mapping those terminal labels to latent reasoning failures.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv",
+          "campaign-01-analysis/evidence/generated/case_results.csv",
+          "archive: episodes/<case>/<selected_run>/final.json",
+          "archive: episodes/<case>/<selected_run>/submission.patch",
+          "archive: episodes/<case>/<selected_run>/trace.jsonl"
+        ],
+        "falsifiers": [
+          "Reinspection of the linked final patches or judge metrics contradicts the empty-patch/missing-file classifications.",
+          "A separately validated adjudication reclassifies the failure modes with independent evidence."
+        ],
+        "follow_up_requirements": [
+          "Separate submission/patch, source-validation, action-protocol, infrastructure, runtime, and behavioral-test failure states.",
+          "Audit taxonomy labels against judge notes before publishing them.",
+          "Report score, trusted score, failed checks, and raw patch hash for each failure class."
+        ],
+        "id": "F-09",
+        "limitations": [
+          "`failure_mode` is a campaign/judge label; it is not a validated taxonomy of cognitive mechanisms.",
+          "The `overfit_visible_tests` label does not match the recorded notes in two cases."
+        ],
+        "novelty": "Failure-layer separation is a useful reporting correction, not a novel theory of model failure.",
+        "quantitative_result": "Among 192 eligible cases, 61 fails: 24 patch_invalid (all empty patches), 20 underfit, 10 source_invalid, 3 runtime_error, 2 invalid_action, and 2 overfit_visible_tests. The latter two are labeled overfit but have trusted_score=1.0 and missing required-file notes. Two provider-coded final rows are outside this taxonomy denominator.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "The track may be an administrative grouping rather than a coherent task family.",
+          "The compile-only BatchNorm results are not directly comparable to the reference-labeled Glyph/MoCo results."
+        ],
+        "claim": "After removing the epistemic_games track-label anomaly, the three selected ML-debugging environments show 9/30 PASS, with highly uneven task outcomes.",
+        "confidence": "HIGH for per-environment result counts and notes; MEDIUM for using the three tasks as a coherent ML-debugging construct.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+          "campaign-01-analysis/evidence/generated/environment_summary.csv",
+          "campaign-01-analysis/evidence/generated/failure_details.csv",
+          "archive: episodes/<batchnorm_or_glyph_or_moco_case>/<selected_run>/final.json"
+        ],
+        "falsifiers": [
+          "A documented track schema assigns epistemic_games intentionally to this group or identifies additional debugging environments omitted from the source-semantic grouping."
+        ],
+        "follow_up_requirements": [
+          "Repair family mappings and compare judge modes separately.",
+          "Audit required-file and visible-test coverage before assigning overfit labels."
+        ],
+        "id": "F-12",
+        "limitations": [
+          "Only three environment families are grouped here; one has compile-only judgments.",
+          "One seed and one selected response per case; no general ML-debugging inference."
+        ],
+        "novelty": "No general ML-debugging capability claim.",
+        "quantitative_result": "batchnorm_ema 0/11 (compile_only), glyph 0/8 (behavioral_reference), moco 9/11 (behavioral_reference); the two MoCo/BatchNorm rows labeled overfit_visible_tests have notes about missing required companion files.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "Different counters may intentionally count distinct layers, retries, successes, or checkpoint scopes.",
+          "A provider may populate reasoning usage fields independently of the request's reasoning_enabled setting."
+        ],
+        "claim": "The archive contains incompatible retry counters and a reasoning-mode metadata discrepancy; usage or retry totals should not be collapsed into a single canonical value.",
+        "confidence": "HIGH that the archived counters/fields disagree; LOW about the underlying cause.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/audit.json#/execution_and_usage",
+          "campaign-01-analysis/evidence/generated/run_attempts.csv",
+          "campaign-01-analysis/evidence/generated/trace_index.csv",
+          "archive root: coverage.json#/run",
+          "archive root: campaign_progress.json",
+          "archive: episodes/<run>/manifest.json, model_responses.jsonl, api_errors.jsonl"
+        ],
+        "falsifiers": [
+          "A documented counter contract reconciles all totals without missing/duplicate events.",
+          "A canonical run manifest explains why reasoning fields appear when the setting is false."
+        ],
+        "follow_up_requirements": [
+          "Define request, HTTP-attempt, retry, response, and turn counters separately.",
+          "Persist exact request configuration and provider response metadata with consistency checks.",
+          "Keep raw logs and do not copy hidden reasoning text into public artifacts."
+        ],
+        "id": "F-13",
+        "limitations": [
+          "No spend/cost field exists in the exported archive.",
+          "No reasoning content is copied or interpreted; presence counts are metadata only."
+        ],
+        "novelty": "A provenance/telemetry discrepancy in this archive, not a cognitive finding.",
+        "quantitative_result": "All 268 runs: 4,061 successful responses, 4,023 summed run/turn IDs, 9,447,242 successful-response tokens. `reasoning_enabled=false` coexists with 325,785 reported reasoning tokens and 2,710 rows containing a reasoning_content field. Retry counts range by source/scope from 3,869 selected final-manifest attempts to 6,412 progress-reported attempts.",
+        "status": "OBSERVED"
+      },
+      {
+        "alternatives": [
+          "A future benchmark calibration could establish a common latent trait or comparable judge behavior, but none is present in this archive."
+        ],
+        "claim": "The most defensible synthesis is a descriptive map of task-specific result and failure patterns, not a scalar measure of general reasoning capability.",
+        "confidence": "HIGH as a reporting recommendation; MEDIUM as a theoretical interpretation.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+          "campaign-01-analysis/evidence/generated/environment_summary.csv",
+          "campaign-01-analysis/evidence/generated/axis_summary.csv",
+          "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+          "campaign-01-analysis/evidence/source_implementation_audit.md"
+        ],
+        "falsifiers": [
+          "A replicated, calibrated multi-task study demonstrates measurement invariance and a reliable common latent score across judge modes."
+        ],
+        "follow_up_requirements": [
+          "Validate judges independently, define common scoring semantics, and estimate repeatability before comparing family-level capability."
+        ],
+        "id": "F-16",
+        "limitations": [
+          "The archive measures one model/provider/configuration, with one seed per selected instance and mixed grading modes.",
+          "The same model may have different sampling variance across environments and retries."
+        ],
+        "novelty": "No general capability or latent-trait claim.",
+        "quantitative_result": "Family counts range from 2/8 eligible PASS in trajectory synthesis to 31/33 in recurrent depth, while judge guarantees, task sizes, no-op axes, and failure modes vary; no common score calibration is demonstrated.",
+        "status": "INFERRED"
+      },
+      {
+        "alternatives": [
+          "The exact combination of this generator, model, tasks, and archive may be under-studied; the current search did not establish global precedence or uniqueness."
+        ],
+        "claim": "The cited prior work already covers broad multi-scenario/multi-metric evaluation, variable perturbation, controlled epistemic-logic tasks, recursive ToM/deception, causal-template ToM generation, and test-coverage limits in code-agent evaluation.",
+        "confidence": "HIGH for the cited paper abstracts/metadata and the narrow precedent summaries; LOW for any exhaustive novelty conclusion.",
+        "evidence_artifacts": [
+          "campaign-01-analysis/sources/references.md",
+          "HELM: https://arxiv.org/abs/2211.09110",
+          "VarBench: https://aclanthology.org/2024.findings-emnlp.946/",
+          "MindGames: https://aclanthology.org/2023.findings-emnlp.303/",
+          "Hi-ToM: https://aclanthology.org/2023.findings-emnlp.717/",
+          "BigToM: https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and_Benchmarks.pdf",
+          "SWE-bench study: https://dl.acm.org/doi/10.1145/3744916.3764576"
+        ],
+        "falsifiers": [
+          "A broader, reproducible literature review finds no prior work covering a specific narrowly worded contribution."
+        ],
+        "follow_up_requirements": [
+          "If making a novelty claim, conduct a systematic related-work search and define the comparison set, task scope, and method precisely."
+        ],
+        "id": "F-17",
+        "limitations": [
+          "This is a targeted prior-work check, not a systematic literature review.",
+          "External prior-work findings do not directly establish correctness or error in the current archive."
+        ],
+        "novelty": "No broad novelty claim survives; only a cohort-specific empirical audit may be distinctive.",
+        "quantitative_result": "HELM reports 42 scenarios and multiple metrics; VarBench applies dynamic variable perturbation and five seeds for variable-based experiments; MindGames uses dynamic epistemic logic; Hi-ToM studies higher-order recursive beliefs/deception; BigToM uses causal templates; the SWE-bench empirical study reports 7.8% of plausible patches counted correct failing the full developer test suite in its studied setting.",
+        "status": "OBSERVED"
+      }
+    ],
+    "schema_version": 1
+  },
+  "finding_id_reconciliation": {
+    "battle_dossier_not_in_trace_rows": [
+      "F-12"
+    ],
+    "trace_rows_not_in_battle_dossier": [
+      "F-01",
+      "F-15"
+    ]
+  },
+  "findings": [
+    {
+      "alternatives": [
+        "A different archive or a corrupted local copy could produce a misleading inventory if its hash were not verified.",
+        "A dirty working tree could have changed task/judge files without changing the selected config hashes."
+      ],
+      "claim": "The selected archive is a completed paid Atria-Dawn-Preview campaign tied to source commit d7357092493f311f649a0742889b301d796911b5; the archive records the campaign repository as dirty.",
+      "confidence": "HIGH for archive identity, config-hash comparison, and recorded dirty flag; MEDIUM for source-snapshot association because the comparator is outside the ZIP.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/audit.json#/archive",
+        "campaign-01-analysis/evidence/generated/config_hash_audit.csv",
+        "campaign-01-analysis/evidence/generated/archive_inventory.csv",
+        "archive root: campaign_ref.txt",
+        "archive root: pilot_manifest.json",
+        "archive root: campaign_intent.json"
+      ],
+      "falsifiers": [
+        "Re-hashing the designated origin/main ZIP yields a different SHA-256 or blob identity.",
+        "Recomputing any one of the 33 selected config hashes against the named clean source commit yields a mismatch."
+      ],
+      "follow_up_requirements": [
+        "Archive the exact dirty diff or hash a complete rendered source bundle per case in any future run.",
+        "Keep the source comparator revision and hash table alongside the campaign artifact."
+      ],
+      "id": "F-01",
+      "limitations": [
+        "Config equality is not byte-for-byte proof that all task, visible-test, judge, or helper code used in paid runs matches the clean snapshot.",
+        "The config comparison source path is an external /tmp snapshot and is not bundled as source code."
+      ],
+      "novelty": "No scientific novelty claim; this is provenance and reproducibility groundwork.",
+      "quantitative_result": "ZIP SHA-256 e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd; 2,968 members; 33/33 selected config hashes match the clean comparator snapshot.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The 218 total is the union of scored IDs and the two report omission lists, not an independently executed 218-row result table."
+      ],
+      "claim": "The campaign report records 194 scored selected cases and 24 separate pre-scoring omissions; the case manifest and result checkpoint contain the same 194 case IDs.",
+      "confidence": "HIGH.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/audit.json#/campaign",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "campaign-01-analysis/evidence/generated/campaign_exclusions.csv",
+        "archive root: campaign_report.json#/campaign_omissions",
+        "archive root: campaign_report.json#/known_gate_blocked_omissions",
+        "archive root: pilot_manifest.json",
+        "archive root: suite_checkpoint.json"
+      ],
+      "falsifiers": [
+        "A duplicate or overlap between the two omission lists and the scored manifest.",
+        "A mismatch between the case IDs in pilot_manifest.json and suite_checkpoint.json."
+      ],
+      "follow_up_requirements": [
+        "Make the planned, selected, omitted, and scored case sets separate first-class machine-readable records.",
+        "Report exclusion reason, disposition, and provider calls for every omitted case."
+      ],
+      "id": "F-02",
+      "limitations": [
+        "The 7 gate-blocked and 17 unsupported cases have no model score and must not be counted as failures or passes.",
+        "A complete unfiltered planned-design file is not required to reproduce this report-level union."
+      ],
+      "novelty": "No scientific novelty claim; records coverage and exclusion scope.",
+      "quantitative_result": "194/194 selected results have status scored across 33 environments; 17 rope cases are omitted for unsupported provider input modality and 7 cases are omitted before provider access for known calibration failures; 218 case IDs are recorded as scored or explicitly omitted.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The campaign may define an outage episode more narrowly than any individual provider-transient error, in which case 131/193 matches its one named outage but leaves the second terminal provider-coded result mixed into FAIL.",
+        "The sheaf transient could be treated as an inconclusive infrastructure/model interaction rather than a scoreable model failure."
+      ],
+      "claim": "Two final selected results, not just the one named in the campaign-level outage counter, explicitly attribute their terminal failure to provider transients after bounded retries.",
+      "confidence": "HIGH that both final notes exist; MEDIUM that every terminal provider-coded row should be excluded from model-performance analysis, because the official campaign counter tracks only one episode.",
+      "evidence_artifacts": [
+        "archive root: campaign_report.json#/provider_outage",
+        "archive root: suite_checkpoint.json#/results",
+        "archive: episodes/sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0/*/final.json",
+        "archive: episodes/ts_trajectory__witness_status=broken_representation=reflective__seed-0/*/final.json",
+        "archive: matching selected-run api_errors.jsonl members",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv"
+      ],
+      "falsifiers": [
+        "The exact phrase is absent from one of the two final.json files or is attached to a different case/run.",
+        "A verified terminal model submission for the sheaf row shows that the provider note was not causal to its final failure."
+      ],
+      "follow_up_requirements": [
+        "Separate provider/network termination from invalid model action in the result schema.",
+        "Have campaign_report aggregate every final result note and provide per-case outage/retry scope.",
+        "Preserve raw and sensitivity denominators in any post."
+      ],
+      "id": "F-03",
+      "limitations": [
+        "The raw row remains scored and its raw failure label is retained; the 192 denominator is an explicit analysis exclusion, not a rewritten campaign report.",
+        "API error events also include transient retries that recovered; only final-result terminal notes define these two exclusions."
+      ],
+      "novelty": "A case-level reporting inconsistency in this archive; not a general provider-reliability result.",
+      "quantitative_result": "Raw checkpoint: 131 PASS / 63 FAIL among 194. Removing only report-listed ts_trajectory gives 131/193 PASS and 62 FAIL. Removing both final-note provider cases gives 131/192 PASS and 61 FAIL.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Per-instance calibration records may provide useful evidence about specific validators even where a row is labelled compile_only; the archive's group-level disclaimer still applies.",
+        "Behavioral_reference should not be equated with an independent external oracle; the instance preflight can share judge code paths."
+      ],
+      "claim": "The campaign contains two materially different scoring-guarantee groups, and the report excludes compile-only results from a validated aggregate.",
+      "confidence": "HIGH for the labels, counts, and report disclaimer.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/audit.json#/campaign/mode_summary",
+        "campaign-01-analysis/evidence/generated/environment_summary.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "archive root: campaign_report.json#/aggregate_note",
+        "archive root: campaign_report.json#/compile_only_disclaimer",
+        "archive root: instance_oracles.json",
+        "archive root: oracle_preflight.json"
+      ],
+      "falsifiers": [
+        "A re-read of campaign_report.json or the per-case guarantee fields yields different counts or no compile-only disclaimer."
+      ],
+      "follow_up_requirements": [
+        "Always publish per-mode counts and a calibration/preflight description.",
+        "Use explicit labels for judge family, exact-instance reference availability, and independent validation status."
+      ],
+      "id": "F-04",
+      "limitations": [
+        "Only epistemic_games has an environment-level public_bayes_oracle behavioral self-test recorded as executed/passed.",
+        "The exact-instance per-case calibration and environment-level oracle preflight are separate mechanisms."
+      ],
+      "novelty": "No novelty claim; this is an interpretation constraint on campaign totals.",
+      "quantitative_result": "Raw: 72 behavioral_reference rows with 56 PASS/16 FAIL; 122 compile_only rows with 75 PASS/47 FAIL. After excluding both provider-coded terminal rows, compile_only is 120 rows with 75 PASS/45 FAIL; behavioral_reference remains 72 with 56/16.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The track could denote campaign ordering or execution infrastructure rather than scientific task family. No archive field documents such a dual meaning."
+      ],
+      "claim": "The archive assigns all seven epistemic_games cases to the recorded ml_debugging track, although the inspected task core implements symbolic Bayesian inference.",
+      "confidence": "HIGH for recorded label; HIGH that task semantics are symbolic Bayesian inference in the comparator; MEDIUM for whether the recorded grouping was intentionally multi-purpose.",
+      "evidence_artifacts": [
+        "archive root: suite_checkpoint.json#/results/<epistemic_games_case>/track",
+        "campaign-01-analysis/evidence/generated/track_summary.csv",
+        "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "source comparator: envs/epistemic_games/files/core.py:18-34"
+      ],
+      "falsifiers": [
+        "Campaign documentation showing that `ml_debugging` intentionally includes epistemic_games as a stable cross-family grouping.",
+        "A different archived environment implementation for epistemic_games."
+      ],
+      "follow_up_requirements": [
+        "Validate environment-to-track mappings against task metadata before aggregation.",
+        "Store conceptual family separately from execution track."
+      ],
+      "id": "F-05",
+      "limitations": [
+        "The analysis_family override is an explicit editorial regrouping; the raw track is preserved unchanged.",
+        "A dirty source tree limits claims about the exact executed task code."
+      ],
+      "novelty": "A data-labeling correction in this campaign, not a model result.",
+      "quantitative_result": "Recorded track summary: ml_debugging 37 cases, 16 PASS/21 FAIL. Source-semantic regrouping: 30 ML-debugging cases, 9 PASS/21 FAIL; epistemic_games separate at 7/7 PASS.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Some patch or source-validation errors may be partly induced by the action interface, patch validator, or task constraints rather than the underlying task concept.",
+        "An empty final patch may follow model termination, tool failure, or an unobserved serialization issue; the final artifact alone does not isolate cause."
+      ],
+      "claim": "The scalar PASS/FAIL and failure-mode labels conceal materially different terminal events, including empty patches, source-validation failures, runtime failures, malformed actions, provider transients, and missing required companion files.",
+      "confidence": "HIGH for terminal notes/metrics and counts; MEDIUM for mapping those terminal labels to latent reasoning failures.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "campaign-01-analysis/evidence/generated/case_results.csv",
+        "archive: episodes/<case>/<selected_run>/final.json",
+        "archive: episodes/<case>/<selected_run>/submission.patch",
+        "archive: episodes/<case>/<selected_run>/trace.jsonl"
+      ],
+      "falsifiers": [
+        "Reinspection of the linked final patches or judge metrics contradicts the empty-patch/missing-file classifications.",
+        "A separately validated adjudication reclassifies the failure modes with independent evidence."
+      ],
+      "follow_up_requirements": [
+        "Separate submission/patch, source-validation, action-protocol, infrastructure, runtime, and behavioral-test failure states.",
+        "Audit taxonomy labels against judge notes before publishing them.",
+        "Report score, trusted score, failed checks, and raw patch hash for each failure class."
+      ],
+      "id": "F-09",
+      "limitations": [
+        "`failure_mode` is a campaign/judge label; it is not a validated taxonomy of cognitive mechanisms.",
+        "The `overfit_visible_tests` label does not match the recorded notes in two cases."
+      ],
+      "novelty": "Failure-layer separation is a useful reporting correction, not a novel theory of model failure.",
+      "quantitative_result": "Among 192 eligible cases, 61 fails: 24 patch_invalid (all empty patches), 20 underfit, 10 source_invalid, 3 runtime_error, 2 invalid_action, and 2 overfit_visible_tests. The latter two are labeled overfit but have trusted_score=1.0 and missing required-file notes. Two provider-coded final rows are outside this taxonomy denominator.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The track may be an administrative grouping rather than a coherent task family.",
+        "The compile-only BatchNorm results are not directly comparable to the reference-labeled Glyph/MoCo results."
+      ],
+      "claim": "After removing the epistemic_games track-label anomaly, the three selected ML-debugging environments show 9/30 PASS, with highly uneven task outcomes.",
+      "confidence": "HIGH for per-environment result counts and notes; MEDIUM for using the three tasks as a coherent ML-debugging construct.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+        "campaign-01-analysis/evidence/generated/environment_summary.csv",
+        "campaign-01-analysis/evidence/generated/failure_details.csv",
+        "archive: episodes/<batchnorm_or_glyph_or_moco_case>/<selected_run>/final.json"
+      ],
+      "falsifiers": [
+        "A documented track schema assigns epistemic_games intentionally to this group or identifies additional debugging environments omitted from the source-semantic grouping."
+      ],
+      "follow_up_requirements": [
+        "Repair family mappings and compare judge modes separately.",
+        "Audit required-file and visible-test coverage before assigning overfit labels."
+      ],
+      "id": "F-12",
+      "limitations": [
+        "Only three environment families are grouped here; one has compile-only judgments.",
+        "One seed and one selected response per case; no general ML-debugging inference."
+      ],
+      "novelty": "No general ML-debugging capability claim.",
+      "quantitative_result": "batchnorm_ema 0/11 (compile_only), glyph 0/8 (behavioral_reference), moco 9/11 (behavioral_reference); the two MoCo/BatchNorm rows labeled overfit_visible_tests have notes about missing required companion files.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "Different counters may intentionally count distinct layers, retries, successes, or checkpoint scopes.",
+        "A provider may populate reasoning usage fields independently of the request's reasoning_enabled setting."
+      ],
+      "claim": "The archive contains incompatible retry counters and a reasoning-mode metadata discrepancy; usage or retry totals should not be collapsed into a single canonical value.",
+      "confidence": "HIGH that the archived counters/fields disagree; LOW about the underlying cause.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/audit.json#/execution_and_usage",
+        "campaign-01-analysis/evidence/generated/run_attempts.csv",
+        "campaign-01-analysis/evidence/generated/trace_index.csv",
+        "archive root: coverage.json#/run",
+        "archive root: campaign_progress.json",
+        "archive: episodes/<run>/manifest.json, model_responses.jsonl, api_errors.jsonl"
+      ],
+      "falsifiers": [
+        "A documented counter contract reconciles all totals without missing/duplicate events.",
+        "A canonical run manifest explains why reasoning fields appear when the setting is false."
+      ],
+      "follow_up_requirements": [
+        "Define request, HTTP-attempt, retry, response, and turn counters separately.",
+        "Persist exact request configuration and provider response metadata with consistency checks.",
+        "Keep raw logs and do not copy hidden reasoning text into public artifacts."
+      ],
+      "id": "F-13",
+      "limitations": [
+        "No spend/cost field exists in the exported archive.",
+        "No reasoning content is copied or interpreted; presence counts are metadata only."
+      ],
+      "novelty": "A provenance/telemetry discrepancy in this archive, not a cognitive finding.",
+      "quantitative_result": "All 268 runs: 4,061 successful responses, 4,023 summed run/turn IDs, 9,447,242 successful-response tokens. `reasoning_enabled=false` coexists with 325,785 reported reasoning tokens and 2,710 rows containing a reasoning_content field. Retry counts range by source/scope from 3,869 selected final-manifest attempts to 6,412 progress-reported attempts.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "The benchmark author may intend the judge as a deliberately narrow proxy rather than a full implementation of the prompt claim.",
+        "Visible tests/starter-code defaults can reveal some otherwise unstated expectations to the model."
+      ],
+      "claim": "The inspected source comparator contains task/judge mismatches that materially limit interpretation of category-family pass rates.",
+      "confidence": "HIGH for line-level source-comparator observations; MEDIUM for executed-run attribution due dirty source.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/source_implementation_audit.md#category-theoreticcompositional-track",
+        "source comparator: envs/cat_theo/compositional_optimizer/files/prompt.md:5-8 and files/judge.py:40-83",
+        "source comparator: envs/cat_theo/sheaf/sheaf_physical_constraints/files/prompt.md:5-11 and files/judge.py:45-100",
+        "source comparator: envs/cat_theo/categorical_lenses/files/prompt.md:5-14, files/judge.py:32-60, files/visible_tests.py:3-5"
+      ],
+      "falsifiers": [
+        "A recovered executed source snapshot changes the cited prompt, visible tests, or judge so the mismatch disappears.",
+        "A formal task specification makes the narrower judge criteria explicit and intended."
+      ],
+      "follow_up_requirements": [
+        "Align prompts, visible tests, judges, and reference implementations before score interpretation.",
+        "Test valid alternatives and adversarial counterexamples with an independent oracle."
+      ],
+      "id": "F-15",
+      "limitations": [
+        "These audit examples do not prove that every category task is under-specified.",
+        "The lens visible test partly anchors the first-coordinate convention even though the hidden judge does not assert it directly."
+      ],
+      "novelty": "No mathematical-theory novelty; this is task/judge contract QA.",
+      "quantitative_result": "Compositional optimizer prompt promises nested associativity/multiple steps while judge checks shape and one state-isolation chain; physical constraints judge enforces an unstated 5:3 ratio; categorical-lens hidden judge checks laws but does not itself assert coordinate-zero view, while the visible test does.",
+      "status": "OBSERVED"
+    },
+    {
+      "alternatives": [
+        "A future benchmark calibration could establish a common latent trait or comparable judge behavior, but none is present in this archive."
+      ],
+      "claim": "The most defensible synthesis is a descriptive map of task-specific result and failure patterns, not a scalar measure of general reasoning capability.",
+      "confidence": "HIGH as a reporting recommendation; MEDIUM as a theoretical interpretation.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+        "campaign-01-analysis/evidence/generated/environment_summary.csv",
+        "campaign-01-analysis/evidence/generated/axis_summary.csv",
+        "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+        "campaign-01-analysis/evidence/source_implementation_audit.md"
+      ],
+      "falsifiers": [
+        "A replicated, calibrated multi-task study demonstrates measurement invariance and a reliable common latent score across judge modes."
+      ],
+      "follow_up_requirements": [
+        "Validate judges independently, define common scoring semantics, and estimate repeatability before comparing family-level capability."
+      ],
+      "id": "F-16",
+      "limitations": [
+        "The archive measures one model/provider/configuration, with one seed per selected instance and mixed grading modes.",
+        "The same model may have different sampling variance across environments and retries."
+      ],
+      "novelty": "No general capability or latent-trait claim.",
+      "quantitative_result": "Family counts range from 2/8 eligible PASS in trajectory synthesis to 31/33 in recurrent depth, while judge guarantees, task sizes, no-op axes, and failure modes vary; no common score calibration is demonstrated.",
+      "status": "INFERRED"
+    },
+    {
+      "alternatives": [
+        "The exact combination of this generator, model, tasks, and archive may be under-studied; the current search did not establish global precedence or uniqueness."
+      ],
+      "claim": "The cited prior work already covers broad multi-scenario/multi-metric evaluation, variable perturbation, controlled epistemic-logic tasks, recursive ToM/deception, causal-template ToM generation, and test-coverage limits in code-agent evaluation.",
+      "confidence": "HIGH for the cited paper abstracts/metadata and the narrow precedent summaries; LOW for any exhaustive novelty conclusion.",
+      "evidence_artifacts": [
+        "campaign-01-analysis/sources/references.md",
+        "HELM: https://arxiv.org/abs/2211.09110",
+        "VarBench: https://aclanthology.org/2024.findings-emnlp.946/",
+        "MindGames: https://aclanthology.org/2023.findings-emnlp.303/",
+        "Hi-ToM: https://aclanthology.org/2023.findings-emnlp.717/",
+        "BigToM: https://proceedings.neurips.cc/paper_files/paper/2023/file/2b9efb085d3829a2aadffab63ba206de-Paper-Datasets_and_Benchmarks.pdf",
+        "SWE-bench study: https://dl.acm.org/doi/10.1145/3744916.3764576"
+      ],
+      "falsifiers": [
+        "A broader, reproducible literature review finds no prior work covering a specific narrowly worded contribution."
+      ],
+      "follow_up_requirements": [
+        "If making a novelty claim, conduct a systematic related-work search and define the comparison set, task scope, and method precisely."
+      ],
+      "id": "F-17",
+      "limitations": [
+        "This is a targeted prior-work check, not a systematic literature review.",
+        "External prior-work findings do not directly establish correctness or error in the current archive."
+      ],
+      "novelty": "No broad novelty claim survives; only a cohort-specific empirical audit may be distinctive.",
+      "quantitative_result": "HELM reports 42 scenarios and multiple metrics; VarBench applies dynamic variable perturbation and five seeds for variable-based experiments; MindGames uses dynamic epistemic logic; Hi-ToM studies higher-order recursive beliefs/deception; BigToM uses causal templates; the SWE-bench empirical study reports 7.8% of plausible patches counted correct failing the full developer test suite in its studied setting.",
+      "status": "OBSERVED"
+    }
+  ],
+  "post_id": "POST-04",
+  "schema_version": 1,
+  "trace_finding_ids": [
+    "F-01",
+    "F-02",
+    "F-03",
+    "F-04",
+    "F-05",
+    "F-09",
+    "F-13",
+    "F-15",
+    "F-16",
+    "F-17"
+  ]
+}
