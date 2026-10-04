@@ -1,5 +1,5 @@
 ---
-title: "Two Output Lengths, One Unanswered Question"
+title: "Thirty-Four Characters Out of Thirty-Two"
 date: 2026-10-03
 layout: post
 ---
@@ -8,83 +8,77 @@ layout: post
 
 <dl class="epistemic-status">
   <dt>Original ideas</dt>
-  <dd>The central reading is that a sharp local contrast can be useful without establishing its cause. It is an interpretation of saved results, not a new experiment.</dd>
+  <dd>A local contrast between regex results under different task labels, and a close look at what one run can and cannot tell us about it.</dd>
   <dt>Synthesis</dt>
-  <dd>This post reads the regex results alongside the other tasks in the same track, the available source comparison, and prior evaluation work.</dd>
+  <dd>Recorded outcomes from six code tasks, the checks used to grade them, and a comparison with a clean source snapshot.</dd>
   <dt>Prose</dt>
-  <dd>This essay organizes saved campaign results and source-comparison notes. No additional cases were run.</dd>
+  <dd>This essay organizes the saved sweep results and analysis. No additional cases were run.</dd>
   <dt>Certainty</dt>
-  <dd>High for the recorded outcomes and notes. Lower for claims about the exact code used in the campaign run, because the record says some working files had uncommitted changes. The saved results do not identify a cause for the two output-length mismatches.</dd>
+  <dd>High for the recorded outcomes and notes. Lower for details inferred from the clean source snapshot, because the campaign's working files were not all recorded as clean.</dd>
   <dt>Importance</dt>
-  <dd>A descriptive result from one model, one answer service, and one evaluation setup. Each selected task setting was run once, so this is a clue for a better experiment, not a general score.</dd>
+  <dd>A useful local example of how benchmark labels and task design affect interpretation; not a general model ranking or a measure of reasoning ability.</dd>
 </dl>
 
-In one saved code-repair campaign, two versions of a regular-expression task began with 32-character inputs and produced outputs of 34 and 66 characters. Both results are marked **FAIL**. Three other versions of the same task are marked **PASS**, including one with a 512-character input. That is a sharp contrast—and a small one.
+A small code task received a 32-character string. One submitted program returned a 34-character string; another returned a 66-character string. The evaluator marked both as failures because the output length did not match the input.
 
-The campaign’s results table has one row for each selected task setup. Here, a *case* means one combination of a task and its settings, not every retry or saved folder. The track discussed in this post contains 30 such cases across six task types. The campaign tested one model, Atria-Dawn-Preview, using one answer service and one set of evaluation settings. Each case used one seed: the randomization setting was 0, and the same setup was not run again. For cases that reach behavioral testing, a *judge* is the software that checks the submitted code against expected task behavior. These details matter because the table’s cases are different settings, not repeated tries at the same problem.
+The immediate story is tempting: perhaps the model handled the familiar-looking version and got confused when the task was dressed differently. These numbers come from a code-repair campaign: a model was given variations of small programming tasks, and a saved results table records the verdict and score for each selected setup. I will call that run-through the sweep. In it, the easy-surface version passed at three input lengths, while two versions with altered surface labels failed at the shortest one. The table gives me an unusual pattern, not its cause.
 
-The campaign groups these tasks under the label “weird machine.” I use that name only for the track: six small code-repair tasks built around unusual ways of describing or implementing a computation. The label does not show that a model recognized a general kind of machine. The regex task is the clearest place to see both what the saved results show and where they stop.
+The task belongs to a family described as “weird-machine” tests. Here that phrase is a name for code challenges where the wording or labels may not make the underlying operation obvious. “Surface” means those names and hints. The task's “hidden depth” setting changes input size; in the regex challenge, it is the length of a string. Neither label measures what the model understood. They describe how the test was configured.
 
-## The regex pattern is clear; its cause is not
+## Five settings, and a sharp contrast
 
-The task asks the model to implement an update of a cellular automaton: a line of binary cells, or zeros and ones, changes according to a rule about neighboring cells. The model had to express that update using regular expressions, or *regex*: text patterns that can find and replace parts of a string. The task’s judge checks that the solution uses regex instead of an explicit loop over the string, matches a known example, preserves output length, and agrees with expected results on a set of test strings. Passing means passing those specific checks, not that the program works for every possible input or for repeated updates. This one-step result is not evidence of Turing completeness—the formal ability to carry out any computation a general-purpose computer can perform.
+The regex task asks for a regular expression—a pattern for finding and transforming text—to perform one update of a simple cellular-automaton rule, which changes a line of cells according to a fixed pattern. The table shows five selected settings, each pairing a task label with an input length. “Score” is copied from the saved results; the checker note is the more direct explanation of the two failures.
 
-The saved results for the five selected regex cases are:
+| Surface label | Input length | Result | Recorded score | Checker note |
+|---|---:|---|---:|---|
+| easy | 32 | PASS | 1.0 | — |
+| easy | 128 | PASS | 1.0 | — |
+| easy | 512 | PASS | 1.0 | — |
+| medium | 32 | FAIL | 0.208333 | Length mismatch: input 32, output 34 |
+| hard | 32 | FAIL | 0.208333 | Length mismatch: input 32, output 66 |
 
-| Surface setting | Input length | Result | Saved judge note |
-|---|---:|---|---|
-| easy | 32 | PASS | No failure note recorded |
-| easy | 128 | PASS | No failure note recorded |
-| easy | 512 | PASS | No failure note recorded |
-| medium | 32 | FAIL | Length mismatch: 32 in, 34 out |
-| hard | 32 | FAIL | Length mismatch: 32 in, 66 out |
+A PASS means the submitted code satisfied this task's recorded checks. It does not certify every regular expression the model might write, or prove that it could repeat the update any number of times. In the clean source copy I inspected, the judge—a checker that compares a solution with task-specific expected behavior—looks for a regex-based solution rather than explicit character-by-character loops, a known example, preservation of string length, and exact output on a small set of prepared input strings. The judge's record is not a proof that every possible input was checked. This is a bounded test of one operation. It does not show Turing-complete computation—the ability to carry out arbitrary computations through repetition.
 
-“Surface setting” means the task’s label and framing—in this case, easy, medium, or hard—not the size of the input string. At first glance, the table invites a simple story: the model handled the longer inputs under the easy label, but stumbled on two altered labels at the shortest input length. The tempting conclusion is that the surface mattered more than size.
+The easy-surface row passed at lengths 32, 128, and 512. That is worth reporting, but there is one selected seed per setting: seed 0, the fixed value used to set the run's random choices. Each setting was run once; there are no repeats to show whether those passes would recur. An identical rerun could help reveal ordinary run-to-run variation, while more than one input at each size could show whether a result depends on a particular string. This archive contains neither comparison. Three checked examples do not establish that the approach is reliable for strings of any size. The two failures at length 32 do not tell us why their outputs grew.
 
-The table cannot establish that. Each setting has one run, so the three easy-label passes do not show that performance is stable at larger sizes. A new run could pass or fail. The two altered-label outcomes also do not show that the names, the instructions, or any particular feature of the task caused the errors. The notes tell us the output lengths did not match; they do not explain why.
+## What changed with the labels?
 
-There are two comparisons tucked into the table. Changes in input length appear only under the easy surface, while the medium and hard labels appear only at the shortest input. The missing combinations matter: we do not know how either altered version behaves at longer lengths. A pass on the longest easy case is not a direct comparison with a hard-label case at that same size. That unfilled part of the table is a question for another experiment, not a gap the current results can answer.
+At the shortest input length, the surface label changes from easy to medium or hard. In the clean source copy, those labels also select different class names. The hard version adds a comment about implementation performance. The comparison therefore does not change one isolated clue: the name changes, and in the hard case the instruction gains another hint.
 
-There is another complication in the task code. I inspected a clean copy of the source repository as a comparison. In that copy, the surface labels use different class names, and the hard version adds a performance hint to the prompt. The proposed “surface” change therefore bundles at least two things: a name change and an extra instruction. If those details also appeared in the paid run, either could matter; the saved results cannot isolate them.
+A name can matter without changing the computation. A familiar class name might suggest a code pattern; an unfamiliar one might not. But an additional performance hint changes the prompt itself. If the two altered versions fail, the archive cannot separate those possibilities from each other—or from ordinary run-to-run variation. There is only one run for each setting.
 
-The source record adds a limit to that comparison. It marks the campaign repository as “dirty,” meaning some working files had changes not represented by the recorded commit. All 33 selected configuration files match the clean comparison copy. That is useful, but it does not prove that the exact task text, starter code, tests, grading rules, and helper files used in the recorded run were identical. The class-name and hint observations are findings about the comparison copy, not proof of every file the model saw. Matching the setting files is like confirming the recipe’s settings, not every ingredient and tool used that day. The task text, starter code, checks, and helper code may still differ. Because the dirty changes are not preserved in the archive, the clean copy is a guide to the likely setup, not a verified reconstruction.
+One hypothesis is that a changed name, or the extra hard-level hint, mattered more in these two cases than the length of the input string. That is plausible, but not tested. It would be a mistake to turn the 34- and 66-character outputs into a story about what the model noticed or why it produced them. The saved notes tell me the output lengths, not the hidden steps that led to them.
 
-So I can report the pattern precisely: easy-label cases passed at the three selected lengths, and the medium- and hard-label cases failed at length 32 with the recorded output mismatches. I cannot turn that into “the model was fooled by the names,” “the hint caused the errors,” or “length did not matter.” The results are a reason to test those possibilities separately, not a result that settles them.
+I also need to be precise about the comparison copy. The campaign archive marks the source repository as dirty: some working files had changes not captured by the saved code version. All 33 selected task-configuration files match a clean source snapshot, but that does not prove that every prompt, task file, test, or checker used in the campaign was identical to the snapshot. When I describe the names and extra hint, I am describing the clean copy used for comparison—not a verified record of every file that ran.
 
-## Five failures stopped in different places
+## Five failures are not five behavioral mistakes
 
-All 30 cases in this track were assigned a judge designed to compare a repair with the task’s expected behavior. But a submitted program can be rejected before the judge gets to test that behavior. A *source check* is a preliminary check for issues such as invalid syntax or a disallowed import. If it rejects the code, the result tells us the submission did not get through that gate; it does not tell us whether the code would have behaved correctly.
+The sweep covers six small code tasks: the regex update; a CSS selector (CSS is used to style web pages) that checks whether a count of bits is even or odd; an SQL task (SQL is used to request information from databases) built as a fixed-point chain; a spreadsheet calculation; a dependency graph for a build-and-test workflow; and a small program that interprets template instructions. A fixed point is a result that stops changing when a rule is applied again; a spreadsheet dataflow task checks how values pass through cells; a dependency graph checks which build steps must come before others. These are different programs, not six versions of the same puzzle. There are five selected cases in each task, for 30 in total. All 30 were graded against task-specific expected behavior, rather than by a build-only check. Twenty-five passed and five failed.
 
-The five recorded failures break down this way. The partial CSS score means the submitted program was judged but fell short; the other two code-gate failures never reached a behavior check. That difference is not a technicality: a broken program file and a program that runs but gives a wrong answer are different evidence about what happened.
+That total mixes different programs and different checks. The five failures show why a PASS/FAIL column is not a diagnosis. Two are the regex length mismatches above. A CSS case received a partial score of 0.416667 at three bits. Another CSS case was rejected before its behavior was tested because the submitted code imported a library the source checker disallowed. The SQL task's middle chain-length case was also rejected before behavior was tested: its code had an unterminated triple-quoted string.
 
-| Task setting | Where it stopped | What the saved record says |
-|---|---|---|
-| Regex, medium label, input 32 | Behavior check | Output was 34 characters instead of 32 |
-| Regex, hard label, input 32 | Behavior check | Output was 66 characters instead of 32 |
-| CSS task, 3 bits | Behavior check | Partial score: 0.416667 |
-| CSS task, 4 bits | Before behavior check | A top-level Python `re` import was disallowed |
-| SQL task, chain length 12 | Before behavior check | A triple-quoted string was left unfinished |
+Those last two are source-check failures. A source checker is a gate that reads proposed code before running it; it can reject a syntax error or an import that is not allowed. These records say the submitted text did not get through that gate. They do not show that the model could not solve the CSS or SQL problem, or what those programs would have done if they had run. The saved results also do not settle how clearly the import restriction was stated. By contrast, the regex and partial-credit CSS cases did reach task-specific behavior checks and fell short there. This distinction matters: otherwise a summary number quietly treats malformed code and wrong behavior as the same kind of evidence.
 
-The CSS task uses styling rules for web pages to test parity—whether a count is odd or even—while changing the number of 0/1 input values. Its easy-label cases receive a partial score at 3 bits, are rejected by the source check at 4 bits, and pass at 5 bits. At 3 bits, the easy, medium, and hard surface settings go fail, pass, pass—the opposite direction from the regex contrast. The rejected import is Python’s regular-expression library; the campaign’s source check did not allow that import at the top level. This is a code-policy rejection, not a test of whether the model understood the parity rule.
+The task totals are uneven. The spreadsheet, build-dependency, and template tasks each passed all five selected cases; SQL passed four, while CSS and regex passed three each. Those counts describe this sweep. They do not establish that the model is generally good at spreadsheets or bad at regex. The code, checks, and inputs differ from one task to the next.
 
-The SQL task uses a database query to follow a chain of states. It passes at chain lengths 6 and 25, while the length-12 submission is rejected because a quoted string in the code was never closed. Again, that failure happened before a behavior test. These uneven outcomes are worth reporting, but the labels easy, medium, and hard do not correspond to one shared measure of difficulty across tasks. The campaign calls its size setting “hidden depth,” but that label points to different things here: input-string length in regex, bit count in CSS, and chain length in SQL. It is not a common scale.
+“Task-specific expected behavior” is stronger than checking only that code loads, but it is still bounded by what each judge tests. A judge can miss behaviors its authors did not include. The label tells me the kind of evidence used; it does not make six different test suites equivalent or exhaustive.
 
-## Twenty-five of thirty is a count, not a capability score
+## “Depth” is not one ruler
 
-The track contains five selected cases for each of six different tasks: the regex update; the CSS parity test; the SQL query; a spreadsheet task where formulas pass values between cells; a CI, or continuous-integration, task about dependencies in automated software checks; and a small program that interprets templates. The saved results show 25 PASS and 5 FAIL. By task, the counts are CI 5/5, spreadsheet 5/5, template interpreter 5/5, SQL 4/5, CSS 3/5, and regex 3/5.
+The label “hidden depth” sounds like a common scale from easy to hard. It is not. In the regex task it changes a string's length. In CSS it changes how many bits feed a parity selector. In SQL it changes the length of a chain. In the spreadsheet task it changes the grid size. A string with 512 characters, five bits, a 25-step chain, and a larger spreadsheet are not equivalent units of work.
 
-Those totals describe this set of rows. They are not a measure of general code ability. The tasks ask for different things and use different tests: a 512-character string, a five-bit input, a 25-step query chain, and a larger spreadsheet are not interchangeable units of computational difficulty. Even within a task, the same FAIL label can describe a behavior mismatch or a program that was stopped before its behavior was tested. Adding the pass counts is accurate arithmetic; treating the sum as one calibrated score would imply more comparability than the experiment provides.
+The outcomes are not even monotone within each task—that is, they do not steadily improve or worsen as the task's size setting increases. The regex easy-surface cases pass at all three string lengths. In CSS, the easy-surface results go from a partial behavioral score at three bits, to a source-check rejection at four, to a pass at five. The surface-label comparison at three bits goes the other way from regex: easy fails while medium and hard pass. SQL passes at chain lengths six and 25, but its case at 12 is rejected for a syntax problem. These are small, local patterns with different failure stages, not points on a shared difficulty curve.
 
-This is why I keep the local regex result separate from the 25/30 total. The other tasks give useful context, but they do not replicate the regex conditions or explain the output lengths. They make the report broader, not the cause clearer.
+The 25/30 total is a simple count: 25 of the 30 selected cases passed their own checks. But pooling them does not create a single test of “hidden depth.” The cases ask different things, change different quantities, and use different task-specific judges. A larger input may be more work in one program and a different kind of work in another. The campaign did not calibrate the tasks onto a common easy-to-hard scale.
 
-## A better sweep would separate the changes
+## A pilot can suggest the next test
 
-The next experiment can be designed around the uncertainty in this one. First, vary class names and the performance hint independently: keep the name fixed while adding or removing the hint, then change names without changing the hint. Cross those choices with the three input lengths. That would show whether either manipulation tracks with the output mismatch, rather than changing both at once.
+The design problem is tractable. First, separate the two surface changes: keep the class name fixed while varying the performance hint, then vary the name while keeping the hint fixed. That would make it possible to tell which prompt feature is associated with a different outcome, rather than changing both together.
 
-One run per setting is not enough to tell a stable pattern from run-to-run variation. I would generate multiple equivalent task instances for each combination, use several seeds, and randomize the order of the runs. Before sending each task to the model, I would compare the exact prompt, starter code, visible tests, and grading program across settings. Those are the materials that determine what the model is asked to do and what the judge later accepts.
+Then create multiple equivalent versions at each input length, randomize their order, and run each setting with several random seeds. Repeating a single prompt would help measure run-to-run variation; using equivalent instances would also show whether a result depends on one particular string or setup. The saved results have neither kind of repetition, so I cannot estimate how stable this five-setting pattern is.
 
-The reporting should keep the steps separate too: was a code patch saved, did it pass the source check, did it run, and did its behavior pass the task-specific tests? A single PASS or FAIL is convenient, but it hides where an attempt stopped. The five failures here show why that detail is worth keeping.
+Before running a new version, compare what the model will actually receive: the rendered prompt, starter code, visible tests, and the checker. If a setting called “depth” changes none of those in a meaningful way, it should not be counted as a distinct experimental change. During scoring, record separate stages: whether a code change was produced, whether its source passed basic checks, whether it ran, and whether its behavior matched the task. That would preserve the distinction between a gate failure and a behavioral failure.
 
-There are precedents for pieces of this design. [HELM](https://arxiv.org/abs/2211.09110) reports language-model results across 42 scenarios and multiple measures. [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) dynamically changes task values and, in its variable-based experiments, runs five evaluations with different sampled values. These are context for broad reporting and repeated sampling, not evidence about this campaign or a claim that its design is new.
+Prior work gives useful context, not validation of this sweep. [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) varies task variables and samples five random seeds in its variable-based experiments. [HELM](https://arxiv.org/abs/2211.09110) evaluates models across 42 scenarios and multiple measures. Those projects are precedents for perturbing conditions and broadening evaluation; they do not verify the source files or explain the outputs in this campaign. I am not claiming that the local pattern is a new evaluation principle.
 
-The useful conclusion is modest. One archived run shows three passing easy-label regex cases at lengths 32, 128, and 512, alongside two length-32 failures under altered labels, with outputs of 34 and 66 characters. The clean source comparison reveals that names and a performance hint changed together, while the uncommitted source changes prevent me from treating that copy as a verified account of every file used in the run. This result does not show that “surface deception beats hidden depth,” or that the model recognizes weird machines in general. It does show exactly what a better experiment should separate next.
+The useful result here is smaller. In one recorded sweep, the easy-surface regex version passed the three tested lengths, while the medium- and hard-surface versions failed at length 32 with outputs that were too long. The hard prompt and class names changed along with the surface label, and each setting was run once. I can say what happened in those cases and what a better comparison should separate. I cannot say that a label fooled the model, that input length did not matter, or that the 25/30 total measures a general ability to recognize a computational machine.
