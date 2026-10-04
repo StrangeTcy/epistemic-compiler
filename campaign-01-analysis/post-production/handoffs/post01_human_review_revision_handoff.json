@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "workflow_id": "campaign-01-post-production",
+  "post_id": "POST-01",
+  "stage": "human_editorial_revision",
+  "status": "valid_revision_waiting_for_human_review",
+  "created_at": "2026-10-04T20:00:48Z",
+  "source_final_writer_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_reconciled_response.md",
+  "source_final_writer_response_sha256": "49f05b299ca6493077321c45c162adcc80cfb9e9b10d73ff45381a03239ba936",
+  "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-01_human_review_revision.md",
+  "revision_sha256": "0a99f5bbb9e159e41e87c2ea32726864872d2e65061e8c1e7500d428690b9e40",
+  "revision_basis": "User-provided editorial feedback after reviewing the reconciled POST-01 draft.",
+  "revision_changes": [
+    "Expanded the opening around the Atria Dawn Preview campaign, rl_eval_generator environment matrix, campaign results, completed analysis, proposed generator work, and future experiments.",
+    "Added a campaign snapshot and an explicit explanation of the distinct row exclusions before showing the denominator fractions.",
+    "Showed both possible 193-row sensitivities: the incomplete sheaf_physical_constraints compile-only record alone, and the report-listed ts_trajectory outage alone; the 192-row primary set removes both.",
+    "Replaced unsupported icon markup with plain emphasis and preserved the dirty-source, judge-mode, one-seed, and causal-inference caveats.",
+    "Removed the requested wording from the public copy and retained the distinction between descriptive findings and proposed or future work."
+  ],
+  "denominator_crosscheck": {
+    "archive_git_ref": "origin/main:atria-campaign-state-62.zip",
+    "archive_sha256": "e69dfc08ae988dada65e1b20a3674a5cb9282b3e98d1cdbdf84d4f15709b55dd",
+    "archive_size_bytes": 6698206,
+    "archive_sha_verified": true,
+    "raw_archive_available_as_workspace_file": false,
+    "raw_archive_read_method": "Read the origin/main Git blob into memory and inspected its ZIP members; SHA-256 matches the frozen provenance hash.",
+    "raw_case_records": [
+      {
+        "case_id": "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0",
+        "environment": "sheaf_physical_constraints",
+        "difficulty": "easy naming, easy symptom mask",
+        "judge_mode": "compile_only",
+        "checkpoint_status": "scored",
+        "verdict": "FAIL",
+        "failure_mode": "invalid_action",
+        "final_note": "provider transient failure after bounded retries",
+        "reconstructed_final_metrics": {},
+        "listed_in_campaign_report_provider_outage_counter": false,
+        "raw_final_member": "episodes/sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0/sheaf_physical_constraints-20261001T124852Z-16ea911b/final.json",
+        "editorial_scope": "Treat as the incomplete compile-only execution record; removing only this case gives one 193-row sensitivity."
+      },
+      {
+        "case_id": "ts_trajectory__witness_status=broken_representation=reflective__seed-0",
+        "environment": "ts_trajectory",
+        "difficulty": "broken witness, reflective representation",
+        "judge_mode": "compile_only",
+        "checkpoint_status": "scored",
+        "verdict": "FAIL",
+        "failure_mode": "invalid_action",
+        "final_note": "provider transient failure after bounded retries",
+        "reconstructed_final_metrics": {},
+        "listed_in_campaign_report_provider_outage_counter": true,
+        "raw_final_member": "episodes/ts_trajectory__witness_status=broken_representation=reflective__seed-0/ts_trajectory-20261002T142441Z-0eb60a63/final.json",
+        "editorial_scope": "The sole case named in campaign_report.json provider_outage.last_case_id; removing only this case gives a different 193-row sensitivity."
+      }
+    ],
+    "campaign_report_provider_outage_counter": {
+      "case_id": "ts_trajectory__witness_status=broken_representation=reflective__seed-0",
+      "retries": 8,
+      "waited_seconds": 3300.0,
+      "last_backoff_seconds": 600.0
+    },
+    "resulting_views": [
+      {
+        "excluded_case_ids": [],
+        "pass": 131,
+        "fail": 63,
+        "total": 194,
+        "label": "raw checkpoint"
+      },
+      {
+        "excluded_case_ids": [
+          "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0"
+        ],
+        "pass": 131,
+        "fail": 62,
+        "total": 193,
+        "label": "incomplete compile-only record removed"
+      },
+      {
+        "excluded_case_ids": [
+          "ts_trajectory__witness_status=broken_representation=reflective__seed-0"
+        ],
+        "pass": 131,
+        "fail": 62,
+        "total": 193,
+        "label": "report-listed outage removed"
+      },
+      {
+        "excluded_case_ids": [
+          "sheaf_physical_constraints__naming=easy_symptom_mask=easy__seed-0",
+          "ts_trajectory__witness_status=broken_representation=reflective__seed-0"
+        ],
+        "pass": 131,
+        "fail": 61,
+        "total": 192,
+        "label": "primary performance set"
+      }
+    ],
+    "interpretive_note": "The frozen extraction and raw final.json files identify provider-transient notes on both rows. The distinction preserved in the article is that the sheaf record is incomplete and not named in the report outage counter, while the ts_trajectory record is the report-listed outage."
+  },
+  "validation": {
+    "status": "valid",
+    "report_copy": "campaign-01-analysis/post-production/handoffs/POST-01_human_review_revision_validation_report.json",
+    "report_sha256": "7f03fe20ede679a4e747884fd8470b6d181e04ba5bdc3f8849f4cacc846b6ac1",
+    "word_count": 2025,
+    "errors": [],
+    "method": "Local runtime.post_production.validate_article call with repository .venv PyYAML, against frozen POST-01 source snapshots, trace rows, findings, and failure details.",
+    "runtime_dag_resumed": false,
+    "model_call_made": false
+  },
+  "terms_removed_from_public_copy": [
+    "paid",
+    "matters",
+    "defensible",
+    "fuckingly"
+  ],
+  "article_approval_or_export_performed": false
+}
