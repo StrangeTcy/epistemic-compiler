@@ -8,6 +8,19 @@
   "final_writer_model_label": "opus 5.5",
   "final_writer_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_final_writer_response.md",
   "final_writer_response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+  "latest_revision_validation": {
+    "errors": [
+      "numeric literals are not present in the source draft/evidence packet: 14, 85",
+      "quantitative result claim sentence(s) do not map to an internal claim-traceability row; see traceability_audit",
+      "required caveat missing: the paid-run source/comparator identity was unresolved because the repository was dirty"
+    ],
+    "report_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
+    "response_matches_prior_final_writer_body": true,
+    "revision_response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+    "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
+    "valid": false,
+    "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_validation_report.json"
+  },
   "manual_review_notes": [
     "The preserved final-writer draft still contains a profane phrase, despite the Critic blueprint recommending that it be omitted.",
     "The epistemic-status Prose field says the draft “is published” under the site byline; no approval or publication has occurred.",

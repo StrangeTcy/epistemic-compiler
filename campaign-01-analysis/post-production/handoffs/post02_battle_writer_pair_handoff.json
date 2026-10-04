@@ -1,4 +1,5 @@
 {
+  "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
   "following_job_id": "post02_final_writer",
   "following_stage": "final_writer",
@@ -8,13 +9,12 @@
   "next_stage": "editorial_critic",
   "next_stage_status": "completed",
   "post_id": "POST-02",
-  "post_validator_status": "completed",
   "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
-  "run_id": "campaign-01-post-production-20261003T223705Z-03e9265c",
+  "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
   "schema_version": 1,
   "stage": "battle_writer_pair",
   "status": "completed",
-  "validation_revision_status": "waiting_for_human",
+  "validation_revision_status": "completed_invalid",
   "workflow_id": "campaign-01-post-production",
   "writers": [
     {

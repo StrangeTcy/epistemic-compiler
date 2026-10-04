@@ -30,9 +30,9 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_response.md"
     }
   ],
-  "run_id": "campaign-01-post-production-20261003T223705Z-03e9265c",
+  "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
   "schema_version": 1,
   "stage": "battle_writer_pair",
-  "validation_revision_status": "waiting_for_human",
+  "validation_revision_status": "completed_invalid",
   "workflow_id": "campaign-01-post-production"
 }
