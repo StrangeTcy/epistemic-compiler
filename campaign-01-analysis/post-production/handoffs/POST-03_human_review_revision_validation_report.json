@@ -116,22 +116,50 @@
         "numbers": [
           "85"
         ],
-        "sentence": "The track contains 85 recorded rows."
+        "sentence": "The category-theory track contains 85 recorded rows."
       },
       {
         "candidate_trace_rows": [
           {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
             "claim_id": "POST-03-C08",
             "finding_ids": "F-08;F-16",
             "matched_numbers": [
-              "1"
+              "85"
             ]
           }
         ],
         "numbers": [
-          "1"
+          "85"
         ],
-        "sentence": "One   row has a final note attributing its terminal failure to a provider transient after bounded retries."
+        "sentence": "| Raw archive | 85 | Includes the provider-transient failure |"
       },
       {
         "candidate_trace_rows": [
@@ -186,7 +214,7 @@
           "57",
           "84"
         ],
-        "sentence": "The other 84 cases include 57 passes and 27 failures."
+        "sentence": "| Performance-eligible set | 84 | 57 passes and 27 failures |"
       },
       {
         "candidate_trace_rows": [
@@ -438,7 +466,7 @@
           "1",
           "4"
         ],
-        "sentence": "The five recorded outcomes are four passes and one failure, but the failure mode matters."
+        "sentence": "The five recorded outcomes are four passes and one failure, and the failure mode changes how to read them."
       },
       {
         "candidate_trace_rows": [
@@ -748,5 +776,5 @@
   "unsupported_spelled_quantitative_counts": [],
   "valid": true,
   "warnings": [],
-  "word_count": 1929
+  "word_count": 1954
 }

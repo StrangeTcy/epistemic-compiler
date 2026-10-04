@@ -10,7 +10,7 @@ layout: post
 
 <dl class="epistemic-status">
   <dt>Original ideas</dt>
-  <dd>The distinction between a benchmark label and its operative measurement is familiar. The contribution here is applying it to this archive's source comparator and keeping its different specification gaps separate.</dd>
+  <dd>This post examines whether the category-theory track's labels match the checks behind its results, while keeping its different specification gaps separate.</dd>
   <dt>Synthesis</dt>
   <dd>This post brings together a frozen campaign archive, a static scan of a clean-source comparator, and a line-level implementation audit.</dd>
   <dt>Prose</dt>
@@ -21,7 +21,7 @@ layout: post
   <dd>Practical: a reminder to read the check that produced a verdict before treating a task name as a capability measurement.</dd>
 </dl>
 
-A row labeled `category_theoretic_compositional` arrives with a ready-made story: compositions, functors, perhaps a law checked across diagrams. But a label never touches submitted code. The judge does. If the task name promises a mathematical property and the visible tests and judge check something narrower, the name cannot make the result stronger.
+[`rl_eval_generator`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5) is an environment generator, not a benchmark. One campaign analysis row groups generated code-repair environments under [`category_theoretic_compositional`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo), a label that invites a story about [compositions](https://en.wikipedia.org/wiki/Function_composition), [functors](https://en.wikipedia.org/wiki/Functoriality), perhaps a law checked through [commutative diagrams](https://en.wikipedia.org/wiki/Commutative_diagram). But labels do not touch submitted code; judges do. If an environment name suggests a mathematical property and its visible tests or judge check something narrower, the name cannot make the result stronger.
 
 The relevant question is which side of that gap this track occupies. The answer is not uniform. In a few inspected tasks, the prompt, tests, and judge disagree in different ways; elsewhere the main problem is that an advertised configuration axis has no direct reference in the clean templates. The archive records real code-repair outcomes, but it does not turn them into one measurement of category-theoretic ability.
 
@@ -29,7 +29,12 @@ There is an important source boundary. The archive records the source tree as di
 
 ## The headline has two kinds of pass
 
-The track contains 85 recorded rows. One `sheaf_physical_constraints` row has a final note attributing its terminal failure to a provider transient after bounded retries. I set it aside for the performance denominator; it remains a recorded failure in the raw archive. The other 84 cases include 57 passes and 27 failures.
+The category-theory track contains 85 recorded rows. One [`sheaf_physical_constraints`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/sheaf/sheaf_physical_constraints) row has a final note attributing its terminal failure to a provider transient after bounded retries. I exclude it from the performance denominator, but retain it as a recorded failure in the raw archive.
+
+| Row set | Rows | What it includes |
+|---|---:|---|
+| Raw archive | 85 | Includes the provider-transient failure |
+| Performance-eligible set | 84 | 57 passes and 27 failures |
 
 That count mixes two different judging guarantees:
 
@@ -38,13 +43,13 @@ That count mixes two different judging guarantees:
 | `behavioral_reference` | 5 | 4 | 1 | The output was checked against a reference behavior |
 | `compile_only` | 79 | 53 | 26 | The submission built and cleared the available checks; the campaign calls this exploratory |
 
-All five behavioral-reference cases are in `categorical_lenses`. The other 79 are compile-only. The campaign report explicitly treats compile-only outcomes as exploratory, not as a validated behavioral aggregate. So 57 of 84 is not a category-theory score: it is a count across different tasks and different guarantees, most of them preliminary.
+All five behavioral-reference cases are in [`categorical_lenses`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/categorical_lenses). The other 79 are compile-only. The campaign report explicitly treats compile-only outcomes as exploratory, not as a validated behavioral aggregate. So 57 of 84 is not a category-theory score: it is a count across different tasks and different guarantees, most of them preliminary.
 
 The one-seed design puts another limit on the number. Even if a set of easy, medium, and hard cells appears to trace a curve, there is no within-cell replication here from which to estimate variation. And because the axes refer to different things in different tasks, their labels do not put those cells on one calibrated difficulty scale.
 
 ## Associativity named; shape checked
 
-In the clean comparator, `compositional_optimizer` promises strict associativity under nested composition, with numerical correctness carried across multiple training steps. Associativity means that changing parentheses does not change the result:
+In the clean comparator, [`compositional_optimizer`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/compositional_optimizer) promises strict associativity under nested composition, with numerical correctness carried across multiple training steps. [Associativity](https://en.wikipedia.org/wiki/Associative_property) means that changing parentheses does not change the result:
 
 $$(f \circ g) \circ h = f \circ (g \circ h)$$
 
@@ -54,15 +59,15 @@ This is not a claim that the executed task definitely used that exact judge: the
 
 ## A lens law is not the whole lens contract
 
-`categorical_lenses` is the only environment in this track with behavioral-reference judging. Its prompt describes a lens whose view is coordinate zero. In the comparator, the hidden judge checks the three lens laws—get-put, put-get, and put-put—but does not itself assert that coordinate-zero convention. A visible test does assert it. The intended behavior is therefore split across the prompt, visible test, and hidden judge; the hidden judge alone does not encode the whole specification.
+[`categorical_lenses`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/categorical_lenses) is the only environment in this track with behavioral-reference judging. Its prompt describes a lens whose view is coordinate zero. In the comparator, the hidden judge checks the three lens laws—get-put, put-get, and put-put—but does not itself assert that coordinate-zero convention. A visible test does assert it. The intended behavior is therefore split across the prompt, visible test, and hidden judge; the hidden judge alone does not encode the whole specification.
 
-The five recorded outcomes are four passes and one failure, but the failure mode matters. Its final note records a syntax error: the submitted file had an unindented block after a function definition. That tells us the code did not pass source validation. It does not tell us that the model failed to understand lenses. Nor do the four passes, by themselves, show broad command of lens theory; they show success under this environment's stated checks.
+The five recorded outcomes are four passes and one failure, and the failure mode changes how to read them. Its final note records a syntax error: the submitted file had an unindented block after a function definition. That tells us the code did not pass source validation. It does not tell us that the model failed to understand lenses. Nor do the four passes, by themselves, show broad command of lens theory; they show success under this environment's stated checks.
 
 The same comparator also declares a `STRICT_LAWS` axis, but that setting has no direct reference in the inspected environment templates. The judge checks all three laws regardless. That is a second question, distinct from the partial mismatch between the prompt and judge: did the advertised setting actually change anything the agent or judge could see?
 
 ## Zero out of four is four different records
 
-The comparator's `sheaf_physical_constraints` task asks for capacity-safe routing. Its hidden judge enforces a 5:3 ratio on a fixed high-demand vector; the prompt does not state that ratio, and the visible test checks output keys and shape rather than the ratio. A model can miss an unstated numerical target without that result being a clean test of sheaf reasoning. Conversely, a pass says that this implementation's checks were met, not that a general mathematical concept was mastered.
+The comparator's [`sheaf_physical_constraints`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/sheaf/sheaf_physical_constraints) task asks for capacity-safe routing. Its hidden judge enforces a 5:3 ratio on a fixed high-demand vector; the prompt does not state that ratio, and the visible test checks output keys and shape rather than the ratio. A model can miss an unstated numerical target without that result being a clean test of sheaf reasoning. Conversely, a pass says that this implementation's checks were met, not that a general mathematical concept was mastered.
 
 The four eligible rows all fail, but not in the same way:
 
@@ -75,7 +80,7 @@ The four eligible rows all fail, but not in the same way:
 
 The fifth recorded cell is the provider-transient case excluded from the performance denominator. Among the four eligible failures, only the two underfit rows reached the judge and earned partial scores. An empty patch is a submission event; an unparseable action is a format or harness event. The task prompt also omits a judge-side numerical constraint. Calling all four outcomes “the model failed at sheaves” would erase distinctions the records actually preserve.
 
-These three examples are not instances of one generic defect. The optimizer prompt names a property its inspected judge does not test. The lens environment distributes parts of its specification across visible and hidden checks. The sheaf prompt leaves a numerical target unstated in the comparator. Those differences matter: a better judge, a clearer prompt, and a better submission interface are different fixes.
+These three examples are not instances of one generic defect. The optimizer prompt names a property its inspected judge does not test. The lens environment distributes parts of its specification across visible and hidden checks. The sheaf prompt leaves a numerical target unstated in the comparator. Those gaps call for different fixes: a better judge, a clearer prompt, and a better submission interface.
 
 ## Some advertised axes have no direct reference
 
@@ -83,7 +88,7 @@ There is a configuration issue underneath the task-level mismatches. `compositio
 
 A static scan finds ten advertised control or variable axes with no direct reference across nine category-track environments. `STRICT_LAWS` in `categorical_lenses` is one example. This is a finding about the comparator's templates, not proof that the execution workspaces were identical: the dirty-repository record prevents that conclusion, and a static scan does not execute task generation or compare every rendered bundle. The careful claim is that those settings have no direct reference in the inspected files, so the comparator does not show how they could change the task or its grading.
 
-That matters for experimental interpretation. A nominal level change is not necessarily an intervention. If the setting does not reach anything visible to the agent or the judge, its easy-to-hard contrast cannot support a claim about sensitivity to that variable. With only one selected seed per cell, the observed pattern cannot tell us whether a real intervention would have mattered, either.
+This limits the experimental interpretation. A nominal level change is not necessarily an intervention. If the setting does not reach anything visible to the agent or the judge, its easy-to-hard contrast cannot support a claim about sensitivity to that variable. With only one selected seed per cell, the observed pattern cannot show whether a real intervention would change the outcome.
 
 ## Failure labels are not explanations
 
@@ -95,7 +100,7 @@ This does not make the archive useless. It makes the raw outcome more informativ
 
 ## What would make the name earn its keep?
 
-Formal properties can be tested through code. Associativity, lens laws, and consistency constraints are all candidates for executable checks. But a benchmark needs an explicit contract between five pieces: the mathematical property, the prompt, the visible tests, the hidden judge, and the reference implementation. For each task, the authors should say exactly what property is under test, include counterexamples and valid alternatives, and check that an independent oracle distinguishes implementations that satisfy the property from plausible code that merely compiles.
+Formal properties can be tested through code. Associativity, lens laws, and consistency constraints are all candidates for executable checks. An evaluation intended to test a formal property needs an explicit contract between five pieces: the mathematical property, the prompt, the visible tests, the hidden judge, and the reference implementation. For each task, the authors should say exactly what property is under test, include counterexamples and valid alternatives, and check that an independent oracle distinguishes implementations that satisfy the property from plausible code that merely compiles.
 
 The configuration needs its own contract. A build-time check could require every advertised axis to alter at least one agent-visible or judge-visible artifact. If it changes none, the build should fail rather than silently count that setting as a new condition. And if the question is about robustness or difficulty, the design needs repeated cases and a calibrated comparison—not one selected seed per level across tasks with different semantics.
 
@@ -103,4 +108,4 @@ This is not a novelty claim. [HELM](https://arxiv.org/abs/2211.09110) is a prece
 
 The narrow result is still useful. On these selected code-repair tasks, under the recorded mix of judges and checks, Atria-Dawn-Preview produced a mixed set of passing and failing submissions. The archive points to concrete work: align prompts with judges, make advertised controls observable, keep source identity auditable, and separate submission failures from behavioral misses.
 
-It does not establish a general category-theory score or a broad compositional-reasoning capability. It also does not show that the model cannot understand those ideas. A check that never compares the two sides of an associativity law cannot support either conclusion about that law. The task name can be a hypothesis about what a benchmark measures. Only the implementation and the evidence can decide whether the hypothesis survived the test.
+It does not establish a general category-theory score or a broad compositional-reasoning capability. It also does not show that the model cannot understand those ideas. A check that never compares the two sides of an associativity law cannot support either conclusion about that law. An environment label is a hypothesis about what its prompts and checks measure; the source and recorded results determine whether that hypothesis held up.
