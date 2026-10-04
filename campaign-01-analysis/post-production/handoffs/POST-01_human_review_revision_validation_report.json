@@ -8,7 +8,7 @@
   "date": "2026-10-03",
   "slug": "a-red-square-is-not-one-result",
   "suggested_jekyll_filename": "2026-10-03-a-red-square-is-not-one-result.md",
-  "word_count": 2400,
+  "word_count": 2424,
   "numeric_literals_checked": [
     "0",
     "0.416667",
@@ -447,7 +447,7 @@
         ]
       },
       {
-        "sentence": "| Incomplete-record sensitivity | 131 / 193 | 62 | Removes only the   row; keeps the report-listed   row |",
+        "sentence": "| Incomplete-record sensitivity | 131 / 193 | 62 | Removes only the [ ] row; keeps the report-listed [ ] row |",
         "numbers": [
           "131",
           "193",
@@ -466,7 +466,7 @@
         ]
       },
       {
-        "sentence": "| Report-listed outage sensitivity | 131 / 193 | 62 | Removes only the   row; keeps the   row |",
+        "sentence": "| Report-listed outage sensitivity | 131 / 193 | 62 | Removes only the [ ] row; keeps the [ ] row |",
         "numbers": [
           "131",
           "193",
@@ -823,7 +823,7 @@
         ]
       },
       {
-        "sentence": "Each radar summarizes PASS share within its family; environment spokes are used for category/compositional, weird-machine, and ML-debugging tasks, while epistemic games uses one spoke per case configuration because it has one environment.",
+        "sentence": "Each radar summarizes PASS share within its family; environment spokes are used for [category/compositional], [weird-machine], and ML-debugging tasks, while [epistemic games] uses one spoke per case configuration because it has one environment.",
         "numbers": [
           "1"
         ],
@@ -1214,7 +1214,7 @@
         ]
       },
       {
-        "sentence": "The raw 194 also contains the incomplete   compile-only record and the report-listed   provider-outage record.",
+        "sentence": "The raw 194 also contains the incomplete [ ] compile-only record and the report-listed [ ] provider-outage record.",
         "numbers": [
           "194"
         ],
@@ -1611,7 +1611,7 @@
         ]
       },
       {
-        "sentence": "Both rows labeled   have a trusted score of 1.0 and notes about a missing required file; the MoCo record names  .",
+        "sentence": "Both rows labeled   have a trusted score of 1.0 and notes about a missing required file; the [  record] names  .",
         "numbers": [
           "1.0"
         ],
@@ -1654,7 +1654,7 @@
         ]
       },
       {
-        "sentence": "The recurrent-depth family records 31 passes in 33 eligible cases; trajectory/synthesis records 2 in 8.",
+        "sentence": "The [recurrent-depth family] records 31 passes in 33 eligible cases; [trajectory/synthesis] records 2 in 8.",
         "numbers": [
           "2",
           "31",
@@ -1734,7 +1734,7 @@
         ]
       },
       {
-        "sentence": "Recurrent depth itself mixes   at 11/11 under behavioral reference,   at 11/11 under compile-only, and   at 9/11 under compile-only.",
+        "sentence": "Recurrent depth itself mixes [ ] at 11/11 under behavioral reference, [ ] at 11/11 under compile-only, and [ ] at 9/11 under compile-only.",
         "numbers": [
           "11",
           "9"
@@ -1759,7 +1759,7 @@
         ]
       },
       {
-        "sentence": "The three ML-debugging environments show another split:   is 0/11 under compile-only,   is 0/8 under behavioral reference, and MoCo is 9/11 under behavioral reference, including the missing-file row.",
+        "sentence": "The three ML-debugging environments show another split: [ ] is 0/11 under compile-only, [ ] is 0/8 under behavioral reference, and [ ] is 9/11 under behavioral reference, including the missing-file row.",
         "numbers": [
           "0",
           "11",
