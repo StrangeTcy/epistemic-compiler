@@ -1,0 +1,185 @@
+gemini 3 flash grounding:
+
+# Final public-post writer — POST-05 (battle mode)
+
+Write one original, publication-ready StrangeTcy research essay from the compact evidence and editorial brief below. The underlying evidence packet, both candidate drafts, and both full critiques are preserved separately but are not attached here; do not assume you have read them. Use only the evidence and attributed editorial guidance included below—do not stitch or quote the drafts, treat critic advice as consensus, or mechanically follow checklists. The brief has already reconciled the major evidence limits and corrected one critique's source-count error.
+
+Return only the complete article in Markdown—no preface, analysis, or wrapper. Follow the Jekyll, word-count, voice, and evidence requirements below. Do not include internal workflow identifiers or mention that this is a compact prompt.
+
+---
+
+# POST-05 compact evidence and editorial brief
+
+This is a compiler-authored condensation for battle-mode use. It replaces verbatim embedding of the full evidence packet, both candidate articles, and both full critiques in the prompt; those source artifacts remain separately preserved. It is not a new critic response or a claim of consensus. If a detail below conflicts with a source artifact, the evidence packet and captured responses control.
+
+## The claim to make
+
+One archived, single-seed sweep shows an eye-catching local regex pattern: the easy-surface cases pass at all three input lengths, while two altered-surface cases fail at length 32. The manipulation is confounded, the other tasks use different notions of size and different judges, and the archive does not identify a cause. The article is about what this pattern does—and does not—show, not a general ability to recognize “weird machines.”
+
+## Evidence card
+
+- The track has six five-case tasks: regex state machine, CSS state machine, SQL fixed point, spreadsheet dataflow, CI dependency graph, and template interpreter. All 30 selected cases are eligible and behaviorally-reference-judged; none are compile-only, excluded, or provider-terminal. Twenty-five pass and five fail.
+- Per task: CI 5/5, spreadsheet 5/5, template 5/5, SQL 4/5, CSS 3/5, regex 3/5. These are heterogeneous counts, not a common capability or difficulty score.
+
+| Regex surface | Input length | Result | Score | Judge note |
+|---|---:|---|---:|---|
+| easy | 32 | PASS | 1.0 | — |
+| easy | 128 | PASS | 1.0 | — |
+| easy | 512 | PASS | 1.0 | — |
+| medium | 32 | FAIL | 0.208333 | length mismatch, in=32, out=34 |
+| hard | 32 | FAIL | 0.208333 | length mismatch, in=32, out=66 |
+
+- The regex task asks for one Rule 110 update using regex. Its judge checks four specific criteria, including length preservation and exact behavior on 15 seeded strings. Passing this bounded check is not general regex correctness or arbitrary iteration.
+- The five failures stop at different layers: two regex underfits (outputs of 34 and 66 characters from length 32); one CSS behavioral underfit (score 0.416667 at 3 bits); one CSS source-invalid result at 4 bits (disallowed top-level `import re`); and one SQL source-invalid result at chain length 12 (unterminated triple-quoted string). The CSS 5-bit case passes; SQL chain lengths 6 and 25 pass. Source-validator rejections are gate failures, not behavioral evidence of semantic inability.
+- The CSS surface sweep at 3 bits is fail/pass/pass for easy/medium/hard—the opposite direction from the regex contrast. These local outcomes are non-monotone; they do not establish a shared depth scale.
+
+## Source and design limits
+
+- Each selected cell has one seed-0 run. Three easy-surface regex passes are not a size-invariance estimate; the two altered-surface failures do not establish an effect or cause.
+- In the clean-source comparator, surface levels use different class names and the hard prompt adds a performance hint. The campaign archive records `repository.dirty=true`. All 33 selected configuration hashes match the clean comparator, but that does not prove the paid-run prompts, task files, or judges were byte-identical to it. State comparator findings as such.
+- The proposed “names or hint mattered more than length” idea is an untested hypothesis; label it speculative if used. Do not diagnose the 34/66 mechanism.
+- A separate clean-comparator scan found ten nominal control/variable axes without direct template references across nine category-track environments. This is adjacent benchmark QA, not evidence about the weird-machine regex task; include at most one carefully qualified sentence.
+- A better experiment would separate class-name and hint manipulations, use multiple instances and seeds, diff rendered prompts/starters/tests/judges before calls, and report patch creation, source validity, execution, and behavioral correctness separately.
+
+## Compact editorial direction from the two critiques
+
+- Open on the two output lengths as a puzzle, with the one-seed and limited-forensics boundary close by. Do not begin with the pooled 25/30 or an abstract definition. Use fresh wording, not either draft’s opener.
+- Recommended flow: opening puzzle → five-cell regex table → name/hint confound and speculative boundary → different failure layers → why 25/30 is bookkeeping across unlike tasks → comparator/source-audit caveat → better experiment → prose ending that says what is licensed and not licensed.
+- Keep the five-cell regex table. Use at most one other compact failure-layer table; put per-environment counts and CSS/SQL depth outcomes in prose. No equations or diagrams are needed. Do not end with a bulleted disclaimer list.
+- Writer A’s strengths: careful evidential boundaries, clear separation of failure layers, and a bounded ending. Writer B’s strengths: the regex table, its useful failure stratification, and refusal to invent a mechanism for 34/66. Do not stitch or paraphrase the drafts; write a new essay.
+- Keep citations limited and relevant: [HELM](https://arxiv.org/abs/2211.09110) as context for broad scenario/multi-metric evaluation (42 scenarios); [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) for dynamic variable perturbation and five-seed sampling in its variable-based experiments. These are precedents, not validation of this campaign or grounds for a novelty claim.
+- The critiques contain conflicting checklist advice. Resolve it using this brief, the source evidence, and the output requirements below. One critique also miscounts a stray profanity in the raw drafts; remove it from public copy and verify specific critique claims against the drafts rather than repeating the miscount.
+
+## Public article requirements
+
+- Target 2,000–2,300 words, within the workflow’s 1,800–2,500-word target. First-person, curious, technically literate, self-correcting, airy paragraphs, short argumentative `##` headings, no `Introduction` heading. Style reference: actual posts sometimes open with a short declarative claim and then complicate it; borrow the movement, not their wording.
+- Use Jekyll frontmatter: quoted, specific `title`; `date: 2026-10-03`; `layout: post`. No MathJax include unless adding a justified formula (none is warranted). Exact byline: `*by <span class="icon-self">StrangeTcy</span>*`.
+- If using the epistemic-status `<dl>`, keep fields in this order: Original ideas, Synthesis, Prose, Certainty, Importance. Describe the actual Arena-assisted writing process accurately; do not imply independent external writers or experiments.
+- Keep caveats next to the claims they qualify. Do not infer causality, Turing completeness, arbitrary iteration, general weird-machine recognition, paid-run source identity, or a common difficulty scale. Do not present source-invalid failures as behavioral failures.
+- No internal paths, hashes, claim/evidence IDs, draft labels, critic labels, editor notes, placeholders, or invented facts/links. Return only the complete Markdown article.
+
+
+&&&&&&&&&&&&&
+
+
+fable 5:
+
+---
+layout: post
+title: "Thirty-Four Characters Out, Sixty-Six Characters Out: Reading One Archived Regex Sweep Honestly"
+date: 2026-10-03
+---
+
+*by <span class="icon-self">StrangeTcy</span>*
+
+<dl>
+  <dt>Original ideas</dt>
+  <dd>None, really. The task design and the sweep belong to an archived evaluation campaign; my contribution is the reading of it, and the insistence on what the reading cannot support.</dd>
+  <dt>Synthesis</dt>
+  <dd>Moderate. I'm connecting one task's local failure pattern to the rest of its track, to the campaign's provenance records, and to some prior art on perturbation-based evaluation.</dd>
+  <dt>Prose</dt>
+  <dd>Written by me as a single new essay, after a model-assisted drafting-and-critique loop that I ran and reconciled myself. No independent experiments were performed for this post.</dd>
+  <dt>Certainty</dt>
+  <dd>High about what the archive records. Deliberately low about why any of it happened.</dd>
+  <dt>Importance</dt>
+  <dd>Small result, medium lesson: single-seed sweeps generate exactly the kind of pattern that invites overclaiming, and resisting that invitation is a skill worth practicing in public.</dd>
+</dl>
+
+A model was asked to apply one step of Rule 110 to a 32-character binary string. It returned 34 characters. Asked again, under a slightly different prompt surface, it returned 66.
+
+Those two numbers are the whole reason this post exists. They come from an archived, single-seed evaluation sweep—one run per cell, seed 0, no reruns—and the archive does not tell me why either output came out the wrong length. I want to be upfront about that before I show you anything else, because the pattern around those two numbers is genuinely eye-catching, and eye-catching patterns from single runs are precisely where evaluation writing goes wrong. So this essay is not going to explain the 34 or the 66. It's going to do something I think is more useful: walk the boundary of what one archived sweep licenses you to say, and mark where the fence posts are.
+
+## The task underneath the numbers
+
+The regex task is one of six in a track of small program-synthesis problems—a regex state machine, a CSS state machine, a SQL fixed point, a spreadsheet dataflow task, a CI dependency graph, and a template interpreter. Each task has five selected cases. All thirty cases in the archive are eligible and judged behaviorally against a reference implementation; none were excluded, none died at compile time, none ended in a provider error. Twenty-five pass. Five fail.
+
+The regex task specifically asks for a single Rule 110 update implemented with regular expressions. Its judge is narrow and concrete: four specific criteria, including length preservation and exact agreement with the reference on fifteen seeded strings. I want to flag what that means before the table, because it constrains everything downstream. Passing this judge means passing a bounded check. It does not mean the solution is a generally correct regex implementation of Rule 110, and it certainly doesn't mean anything about iterating the rule arbitrarily or about Turing completeness. Rule 110 carries that aura—it's the famous universality result—but one update step under a four-criterion judge is a much smaller object than the aura suggests.
+
+## Five cells, one pattern, one seed
+
+Here is the regex sweep in full. Three "easy"-surface cases at increasing input lengths, and two altered-surface cases at the shortest length:
+
+| Regex surface | Input length | Result | Score | Judge note |
+|---|---:|---|---:|---|
+| easy | 32 | PASS | 1.0 | — |
+| easy | 128 | PASS | 1.0 | — |
+| easy | 512 | PASS | 1.0 | — |
+| medium | 32 | FAIL | 0.208333 | length mismatch, in=32, out=34 |
+| hard | 32 | FAIL | 0.208333 | length mismatch, in=32, out=66 |
+
+The surface reading is irresistible: the model handles the easy surface at every length, including 512 characters, but trips on the altered surfaces at the *shortest* length. Length doesn't seem to be the problem; something about the surface does. That's a real local pattern and I'm not going to pretend it isn't there.
+
+But each of those cells is one run with one seed. Three easy-surface passes are not an estimate of size-invariance—they're three data points that happen to agree. Two altered-surface failures are not an effect size, and they establish no cause. If you reran the sweep with five seeds per cell, this pattern could sharpen, dissolve, or invert, and nothing in the archive tells you which.
+
+And the numbers themselves—34 and 66—are sitting right there begging for a mechanism. Thirty-four is thirty-two plus two; sixty-six is twice thirty-three; you can feel the just-so stories assembling themselves. I'm declining to assemble one. The judge note says "length mismatch" and stops. The archive preserves the verdict, not the generated regex's reasoning path, and reverse-engineering a mechanism from two output lengths is numerology, not analysis.
+
+## The manipulation is confounded
+
+Here's the part that should give you the most pause, and it comes from a comparison against a clean-source copy of the task repository rather than from the paid runs themselves.
+
+In that comparator, the surface levels are not a clean difficulty knob. The different surfaces use *different class names*, and the hard-surface prompt additionally includes a performance hint that the others lack. So "altered surface" bundles at least two changes—naming and hint—on top of whatever the intended difficulty manipulation was. When the medium and hard cases fail at length 32, you cannot attribute the failure to surface difficulty, because surface difficulty never varied in isolation.
+
+There's an obvious hypothesis lurking here: maybe the class names or the hint mattered more than the input length did. I'll say it once and label it properly—that is speculation. It's consistent with the table, it's untested, and the single-seed design means it couldn't have been tested with this data even in principle. A hypothesis that fits five cells is cheap. The experiment that would make it expensive comes later in this post.
+
+## Five failures, three different floors
+
+If the regex failures were the whole story, you might still be tempted toward a tidy narrative—"the model is brittle to surface changes." The other failures in the track break that tidiness, and they break it in an instructive way: the five failures stop at different layers of the pipeline.
+
+| Case | Layer | What happened |
+|---|---|---|
+| regex medium, length 32 | behavioral | output 34 chars from 32 input |
+| regex hard, length 32 | behavioral | output 66 chars from 32 input |
+| CSS, 3 bits | behavioral | wrong behavior, score 0.416667 |
+| CSS, 4 bits | source-invalid | disallowed top-level `import re` |
+| SQL, chain length 12 | source-invalid | unterminated triple-quoted string |
+
+Two of these five never reached behavioral judging at all. The CSS 4-bit case was rejected by a source validator for a disallowed top-level import; the SQL chain-12 case died on an unterminated triple-quoted string. These are gate failures. They tell you the submission violated a static rule or wasn't even syntactically whole—they tell you *nothing* about whether the model understood the state machine or the fixed point. Treating a source-validator rejection as evidence of semantic inability is a category error, and pooled pass rates commit it silently.
+
+The remaining behavioral failures refuse to line up on a shared axis, too. The CSS task's surface sweep at 3 bits goes fail/pass/pass for easy/medium/hard—the *opposite* direction from the regex contrast, where easy passed and the altered surfaces failed. The SQL task fails at chain length 12 but passes at both 6 and 25; the CSS task fails at 4 bits as a gate failure while passing at 5 bits. Non-monotone everywhere. Whatever "depth" means in each task, these outcomes do not establish a common scale across tasks, and they barely establish a monotone scale within one.
+
+## The 25/30 is bookkeeping, not a score
+
+The track's headline arithmetic—25 of 30 cases pass; per task, CI 5/5, spreadsheet 5/5, template 5/5, SQL 4/5, CSS 3/5, regex 3/5—is accurate bookkeeping and nothing more. The six tasks use different notions of size (input length in characters, bit counts, dependency chain lengths), different judges with different criteria, and different failure gates. Summing their verdicts produces a number; it does not produce a capability measurement, because the thing being counted isn't the same thing six times.
+
+This is not a novel observation about evaluation—it's close to the founding complaint of the broad-evaluation literature. HELM's whole premise was that meaningful evaluation requires keeping scenarios and metrics distinct rather than collapsing them: it evaluated models across 42 scenarios with multiple metrics per scenario precisely because a single pooled number hides the structure that matters. I cite it as context, not as validation of this campaign; the point is just that "25/30" belongs in a ledger, not a conclusion.
+
+And one task's headline count can hide opposite stories. Regex 3/5 and CSS 3/5 look identical in the per-task summary, but regex's two failures are both behavioral length mismatches on altered surfaces, while CSS's two failures are one behavioral underfit and one source-gate rejection, with the surface sweep trending the other way. Same count, different anatomy.
+
+## What the archive can and cannot vouch for
+
+Now the provenance caveat, which I've been deferring but which qualifies everything above.
+
+The campaign archive records `repository.dirty=true`—the working tree at run time had uncommitted changes. All 33 selected configuration hashes match the clean-source comparator, which is reassuring as far as it goes, but matching configuration hashes do not prove that the prompts fuckingly rendered, the task files fuckingly loaded, or the judges fuckingly executed in the paid runs were byte-identical to the clean copy. Everything I said about the class-name differences and the hard-surface performance hint is a finding about the *comparator*, stated as such. It is very plausibly also true of the paid runs. "Very plausibly" is not "verified," and the gap between those two is exactly the kind of gap that dirty working trees live in.
+
+While I'm on benchmark hygiene: a separate scan of the clean comparator found ten nominal control or variable axes across nine category-track environments with no direct template references—an adjacent QA observation about the broader benchmark's plumbing, not evidence about this regex task, and I'll leave it at that one sentence.
+
+## The experiment this sweep is pointing at
+
+The honest value of a confounded single-seed sweep is that it writes the protocol for the unconfounded multi-seed one. Here's what I'd fuckingly run:
+
+**Deconfound the surface.** Vary class names and the performance hint as separate factors, crossed with input length. If the speculative hypothesis above is right, the naming factor should carry the failure and length shouldn't. If it's wrong, we learn that too. Either way, "surface difficulty" stops being a bundle.
+
+**Sample properly.** Multiple task instances and multiple seeds per cell. VarBench is a reasonable precedent here—its variable-based experiments perturb task variables dynamically and sample five seeds per configuration, which is the minimum gesture toward distinguishing an effect from a coin flip. Again: precedent, not validation, and no novelty claim on either side.
+
+**Diff before calling.** Capture and diff the rendered prompts, starter code, tests, and judges *before* any model call, against a committed reference. This is the cheap insurance that makes `repository.dirty=true` a non-event instead of a permanent asterisk.
+
+**Report the layers separately.** Patch creation, source validity, execution, and behavioral correctness as four separate columns, never pooled. The CSS and SQL gate failures in this very track show why: a pooled pass rate charges the model's semantics for its syntax errors and its syntax for its import hygiene, and you can't un-mix that after the fact.
+
+None of this is exotic. It's the difference between a sweep that generates a hypothesis and an experiment that tests one.
+
+## What I'm fuckingly allowed to say
+
+Let me end by walking the fence line explicitly, in prose, because this is the part I'd want quoted if any of it gets quoted.
+
+What the archive licenses: in one single-seed sweep, a regex Rule-110 task passed its bounded, four-criterion judge on the easy surface at input lengths 32, 128, and 512, and failed on the medium and hard surfaces at length 32 with outputs of 34 and 66 characters. That local pattern is real and recorded. The surface manipulation in the clean comparator is confounded by class names and a hard-only performance hint, so the pattern cannot be attributed to surface difficulty. The track's five failures stop at three different layers, two of them at source gates that say nothing about semantics. The pooled 25/30 is arithmetic over unlike judges and unlike size axes.
+
+What it does not license: any causal story about why 34 or 66; any claim of size-invariance from three agreeing easy-surface runs; any claim that the model does or doesn't "recognize weird machines" in general; any statement that the paid-run sources matched the clean comparator byte for byte; any shared difficulty scale across the six tasks; and absolutely nothing about arbitrary iteration or universality, no matter how loudly Rule 110's reputation hums in the background.
+
+I came into this archive hoping the five-cell table would tell me something about the model. What it fuckingly told me something about is sweep design. The pattern is interesting precisely because the experiment, as run, cannot cash it out—and saying that plainly is worth more than the mechanism I didn't invent for those two extra characters.
+
+---
+
+**References**
+
+- Liang et al., [Holistic Evaluation of Language Models (HELM)](https://arxiv.org/abs/2211.09110) — broad multi-scenario, multi-metric evaluation across 42 scenarios; context for why pooled pass rates obscure structure.
+- [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) — dynamic variable perturbation with five-seed sampling in its variable-based experiments; a precedent for the resampling protocol sketched above.
