@@ -1,7 +1,7 @@
 {
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
-  "created_at": "2026-10-04T16:57:37Z",
+  "created_at": "2026-10-04T17:22:15Z",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -148,7 +148,7 @@
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-04/evidence/failure_taxonomy.csv"
     }
   ],
-  "expected_response_artifact": "artifacts/jobs/post04_battle_writer_b/response.md",
+  "expected_response_artifact": "artifacts/jobs/post04_editorial_critic/response.md",
   "input_renderings": [
     {
       "reference": "job:post04_prepare_post:response",
@@ -226,6 +226,18 @@
         }
       ],
       "source_sha256": "5660bc1bcd44eb95f5f7c39ed22b537d288b9f8790330240a56ff8c241249f31"
+    },
+    {
+      "reference": "job:post04_battle_writer_a:response",
+      "rendered_sha256": "4366932de5467426271d19c4ef154cb81b26a3734f81717cfbe3aa09716e8a21",
+      "source_renderings": [],
+      "source_sha256": "4366932de5467426271d19c4ef154cb81b26a3734f81717cfbe3aa09716e8a21"
+    },
+    {
+      "reference": "job:post04_battle_writer_b:response",
+      "rendered_sha256": "9c5e5fbfcaa2b51d59e27493bc5ab705be6b020df3502d78d7a338ce2bf706e1",
+      "source_renderings": [],
+      "source_sha256": "9c5e5fbfcaa2b51d59e27493bc5ab705be6b020df3502d78d7a338ce2bf706e1"
     }
   ],
   "inputs": [
@@ -236,41 +248,43 @@
       "size_bytes": 43355,
       "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-04_prepared_evidence_packet.md",
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-04_prepared_evidence_packet.md"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post04_battle_writer_a:response",
+      "sha256": "4366932de5467426271d19c4ef154cb81b26a3734f81717cfbe3aa09716e8a21",
+      "size_bytes": 15653,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-04_writer_a_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-04_writer_a_response.md"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "job:post04_battle_writer_b:response",
+      "sha256": "9c5e5fbfcaa2b51d59e27493bc5ab705be6b020df3502d78d7a338ce2bf706e1",
+      "size_bytes": 12818,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-04_writer_b_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-04_writer_b_response.md"
     }
   ],
-  "job_id": "post04_battle_writer_b",
-  "model_label": "gpt 6 luna max",
-  "model_label_provenance": "Explicit label in the user-committed combined response file; not independently verified.",
-  "next_stage": "editorial_critic",
-  "next_stage_status": "waiting_for_human",
+  "job_id": "post04_editorial_critic",
+  "model_label": null,
+  "next_stage": "final_writer",
+  "next_stage_status": "blocked_until_critic_response_is_ingested",
   "post_id": "POST-04",
-  "prompt_sha256": "70de747dd9b28a86e9de8b793704d48ec0ab96d26e43b56ab9e77aa87913ed16",
-  "prompt_to_paste": "artifacts/jobs/post04_battle_writer_b/prompt_to_paste.md",
-  "response_bytes": 12818,
-  "response_captured_in_workspace": true,
+  "prompt_sha256": "b44eaec4abedb6b6acda829fd1ff7d6377cb4f1fe9816dfbbbf7d59d6e6c4f47",
+  "prompt_to_paste": "artifacts/jobs/post04_editorial_critic/prompt_to_paste.md",
   "response_ingested": false,
-  "response_ingested_locally": true,
-  "response_provenance": "Response body copied verbatim from the explicitly labeled user-committed combined response file; only the wrapper label and separator blank lines were omitted.",
-  "response_sha256": "9c5e5fbfcaa2b51d59e27493bc5ab705be6b020df3502d78d7a338ce2bf706e1",
-  "response_source_commit": "aed5a750f443fb7da2f9d582b4910630d5f4bd11",
-  "response_source_file": "campaign-01-analysis/post-production/handoffs/post_04_responses",
-  "response_source_sha256": "cb20c078629b086dd9f01e6df51cf4d50ec7509dfc39999147d2bd1cf451a72f",
-  "role": "battle_writer_b",
+  "role": "editorial_critic",
   "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
-  "runtime_response_ingested": false,
   "runtime_state_available": false,
-  "runtime_state_note": "The run-local artifacts are ignored by Git and absent in this checkout. This durable handoff and prompt copy are rehydrated from the immutable mission snapshots; do not use a post_workflow.py ingest command until runtime state is rebuilt.",
+  "runtime_state_note": "This is a durable workspace handoff generated from the committed evidence packet and the two labeled response copies. The ignored runtime state is absent; no runtime job or DAG was run.",
   "schema_version": 1,
-  "stage": "battle_writer_b",
-  "stage_status": "completed_local_response_capture",
-  "status": "completed_local_response_capture",
-  "template_prompt_artifact": "prompts/writer.md",
-  "template_prompt_sha256": "37b3c9f568d45d55c16c237a25b49e33ff8535819c9be246223e5479fafa4913",
-  "updated_at": "2026-10-04T17:22:15Z",
+  "stage": "editorial_critic",
+  "stage_status": "waiting_for_human",
+  "status": "waiting_for_human",
+  "template_prompt_artifact": "prompts/critic.md",
+  "template_prompt_sha256": "50576f5e676351f4883a85b283638c1128c9b9009f6614e394e3869860c17d85",
   "workflow_id": "campaign-01-post-production",
-  "workspace_input_packet": "campaign-01-analysis/post-production/handoffs/POST-04_prepared_evidence_packet.md",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-04_writer_b_prompt.md",
-  "workspace_prompt_copy_sha256": "70de747dd9b28a86e9de8b793704d48ec0ab96d26e43b56ab9e77aa87913ed16",
-  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-04_writer_b_response.md",
-  "workspace_response_copy_sha256": "9c5e5fbfcaa2b51d59e27493bc5ab705be6b020df3502d78d7a338ce2bf706e1"
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-04_editorial_critic_prompt.md",
+  "workspace_prompt_copy_sha256": "b44eaec4abedb6b6acda829fd1ff7d6377cb4f1fe9816dfbbbf7d59d6e6c4f47"
 }
