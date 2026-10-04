@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "workflow_id": "campaign-01-post-production",
+  "post_id": "POST-05",
+  "created_at": "2026-10-04T22:35:31Z",
+  "stage": "evidence_based_human_review_revision",
+  "status": "valid_human_review_revision_waiting_for_human_review",
+  "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-05_human_review_revision.md",
+  "revision_sha256": "820b8f37df833cb0128be7be2129fb59e65177db40e1e9f5fc6bd789ba68a4e8",
+  "revision_basis": "Fresh reader-facing article prepared from the committed compact evidence/editorial brief and frozen source evidence. Writer A, Writer B, critic responses, the raw final-writer response artifact, and the pending prompt were left separately preserved; no final-writer runtime response was ingested.",
+  "revision_changes": [
+    "Opens with the recorded 32-to-34 and 32-to-66 output-length contrast, then defines what a case row and the selected track represent.",
+    "Explains the model run, seed, judge, regex task, task surface, source check, and “hidden depth” label in plain language.",
+    "Keeps the five-row regex table and one failure-layer table; distinguishes behavior-test failures from pre-test source-check rejections.",
+    "Preserves the 25/30 track count, per-task counts, one-seed scope, class-name/performance-hint confound, and dirty-source/comparator caveat.",
+    "Includes a bounded experiment proposal and verified HELM/VarBench context without claiming novelty, causality, or general weird-machine recognition.",
+    "Uses a neutral Prose note with no model- or Arena-authorship claim; includes no MathJax because the article contains no formula."
+  ],
+  "source_inputs": [
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+      "role": "Prepared evidence packet",
+      "sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_battle_brief.md",
+      "role": "Compact final-writer editorial/evidence brief",
+      "sha256": "6f21585a80128ca648e2f5ce656d7db6e080a5566e9b20f6f1bbca545aa634b6"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/source_snapshots/POST-05/source_audit_excerpt.md",
+      "role": "Clean-source comparison excerpt",
+      "sha256": "26804ac767c24391761e94f43d850b8ecba395c2aeb60c29f764a87ea995c0be"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/selected_case_results.csv",
+      "role": "Selected case results",
+      "sha256": "7916f99a3e606a1de14b7d43184a5ea612f22feab9da0a7fbd9a2377b1dfe87b"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/failure_details.csv",
+      "role": "Failure details",
+      "sha256": "8304a428e1e04f897c5dbea6070989875777cb182fc42173cf146811d8cc36d8"
+    }
+  ],
+  "preserved_candidates": [
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "role": "Writer A",
+      "sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "role": "Writer B",
+      "sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_sonnet_4_6_response.md",
+      "role": "Editorial critic response (label preserved as supplied: sonnet 4.6)",
+      "sha256": "3effb39d6ef76b8d71238679de6fc9ac71361429148cc9a99d4f6400d403b79e"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_opus_4_7_response.md",
+      "role": "Editorial critic response (label preserved as supplied: opus 4.7)",
+      "sha256": "96c9edfe8c654429e8a4492e873677f1ce0aee3194f8919b877e45ad4284c489"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/post_05_final_public_writer_responses",
+      "role": "Raw final-writer response artifact; not ingested as a runtime response or used as the article copy",
+      "sha256": "1d9260618f4bc08565532c0483ca68f3aea720a119fbd9e796bec8432f1a5f9e"
+    }
+  ],
+  "final_writer_prompt_state": {
+    "path": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
+    "handoff_path": "campaign-01-analysis/post-production/handoffs/post05_final_writer_handoff.json",
+    "status": "waiting_for_human",
+    "runtime_response_ingested": false,
+    "note": "This human-review copy was prepared directly from the compact brief and evidence; it is not represented as a response to the pending final-writer job."
+  },
+  "external_sources_checked": [
+    {
+      "title": "Holistic Evaluation of Language Models (HELM)",
+      "url": "https://arxiv.org/abs/2211.09110",
+      "verified_detail": "Reports evaluation across 42 scenarios and multiple metrics."
+    },
+    {
+      "title": "VarBench: Robust Language Model Benchmarking Through Dynamic Variable Perturbation",
+      "url": "https://aclanthology.org/2024.findings-emnlp.946/",
+      "verified_detail": "Describes dynamic variable perturbation and five runs with different sampled values for variable-based experiments."
+    }
+  ],
+  "article_approval_or_export_performed": false,
+  "validation": {
+    "status": "valid",
+    "validator": "runtime.post_production.validate_article",
+    "report_copy": "campaign-01-analysis/post-production/handoffs/POST-05_human_review_revision_validation_report.json",
+    "report_sha256": "5a822411667d0cb86ffe330eebd226fd9aa9bc78711932fa6c34d26ff89882b8",
+    "evidence_packet_copy": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+    "evidence_packet_sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942",
+    "word_count": 2095,
+    "word_count_target": "2,000–2,300",
+    "errors": [],
+    "warnings": [],
+    "trace_row_ids_loaded": [
+      "POST-05-C01",
+      "POST-05-C02",
+      "POST-05-C03",
+      "POST-05-C04",
+      "POST-05-C05",
+      "POST-05-C06",
+      "POST-05-C07",
+      "POST-05-C08",
+      "POST-05-C09"
+    ],
+    "article_approval_required": true,
+    "publication_ready": false,
+    "model_call_made": false,
+    "runtime_dag_resumed": false,
+    "human_review_required": true
+  },
+  "human_review_required": true
+}

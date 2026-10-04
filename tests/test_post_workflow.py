@@ -297,6 +297,33 @@ def test_validator_flags_turing_completeness_claim_and_internal_trace_leak():
     assert any("Turing-completeness" in error for error in bad["errors"])
 
 
+def test_validator_accepts_explicit_negative_turing_caveat():
+    article = _valid_article(
+        "This one-step result is not evidence of Turing completeness."
+    )
+    report = validate_article(article, "POST-05", _packet(), expected_date="2026-10-03")
+    assert not any(
+        "required caveat missing: do not claim Turing completeness" in error
+        for error in report["errors"]
+    )
+
+
+def test_validator_requires_mathjax_only_when_article_uses_math():
+    no_include = "{% include mathjax.html %}\n\n"
+    plain_article = _valid_article().replace(no_include, "")
+    plain_report = validate_article(
+        plain_article, "POST-02", _packet(), expected_date="2026-10-03"
+    )
+    assert plain_report["valid"] is True, plain_report["errors"]
+
+    math_article = _valid_article("The relation is $x=y$.").replace(no_include, "")
+    math_report = validate_article(
+        math_article, "POST-02", _packet(), expected_date="2026-10-03"
+    )
+    assert math_report["valid"] is False
+    assert any("math markup" in error for error in math_report["errors"])
+
+
 def test_cross_post_review_router_normalizes_only_targeted_revisions():
     raw = json.dumps(
         {

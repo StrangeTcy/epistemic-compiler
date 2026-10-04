@@ -439,8 +439,16 @@ def validate_article(
     if not slug:
         errors.append("title does not produce a usable Jekyll slug")
 
-    if "{% include mathjax.html %}" not in body:
-        errors.append("required target-site include is missing: {% include mathjax.html %}")
+    # Posts without TeX do not need a MathJax include; formula-bearing posts do.
+    math_markup = re.search(
+        r"(?s)(?:\$\$.*?\$\$|(?<!\\)\$[^$\n]+\$|\\\[.*?\\\]|\\\(.*?\\\))",
+        body,
+    )
+    if math_markup and "{% include mathjax.html %}" not in body:
+        errors.append(
+            "math markup is present but the required target-site include is missing: "
+            "{% include mathjax.html %}"
+        )
     if '<span class="icon-self">StrangeTcy</span>' not in body:
         errors.append("target-site author signature is missing or mismatched")
     if "{% include " in body and not re.search(r"\{% include [\w./-]+\.html %\}", body):
@@ -576,7 +584,7 @@ def validate_article(
         if not re.search(r"\b(?:not|does not|doesn't|cannot|never)\b[^.!?]{0,80}\b(?:recursive|theory of mind|ToM)\b|\b(?:not a|not an|not itself a)\s+(?:recursive\s+)?(?:theory of mind|ToM)\b", caveat_text):
             errors.append("required caveat missing: state that the epistemic-games task is not a recursive-ToM benchmark")
     if post_id == "POST-05":
-        if not re.search(r"\b(?:not|does not|doesn't|cannot|no claim|not evidence)\b[^.!?]{0,80}\bTuring[- ]complete\b|\b(?:not|does not|doesn't|cannot)\b[^.!?]{0,80}\b(?:Turing completeness|Turing-complete general computation)\b", caveat_text):
+        if not re.search(r"\b(?:not|does not|doesn't|cannot|no claim|not evidence)\b[^.!?]{0,80}\bturing[- ]complete\b|\b(?:not|does not|doesn't|cannot)\b[^.!?]{0,80}\b(?:turing completeness|turing-complete general computation)\b", caveat_text):
             errors.append("required caveat missing: do not claim Turing completeness from the observed behavior")
 
     trace_ids = metadata.get("trace_row_ids", [])
