@@ -58,6 +58,21 @@ def test_post04_reference_packet_includes_only_relevant_prior_work():
     assert "VarBench" not in rendered
 
 
+def test_post05_packet_uses_post05_references_and_limitations():
+    references = (post_workflow.SNAPSHOT_ROOT / "shared" / "references.md").read_text(encoding="utf-8")
+    rendered_references = _render_model_artifact("references", references, "POST-05", "b" * 64)
+    assert "POST-05 prior-work references" in rendered_references
+    assert "VarBench" in rendered_references
+    assert "HELM" in rendered_references
+
+    limitations = (post_workflow.SNAPSHOT_ROOT / "POST-05" / "limitations.md").read_text(encoding="utf-8")
+    rendered_limitations = _render_model_artifact("limitations_POST-05", limitations, "POST-05", "c" * 64)
+    assert "single Rule 110 update" in rendered_limitations
+    assert "does not show that the tested expression performs arbitrary iteration" in rendered_limitations
+    assert "194 raw results" not in rendered_limitations
+    assert "192-case sensitivity set" not in rendered_limitations
+
+
 def _packet() -> str:
     metadata = {
         "post_id": "POST-02",

@@ -708,7 +708,14 @@ def _compact_reference_list(text: str, post_id: str) -> str:
 - HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: a precedent for broad scenario and metric coverage, not a validation of this campaign. https://arxiv.org/abs/2211.09110
 
 This targeted reference check supports no “first” or exhaustive-novelty claim."""
-    return """POST-01 prior-work citations from the source draft; precedent only, not validation of this campaign.
+    if post_id == "POST-05":
+        return """POST-05 prior-work references from the source draft; context only, not validation of this campaign.
+
+- VarBench, Qian et al. (Findings of EMNLP 2024), “Robust Language Model Benchmarking Through Dynamic Variable Perturbation”: dynamic variable perturbation and repeated sampling for variable-based experiments. https://aclanthology.org/2024.findings-emnlp.946/
+- HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: broad scenario coverage and multiple metrics, as context for avoiding a single-score interpretation. https://arxiv.org/abs/2211.09110
+
+This targeted reference check supports no “first” or exhaustive-novelty claim."""
+    return """Prior-work references from the supplied campaign bibliography; context only, not validation of this campaign.
 
 - HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: 42 scenarios and multiple metrics. https://arxiv.org/abs/2211.09110
 - VarBench, Qian et al. (Findings of EMNLP 2024), “Robust Language Model Benchmarking Through Dynamic Variable Perturbation”: dynamic variable perturbation; five sampled runs (seeds 40–44) for variable-based experiments. https://aclanthology.org/2024.findings-emnlp.946/
@@ -736,10 +743,12 @@ def _compact_evidence_extract(text: str) -> str:
     )
 
 
-def _compact_limitations() -> str:
-    return """- One selected seed per case; no cell-level replications. Keep 194 raw results, 24 separate omissions, two provider-terminal cases, and the 192-case sensitivity set distinct.
+def _compact_limitations(text: str, post_id: str) -> str:
+    if post_id == "POST-04":
+        return """- One selected seed per case; no cell-level replications. Keep 194 raw results, 24 separate omissions, two provider-terminal cases, and the 192-case sensitivity set distinct.
 - The eligible set mixes 72 behavioral-reference and 120 compile-only cases; compile-only results are exploratory, not a validated behavioral aggregate.
 - The repository was recorded dirty; matching config hashes do not establish exact task/judge identity. Axes are task-specific and sparse; names/hints are bundled, and validator/runtime/judge failures are not behavioral misses."""
+    return text.rstrip()
 
 
 def _compact_failure_details(text: str) -> str:
@@ -837,7 +846,7 @@ def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: st
     if "evidence_extract" in name:
         return _compact_evidence_extract(text)
     if "limitations" in name:
-        return _compact_limitations() + "\n"
+        return _compact_limitations(text, post_id) + "\n"
     if "source_audit" in name:
         return _compact_source_audit(text)
     if "axis_placeholder_audit" in name:
