@@ -1,0 +1,284 @@
+grok 4.5:
+
+---
+title: Length Holds, Names Break — What One Sweep of Surface and Size Actually Shows
+date: 2026-10-03
+layout: post
+---
+*by <span class="icon-self">StrangeTcy</span>*
+
+<dl class="epistemic-status">
+  <dt>Original ideas</dt>
+  <dd>Local contrast between length-stable regex passes under one surface and length-mismatched failures under renamed surfaces in a single-seed pilot; explicit separation of source-validator events from behavioral underfit.</dd>
+  <dt>Synthesis</dt>
+  <dd>Heterogeneous code-task outcomes from one paid campaign archive, read against a clean-source comparator and prior multi-scenario/perturbation work, without claiming a shared depth scale or causal surface effect.</dd>
+  <dt>Prose</dt>
+  <dd>First-person technical narrative written from the Arena campaign evidence packet and style constraints.</dd>
+  <dt>Certainty</dt>
+  <dd>High on the recorded cell outcomes, failure notes, and dirty-repository flag; low on any isolated cause or general weird-machine detection claim.</dd>
+  <dt>Importance</dt>
+  <dd>Medium for measurement hygiene in code-agent evaluation; low as a capability ranking.</dd>
+</dl>
+
+I keep returning to five cells. Three of them look almost boring: the same model, seed 0, produces a regular-expression encoding of one Rule 110 update that preserves length on input strings of 32, 128, and 512 characters. The other two, still at length 32, collapse. One emits length 34; the other emits length 66. The judge records both as underfit. The only advertised change between the passing trio and the failing pair is the surface label—easy versus medium or hard.
+
+That contrast is sharp enough to feel like a finding. It is also exactly the kind of pattern that evaporates once you ask what else moved with the label. This note stays inside the archive: one selected seed per cell, a dirty repository flag, and a clean-source comparator that is not proof of the paid-run workspace. The question is not whether the model “sees weird machines.” The question is what these particular cells license, and what they carefully do not.
+
+## The track is six programs, not one depth axis
+
+The weird-machine family in the archive contains six environments: a regex cellular-automaton step, a CSS parity selector, an SQL fixed-point chain, a spreadsheet dataflow, a CI dependency graph, and a small template interpreter. Thirty eligible selected cases; twenty-five pass under behavioral_reference judges. That fraction is a description of these implementations and this run. It is not a calibrated score of hidden-depth competence.
+
+Each environment defines its own size parameter and its own success criteria. Regex checks output length plus a handful of fixed seeded strings. CSS checks parity behavior while the bit count moves from 3 to 4 to 5. SQL runs a fixed-point query whose chain length is varied. Spreadsheets check dataflow over class-name and grid-length contrasts. CI checks a dependency graph. The template interpreter checks a miniature language. A 512-character string, a 5-bit selector, a 25-node chain, and a larger grid are not interchangeable units of computational demand. Adding the passes therefore mixes distinct programs, distinct judges, and distinct notions of “larger.”
+
+The same non-monotonicity appears inside single environments. Under the easy surface the CSS cases score a partial 0.416667 at 3 bits, a source-invalid zero at 4 bits (disallowed top-level import of `re`), and a clean pass at 5 bits. The surface sweep at 3 bits is fail/pass/pass. SQL passes at chain lengths 6 and 25 yet fails source validation at length 12 with an unterminated triple-quoted string. The spreadsheet, CI, and template environments pass all five of their selected cells. These are heterogeneous code-repair outcomes. They do not form a theorem, a scalar difficulty scale, or evidence that the model detected an underlying machine in any general sense.
+
+One Rule 110 update encoded in regex does not establish Turing completeness, arbitrary iteration, or that the model internally represented a “weird machine.” The judge only ever saw length preservation and fifteen seeded strings. Passing those checks is local.
+
+## The regex contrast is real and confounded
+
+Hold the surface at easy and the three length cells all pass. Hold length at 32 and switch the surface to medium or hard: both fail with length mismatches (34 and 66). The failure notes are explicit morphisms collapsed on length. That is the cleanest surface-versus-size pattern the track contains.
+
+It is also confounded by construction. In the clean-source comparator the surface levels correspond to different class names. The hard prompt additionally inserts an implementation-performance hint. A name change can alter retrieval or coding conventions even when the underlying transition rule is unchanged; an extra hint changes the instruction itself. The design therefore bundles at least two surface factors with the nominal label. There is one seed-0 run per selected cell. No factorial separation, no repeated sampling, no population of equivalent task instances. The archive supports the exact response pattern that was observed. It does not support the causal claim that class names fooled the model, that the performance note distracted it, or that input length was irrelevant.
+
+A plausible and still-untested hypothesis is that the renamed classes or the added hard-level hint mattered more than string length for these two failures. The present sweep cannot distinguish that hypothesis from ordinary sampling variation or from their interaction. I am stating it as speculation, not as an inferred effect.
+
+## Failure layers are not interchangeable
+
+Across the broader eligible set the scalar PASS/FAIL label conceals different terminal events: empty patches, source-validation failures, runtime errors, malformed actions, and behavioral underfit. In the weird-machine track itself the two regex failures are underfit (length mismatch after a patch was produced). The CSS medium-depth cell is source_invalid because of a disallowed import. The SQL medium-depth cell is source_invalid because of a syntax error in a triple-quoted string. Those validator rejections occurred before any behavioral test of parity or fixed-point semantics. They are not evidence that the model failed to grasp the intended computation; they are evidence that the produced source did not clear the static gate.
+
+I keep the layers distinct on purpose. A source-invalid or runtime failure is a different kind of miss from an underfit that reaches the judge and then mismatches length or parity. Collapsing them into a single “fail” rate erases exactly the diagnostic information the archive still contains. Provider-terminal rows sit outside the main taxonomy denominator entirely; they are recorded but not folded into the behavioral counts used here.
+
+All thirty weird-machine cells carry the behavioral_reference judge guarantee. There are no compile-only outcomes inside this family to misread as validated behavior. The 25/30 figure is therefore a behavioral-reference pass count under the stated eligibility rules, nothing more.
+
+## One seed, dirty tree, comparator only
+
+Every selected cell is a single seed-0 draw. Subsequent editorial or model-role passes are not independent replications. Most contrasts are sparse one-factor substitutions around a baseline rather than full factorials or interaction tests. That design is enough to surface interesting local patterns; it is not enough to estimate cell-level variance or to claim robustness.
+
+The campaign archive records the repository as dirty. All thirty-three selected configuration hashes match the clean comparator snapshot, yet exact identity of the task, starter, visible-test, and judge code that actually ran remains unresolved. Observations drawn from the clean source—class-name differences, the hard-level performance note, the absence of direct template references for certain advertised axes in the wider category track—are therefore comparator findings. They do not establish the precise paid-run workspaces. I treat them as such.
+
+The same caution applies to the adjacent source-audit result that several nominal axes in the broader category track left no direct reference in the inspected templates. That is useful benchmark QA. It is not direct evidence about the regex surface manipulation, and the dirty flag still attaches.
+
+## What the measurement tradition already knew
+
+None of the methodological worries are new. Dynamic variable perturbation and repeated sampling already appear in VarBench; broad multi-scenario, multi-metric evaluation is the point of HELM. Other lines of work have examined epistemic-logic tasks, higher-order belief, causal templates for theory-of-mind, and the gap between plausible patches and full developer test suites. The contribution of this sweep is narrower: a concrete local pattern (length-stable passes under one regex surface, length-mismatched failures under the others) plus an explicit source-comparator audit that flags the name-plus-hint confound. Because the repository was dirty, even that audit stops short of proving exact runtime identity.
+
+I am not claiming priority. I am claiming that the archive makes the confound visible and that the right response is to keep the claim local.
+
+## A cleaner separation would look different
+
+If the goal is to isolate surface from size, the next design writes the factors apart. Fix the class name and vary only the implementation hint; then vary names while holding the hint constant. Generate multiple equivalent task instances at each input size, randomize order, and draw multiple seeds. Before any model call, diff the rendered prompt, starter code, visible tests, and judge inputs across levels; block any advertised axis that changes no relevant artifact. Score exact behavioral match separately from patch validity and from source/runtime clearance. Only then does a length-invariance claim or a surface-sensitivity claim become estimable rather than anecdotal.
+
+The present data cannot run that experiment retroactively. They can only show where the entanglement lives.
+
+## What the evidence licenses
+
+In one archived, single-seed sweep the model produced length-preserving regex updates for strings of 32, 128, and 512 characters under the easy surface label, and produced length-mismatched outputs (34 and 66) under the medium and hard surface labels at length 32. The surface manipulation bundled class-name changes and, at hard, an extra performance hint. Four other environments contributed additional passes and a pair of source-validation failures; two more environments passed every selected cell. The aggregate 25/30 is a heterogeneous count across six distinct programs and judges, not a shared depth metric.
+
+These observations do not establish that the model detects computational weirdness in general, that surface deception systematically beats hidden depth, that input length is irrelevant, or that any particular factor caused the two regex failures. They do not yield a common difficulty scale, a capability ranking, or a Turing-completeness result. They do show, concretely, that surface labels, size parameters, validators, and task semantics must be disentangled before anyone treats the cells as evidence about “what the model saw.” The useful residue is the map of where those distinctions failed in this run, and the reminder that a dirty tree plus one seed per cell is a pilot, not a proof.
+
+
+&&&&&&&
+
+opus 5.5:
+
+---
+title: "Thirty-Four Characters Out of Thirty-Two"
+date: 2026-10-03
+layout: post
+---
+
+*by <span class="icon-self">StrangeTcy</span>*
+
+<dl class="epistemic-status">
+  <dt>Original ideas</dt>
+  <dd>Moderate. Two ideas here are new: reading the regex contrast as a map of where failures happen rather than as a result, and a design that tests the two bundled manipulations separately. The general principle of perturbing variables and controlling for them comes from earlier work.</dd>
+  <dt>Synthesis</dt>
+  <dd>Combines one archived paid evaluation campaign (one model, one configuration, one seed per cell), an audit of a clean source comparator for a repository recorded as dirty, and two published benchmark papers used only for context.</dd>
+  <dt>Prose</dt>
+  <dd>A language model drafted this in an Arena writing pass, working from a compiled evidence packet of archive tables, audit findings, and limitations. It is published under this byline. No outside authors contributed.</dd>
+  <dt>Certainty</dt>
+  <dd>High for the recorded case outcomes. Low for any causal reading of them. The one causal hypothesis below is labelled speculative and was not tested.</dd>
+  <dt>Importance</dt>
+  <dd>Modest. The post is about experimental design for one small task family, not about model capability.</dd>
+</dl>
+
+Suppose you rename a class and the model's regex stops preserving string length.
+
+What did you learn? The obvious answer is that the model was paying attention to the name. A more careful answer is that you learned something about the name and about whatever else changed when the name changed. If you can't say what else changed, you have learned less than the obvious answer claims.
+
+This post is about one small cluster of results that looks at first like it answers a good question: *can a model see the computation underneath an unfamiliar surface?* I want to show why it doesn't answer that yet, and why the way it falls short is still useful.
+
+## The task family
+
+The campaign archive has a track of six "weird machine" code tasks. Each one hides a computation inside a substrate that wasn't built for it:
+
+- a regex that has to carry out a cellular-automaton step
+- CSS selectors that compute parity
+- a SQL fixed-point query
+- spreadsheet dataflow
+- a CI dependency graph
+- a small template interpreter
+
+Each task has two nominal axes, `surface_deceptiveness` and `hidden_depth`, each labelled easy, medium, or hard.
+
+The design isn't a full grid. Each environment has five selected cells:
+
+- the easy/easy baseline
+- two cells that change depth while surface stays easy
+- two cells that change surface while depth stays easy
+
+That's a one-factor-at-a-time cross around a single baseline. Each cell has exactly one seed-0 run. Every one of the 30 cases is graded by a behavioral reference judge, not compile-only. All 30 were recorded and all 30 count toward the score: no exclusions and no provider-terminal rows in this track.
+
+25 of the 30 pass. I'll come back to why that number means less than it seems.
+
+## The cross in the regex task
+
+The regex task asks for a single update of Rule 110, written as regular-expression machinery. "Hidden depth" here means only the length of the input string: 32, 128, or 512 characters.
+
+Here are the five cells:
+
+| surface | input length | verdict | score | judge note |
+|---|---|---|---|---|
+| easy | 32 | PASS | 1.0 | — |
+| easy | 128 | PASS | 1.0 | — |
+| easy | 512 | PASS | 1.0 | — |
+| medium | 32 | FAIL | 0.208333 | length mismatch, in=32, out=34 |
+| hard | 32 | FAIL | 0.208333 | length mismatch, in=32, out=66 |
+
+Laid out like that, it looks like a clean story. Under the easy label, the model's solution holds up as the input grows sixteenfold. At the smallest input, changing the surface label breaks it. Surface beats depth.
+
+I believed that for about one paragraph of the first draft. Then I looked at what the surface label actually controls.
+
+## Two changes made at once
+
+In the clean source comparator, the surface levels map to different class names. The hard level also adds an implementation-performance hint to the prompt.
+
+So moving from easy to hard surface changes two things together:
+
+1. **A name.** A class name changes nothing about the computation, but it can change which conventions and memorised patterns the model reaches for.
+2. **The instruction.** The extra hint is new content. It asks for something, or at least suggests something, that the easy prompt doesn't.
+
+The medium cell changes only the name (as far as the comparator shows). The hard cell changes the name and adds the hint. Both fail. Because each cell has one run, I can't separate the following:
+
+- the name mattered
+- the hint mattered
+- both mattered, or they interacted
+- seed 0 happened to land badly on two of five draws
+
+There's another caveat. The comparator is *clean*, while the paid campaign recorded its repository as dirty. All 33 selected config hashes match the clean snapshot. But matching configs isn't byte-level proof that the prompts, visible tests, or judge code the model actually saw were the same. So even "the hard prompt contained a performance hint" is an observation about the comparator, not a certainty about the paid run.
+
+Here is the hypothesis I'd bet on, and I'm labelling it plainly as speculation. **In this particular regex task and this particular run, the changed names or the added hint probably mattered more than input length.** The archive can't separate that from sampling noise. Nothing in it estimates an effect.
+
+## What the numbers 34 and 66 tell us
+
+The judge's notes give a little more than a verdict, and they're tempting to over-read.
+
+On a 32-character input, the medium-surface output was 34 characters: the input plus two. The hard-surface output was 66 characters: a bit more than double. A Rule 110 update should map a string to a string of the same length. Both failures broke that invariant, and the judge stopped at the mismatch. Its note says it "collapsed on length mismatch".
+
+My first instinct was to diagnose. +2 looks like a boundary-padding slip that never got trimmed. ~2× looks like something duplicating or interleaving the string. Those are plausible stories. But the archive records only the lengths, and I'd be making up a mechanism from two integers. What I can say is narrower: both failures are behavioral misses of the same kind. The code ran and produced output, and that output violated a structural property the task requires. They weren't crashes or validator rejections.
+
+That distinction matters, because the passes need a caveat too. The regex judge checks four specific criteria, including 15 seeded strings and length preservation. Passing those checks shows the expression behaved correctly on those checks. It doesn't prove the regex is correct in general.
+
+It also says nothing about the more romantic claim nearby. Rule 110 is famously Turing complete when iterated. This task asks for *one update*. A model that writes a correct single step hasn't shown that it represented a universal machine, that the expression can iterate arbitrarily, or anything at all about Turing completeness. The weird-machine framing is a reason to build the task. It isn't something the task measures.
+
+## Five failures, three layers
+
+Now widen the view. The track has five failures across 30 cases, and they don't all happen at the same stage:
+
+| environment | condition | score | where it stopped |
+|---|---|---|---|
+| regex | surface=medium, depth=easy | 0.208333 | behavioral: length mismatch (32→34) |
+| regex | surface=hard, depth=easy | 0.208333 | behavioral: length mismatch (32→66) |
+| CSS | surface=easy, depth=easy | 0.416667 | behavioral: partial credit, labelled underfit |
+| CSS | surface=easy, depth=medium | 0.0 | source validator: disallowed `import re` |
+| SQL | surface=easy, depth=medium | 0.0 | source validator: unterminated triple-quoted string |
+
+Three are behavioral misses: the program ran and got things wrong. Two never reached a behavioral test. The CSS medium-depth patch imported a module that isn't on the allowlist. The SQL medium-depth patch had a syntax error. Both validators reject before any semantics are checked. The validator's own note says it is not a security sandbox. Whatever it is, it's a gate, and these two cases stopped at the gate.
+
+That changes how the "depth" rows read. CSS uses a parity-selector implementation, and depth there means bit count:
+
+| CSS, surface=easy | 3 bits | 4 bits | 5 bits |
+|---|---|---|---|
+| outcome | FAIL 0.416667 (behavioral) | FAIL 0.0 (source-invalid) | PASS |
+
+SQL's depth is the length of a graph chain:
+
+| SQL, surface=easy | chain 6 | chain 12 | chain 25 |
+|---|---|---|---|
+| outcome | PASS | FAIL 0.0 (source-invalid) | PASS |
+
+Both rows are non-monotone as archived outcomes. In SQL the middle value fails and the largest passes. In CSS the smallest has the only behavioral failure and the largest passes. But in both, the failure in the middle row is a validator rejection. That's not evidence the model couldn't handle 4 bits or a 12-node chain. It's evidence that on that draw the model wrote a patch that didn't get through the gate. Whether a validator failure is "really" a reasoning failure is a fair question, but the archive can't answer it. Folding these into a depth curve would bury the question.
+
+The CSS surface sweep at 3 bits runs fail, pass, pass for easy, medium, hard. That's the opposite direction from regex. I'm not going to make a pattern out of that either. One run per cell, different task, different judge.
+
+The other three environments are uneventful in this run. Spreadsheet dataflow, the CI dependency graph, and the template interpreter each pass all five selected cells.
+
+For scale: across the whole campaign, the taxonomy has 61 failures among 192 eligible cases, and two provider-coded final rows fall outside that denominator. The labels there hide similar mixtures. Empty patches, source rejections, runtime errors, and malformed actions all show up as FAIL. Two cases labelled "overfit to visible tests" actually have full trusted scores and missing-companion-file notes. The weird-machine track is cleaner than that because everything in it is behaviorally judged and nothing is excluded. But a clean track can still mix failures from different layers.
+
+## Why 25/30 isn't a number about anything in particular
+
+Per environment, the track breaks down as follows:
+
+| environment | eligible | pass |
+|---|---|---|
+| CI dependency graph | 5 | 5 |
+| spreadsheet dataflow | 5 | 5 |
+| template interpreter | 5 | 5 |
+| SQL fixed point | 5 | 4 |
+| CSS state machine | 5 | 3 |
+| regex state machine | 5 | 3 |
+
+The pooled 25/30 is accurate bookkeeping. It's a poor *measurement*, because the rows have nothing in common except the axis labels:
+
+- They are different programs.
+- Each has its own judge: length preservation and seeded strings for regex, parity behavior for CSS, a fixed-point computation for SQL, dataflow for spreadsheets, a dependency graph for CI, a small language for the template interpreter.
+- "Hidden depth" means a 512-character string in one, a 5-bit selector in another, a 25-node chain in a third, and a larger grid in a fourth.
+
+Nothing says those are equally hard, or even hard along the same dimension.
+
+So easy/medium/hard aren't points on a common difficulty scale. They're ordinal labels inside each environment, and a few cells show the labels don't even order outcomes reliably there. Averaging over them gives a number with units of "whatever these six tasks happen to be". It's not a weird-machine capability score, and with one model and one configuration it's certainly not a ranking.
+
+The underlying move isn't new. HELM's case for [broad scenario coverage and multiple metrics](https://arxiv.org/abs/2211.09110) (42 scenarios) is largely an argument against reading a single pooled score this way. [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) already does dynamic variable perturbation, with repeated sampling (five seeds) for its variable-based experiments. I'm citing these as context for the design, not as validation of this campaign. This post doesn't do anything those papers haven't, beyond looking closely at one archive.
+
+## What the source audit adds, and what it doesn't
+
+The useful contribution here is small and specific. Comparing the archived outcomes with the source comparator found the name-plus-hint bundling in the regex surface axis. Without the comparator, "surface deceptiveness" would look like one intervention. With it, we can see it's at least two.
+
+A related audit covered the separate category track, a set of heterogeneous code-repair tasks. A static scan of the clean comparator found ten advertised control or variable axes, across nine category environments, that the environment templates never directly reference. Where that holds, the nominal axis count overstates the number of distinct interventions: a cell labelled "hard" may differ from "easy" only in its label. That finding isn't about the regex task, and it doesn't make the category-track outcomes a theorem or a score. They're still a collection of code-repair results. I mention it because it's the same kind of problem as the regex finding: the label promises a manipulation, and the artifacts may not deliver that manipulation cleanly.
+
+Both audit findings carry the dirty-repository caveat. They describe what the clean source does. They show only by inference what the paid runs saw.
+
+## The experiment I'd fuckingly want
+
+If the question is "does the surface or the depth decide the outcome?", the design has to give each its own handle:
+
+1. **Split the bundled surface manipulation.** Hold the class name fixed and toggle only the performance hint. Then hold the hint fixed (present or absent) and vary only the name. That's a 2×2 on the surface side, not three ordered levels.
+2. **Replicate cells.** Generate several equivalent task instances at each input size, randomise their order, and run multiple seeds per cell. With five draws per cell, a 0-for-5 means something that a 0-for-1 can't.
+3. **Diff the rendered artifacts before any model sees them.** For every pair of levels, compare the rendered prompt, starter code, visible tests, and judge inputs. If an advertised axis changes no relevant artifact, block it from the sweep. If it changes more than one, record each change as its own factor.
+4. **Score layers separately.** Report patch created, source valid, runs without error, and behaviorally correct as distinct outcomes. A validator rejection at 4 bits and a wrong parity answer at 3 bits shouldn't share a column.
+5. **Make the regex judge report more than lengths.** Even when length preservation fails, a per-position comparison on the seeded strings would let "+2 characters" become a diagnosis instead of a guess.
+
+Even with all that, the result would be about these task implementations under this judge, not about an abstract ability to detect computational weirdness.
+
+## What this licenses
+
+The archive supports one narrow claim:
+
+> In one archived sweep, with one seed per cell, this model passed the regex Rule 110 task at all three input lengths under the easy surface label and failed both altered-surface variants at the shortest length, where the altered variants change class names and, at the hard level, add an implementation hint.
+
+It also supports a few small descriptive facts:
+
+- Three of the track's five failures are behavioral misses and two are source-validator rejections.
+- Three environments passed everything they were given.
+- The depth axes measure different quantities in different environments.
+
+It doesn't license:
+
+- a causal claim that names fooled the model
+- a claim that depth didn't matter
+- a law that surface beats depth
+- a calibrated difficulty scale
+- a capability ranking
+- any statement about Turing completeness
+
+The most interesting thing in the archive is still the pair of integers 34 and 66. I'd just rather find out what produced them than write as if I already know.
