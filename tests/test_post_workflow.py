@@ -8,7 +8,13 @@ from pathlib import Path
 import pytest
 
 from runtime import engine
-from runtime.post_production import _audit_numeric_claim_traceability, _normalize_cross_review, validate_article
+from runtime.post_production import (
+    _audit_numeric_claim_traceability,
+    _compact_writer_template,
+    _normalize_cross_review,
+    _render_model_artifact,
+    validate_article,
+)
 from scripts import post_workflow
 
 
@@ -29,6 +35,27 @@ def test_existing_mission_uses_frozen_snapshots_without_rebuilding(monkeypatch: 
 
     monkeypatch.setattr(post_workflow, "_snapshot_sources", unexpected_rebuild)
     assert post_workflow.ensure_workflow() == mission_path
+
+
+def test_post04_writer_prompt_keeps_campaign_denominators_and_provider_rows_distinct():
+    prompt = _compact_writer_template("POST-04")
+    assert "194 raw scored rows" in prompt
+    assert "24 separate omissions" in prompt
+    assert "193-row single-provider-exclusion sensitivity set" in prompt
+    assert "192-row two-provider-exclusion analysis set" in prompt
+    assert "Two raw rows have `invalid_action` labels" in prompt
+    assert "no spend field" in prompt
+    assert "never present it as a rate for this campaign" in prompt
+    assert "Do not import unrelated cross-post bibliography items" in prompt
+
+
+def test_post04_reference_packet_includes_only_relevant_prior_work():
+    references = (post_workflow.SNAPSHOT_ROOT / "shared" / "references.md").read_text(encoding="utf-8")
+    rendered = _render_model_artifact("references", references, "POST-04", "a" * 64)
+    assert "Are ‘Solved Issues’ in SWE-bench Really Solved Correctly?" in rendered
+    assert "10.1145/3744916.3764576" in rendered
+    assert "not an estimate for the Atria campaign" in rendered
+    assert "VarBench" not in rendered
 
 
 def _packet() -> str:

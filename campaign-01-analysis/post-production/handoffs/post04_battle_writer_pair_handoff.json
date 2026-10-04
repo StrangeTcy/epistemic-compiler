@@ -1,0 +1,71 @@
+{
+  "article_approval_or_export_performed": false,
+  "browser_ui_submission_attempted": false,
+  "created_at": "2026-10-04T16:57:37Z",
+  "editorial_critic_job_id": "post04_editorial_critic",
+  "execution_mode": "workspace_rehydration_not_dag",
+  "following_job_id": "post04_editorial_critic",
+  "following_stage": "editorial_critic",
+  "following_stage_status": "blocked_until_both_writer_responses_are_ingested",
+  "handoff_creation_context": "POST-04 writer prompts and handoffs were materialized after the user noted that the repository contained no POST-04 handoff files.",
+  "identical_writer_prompts": true,
+  "model_label_capture_policy": "Preserve each writer response label separately; none has been supplied yet.",
+  "next_job_ids": [
+    "post04_battle_writer_a",
+    "post04_battle_writer_b"
+  ],
+  "next_stage": "battle_writer_pair",
+  "next_stage_status": "waiting_for_human",
+  "post03_dependency": {
+    "report_sha256": "6b16e6b1ca07db58d4566f38905bb17bc8aad929e979475f2e3e5ccadc89daf8",
+    "revision_noop_check_performed_locally": true,
+    "revision_response_matches_final_writer_response": true,
+    "revision_validator_job_id": "post03_validation_revision_validator",
+    "revision_validator_status": "conditional_noop_not_recorded_in_runtime",
+    "status": "existing_valid_post03_post_validator_report; conditional revision step not recorded in runtime",
+    "valid": true,
+    "validation_report_copy": "campaign-01-analysis/post-production/handoffs/POST-03_validation_report.json",
+    "validator_jobs_recorded": [
+      "post03_post_validator"
+    ]
+  },
+  "post_id": "POST-04",
+  "prepared_evidence_packet": "campaign-01-analysis/post-production/handoffs/POST-04_prepared_evidence_packet.md",
+  "prepared_evidence_packet_sha256": "5660bc1bcd44eb95f5f7c39ed22b537d288b9f8790330240a56ff8c241249f31",
+  "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
+  "runtime_state_available": false,
+  "runtime_state_note": "The ignored runtime/runs directory is absent in this checkout. These are durable, paste-ready workspace handoffs rebuilt from the immutable source snapshots; no live Arena UI, browser, or campaign run was used.",
+  "schema_version": 1,
+  "stage": "battle_writer_pair",
+  "status": "waiting_for_human",
+  "updated_at": "2026-10-04T17:00:35Z",
+  "upstream_prepare_post_status": "completed_local_packet_build",
+  "workflow_id": "campaign-01-post-production",
+  "workspace_prompt_copies": [
+    "campaign-01-analysis/post-production/handoffs/POST-04_writer_a_prompt.md",
+    "campaign-01-analysis/post-production/handoffs/POST-04_writer_b_prompt.md"
+  ],
+  "writer_prompts_identical": true,
+  "writers": [
+    {
+      "expected_response_artifact": "artifacts/jobs/post04_battle_writer_a/response.md",
+      "job_id": "post04_battle_writer_a",
+      "model_label": null,
+      "prompt_sha256": "70de747dd9b28a86e9de8b793704d48ec0ab96d26e43b56ab9e77aa87913ed16",
+      "response_ingested": false,
+      "role": "battle_writer_a",
+      "status": "waiting_for_human",
+      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-04_writer_a_prompt.md"
+    },
+    {
+      "expected_response_artifact": "artifacts/jobs/post04_battle_writer_b/response.md",
+      "job_id": "post04_battle_writer_b",
+      "model_label": null,
+      "prompt_sha256": "70de747dd9b28a86e9de8b793704d48ec0ab96d26e43b56ab9e77aa87913ed16",
+      "response_ingested": false,
+      "role": "battle_writer_b",
+      "status": "waiting_for_human",
+      "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-04_writer_b_prompt.md"
+    }
+  ]
+}

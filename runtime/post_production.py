@@ -700,7 +700,14 @@ def _compact_style_references(text: str) -> str:
     return "\n".join(blocks).strip() + "\n"
 
 
-def _compact_reference_list(text: str) -> str:
+def _compact_reference_list(text: str, post_id: str) -> str:
+    if post_id == "POST-04":
+        return """POST-04 prior-work references from the source draft; context only, not validation of this campaign.
+
+- You Wang, Michael Pradel, and Zhongxin Liu. “Are ‘Solved Issues’ in SWE-bench Really Solved Correctly? An Empirical Study.” The study reports that 7.8% of plausible patches counted correct by benchmark validation failed the full developer-written test suite in its studied SWE-bench Verified setting. This rate is not an estimate for the Atria campaign. https://dl.acm.org/doi/10.1145/3744916.3764576
+- HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: a precedent for broad scenario and metric coverage, not a validation of this campaign. https://arxiv.org/abs/2211.09110
+
+This targeted reference check supports no “first” or exhaustive-novelty claim."""
     return """POST-01 prior-work citations from the source draft; precedent only, not validation of this campaign.
 
 - HELM, Liang et al. (TMLR 2023), “Holistic Evaluation of Language Models”: 42 scenarios and multiple metrics. https://arxiv.org/abs/2211.09110
@@ -807,7 +814,7 @@ def _render_model_artifact(name: str, text: str, post_id: str, source_sha256: st
     if "style_reference_material" in name:
         return _compact_style_references(text)
     if name == "references":
-        return _compact_reference_list(text)
+        return _compact_reference_list(text, post_id)
     if "relevant_findings" in name:
         try:
             payload = json.loads(text)
@@ -1193,6 +1200,18 @@ def _compact_prepared_packet(packet: str, post_id: str) -> tuple[str, list[dict[
 
 
 def _compact_writer_template(post_id: str) -> str:
+    post_specific = ""
+    if post_id == "POST-04":
+        post_specific = """
+POST-04-specific evidence boundaries:
+- Keep the 194 raw scored rows, 24 separate omissions, the 193-row single-provider-exclusion sensitivity set, and the 192-row two-provider-exclusion analysis set distinct. The 24 omissions are not scored failures.
+- In the 192-row set, distinguish 72 behavioral-reference cases from 120 exploratory compile-only cases; scope the 61-failure taxonomy to that set.
+- Two raw rows have `invalid_action` labels but final notes attributing terminal failure to provider transients. Preserve the raw labels and the terminal-note interpretation; do not describe those rows as ordinary model-format failures.
+- The seven `epistemic_games` rows retain their recorded track label. Any semantic regrouping is an analysis view, not a rewrite of the archive.
+- Treat configuration/telemetry inconsistencies as metadata discrepancies, not evidence about internal reasoning. The archive has no spend field, and no reasoning text is reproduced.
+- The SWE-bench study's 7.8% result applies only to its studied setting; never present it as a rate for this campaign.
+- For literature context, use only the SWE-bench study and HELM entries in the POST-04 reference block. Do not import unrelated cross-post bibliography items from campaign-wide evidence summaries.
+"""
     return f"""# Independent StrangeTcy research essay — {post_id}
 
 Write one complete essay with a new thesis, opening, and argument structure. Use the full draft as an evidence map, not an outline or prose to paraphrase. This is one of two parallel candidates; do not refer to or imitate another answer.
@@ -1200,7 +1219,7 @@ Write one complete essay with a new thesis, opening, and argument structure. Use
 Use only supplied facts and citations. Keep raw scores, exclusions, provider-terminal cases, denominators, judge guarantees, and failure layers distinct. Compile-only outcomes are exploratory, not a validated behavioral aggregate. There is one selected seed per cell; subsequent editorial/model role passes are not independent replications. The repository was recorded dirty: the clean source is only a comparator. These sparse results do not establish causal effects, a common difficulty scale, or a general capability ranking. Keep caveats next to claims. Distinguish validator/runtime/tool/judge failures from behavioral misses.
 
 POST-02 is Bayesian inference over stipulated policies, not recursive ToM; POST-05's Rule 110/code-repair observations do not establish Turing completeness. Category-track outcomes are heterogeneous code-repair results, not a theorem or scalar score.
-
+{post_specific}
 The packet includes verbatim excerpts from actual StrangeTcy posts: use them only for rhetorical structure, never copy distinctive wording, examples, titles, or author-process claims. Avoid generic AI prose and benchmark-report tone; use technical detail and math/tables/diagrams only when they clarify.
 
 Return only the complete Markdown article, 1,800–2,500 words. Use frontmatter `title`, `date: 2026-10-03`, `layout: post`; the exact StrangeTcy byline; and the site's epistemic-status `<dl>` fields in order: Original ideas, Synthesis, Prose, Certainty, Importance. If using math, place `{{% include mathjax.html %}}` after frontmatter. Attribute the actual Arena writing process accurately. No preface, editor note, draft label, internal `F-xx`/`POST-xx` ID, path, hash, or response fence."""

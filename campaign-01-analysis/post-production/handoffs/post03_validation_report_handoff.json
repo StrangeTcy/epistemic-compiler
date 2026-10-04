@@ -1,0 +1,33 @@
+{
+  "article_approval_or_export_performed": false,
+  "browser_ui_submission_attempted": false,
+  "errors": [],
+  "execution_mode": "workspace_rehydration_not_dag",
+  "final_writer_response_copy": "campaign-01-analysis/post-production/handoffs/POST-03_final_writer_reconciled_response.md",
+  "final_writer_response_sha256": "0d99cd3cedb1b11f3dbf97416a0d15968e3ffaf4be0c01bffb6bf736bc6c65e2",
+  "following_job_id": "post04_prepare_post",
+  "following_stage": "post04_prepare_post",
+  "following_stage_status": "completed_local_packet_build",
+  "next_job_id": "post04_battle_writer_pair",
+  "next_stage": "battle_writer_pair",
+  "next_stage_status": "waiting_for_human",
+  "post_id": "POST-03",
+  "report_sha256": "6b16e6b1ca07db58d4566f38905bb17bc8aad929e979475f2e3e5ccadc89daf8",
+  "revision_noop_check": {
+    "performed_locally": true,
+    "result": "official conditional helper returned the final-writer response byte-for-byte because the existing validator report is valid",
+    "workflow_job_execution_recorded": false
+  },
+  "revision_response_matches_final_writer_response": true,
+  "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
+  "schema_version": 1,
+  "valid": true,
+  "validation_revision_job_id": "post03_validation_revision",
+  "validation_revision_status": "conditional_noop_not_recorded_in_runtime",
+  "validation_revision_validator_job_id": "post03_validation_revision_validator",
+  "validator_jobs": [
+    "post03_post_validator"
+  ],
+  "workflow_id": "campaign-01-post-production",
+  "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-03_validation_report.json"
+}
