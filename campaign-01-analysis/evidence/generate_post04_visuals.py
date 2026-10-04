@@ -42,6 +42,14 @@ EXPECTED = {
     "invalid_action": (2, 0, 2),
     "overfit_visible_tests": (2, 1, 1),
 }
+DISPLAY_LABELS = {
+    "patch_invalid": "Empty patch file",
+    "underfit": "Score below pass bar",
+    "source_invalid": "Code rejected before run",
+    "runtime_error": "Execution failure",
+    "invalid_action": "Malformed action",
+    "overfit_visible_tests": "Label / note conflict",
+}
 
 
 def esc(value: object) -> str:
@@ -140,38 +148,38 @@ def pipeline_svg(rows: list[dict[str, object]], provider_count: int, omissions: 
     width, height = 1240, 540
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-        '<title id="title">A reading map of POST-04 failure labels along an evaluation pipeline</title>',
-        '<desc id="desc">The 61 eligible failures are grouped by recorded label at action and patch, source validation, runtime, and judge or record stages. Two provider-terminal rows are outside the 192-row analysis set, and pre-scoring omissions have no pass or fail result. This is a reading map, not a causal execution trace.</desc>',
+        '<title id="title">Where a code-repair case can stop</title>',
+        '<desc id="desc">A plain-language map of saved code-repair outcomes: provider-service errors, empty patches and malformed actions, code rejected before running, execution errors, and judge or record conflicts. Two cases with provider-service notes are outside the 192-case comparison; 24 unscored cases are separate. The map is not a trace of each execution.</desc>',
         f'<rect x="0" y="0" width="{width}" height="{height}" fill="{COLORS["paper"]}"/>',
-        text(24, 39, "A red result can enter the record at different points", 22, COLORS["ink"], 700),
-        text(24, 68, "Nominal handoffs between stages · cards list recorded labels · not a trace of one execution", 12, COLORS["muted"]),
+        text(24, 39, "Where a code-repair case can stop", 22, COLORS["ink"], 700),
+        text(24, 68, "Typical route through evaluation · cards summarize the saved notes, not each run", 12, COLORS["muted"]),
         '<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52616d"/></marker></defs>',
     ]
     stages = [
-        ("Provider response", [
-            f"{provider_count} provider-terminal rows",
-            "outside the 192-row set",
-            "raw label: invalid_action",
+        ("Model service", [
+            f"{provider_count} final notes report service errors",
+            "after retries; outside the 192-case",
+            "comparison; raw label is retained",
         ], True),
-        ("Action / patch", [
-            f"{by_label['patch_invalid']['count']} patch_invalid: empty patch file",
-            f"{by_label['invalid_action']['count']} eligible invalid_action rows",
-            "malformed action or patch JSON",
+        ("Answer and patch", [
+            f"{by_label['patch_invalid']['count']} saved patch files are empty",
+            f"{by_label['invalid_action']['count']} answers could not be parsed",
+            "as valid actions",
         ], False),
-        ("Source validation", [
-            f"{by_label['source_invalid']['count']} source_invalid rows",
-            "validator rejection",
+        ("Basic code check", [
+            f"{by_label['source_invalid']['count']} code submissions rejected",
+            "for syntax or import-policy issues",
             "before execution",
         ], False),
-        ("Runtime", [
-            f"{by_label['runtime_error']['count']} runtime_error rows",
-            "execution failures",
-            "after source validation",
+        ("Run the code", [
+            f"{by_label['runtime_error']['count']} cases failed during execution",
+            "after passing the basic",
+            "code checks",
         ], False),
-        ("Judge / stored label", [
-            f"{by_label['underfit']['count']} underfit score shortfalls",
-            f"{by_label['overfit_visible_tests']['count']} overfit labels conflict",
-            "with trusted scores and final notes",
+        ("Test and saved result", [
+            f"{by_label['underfit']['count']} results below the pass bar",
+            f"{by_label['overfit_visible_tests']['count']} labels conflict",
+            "with score fields and final notes",
         ], False),
     ]
     box_xs = [40, 280, 520, 760, 1000]
@@ -194,11 +202,11 @@ def pipeline_svg(rows: list[dict[str, object]], provider_count: int, omissions: 
         parts.append(multiline(x + box_w / 2, card_y + 28, details, 11, COLORS["muted"], 500, "middle", 20))
 
     parts.append(f'<rect x="40" y="330" width="1160" height="82" rx="8" fill="{COLORS["note_bg"]}" stroke="{COLORS["grid"]}"/>')
-    parts.append(text(58, 357, f"{total_failures} eligible FAIL labels", 14, COLORS["ink"], 700))
-    parts.append(text(58, 382, "24 empty patch files + 2 malformed actions + 10 validator rejections + 3 runtime errors + 20 underfit + 2 conflicting overfit labels", 12, COLORS["muted"]))
-    parts.append(text(58, 402, f"The separate {omissions} pre-scoring omissions have no scored outcome; they are neither PASS nor FAIL.", 11, COLORS["muted"]))
-    parts.append(text(40, 455, "The provider-terminal rows remain in the raw checkpoint but are outside the eligible-failure total.", 12, COLORS["muted"], 600))
-    parts.append(text(40, 481, "The labels distinguish recorded events; they do not identify who caused a stop or diagnose a reasoning process.", 12, COLORS["muted"]))
+    parts.append(text(58, 357, f"{total_failures} FAIL cases in the 192-case comparison", 14, COLORS["ink"], 700))
+    parts.append(text(58, 382, "24 empty patches + 2 malformed actions + 10 code-check rejections + 3 run errors + 20 below-pass results + 2 label/note conflicts", 12, COLORS["muted"]))
+    parts.append(text(58, 402, f"The separate {omissions} cases omitted before scoring have no PASS/FAIL result.", 11, COLORS["muted"]))
+    parts.append(text(40, 455, "The two provider-service rows remain in the raw 194 but are outside this 192-case comparison.", 12, COLORS["muted"], 600))
+    parts.append(text(40, 481, "These records show what was logged, not who caused each failure or what the model was thinking.", 12, COLORS["muted"]))
     parts.append("</svg>")
     return "\n".join(parts) + "\n"
 
@@ -210,17 +218,17 @@ def taxonomy_svg(rows: list[dict[str, object]]) -> str:
     scale = plot_width / max_count
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-        '<title id="title">Eligible POST-04 failures by label and judge guarantee</title>',
-        '<desc id="desc">A stacked horizontal bar chart of 61 failures in the 192-row analysis set. Each recorded failure label is split into behavioral-reference and compile-only counts; the latter are exploratory in the campaign report.</desc>',
+        '<title id="title">The 61 failed cases by plain-language category and grading method</title>',
+        '<desc id="desc">A stacked horizontal bar chart of 61 failures in the 192-case comparison. Bars show counts in each of six plain-language categories, split between a reference-behavior check and build or available checks, which the campaign report calls exploratory.</desc>',
         f'<rect x="0" y="0" width="{width}" height="{height}" fill="{COLORS["paper"]}"/>',
-        text(24, 39, "The 61 eligible failures, split by judge guarantee", 22, COLORS["ink"], 700),
-        text(24, 68, "Counts by recorded label · provider-terminal failures excluded from this denominator", 12, COLORS["muted"]),
+        text(24, 39, "How the 61 failed cases split across grading methods", 22, COLORS["ink"], 700),
+        text(24, 68, "Bar length is a count · the two provider-service cases are outside this comparison", 12, COLORS["muted"]),
         f'<rect x="26" y="91" width="15" height="15" rx="2" fill="{COLORS["br"]}"/>',
-        text(49, 103, "BR · behavioral-reference", 11, COLORS["muted"]),
+        text(49, 103, "Reference-behavior check", 11, COLORS["muted"]),
         f'<rect x="269" y="91" width="15" height="15" rx="2" fill="{COLORS["co"]}"/>',
-        text(292, 103, "CO · compile-only (exploratory)", 11, COLORS["muted"]),
-        text(24, 135, "RECORDED LABEL", 10, COLORS["muted"], 700, extra='letter-spacing="0.7px"'),
-        text(left, 135, "CASE COUNT", 10, COLORS["muted"], 700, extra='letter-spacing="0.7px"'),
+        text(292, 103, "Build + available checks (exploratory)", 11, COLORS["muted"]),
+        text(24, 135, "WHAT THE RECORD SAYS", 10, COLORS["muted"], 700, extra='letter-spacing="0.7px"'),
+        text(left, 135, "NUMBER OF CASES", 10, COLORS["muted"], 700, extra='letter-spacing="0.7px"'),
         text(985, 135, "TOTAL", 10, COLORS["muted"], 700, extra='letter-spacing="0.7px"'),
     ]
     axis_bottom = top + (len(rows) - 1) * pitch + bar_h + 8
@@ -230,7 +238,7 @@ def taxonomy_svg(rows: list[dict[str, object]]) -> str:
         parts.append(text(x, 149, tick, 10, COLORS["muted"], 400, "middle"))
     for index, row in enumerate(rows):
         y = top + index * pitch
-        parts.append(text(24, y + 19, row["label"], 12, COLORS["ink"], 550))
+        parts.append(text(24, y + 19, DISPLAY_LABELS[row["label"]], 12, COLORS["ink"], 550))
         br_width = row["br"] * scale
         co_width = row["co"] * scale
         if br_width:
@@ -241,7 +249,7 @@ def taxonomy_svg(rows: list[dict[str, object]]) -> str:
             parts.append(f'<rect x="{co_x:.1f}" y="{y}" width="{co_width:.1f}" height="{bar_h}" rx="3" fill="{COLORS["co"]}"/>')
             parts.append(text(co_x + co_width / 2, y + 19, row["co"], 11, COLORS["white"], 700, "middle"))
         parts.append(text(985, y + 19, f"{row['count']}", 12, COLORS["ink"], 650))
-    parts.append(text(24, 535, "Compile-only verdicts are exploratory; the labels are not a validated taxonomy of reasoning mechanisms.", 11, COLORS["muted"]))
+    parts.append(text(24, 535, "The campaign treats build-and-available-check results as exploratory; category labels do not explain why code failed.", 11, COLORS["muted"]))
     parts.append("</svg>")
     return "\n".join(parts) + "\n"
 

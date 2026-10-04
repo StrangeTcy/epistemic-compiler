@@ -4,18 +4,17 @@
   "valid": true,
   "errors": [],
   "warnings": [],
-  "title": "One Pass Rate, Six Stopping Points",
+  "title": "What Does a Failed Code Repair Tell Us?",
   "date": "2026-10-03",
-  "slug": "one-pass-rate-six-stopping-points",
-  "suggested_jekyll_filename": "2026-10-03-one-pass-rate-six-stopping-points.md",
-  "word_count": 2402,
+  "slug": "what-does-a-failed-code-repair-tell-us",
+  "suggested_jekyll_filename": "2026-10-03-what-does-a-failed-code-repair-tell-us.md",
+  "word_count": 2368,
   "numeric_literals_checked": [
     "0",
     "0.95",
     "1",
     "1.0",
     "10",
-    "11",
     "120",
     "122",
     "131",
@@ -33,14 +32,12 @@
     "2710",
     "3",
     "30",
-    "31",
     "325785",
     "33",
     "37",
     "3869",
     "45",
     "47",
-    "5",
     "56",
     "61",
     "62",
@@ -51,22 +48,41 @@
     "7.8%",
     "72",
     "75",
-    "8",
     "9"
   ],
   "unsupported_numeric_literals": [],
   "spelled_quantitative_counts_checked": [
     "1",
-    "16",
-    "2",
-    "20",
-    "3"
+    "17",
+    "2"
   ],
   "unsupported_spelled_quantitative_counts": [],
   "traceability_audit": {
     "mapped_numeric_claim_sentences": [
       {
-        "sentence": "Two rows in this archive carry the label  .",
+        "sentence": "Its saved result table contains **194 scored cases**.",
+        "numbers": [
+          "194"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
+            "matched_numbers": [
+              "194"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "194"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "Two rows in the record carry the label  .",
         "numbers": [
           "2"
         ],
@@ -109,50 +125,7 @@
         ]
       },
       {
-        "sentence": "Both rows also record a trusted score of 1.0.",
-        "numbers": [
-          "1.0"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "1.0"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "1.0"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "1.0"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "1.0"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "1.0"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Three fields on one row, pointing three ways.",
+        "sentence": "One row reports the missing  ; the other,  .",
         "numbers": [
           "1"
         ],
@@ -167,7 +140,7 @@
         ]
       },
       {
-        "sentence": "The result checkpoint holds **194 scored cases: 131 PASS and 63 FAIL**.",
+        "sentence": "The saved results include **194 scored cases: 131 PASS and 63 FAIL**.",
         "numbers": [
           "131",
           "194",
@@ -195,68 +168,7 @@
         ]
       },
       {
-        "sentence": "Alongside it, the campaign records **24 omissions**: 17   cases dropped because the provider did not support their input modality, and 7 cases blocked before any provider call by known calibration failures.",
-        "numbers": [
-          "17",
-          "24",
-          "7"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C01",
-            "finding_ids": "F-01;F-02;F-03",
-            "matched_numbers": [
-              "17",
-              "24",
-              "7"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "24"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "24"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "7"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "24"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "24"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "24"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "None of the 24 has a model score.",
+        "sentence": "The campaign separately lists **24 cases that were not scored**.",
         "numbers": [
           "24"
         ],
@@ -306,10 +218,162 @@
         ]
       },
       {
-        "sentence": "| Raw checkpoint | nothing | 131 / 63 of 194 | every selected scored row, provider-terminal rows included |",
+        "sentence": "Seventeen tasks in an environment named   could not be sent because the provider—the service returning the model’s answer—did not support their input format.",
+        "numbers": [
+          "17"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
+            "matched_numbers": [
+              "17"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "Those 24 cases have no model verdict; they are neither passes nor failures.",
+        "numbers": [
+          "24"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "24"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "There is also a disagreement about two scored failures.",
+        "numbers": [
+          "2"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "But the final notes on two rows say a temporary provider failure continued after retries.",
+        "numbers": [
+          "2"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "| Raw campaign results | None | 131 / 63 of 194 | The official scored total, including the two cases whose notes blame the provider service |",
         "numbers": [
           "131",
           "194",
+          "2",
           "63"
         ],
         "candidate_trace_rows": [
@@ -323,18 +387,47 @@
             ]
           },
           {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
               "131",
               "194",
+              "2",
               "63"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "2"
             ]
           }
         ]
       },
       {
-        "sentence": "| Report-consistent set | the one outage the report counter names | 131 / 62 of 193 | follows the campaign report's own count |",
+        "sentence": "| Remove one summary-listed outage | The one outage named by the campaign summary | 131 / 62 of 193 | Follows the summary’s single-outage count |",
         "numbers": [
           "131",
           "193",
@@ -362,7 +455,7 @@
         ]
       },
       {
-        "sentence": "| Analysis set | both rows whose final notes blame the provider | 131 / 61 of 192 | follows the row-level terminal notes |",
+        "sentence": "| Remove both cases with service-error notes | Both rows whose final notes blame the provider | 131 / 61 of 192 | Excludes both provider-service cases from the performance comparison |",
         "numbers": [
           "131",
           "192",
@@ -422,16 +515,18 @@
         ]
       },
       {
-        "sentence": "The 192-row set is my explicit exclusion, not a corrected campaign figure.",
+        "sentence": "I use the **192-case comparison** to discuss performance, but that is my choice, not a correction to the campaign’s official 194-case result.",
         "numbers": [
-          "192"
+          "192",
+          "194"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C01",
             "finding_ids": "F-01;F-02;F-03",
             "matched_numbers": [
-              "192"
+              "192",
+              "194"
             ]
           },
           {
@@ -445,7 +540,8 @@
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "192"
+              "192",
+              "194"
             ]
           },
           {
@@ -472,57 +568,57 @@
         ]
       },
       {
-        "sentence": "Everything below uses 192 unless I say otherwise.",
+        "sentence": "The 24 unscored cases stay separate from all three views.",
         "numbers": [
-          "192"
+          "24"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C01",
             "finding_ids": "F-01;F-02;F-03",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           },
           {
             "claim_id": "POST-04-C03",
             "finding_ids": "F-09",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           },
           {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           },
           {
             "claim_id": "POST-04-C09",
             "finding_ids": "F-09;F-13;F-16",
             "matched_numbers": [
-              "192"
+              "24"
             ]
           }
         ]
       },
       {
-        "sentence": "All 33 selected configuration hashes match a clean source comparator, but matching configs are not byte-level proof that the task, visible-test, judge, and helper code used in the paid run were clean.",
+        "sentence": "The settings for all **33** selected tasks match those in a clean code snapshot.",
         "numbers": [
           "33"
         ],
@@ -551,7 +647,64 @@
         ]
       },
       {
-        "sentence": "My first plan was to compute a model-attributable failure rate: take the 61 failures, remove the obviously infrastructural ones, divide the remainder by 192.",
+        "sentence": "The two provider-service cases are outside the 192-case comparison; 24 unscored cases are shown separately.]",
+        "numbers": [
+          "192",
+          "24"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "192",
+              "24"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "In the 192-case comparison, **61 rows are marked FAIL**.",
         "numbers": [
           "192",
           "61"
@@ -608,114 +761,7 @@
         ]
       },
       {
-        "sentence": "It also keeps the two provider-terminal rows outside the 192-row analysis set and separates them from the two eligible   cases.",
-        "numbers": [
-          "192"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C01",
-            "finding_ids": "F-01;F-02;F-03",
-            "matched_numbers": [
-              "192"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "192"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "192"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "192"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "192"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "192"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Here are the 61 failures in the 192-row set, with judge mode kept visible:",
-        "numbers": [
-          "192",
-          "61"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C01",
-            "finding_ids": "F-01;F-02;F-03",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "192",
-              "61"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "|   | 24 | 9 / 15 | every final note says the patch file is empty |",
+        "sentence": "|   | 24 | 9 / 15 | Every final note says the patch file is empty |",
         "numbers": [
           "15",
           "24",
@@ -774,7 +820,7 @@
         ]
       },
       {
-        "sentence": "|   | 20 | 3 / 17 | a judge scored the submission below passing |",
+        "sentence": "|   | 20 | 3 / 17 | The judge records a below-pass result |",
         "numbers": [
           "17",
           "20",
@@ -831,7 +877,7 @@
         ]
       },
       {
-        "sentence": "|   | 10 | 3 / 7 | syntax error or disallowed import, before execution |",
+        "sentence": "|   | 10 | 3 / 7 | Code was rejected before execution, for syntax or import-policy reasons |",
         "numbers": [
           "10",
           "3",
@@ -895,7 +941,7 @@
         ]
       },
       {
-        "sentence": "|   | 3 | 0 / 3 | the patch executed and crashed |",
+        "sentence": "|   | 3 | 0 / 3 | The program failed while running |",
         "numbers": [
           "0",
           "3"
@@ -939,7 +985,7 @@
         ]
       },
       {
-        "sentence": "|   | 2 | 0 / 2 | action rejected as malformed; see the next section |",
+        "sentence": "|   | 2 | 0 / 2 | The submitted action was not in an accepted format |",
         "numbers": [
           "0",
           "2"
@@ -983,7 +1029,7 @@
         ]
       },
       {
-        "sentence": "|   | 2 | 1 / 1 | label contradicted by score and note; see the next section |",
+        "sentence": "|   | 2 | 1 / 1 | The label conflicts with a trusted-score field and missing-file notes |",
         "numbers": [
           "1",
           "2"
@@ -1028,7 +1074,7 @@
         ]
       },
       {
-        "sentence": "[Stacked horizontal bars for the 61 eligible failures, split by behavioral-reference and compile-only judge modes across six recorded labels.]",
+        "sentence": "[Horizontal stacked bars showing the 61 failures by plain-language category and grading method: reference-behavior checks versus build and available checks.]",
         "numbers": [
           "61"
         ],
@@ -1078,146 +1124,36 @@
         ]
       },
       {
-        "sentence": "The behavioral-reference slice has 16 failures: nine empty patches, three source rejections, one mislabeled “overfit” row, and three   rows.",
+        "sentence": "One detail changes how I read the 72 cases checked against reference behavior.",
         "numbers": [
-          "16",
-          "3"
+          "72"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C02",
             "finding_ids": "F-04",
             "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "3"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "3"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "16"
+              "72"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "16",
-              "3"
+              "72"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "16",
-              "3"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "3"
+              "72"
             ]
           }
         ]
       },
       {
-        "sentence": "So in the slice with the stronger guarantee, three of sixteen failures are the kind a behavioral test is designed to catch.",
-        "numbers": [
-          "16"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C02",
-            "finding_ids": "F-04",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Seventeen of the twenty   rows are compile-only.",
-        "numbers": [
-          "20"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "20"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "20"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "20"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "20"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "20"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Back to the two rows I opened with.",
+        "sentence": "Here are the two   rows.",
         "numbers": [
           "2"
         ],
@@ -1260,7 +1196,7 @@
         ]
       },
       {
-        "sentence": "| [ ] | compile-only |   | 0.95 | 1.0 | required file   missing |",
+        "sentence": "| [ ] | Compile-only | FAIL |   | 0.95 | 1.0 | Required   file missing |",
         "numbers": [
           "0.95",
           "1.0"
@@ -1304,7 +1240,7 @@
         ]
       },
       {
-        "sentence": "| [ ] | behavioral-reference |   | 0.95 | 1.0 | required file   missing; note also says   |",
+        "sentence": "| [ ] | Behavioral reference | FAIL |   | 0.95 | 1.0 | Required   file missing; note also includes the unexplained   flag |",
         "numbers": [
           "0.95",
           "1.0"
@@ -1348,7 +1284,51 @@
         ]
       },
       {
-        "sentence": "These two rows are not straightforward evidence of overfitting.",
+        "sentence": "Both rows are marked FAIL with a   of 0.95, while the separate   field is 1.0.",
+        "numbers": [
+          "0.95",
+          "1.0"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C06",
+            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C08",
+            "finding_ids": "F-04;F-09;F-13;F-17",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "1.0"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "The two cases with provider-service notes create the reverse problem.",
         "numbers": [
           "2"
         ],
@@ -1391,106 +1371,7 @@
         ]
       },
       {
-        "sentence": "The other two   rows, inside the 61, are both compile-only and carry no such note.",
-        "numbers": [
-          "2",
-          "61"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C01",
-            "finding_ids": "F-01;F-02;F-03",
-            "matched_numbers": [
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "2",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "2",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "2",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "2",
-              "61"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "2",
-              "61"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "## Two judges, two promises",
-        "numbers": [
-          "2"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "2"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "The 192 rows were not graded under one contract.",
+        "sentence": "They are excluded from the 192-case comparison.",
         "numbers": [
           "192"
         ],
@@ -1540,20 +1421,48 @@
         ]
       },
       {
-        "sentence": "**72 are  : 56 PASS, 16 FAIL.",
+        "sentence": "The 192-case comparison combines **72 behavioral-reference cases**—56 PASS and 16 FAIL—with **120 compile-only cases**—75 PASS and 45 FAIL.",
         "numbers": [
+          "120",
           "16",
+          "192",
+          "45",
           "56",
-          "72"
+          "72",
+          "75"
         ],
         "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
+            "matched_numbers": [
+              "192"
+            ]
+          },
           {
             "claim_id": "POST-04-C02",
             "finding_ids": "F-04",
             "matched_numbers": [
+              "120",
               "16",
+              "45",
               "56",
-              "72"
+              "72",
+              "75"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C03",
+            "finding_ids": "F-09",
+            "matched_numbers": [
+              "192"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C04",
+            "finding_ids": "F-03;F-09",
+            "matched_numbers": [
+              "192"
             ]
           },
           {
@@ -1567,29 +1476,42 @@
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
+              "120",
               "16",
+              "192",
+              "45",
               "56",
-              "72"
+              "72",
+              "75"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
+              "120",
               "16",
+              "192",
+              "45",
               "56",
-              "72"
+              "72",
+              "75"
+            ]
+          },
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "192"
             ]
           }
         ]
       },
       {
-        "sentence": "120 are  : 75 PASS, 45 FAIL.** In the raw 194, the compile-only count is 122 at 75/47; both provider-terminal rows were compile-only.",
+        "sentence": "In the raw 194, the compile-only total is 122, with 75 PASS and 47 FAIL; both cases with provider-service notes used that check mode.",
         "numbers": [
-          "120",
           "122",
           "194",
-          "45",
           "47",
           "75"
         ],
@@ -1605,9 +1527,7 @@
             "claim_id": "POST-04-C02",
             "finding_ids": "F-04",
             "matched_numbers": [
-              "120",
               "122",
-              "45",
               "47",
               "75"
             ]
@@ -1623,9 +1543,7 @@
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "120",
               "122",
-              "45",
               "47",
               "75"
             ]
@@ -1634,9 +1552,7 @@
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "120",
               "122",
-              "45",
               "47",
               "75"
             ]
@@ -1644,7 +1560,7 @@
         ]
       },
       {
-        "sentence": "So 131/192 is not an accuracy.",
+        "sentence": "That means **131/192 is a bookkeeping total, not a uniform accuracy estimate**.",
         "numbers": [
           "131",
           "192"
@@ -1697,101 +1613,50 @@
         ]
       },
       {
-        "sentence": "The archive’s behavioral-reference subtotal is 56 of 72; even that is one selected seed per case across several environments, not a population estimate.",
+        "sentence": "The clean comparison copy gives two examples of why the exact tests matter.",
         "numbers": [
-          "56",
-          "72"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C02",
-            "finding_ids": "F-04",
-            "matched_numbers": [
-              "56",
-              "72"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "56",
-              "72"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "56",
-              "72"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "A pass under compile-only scoring is not interchangeable with a pass under a behavioral-reference judge even when both are recorded as 1.",
-        "numbers": [
-          "1"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "1"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "The [ ] judge enforces a 5:3 ratio the task never states.",
-        "numbers": [
-          "3",
-          "5"
+          "2"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C03",
             "finding_ids": "F-09",
             "matched_numbers": [
-              "3"
+              "2"
             ]
           },
           {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "3"
+              "2"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "3",
-              "5"
+              "2"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "3",
-              "5"
+              "2"
             ]
           },
           {
             "claim_id": "POST-04-C09",
             "finding_ids": "F-09;F-13;F-16",
             "matched_numbers": [
-              "3"
+              "2"
             ]
           }
         ]
       },
       {
-        "sentence": "An [empirical study of SWE-bench Verified] reported that 7.8% of plausible patches counted as correct by benchmark validation failed the full developer-written test suite in that study.",
+        "sentence": "An [empirical study of SWE-bench Verified] reported that 7.8% of plausible patches counted correct by benchmark validation failed the full developer-written test suite in that study.",
         "numbers": [
           "7.8",
           "7.8%"
@@ -1816,22 +1681,7 @@
         ]
       },
       {
-        "sentence": "The same thing happens one level up.",
-        "numbers": [
-          "1"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "1"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "The recorded track total stays as recorded: ** , 37 cases, 16 PASS / 21 FAIL**.",
+        "sentence": "The original track label remains **37 cases: 16 PASS and 21 FAIL**.",
         "numbers": [
           "16",
           "21",
@@ -1871,8 +1721,10 @@
         ]
       },
       {
-        "sentence": "As an analysis view, not an edit to the archive, I separate it into the three ML-debugging environments at **9 / 30** and   at **7 / 7**.",
+        "sentence": "As a separate analysis, I can split out the seven inference cases: the remaining 30 machine-learning-debugging cases have 9 PASS and 21 FAIL, while the inference cases have 7 PASS and 0 FAIL.",
         "numbers": [
+          "0",
+          "21",
           "30",
           "7",
           "9"
@@ -1889,6 +1741,7 @@
             "claim_id": "POST-04-C05",
             "finding_ids": "F-05",
             "matched_numbers": [
+              "21",
               "30",
               "7",
               "9"
@@ -1897,85 +1750,7 @@
         ]
       },
       {
-        "sentence": "Even the 30 are not one thing.",
-        "numbers": [
-          "30"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "30"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "[ ] is 9/11 under behavioral-reference judging, [ ] is 0/8 under behavioral-reference, and [ ] is 0/11 under compile-only.",
-        "numbers": [
-          "0",
-          "11",
-          "8",
-          "9"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "9"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "8"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "The recorded 16/37 blends a perfect inference slice into a debugging slice whose environments span different outcomes under different judges.",
-        "numbers": [
-          "16",
-          "37"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C02",
-            "finding_ids": "F-04",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "16",
-              "37"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "The archive has 268 run directories, including earlier and superseded attempts.",
+        "sentence": "There are **268 saved folders**.",
         "numbers": [
           "268"
         ],
@@ -2004,7 +1779,7 @@
         ]
       },
       {
-        "sentence": "Retry counts depend on where you look: 3,869 attempts in the selected final manifests, 6,412 in campaign progress, with the API logs and checkpoint rows disagreeing in between.",
+        "sentence": "The list attached to final results counts **3,869** attempts, while the campaign progress log reports **6,412**.",
         "numbers": [
           "3869",
           "6412"
@@ -2037,7 +1812,7 @@
         ]
       },
       {
-        "sentence": "The run configuration says  , while usage logs report 325,785 reasoning tokens and 2,710 response rows containing a   field.",
+        "sentence": "A configuration field says  , while the usage summary lists **325,785** units labeled reasoning tokens and **2,710** response rows with a field named  .",
         "numbers": [
           "2710",
           "325785"
@@ -2070,237 +1845,172 @@
         ]
       },
       {
-        "sentence": "Outcomes vary by environment, from 2/8 eligible passes in trajectory synthesis to 31/33 in the recurrent-depth family, under judge guarantees that differ case by case and with no common calibration demonstrated across them.",
+        "sentence": "[HELM] is a model-evaluation project that reports results across many scenarios and measures instead of one score.",
         "numbers": [
-          "2",
-          "31",
-          "33",
-          "8"
+          "1"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-04-C09",
+            "finding_ids": "F-09;F-13;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "In this campaign, 131/192 means that 131 of the rows in one chosen comparison passed under their recorded checks.",
+        "numbers": [
+          "131",
+          "192"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C01",
             "finding_ids": "F-01;F-02;F-03",
             "matched_numbers": [
-              "33"
+              "131",
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C03",
             "finding_ids": "F-09",
             "matched_numbers": [
-              "2"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "2"
+              "131",
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "2",
-              "33"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "2"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C09",
             "finding_ids": "F-09;F-13;F-16",
             "matched_numbers": [
-              "2",
-              "31",
-              "33",
-              "8"
+              "192"
             ]
           }
         ]
       },
       {
-        "sentence": "In the 192-row set, the 61 failures span six recorded labels.",
+        "sentence": "It does **not** mean the model solved 131 out of every 192 possible coding problems.",
         "numbers": [
-          "192",
-          "61"
+          "131",
+          "192"
         ],
         "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C01",
             "finding_ids": "F-01;F-02;F-03",
             "matched_numbers": [
-              "192",
-              "61"
+              "131",
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C03",
             "finding_ids": "F-09",
             "matched_numbers": [
-              "192",
-              "61"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "192",
-              "61"
+              "131",
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "192",
-              "61"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "192",
-              "61"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C09",
             "finding_ids": "F-09;F-13;F-16",
             "matched_numbers": [
-              "192",
-              "61"
+              "192"
             ]
           }
         ]
       },
       {
-        "sentence": "In the behavioral-reference slice, three of sixteen failures are  .",
+        "sentence": "The 192-case comparison combines two grading methods, one of which the campaign calls exploratory.",
         "numbers": [
-          "16"
+          "192"
         ],
         "candidate_trace_rows": [
           {
-            "claim_id": "POST-04-C02",
-            "finding_ids": "F-04",
+            "claim_id": "POST-04-C01",
+            "finding_ids": "F-01;F-02;F-03",
             "matched_numbers": [
-              "16"
+              "192"
             ]
           },
-          {
-            "claim_id": "POST-04-C05",
-            "finding_ids": "F-05",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "16"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Two “overfit” labels describe missing companion files beside trusted scores of 1.0.",
-        "numbers": [
-          "1.0"
-        ],
-        "candidate_trace_rows": [
           {
             "claim_id": "POST-04-C03",
             "finding_ids": "F-09",
             "matched_numbers": [
-              "1.0"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C04",
             "finding_ids": "F-03;F-09",
             "matched_numbers": [
-              "1.0"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C06",
             "finding_ids": "F-01;F-04;F-09;F-15;F-17",
             "matched_numbers": [
-              "1.0"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C08",
             "finding_ids": "F-04;F-09;F-13;F-17",
             "matched_numbers": [
-              "1.0"
+              "192"
             ]
           },
           {
             "claim_id": "POST-04-C09",
             "finding_ids": "F-09;F-13;F-16",
             "matched_numbers": [
-              "1.0"
-            ]
-          }
-        ]
-      },
-      {
-        "sentence": "Two   rows have notes blaming the provider.",
-        "numbers": [
-          "2"
-        ],
-        "candidate_trace_rows": [
-          {
-            "claim_id": "POST-04-C03",
-            "finding_ids": "F-09",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C04",
-            "finding_ids": "F-03;F-09",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C06",
-            "finding_ids": "F-01;F-04;F-09;F-15;F-17",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C08",
-            "finding_ids": "F-04;F-09;F-13;F-17",
-            "matched_numbers": [
-              "2"
-            ]
-          },
-          {
-            "claim_id": "POST-04-C09",
-            "finding_ids": "F-09;F-13;F-16",
-            "matched_numbers": [
-              "2"
+              "192"
             ]
           }
         ]

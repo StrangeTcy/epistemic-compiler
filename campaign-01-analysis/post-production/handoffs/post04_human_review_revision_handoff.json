@@ -29,17 +29,17 @@
       "sha256": "a195e595b79f13fa97e7cc77d12a91e3c9aa265d297d269c7a21af92b5c7c2fd"
     }
   ],
-  "revision_basis": "Prepared a distinct human-review copy from the locally validator-passing POST-04 validation-revision candidate; source drafts and prior validation artifacts remain separate and unchanged.",
+  "revision_basis": "Rewrote the separate POST-04 human-review copy for a general reader in response to human feedback, preserving the source evidence and separate writer records.",
   "revision_changes": [
-    "Created a separate POST-04 human-review article from the locally validator-passing revision candidate; did not overwrite Writer A, Writer B, the final-writer candidate, or either validation-revision response.",
-    "Refined the epistemic-status block and retained the explicit boundary that this archive does not establish a general capability ranking, a common difficulty scale, or causal effects.",
-    "Restored the SWE-bench and HELM citation anchors and linked named environments to the pinned clean comparator, while preserving the dirty-source caveat.",
-    "Kept the three denominator views, the six-label failure taxonomy, judge-mode splits, one-seed limitation, telemetry discrepancy, and provider-exclusion caveat.",
-    "Restored the case-record details for the two overfit_visible_tests labels, including missing required-file names and the moco terminal-note detail.",
-    "Added a generated pipeline reading map and a stacked failure-count chart split by judge guarantee; both visuals distinguish the provider-terminal rows from the 192-row analysis set."
+    "Removed the prose-stage disclosure about a language model and replaced it with a neutral note that the essay organizes saved results and adds no cases.",
+    "Rewrote the opening to identify the evaluation, saved result table, meaning of a case row, and the two overfit_visible_tests records before discussing them.",
+    "Defined the evaluator, provider, case, patch, grading methods, and key failure labels in plain language; replaced technical chart labels with plain-language descriptions.",
+    "Preserved the 194/193/192 denominator views, 24 unscored cases, 61 eligible failures, judge-mode splits, missing-file conflict, source-identity caveat, and one-seed limitation.",
+    "Kept the readable pipeline map and stacked failure chart, with provider-service cases clearly separate from the 192-case comparison.",
+    "Restored pinned source links and the SWE-bench/HELM reference links; the source links remain labeled as a clean comparison copy, not proof of exact executed code."
   ],
   "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-04_human_review_revision.md",
-  "revision_sha256": "c6d5f0928823c6c0b72f543b9815dd0d222272b01078fe4507153c837e97de96",
+  "revision_sha256": "ae4e3a508195abdcebd2fa054df976ca2c790f7bfd8cec28f5955f4bf0d83016",
   "schema_version": 1,
   "source_final_writer_copy": "campaign-01-analysis/post-production/handoffs/POST-04_final_writer_fable_5_1_response.md",
   "source_final_writer_sha256": "6517f850bd17fd5b57ea1af560a1476b6c3c7bd564aaa2e45aa64ef578a96a94",
@@ -55,7 +55,7 @@
     "model_call_made": false,
     "publication_ready": false,
     "report_copy": "campaign-01-analysis/post-production/handoffs/POST-04_human_review_revision_validation_report.json",
-    "report_sha256": "24bfdaa75469325e313eb811ae41918497c4207569bbf4930626a12fd410412e",
+    "report_sha256": "066ae1d91a09938430800bd4b56c504c35465c3183a0f50a0d069f58a5c3b26c",
     "runtime_dag_resumed": false,
     "status": "valid",
     "trace_row_ids_loaded": [
@@ -71,7 +71,7 @@
     ],
     "validator": "runtime.post_production.validate_article",
     "warnings": [],
-    "word_count": 2402
+    "word_count": 2368
   },
   "visuals": {
     "generator": "campaign-01-analysis/evidence/generate_post04_visuals.py",
@@ -80,15 +80,15 @@
     "svg_xml_parsed": true,
     "pipeline_map": {
       "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/post04-failure-pipeline.svg",
-      "sha256": "41acc71780db92524cd7d48e1f6beb4595bca8ce4b0335ee5331e38aaf4a0a3e",
-      "bytes": 6330
+      "sha256": "0bf1a5f8cd8c62af6d9222edd2aa760b8a851212e0a11bfd7c3c487e7ef04f72",
+      "bytes": 6300
     },
     "failure_taxonomy_chart": {
       "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/post04-failure-taxonomy.svg",
-      "sha256": "dce23f0154c231b511b04b66601ea16222131f340cb58ef58102ed4f84142303",
-      "bytes": 7489
+      "sha256": "386cde187b93e650fb40c75a1b2305e35e3f69a3f6bca2ce5c7ee75a36613315",
+      "bytes": 7596
     },
-    "generator_sha256": "28d0e925cb40250d1998775c78895f15c6d6fd72edea27a1cd97c28ea92cd253",
+    "generator_sha256": "15970cbd60a2133dfad954090a1cc2ffc5b0170b4f9babe0a8a9d67e52b2dc76",
     "source_inputs": {
       "failure_taxonomy.csv": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
       "failure_details.csv": "ddfbf8f204f2f1935b4166d4fee88ec7e5988fdabd191c09c9fc0c7f2268ba84",
