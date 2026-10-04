@@ -1,0 +1,251 @@
+# Editorial Blueprint — POST-04
+
+---
+
+## 1. Conceptual Structure and Thesis
+
+**What the real argument is**
+
+Both drafts establish that a scalar FAIL is a lossy encoding of a pipeline event. Writer A frames this as an attribution problem ("whose zero is it?") organized around a tagged-union metaphor. Writer B frames it as a provenance problem ("a verdict needs provenance") organized around audit procedure. Neither framing is wrong, but neither is as sharp as the evidence allows.
+
+The argument the evidence actually supports is more specific: **a scalar verdict is a lossy projection of a pipeline event, and the loss is not symmetric.** Different stopping points — provider termination, absent artifact, validator rejection, runtime crash, behavioral miss — implicate different owners, require different fixes, and cannot be recovered from the bool. The archive doesn't just illustrate this generically; it contains rows where the recorded label actively inverts its own terminal note. That inversion is the sharpest version of the claim.
+
+The thesis should say so directly: not "scalar scores are insufficient" (too familiar) but "the label and the event can point in opposite directions, which means any aggregate built from labels inherits the inversion." The evidence for this is specific and traceable.
+
+**What should move or be cut**
+
+- Writer A's tagged-union equation. It restates in notation what the table and prose already say more clearly. Drop it. If the final writer wants a compact formalization, the pipeline-gate list at A's "What a row should carry" section does more work without the overhead.
+- Both drafts' prescriptive "what a row should carry" checklists. These are design-doc register, not argument. The prescription should be one or two sentences integrated into the closing, not a fenced code block or a bullet list.
+- The blended "what this licenses / doesn't license" lists at the end of both drafts are solid but too long. They read like a hedge hedge hedge pattern. One tight paragraph is enough; the unlicensed claims don't all need individual enumeration.
+- B's "Put the boundary in the report" section title is accurate but dull. Its content is important; its structure as a separate section inflates the post past where the argument runs out.
+
+**Where the structures diverge**
+
+A has a narrative arc with a turning-point moment ("the number that changed my mind"), aggressive section titles, and specific examples throughout. Its telemetry section is well-scoped. B is more systematic: it uses better table column headers and handles the `invalid_action` boundary (provider-terminal vs. compile-only) more precisely. A's argumentative momentum is better; B's evidentiary precision is better. The final article needs both.
+
+---
+
+## 2. Opening
+
+**Comparing the two**
+
+A opens with a question the author couldn't answer — "of the cases that failed, how many failed because of the model?" — then explains why the question dissolved. This is close to the StrangeTcy voice (see "The Next Question Is Part of the Game": opens with a strategic framing, uses the question as a structural device). The problem is that A's opening is still primarily about the author's epistemic journey rather than a concrete event in the archive.
+
+B opens with a thesis: "A PASS in a code-agent campaign is not a property of a model in isolation." This is crisp but abstract. It reads like the opening of a brief, not a post. It states the conclusion before the reader has a reason to care.
+
+Both openings are generic by StrangeTcy standards. The reference posts open with something specific enough to be immediately strange — a unit test vs. a diagram, "most benchmarks hand the agent its context for free," "suppose I want you to make the wrong decision."
+
+**Proposed opening strategy**
+
+Start with the most concrete fact in the archive that makes the general problem vivid and verifiable. The two `overfit_visible_tests` rows are ideal: they carry a label that sounds like the most interesting failure in the set, their `trusted_score` is 1.0, and their terminal notes describe a missing companion file. The label and the event point in opposite directions on the same row.
+
+Open there — not as "here is an anomaly I found" but as a direct statement of what the record shows. Then raise the problem: if a label can invert its own note, every aggregate built from labels inherits the inversion. Then widen to the full pipeline-compression argument.
+
+Do not start with the author's confusion. Do not start with the pass rate. Do not start with "here's a question." Start with the row.
+
+---
+
+## 3. Examples and Technical Depth
+
+**What is exact, source-grounded, and useful**
+
+From the evidence packet, all of the following are directly traceable:
+
+- The four `monadic_reward` cases rejected for importing `ast` — useful because they show a validator-policy collision that is distinct from a behavioral miss; the policy is not stated in the evidence as having been disclosed to the agent, which makes the ownership ambiguous
+- The `compositional_optimizer` case rejected for `weakref`, the `css_state_machine` case rejected for `re` — same point, different environments
+- The two `regex_state_machine` underfit cases: input length 32, outputs of length 66 and 34 — these are the closest to a behavioral miss in the behavioral-reference slice and should be named, because they show what a real underfit looks like
+- The `rd_adaptive_halting` runtime error (float tensor used as boolean condition) — concrete, traceable, shows execution failure as distinct from source rejection
+- The `overfit_visible_tests` mislabeling: `batchnorm_ema` missing `train.py`, `moco` missing `moco_model.py` with `trusted_score=1.0` — both cases, both notes, both environments
+- The comparator audit examples: `compositional_optimizer` prompt promises nested associativity / multiple steps while judge checks shape and state-isolation chain; `sheaf_physical_constraints` judge enforces a 5:3 ratio not stated in the prompt — both useful, both require the dirty-repo caveat immediately before or after
+
+**What is decorative or unsupported**
+
+- The tagged-union equation in A. Drop it. The same information is in the failure table and the gate-prose. The equation adds a formalism that isn't earned by the rest of the post and is inconsistent with the airy-paragraph style.
+- The full environment totals table. Too long, too granular for this post. The per-environment variance that matters is expressible in prose with three numbers: `moco` 9/11, `glyph` 0/8, `batchnorm_ema` 0/11 — and the one-seed caveat must travel with those numbers.
+- Per-case condition strings in the failure examples (e.g., `naming=easy_symptom_mask=hard`) — granular enough to be noise at the prose level; they can be dropped or moved to a parenthetical.
+
+**Tables to retain**
+
+Two tables, both present in both drafts in slightly different forms:
+
+The three-view denominator table should use B's column structure ("What the view represents") — it is cleaner. Keep all three rows (194 raw, 193 single-exclusion, 192 two-exclusion) plus the 24-omission row as a clearly separated note.
+
+The failure taxonomy table should use B's "What the record supports" column (more precise than A's "Where it stopped"). Add the behavioral-reference / compile-only split within each row, as both drafts do. Do not add a separate row for the two provider-terminal `invalid_action` rows; note them in prose immediately below the table to avoid the label collision with the two compile-only `invalid_action` rows inside the 192-case set.
+
+---
+
+## 4. Generic AI Prose and Benchmark-Report Tone
+
+**From Writer A — flag and cut**
+
+- "That plan was wrong, and the reason it was wrong is the point of this post" — functional but slightly theatrical. It works if the opening is concrete enough to make the plan memorable.
+- "FAIL is a sum type that got cast to a bool" — strong title; the section body justifies it. Keep the concept; the equation underneath it does not earn its notation.
+- "the honest move is to leave the attribution open" — fine as a stated policy; becomes stock if used more than once.
+- "the most informative questions concern empty patches, validator policy, required files, provider termination, and what each judge fuckingly verifies" — this is from the source draft and appears in A's closing. The expletive is a deliberate voice marker. If it stays it should appear once and at the argument's peak, not in a list.
+
+**From Writer B — flag and cut**
+
+- "That distinction changes how I read the Atria-Dawn-Preview archive" — stock pivot phrase.
+- "A trustworthy summary should show these choices rather than silently selecting the denominator" — design-doc register; cut or fold into a shorter observation.
+- "This is not a reason to dismiss behavioral tests. It is a reason to specify what they establish" — the "not X, it is Y" deflation structure appears twice in B. Once is rhetorical; twice is a tic.
+- "The payoff is not a more elaborate scoreboard" — fine deflation; keep once.
+- "with one selected seed per case and unresolved source-identity questions, the careful conclusion is narrower" — accurate but reads like a grant-paper caveat section. Integrate into the main argument, don't segregate at the end.
+- Both drafts use "it does not support / it does not establish" in lists at the close. One negative statement is enough. The rest of the space should be used to say what the evidence does support, which is more interesting.
+
+**From the source draft**
+
+- "This is consistent with broader multi-metric evaluation practice" — generic. Cut; the HELM citation does the work.
+- "The central result is not that scalar scores are useless. It is that a scalar should be the last line of a traceable evidence chain, not the first and only one" — this is the cleanest version of the thesis in the source draft and neither final writer reproduces it verbatim. It is worth adapting — not copying — for the final article's thesis statement.
+
+---
+
+## 5. Transitions and Caveat Placement
+
+**Dirty-source/comparator caveat**
+
+Must appear *before* the first claim about what a task or judge checks. Both drafts introduce it in the denominator section, which is correct. But both drafts then use comparator examples later (the compositional-optimizer and physical-constraints cases) without a local reminder. The final article should include a brief local reminder at the "judge is part of the measured system" section — one clause is enough: "these are comparator observations; the dirty repository means they describe the clean snapshot, not the paid-run code with certainty."
+
+**Judge-mode/defect caveat**
+
+Must accompany every compile-only pass rate and every reference to the 131/192 aggregate. Both drafts handle this. The final article should make it part of the table introduction, not a separate paragraph — the column label "explore only" or equivalent in the failure table is one way to carry it without repeating the caveat in prose.
+
+**Provider-terminal / exclusion boundary**
+
+B handles this more precisely than A: B explicitly distinguishes the two provider-terminal `invalid_action` rows (excluded from 192-case set) from the two compile-only `invalid_action` rows inside the taxonomy table. This distinction must be in the final article, with a clear sentence: the same raw label appears in two different situations; the terminal note is what distinguishes them.
+
+**One-seed boundary**
+
+Neither draft integrates this caveat at the point where it most matters: the per-environment variance discussion. When citing `moco` 9/11 vs. `glyph` 0/8 as evidence of heterogeneity, the final article must say "each of these numbers is from one seed per case" before or immediately after — not only in the closing. A reader who sees 82% vs. 0% without that caveat may incorrectly treat the contrast as stable.
+
+---
+
+## 6. Unsupported Claims and Claim Traceability
+
+**Remove or cut entirely**
+
+- Any cost or spend estimate. No spend field exists in the archive. Neither draft makes one, but the blueprint should flag this as a hard prohibition.
+- Any characterization of the `epistemic_games` task as involving recursive theory of mind. The comparator shows Bayesian inference over stipulated policy tables. That is what the evidence supports.
+- "First" or exhaustive-novelty claims. The prior-work check is targeted, not systematic.
+
+**Narrow before using**
+
+- A's "only three of sixteen failures look like what people mean by 'the model got the task wrong'" — the phrase "what people mean" is an unsupported reader-psychology claim. Narrow to: three of the sixteen behavioral-reference failures carry the `underfit` label, the only category where an independent behavioral judge ran on a submitted patch and found it wanting. Everything else in the sixteen stopped before that judgment.
+- B's "A PASS in a code-agent campaign is not a property of a model in isolation" — this is a general claim that slightly exceeds the archive. Frame it as an observation from this specific archive, not a universal statement about the category.
+- A's "A syntax error is plausibly the model's output being broken" — OK as stated uncertainty; do not strengthen it.
+- Both drafts: "the label is contradicted by its own row" (for `overfit_visible_tests`) — this is accurate for the two labeled cases and is directly traceable. Keep it.
+
+**Substantiate or remove**
+
+- The claim that the `underfit` label "means something different" under compile-only vs. behavioral-reference scoring is asserted but not developed. The evidence supports this: compile-only is explicitly exploratory, and 17 of 20 underfit rows are compile-only. The final article should say this plainly: under compile-only scoring, "underfit" records a judge-shortfall in an exploratory mode; under behavioral-reference, it records a finding by the judge with the stronger guarantee. They are not interchangeable even though the label is identical.
+- The SWE-bench 7.8% figure — use it exactly as qualified in the source packet: "in its studied SWE-bench Verified setting." Do not generalize it to this campaign. Both drafts handle this correctly; the blueprint confirms it.
+- HELM — cite only as precedent for multi-scenario evaluation, not as validation of this campaign or this post's method.
+
+**Do not reproduce or paraphrase**
+
+Reasoning content is absent. No inference about what the model "did internally" is licensed. The `reasoning_enabled=false` / `reasoning_content` field discrepancy establishes a metadata disagreement, and both drafts correctly decline to interpret it. The final article should name the interpretive temptation (a reader might conclude the model reasoned despite the flag) and then decline it explicitly, in one sentence.
+
+---
+
+## 7. Public-Site Fit
+
+**YAML frontmatter**
+
+Both drafts have the correct fields. Final writer should verify: `title`, `date: 2026-10-03`, `layout: post`. Title should be confirmed as argumentative rather than descriptive — both "Whose Zero Is It?" (A) and "A Verdict Needs Provenance" (B) are acceptable in register; the final writer should choose based on which opening strategy they adopt.
+
+**`{% include mathjax.html %}`**
+
+Include it only if the final article retains LaTeX. If the tagged-union equation is dropped (recommended), remove the include. B includes it with no math in the draft — that is an error B introduces. The final article should not include it decoratively.
+
+**Byline**
+
+Both use the exact form `*by <span class="icon-self">StrangeTcy</span>*` — correct. No change needed.
+
+**Epistemic-status fields**
+
+Use A's "Original ideas" language as the model: explicitly saying "breaking a pass rate down by pipeline stage is standard practice; what this post adds is one specific attribution exercise on one frozen archive" is more honest than B's description of the framing. The "Prose" field must accurately describe the Arena pipeline process. A's version ("a language model wrote this in the Arena pipeline, working from an audited evidence packet and an earlier source draft; later editorial and model passes are revisions of one analysis, not independent replications") is correct and should be carried forward in substance. B's is shorter but less transparent.
+
+The "Certainty" field should specify both what is high-confidence (archived counts, labels, terminal notes) and what is not (exact paid-run task/judge code due to dirty repository, latent model behavior). A's "Low for anything about why a given output was produced" is correctly calibrated.
+
+**Section headers**
+
+A's argumentative headers ("When the tag itself is wrong," "Two judges, two promises") fit the StrangeTcy voice better than B's descriptive ones ("The denominator is an audit choice," "The same numerator crosses two judge modes"). The reference posts use headers as turns in an argument, not labels on containers. Final writer should follow A's approach throughout, including the closing section.
+
+**Voice and register**
+
+A is closer to the reference-post voice. Short paragraphs, questions that advance the argument, willingness to say "that plan was wrong." B is more careful evidentiary­ but reads slightly like an audit report. The final article should move at A's pace with B's precision on label boundaries and table columns.
+
+**Word count**
+
+A runs long; B is at the right length. The section sequence proposed below targets 1,800–2,400 words without padding. The prescriptive checklist and the extended "what this licenses" list are the primary sources of overage in both drafts.
+
+---
+
+## Blueprint Summary for the Final Writer
+
+**Proposed thesis (do not copy verbatim; use as direction)**
+
+A scalar verdict is a lossy projection of a pipeline event. The loss is not symmetric: different stopping points implicate different owners. In this archive, two rows carry a label that inverts their own terminal note. Any aggregate built from labels inherits the inversion. That is what makes the row-level anatomy more informative than the pass rate.
+
+**Opening strategy**
+
+Open with the two `overfit_visible_tests` rows — state the label, state the trusted score of 1.0, state the missing-file note. Do not frame this as discovery or surprise. State it as a fact, then ask what follows from it for every aggregate that uses those labels. That question is the article.
+
+**Section-by-section sequence**
+
+1. **Opening** (~180 words): The mislabeled rows, then the general pipeline-compression problem.
+2. **Who gets a row and what the denominator means** (~280 words): 194 scored / 24 omissions / three denominator views (table) / dirty-repo caveat. Introduce provider-terminal distinction here.
+3. **Six labels, six stages** (~380 words): Failure taxonomy table (B's column structure). Gate-walkthrough prose. Specific examples: `ast` rejections, length mismatches, float-tensor crash. Underfit label split across judge modes. One-seed caveat when citing per-environment numbers.
+4. **When the label contradicts the note** (~200 words): `overfit_visible_tests` detail (expand the opening observation with full evidence). Provider-terminal `invalid_action` pair vs. compile-only `invalid_action` pair — distinguish precisely.
+5. **Two judges, two guarantees** (~280 words): Behavioral-reference vs. compile-only split. Comparator audit examples with dirty-repo caveat immediately preceding. SWE-bench citation with its studied-setting qualifier.
+6. **Track labels are tags too** (~180 words): `epistemic_games` / `ml_debugging` regrouping in prose with inline numbers. One-seed caveat local to the per-environment contrast.
+7. **Telemetry as discrepancy** (~130 words): Retry counter range. `reasoning_enabled=false` / reasoning-token disagreement. Name the interpretive temptation; decline it in one sentence. No spend estimate.
+8. **What the evidence licenses** (~180 words): Descriptive map of stopping points; one specific note on what is not licensed (capability ranking, common difficulty scale, causal claims). One sentence on what a pass rate can be if it comes last in a traceable chain.
+
+**Example and equation plan**
+
+Retain: three-view denominator table; failure taxonomy table with B's column structure and judge-mode split; `monadic_reward` + `ast` import rejection (×4); `regex_state_machine` length mismatches; `rd_adaptive_halting` float-tensor crash; `overfit_visible_tests` detail for both cases; comparator audit examples with local dirty-repo caveat.
+
+Drop: tagged-union equation; full environment totals table; per-case condition strings in prose.
+
+**A elements worth retaining**
+
+Argumentative section headers; narrative turning-point structure; specific example depth (ast imports, length mismatches, crash); "the honest move is to leave attribution open" as stated policy; gate-walkthrough prose approach; closing that distinguishes the licensed descriptive map from unlicensed capability claims; voice and pacing.
+
+**B elements worth retaining**
+
+Three-view denominator table with "What the view represents" column; failure taxonomy table with "What the record supports" column; precise handling of provider-terminal vs. compile-only `invalid_action` distinction; "A judge is part of the measured system" as a section concept; epistemic-status "Certainty" language; the formulation that a behavioral-reference pass is not interchangeable with a compile-only pass even when both score 1.
+
+**Elements neither draft handles well**
+
+The underfit-label ambiguity across judge modes — neither draft says explicitly that "underfit" under compile-only and "underfit" under behavioral-reference are not the same epistemic object. The final article should say this once, plainly, in the failure-label section.
+
+The one-seed caveat is in the closing of both drafts but absent from the per-environment contrast discussion, where it most needs to be.
+
+The interpretive temptation posed by the reasoning-token discrepancy is named but not articulated. A reader who sees `reasoning_enabled=false` alongside 325,785 reasoning tokens would naturally want to conclude something. The final article should name that inference, then decline it with the reason: field presence is not field semantics, and no reasoning text is available.
+
+---
+
+## Final Quality Checklist
+
+- [ ] YAML frontmatter complete: `title`, `date: 2026-10-03`, `layout: post`
+- [ ] `{% include mathjax.html %}` included only if LaTeX is retained in the body; removed if equation is dropped
+- [ ] Exact byline: `*by <span class="icon-self">StrangeTcy</span>*`
+- [ ] `<dl class="epistemic-status">` present with all five fields in order; "Prose" field accurately describes Arena pipeline process without claiming independent experimental replication
+- [ ] "Original ideas" field calibrated honestly (standard practice + one specific archive exercise)
+- [ ] Dirty-repo caveat precedes every claim about task or judge behavior drawn from the comparator; a local reminder appears at the comparator-audit section even if the caveat was introduced earlier
+- [ ] Compile-only/exploratory caveat accompanies every compile-only pass rate and the 131/192 aggregate
+- [ ] One-seed caveat appears inline at the per-environment contrast (moco / glyph / batchnorm_ema numbers), not only in the closing
+- [ ] Provider-terminal `invalid_action` pair explicitly distinguished from compile-only `invalid_action` pair inside the 192-case taxonomy
+- [ ] `overfit_visible_tests` treatment states: the label, `trusted_score=1.0`, the missing-file note, and that the record does not resolve cause — without calling it overfitting or dismissing it
+- [ ] No claim about reasoning content or cognition from the `reasoning_content` field; the interpretive temptation is named and declined
+- [ ] No cost or spend estimate (no spend field in archive)
+- [ ] SWE-bench 7.8% figure cited with "in its studied SWE-bench Verified setting" qualifier — not generalized to this campaign
+- [ ] HELM cited as precedent for multi-scenario evaluation, not as validation
+- [ ] `epistemic_games` task described as Bayesian inference over stipulated policy tables — not as recursive theory of mind
+- [ ] Section headers are argumentative turns, not descriptive labels
+- [ ] No tagged-union equation unless the final writer finds it indispensable (default: drop)
+- [ ] No fenced code block or bullet-list design-doc checklist for "what a row should carry"; integrate as one or two sentences
+- [ ] Closing states what the evidence licenses in one paragraph; does not list every unlicensed claim individually
+- [ ] No internal compiler paths, hashes, claim IDs, or evidence-packet labels in public prose
+- [ ] Word count 1,800–2,400; no padding sections
+- [ ] Expletive voice marker used at most once, at the argument's peak, not in a list
