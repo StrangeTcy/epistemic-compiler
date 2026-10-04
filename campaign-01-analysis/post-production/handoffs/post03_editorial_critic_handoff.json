@@ -1,4 +1,5 @@
 {
+  "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
   "created_at": "2026-10-04T10:03:03+00:00",
   "expanded_source_inputs": [
@@ -148,6 +149,8 @@
     }
   ],
   "expected_response_artifact": "artifacts/jobs/post03_editorial_critic/response.md",
+  "final_writer_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-03_final_writer_prompt.md",
+  "final_writer_prompt_sha256": "e6dc349b3f075e6966cae30bcdf40579d3a30eb3aab96f163de74351fb5ce211",
   "input_renderings": [
     {
       "reference": "job:post03_prepare_post:response",
@@ -276,18 +279,27 @@
     }
   ],
   "job_id": "post03_editorial_critic",
+  "model_label": null,
+  "model_label_status": "not specified in the supplied response file; not inferred",
   "next_stage": "final_writer",
-  "next_stage_status": "blocked_until_critic_response",
+  "next_stage_status": "waiting_for_human",
   "post_id": "POST-03",
+  "previous_run_id": "campaign-01-post-production-20261004T095953Z-ac4ae27a",
   "prompt_sha256": "650a2e9edd8019d0f2ce8a23696eb91c98c931925fd68cc6526f0fa4b005817e",
   "prompt_to_paste": "artifacts/jobs/post03_editorial_critic/prompt_to_paste.md",
+  "response_bytes": 6010,
+  "response_copy": "campaign-01-analysis/post-production/handoffs/POST-03_editorial_critic_response.md",
+  "response_ingested_at": "2026-10-04T12:13:17Z",
+  "response_sha256": "a13e1cdd299417167e026c24a7b6ec55d561c7671659051a1a1bda69e9a30010",
+  "response_source_commit": "6d022be222e1edf6442692e20cfe5d967032694e",
+  "response_source_path": "campaign-01-analysis/post-production/handoffs/post_03_response",
   "responses_ingested": true,
   "role": "editorial_critic",
-  "run_id": "campaign-01-post-production-20261004T095953Z-ac4ae27a",
+  "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
   "schema_version": 1,
   "stage": "editorial_critic",
-  "stage_status": "waiting_for_human",
-  "status": "waiting_for_human",
+  "stage_status": "completed",
+  "status": "completed",
   "template_prompt_artifact": "prompts/critic.md",
   "template_prompt_sha256": "50576f5e676351f4883a85b283638c1128c9b9009f6614e394e3869860c17d85",
   "workflow_id": "campaign-01-post-production",
