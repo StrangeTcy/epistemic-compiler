@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-04T08:57:19+00:00",
+  "created_at": "2026-10-04T09:05:10+00:00",
   "editorial_blueprint_copy": "campaign-01-analysis/post-production/handoffs/POST-01_editorial_critic_compiler_blueprint.md",
   "editorial_blueprint_copy_sha256": "3aa7a703da258fba9f4a1775719947cf3688de4ea3bf36fd3cc01ebe1413293a",
   "expanded_source_inputs": [
@@ -262,7 +262,7 @@
       "sha256": "df336be278a34547e17b7fd8094bc981ade9154f0262bc681743eaec2fb3746f",
       "size_bytes": 43111,
       "snapshot_path": "inputs/files/df336be278a34547-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post01_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post01_prepare_post/response.md"
     },
     {
       "attachment_index": 1,
@@ -270,7 +270,7 @@
       "sha256": "1487cb4192f795635fe3e8013be006e10095d0fffcc87dfd7da180399283821d",
       "size_bytes": 15917,
       "snapshot_path": "inputs/files/1487cb4192f79563-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post01_battle_writer_a/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post01_battle_writer_a/response.md"
     },
     {
       "attachment_index": 2,
@@ -278,7 +278,7 @@
       "sha256": "d6d6a559f073488a5704b2d5e1e7fc841d55e946c20d6e79a489a78f971b9c9d",
       "size_bytes": 13353,
       "snapshot_path": "inputs/files/d6d6a559f073488a-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post01_battle_writer_b/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post01_battle_writer_b/response.md"
     },
     {
       "attachment_index": 3,
@@ -286,7 +286,7 @@
       "sha256": "3aa7a703da258fba9f4a1775719947cf3688de4ea3bf36fd3cc01ebe1413293a",
       "size_bytes": 11104,
       "snapshot_path": "inputs/files/3aa7a703da258fba-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post01_editorial_critic/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post01_editorial_critic/response.md"
     }
   ],
   "job_id": "post01_final_writer",
@@ -296,7 +296,7 @@
   "prompt_to_paste": "artifacts/jobs/post01_final_writer/prompt_to_paste.md",
   "response_sha256": "49f05b299ca6493077321c45c162adcc80cfb9e9b10d73ff45381a03239ba936",
   "role": "final_writer",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
   "schema_version": 1,
   "stage": "final_writer",
   "template_prompt_artifact": "prompts/final_writer.md",

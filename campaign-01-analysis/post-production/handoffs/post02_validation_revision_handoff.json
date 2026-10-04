@@ -2,7 +2,7 @@
   "arena_response_model_label": "fable 5.1",
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
-  "created_at": "2026-10-04T08:57:21+00:00",
+  "created_at": "2026-10-04T09:05:12+00:00",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -232,7 +232,7 @@
       "sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
       "size_bytes": 44595,
       "snapshot_path": "inputs/files/c5afe692c8c5bedb-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_post_validator/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_post_validator/response.md"
     },
     {
       "attachment_index": 1,
@@ -240,7 +240,7 @@
       "sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
       "size_bytes": 16522,
       "snapshot_path": "inputs/files/f3a3bf43b2cedf3b-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_final_writer/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_final_writer/response.md"
     },
     {
       "attachment_index": 2,
@@ -248,7 +248,7 @@
       "sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d",
       "size_bytes": 40407,
       "snapshot_path": "inputs/files/7260ac159609bf6c-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_prepare_post/response.md"
     }
   ],
   "job_id": "post02_validation_revision",
@@ -260,7 +260,7 @@
   "response_matches_prior_final_writer_body": false,
   "response_sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
   "role": "validation_revision",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
   "schema_version": 1,
   "stage": "validation_revision",
   "status": "completed",

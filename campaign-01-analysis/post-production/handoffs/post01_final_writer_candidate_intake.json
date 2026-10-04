@@ -40,9 +40,9 @@
     "valid": true
   },
   "post_id": "POST-01",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
   "schema_version": 1,
-  "scope_note": "POST-01 passed local validation and remains unapproved/unexported. POST-02 Fable 5.1 validation revision removed the two untraceable derived numeric literals and resolved numeric-claim traceability; the local validator still reports one source/comparator caveat error. No later post was processed.",
+  "scope_note": "POST-01 passed local validation and remains unapproved/unexported. POST-02 latest Fable 5.1 revision is locally invalid only on the source/comparator caveat wording; user authorized POST-03 writer prompts, which are now persisted. No POST-03 responses have been ingested.",
   "selected_action": "reconcile",
   "selected_response": {
     "model_label_used_for_ingest": "Compiler-reconciled draft from user-selected Grok 4.5 and Opus 4.7 candidates",

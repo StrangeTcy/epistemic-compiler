@@ -1,7 +1,7 @@
 {
   "conversation_id": null,
   "current_url": null,
-  "ended_at": "2026-10-04T08:57:21Z",
+  "ended_at": "2026-10-04T09:05:12Z",
   "error": null,
   "input_artifacts": [
     {
@@ -10,7 +10,7 @@
       "sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
       "size_bytes": 16726,
       "snapshot_path": "inputs/files/dfe2180f5c78258c-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_validation_revision/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_validation_revision/response.md"
     },
     {
       "attachment_index": 1,
@@ -18,7 +18,7 @@
       "sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d",
       "size_bytes": 40407,
       "snapshot_path": "inputs/files/7260ac159609bf6c-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_prepare_post/response.md"
     }
   ],
   "job_id": "post02_validation_revision_validator",
@@ -44,11 +44,11 @@
   "revision_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_response.md",
   "revision_response_sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
   "role": "validation_revision_validator",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
   "schema_version": 1,
   "screenshot": null,
   "site": "local",
-  "started_at": "2026-10-04T08:57:21Z",
+  "started_at": "2026-10-04T09:05:12Z",
   "status": "completed",
   "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_validation_report.json",
   "workspace_report_copy_sha256": "f7efdf14a0ff2a2a2c97a71cd1543b640b43a9aabf1724d598be4cdba1377d35"

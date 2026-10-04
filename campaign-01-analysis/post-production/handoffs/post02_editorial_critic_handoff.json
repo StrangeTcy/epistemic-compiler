@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-04T08:57:20+00:00",
+  "created_at": "2026-10-04T09:05:11+00:00",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -230,7 +230,7 @@
       "sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d",
       "size_bytes": 40407,
       "snapshot_path": "inputs/files/7260ac159609bf6c-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_prepare_post/response.md"
     },
     {
       "attachment_index": 1,
@@ -238,7 +238,7 @@
       "sha256": "3ac8cd843bb523c5a39d05152c18d0af4c4c6ab998f68cc6c7bb44fa0419e884",
       "size_bytes": 13463,
       "snapshot_path": "inputs/files/3ac8cd843bb523c5-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_battle_writer_a/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_battle_writer_a/response.md"
     },
     {
       "attachment_index": 2,
@@ -246,7 +246,7 @@
       "sha256": "f2d8c118e0714b8e45c8728892b4318daf8052b3b28e43815f12c33feb06e9fe",
       "size_bytes": 14429,
       "snapshot_path": "inputs/files/f2d8c118e0714b8e-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_battle_writer_b/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T090510Z-2118d4d2/artifacts/jobs/post02_battle_writer_b/response.md"
     }
   ],
   "job_id": "post02_editorial_critic",
@@ -257,7 +257,7 @@
   "response_provenance": "Compiler-authored synthesis of two separately preserved Critic candidates; neither raw candidate was represented as the single workflow response.",
   "response_sha256": "f71e051257eb4dbebdb103240750c736af96a68bf4864671e1a3c4ae6e608492",
   "role": "editorial_critic",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
   "schema_version": 1,
   "stage": "editorial_critic",
   "template_prompt_artifact": "prompts/critic.md",
