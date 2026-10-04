@@ -2305,7 +2305,7 @@
         "numbers": [
           "1"
         ],
-        "sentence": "All of this rests on one run per cell and on paid-run source/comparator identity that remains unresolved because the repository was recorded as dirty."
+        "sentence": "All of this rests on one run per cell; the archive records the source tree as dirty, so the run's exact source remains unresolved."
       }
     ],
     "unmapped_numeric_claim_sentences": []
@@ -2314,5 +2314,5 @@
   "unsupported_spelled_quantitative_counts": [],
   "valid": true,
   "warnings": [],
-  "word_count": 2748
+  "word_count": 2752
 }

@@ -1,6 +1,6 @@
 {
   "article_approval_or_export_performed": false,
-  "created_at": "2026-10-04T21:11:47Z",
+  "created_at": "2026-10-04T21:21:22Z",
   "external_reference_added": {
     "authors": "Teck-Hua Ho, So-Eun Park, and Xuanming Su",
     "doi": "https://doi.org/10.1287/mnsc.2020.3595",
@@ -39,10 +39,11 @@
     "Added a linked Wikipedia definition of theory of mind and a Bayesian level-k reference as a proposed follow-up framework, not a description of the current environment.",
     "Added a prior-versus-posterior plot for cases A–G and included the existing condition heatmap.",
     "Added a clearly marked future-post link placeholder and retained the MindGames/Hi-ToM/BigToM paragraph.",
-    "Revised the process disclosure to say different models drafted and improved the post, with StrangeTcy making the final edits; omitted the Arena role-separated process."
+    "Revised the process disclosure to say different models drafted and improved the post, with StrangeTcy making the final edits; omitted the Arena role-separated process.",
+    "Replaced the flagged source label with neutral run/source wording while retaining the dirty-source caveat."
   ],
   "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-02_human_review_revision.md",
-  "revision_sha256": "b95730e6c72067cd59823fec1a16000242213f56b2ac5c9911d633fb976d9228",
+  "revision_sha256": "ee2c09d005942e70e842138822ba13771768adb5e9ee3472448ec9be3ba53dfd",
   "schema_version": 1,
   "stage": "human_editorial_revision",
   "status": "valid_human_review_revision_waiting_for_human_review",
@@ -55,7 +56,7 @@
     "model_call_made": false,
     "publication_ready": false,
     "report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_human_review_revision_validation_report.json",
-    "report_sha256": "b035f33aa7a14126bccfbe429623460dabef15bcc42d4d9946ac7f1150ca2337",
+    "report_sha256": "7fe2ddddf83cfcdbc2b1d2165086ad74c6af23b19cc5cb94c5226fcc9f63d3b3",
     "runtime_dag_resumed": false,
     "status": "valid",
     "trace_row_ids_loaded": [
@@ -70,7 +71,7 @@
     ],
     "validator": "runtime.post_production.validate_article",
     "warnings": [],
-    "word_count": 2748
+    "word_count": 2752
   },
   "visuals": {
     "article_asset_links_resolve": true,
