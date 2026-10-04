@@ -1,0 +1,2318 @@
+{
+  "checks": {
+    "frontmatter": true,
+    "html_tag_balance": true,
+    "independent_replication_overclaim": true,
+    "internal_provenance_leakage": true,
+    "jekyll_layout_include_author": true,
+    "markdown_fences_and_links": true,
+    "numeric_claim_traceability": true,
+    "numerical_claim_literals": true,
+    "post_specific_overclaim_and_caveats": true
+  },
+  "date": "2026-10-03",
+  "errors": [],
+  "evidence_input_sha256": {
+    "mission:campaign_provenance": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9",
+    "mission:evidence_analysis_family_summary_POST-02": "30c966fff429a3d634ef6eca92b3e167af55ceee459176ffe9b758381d6d86ee",
+    "mission:evidence_axis_summary_POST-02": "ef2e3448ac367023c5705cd38bad376f03ee81092ff7abf3c73cafa11e8c2fd3",
+    "mission:evidence_case_results_POST-02": "d3f6e76008fdbdf2e85f5959a366aae6a53a7fd8004fd98bab0dcfdd086860d6",
+    "mission:evidence_environment_summary_POST-02": "a29d015640d99e171cb2a861df5759b23503073e204bf690d8d72be8dfb7df76",
+    "mission:evidence_extract_POST-02": "b276f9e3564eb7cb8e3a016684dffa58763ac6252de85e7840941f553a58a8dc",
+    "mission:evidence_failure_taxonomy_POST-02": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+    "mission:house_style": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+    "mission:limitations_POST-02": "7fcc58d4ce9331cf23a1a2d1f143627110749b0f6dc2245a36a33af51c7f6bd6",
+    "mission:references": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0",
+    "mission:relevant_findings_POST-02": "0cd1bb194592dc77e92fce37bf1730470d98aa2c74618dd7210caebf192b7f1d",
+    "mission:source_audit_POST-02": "168935bd41f48a2c281a43aa4c6a5d83ef78e8d89c4e86f1098b264adf691beb",
+    "mission:source_draft_POST-02": "eeea2454b3b15e67568a54efc9f1ddd2e3b06e560be15f5fac1a6a78e6903964",
+    "mission:style_reference_material": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+    "mission:trace_rows_POST-02": "40abbbb39f0b435e9e77e79f50202460a7db4834cd887477d7b845a6e84d0ce9",
+    "mission:workflow_input_manifest": "15409d70ae25020b8327d9f102956b7cb288b470e594682095655eb7ca05a158"
+  },
+  "numeric_literals_checked": [
+    "0",
+    "1",
+    "1.0",
+    "15",
+    "177",
+    "2",
+    "3",
+    "33",
+    "5",
+    "92"
+  ],
+  "post_id": "POST-02",
+  "schema_version": 1,
+  "slug": "a-correct-posterior-is-not-a-model-of-the-speaker",
+  "spelled_quantitative_counts_checked": [
+    "1",
+    "2",
+    "5",
+    "7"
+  ],
+  "suggested_jekyll_filename": "2026-10-03-a-correct-posterior-is-not-a-model-of-the-speaker.md",
+  "title": "A Correct Posterior Is Not a Model of the Speaker",
+  "trace_row_ids_loaded": [
+    "POST-02-C01",
+    "POST-02-C02",
+    "POST-02-C03",
+    "POST-02-C04",
+    "POST-02-C05",
+    "POST-02-C06",
+    "POST-02-C07",
+    "POST-02-C08"
+  ],
+  "traceability_audit": {
+    "mapped_numeric_claim_sentences": [
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "One environment,  , gave the model two possible worlds and asked it to update a probability after seeing a player's announcement."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "2"
+        ],
+        "sentence": "In the inspected clean-source comparator, World 1 is the “genuine” hypothesis and World 2 the “strategic” one."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "Each case supplies a prior probability for World 1 and the likelihood of the observed announcement under each world."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "2"
+        ],
+        "sentence": "The prior is the starting probability before hearing the announcement; the likelihoods say how probable that announcement would be if World 1 or World 2 were true."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "Most cases use a balanced   prior; one starts with a skewed prior that already favours World 1:  ."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "The posterior,  , is the probability of World 1 after the announcement; a separate evidence verdict says whether the announcement distinguishes the worlds."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "33"
+            ]
+          }
+        ],
+        "numbers": [
+          "33"
+        ],
+        "sentence": "All 33 selected configuration hashes match the clean comparator, but that does not prove that the executed task, judge, or helper code was identical."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "One archived answer in the skewed-prior case reports  , calls the evidence *indistinguishable*, and names World 1 as the more-supported world."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "Those outputs are consistent: the prior already put World 1 at  , and the announcement is equally likely under both worlds, so the posterior stays at  ."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "World 1 is favoured before and after the observation, while the observation itself adds no evidence."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "1."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2"
+        ],
+        "sentence": "2."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "3"
+        ],
+        "sentence": "3."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1.0"
+            ]
+          }
+        ],
+        "numbers": [
+          "1.0"
+        ],
+        "sentence": "Atria-Dawn-Preview passed all seven selected cases with score 1.0."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "The numerator asks how plausible World 1 was to begin with, and how likely World 1 would be to produce this announcement."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "The likelihood ratio is 1, so the observation contributes no evidence."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2",
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "2",
+          "3"
+        ],
+        "sentence": "With the skewed prior, the posterior stays at  , or odds of 3 to 2 for World 1."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "World 1 leads because of the prior, not because the announcement advanced it."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "| Evidence, prior | Posterior for World 1 | Evidence verdict | More-supported world |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "| Ambiguous, skewed |   | Indistinguishable | World 1 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2"
+        ],
+        "sentence": "| Strong, balanced |   | Distinguishable | World 2 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "| Weak, balanced |   | Weakly distinguishable | World 1 |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          }
+        ],
+        "numbers": [
+          "7"
+        ],
+        "sentence": "[Prior probabilities (open circles) and judge-credited posteriors (filled diamonds) for the seven cases."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C06",
+            "finding_ids": "F-17",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "15",
+              "177",
+              "2",
+              "3",
+              "5",
+              "92"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "15",
+          "177",
+          "2",
+          "3",
+          "5",
+          "92"
+        ],
+        "sentence": "The balanced ambiguous cases stay at 1/2; the skewed ambiguous case stays at 3/5; strong evidence shifts the posterior to 1/15; weak evidence gives 92/177."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "*The horizontal position encodes probability of World 1."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "With a balanced prior, the prior odds are 1, so the posterior odds equal the likelihood ratio."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1",
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "2"
+        ],
+        "sentence": "In the strong case,   leaves World 1 far behind; the evidence favours World 2 heavily."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "In the weak case,   sits just above one half, so the odds lean only slightly towards World 1."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2"
+        ],
+        "sentence": "For these two cases the judge checks the posterior value and, separately, whether the evidence falls in the correct likelihood-ratio band."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "0",
+          "1"
+        ],
+        "sentence": "*The factor values are categorical, and each row is one seed-0 case—not a replicate.*"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C06",
+            "finding_ids": "F-17",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "5"
+        ],
+        "sentence": "It is tempting to read seven perfect scores across five axes (evidence, framing, presentation, prior and scenario) as evidence that framing or presentation has no effect, or that the model resists narrative pull in general."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "Exactly one case uses narrative framing, one uses solo presentation and one uses a skewed prior."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2"
+        ],
+        "sentence": "When the narrative case and its bare-table counterpart both pass, all we learn is that neither of those two cells failed."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          }
+        ],
+        "numbers": [
+          "7"
+        ],
+        "sentence": "These seven cases are also not seven independent draws from “strategic situations.” They are hand-varied neighbours of each other."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "7"
+            ]
+          }
+        ],
+        "numbers": [
+          "7"
+        ],
+        "sentence": "All seven cases use behavioural-reference judging, which scores answers against a reference."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C06",
+            "finding_ids": "F-17",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "3",
+          "5"
+        ],
+        "sentence": "## What the 3/5 answer licenses"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "World 1 sits at  , and the announcement is indistinguishable between the worlds."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-02-C01",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C02",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C03",
+            "finding_ids": "F-01;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C04",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C05",
+            "finding_ids": "F-04;F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C07",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-02-C08",
+            "finding_ids": "F-07",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "All of this rests on one run per cell and on paid-run source/comparator identity that remains unresolved because the repository was recorded as dirty."
+      }
+    ],
+    "unmapped_numeric_claim_sentences": []
+  },
+  "unsupported_numeric_literals": [],
+  "unsupported_spelled_quantitative_counts": [],
+  "valid": true,
+  "warnings": [],
+  "word_count": 2748
+}

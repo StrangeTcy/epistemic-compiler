@@ -1,0 +1,88 @@
+{
+  "article_approval_or_export_performed": false,
+  "created_at": "2026-10-04T21:11:47Z",
+  "external_reference_added": {
+    "authors": "Teck-Hua Ho, So-Eun Park, and Xuanming Su",
+    "doi": "https://doi.org/10.1287/mnsc.2020.3595",
+    "scope": "A formal reference point for a proposed future task only; not evidence that the campaign environment implements this model.",
+    "title": "A Bayesian Level-k Model in n-Person Games"
+  },
+  "post_id": "POST-02",
+  "preserved_candidates": [
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_response.md",
+      "role": "Writer A",
+      "sha256": "3ac8cd843bb523c5a39d05152c18d0af4c4c6ab998f68cc6c7bb44fa0419e884"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-02_writer_b_response.md",
+      "role": "Writer B",
+      "sha256": "f2d8c118e0714b8e45c8728892b4318daf8052b3b28e43815f12c33feb06e9fe"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-02_final_writer_response.md",
+      "role": "final-writer candidate",
+      "sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb"
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_response.md",
+      "role": "validation-revision candidate",
+      "sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735"
+    }
+  ],
+  "revision_basis": "User-provided editorial feedback after reviewing the existing POST-02 final-writer draft.",
+  "revision_changes": [
+    "Reframed the opening as evaluation campaign → raw results → charts and graphs → the two-world epistemic_games task, defining prior, likelihoods, and posterior before the 3/5 example.",
+    "Made explicit that 3/5 is the skewed prior and equal ambiguous likelihoods leave the posterior unchanged; retained and explained the two-hypothesis Bayes equation.",
+    "Emphasized the precision note and removed unsupported decimal literals that failed the earlier trace audit.",
+    "Explained the trap template story while stating that the selected bare-table prompt did not show it.",
+    "Added a linked Wikipedia definition of theory of mind and a Bayesian level-k reference as a proposed follow-up framework, not a description of the current environment.",
+    "Added a prior-versus-posterior plot for cases A–G and included the existing condition heatmap.",
+    "Added a clearly marked future-post link placeholder and retained the MindGames/Hi-ToM/BigToM paragraph.",
+    "Revised the process disclosure to say different models drafted and improved the post, with StrangeTcy making the final edits; omitted the Arena role-separated process."
+  ],
+  "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-02_human_review_revision.md",
+  "revision_sha256": "b95730e6c72067cd59823fec1a16000242213f56b2ac5c9911d633fb976d9228",
+  "schema_version": 1,
+  "stage": "human_editorial_revision",
+  "status": "valid_human_review_revision_waiting_for_human_review",
+  "validation": {
+    "errors": [],
+    "evidence_packet_copy": "campaign-01-analysis/post-production/handoffs/POST-02_human_review_revision_evidence_packet.md",
+    "evidence_packet_method": "Reconstructed with runtime.post_production.prepare_post_packet from the frozen POST-02 source snapshots listed by post02_prepare_post in mission.yaml.",
+    "evidence_packet_sha256": "d38b2e075ced3ffb9723d4bbfd64861ab20eb52f8ae636061135d7241bfa6e8d",
+    "human_review_required": true,
+    "model_call_made": false,
+    "publication_ready": false,
+    "report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_human_review_revision_validation_report.json",
+    "report_sha256": "b035f33aa7a14126bccfbe429623460dabef15bcc42d4d9946ac7f1150ca2337",
+    "runtime_dag_resumed": false,
+    "status": "valid",
+    "trace_row_ids_loaded": [
+      "POST-02-C01",
+      "POST-02-C02",
+      "POST-02-C03",
+      "POST-02-C04",
+      "POST-02-C05",
+      "POST-02-C06",
+      "POST-02-C07",
+      "POST-02-C08"
+    ],
+    "validator": "runtime.post_production.validate_article",
+    "warnings": [],
+    "word_count": 2748
+  },
+  "visuals": {
+    "article_asset_links_resolve": true,
+    "existing_condition_heatmap": {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/epistemic-games-heatmap.svg",
+      "sha256": "14d0d1b6944875a99c4e74d9ebcf867f33cce2dfe96de9aeede32eccbe498908"
+    },
+    "prior_posterior_plot": {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/epistemic-games-prior-posterior.svg",
+      "sha256": "f8d5dd5a99d7e4c9d150d5f3cb5d968ad64582fd454635df522b1e365127389f"
+    },
+    "svg_xml_parsed": true
+  },
+  "workflow_id": "campaign-01-post-production"
+}
