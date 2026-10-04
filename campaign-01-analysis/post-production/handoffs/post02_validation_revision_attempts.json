@@ -1,0 +1,26 @@
+{
+  "article_approval_or_export_performed": false,
+  "attempts": [
+    {
+      "error_count": 3,
+      "model_label": "opus 5.5",
+      "response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_response.md",
+      "response_matches_prior_final_writer_body": true,
+      "response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+      "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
+      "valid": false
+    },
+    {
+      "error_count": 1,
+      "model_label": "fable 5.1",
+      "response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_response.md",
+      "response_matches_prior_final_writer_body": false,
+      "response_sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
+      "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+      "valid": false
+    }
+  ],
+  "post_id": "POST-02",
+  "schema_version": 1,
+  "workflow_id": "campaign-01-post-production"
+}

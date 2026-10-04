@@ -1,6 +1,8 @@
 {
-  "arena_response_model_label": "opus 4.8",
-  "created_at": "2026-10-04T08:57:20+00:00",
+  "arena_response_model_label": "opus 5.5",
+  "article_approval_or_export_performed": false,
+  "browser_ui_submission_attempted": false,
+  "created_at": "2026-10-04T08:37:24+00:00",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -131,8 +133,20 @@
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-02/evidence/failure_taxonomy.csv"
     }
   ],
-  "expected_response_artifact": "artifacts/jobs/post02_battle_writer_a/response.md",
+  "expected_response_artifact": "artifacts/jobs/post02_validation_revision/response.md",
   "input_renderings": [
+    {
+      "reference": "job:post02_post_validator:response",
+      "rendered_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
+      "source_renderings": [],
+      "source_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9"
+    },
+    {
+      "reference": "job:post02_final_writer:response",
+      "rendered_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+      "source_renderings": [],
+      "source_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb"
+    },
     {
       "reference": "job:post02_prepare_post:response",
       "rendered_sha256": "4200e56c197412fb6c904b7c7094fc68fb5e0c826a8aa10969f28464e6a86825",
@@ -214,28 +228,48 @@
   "inputs": [
     {
       "attachment_index": 0,
+      "reference": "job:post02_post_validator:response",
+      "sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
+      "size_bytes": 44595,
+      "snapshot_path": "inputs/files/c5afe692c8c5bedb-response.md",
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T083722Z-9704b15b/artifacts/jobs/post02_post_validator/response.md"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post02_final_writer:response",
+      "sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+      "size_bytes": 16522,
+      "snapshot_path": "inputs/files/f3a3bf43b2cedf3b-response.md",
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T083722Z-9704b15b/artifacts/jobs/post02_final_writer/response.md"
+    },
+    {
+      "attachment_index": 2,
       "reference": "job:post02_prepare_post:response",
       "sha256": "7260ac159609bf6c8cf8469ee1f8199d43590c61da960fae031e9785f478813d",
       "size_bytes": 40407,
       "snapshot_path": "inputs/files/7260ac159609bf6c-response.md",
-      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T085719Z-a4550eb0/artifacts/jobs/post02_prepare_post/response.md"
+      "source_path": "/home/user/epistemic-compiler/runtime/runs/campaign-01-post-production/campaign-01-post-production-20261004T083722Z-9704b15b/artifacts/jobs/post02_prepare_post/response.md"
     }
   ],
-  "job_id": "post02_battle_writer_a",
-  "next_stage": "editorial_critic",
+  "job_id": "post02_validation_revision",
+  "next_stage": "validation_revision_validator",
+  "next_stage_status": "completed_invalid",
   "post_id": "POST-02",
-  "prompt_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
-  "prompt_to_paste": "artifacts/jobs/post02_battle_writer_a/prompt_to_paste.md",
-  "response_sha256": "3ac8cd843bb523c5a39d05152c18d0af4c4c6ab998f68cc6c7bb44fa0419e884",
-  "role": "battle_writer_a",
-  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "prompt_sha256": "2a0b1b79ecbc55c65890515d22909955cb376bc04daccbbbf1adf1be8178cc80",
+  "prompt_to_paste": "artifacts/jobs/post02_validation_revision/prompt_to_paste.md",
+  "response_matches_prior_final_writer_body": true,
+  "response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+  "role": "validation_revision",
+  "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
   "schema_version": 1,
-  "stage": "battle_writer_a",
-  "template_prompt_artifact": "prompts/writer.md",
-  "template_prompt_sha256": "37b3c9f568d45d55c16c237a25b49e33ff8535819c9be246223e5479fafa4913",
+  "stage": "validation_revision",
+  "status": "completed",
+  "template_prompt_artifact": "prompts/validation_revision.md",
+  "template_prompt_sha256": "9a9f387a34c2fd694988b284d84075b579471c1860e7f8f55d3077270e702609",
+  "validation_result": "invalid",
   "workflow_id": "campaign-01-post-production",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_prompt.md",
-  "workspace_prompt_copy_sha256": "3bc6671ac39d0299688e1aab8610523439460a49ae8f58954c1fdefa2468e308",
-  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_writer_a_response.md",
-  "workspace_response_copy_sha256": "3ac8cd843bb523c5a39d05152c18d0af4c4c6ab998f68cc6c7bb44fa0419e884"
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_prompt.md",
+  "workspace_prompt_copy_sha256": "2a0b1b79ecbc55c65890515d22909955cb376bc04daccbbbf1adf1be8178cc80",
+  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_response.md",
+  "workspace_response_copy_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb"
 }

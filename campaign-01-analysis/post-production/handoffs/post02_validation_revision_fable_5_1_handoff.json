@@ -1,0 +1,21 @@
+{
+  "article_approval_or_export_performed": false,
+  "errors": [
+    "required caveat missing: the paid-run source/comparator identity was unresolved because the repository was dirty"
+  ],
+  "job_id": "post02_validation_revision",
+  "model_label": "fable 5.1",
+  "post_id": "POST-02",
+  "prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_prompt.md",
+  "prompt_sha256": "2a0b1b79ecbc55c65890515d22909955cb376bc04daccbbbf1adf1be8178cc80",
+  "response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_response.md",
+  "response_matches_prior_final_writer_body": false,
+  "response_sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
+  "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
+  "schema_version": 1,
+  "valid": false,
+  "validation_job_id": "post02_validation_revision_validator",
+  "validation_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_validation_report.json",
+  "validation_report_sha256": "f7efdf14a0ff2a2a2c97a71cd1543b640b43a9aabf1724d598be4cdba1377d35",
+  "workflow_id": "campaign-01-post-production"
+}

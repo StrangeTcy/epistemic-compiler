@@ -10,16 +10,16 @@
   "final_writer_response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
   "latest_revision_validation": {
     "errors": [
-      "numeric literals are not present in the source draft/evidence packet: 14, 85",
-      "quantitative result claim sentence(s) do not map to an internal claim-traceability row; see traceability_audit",
       "required caveat missing: the paid-run source/comparator identity was unresolved because the repository was dirty"
     ],
-    "report_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
-    "response_matches_prior_final_writer_body": true,
-    "revision_response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
-    "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
+    "model_label": "fable 5.1",
+    "report_sha256": "f7efdf14a0ff2a2a2c97a71cd1543b640b43a9aabf1724d598be4cdba1377d35",
+    "response_matches_prior_final_writer_body": false,
+    "revision_response_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_response.md",
+    "revision_response_sha256": "dfe2180f5c78258c4356e1ac01390cd4dbeaf83cb1f12c35d09dd9f3ab8f5735",
+    "run_id": "campaign-01-post-production-20261004T085719Z-a4550eb0",
     "valid": false,
-    "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_validation_report.json"
+    "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_fable_5_1_validation_report.json"
   },
   "manual_review_notes": [
     "The preserved final-writer draft still contains a profane phrase, despite the Critic blueprint recommending that it be omitted.",
@@ -32,6 +32,21 @@
   "report_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
   "revision_job_id": "post02_validation_revision",
   "revision_status": "waiting_for_human",
+  "revision_validation_history": [
+    {
+      "errors": [
+        "numeric literals are not present in the source draft/evidence packet: 14, 85",
+        "quantitative result claim sentence(s) do not map to an internal claim-traceability row; see traceability_audit",
+        "required caveat missing: the paid-run source/comparator identity was unresolved because the repository was dirty"
+      ],
+      "report_sha256": "c5afe692c8c5bedb0cc25f7a8ce4df14a6c2ab76c7abd0c8f7a3b6b846bbb8a9",
+      "response_matches_prior_final_writer_body": true,
+      "revision_response_sha256": "f3a3bf43b2cedf3b667f1368f36d98b0a7d505f3852d55e708785ec150f273bb",
+      "run_id": "campaign-01-post-production-20261004T083722Z-9704b15b",
+      "valid": false,
+      "workspace_report_copy": "campaign-01-analysis/post-production/handoffs/POST-02_validation_revision_validation_report.json"
+    }
+  ],
   "run_id": "campaign-01-post-production-20261003T223705Z-03e9265c",
   "schema_version": 1,
   "valid": false,
