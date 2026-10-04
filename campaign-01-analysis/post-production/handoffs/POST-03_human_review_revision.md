@@ -43,6 +43,14 @@ That count mixes two different judging guarantees:
 | `behavioral_reference` | 5 | 4 | 1 | The output was checked against a reference behavior |
 | `compile_only` | 79 | 53 | 26 | The submission built and cleared the available checks; the campaign calls this exploratory |
 
+### The cases behind the counts
+
+The radar summarizes eligible pass shares by environment. It is a within-track map, not a common scale across unlike tasks. The heatmap restores all 85 recorded cases, including their judge modes, terminal labels, and the provider-transient row excluded from the performance denominator. Each heatmap cell is one selected seed, not a replicate.
+
+![Radar chart of performance-eligible pass shares across the category-theoretic and compositional environments; each spoke is one environment, so the values are descriptive within this track.](figures/family-maps/category-radar.svg)
+
+![Case heatmap of the category-theoretic and compositional track, showing each environment, judge mode, outcome, terminal label, and the provider-transient exclusion among all 85 raw rows.](figures/family-maps/category-heatmap.svg)
+
 All five behavioral-reference cases are in [`categorical_lenses`](https://github.com/StrangeTcy/rl_eval_generator/tree/d7357092493f311f649a0742889b301d796911b5/envs/cat_theo/categorical_lenses). The other 79 are compile-only. The campaign report explicitly treats compile-only outcomes as exploratory, not as a validated behavioral aggregate. So 57 of 84 is not a category-theory score: it is a count across different tasks and different guarantees, most of them preliminary.
 
 The one-seed design puts another limit on the number. Even if a set of easy, medium, and hard cells appears to trace a curve, there is no within-cell replication here from which to estimate variation. And because the axes refer to different things in different tasks, their labels do not put those cells on one calibrated difficulty scale.

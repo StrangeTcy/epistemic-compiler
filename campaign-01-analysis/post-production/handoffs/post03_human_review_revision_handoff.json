@@ -35,10 +35,11 @@
     "Identified rl_eval_generator as an environment generator rather than a benchmark.",
     "Linked the category track and named environment directories to the inspected comparator commit; linked composition, functors, diagrams, and associativity to Wikipedia.",
     "Added a compact table contrasting the 85-row raw archive with the 84-row performance-eligible set.",
-    "Reworded the experimental-interpretation passage to avoid the user-flagged term and its inflections."
+    "Reworded the experimental-interpretation passage to avoid the user-flagged term and its inflections.",
+    "Embedded the category-track radar chart and 85-case heatmap, reusing the verified SVG figures from POST-01."
   ],
   "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-03_human_review_revision.md",
-  "revision_sha256": "7d432733dadce0b1efff614884a670f0626dd8507c965336cc32ba133920edd4",
+  "revision_sha256": "9a28db2f4f37a4ea778aa6f1d666cb9345e998db862c246359b00b633199860d",
   "schema_version": 1,
   "source_final_writer_copy": "campaign-01-analysis/post-production/handoffs/POST-03_final_writer_reconciled_response.md",
   "source_final_writer_sha256": "0d99cd3cedb1b11f3dbf97416a0d15968e3ffaf4be0c01bffb6bf736bc6c65e2",
@@ -53,7 +54,7 @@
     "model_call_made": false,
     "publication_ready": false,
     "report_copy": "campaign-01-analysis/post-production/handoffs/POST-03_human_review_revision_validation_report.json",
-    "report_sha256": "ce8f8176764b2be17670493325c2f919035cc738abdde0f8251a9ff2d215fc2d",
+    "report_sha256": "97ea3c34fbf2cf6ce420ad1e983538a5c8d4269e980b8db3975a42ea95e25dbf",
     "runtime_dag_resumed": false,
     "status": "valid",
     "trace_row_ids_loaded": [
@@ -68,7 +69,22 @@
     ],
     "validator": "runtime.post_production.validate_article",
     "warnings": [],
-    "word_count": 1954
+    "word_count": 2061
   },
-  "workflow_id": "campaign-01-post-production"
+  "workflow_id": "campaign-01-post-production",
+  "visuals": {
+    "article_asset_links_resolve": true,
+    "assets_reused_from": "POST-01 human-review revision; generated from the frozen case-results table",
+    "svg_xml_parsed": true,
+    "within_track_radar": {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/category-radar.svg",
+      "sha256": "e6d1c7e03444f7b9ac3d4bad479d48368240d2fd6344dbb71b55aea5532a9827",
+      "bytes": 11719
+    },
+    "case_heatmap": {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/category-heatmap.svg",
+      "sha256": "f299372e446a87b9631c6158757c22e29ae2a487d661b1dcd0850c386ec0b016",
+      "bytes": 77213
+    }
+  }
 }
