@@ -193,6 +193,172 @@
   "final_writer_job_status": "waiting_for_human",
   "input_renderings": [
     {
+      "reference": "compiler:post05_final_writer_battle_brief",
+      "rendered_sha256": "6f21585a80128ca648e2f5ce656d7db6e080a5566e9b20f6f1bbca545aa634b6",
+      "source_sha256": "6f21585a80128ca648e2f5ce656d7db6e080a5566e9b20f6f1bbca545aa634b6",
+      "source_renderings": [
+        {
+          "reference": "job:post05_prepare_post:response",
+          "rendered_sha256": "8f301efbae02f0677ef5889034383607b886fd1c23bb75a3f13dbbb6861a1e26",
+          "source_sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942"
+        },
+        {
+          "reference": "job:post05_battle_writer_a:response",
+          "rendered_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+          "source_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3"
+        },
+        {
+          "reference": "job:post05_battle_writer_b:response",
+          "rendered_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+          "source_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103"
+        },
+        {
+          "reference": "job:post05_editorial_critic:response",
+          "rendered_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+          "source_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "attachment_index": 0,
+      "reference": "job:post05_prepare_post:response",
+      "sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942",
+      "size_bytes": 52821,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post05_battle_writer_a:response",
+      "sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "size_bytes": 11523,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "job:post05_battle_writer_b:response",
+      "sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "size_bytes": 16060,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 3,
+      "reference": "job:post05_editorial_critic:response",
+      "sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+      "size_bytes": 45970,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    }
+  ],
+  "job_id": "post05_final_writer",
+  "model_label": null,
+  "model_label_status": "Unverified: this handoff does not establish which model will generate the final article; do not infer attribution from a GitHub commit author.",
+  "next_stage": "post_validator",
+  "next_stage_job_id": "post05_post_validator",
+  "next_stage_status": "waiting_for_human",
+  "post_id": "POST-05",
+  "post_specific_prompt_note": "Battle-mode compaction: the final writer receives a concise compiler-authored evidence/editorial brief instead of verbatim embeddings of the evidence packet, both candidate articles, and both full critiques. Writer A and Writer B remain distinct; the two critiques remain separately labeled and preserved, and no critic consensus is asserted.",
+  "prompt_sha256": "b66e5b95fab7ca2a759509b3705d33e4216fdc6626f75c317eb03887239a1fe0",
+  "prompt_to_paste": "artifacts/jobs/post05_final_writer/prompt_to_paste.md",
+  "response_captured_in_workspace": false,
+  "response_ingested": false,
+  "role": "final_writer",
+  "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
+  "runtime_response_ingested": false,
+  "runtime_state_available": false,
+  "runtime_state_note": "This paste-ready final-writer prompt is assembled from the committed POST-05 evidence packet, two separately preserved writer responses, and a bundle of two separately labeled critic responses. No runtime DAG, final-writer model call, browser, or Arena UI submission was performed.",
+  "schema_version": 1,
+  "source_provenance_note": "The compact battle brief was compiled from the frozen POST-05 evidence packet, separate Writer A/B article copies, and the two separately captured, separately labeled critique responses. It is not a replacement for those source artifacts; their paths and hashes are recorded in source_material_references. Critic/model labels are preserved as supplied and not independently verified.",
+  "stage": "final_writer",
+  "stage_status": "prompt_prepared_locally_waiting_for_human",
+  "status": "waiting_for_human",
+  "template_prompt_artifact": "prompts/final_writer.md",
+  "template_prompt_sha256": "3534605a01b53390b22ee6ca90e43920b149e28d371f59746f690e90f839157f",
+  "updated_at": "2026-10-04T19:05:07Z",
+  "workflow_id": "campaign-01-post-production",
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
+  "workspace_prompt_copy_sha256": "b66e5b95fab7ca2a759509b3705d33e4216fdc6626f75c317eb03887239a1fe0",
+  "writer_response_provenance": [
+    {
+      "model_label": "grok 4.5",
+      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "role": "battle_writer_a",
+      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
+      "response_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
+    },
+    {
+      "model_label": "opus 5.5",
+      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "role": "battle_writer_b",
+      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
+      "response_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
+    }
+  ],
+  "source_material_references": [
+    {
+      "attachment_index": 0,
+      "reference": "job:post05_prepare_post:response",
+      "sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942",
+      "size_bytes": 52821,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post05_battle_writer_a:response",
+      "sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "size_bytes": 11523,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "job:post05_battle_writer_b:response",
+      "sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "size_bytes": 16060,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    },
+    {
+      "attachment_index": 3,
+      "reference": "job:post05_editorial_critic:response",
+      "sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+      "size_bytes": 45970,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+      "included_in_prompt_verbatim": false,
+      "inclusion_mode": "condensed into POST-05_final_writer_battle_brief.md; full source remains separately preserved"
+    }
+  ],
+  "prompt_mode": "battle_mode_compact",
+  "compact_brief_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_battle_brief.md",
+  "compact_brief_sha256": "6f21585a80128ca648e2f5ce656d7db6e080a5566e9b20f6f1bbca545aa634b6",
+  "compact_brief_bytes": 7362,
+  "compact_brief_line_count": 49,
+  "prompt_bytes": 7956,
+  "prompt_line_count": 57,
+  "source_material_renderings": [
+    {
       "reference": "job:post05_prepare_post:response",
       "rendered_sha256": "8f301efbae02f0677ef5889034383607b886fd1c23bb75a3f13dbbb6861a1e26",
       "source_renderings": [
@@ -291,86 +457,6 @@
       "rendered_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
       "source_renderings": [],
       "source_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75"
-    }
-  ],
-  "inputs": [
-    {
-      "attachment_index": 0,
-      "reference": "job:post05_prepare_post:response",
-      "sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942",
-      "size_bytes": 52821,
-      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
-      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md"
-    },
-    {
-      "attachment_index": 1,
-      "reference": "job:post05_battle_writer_a:response",
-      "sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
-      "size_bytes": 11523,
-      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
-      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
-    },
-    {
-      "attachment_index": 2,
-      "reference": "job:post05_battle_writer_b:response",
-      "sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
-      "size_bytes": 16060,
-      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
-      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
-    },
-    {
-      "attachment_index": 3,
-      "reference": "job:post05_editorial_critic:response",
-      "sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
-      "size_bytes": 45970,
-      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
-      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md"
-    }
-  ],
-  "job_id": "post05_final_writer",
-  "model_label": null,
-  "model_label_status": "Unverified: this handoff does not establish which model will generate the final article; do not infer attribution from a GitHub commit author.",
-  "next_stage": "post_validator",
-  "next_stage_job_id": "post05_post_validator",
-  "next_stage_status": "waiting_for_human",
-  "post_id": "POST-05",
-  "post_specific_prompt_note": "POST-05 editorial-input note: the editorial-critic artifact is a compiler-assembled bundle of two separately labeled critiques, not a synthesized consensus or ranking. Reconcile recommendations against the evidence packet, the source draft, and both candidate articles; do not reproduce critic labels or internal workflow details in the public article. Some recommendations conflict, so do not follow checklist items mechanically; the final-writer template and source evidence take precedence, including its 1,800–2,500-word target. Verify factual diagnoses directly against the source text: the second critique gives a count of one instance in Writer A and three in Writer B for “fuckingly,” but the captured drafts contain none in Writer A and one in Writer B. Do not repeat that phrase in the final article.",
-  "prompt_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
-  "prompt_to_paste": "artifacts/jobs/post05_final_writer/prompt_to_paste.md",
-  "response_captured_in_workspace": false,
-  "response_ingested": false,
-  "role": "final_writer",
-  "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
-  "runtime_response_ingested": false,
-  "runtime_state_available": false,
-  "runtime_state_note": "This paste-ready final-writer prompt is assembled from the committed POST-05 evidence packet, two separately preserved writer responses, and a bundle of two separately labeled critic responses. No runtime DAG, final-writer model call, browser, or Arena UI submission was performed.",
-  "schema_version": 1,
-  "source_provenance_note": "The critic source commit identifies where the combined response file was stored, not which models generated the critiques. Explicit labels are retained as supplied, not independently verified.",
-  "stage": "final_writer",
-  "stage_status": "prompt_prepared_locally_waiting_for_human",
-  "status": "waiting_for_human",
-  "template_prompt_artifact": "prompts/final_writer.md",
-  "template_prompt_sha256": "3534605a01b53390b22ee6ca90e43920b149e28d371f59746f690e90f839157f",
-  "updated_at": "2026-10-04T18:45:19Z",
-  "workflow_id": "campaign-01-post-production",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
-  "workspace_prompt_copy_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
-  "writer_response_provenance": [
-    {
-      "model_label": "grok 4.5",
-      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
-      "role": "battle_writer_a",
-      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
-      "response_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
-      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
-    },
-    {
-      "model_label": "opus 5.5",
-      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
-      "role": "battle_writer_b",
-      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
-      "response_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
-      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
     }
   ]
 }

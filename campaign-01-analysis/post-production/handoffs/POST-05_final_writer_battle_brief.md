@@ -1,14 +1,6 @@
-# Final public-post writer — POST-05 (battle mode)
-
-Write one original, publication-ready StrangeTcy research essay from the compact evidence and editorial brief below. The underlying evidence packet, both candidate drafts, and both full critiques are preserved separately but are not attached here; do not assume you have read them. Use only the evidence and attributed editorial guidance included below—do not stitch or quote the drafts, treat critic advice as consensus, or mechanically follow checklists. The brief has already reconciled the major evidence limits and corrected one critique's source-count error.
-
-Return only the complete article in Markdown—no preface, analysis, or wrapper. Follow the Jekyll, word-count, voice, and evidence requirements below. Do not include internal workflow identifiers or mention that this is a compact prompt.
-
----
-
 # POST-05 compact evidence and editorial brief
 
-This is a compiler-authored condensation for battle-mode use. It replaces verbatim embedding of the full evidence packet, both candidate articles, and both full critiques in the prompt; those source artifacts remain separately preserved. It is not a new critic response or a claim of consensus. If a detail below conflicts with a source artifact, the evidence packet and captured responses control.
+This is a compiler-authored condensation for battle-mode use; the evidence packet, both candidate articles, and both full critiques remain separately preserved but are not attached here. Treat the facts below as the evidence available for this call. If a point is unclear, omit or qualify it rather than resolving it from memory or from unprovided drafts. This is not a new critic response or a claim of consensus.
 
 ## The claim to make
 
@@ -16,7 +8,7 @@ One archived, single-seed sweep shows an eye-catching local regex pattern: the e
 
 ## Evidence card
 
-- The track has six five-case tasks: regex state machine, CSS state machine, SQL fixed point, spreadsheet dataflow, CI dependency graph, and template interpreter. All 30 selected cases are eligible and behaviorally-reference-judged; none are compile-only, excluded, or provider-terminal. Twenty-five pass and five fail.
+- The track has six five-case tasks: regex state machine, CSS state machine, SQL fixed point, spreadsheet dataflow, CI dependency graph, and template interpreter. All 30 selected cases are eligible and use behavioral-reference judges; none are compile-only, excluded, or provider-terminal. Twenty-five pass and five fail.
 - Per task: CI 5/5, spreadsheet 5/5, template 5/5, SQL 4/5, CSS 3/5, regex 3/5. These are heterogeneous counts, not a common capability or difficulty score.
 
 | Regex surface | Input length | Result | Score | Judge note |
@@ -39,19 +31,19 @@ One archived, single-seed sweep shows an eye-catching local regex pattern: the e
 - A separate clean-comparator scan found ten nominal control/variable axes without direct template references across nine category-track environments. This is adjacent benchmark QA, not evidence about the weird-machine regex task; include at most one carefully qualified sentence.
 - A better experiment would separate class-name and hint manipulations, use multiple instances and seeds, diff rendered prompts/starters/tests/judges before calls, and report patch creation, source validity, execution, and behavioral correctness separately.
 
-## Compact editorial direction from the two critiques
+## Editorial guidance from the separately preserved critiques
 
-- Open on the two output lengths as a puzzle, with the one-seed and limited-forensics boundary close by. Do not begin with the pooled 25/30 or an abstract definition. Use fresh wording, not either draft’s opener.
-- Recommended flow: opening puzzle → five-cell regex table → name/hint confound and speculative boundary → different failure layers → why 25/30 is bookkeeping across unlike tasks → comparator/source-audit caveat → better experiment → prose ending that says what is licensed and not licensed.
-- Keep the five-cell regex table. Use at most one other compact failure-layer table; put per-environment counts and CSS/SQL depth outcomes in prose. No equations or diagrams are needed. Do not end with a bulleted disclaimer list.
-- Writer A’s strengths: careful evidential boundaries, clear separation of failure layers, and a bounded ending. Writer B’s strengths: the regex table, its useful failure stratification, and refusal to invent a mechanism for 34/66. Do not stitch or paraphrase the drafts; write a new essay.
+- Shared direction—not full consensus: use a fresh, concrete opening; keep the five-cell regex table; place the single-seed and confound limits beside the regex claim; separate source-invalid failures from behavioral underfits; invent no mechanism for 34/66; and close in prose with what the evidence does and does not license.
+- Sonnet 4.6 emphasizes failure-layer clarity and an airy essay: keep the regex table and, if useful, one compact failure-layer table; move per-environment and CSS/SQL depth counts into prose; keep the broader 192/61 campaign taxonomy out; place comparator and dirty-source caveats where they matter.
+- Opus 4.7 favors retaining the regex and failure-layer tables plus per-environment counts, and allows a brief 192/61 scale aside. Its advice on tables and breadth differs from Sonnet’s; this brief resolves that disagreement by keeping only the five-cell regex table plus at most one failure-layer table, and putting counts in prose.
+- Both drafts remain distinct: Writer A’s strengths are careful evidential boundaries, failure-layer separation, and a bounded ending; Writer B’s are the regex table, useful failure stratification, and refusal to invent a 34/66 mechanism. Do not stitch or paraphrase either draft; write a new essay.
 - Keep citations limited and relevant: [HELM](https://arxiv.org/abs/2211.09110) as context for broad scenario/multi-metric evaluation (42 scenarios); [VarBench](https://aclanthology.org/2024.findings-emnlp.946/) for dynamic variable perturbation and five-seed sampling in its variable-based experiments. These are precedents, not validation of this campaign or grounds for a novelty claim.
-- The critiques contain conflicting checklist advice. Resolve it using this brief, the source evidence, and the output requirements below. One critique also miscounts a stray profanity in the raw drafts; remove it from public copy and verify specific critique claims against the drafts rather than repeating the miscount.
+- The Opus 4.7 checklist miscounts a profanity in the source drafts (it says Writer A has one and Writer B three; the preserved copies show Writer A zero and Writer B one). Omit it entirely from public copy. No supplied critic’s checklist is authoritative; follow the evidence and requirements here, not an asserted consensus.
 
 ## Public article requirements
 
 - Target 2,000–2,300 words, within the workflow’s 1,800–2,500-word target. First-person, curious, technically literate, self-correcting, airy paragraphs, short argumentative `##` headings, no `Introduction` heading. Style reference: actual posts sometimes open with a short declarative claim and then complicate it; borrow the movement, not their wording.
 - Use Jekyll frontmatter: quoted, specific `title`; `date: 2026-10-03`; `layout: post`. No MathJax include unless adding a justified formula (none is warranted). Exact byline: `*by <span class="icon-self">StrangeTcy</span>*`.
-- If using the epistemic-status `<dl>`, keep fields in this order: Original ideas, Synthesis, Prose, Certainty, Importance. Describe the actual Arena-assisted writing process accurately; do not imply independent external writers or experiments.
+- If using the site's `<dl class="epistemic-status">`, keep fields in this order: Original ideas, Synthesis, Prose, Certainty, Importance. Describe the actual Arena-assisted writing process accurately; do not imply independent external writers or experiments.
 - Keep caveats next to the claims they qualify. Do not infer causality, Turing completeness, arbitrary iteration, general weird-machine recognition, paid-run source identity, or a common difficulty scale. Do not present source-invalid failures as behavioral failures.
 - No internal paths, hashes, claim/evidence IDs, draft labels, critic labels, editor notes, placeholders, or invented facts/links. Return only the complete Markdown article.

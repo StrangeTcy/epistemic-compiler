@@ -5,7 +5,7 @@
   "combined_response_bundle_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
   "created_at": "2026-10-04T18:45:19Z",
   "final_writer_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
-  "final_writer_prompt_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
+  "final_writer_prompt_sha256": "b66e5b95fab7ca2a759509b3705d33e4216fdc6626f75c317eb03887239a1fe0",
   "final_writer_status": "waiting_for_human",
   "model_labels_preserved_individually": true,
   "post_id": "POST-05",
@@ -64,7 +64,10 @@
   "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
   "stage": "editorial_critic",
   "status": "completed_local_response_capture",
-  "updated_at": "2026-10-04T18:45:19Z",
+  "updated_at": "2026-10-04T19:05:07Z",
   "workflow_id": "campaign-01-post-production",
-  "wrapper_delimiter": "&&&&&&&&&&&&&"
+  "wrapper_delimiter": "&&&&&&&&&&&&&",
+  "final_writer_prompt_mode": "battle_mode_compact",
+  "compact_brief_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_battle_brief.md",
+  "compact_brief_sha256": "6f21585a80128ca648e2f5ce656d7db6e080a5566e9b20f6f1bbca545aa634b6"
 }
