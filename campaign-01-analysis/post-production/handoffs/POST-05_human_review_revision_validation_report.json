@@ -8,7 +8,7 @@
   "date": "2026-10-03",
   "slug": "thirty-four-characters-out-of-thirty-two",
   "suggested_jekyll_filename": "2026-10-03-thirty-four-characters-out-of-thirty-two.md",
-  "word_count": 2048,
+  "word_count": 2152,
   "numeric_literals_checked": [
     "0",
     "0.208333",
@@ -30,7 +30,8 @@
     "1",
     "2",
     "3",
-    "5"
+    "5",
+    "6"
   ],
   "unsupported_spelled_quantitative_counts": [],
   "traceability_audit": {
@@ -467,6 +468,151 @@
         ]
       },
       {
+        "sentence": "The graph below compares input and output lengths; its inset enlarges the three settings at input length 32.",
+        "numbers": [
+          "32"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-05-C02",
+            "finding_ids": "F-06;F-10",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C09",
+            "finding_ids": "F-18",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C07",
+            "finding_ids": "F-06;F-10;F-14",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C08",
+            "finding_ids": "F-06;F-10;F-16",
+            "matched_numbers": [
+              "32"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "[Scatterplot of regex input length versus output length, with an inset for length 32.",
+        "numbers": [
+          "32"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-05-C02",
+            "finding_ids": "F-06;F-10",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C09",
+            "finding_ids": "F-18",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C07",
+            "finding_ids": "F-06;F-10;F-14",
+            "matched_numbers": [
+              "32"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C08",
+            "finding_ids": "F-06;F-10;F-16",
+            "matched_numbers": [
+              "32"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "Easy-surface results match at 32, 128, and 512; at input 32, the medium output is 34 and the hard output is 66.]",
+        "numbers": [
+          "128",
+          "32",
+          "34",
+          "512",
+          "66"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-05-C02",
+            "finding_ids": "F-06;F-10",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C09",
+            "finding_ids": "F-18",
+            "matched_numbers": [
+              "128",
+              "32",
+              "34",
+              "512",
+              "66"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C07",
+            "finding_ids": "F-06;F-10;F-14",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C08",
+            "finding_ids": "F-06;F-10;F-16",
+            "matched_numbers": [
+              "128",
+              "32",
+              "512"
+            ]
+          }
+        ]
+      },
+      {
         "sentence": "The easy-surface row passed at lengths 32, 128, and 512.",
         "numbers": [
           "128",
@@ -834,7 +980,7 @@
         ]
       },
       {
-        "sentence": "It would be a mistake to turn the 34- and 66-character outputs into a story about what the model noticed or why it produced them.",
+        "sentence": "It would be a mistake to infer a cause from the 34- and 66-character outputs.",
         "numbers": [
           "34",
           "66"
@@ -1236,6 +1382,78 @@
         ]
       },
       {
+        "sentence": "The bars make the tally easy to scan, while keeping the six task results separate.",
+        "numbers": [
+          "6"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-05-C02",
+            "finding_ids": "F-06;F-10",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C07",
+            "finding_ids": "F-06;F-10;F-14",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C08",
+            "finding_ids": "F-06;F-10;F-16",
+            "matched_numbers": [
+              "6"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "[Horizontal bars show pass and fail counts for the six tasks: five of five in the build-dependency, spreadsheet, and template tasks; four of five in SQL; and three of five in CSS and regex.",
+        "numbers": [
+          "6"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-05-C02",
+            "finding_ids": "F-06;F-10",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C07",
+            "finding_ids": "F-06;F-10;F-14",
+            "matched_numbers": [
+              "6"
+            ]
+          },
+          {
+            "claim_id": "POST-05-C08",
+            "finding_ids": "F-06;F-10;F-16",
+            "matched_numbers": [
+              "6"
+            ]
+          }
+        ]
+      },
+      {
         "sentence": "A string with 512 characters, five bits, a 25-step chain, and a larger spreadsheet are not equivalent units of work.",
         "numbers": [
           "25",
@@ -1454,7 +1672,7 @@
         ]
       },
       {
-        "sentence": "[HELM] evaluates models across 42 scenarios and multiple measures.",
+        "sentence": "[HELM] covers evaluations across 42 scenarios and multiple measures.",
         "numbers": [
           "42"
         ],
@@ -1512,7 +1730,7 @@
         ]
       },
       {
-        "sentence": "I cannot say that a label fooled the model, that input length did not matter, or that the 25/30 total measures a general ability to recognize a computational machine.",
+        "sentence": "I cannot say that changing a label caused a failure, that input length did not matter, or that the 25/30 total measures a general ability to recognize a computational machine.",
         "numbers": [
           "25",
           "30"

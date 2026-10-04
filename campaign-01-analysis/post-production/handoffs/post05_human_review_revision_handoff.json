@@ -5,13 +5,16 @@
   "status": "valid_human_review_revision_waiting_for_human_review",
   "created_at": "2026-10-04",
   "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-05_human_review_revision.md",
-  "revision_sha256": "7d63c7ef1276629612faf3c6a48e7557b65193a826a3de8c16c98d92a74d3953",
+  "revision_sha256": "5603f9a27cd2a3c9261abbd10dae9fa4bcb56c12e88f24a05686b200a9bf713a",
   "revision_basis": "Fresh reader-facing essay prepared from the frozen POST-05 evidence packet and compact battle brief; separate from the pending final-writer prompt response.",
   "revision_changes": [
     "Opened with the 32-to-34 and 32-to-66 output-length puzzle, then defined the campaign sweep, saved result table, setting, surface labels, and seed in plain language.",
     "Kept the five-setting regex table and explained the task-specific judge; treated its pass as bounded evidence, not a general capability result.",
     "Separated source-check rejections from behavior-check failures and explained why the 25/30 total combines unlike tasks and size measures.",
     "Preserved the single-seed limitation, class-name/performance-hint confound, dirty-source/comparator caveat, and limits on causal, generalization, and Turing-completeness claims.",
+    "Linked the weird-machine family and each of its six task directories in the pinned clean-source comparison tree; the links identify comparison sources, not proof that those exact files ran.",
+    "Added two accessible, evidence-driven SVG charts: a regex input/output-length plot with a close-up, and a six-task pass/fail tally. Both are reproducibly generated from the frozen POST-05 evidence tables.",
+    "Honored the requested no-model-word restriction in speculative passages; no model terminology remains in the public article. The prose does not claim knowledge of hidden reasoning or cause.",
     "Kept prior-work context to VarBench and HELM; no novelty claim, internal trace IDs, or model/Arena authorship claim appears in the public Prose note.",
     "Omitted MathJax because the essay contains no formula, consistent with the POST-05 writer brief; the existing validator accepts formula-free articles without the include."
   ],
@@ -46,17 +49,41 @@
   },
   "validation": {
     "status": "valid",
-    "word_count": 2048,
+    "word_count": 2152,
     "errors": [],
     "warnings": [],
     "report_copy": "campaign-01-analysis/post-production/handoffs/POST-05_human_review_revision_validation_report.json",
-    "report_sha256": "343e59439c62e34881c7a68b1e5f40ec167f374771d55c396fdcd391e9bc5268",
+    "report_sha256": "8366d01af64d5c7741959652a43271b34293f786632da744354ae594a6baed3a",
     "evidence_packet_copy": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
     "evidence_packet_sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942",
     "validator": "runtime.post_production.validate_article",
-    "runtime_model_call_made": false
+    "runtime_model_call_made": false,
+    "revision_sha256": "5603f9a27cd2a3c9261abbd10dae9fa4bcb56c12e88f24a05686b200a9bf713a",
+    "unsupported_numeric_literals": [],
+    "unsupported_spelled_quantitative_counts": []
   },
   "article_approval_or_export_performed": false,
   "human_review_required": true,
-  "publication_ready": false
+  "publication_ready": false,
+  "updated_at": "2026-10-05",
+  "visual_assets": [
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/post05-regex-length-comparison.svg",
+      "sha256": "0859b295432e23e68e9f55179ada4859a6e5019f0dd3194181b860e83fd3611a",
+      "description": "Input versus output string lengths, with an inset comparing the three settings at input length 32."
+    },
+    {
+      "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/post05-task-outcomes.svg",
+      "sha256": "e84749fe7684d1aeec792c6b6cb63405c69d2d084d1ad0fa94c44bbc392dcb28",
+      "description": "Pass and fail counts for five selected cases in each of the six distinct tasks."
+    }
+  ],
+  "visual_generator": {
+    "path": "campaign-01-analysis/evidence/generate_post05_visuals.py",
+    "sha256": "2b4105c9a618504d2c4e950392a0e6b528310688bbe6e0c02ecf64092d89380b",
+    "inputs": [
+      "campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/selected_case_results.csv",
+      "campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/environment_summary.csv"
+    ]
+  }
 }
