@@ -1,8 +1,48 @@
 {
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
-  "created_at": "2026-10-04T18:29:40Z",
-  "expected_response_artifact": "artifacts/jobs/post05_editorial_critic/response.md",
+  "created_at": "2026-10-04T18:45:19Z",
+  "critic_bundle_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+  "critic_bundle_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+  "critic_response_labels_preserved_individually": true,
+  "critic_responses": [
+    {
+      "attachment_index": 1,
+      "critic_label": "sonnet 4.6",
+      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "response_bytes": 28267,
+      "response_captured_in_workspace": true,
+      "response_sha256": "3effb39d6ef76b8d71238679de6fc9ac71361429148cc9a99d4f6400d403b79e",
+      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
+      "runtime_response_ingested": false,
+      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
+      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "source_label": "sonnet 4.6",
+      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
+      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "status": "completed_local_response_capture",
+      "word_count_whitespace_split": 4299,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_sonnet_4_6_response.md"
+    },
+    {
+      "attachment_index": 2,
+      "critic_label": "opus 4.7",
+      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "response_bytes": 17338,
+      "response_captured_in_workspace": true,
+      "response_sha256": "96c9edfe8c654429e8a4492e873677f1ce0aee3194f8919b877e45ad4284c489",
+      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
+      "runtime_response_ingested": false,
+      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
+      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "source_label": "opus 4.7",
+      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
+      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "status": "completed_local_response_capture",
+      "word_count_whitespace_split": 2716,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_opus_4_7_response.md"
+    }
+  ],
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -149,6 +189,8 @@
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/failure_taxonomy.csv"
     }
   ],
+  "expected_response_artifact": "artifacts/jobs/post05_final_writer/response.md",
+  "final_writer_job_status": "waiting_for_human",
   "input_renderings": [
     {
       "reference": "job:post05_prepare_post:response",
@@ -243,6 +285,12 @@
       "rendered_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
       "source_renderings": [],
       "source_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103"
+    },
+    {
+      "reference": "job:post05_editorial_critic:response",
+      "rendered_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+      "source_renderings": [],
+      "source_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75"
     }
   ],
   "inputs": [
@@ -269,34 +317,44 @@
       "size_bytes": 16060,
       "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
+    },
+    {
+      "attachment_index": 3,
+      "reference": "job:post05_editorial_critic:response",
+      "sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+      "size_bytes": 45970,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md"
     }
   ],
-  "job_id": "post05_editorial_critic",
+  "job_id": "post05_final_writer",
   "model_label": null,
-  "model_label_status": "Two explicit critique labels are recorded separately in critic_responses; model identities are not independently verified.",
-  "next_stage": "final_writer",
-  "next_stage_status": "final_writer_prompt_prepared_locally_waiting_for_human",
+  "model_label_status": "Unverified: this handoff does not establish which model will generate the final article; do not infer attribution from a GitHub commit author.",
+  "next_stage": "post_validator",
+  "next_stage_job_id": "post05_post_validator",
+  "next_stage_status": "waiting_for_human",
   "post_id": "POST-05",
-  "prompt_sha256": "e0e77013b3c36a5f8f807f0cb63b33463d762218b3055d212e3f88a8e9876c63",
-  "prompt_to_paste": "artifacts/jobs/post05_editorial_critic/prompt_to_paste.md",
-  "response_captured_in_workspace": true,
+  "post_specific_prompt_note": "POST-05 editorial-input note: the editorial-critic artifact is a compiler-assembled bundle of two separately labeled critiques, not a synthesized consensus or ranking. Reconcile recommendations against the evidence packet, the source draft, and both candidate articles; do not reproduce critic labels or internal workflow details in the public article. Some recommendations conflict, so do not follow checklist items mechanically; the final-writer template and source evidence take precedence, including its 1,800–2,500-word target. Verify factual diagnoses directly against the source text: the second critique gives a count of one instance in Writer A and three in Writer B for “fuckingly,” but the captured drafts contain none in Writer A and one in Writer B. Do not repeat that phrase in the final article.",
+  "prompt_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
+  "prompt_to_paste": "artifacts/jobs/post05_final_writer/prompt_to_paste.md",
+  "response_captured_in_workspace": false,
   "response_ingested": false,
-  "role": "editorial_critic",
+  "role": "final_writer",
   "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
   "runtime_response_ingested": false,
   "runtime_state_available": false,
-  "runtime_state_note": "The two labeled critiques are captured locally and bundled for the final-writer prompt. No runtime DAG, additional model call, browser, or Arena UI submission was performed.",
+  "runtime_state_note": "This paste-ready final-writer prompt is assembled from the committed POST-05 evidence packet, two separately preserved writer responses, and a bundle of two separately labeled critic responses. No runtime DAG, final-writer model call, browser, or Arena UI submission was performed.",
   "schema_version": 1,
-  "source_provenance_note": "The source commit identifies where the combined critic-response file was stored, not which models generated the critiques. Explicit labels “sonnet 4.6” and “opus 4.7” are preserved separately and are not independently verified.",
-  "stage": "editorial_critic",
-  "stage_status": "completed_local_response_capture",
-  "status": "completed_local_response_capture",
-  "template_prompt_artifact": "prompts/critic.md",
-  "template_prompt_sha256": "50576f5e676351f4883a85b283638c1128c9b9009f6614e394e3869860c17d85",
+  "source_provenance_note": "The critic source commit identifies where the combined response file was stored, not which models generated the critiques. Explicit labels are retained as supplied, not independently verified.",
+  "stage": "final_writer",
+  "stage_status": "prompt_prepared_locally_waiting_for_human",
+  "status": "waiting_for_human",
+  "template_prompt_artifact": "prompts/final_writer.md",
+  "template_prompt_sha256": "3534605a01b53390b22ee6ca90e43920b149e28d371f59746f690e90f839157f",
   "updated_at": "2026-10-04T18:45:19Z",
   "workflow_id": "campaign-01-post-production",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_prompt.md",
-  "workspace_prompt_copy_sha256": "e0e77013b3c36a5f8f807f0cb63b33463d762218b3055d212e3f88a8e9876c63",
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
+  "workspace_prompt_copy_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
   "writer_response_provenance": [
     {
       "model_label": "grok 4.5",
@@ -304,8 +362,6 @@
       "role": "battle_writer_a",
       "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
       "response_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
-      "source_file": "campaign-01-analysis/post-production/handoffs/pos_05_responses",
-      "source_commit": "a0c034fac5b314c4ad9414abd1a8590690093de9",
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
     },
     {
@@ -314,72 +370,7 @@
       "role": "battle_writer_b",
       "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
       "response_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
-      "source_file": "campaign-01-analysis/post-production/handoffs/pos_05_responses",
-      "source_commit": "a0c034fac5b314c4ad9414abd1a8590690093de9",
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
     }
-  ],
-  "response_ingested_locally": true,
-  "response_labels_preserved_individually": true,
-  "critic_response_capture_method": "Local extraction from the user-committed combined response file; no runtime engine ingestion, model call, or DAG resume was performed.",
-  "critic_responses": [
-    {
-      "attachment_index": 1,
-      "critic_label": "sonnet 4.6",
-      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
-      "response_bytes": 28267,
-      "response_captured_in_workspace": true,
-      "response_sha256": "3effb39d6ef76b8d71238679de6fc9ac71361429148cc9a99d4f6400d403b79e",
-      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
-      "runtime_response_ingested": false,
-      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
-      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-      "source_label": "sonnet 4.6",
-      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
-      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-      "status": "completed_local_response_capture",
-      "word_count_whitespace_split": 4299,
-      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_sonnet_4_6_response.md"
-    },
-    {
-      "attachment_index": 2,
-      "critic_label": "opus 4.7",
-      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
-      "response_bytes": 17338,
-      "response_captured_in_workspace": true,
-      "response_sha256": "96c9edfe8c654429e8a4492e873677f1ce0aee3194f8919b877e45ad4284c489",
-      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
-      "runtime_response_ingested": false,
-      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
-      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-      "source_label": "opus 4.7",
-      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
-      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-      "status": "completed_local_response_capture",
-      "word_count_whitespace_split": 2716,
-      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_opus_4_7_response.md"
-    }
-  ],
-  "combined_response_bundle": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
-  "combined_response_bundle_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
-  "response_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
-  "response_bytes": 45970,
-  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
-  "workspace_response_copy_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
-  "response_source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
-  "response_source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-  "response_source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
-  "response_source_size_bytes": 45645,
-  "response_source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
-  "wrapper_delimiter": "&&&&&&&&&&&&&",
-  "final_writer_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
-  "final_writer_prompt_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7",
-  "final_writer_status": "waiting_for_human",
-  "critic_response_preservation_notes": [
-    "Both critique bodies are preserved separately and verbatim, without editorial reconciliation or ranking.",
-    "Explicit source labels “sonnet 4.6” and “opus 4.7” are provenance metadata; neither model identity is independently verified.",
-    "The 13-ampersand delimiter and wrapper separator blank lines are omitted from the individual response copies.",
-    "The combined bundle is only a wrapper around the individual copies; it does not synthesize or select a critic.",
-    "The local bundle is not a runtime response ingestion, model call, or DAG resume."
   ]
 }

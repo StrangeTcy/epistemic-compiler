@@ -5,8 +5,8 @@
   "editorial_critic_job_id": "post05_editorial_critic",
   "editorial_critic_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_prompt.md",
   "editorial_critic_prompt_sha256": "e0e77013b3c36a5f8f807f0cb63b33463d762218b3055d212e3f88a8e9876c63",
-  "editorial_critic_status": "prompt_prepared_locally_waiting_for_human",
-  "final_writer_status": "blocked_until_editorial_critic_response_captured",
+  "editorial_critic_status": "completed_local_response_capture",
+  "final_writer_status": "waiting_for_human",
   "model_labels_preserved_individually": true,
   "pair_ingestion_method": "Local extraction from the user-committed combined response file; no runtime engine ingestion, model call, or DAG resume was performed.",
   "post_id": "POST-05",
@@ -71,7 +71,7 @@
   "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/pos_05_responses",
   "stage": "battle_writer_pair",
   "status": "completed_local_pair_ingestion",
-  "updated_at": "2026-10-04T18:29:40Z",
+  "updated_at": "2026-10-04T18:45:19Z",
   "workflow_id": "campaign-01-post-production",
   "wrapper_delimiter": "&&&&&&&",
   "writer_prompts_identical": true,
@@ -113,5 +113,50 @@
       "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
       "word_count_whitespace_split": 2645
     }
-  ]
+  ],
+  "editorial_critic_response_bundle": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_response_bundle.md",
+  "editorial_critic_response_bundle_sha256": "5bed91f0fade9e61ba8b3e3f033fc121085436d785419751c5f74cef0ccb4d75",
+  "editorial_critic_response_source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
+  "editorial_critic_response_source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+  "editorial_critic_response_source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
+  "editorial_critic_responses": [
+    {
+      "attachment_index": 1,
+      "critic_label": "sonnet 4.6",
+      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "response_bytes": 28267,
+      "response_captured_in_workspace": true,
+      "response_sha256": "3effb39d6ef76b8d71238679de6fc9ac71361429148cc9a99d4f6400d403b79e",
+      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
+      "runtime_response_ingested": false,
+      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
+      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "source_label": "sonnet 4.6",
+      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
+      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "status": "completed_local_response_capture",
+      "word_count_whitespace_split": 4299,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_sonnet_4_6_response.md"
+    },
+    {
+      "attachment_index": 2,
+      "critic_label": "opus 4.7",
+      "critic_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "response_bytes": 17338,
+      "response_captured_in_workspace": true,
+      "response_sha256": "96c9edfe8c654429e8a4492e873677f1ce0aee3194f8919b877e45ad4284c489",
+      "response_provenance": "Critique body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted.",
+      "runtime_response_ingested": false,
+      "source_commit": "70e171e2bc2a611ba684437ffb53bcb2d640708b",
+      "source_file": "campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "source_label": "opus 4.7",
+      "source_sha256": "ec41c77547903bbba296244cd4cce73d96acf6881dc72295b7de6625e9a8a7ed",
+      "source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/post_05_editorial_responses",
+      "status": "completed_local_response_capture",
+      "word_count_whitespace_split": 2716,
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_opus_4_7_response.md"
+    }
+  ],
+  "final_writer_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_final_writer_prompt.md",
+  "final_writer_prompt_sha256": "2a2210e481970136e8495e57def9a5ab68bb2cc0db7a8c55d829c55e041c2ff7"
 }
