@@ -1,7 +1,8 @@
 {
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
-  "created_at": "2026-10-04T18:15:24Z",
+  "created_at": "2026-10-04T18:29:40Z",
+  "expected_response_artifact": "artifacts/jobs/post05_editorial_critic/response.md",
   "expanded_source_inputs": [
     {
       "attachment_index": 0,
@@ -148,7 +149,6 @@
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/source_snapshots/POST-05/evidence/failure_taxonomy.csv"
     }
   ],
-  "expected_response_artifact": "artifacts/jobs/post05_battle_writer_b/response.md",
   "input_renderings": [
     {
       "reference": "job:post05_prepare_post:response",
@@ -231,6 +231,18 @@
         }
       ],
       "source_sha256": "0ec5bd833da23585f48f4141dd1cd4f9cd3d793e922f27f87f2b043cf5d45942"
+    },
+    {
+      "reference": "job:post05_battle_writer_a:response",
+      "rendered_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "source_renderings": [],
+      "source_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3"
+    },
+    {
+      "reference": "job:post05_battle_writer_b:response",
+      "rendered_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "source_renderings": [],
+      "source_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103"
     }
   ],
   "inputs": [
@@ -241,44 +253,70 @@
       "size_bytes": 52821,
       "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
       "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md"
+    },
+    {
+      "attachment_index": 1,
+      "reference": "job:post05_battle_writer_a:response",
+      "sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "size_bytes": 11523,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
+    },
+    {
+      "attachment_index": 2,
+      "reference": "job:post05_battle_writer_b:response",
+      "sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "size_bytes": 16060,
+      "snapshot_path": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
+      "source_path": "/home/user/epistemic-compiler/campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
     }
   ],
-  "job_id": "post05_battle_writer_b",
-  "model_label": "opus 5.5",
-  "next_stage": "editorial_critic",
-  "next_stage_status": "waiting_for_human",
+  "job_id": "post05_editorial_critic",
+  "model_label": null,
+  "model_label_status": "Unverified: this handoff does not establish which model will generate a critic response; do not infer attribution from a GitHub commit author.",
+  "next_stage": "final_writer",
+  "next_stage_status": "blocked_until_editorial_critic_response_captured",
   "post_id": "POST-05",
-  "prompt_sha256": "b4c8247dc9dba331a05b213741f65db5c36d67a34fe65a15b7803333eddb3556",
-  "prompt_to_paste": "artifacts/jobs/post05_battle_writer_b/prompt_to_paste.md",
+  "prompt_sha256": "e0e77013b3c36a5f8f807f0cb63b33463d762218b3055d212e3f88a8e9876c63",
+  "prompt_to_paste": "artifacts/jobs/post05_editorial_critic/prompt_to_paste.md",
+  "response_captured_in_workspace": false,
   "response_ingested": false,
-  "role": "battle_writer_b",
+  "role": "editorial_critic",
   "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
-  "runtime_state_available": false,
-  "runtime_state_note": "Durable workspace handoff rebuilt from immutable mission snapshots; ignored runtime state is absent and no DAG job or model call was run.",
-  "schema_version": 1,
-  "stage": "battle_writer_b",
-  "stage_status": "completed_local_response_capture",
-  "status": "completed_local_response_capture",
-  "template_prompt_artifact": "prompts/writer.md",
-  "template_prompt_sha256": "37b3c9f568d45d55c16c237a25b49e33ff8535819c9be246223e5479fafa4913",
-  "workflow_id": "campaign-01-post-production",
-  "workspace_input_packet": "campaign-01-analysis/post-production/handoffs/POST-05_prepared_evidence_packet.md",
-  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_prompt.md",
-  "workspace_prompt_copy_sha256": "b4c8247dc9dba331a05b213741f65db5c36d67a34fe65a15b7803333eddb3556",
-  "updated_at": "2026-10-04T18:29:40Z",
-  "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
-  "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
-  "response_bytes": 16060,
-  "response_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
-  "response_source_commit": "a0c034fac5b314c4ad9414abd1a8590690093de9",
-  "response_source_file": "campaign-01-analysis/post-production/handoffs/pos_05_responses",
-  "response_source_sha256": "de93a1d1431cc32f2259f87d7c52fd70d50999ebae9761f8c6e1661fbfe6378d",
-  "response_source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/arena/01a107c8-epistemic-compiler/campaign-01-analysis/post-production/handoffs/pos_05_responses",
-  "response_provenance": "Response body copied verbatim from the user-committed combined response file; only the wrapper label, pair delimiter, and wrapper separator blank lines were omitted. No article edits were made.",
-  "response_captured_in_workspace": true,
-  "response_ingested_locally": true,
   "runtime_response_ingested": false,
-  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md",
-  "workspace_response_copy_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
-  "response_word_count_whitespace_split": 2645
+  "runtime_state_available": false,
+  "runtime_state_note": "This paste-ready critic prompt is built from the committed POST-05 evidence packet and two separately preserved article bodies. No runtime DAG, model call, browser, or Arena UI submission was performed.",
+  "schema_version": 1,
+  "source_provenance_note": "Source commit identifies where the combined response file was stored, not which model generated either article. The two explicit labels and positional Writer A/B assignment are preserved separately.",
+  "stage": "editorial_critic",
+  "stage_status": "prompt_prepared_locally_waiting_for_human",
+  "status": "waiting_for_human",
+  "template_prompt_artifact": "prompts/critic.md",
+  "template_prompt_sha256": "50576f5e676351f4883a85b283638c1128c9b9009f6614e394e3869860c17d85",
+  "updated_at": "2026-10-04T18:29:40Z",
+  "workflow_id": "campaign-01-post-production",
+  "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-05_editorial_critic_prompt.md",
+  "workspace_prompt_copy_sha256": "e0e77013b3c36a5f8f807f0cb63b33463d762218b3055d212e3f88a8e9876c63",
+  "writer_response_provenance": [
+    {
+      "model_label": "grok 4.5",
+      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "role": "battle_writer_a",
+      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
+      "response_sha256": "a997d42ab0b74ab348fd1d850bb2c20b9e66d16949f9cec2badbbb8d517178c3",
+      "source_file": "campaign-01-analysis/post-production/handoffs/pos_05_responses",
+      "source_commit": "a0c034fac5b314c4ad9414abd1a8590690093de9",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_a_response.md"
+    },
+    {
+      "model_label": "opus 5.5",
+      "model_label_provenance": "Explicit label in the user-committed combined response file; model identity is not independently verified.",
+      "role": "battle_writer_b",
+      "role_assignment_provenance": "Writer A/B role assigned by position in the combined source file (first labeled response=A, second=B); the source itself does not print A/B role names.",
+      "response_sha256": "8c9b4f0e0b1a8ab4f1de51a6eb9b92f584201314f762042adf79d65ac3a1e103",
+      "source_file": "campaign-01-analysis/post-production/handoffs/pos_05_responses",
+      "source_commit": "a0c034fac5b314c4ad9414abd1a8590690093de9",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-05_writer_b_response.md"
+    }
+  ]
 }
