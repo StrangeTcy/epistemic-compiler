@@ -1,6 +1,9 @@
 {
   "article_approval_or_export_performed": false,
   "browser_ui_submission_attempted": false,
+  "candidate_count": 1,
+  "candidate_intake_copy": "campaign-01-analysis/post-production/handoffs/post04_final_writer_candidate_intake.json",
+  "candidate_intake_status": "awaiting_validation_revision_response",
   "created_at": "2026-10-04T17:40:43Z",
   "expanded_source_inputs": [
     {
@@ -149,6 +152,7 @@
     }
   ],
   "expected_response_artifact": "artifacts/jobs/post04_final_writer/response.md",
+  "final_writer_job_status": "one_article_candidate_captured; local validator rejected it",
   "input_renderings": [
     {
       "reference": "job:post04_prepare_post:response",
@@ -281,26 +285,49 @@
     }
   ],
   "job_id": "post04_final_writer",
-  "model_label": null,
-  "next_stage": "post_validator",
-  "next_stage_status": "blocked_until_final_writer_response_is_captured",
+  "model_label": "fable 5.1",
+  "model_label_provenance": "Explicit label in the user-committed combined final-response file; not independently verified.",
+  "next_stage": "validation_revision",
+  "next_stage_status": "waiting_for_human",
+  "opus_segment_classification": "prompt_echo_not_article_response",
   "post_id": "POST-04",
   "post_specific_prompt_note": "POST-04 editorial-input note: the editorial-critic artifact is a compiler-assembled bundle of two separately labeled critiques, not a synthesized consensus or ranking. Reconcile their recommendations against the evidence packet; preserve the boundaries and do not reproduce internal critic labels in the public article.",
   "prompt_sha256": "395c1f42cacf5e7b4fe41d531c6ae1a664dcfd6698c20bcb45ce9d860073b4e5",
   "prompt_to_paste": "artifacts/jobs/post04_final_writer/prompt_to_paste.md",
-  "response_captured_in_workspace": false,
+  "response_bytes": 16823,
+  "response_captured_in_workspace": true,
   "response_ingested": false,
+  "response_provenance": "Article body extracted from the fable 5.1-labeled segment of the committed combined response file; body preserved verbatim. The opus 4.8-labeled segment matches the issued prompt exactly and is not counted as an article response.",
+  "response_sha256": "6517f850bd17fd5b57ea1af560a1476b6c3c7bd564aaa2e45aa64ef578a96a94",
+  "response_source_commit": "94f714d9246354f7fe25eb9623fa24db3c63ff7d",
+  "response_source_file": "campaign-01-analysis/post-production/handoffs/post_04_final_responses",
+  "response_source_sha256": "1bd5aeb572c8f0df29ffc31f37fff7c08db3462e978fb336a4cf874338dc76df",
   "role": "final_writer",
   "run_id": "campaign-01-post-production-20261004T121240Z-32b07d54",
+  "runtime_response_ingested": false,
   "runtime_state_available": false,
   "runtime_state_note": "This prompt was generated locally from the committed source snapshots and response captures using _handoff_prompt. The ignored runtime state is absent; no DAG job or model call was run.",
   "schema_version": 1,
   "stage": "final_writer",
-  "stage_status": "waiting_for_human",
-  "status": "waiting_for_human",
+  "stage_status": "candidate_captured_local_validation_failed",
+  "status": "candidate_captured_local_validation_failed",
   "template_prompt_artifact": "prompts/final_writer.md",
   "template_prompt_sha256": "3534605a01b53390b22ee6ca90e43920b149e28d371f59746f690e90f839157f",
+  "updated_at": "2026-10-04T17:50:00Z",
+  "validation_errors": [
+    "public copy leaks internal source or result identifier",
+    "numeric literals are not present in the source draft/evidence packet: 0%, 82, 82%",
+    "quantitative result claim sentence(s) do not map to an internal claim-traceability row; see traceability_audit",
+    "article overstates independent replication or independent model execution",
+    "required caveat missing: explicitly limit what the benchmark establishes"
+  ],
+  "validation_report_copy": "campaign-01-analysis/post-production/handoffs/POST-04_validation_report.json",
+  "validation_report_sha256": "5fd72e145efbecbececa17d3e0a5b75fc291a635866a1891d7349c2452e07a2b",
+  "validation_status": "invalid",
+  "validation_word_count": 2596,
   "workflow_id": "campaign-01-post-production",
   "workspace_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-04_final_writer_prompt.md",
-  "workspace_prompt_copy_sha256": "395c1f42cacf5e7b4fe41d531c6ae1a664dcfd6698c20bcb45ce9d860073b4e5"
+  "workspace_prompt_copy_sha256": "395c1f42cacf5e7b4fe41d531c6ae1a664dcfd6698c20bcb45ce9d860073b4e5",
+  "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-04_final_writer_fable_5_1_response.md",
+  "workspace_response_copy_sha256": "6517f850bd17fd5b57ea1af560a1476b6c3c7bd564aaa2e45aa64ef578a96a94"
 }
