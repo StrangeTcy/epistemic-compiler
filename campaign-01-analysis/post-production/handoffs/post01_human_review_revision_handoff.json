@@ -3,17 +3,18 @@
   "workflow_id": "campaign-01-post-production",
   "post_id": "POST-01",
   "stage": "human_editorial_revision",
-  "status": "valid_revision_waiting_for_human_review",
+  "status": "valid_revision_with_family_visuals_waiting_for_human_review",
   "created_at": "2026-10-04T20:00:48Z",
   "source_final_writer_copy": "campaign-01-analysis/post-production/handoffs/POST-01_final_writer_reconciled_response.md",
   "source_final_writer_response_sha256": "49f05b299ca6493077321c45c162adcc80cfb9e9b10d73ff45381a03239ba936",
   "revision_copy": "campaign-01-analysis/post-production/handoffs/POST-01_human_review_revision.md",
-  "revision_sha256": "0a99f5bbb9e159e41e87c2ea32726864872d2e65061e8c1e7500d428690b9e40",
+  "revision_sha256": "041c774d61be7729a571205bcfc39ebf9a0d043479c632989910169ae0115c23",
   "revision_basis": "User-provided editorial feedback after reviewing the reconciled POST-01 draft.",
   "revision_changes": [
     "Expanded the opening around the Atria Dawn Preview campaign, rl_eval_generator environment matrix, campaign results, completed analysis, proposed generator work, and future experiments.",
     "Added a campaign snapshot and an explicit explanation of the distinct row exclusions before showing the denominator fractions.",
     "Showed both possible 193-row sensitivities: the incomplete sheaf_physical_constraints compile-only record alone, and the report-listed ts_trajectory outage alone; the 192-row primary set removes both.",
+    "Added family-specific radar charts and case-level heatmaps for category-theoretic/compositional tasks, weird machines, ML debugging, and epistemic games; the heatmaps preserve every selected case, nominal factor values, judge mode, terminal label, and exclusion status.",
     "Replaced unsupported icon markup with plain emphasis and preserved the dirty-source, judge-mode, one-seed, and causal-inference caveats.",
     "Removed the requested wording from the public copy and retained the distinction between descriptive findings and proposed or future work."
   ],
@@ -102,12 +103,13 @@
   "validation": {
     "status": "valid",
     "report_copy": "campaign-01-analysis/post-production/handoffs/POST-01_human_review_revision_validation_report.json",
-    "report_sha256": "7f03fe20ede679a4e747884fd8470b6d181e04ba5bdc3f8849f4cacc846b6ac1",
-    "word_count": 2025,
+    "report_sha256": "ccba50eacf2952612ee55a0eeea3b45c978ed3800b4c261c5830485ce8968632",
+    "word_count": 2400,
     "errors": [],
     "method": "Local runtime.post_production.validate_article call with repository .venv PyYAML, against frozen POST-01 source snapshots, trace rows, findings, and failure details.",
     "runtime_dag_resumed": false,
-    "model_call_made": false
+    "model_call_made": false,
+    "svg_link_check": "All eight Markdown-referenced SVG files exist and parse as XML; chart generation was run from the full frozen case_results.csv."
   },
   "terms_removed_from_public_copy": [
     "paid",
@@ -115,5 +117,105 @@
     "defensible",
     "fuckingly"
   ],
-  "article_approval_or_export_performed": false
+  "article_approval_or_export_performed": false,
+  "visuals": {
+    "generator_script": "campaign-01-analysis/evidence/generate_post01_visuals.py",
+    "generator_sha256": "3a04917e980e383190dd9deea33d3cde1d7100567542fbce0d9f81df721b41f9",
+    "generator_command": "python campaign-01-analysis/evidence/generate_post01_visuals.py",
+    "source_data": "campaign-01-analysis/evidence/generated/case_results.csv",
+    "source_data_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5",
+    "relative_asset_prefix": "figures/family-maps/",
+    "all_article_asset_links_resolve": true,
+    "all_svg_xml_parses": true,
+    "radar_measure": "PASS / performance-eligible rows, separately within each family; epistemic-games spokes are individual case configurations.",
+    "heatmap_measure": "All selected rows in each requested family; fill encodes PASS, FAIL, or EXCL; tile labels preserve terminal class; row badges identify judge mode; configuration labels preserve factor values.",
+    "family_counts": {
+      "category_theoretic_compositional": {
+        "raw": 85,
+        "eligible": 84,
+        "pass": 57,
+        "fail": 27,
+        "excluded": 1
+      },
+      "weird_machine": {
+        "raw": 30,
+        "eligible": 30,
+        "pass": 25,
+        "fail": 5,
+        "excluded": 0
+      },
+      "ml_debugging": {
+        "raw": 30,
+        "eligible": 30,
+        "pass": 9,
+        "fail": 21,
+        "excluded": 0
+      },
+      "epistemic_games": {
+        "raw": 7,
+        "eligible": 7,
+        "pass": 7,
+        "fail": 0,
+        "excluded": 0
+      }
+    },
+    "charts": [
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/category-heatmap.svg",
+        "sha256": "f299372e446a87b9631c6158757c22e29ae2a487d661b1dcd0850c386ec0b016",
+        "bytes": 77213,
+        "family": "category_theoretic_compositional",
+        "type": "heatmap"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/category-radar.svg",
+        "sha256": "e6d1c7e03444f7b9ac3d4bad479d48368240d2fd6344dbb71b55aea5532a9827",
+        "bytes": 11719,
+        "family": "category_theoretic_compositional",
+        "type": "radar"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/epistemic-games-heatmap.svg",
+        "sha256": "14d0d1b6944875a99c4e74d9ebcf867f33cce2dfe96de9aeede32eccbe498908",
+        "bytes": 127311,
+        "family": "epistemic_games",
+        "type": "heatmap"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/epistemic-games-radar.svg",
+        "sha256": "9db5be4b2af4a320ffeed86aef3dccb66e09a5327dcaa409ddcf5f0ce14b121a",
+        "bytes": 6575,
+        "family": "epistemic_games",
+        "type": "radar"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/ml-debugging-heatmap.svg",
+        "sha256": "7e0f44c124857073ab53f34ca8f5aca7bea54f2133556bcb399924cc0f080767",
+        "bytes": 39648,
+        "family": "ml_debugging",
+        "type": "heatmap"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/ml-debugging-radar.svg",
+        "sha256": "c62f35e8c3420ffb0819c77758214fcdf132c7056b9c71db1b95d00d72b7ba14",
+        "bytes": 4556,
+        "family": "ml_debugging",
+        "type": "radar"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/weird-machines-heatmap.svg",
+        "sha256": "6e383311b6531a057f616b954098d69cbec493b40048761b899b0e114a8cbc60",
+        "bytes": 32081,
+        "family": "weird_machine",
+        "type": "heatmap"
+      },
+      {
+        "path": "campaign-01-analysis/post-production/handoffs/figures/family-maps/weird-machines-radar.svg",
+        "sha256": "f107488b25c2544948551a5db3c3fa481408e4cc0771cd95331c5e606a2fbe07",
+        "bytes": 6048,
+        "family": "weird_machine",
+        "type": "radar"
+      }
+    ]
+  }
 }

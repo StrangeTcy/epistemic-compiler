@@ -8,7 +8,7 @@
   "date": "2026-10-03",
   "slug": "a-red-square-is-not-one-result",
   "suggested_jekyll_filename": "2026-10-03-a-red-square-is-not-one-result.md",
-  "word_count": 2025,
+  "word_count": 2400,
   "numeric_literals_checked": [
     "0",
     "0.416667",
@@ -54,6 +54,7 @@
   ],
   "unsupported_numeric_literals": [],
   "spelled_quantitative_counts_checked": [
+    "1",
     "2"
   ],
   "unsupported_spelled_quantitative_counts": [],
@@ -817,6 +818,56 @@
             "finding_ids": "F-06;F-14;F-16",
             "matched_numbers": [
               "33"
+            ]
+          }
+        ]
+      },
+      {
+        "sentence": "Each radar summarizes PASS share within its family; environment spokes are used for category/compositional, weird-machine, and ML-debugging tasks, while epistemic games uses one spoke per case configuration because it has one environment.",
+        "numbers": [
+          "1"
+        ],
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-01-C03",
+            "finding_ids": "F-01;F-06;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C04",
+            "finding_ids": "F-06;F-09;F-10",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C05",
+            "finding_ids": "F-06;F-09;F-10;F-11;F-12",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C06",
+            "finding_ids": "F-04;F-09;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C07",
+            "finding_ids": "F-04;F-11;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim_id": "POST-01-C09",
+            "finding_ids": "F-06;F-14;F-16",
+            "matched_numbers": [
+              "1"
             ]
           }
         ]

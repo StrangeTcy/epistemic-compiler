@@ -61,6 +61,44 @@ The archive also records a passing public Bayesian-oracle preflight for the epis
 
 The source audit has a boundary of its own. The campaign archive records a dirty working tree. All 33 selected configuration hashes match a clean comparator of the recorded commit, which establishes a match for those configurations. It does not prove that the task templates, visible tests, judge code, or helper files used during the campaign were byte-identical to the comparator. When I describe what an axis does, I am describing the inspected comparator—not a verified transcript of the executed source tree.
 
+## Family radar charts and case heatmaps
+
+The heatmaps below show every selected case in these families: exact configuration labels, judge mode, verdict, terminal label, and whether the row enters the performance denominator. `EXCL` stays visible in raw case accounting but is omitted from the radar rate. The family grouping follows the semantic analysis labels, so epistemic games is shown separately from the campaign’s recorded ML-debugging track label. Each radar summarizes PASS share within its family; environment spokes are used for category/compositional, weird-machine, and ML-debugging tasks, while epistemic games uses one spoke per case configuration because it has one environment. These are descriptive summaries, not cross-family capability profiles.
+
+`Easy`, `medium`, and `hard` are the source configuration values—not a calibrated scale shared by tasks. The epistemic-games chart instead shows its categorical scenario, evidence, prior, presentation, and framing values. Each point is a one-seed observation; the plots do not establish causal effects.
+
+### Category-theoretic and compositional tasks
+
+![Within-family radar of eligible pass shares across category-theoretic and compositional environments; numbered spokes match the heatmap rows and marker shape identifies judge mode.](figures/family-maps/category-radar.svg)
+
+*The radar is an environment-level summary; the matrix preserves the exact naming and symptom-mask settings for each selected case.*
+
+![Case heatmap for all category-theoretic and compositional environments, with judge mode, outcome, terminal label, and excluded raw row visible.](figures/family-maps/category-heatmap.svg)
+
+### Weird machines
+
+![Within-family radar of eligible pass shares across weird-machine environments; numbered spokes match the heatmap rows.](figures/family-maps/weird-machines-radar.svg)
+
+*The heatmap records the hidden-depth and surface-deceptiveness settings separately; these task axes do not share a physical unit.*
+
+![Case heatmap for every selected weird-machine configuration, including each easy, medium, and hard setting.](figures/family-maps/weird-machines-heatmap.svg)
+
+### ML debugging
+
+![Within-family radar of eligible pass shares for the ML-debugging environments; marker shape distinguishes compile-only from behavioral-reference judging.](figures/family-maps/ml-debugging-radar.svg)
+
+*The heatmap labels every changed factor and level for batch normalization, Glyph, and MoCo; the all-easy configuration is shown as the baseline.*
+
+![Case heatmap for every selected ML-debugging configuration, with judge mode and terminal failure label.](figures/family-maps/ml-debugging-heatmap.svg)
+
+### Epistemic games
+
+![Within-family radar with one spoke per selected epistemic-games case configuration; each point is a single case, not a replicate.](figures/family-maps/epistemic-games-radar.svg)
+
+*The categorical matrix shows scenario, evidence, prior, presentation, and framing for each selected case; it does not force these factors onto an easy-medium-hard scale.*
+
+![Case heatmap for every selected epistemic-games configuration, including each categorical condition and behavioral-reference outcome.](figures/family-maps/epistemic-games-heatmap.svg)
+
 ## “Easy” and “hard” name different things in different tasks
 
 Consider the regex state-machine environment. Its “hidden depth” axis is input-string length: 32, 128, or 512 characters. At the easy surface label, the selected run passes all three lengths. Hold the input at 32 characters and sweep the surface label, though, and the medium and hard cases fail: the recorded outputs have 34 and 66 characters rather than 32. That is a sharp contrast in these selected cases, not evidence for a general surface effect. In the clean comparator, the surface labels also change class names, and the hard prompt adds a performance hint. The dirty-tree record means those comparator details do not establish exactly what the campaign used; the sweep also has one selected seed per cell.
