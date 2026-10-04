@@ -1,0 +1,55 @@
+{
+  "article_approval_or_export_performed": false,
+  "browser_ui_submission_attempted": false,
+  "editorial_critic_prompt_copy": "campaign-01-analysis/post-production/handoffs/POST-03_editorial_critic_prompt.md",
+  "editorial_critic_prompt_sha256": "650a2e9edd8019d0f2ce8a23696eb91c98c931925fd68cc6526f0fa4b005817e",
+  "editorial_critic_response_artifact": "artifacts/jobs/post03_editorial_critic/response.md",
+  "model_labels_preserved_individually": true,
+  "next_job_id": "post03_editorial_critic",
+  "next_stage": "editorial_critic",
+  "next_stage_status": "waiting_for_human",
+  "pair_ingested_at": "2026-10-04T10:03:03Z",
+  "pair_ingestion_method": "runtime engine response ingestion for Writer A and Writer B followed by one DAG resume",
+  "post_id": "POST-03",
+  "predecessor_run_id": "campaign-01-post-production-20261004T090510Z-2118d4d2",
+  "prompt_sha256": "3b80f8e4cdb84e824cc2c2b26c35d8ac0d5ae534444fc2089d74f57d29432816",
+  "rehydration_note": "The ignored runtime state from the prior run was unavailable in this checkout; earlier POST-01/POST-02 human artifacts were replayed into a fresh local run before this pair-ingest. No Atria experiment was rerun and no live Arena UI was used.",
+  "response_preservation_notes": [
+    "Both complete Markdown candidate bodies were saved separately without editorial changes.",
+    "The outer Markdown fences supplied in the user message are preserved in each response artifact.",
+    "The model labels are provenance metadata, not article text; the &&& separator was not included in either response."
+  ],
+  "responses": [
+    {
+      "expected_response_artifact": "artifacts/jobs/post03_battle_writer_a/response.md",
+      "job_id": "post03_battle_writer_a",
+      "model_label": "sonnet 5",
+      "outer_markdown_fence_preserved": true,
+      "response_bytes": 12621,
+      "response_provenance": "User-supplied model response; body preserved verbatim in the saved response copy.",
+      "response_sha256": "6b29236f9e11cd3fcf9fe9328f19b4bf21f9c365b9fb8a53166399de61874d00",
+      "role": "battle_writer_a",
+      "status": "completed",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-03_writer_a_response.md"
+    },
+    {
+      "expected_response_artifact": "artifacts/jobs/post03_battle_writer_b/response.md",
+      "job_id": "post03_battle_writer_b",
+      "model_label": "opus 4.8",
+      "outer_markdown_fence_preserved": true,
+      "response_bytes": 13787,
+      "response_provenance": "User-supplied model response; body preserved verbatim in the saved response copy.",
+      "response_sha256": "c13bd8f18848d9957cd36f1c2e6764c1fd2af14b5ff27e2a19bb33563803c0f8",
+      "role": "battle_writer_b",
+      "status": "completed",
+      "workspace_response_copy": "campaign-01-analysis/post-production/handoffs/POST-03_writer_b_response.md"
+    }
+  ],
+  "run_id": "campaign-01-post-production-20261004T095953Z-ac4ae27a",
+  "schema_version": 1,
+  "stage": "battle_writer_pair",
+  "status": "completed_pair_ingest",
+  "upstream_post02_validation": "invalid_one_source_comparator_caveat_flag",
+  "upstream_post02_validation_report_sha256": "f7efdf14a0ff2a2a2c97a71cd1543b640b43a9aabf1724d598be4cdba1377d35",
+  "workflow_id": "campaign-01-post-production"
+}
