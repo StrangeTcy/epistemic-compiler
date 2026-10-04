@@ -1,0 +1,752 @@
+{
+  "checks": {
+    "frontmatter": true,
+    "html_tag_balance": true,
+    "independent_replication_overclaim": true,
+    "internal_provenance_leakage": true,
+    "jekyll_layout_include_author": true,
+    "markdown_fences_and_links": true,
+    "numeric_claim_traceability": true,
+    "numerical_claim_literals": true,
+    "post_specific_overclaim_and_caveats": true
+  },
+  "date": "2026-10-03",
+  "errors": [],
+  "evidence_input_sha256": {
+    "mission:campaign_provenance": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9",
+    "mission:evidence_analysis_family_summary_POST-03": "dc7408b3767289e684378b7f65bf69320d5ee49ce61e152a61bc3af1189854c9",
+    "mission:evidence_axis_placeholder_audit_POST-03": "64c368e44f2922d776793b64f374635dbab39cea31fb16e3cef84f0ccbc748df",
+    "mission:evidence_axis_summary_POST-03": "6adbe8a6968def08ab6d197bcea048d4be7212aacf63bef2432ce9cb86128fab",
+    "mission:evidence_case_results_POST-03": "39b433fc910bd670535ce6e9d7b81bd88dc57a478b07bb130a61ba9557e77339",
+    "mission:evidence_environment_summary_POST-03": "f3c2c57c5d034d4c188818b094e4748ee70a6234d3e901032e1c5be48166d9e6",
+    "mission:evidence_extract_POST-03": "15495ccf6759b297e0691f456d72f9fb64319840b8bd40652bfcc2a3e54d3860",
+    "mission:evidence_failure_taxonomy_POST-03": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+    "mission:evidence_track_summary_POST-03": "af1b17cea27fc651479694cd83090ff5b727232567b786c6080b58d9fce2cc12",
+    "mission:house_style": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+    "mission:limitations_POST-03": "7716d9a9744fa3dfd56266688c7d7b260d375349e573e82fda7fb6963e318ff8",
+    "mission:references": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0",
+    "mission:relevant_findings_POST-03": "1faf368a1c32f05d15eb66ddba329957680c45287d8e0847175c062859142e34",
+    "mission:source_audit_POST-03": "66dad2ff836b4e0db41b9e90938970030242604bf059ee3749ba8e0ab8fa5437",
+    "mission:source_draft_POST-03": "fac657f187fb7cb366d735b3899d9477487bbf7d89f597fbe8bce03fd9a24932",
+    "mission:style_reference_material": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+    "mission:trace_rows_POST-03": "9308f4b1769234260490558154e906fec1f82d49c4ec7214f5c82e52bcb0856a",
+    "mission:workflow_input_manifest": "15409d70ae25020b8327d9f102956b7cb288b470e594682095655eb7ca05a158"
+  },
+  "numeric_literals_checked": [
+    "1",
+    "1.0",
+    "10",
+    "192",
+    "2",
+    "20",
+    "24",
+    "26",
+    "27",
+    "3",
+    "4",
+    "5",
+    "53",
+    "57",
+    "61",
+    "79",
+    "84",
+    "85"
+  ],
+  "post_id": "POST-03",
+  "schema_version": 1,
+  "slug": "a-category-theory-label-is-not-a-category-theory-measurement",
+  "spelled_quantitative_counts_checked": [
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "suggested_jekyll_filename": "2026-10-03-a-category-theory-label-is-not-a-category-theory-measurement.md",
+  "title": "A Category-Theory Label Is Not a Category-Theory Measurement",
+  "trace_row_ids_loaded": [
+    "POST-03-C01",
+    "POST-03-C02",
+    "POST-03-C03",
+    "POST-03-C04",
+    "POST-03-C05",
+    "POST-03-C06",
+    "POST-03-C07",
+    "POST-03-C08"
+  ],
+  "traceability_audit": {
+    "mapped_numeric_claim_sentences": [
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "85"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "85"
+            ]
+          }
+        ],
+        "numbers": [
+          "85"
+        ],
+        "sentence": "The track contains 85 recorded rows."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "One   row has a final note attributing its terminal failure to a provider transient after bounded retries."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "27",
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "27",
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "27",
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "27",
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "27",
+              "57",
+              "84"
+            ]
+          }
+        ],
+        "numbers": [
+          "27",
+          "57",
+          "84"
+        ],
+        "sentence": "The other 84 cases include 57 passes and 27 failures."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C02",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C05",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "1",
+              "4",
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "4",
+          "5"
+        ],
+        "sentence": "|   | 5 | 4 | 1 | The output was checked against a reference behavior |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "53",
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "53",
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "53",
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "53",
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "53",
+              "79"
+            ]
+          }
+        ],
+        "numbers": [
+          "26",
+          "53",
+          "79"
+        ],
+        "sentence": "|   | 79 | 53 | 26 | The submission built and cleared the available checks; the campaign calls this exploratory |"
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "79"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "79"
+            ]
+          }
+        ],
+        "numbers": [
+          "79"
+        ],
+        "sentence": "The other 79 are compile-only."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "57",
+              "84"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "57",
+              "84"
+            ]
+          }
+        ],
+        "numbers": [
+          "57",
+          "84"
+        ],
+        "sentence": "So 57 of 84 is not a category-theory score: it is a count across different tasks and different guarantees, most of them preliminary."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "1",
+              "4"
+            ]
+          }
+        ],
+        "numbers": [
+          "1",
+          "4"
+        ],
+        "sentence": "The five recorded outcomes are four passes and one failure, but the failure mode matters."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "4"
+            ]
+          }
+        ],
+        "numbers": [
+          "4"
+        ],
+        "sentence": "Nor do the four passes, by themselves, show broad command of lens theory; they show success under this environment's stated checks."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C02",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C05",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3",
+              "5"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "5"
+            ]
+          }
+        ],
+        "numbers": [
+          "3",
+          "5"
+        ],
+        "sentence": "Its hidden judge enforces a 5:3 ratio on a fixed high-demand vector; the prompt does not state that ratio, and the visible test checks output keys and shape rather than the ratio."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C02",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C05",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          }
+        ],
+        "numbers": [
+          "3"
+        ],
+        "sentence": "These three examples are not instances of one generic defect."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C02",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C05",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "2",
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "2",
+          "3"
+        ],
+        "sentence": "The five archived outcomes—three passes and two failures—cannot, on that source snapshot, be read as a response to optimizer-class or learning-rate changes."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "1"
+            ]
+          }
+        ],
+        "numbers": [
+          "1"
+        ],
+        "sentence": "in   is one example."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C01",
+            "finding_ids": "F-01;F-03;F-04;F-08",
+            "matched_numbers": [
+              "192",
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C02",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C04",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C05",
+            "finding_ids": "F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "10",
+              "192",
+              "2",
+              "20",
+              "24",
+              "3",
+              "61"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C07",
+            "finding_ids": "F-08;F-14;F-15",
+            "matched_numbers": [
+              "3"
+            ]
+          },
+          {
+            "claim_id": "POST-03-C08",
+            "finding_ids": "F-08;F-16",
+            "matched_numbers": [
+              "2"
+            ]
+          }
+        ],
+        "numbers": [
+          "10",
+          "192",
+          "2",
+          "20",
+          "24",
+          "3",
+          "61"
+        ],
+        "sentence": "Across the full 192-case eligible campaign set—not just this category track—the archive records 61 failures: 24   cases, all empty patches; 20  ; 10  ; 3  ; 2  ; and 2 labeled  ."
+      },
+      {
+        "candidate_trace_rows": [
+          {
+            "claim_id": "POST-03-C06",
+            "finding_ids": "F-08;F-09;F-15",
+            "matched_numbers": [
+              "1.0"
+            ]
+          }
+        ],
+        "numbers": [
+          "1.0"
+        ],
+        "sentence": "The last two carry trusted scores of 1.0 and notes about missing required companion files."
+      }
+    ],
+    "unmapped_numeric_claim_sentences": []
+  },
+  "unsupported_numeric_literals": [],
+  "unsupported_spelled_quantitative_counts": [],
+  "valid": true,
+  "warnings": [],
+  "word_count": 1929
+}
