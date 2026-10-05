@@ -20,6 +20,7 @@ The candidate sentences make the empirical contrasts explicit; they are starting
 - **Competing predictions:** evidence-sensitive Bayesian updating versus prior neglect, likelihood neglect, or cue-based answers.
 - **Nearest collision / status:** Mission 02's v0 already instantiates an answer-only version. Treat this as a reuse baseline or a question about a clearly added factor—not as novelty merely because the task is epistemic.
 - **Feasibility issue:** separate policy inference from policy application; v0 supplies the policy and is not a recursive level-k engine.
+- **Current development card:** [`question_cards/E1_supplied_policy_update.md`](question_cards/E1_supplied_policy_update.md) (working draft; not a Gate 1 decision).
 
 ### E2 — Sequential public-announcement updates
 
