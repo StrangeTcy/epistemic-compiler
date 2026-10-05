@@ -70,6 +70,7 @@ The pinned source is `rl_eval_generator` commit `e1b038a4efb7343afd713f4e981c90f
 The linked bundle is preserved at [`e1_responses`](e1_responses). Its headings self-label two response sources (`grok 4.3`, `opus 5`); Arena mode, verified Arena-displayed model labels, session times, and tool metadata were not supplied. Treat the contents as advisory critiques, not as source-level evidence, verified literature review, Gate disposition, or authorization.
 
 - The reviews converge on retaining E1 as the supplied-policy/v0 baseline rather than claiming a novel family. A possible agent-policy-versus-abstract-signal framing contrast is parked as a separate candidate extension; it is not folded into E1's primary question.
+- One review calls v0 an “answer-only” task. The pinned public task actually requests a numeric posterior, an evidence-strength verdict, a directional support label, and a short justification; do not read that shorthand as meaning the task is categorical-only.
 - The log-odds coefficient decomposition above is retained as a candidate way to distinguish likelihood neglect, prior neglect, and conservative updating. It is not registered; the realized grid's identifiability and boundary handling still need checking.
 - The bundle's named papers and novelty claims remain **unverified leads**. The reviews do not close Gate 1's prior-work criterion; verify primary sources before citing or relying on those claims.
 - No numeric tolerance or equivalence margin proposed in the bundle is adopted here.
