@@ -1,0 +1,154 @@
+grok 4.3:
+
+**E1 card review — independent assessment**
+
+This is a clean, well-scoped first serial card. It correctly treats E1 as potentially a reuse/baseline on the existing v0 substrate rather than a novel family claim, quarantines H2 as optional, and keeps the focus on numeric posterior calibration plus categorical verdict against exact Bayes ground truth. The four open questions are the right ones to resolve locally before any Gate 1 review.
+
+### 1. Is E1 an independently interesting question about model use of supplied likelihoods, or primarily a baseline/anchor?
+
+It can function as either, but the card currently leans toward **baseline/anchor** for the portfolio. The explicit two-world setup with a disclosed behavior table is already instantiated in v0 (answer-only Bayesian task, exact rational ground truth, axes including evidence strength/prior/narrative-vs-table). Without a named added factor (e.g., a specific manipulation of table format, numeric vs verbal likelihoods, or a new response format), E1 largely reproduces the v0 task. Treating it as an anchor that calibrates the substrate for later E- and S-cards (especially S2/S3, which need a frozen family with verified text-to-formal fidelity) is the more productive framing. If the human wants it to stand alone as an interesting behavioral question, the card should name one concrete added factor (e.g., “numeric posterior reporting under explicit likelihood tables vs implicit evidence”) that is not already tested in v0.
+
+### 2. Which exact posterior observable makes under-updating distinguishable from prior neglect and ordinary numerical imprecision?
+
+The current proposal (numeric `posterior_world1` error + categorical verdict) is workable but needs one refinement. A proper scoring rule (e.g., Brier score or log score on the numeric posterior) plus a pre-registered tolerance band around the exact posterior (e.g., “within ±0.05 probability mass or equivalent log-odds”) distinguishes systematic under-updating or prior dominance from random numerical error. The categorical verdict should be scored separately (exact match to the Bayes-optimal category) and never allowed to substitute for numeric calibration. A secondary observable—change in reported posterior as likelihood ratio varies while holding prior fixed—directly tests responsiveness to the supplied evidence. The card already gestures at this; making the tolerance band and proper-score rule explicit in the next iteration would close the gap.
+
+### 3. Source-level prior work on LLM Bayesian/probabilistic updating on supplied likelihood tables
+
+Several recent papers directly test Bayesian updating in LLMs, but the exact E1 regime (explicit supplied behavior/policy table in a two-world epistemic setup, numeric posteriors against exact Bayes ground truth, narrative-vs-table presentation axis) is not fully covered.
+
+- “Enough Coin Flips Can Make LLMs Act Bayesian” (Gupta et al., arXiv:2503.04722, ACL 2025) shows LLMs broadly follow Bayesian posterior updates in a controlled biased-coin ICL setting once sufficient evidence is provided; deviations are mainly from miscalibrated priors rather than flawed updating mechanics.
+- “LLMs are not (consistently) Bayesian” (arXiv:2605.06915) quantifies an “information processing gap” between observed and Bayes-optimal updates and finds that forcing explicit Bayes’ law does not consistently improve downstream performance.
+- “Bayesian Teaching Enables Probabilistic Reasoning in Large Language Models” (arXiv:2503.17523) demonstrates that LLMs initially fall short of normative Bayesian updating but can be taught to approximate it via in-context examples of a Bayesian assistant.
+- “BayesBench” (arXiv:2606.30850) introduces a multi-turn evidence-accumulation benchmark that polls elicited posteriors after each piece of evidence and compares trajectories to Bayesian references.
+- “The Geometry of Ignorance” (arXiv:2609.02959) identifies a geometric “direction of ignorance” in the unembedding that encodes the unigram prior and shows LLMs perform a tempered Bayesian update whose prior reliance decreases with more context.
+
+Closest collision is the coin-flip and multi-turn evidence paradigms; none of the above use an *explicitly supplied behavior/policy table* with registered likelihood ratios in a two-world epistemic setting plus the narrative-vs-table axis. The v0 prototype already implements the core task, so E1’s contribution is best framed as a calibration/baseline study on that substrate rather than a novel family. A targeted source check of the v0 code (or a short written confirmation from the architect) would confirm whether any of the above papers’ exact setups overlap with v0’s implementation.
+
+### 4. Does reusing v0 provide enough accessible architecture, and what is the minimal independent check?
+
+Yes, with one bounded verification step. The seed already states that v0 supplies the policy table, computes exact rational Bayes ground truth, and includes the narrative-vs-table axis. The shared generator/judge implementation in `core.py` is an acknowledged limitation. The smallest Gate 1 feasibility check is a one-paragraph written statement confirming that an independent verifier (e.g., a second, separate implementation or static lookup against a frozen specification) can be produced for the two-world Bayesian task with bounded effort. This is the same minimal check identified for the overall portfolio and applies directly to E1 as the anchor family. No full re-implementation is required at Gate 1.
+
+### Recommendation
+
+E1 is ready for the next local development step once the four questions above are answered in writing on the card itself. It should be retained in the portfolio primarily as the **supplied-policy/v0 anchor** rather than as a standalone novel-family claim. After the anchor is frozen, the sequence V3 (verifier feasibility) → V1 (text-to-formal fidelity) on this family is the correct next dependency before using it as substrate for S2/S3.
+
+No Arena call, Gate 1 decision, or experiment authorization is implied or requested by this review. The card remains a non-decisional working draft.
+
+
+&&&&&&&&&&&&&&&
+
+
+opus 5:
+
+No stray-token artifact in this card — the proofreading pass appears to have taken. 
+
+Question 3 (source-level prior work on LLM Bayesian updating) is the one item on your list that I can materially advance without an Arena call, since literature search is local source work rather than model critique. Let me run that spot-check, then address the other three.The duplicated await in my call burned the search budget — my error. Let me retry with a single, careful call.Search budget for this session is exhausted (my duplicated call consumed it), so **Question 3 remains unresolved — I will not substitute recall for verification.** I've marked the recalled leads below with `[R]` and they should be treated exactly as the portfolio treats L08: leads, not findings.
+
+Questions 1, 2, and 4 I can advance now. I'm taking **Q2 first**, because it is not really a downstream detail — it determines whether H1 and H0 make distinct predictions at all, which is Gate 1 criterion 2.
+
+---
+
+## Q2 — The observable that separates under-updating, prior neglect, and noise
+
+### The card's current primary observable cannot do this
+
+The card names *"numeric `posterior_world1` error relative to the exact posterior"* as primary. Mean absolute (or squared) posterior error conflates all three accounts you want to separate:
+
+- A model that updates correctly but reports with noise, a model that under-updates systematically, and a model that ignores the likelihood entirely can all produce similar average error, differing only in how that error is distributed across the design grid.
+- Error in probability space is scale-distorted. The same evidential mistake costs far less measured error near p=0.5 than near p=0.95, so the statistic's sensitivity varies across your own design axes.
+
+### The observable that does work: coefficients in log-odds space
+
+Convert both the model's reported posterior and the registered inputs to log odds, and estimate:
+
+```
+logit(reported_posterior) = β0 + β_prior · logit(prior) + β_LR · log(LR) + ε
+```
+
+Exact Bayesian updating is the point prediction **β_prior = 1, β_LR = 1, β0 = 0**. The three competing accounts then become *distinct parameter claims rather than accuracy claims*:
+
+| Account | Prediction | 
+|---|---|
+| **H1** evidence-sensitive updating | β_prior ≈ 1, β_LR ≈ 1 |
+| **H0a** prior-dominant / likelihood neglect | β_LR ≈ 0, β_prior > 0 |
+| **H0b** base-rate neglect (the mirror failure) | β_prior ≈ 0, β_LR > 0 |
+| **H0c** conservatism / under-updating | 0 < β_LR < 1 with β_LR reliably below 1 |
+| **Numerical imprecision** | coefficients unbiased; shows up as residual variance ε, *not* as coefficient shift |
+
+This cleanly answers your question: imprecision is relegated to the error term, while the two failure modes are separate coefficients. It also subsumes the card's stated "prior-only prediction" comparison, which is simply the nested restriction β_LR = 0 — so your intended contrast is a hypothesis test inside the same model rather than a separate analysis.
+
+Three consequences worth recording on the card:
+
+1. **Your design axes are already the right ones, and that is not a coincidence.** Identifiability of β_prior and β_LR separately *requires* that prior odds and likelihood ratio vary independently across instances. The card already specifies this ("varies the prior odds and likelihood ratio independently"). Add the corresponding constraint explicitly: the generated grid must keep log prior odds and log LR near-orthogonal across the item set, or the two coefficients become collinear and the central discrimination silently fails.
+
+2. **Censoring can manufacture a false conservatism result.** If the grid allows true posteriors near 0 or 1, reported probabilities pile up at reporting bounds (1.0, 0.99, 0.0) and at round numbers. Censoring and heaping both bias β_LR *downward*, which is indistinguishable from genuine under-updating. Constrain the grid so true posteriors stay in a non-saturating band, or pre-register a censored estimator. This is a Gate 1-relevant point because without it H0c is not identified from an artifact.
+
+3. **H1 as currently worded is close to vacuous.** "Approximate amount" has no content. Under the coefficient framing it becomes statable: H1 is a claim about β_LR being near 1, H0c a claim about it being reliably below 1. The *size* of the equivalence region is Gate 2; the *form* of the claim is Gate 1 and should be fixed on this card.
+
+### On the categorical verdict
+
+The verdict is a coarsening of the posterior and is near-deterministic except close to the decision boundary. If retained as a secondary observable, stratify by distance of the true posterior from 0.5 — otherwise most verdict trials carry almost no information and inflate apparent accuracy. Alternatively, drop it and note that a correct category never evidences calibration (which the card already says, correctly).
+
+---
+
+## Q1 — Standalone question or baseline anchor?
+
+**My read: as currently worded, E1 is primarily an anchor, and its standalone novelty is weak.** The core phenomenon — do probabilistic reasoners under-weight supplied likelihoods or base rates — is one of the most heavily studied patterns in behavioral decision research, and the log-odds coefficient design above is, to my recollection `[R]`, the standard estimator from that literature rather than anything new. LLM-directed replications of it are likely to exist. That is precisely what Q3's search must establish.
+
+**However, there is a defensible standalone variant specific to your mission**, and it is the thing that makes E1 more than a calibration run:
+
+> Does delivering the likelihoods as *an agent's disclosed behavior policy* ("Agent B sends this message in 80% of states of type w1") degrade updating relative to a formally identical abstract presentation ("a draw from this urn yields this signal 80% of the time")?
+
+That is an interaction claim — agentic framing × evidence weighting — with the same ground truth, the same estimator, and β_LR as the outcome. It is closer to the mission's epistemic-game interest than plain Bayesian accuracy; it bears directly on whether later S-questions can assume that supplied policies are even being read as likelihoods; and it is a genuinely plausible two-sided bet. Note it is partially adjacent to L07's game-structure-versus-framing concern, which strengthens the need for the Q3 search.
+
+Recommendation: record **both** readings on the card — E1-as-anchor (which is what later S2/S3 need) and E1-framing (the candidate standalone contribution) — and let the Q3 search decide whether the second survives. Do not merge them into one claim.
+
+---
+
+## Q4 — Is v0 adequate, and what is the minimal independent check?
+
+**E1 is the cheapest card in the portfolio on verification burden, which supports the chosen work order.** Two specific reasons:
+
+- **V3 (verifier independence) is nearly trivial here.** The ground truth is a two-line closed-form computation over three numbers. The shared `core.py` generator/judge is a real limitation in principle, but the minimal sufficient check is small: take a sample of rendered instances, have an independent implementation (different code path, different arithmetic library, or even manual exact computation) recompute the posterior **from the numbers as stated in the rendered English**, not from generator internals. If those agree, layers 1 and 2 of verification are jointly covered for this family at low cost. Note that recomputing from generator internals would *not* count — it would re-check the same hidden parameters, which is exactly the critique the cross-critique raised.
+
+- **V1 (text fidelity) is unusually tractable here.** For the DEL families, reconstructing the formal state from prose is a hard annotation task. For E1 the entire formal state is three numbers plus an observed action. An annotator extracting `P(w1)`, `P(a|w1)`, `P(a|w2)`, and the queried world from the text is a short, well-defined task with an objective answer. This makes E1 a good place to pilot the V1 protocol itself before applying it to E2–E5, where it is far more expensive.
+
+**One caution:** if the v0 narrative-versus-table axis already exists, then the matched-rendering contrast (H2, and the framing variant under Q1) may be the most readily available *and* most novel thing in E1 — while the card currently assigns it secondary status. Resolve deliberately whether H2 is a nuisance control or the actual contribution; that choice changes which prior work matters.
+
+---
+
+## Q3 — Unresolved; here is the targeted search specification
+
+I could not verify anything this session. The following are **recalled leads only `[R]`, not verified, not to be cited as findings**, offered so the search is efficient rather than open-ended:
+
+- The log-odds regression design for separating base-rate neglect from likelihood weighting originates in behavioral/experimental economics `[R]`; identifying the canonical source would give you a pre-existing, citable estimator and strengthen the design.
+- There is an active line of LLM work on calibration and probabilistic judgment `[R]`, and a separate line on cognitive-bias replication in LLMs including base-rate neglect `[R]`. Either could already contain E1's exact contrast.
+- L07 (game structure versus contextual framing) is the nearest *named* anchor already in your packet for the framing variant.
+
+Four targeted queries, in priority order, with the decision each one resolves:
+
+| Query target | Resolves |
+|---|---|
+| LLM base-rate neglect / Bayesian updating replications of classic tasks | Whether plain E1 is already established → E1 becomes anchor-only |
+| LLM calibration with *explicitly supplied* likelihoods (not elicited priors) | Whether the "disclosed table" regime is distinct from calibration work |
+| Framing/presentation effects on LLM probabilistic judgment | Whether the Q1 framing variant survives |
+| Agent-policy vs. abstract-signal presentations of identical likelihoods | Whether the specific agentic-framing interaction is open |
+
+Until at least the first two return, criterion 3 for E1 stays **Open**, and E1 should not be marked ready for Gate 1 review.
+
+---
+
+## Suggested delta to the card's audit table
+
+| Criterion | Current | Suggested after this pass |
+|---|---|---|
+| Sharp empirical discrimination | Promising candidate | **Promising — conditional on adopting a coefficient-based observable;** MAE-on-posteriors does not discriminate the stated hypotheses |
+| Competing plausible hypotheses | Candidate pair stated | **Improved:** H0 should split into prior-neglect, likelihood-neglect, and conservatism, which are different parameter claims; H1 needs the β-form to be non-vacuous |
+| Prior-work differentiation | Open | **Still open — no verification performed this session** |
+| Existing/local architecture | Seed-described | **Lowest-burden card in the portfolio;** minimal check = independent recomputation *from rendered text* on a sample |
+
+---
+
+Nothing here decides Gate 1, authorizes a reframe, or requests an Arena call. The two things I'd suggest next, in order: run the first two Q3 queries (local work, no model call), and record the anchor-versus-framing choice from Q1, since the latter determines which prior work is fuckingly dispositive.
+
+I can draft the V1 annotation protocol for E1 specifically — it's small enough to write in full, and it's reusable as the template for E2–E5 — or write the independent-recomputation check for V3, whichever is more useful.
