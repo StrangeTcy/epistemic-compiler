@@ -1,0 +1,64 @@
+{
+  "canonical_ingestion_artifact": "mission-02/council/skeptic.a.intake.json",
+  "canonical_response_artifact": "mission-02/council/skeptic.a.md",
+  "expanded_source_inputs": [],
+  "ingested_at": "2026-10-05T11:11:45Z",
+  "input_artifacts": [],
+  "job_id": "skeptic_a",
+  "method": "manual_arena_ui",
+  "missing_metadata": [
+    "arena_mode",
+    "model_label",
+    "session_time"
+  ],
+  "mission_id": "mission-02",
+  "model_label": null,
+  "post_id": null,
+  "prompt_sha256": "7b89da36787d1c10dc8c082921d44cbf10d4b7f2c236233dfc43c98cf0bb1a90",
+  "prompt_to_paste": "inputs/prompts/skeptic_a.md",
+  "required_metadata": [
+    "arena_mode",
+    "model_label",
+    "session_time",
+    "tools"
+  ],
+  "response_artifact": "artifacts/jobs/skeptic_a/response.md",
+  "response_sha256": "2272dbc10de3be64db5bf26e596d128788ba3450422480e74d2de5b1422e78d0",
+  "role": "council_round_1:skeptic:a",
+  "run_id": "mission-02-20261005T111038Z-b91faaa5",
+  "run_metadata": {
+    "arena_mode": null,
+    "extraction_note": "Response body copied byte-for-byte from the labeled section beginning at its first Markdown heading. The wrapper label/header and inter-section separator are represented in this metadata and excluded from the response body. The source bundle remains unchanged. Arena mode, exact Arena-displayed model label, and session time were not supplied.",
+    "model_label": null,
+    "prompt_id": "M02-P03-S v1",
+    "role": "SKEPTIC (P03-S)",
+    "saw_other_roles_output": false,
+    "self_reported_model": "Claude (Anthropic), Sonnet-class",
+    "self_reported_model_caveat": "The bundle explicitly says the self-reported model may be wrong.",
+    "session_time": null,
+    "source_bundle_header_line_range": [
+      1,
+      9
+    ],
+    "source_bundle_path": "mission-02/council/skeptic_prompt_responses",
+    "source_bundle_response_line_range": [
+      11,
+      153
+    ],
+    "source_bundle_section_label": "opus 5",
+    "source_bundle_sha256": "e95f3d3965668a60070996f3a0ff25b5267778e40476cedcc2cc08e38a08bcf9",
+    "tools": {
+      "browsing": true,
+      "code_execution": true
+    },
+    "tools_detail": "browsing yes (web search used, 4 queries); code execution yes (used for one power calculation)",
+    "tools_source": "Self-reported in the linked response bundle; not independently verified."
+  },
+  "run_metadata_source": {
+    "path": "/home/user/epistemic-compiler/runtime/runs/mission-02/mission-02-20261005T111038Z-b91faaa5/source_bundle_parts/skeptic_a.metadata.json",
+    "sha256": "20f44a11846bde8e052557db908ef3d12483e6984fd44df26a1d87faeed3c7a4"
+  },
+  "schema_version": 1,
+  "source_path": "/home/user/epistemic-compiler/runtime/runs/mission-02/mission-02-20261005T111038Z-b91faaa5/source_bundle_parts/skeptic_a.txt",
+  "source_sha256": "2272dbc10de3be64db5bf26e596d128788ba3450422480e74d2de5b1422e78d0"
+}

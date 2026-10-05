@@ -1,6 +1,6 @@
 # Mission 02: running the Council round
 
-**Status (2026-10-02): three of four roles are stored (Theorist, `theorist.md`; Experimentalist, two samples, `experimentalist.a.md` and `.b.md`; Prior-Work Killer, two samples, `prior_work_killer.a.md` and `.b.md`); the Skeptic is outstanding. `intake_log.md` records how each stored response was checked.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9). This round is paused, not discarded.
+**Status (2026-10-05): all four Council roles are stored. Skeptic (P03-S) has two separate samples: `skeptic.a.md` (source-bundle label `opus 5`) and `skeptic.b.md` (label `gpt 6 luna max`); the source bundle remains at `skeptic_prompt_responses`. Each sample has an `.intake.json` sidecar. The Skeptic pair has not been substantively reviewed, and no cross-critique has been prepared. Gate 1 remains pending, and the human must resolve whether/how to use the earlier Arena dialogue recorded in `../sources/2026-09-29_arena_round_note.md` before cross-critique.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9). This round remains paused, not discarded.
 
 Mission 02 asks two linked questions (see `../seed.yaml`): Q-A, what a higher-order epistemic-game instance family needs so that its ground truth is independently checkable; and Q-B, whether trigger-matched strategy packs improve solving, with the comparison's design constraints registered in the seed. Mission 01 is frozen and is not reopened.
 
@@ -28,15 +28,15 @@ f668ecf81a355a52c73daae656e88605fb9f5777d3ec1292b31e0c9ebcccc6f0  prompts/01_the
 
 1. One fresh session per role. Never show one role's answer to another role's session, and paste nothing else into a session.
 2. If the arena shows two answers side by side, **save both**. They are two independent samples of the Council, which is useful; the vote is not a result. Note which models they turned out to be.
-3. Save each answer unedited as `mission-02/council/<role>.md` (`theorist`, `experimentalist`, `skeptic`, `prior_work_killer`; with `.a` / `.b` before `.md` if there are two), or paste them into the chat and the compiler agent will store them verbatim.
-4. At the top of each saved answer, add a few lines of your own: arena mode (battle or direct), the model name as the arena displays it, date and time, and whether the session had browsing or code execution. The model's self-reported name in its header is not reliable.
+3. Save each response body without rewriting it or adding a provenance header. Canonical paired files use names such as `experimentalist.a.md` / `.b.md`, `skeptic.a.md` / `.b.md`, and `prior_work_killer.a.md` / `.b.md`; a single response uses the configured unsuffixed path. Workbench intake stores provenance in a separate `.intake.json` sidecar.
+4. Record only metadata actually visible or otherwise known from the Arena session. Keep a model's self-reported model name distinct from the Arena-displayed label; if tool availability is only self-reported in the answer, record that source and do not present it as independently observed. Leave absent details missing rather than guessing. See `../../runtime/WORKBENCH.md`.
 5. If a session errors out or truncates, rerun it in a fresh session and keep both outputs.
 
 ## Order of events (so the record shows what was known when)
 
 1. The seed, the retrieval view, the evidence digest and these prompts are committed first.
-2. The `game`-family candidate cards are authored from the graph leads and the primary literature, and frozen (card versions and content hashes in `mission-02/freeze/`) in a later commit, **before any Council response is stored in this repository**. The Council does not see the cards in this round, so the instance-family design cannot be tuned to them.
-3. Responses are then stored unedited, and the cross-critique and Gate 1 follow.
+2. The `game`-family candidate cards were authored from the graph leads and the primary literature, and frozen (card versions and content hashes in `mission-02/freeze/`) in a later commit, **before any Council response was stored in this repository**. The Council does not see the cards in this round, so the instance-family design cannot be tuned to them.
+3. Responses are stored unedited. Cross-critique is a separate step that waits for the human to resolve the open disposition of the earlier Arena dialogue (`../sources/2026-09-29_arena_round_note.md`); Gate 1 remains an explicit human decision.
 
 ## Material received after these prompts were written
 

@@ -1,0 +1,64 @@
+{
+  "canonical_ingestion_artifact": "mission-02/council/skeptic.b.intake.json",
+  "canonical_response_artifact": "mission-02/council/skeptic.b.md",
+  "expanded_source_inputs": [],
+  "ingested_at": "2026-10-05T11:11:47Z",
+  "input_artifacts": [],
+  "job_id": "skeptic_b",
+  "method": "manual_arena_ui",
+  "missing_metadata": [
+    "arena_mode",
+    "model_label",
+    "session_time"
+  ],
+  "mission_id": "mission-02",
+  "model_label": null,
+  "post_id": null,
+  "prompt_sha256": "7b89da36787d1c10dc8c082921d44cbf10d4b7f2c236233dfc43c98cf0bb1a90",
+  "prompt_to_paste": "inputs/prompts/skeptic_b.md",
+  "required_metadata": [
+    "arena_mode",
+    "model_label",
+    "session_time",
+    "tools"
+  ],
+  "response_artifact": "artifacts/jobs/skeptic_b/response.md",
+  "response_sha256": "f2d1c2ac4d3a15e7b29a75c31ba33605ddd327c1e465cb9fff088cc0bf606c45",
+  "role": "council_round_1:skeptic:b",
+  "run_id": "mission-02-20261005T111038Z-b91faaa5",
+  "run_metadata": {
+    "arena_mode": null,
+    "extraction_note": "Response body copied byte-for-byte from the labeled section beginning at its first Markdown heading. The wrapper label/header and inter-section separator are represented in this metadata and excluded from the response body. The source bundle remains unchanged. Arena mode, exact Arena-displayed model label, and session time were not supplied.",
+    "model_label": null,
+    "prompt_id": "M02-P03-S v1",
+    "role": "SKEPTIC (P03-S)",
+    "saw_other_roles_output": false,
+    "self_reported_model": "ChatGPT (exact serving-model label unavailable)",
+    "self_reported_model_caveat": "The bundle says the exact serving-model label is unavailable.",
+    "session_time": null,
+    "source_bundle_header_line_range": [
+      158,
+      164
+    ],
+    "source_bundle_path": "mission-02/council/skeptic_prompt_responses",
+    "source_bundle_response_line_range": [
+      166,
+      266
+    ],
+    "source_bundle_section_label": "gpt 6 luna max",
+    "source_bundle_sha256": "e95f3d3965668a60070996f3a0ff25b5267778e40476cedcc2cc08e38a08bcf9",
+    "tools": {
+      "browsing": true,
+      "code_execution": false
+    },
+    "tools_detail": "browsing yes; code execution no",
+    "tools_source": "Self-reported in the linked response bundle; not independently verified."
+  },
+  "run_metadata_source": {
+    "path": "/home/user/epistemic-compiler/runtime/runs/mission-02/mission-02-20261005T111038Z-b91faaa5/source_bundle_parts/skeptic_b.metadata.json",
+    "sha256": "7bd711d123781dc979714871bfb9173a7fe6e6c249bef6953362d2c109161b8c"
+  },
+  "schema_version": 1,
+  "source_path": "/home/user/epistemic-compiler/runtime/runs/mission-02/mission-02-20261005T111038Z-b91faaa5/source_bundle_parts/skeptic_b.txt",
+  "source_sha256": "f2d1c2ac4d3a15e7b29a75c31ba33605ddd327c1e465cb9fff088cc0bf606c45"
+}

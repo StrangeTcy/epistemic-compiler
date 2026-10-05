@@ -1,15 +1,15 @@
 # Council round 1: intake log
 
-The compiler's running notes on each response as it is stored: how it conforms to the required output format, which of its checkable claims were checked and how, and what it asks of the seed. This is the compiler's reading. It is not part of the Council record, and it decides nothing. The cross-critique and Gate 1 wait until all four responses are in. Responses are stored unedited as `<role>.md`, with a provenance header that is marked as not part of the response.
+The compiler's running notes on each response as it is stored: how it conforms to the required output format, which of its checkable claims were checked and how, and what it asks of the seed. This is the compiler's reading, not part of the Council record, and it decides nothing. All four Council roles are now stored; no cross-critique has been prepared. Cross-critique waits for the human to resolve the open disposition of the earlier Arena dialogue in `mission-02/sources/2026-09-29_arena_round_note.md`; Gate 1 remains an explicit human decision. Legacy response files retain their original formatting; workbench-ingested response bodies are preserved unedited with provenance in `.intake.json` sidecars.
 
 | Role | Stored | File | Format | Checked claims |
 | :--- | :--- | :--- | :--- | :--- |
 | Theorist (P01-T) | 2026-10-02 | `theorist.md` | sections 1 to 9 of 10; section 10 absent and not declared cut; 4,261 words against a 3,500 guide | the 3 claims that could be checked all hold |
 | Experimentalist (P02-E), two samples | 2026-10-02 | `experimentalist.a.md` ("opus 4.6"), `experimentalist.b.md` ("fable 5.1") | all 10 sections in both; 3,630 and 3,674 words against a 3,500 guide; b's section 1 heading is glued to a preceding sentence | the claims that could be checked hold; both responses' power figures are slightly optimistic |
-| Skeptic (P03-S) | not yet | | | |
+| Skeptic (P03-S), two samples | 2026-10-05 | `skeptic.a.md` (`opus 5`); `skeptic.b.md` (`gpt 6 luna max`) | sections 1–7 in both; **a** declares cuts for length; wrapper metadata recorded separately | not yet checked |
 | Prior-Work Killer (P04-PW), two samples | 2026-10-02 | `prior_work_killer.a.md` ("fable 5"), `prior_work_killer.b.md` ("gpt 6 luna max") | all 7 sections in both; a has a duplicated header block glued to search narration | not yet checked |
 
-Missing for every stored response so far: the arena mode, the model name as the arena displayed it, the session time, and whether tools were present. The response's own header is self-reported and unreliable.
+For the pre-workbench Theorist, Experimentalist, and Prior-Work Killer artifacts, no structured intake sidecars exist; this log records missing Arena mode, Arena-displayed model label, session time, and tool-presence metadata, with model names only self-reported. For the Skeptic pair, the bundle supplies self-reported model and tool details plus role/prompt labels, but not Arena mode, the exact Arena-displayed model label, or session time. These self-reports are not independently verified; see each `.intake.json`.
 
 ## Theorist (P01-T)
 
@@ -35,7 +35,7 @@ Missing for every stored response so far: the arena mode, the model name as the 
 - **Convergence.** Six of the Theorist's nine declared validity conditions have a matching obligation in a frozen card: publicness, truthfulness and protocol (card A, OB3, OB4, XC1), knowledge versus belief (B, OB1), policy status (C OB1, E OB1), dominance type (D, OB3, OB4). The three with no card are the common prior, incentive alignment and commitment, which are exactly the agreement, signalling and persuasion cards the library lacks.
 - One voice, not corroboration: the Theorist's doubts about Q-B's design are consistent with the case in `mission-03/DESIGN.md` for testing the Strategy IR's central claim on existing tasks first.
 
-**Open.** The other three responses; the arena metadata; the Pearce/Bernheim correction in the source graph.
+**Open.** Substantive review of the other Council roles; the missing Arena metadata; the Pearce/Bernheim correction in the source graph.
 
 ## Experimentalist (P02-E), two samples
 
@@ -80,7 +80,13 @@ Two answers to the same prompt arrived together: **a** is labelled "opus 4.6" an
 - **On S2.** Both treat S2 as something that can be planted mechanically. Neither notes that, with the frozen cards, a private announcement would fire card A's exclusion; the Theorist's concern applies. b's rule that a card whose method cannot be made mechanical gets no S2 cell is compatible with the Theorist's proposal.
 - **On obligations.** b's seventh critique is accurate for the IR as built: obligations are prose shown to the solver, and the validator checks only recorded statuses, so only the solver's response to prose can be tested.
 
-**Open.** The Skeptic and Prior-Work Killer responses; the arena metadata; whether to adopt a local SMCDEL install for the verifier.
+**Open.** Substantive review of the Skeptic pair and Prior-Work Killer responses; remaining Arena metadata; whether to adopt a local SMCDEL install for the verifier.
+
+## Skeptic (P03-S), two samples — intake only
+
+The tracked source bundle `skeptic_prompt_responses` remains unchanged. Its two labeled sections were split in source order: **a** = `opus 5`; **b** = `gpt 6 luna max`. The canonical response bodies begin at the first Markdown heading; wrapper labels/headers and the section separator are recorded in each `.intake.json`. Both contain sections 1–7; **a** also declares material cut for length. No response claims have been checked, and no substantive synthesis or cross-critique has been prepared.
+
+**Provenance supplied in the bundle (self-reported, not independently verified).** Both identify role P03-S and prompt ID M02-P03-S v1 and report no other roles' output. **a** reports Claude (Anthropic), Sonnet-class, browsing used (four web searches), and code execution used for a power calculation. **b** reports ChatGPT with the exact serving-model label unavailable, browsing yes, and code execution no. Arena mode, exact Arena-displayed model label, and session time were not supplied; each sidecar records those required fields as missing.
 
 ## Prior-Work Killer (P04-PW), two samples
 
@@ -93,4 +99,4 @@ Two answers to the same prompt arrived together: **a** is labelled "fable 5" (se
 - **a's distinctive items:** ExploreToM, DEL-ToM, AutoToM, ToM-LM, MCMAS/DEMO/MCK, and a recalled ([R]) bibliographic audit flagging suspect identifiers on `aumann-1976`, `baltag-moss-solecki-1998`, `camerer-ho-chong-2004`, `rubinstein-1989` and the Plaza dating. Both repeat the Bernheim/Pearce duplicate JSTOR link already found by the Theorist.
 - **Disagreements to check:** Hi-ToM author order (a: He first in the ACL PDF; b: Wu first); ExploreToM accuracy figures (a notes 0%/9% vs 5% across versions).
 
-**Open.** Verify TRS, L02 and the [R] identifier flags; the arena metadata; the Skeptic response.
+**Open.** Verify TRS, L02 and the [R] identifier flags; review the Skeptic pair; resolve remaining Arena metadata.
