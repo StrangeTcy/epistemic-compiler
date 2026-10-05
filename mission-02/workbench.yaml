@@ -17,9 +17,11 @@ stages:
     blockers: []
     next_action: >-
       The human has kept the separate Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md
-      outside Council round 1. Review the compiler-prepared cross-critique at
-      mission-02/council/cross_critique.md, then make an explicit Gate 1 decision. The cross-critique
-      does not approve Gate 1 or authorize Gate 2 or an experiment.
+      outside Council round 1. A copy-ready, advisory-only Gate 1 review prompt is prepared at
+      mission-02/gates/gate1_review_prompt.md for the human to submit manually in Arena Battle mode.
+      The assistant made no Arena call. Preserve the two returned reviews separately with available
+      session metadata; then the human makes an explicit Gate 1 decision. Gate 1 remains pending; this
+      review does not authorize Gate 2 or an experiment.
     roles:
       - id: theorist
         label: "Theorist (P01-T)"
