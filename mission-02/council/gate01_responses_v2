@@ -1,0 +1,331 @@
+grok 4.5:
+
+**Note on prompt artifacts:** The review questions contain two instances of the stray token “fuckingly” (Q2 and Q4). These match the class of edit artifacts previously flagged in the compiler cross-critique. They are disregarded as non-substantive.
+
+**Status of this document:** Advisory independent Gate 1 review only (Arena Battle mode). It does not record the human disposition, approve Gate 1, authorize Gate 2, authorize any solver/model run, or authorize paid work. I did not receive or use the seven raw Council responses or the earlier Arena dialogue; I assessed the supplied seed, prior-work claims, and compiler summary as given, supplemented by targeted primary-source checks.
+
+I browsed primary sources for the closest leads (MindGames arXiv HTML, Hi-ToM arXiv HTML, GTBench arXiv HTML) and confirmed abstracts/records for the others. Citations below use the tool results.
+
+---
+
+# 1. Gate 1 Recommendation
+
+**REFRAME ONCE**  
+**Confidence: medium-high**
+
+The seed contains a meaningful non-trivial core (controlled evaluation of trigger-matched strategy packs with obligations on an epistemic family that has inspectable semantics and an auditable judge), but as written it fails sharpness and prior-work criteria. Q-A is a design/specification task, not a sharp empirical question; the listed semantics are a menu rather than a commitment; broad novelty language around “higher-order,” formal ground truth, or generic retrieval collides with existing artifacts; and the exact contribution of the pack+obligations mechanism remains only partially verified. One bounded reframe that collapses Q-A into a reuse/precondition step, locks a single narrow family, and states an explicit claim ceiling will produce a Gate-1-viable question. Abort is not warranted: the core is not tautological and is plausibly testable. “Insufficient evidence” is the wrong category because the missing pieces are bounded and nameable rather than open-ended.
+
+---
+
+# 2. Criteria Table
+
+| Criterion | Status | Packet evidence | Remaining uncertainty |
+|-----------|--------|-----------------|-----------------------|
+| 1. Sharp empirical discrimination question | **Partially met** | Q-B is reasonably sharp (pack vs controls on verified accuracy, plus obligations on invalid moves). Q-A is a “what minimal specification / what to reuse” design question, not an empirical discrimination. Candidate semantics are listed without commitment. | Combined Q-A+Q-B is not sharp. Family must be fixed to one concrete, reusable (or minimally extended) semantics before the question discriminates. |
+| 2. ≥2 genuinely competing, a priori plausible hypotheses | **Partially met** | H0 (artifact/null) vs H1 (valid trigger-matched pack improves S1 accuracy) are distinct and plausible. H2 adds a distinct S2/obligation prediction. | H3 partially collapses into a mechanism reading of H1 unless a strong generic-explicit-modelling arm is present. H4 and H5 are design/calibration preconditions, not competing scientific hypotheses about LLM behavior. |
+| 3. Adequate prior-work/benchmark search verifying exact contribution not already established (or narrowed to unestablished regime) | **Not met** | Seed confirmed existence/abstracts of L01–L07 on 2026-10-02; full texts and artifacts unchecked; L08 graph leads only. Compiler summary correctly flags mixed [V]/[S]/[R] status and no independent verification. | My checks (below) show L01 already supplies DEL generation + NL verbalization + public model-checker judge. Exact pack+obligations+S1/S2 gap is plausible but still requires targeted confirmation that no prior intervention of this form exists on these families. |
+| 4. Testability in existing or locally extensible architecture | **Partially met** | Seed describes v0 (Bayesian two-world task, behavior table, exact rational arithmetic GT) but states generator and judge share an implementation and that v0 lacks recursion/level-k. Future needs are listed aspirationally. | Smallest missing Gate-1 check is a short written confirmation that an independent judge (second implementation or frozen-spec lookup) is achievable with bounded local extension, plus a feasibility note on English-fidelity audit. Detailed power/dispatch are Gate 2. |
+
+---
+
+# 3. Surviving Question and Claim Ceiling
+
+**Proposed single-sentence Gate 1 question (the required reframe):**  
+On a narrow, reused or minimally extended epistemic-game family that already possesses (or can be given) explicit inspectable semantics and a separately auditable judge, and after confirming English renderings faithfully denote the formal instances, does a trigger-matched strategy pack improve verified accuracy on valid-move (S1) instances relative to a strong length-and-content-matched generic-method control, and does the inclusion of explicit obligations reduce misapplication errors on invalid-move (S2) instances relative to the identical pack without obligations?
+
+**Narrow claim ceiling:**  
+A positive result supports only that this specific external pack format (trigger + obligations) adds value over the chosen controls on the pre-specified family under the registered verification regime. It does **not** establish general retrieval mechanisms, recursive ToM competence, theory-of-mind as such, superiority of any particular semantics, or transfer beyond the frozen family. Strategy-pack value and obligation efficacy are separate claims and require separate primary contrasts. Accuracy does not imply the model executed the card’s reasoning steps.
+
+**Q-A disposition:** Reclassify as a Gate-1/Gate-2 precondition (“select and audit one reusable family + independent judge + text-fidelity sample”) whose deliverable unlocks the empirical Q-B. Do not treat “what minimal specification” as the research question.
+
+---
+
+# 4. Hypothesis Audit
+
+- **H0 vs H1 — Survive as the primary competition.**  
+  Distinct predictions on the same observable (S1 verified accuracy). Both a priori plausible. Not rendered tautological by family construction if the family-selection rule is fixed independently of the desired pack effect (as the compiler summary correctly warns).
+
+- **H2 — Survives as a distinct prediction but is currently under-specified.**  
+  Makes a prediction not entailed by H0/H1 (packs can increase S2 errors; obligations may fail to block them). Testable only with an explicit same-card ± obligations contrast. Without that arm the hypothesis cannot be isolated. Keep as secondary or co-primary only after the arm is registered.
+
+- **H3 — Partial collapse with H1; treat as mechanism hypothesis requiring its own control.**  
+  “Generic explicit modelling explains any gain” is not an independent outcome hypothesis; it is an alternative explanation of an H1 effect. It becomes distinguishable only with a strong, actionable generic-method arm (not merely length-matched prose or random cards). Current P/L/R/N does not cleanly separate them. This is primarily a Gate-2 design issue once the primary claim is fixed; it is not a Gate-1 blocker unless the human elevates H3 to primary status.
+
+- **H4 — Reclassify as design precondition.**  
+  “Independent verification and mechanical strata construction are achievable” is an engineering/architecture claim required for Q-B to be interpretable. A “result” that H4 holds is not a scientific finding about models. Move to feasibility checklist.
+
+- **H5 — Reclassify as calibration/headroom check.**  
+  Ceiling characterization, not a competing mechanism hypothesis. Belongs in pilot or Gate-2 pre-registration, not in the H0–H3 competition.
+
+**Bottom line at Gate 1:** At least two genuinely competing hypotheses (H0/H1) exist and are plausible. The set is thinned by reclassification of H4/H5 and the need to operationalize H3, but the core competition survives a reframe.
+
+---
+
+# 5. Prior-Work Audit
+
+**Exact claimed contribution under review:**  
+A higher-order epistemic-game family with explicit inspectable semantics + separately auditable judge, containing instances where obvious readings fail and method choice matters (Q-A), plus a controlled test of whether trigger-matched strategy packs (with obligations) improve verified accuracy and prevent misapplication (Q-B), beyond length/format artifacts and generic modelling.
+
+**Source status (what I verified vs. packet claims):**
+
+- **L01 MindGames (Sileo & Lernould, EMNLP Findings 2023; arXiv:2305.03353):**  
+  Verified from primary HTML. Uses dynamic epistemic logic to generate controlled ToM/epistemic problems; introduces verbalization techniques into English; public code + datasets; employs the SMCDEL model checker (separate from generation) to label entailment; includes Muddy-Children-style and related setups; tracks higher-order beliefs (generation uses K=2); scaling does not reliably beat chance except GPT-4 still has headroom.  
+  **Implication:** Directly supplies much of the Q-A desiderata (DEL family, NL renderings, independent model-checker judge, public artifacts). Q-A novelty for “generated DEL + judge” is weak; reuse or minimal extension is the correct path. Unchecked in my pass: exact depth distribution beyond K=2, full faithfulness audit protocol for verbalizations, and whether behavior-policy tables of the seed’s v0 style are present.
+
+- **L02 (Li, Luo & Liao, Knowledge-Based Systems, 2026):**  
+  Abstract confirmed: 2,784-sample DEL benchmark synthesizing Muddy Children + Cheryl’s Birthday; answer-prediction + role-playing; recursive perspective-taking failures; 20–30% drop on complex items. Full text paywalled; artifacts unchecked. No evidence in abstract of strategy-pack or obligation interventions.
+
+- **L03 Hi-ToM (Wu et al. / He et al., EMNLP Findings 2023; arXiv:2310.16755):**  
+  Verified: higher-order ToM benchmark to 4th order; Sally-Anne-style stories with public/private (including deceptive) communications; automatic generation + manual check; multiple-choice; performance declines with order; code/dataset released. Overlaps the “higher-order” label and recursive belief reasoning; different surface form (narrative stories vs. formal DEL with supplied policies).
+
+- **L04 GTBench (Duan et al., arXiv:2402.12348):**  
+  Verified: 10 game-theoretic tasks; advanced reasoning methods (CoT, ToT, etc.) do **not** always help; code-pretraining helps more. No trigger-matched strategy cards or obligation text. Relevant to “does method text help?” but categorically different intervention.
+
+- **L05 Self-Discover (arXiv:2402.03620):**  
+  LLMs self-select and compose atomic reasoning modules into task-specific structures. Differs from an *external* trigger matcher + fixed pack with obligations. Weakens pure “reasoning-structure selection” novelty but not the external-card + obligation claim.
+
+- **L06 Buffer of Thoughts (arXiv:2406.04271):**  
+  Meta-buffer of thought-templates; retrieve + instantiate. Directly weakens any broad “strategy retrieval helps” claim. The specific combination of trigger-matching + stated obligations + S1/S2 validity strata on an epistemic family is not covered by the abstract.
+
+- **L07, L08:** Existence/abstract-level or graph leads only; no blocking collision established. Surface-feature/framing confounds (L07) are real design risks but not fatal to novelty.
+
+**Minimum targeted verification still needed before the reframed question returns for human review:**
+1. Short written reuse analysis of L01 (and secondarily L02/L03): confirm whether SMCDEL (or equivalent) already gives an independent judge; whether the existing generators cover (or can be lightly extended to) instances with supplied behavior policies / method-sensitive items; and a 10–20 instance English-fidelity spot-check protocol.
+2. Confirm from L04/L05/L06 full texts (or abstracts + code) that no experiment already tests external trigger-matched packs *with explicit obligations* under an S1-valid / S2-invalid stratum on comparable families.
+3. One-paragraph statement that the chosen family can support mechanical S1/S2 labeling without leaking stratum identity to the matcher in the registered information regime.
+
+If those three return “gap survives / reuse feasible,” the reframed question is ready for human Gate-1 re-review. The packet’s original “existence only, full texts unread” status is now partially upgraded for L01/L03/L04 but not eliminated.
+
+---
+
+# 6. Architecture Check
+
+**Available (from seed description only):**  
+v0 implements an answer-only Bayesian task (two hidden worlds, one public observation, supplied behavior table) with exact rational-arithmetic ground truth. Generator and judge currently share an implementation. No recursive level-k in v0.
+
+**Assumed but not verified:**  
+That a future (or lightly extended) family can add explicit policies, recursion/utilities, generated tables, and—critically—an architecturally independent judge; that English renderings can be made faithful enough for the formal judge to be decisive; that S1/S2 can be labeled mechanically without becoming a visible cue or circular with card validity.
+
+**Smallest missing Gate-1 feasibility check:**  
+A short (≤1 page) architecture note stating (a) the concrete mechanism that separates judge from generator (second independent implementation, frozen formal-spec lookup table, or external model checker such as SMCDEL-style), (b) whether this is achievable with bounded local effort on the existing codebase or by direct reuse of L01 artifacts, and (c) a one-paragraph plan for a text-fidelity audit sample (human reconstruction of formal parameters from English, disagreement rule, ambiguity threshold).  
+
+This is a yes/no existence/feasibility statement, not a full implementation or Gate-2 measurement design. Without it, criterion 4 remains only partially met. Manual Arena vs API solver is a later channel choice (Gate 2), not a Gate-1 blocker.
+
+---
+
+# 7. Gate 2 Deferrals
+
+These are real issues raised by the compiler summary and seed, but they concern measurement design, not whether a sharp, novel, testable *question* exists. Do not treat them as Gate-1 acceptance criteria:
+
+- Exact power calculation, sample-size reconciliation, and “uninformative vs negative” interval (the 60-paste vs 400-trial discrepancy).
+- Choice of primary contrast (P vs strong L, P vs all-cards/fixed-recipe, P vs yoked, full-card vs same-card-minus-obligations) and multiplicity rules.
+- Solver channel (manual Arena dispatch per seed R6 vs deterministic API).
+- Full characterization protocol (unit, feature dictionary, blinding, leakage threat model, coder reliability).
+- Pilot scope, test-retest, surface-feature checks, schema hold-outs, oracle accessibility of S2 items.
+- Detailed stop rules and secondary-analysis pre-registration.
+
+None of the above currently make the *question* untestable in any accessible architecture; they make a high-quality experiment design non-trivial. They belong after a reframed Gate-1 pass.
+
+---
+
+# 8. Strongest Argument Against My Own Recommendation & What Would Change It
+
+**Strongest argument for PASS TO GATE 2 (or softer INSUFFICIENT):**  
+Q-B is already a sharp empirical question; L01/L02/L03 supply reusable families and judges, so Q-A can be treated as a quick precondition rather than a blocker; the Council consensus was “narrow and reuse,” not “the idea is dead”; and requiring another full verification cycle before even measurement-design work adds process overhead for information that is unlikely to kill the core pack+obligations claim. A human could reasonably pass a narrowed Q-B now and park the three verification items as Gate-2 entry conditions.
+
+**Strongest argument for ABORT:**  
+If full-text checks revealed that an existing paper already ran essentially the same trigger-matched pack ± obligations contrast on a DEL/ToM family with independent verification, the exact claim would be established and the seed should close. (My checks did not find this.)
+
+**What would change my recommendation:**
+- To **PASS TO GATE 2**: Delivery of the three minimum verification items in §5 plus the architecture note in §6, all supporting that a clean gap survives and an independent judge + fidelity audit are feasible with bounded effort. The question would then be the reframed sentence in §3.
+- To **ABORT/CLOSE**: Primary-source evidence that the exact pack+obligations+S1/S2 design on a comparable family with auditable judge has already been published and the result is settled.
+- To **INSUFFICIENT EVIDENCE TO PASS**: If the verification items cannot be completed quickly (e.g., L02 full text permanently inaccessible and no substitute artifact) *and* the architecture note cannot confirm independent-judge feasibility, keep pending while those are obtained. That is a temporary evidence gap, not a substantive failure of the question.
+
+**Final advisory note:** The human alone records Gate 1. This review recommends one bounded reframe that preserves the interesting causal question (does this external card format, including its obligations, actually move verified accuracy under proper controls and verification?) while discarding the over-broad Q-A novelty claim and the un-reified hypothesis list. No experiment, solver run, or Gate-2 protocol is authorized by this document.
+
+&&&&
+
+opus 4.6:
+
+**Preliminary note:** The prompt contains two instances of "fuckingly" (in questions 2 and 4). These are consistent with the stray-edit artifact identified in the compiler cross-critique. They are noted and ignored.
+
+Let me verify the most collision-relevant prior-work leads before proceeding with the full assessment.Now let me check two additional critical leads: L02 (the 2026 DEL evaluation paper, which is the most recent and closest potential collision) and the recent paper that appeared in a search result above — "Beyond Memorization" from 2026 — which was not in the seed's list but clearly sits in the same space.Good. I now have source-level information on L01, L03, L04, and L06, plus a new paper not in the seed's list. Let me produce the full review.
+
+---
+
+# Mission 02 — Gate 1 Independent Review (Reviewer B)
+
+**Role:** Independent reviewer, Arena Battle mode. This assessment is advisory only. It does not approve Gate 1, authorize Gate 2, authorize solver/model runs, or authorize paid experiments.
+
+**Editorial note:** Two instances of "fuckingly" in the review questions are consistent with the stray-edit artifact flagged in the compiler cross-critique. Noted and disregarded.
+
+---
+
+## 1. Gate 1 Recommendation
+
+**REFRAME ONCE**
+
+**Confidence: medium-high**
+
+The seed contains a surviving empirical core, but Q-A is a design specification task masquerading as a research question, and Q-B bundles at least three separable causal claims (prompt-content value, trigger-matching value, obligation efficacy) that require different controls. A single bounded reframe can fix this without destroying the contribution. The prior-work collision on the Q-A side is serious enough — and recently made more serious by a paper the seed does not list — that the question cannot pass in its current form, but is not killed outright because the Q-B intervention (trigger-matched strategy cards with obligations on a controlled S1/S2 family) is not replicated by any identified prior work.
+
+---
+
+## 2. Criteria Table
+
+| Gate 1 Criterion | Status | Packet Evidence | Remaining Uncertainty |
+|---|---|---|---|
+| **1. Sharp empirical discrimination question** | **Not met (fixable)** | Q-B asks whether trigger-matched packs improve accuracy and whether obligations prevent misapplication, but these are two claims with different required comparisons, bundled under one label. Q-A is a design/specification task, not an empirical question at all. | One reframe can separate the primary Q-B claim from secondary mechanism questions, and reclassify Q-A as a precondition. |
+| **2. At least two competing, a priori plausible hypotheses** | **Partially met** | H0 vs. H1 is a genuine competition. H2 adds a distinct prediction. H3 partially collapses with H1 absent an explicit generic-reasoning arm. H4 and H5 are design preconditions. | Two genuine hypotheses survive, meeting the minimum threshold, but the hypothesis list needs pruning and relabeling. |
+| **3. Prior-work search verifying exact contribution** | **Not met** | Abstracts/existence confirmed for L01–L07; full texts not read; L08 unverified. My own searches confirm that L01 already provides DEL-generated epistemic puzzles with public code. A new 2026 paper ("Beyond Memorization," arXiv:2603.21350) — not in the seed — directly covers the distinction between pattern-matching and epistemic reasoning on DEL puzzles with controlled difficulty variation, making the Q-A "novel family" claim weaker than the seed assumes. | Full-text verification of L01 and the new "Beyond Memorization" paper is required. The Q-B intervention (strategy cards + obligations) has no identified collision, but this is an absence-of-evidence finding, not a verified gap. |
+| **4. Testability within existing/extensible architecture** | **Partially met** | v0 exists with exact rational arithmetic. But the seed acknowledges the generator and judge share an implementation, and recursive level-k is not implemented. | A short architecture statement confirming bounded separability of the judge is the minimum missing check. This is fixable, not fatal. |
+
+---
+
+## 3. Surviving Question and Claim Ceiling
+
+**Reframed Gate 1 question (one sentence):**
+
+On instances from an existing or minimally extended DEL-based epistemic-game family with an independently audited formal verifier and confirmed text-to-model faithfulness, does a trigger-matched strategy card improve verified answer accuracy on valid-applicability (S1) instances relative to a content-length-matched prose control, and — separately, as a secondary registered contrast — does including obligation text reduce error rates on invalid-applicability (S2) instances relative to an otherwise-identical card without obligations?
+
+**Claim ceiling:** A positive result would show that *this specific prompt package* adds value on *this specific family* over a matched control. It would not establish a general retrieval mechanism, recursive reasoning, theory of mind, or generalization to other task families. The obligation sub-claim is a *separate* finding requiring its own comparison; it cannot be inferred from the S1 result.
+
+---
+
+## 4. Hypothesis Audit
+
+### H0 vs. H1: Survive as a genuine pair
+
+H0 (no effect beyond length/format) and H1 (trigger-matched pack improves S1 accuracy) make distinct, falsifiable predictions on the same primary observable. Both are a priori plausible: H0 because prior work (including GTBench) shows that reasoning prompts do not uniformly help on game-theoretic tasks; H1 because structured domain-specific instructions plausibly aid a solver even if generic CoT does not. GTBench examined five different CoT strategies and found these prompts "resulting in different performances are all worse than the naive Prompt Agent," which directly supports H0's plausibility. Meanwhile, the specificity of trigger-matched cards (domain-specific method selection + obligations) is categorically different from generic CoT, supporting H1's plausibility as an independent hypothesis.
+
+### H2: Survives but requires its own contrast
+
+H2 (packs raise errors on S2 items; obligations do not prevent this) makes a prediction distinct from H1 — it concerns a different stratum (S2) and a different mechanism (obligation adherence). However, it is testable *only* with a same-card-minus-obligations arm. Without that arm, a positive S2 error rate could be attributed to the card content rather than the absence of obligation enforcement. H2 survives as a *hypothesis* but its testability is conditional on a control arm the current seed does not specify.
+
+### H3: Partially collapses with H1
+
+H3 (generic explicit modelling explains any H1 gain) is a mechanism claim, not an independent outcome prediction. It produces the same directional prediction as H1 on the primary observable. The only discriminant is whether a *generic* explicit-modelling prompt matches the card's effect. This requires a strong, high-quality "generic method" arm — not merely a length-matched prose filler. The seed's current L arm is described as "length-matched prose," which would test H0 vs. H1 but would not separate H1 from H3. H3 should be flagged as a secondary mechanism question requiring an additional arm, not as a co-primary hypothesis.
+
+### H4: Reclassify as a design precondition
+
+H4 (independent verification and mechanical strata construction are achievable) is an engineering deliverable, not a scientific hypothesis about LLM behavior. Its satisfaction is necessary for Q-B to proceed; its failure would block the experiment rather than constitute a negative finding.
+
+### H5: Reclassify as a calibration/headroom check
+
+H5 (headroom exists for the strongest solvers) is a ceiling characterization. It belongs in a Gate 2 pilot design. It does not compete with H0–H3 on a shared observable.
+
+**Summary:** Two genuine competing hypotheses survive (H0/H1). H2 survives conditionally. H3 collapses with H1 absent a specific additional arm. H4 and H5 are preconditions and calibration, respectively.
+
+---
+
+## 5. Prior-Work Audit
+
+### What I verified at source level
+
+**L01 — MindGames (Sileo & Lernould, EMNLP Findings 2023):**
+MindGames "is a dataset grounded in dynamic epistemic modal logic, designed to evaluate the epistemic reasoning of large language models through controlled problem generation." The public code repository generates "epistemic reasoning problems (akin to muddy children or drinking logicians) using modal logic to target theory of mind." The methodology uses "Dynamic Epistemic Logic (DEL) to procedurally generate logic puzzles" where "DEL provides a formal framework for modeling how information changes as agents receive public announcements."
+
+**Source-verified:** L01 exists, has public code and a HuggingFace dataset, and already provides DEL-generated epistemic problems with controlled generation. **Not verified from full text:** whether its verifier is architecturally independent of its generator; depth of higher-order reasoning implemented; whether text-faithfulness to the formal model is audited.
+
+**L01 implication for the seed:** Q-A's claim to provide a "novel" generated epistemic-game family is directly challenged. The seed must demonstrate what its family adds *beyond* what MindGames already provides — e.g., behavior-policy supply, game-theoretic payoff structure, or S1/S2 stratum construction — or reuse MindGames explicitly.
+
+**New prior work not in the seed — "Beyond Memorization" (Gabay, Stanovsky & Peterfreund, arXiv:2603.21350, March 2026):**
+
+This paper was discovered during my search and is *not* listed in the seed's L01–L08. It introduces "a two-dimensional benchmark over DEL-style puzzles, separating narrative familiarity from inference complexity, allowing us to distinguish pattern-based from epistemic reasoning." The benchmark contrasts classic puzzles with novel narratives and increases difficulty "by shifting from standard symmetric settings, where each agent observes all others but themselves, to asymmetric, partial views." It formalizes asymmetry "using an observation matrix O∈{0,1}^(n×n), where O_(i,j)=1 if and only if agent i observes agent j's status."
+
+This paper directly occupies the space the seed describes for Q-A: controlled DEL-based epistemic puzzles with difficulty variation, formal generation, and a focus on whether models pattern-match or reason. Its existence does not kill Q-B (it does not study strategy-card interventions), but it *significantly narrows* Q-A's novelty claim and must be addressed before Gate 1 can pass.
+
+**L03 — Hi-ToM (Wu et al., EMNLP Findings 2023):**
+Hi-ToM "involves recursive reasoning on others' beliefs" and provides a "Higher Order Theory of Mind benchmark." It "contains questions from zeroth-order to fourth-order ToM, and incorporates agent communications in the stories." It is also "the first one pioneering in adding the deceptive communication protocol in ToM setups."
+
+**Implication:** Hi-ToM already covers "higher-order" as a label through fourth order. The seed cannot claim "higher-order epistemic reasoning" as novel unless its family adds structure (e.g., game-theoretic payoffs, behavior policies) that Hi-ToM lacks.
+
+**L04 — GTBench (Duan et al., NeurIPS 2024):**
+GTBench "supports 10 different gaming environments" covering "complete- and incomplete-information gaming, dynamic and static gaming, and probabilistic and deterministic gaming." Its reasoning prompts "are designed to only focus on instructing LLM how to think, regardless of the game environment." Its finding that CoT prompts were "all worse than the naive Prompt Agent" is relevant to Q-B's plausibility structure: generic reasoning methods do not uniformly help on game-theoretic tasks.
+
+**Implication for Q-B:** GTBench uses generic reasoning prompts (CoT, ToT), not trigger-matched domain-specific cards with obligations. The seed's intervention is structurally different — it involves a *matched* card with *specific* method guidance and *stated obligations*. This is a genuine structural gap. However, GTBench's negative result for generic prompts also means Q-B must ensure its primary comparison arm (L) is not merely a worse version of a generic prompt; otherwise a positive P−L result would replicate the GTBench finding rather than establishing trigger-matching value.
+
+**L06 — Buffer of Thoughts (Yang et al., NeurIPS 2024):**
+BoT proposes "meta-buffer to store a series of informative high-level thoughts, namely thought-template, distilled from the problem-solving processes across various tasks." For each problem, it retrieves "a relevant thought-template and adaptively instantiate[s] it with specific reasoning structures to conduct efficient reasoning."
+
+**Implication:** BoT is a retrieval-of-reasoning-templates system. A broad "retrieval of strategy text helps LLMs" claim would collide with BoT's demonstrated contribution. The seed's surviving novelty must be narrower: not retrieval in general, but trigger-matched cards with obligations on a specific family with S1/S2 strata. This is noted in the Council synthesis and is a valid narrowing.
+
+**L02 and L07:** Not independently verified at source level in this review. L02's abstract was confirmed by the seed's search but I could not access the full text.
+
+### Minimum targeted verification still needed
+
+1. **Full-text read of L01 (MindGames):** Determine whether its verifier is independent, how deep its higher-order reasoning goes, and whether its natural-language rendering is audited.
+2. **Read or detailed abstract review of "Beyond Memorization" (arXiv:2603.21350):** This 2026 paper was not in the seed's list and must be assessed for collision. Its observation-matrix formalization and asymmetric-view design are directly relevant to Q-A.
+3. **Confirmation that no prior work combines strategy-card interventions with S1/S2 validity strata on epistemic-game families.** This is the surviving Q-B gap. It is currently an absence-of-collision finding, not a verified novelty claim.
+
+---
+
+## 6. Architecture Check
+
+### Confirmed from the seed's own description
+- v0 implements a Bayesian task with exact rational arithmetic ground truth.
+- Generator and judge share an implementation in v0.
+- v0 does not implement recursive level-k reasoning.
+- Future extensions (explicit policies, recursion, utilities, generated behavior tables) are aspirational statements, not confirmed code.
+
+### What is assumed but not independently verified
+- That separating the judge from the generator is achievable with bounded effort.
+- That rendered English in v0 faithfully specifies the formal model.
+- That S1/S2 stratification can be performed without leaking stratum status to the matcher or solver.
+
+### Smallest missing Gate 1 feasibility check
+A written statement from the v0 architect confirming: (a) that a verifier independent of the generator is achievable by a specified mechanism (e.g., re-implementation in a different language, static lookup against a frozen specification), and (b) the effort class of that change. This is a one-paragraph deliverable, not a Gate 2 implementation task.
+
+If MindGames' code is reused for Q-A, the equivalent check is whether MindGames' existing verifier is independent of its generator — which a code inspection of `sileod/llm-theory-of-mind` could answer.
+
+---
+
+## 7. Gate 2 Deferrals
+
+The following are real concerns that belong to Gate 2 measurement design and should not block or be confused with Gate 1:
+
+| Item | Why it is Gate 2 |
+|---|---|
+| **Power and sample size reconciliation** | The Council's unreconciled estimates are a measurement-design problem. At Gate 1, the question is whether *any* feasible design could answer Q-B; the answer is yes in principle. |
+| **Primary contrast selection (P−L, P−R, P vs. all-cards, P vs. yoked card)** | These are design choices that implement the primary causal claim. Gate 1 fixes the claim; Gate 2 fixes the contrast. |
+| **Solver channel (manual Arena vs. API)** | A design fork requiring a human decision at Gate 2. It does not affect whether the question is meaningful. |
+| **Characterization protocol, blinding, and leakage threat model** | These are measurement-integrity checks. The *possibility* of characterization without leakage is plausible; its exact protocol is Gate 2. |
+| **Multiplicity, stopping rules, and secondary-analysis registration** | Gate 2 pre-registration concerns. |
+| **Pilot design (oracle pilot, surface-feature checks, test-retest)** | Execution-quality controls for Gate 2. |
+| **Same-card-without-obligations arm specification** | Required for H2 but is a control-design question, not a Gate 1 question about whether H2 is meaningful. |
+
+---
+
+## 8. Strongest Argument Against My Recommendation and What Would Change It
+
+### Strongest argument for PASS TO GATE 2
+
+The surviving Q-B core — trigger-matched strategy cards with obligations, tested on a controlled S1/S2 family against matched controls — is not replicated by any identified prior work. H0 and H1 genuinely compete. The missing items (full-text read of L01, architecture statement, addition of "Beyond Memorization" to the prior-work register) are verification tasks, not substantive redesigns. A pragmatic reviewer could say: pass now with those checks registered as Gate 2 entry conditions; the reframe I recommend could be done *as* the Gate 2 design step rather than as a formal Gate 1 iteration, saving a cycle.
+
+### What would change my recommendation
+
+Two things would move me to PASS TO GATE 2:
+
+1. A written statement confirming that the full text of L01 (MindGames) and "Beyond Memorization" (arXiv:2603.21350) have been read, and specifying what Q-A adds or reuses relative to each. If Q-A reduces to pure reuse + S1/S2 stratification, that is acceptable — but it must be stated.
+2. The one-paragraph architecture statement confirming judge separability.
+
+If both arrive and the question is simultaneously narrowed to the single-sentence reframe above (separating the primary P−L contrast from the secondary obligation contrast, reclassifying H4/H5, and adding the missing prior-work entry), I would revise to PASS.
+
+### Strongest argument for ABORT/CLOSE
+
+One could argue that MindGames + Hi-ToM + "Beyond Memorization" collectively cover the Q-A space so thoroughly that there is no room for a novel family. I do not find this persuasive because none of these papers study a *strategy-card intervention* with *obligation text* on *validity-stratified instances*. The Q-B intervention is structurally distinct from what any identified prior work evaluates. The question is wounded on Q-A but alive on Q-B.
+
+---
+
+## Proposed Reframe (per protocol)
+
+**Reframed Gate 1 question (one sentence):** On instances drawn from an existing or minimally extended formally verified epistemic-game family (reusing MindGames or equivalent with a confirmed independent judge), does a trigger-matched strategy card with stated obligations improve verified answer accuracy on valid-applicability instances relative to a content-length-matched control?
+
+**Narrow claim ceiling:** Prompt-package value on a specific pre-registered family; not a general retrieval mechanism, not recursive reasoning, not theory of mind.
+
+**Minimum checks before return for human review:**
+1. Full-text read of L01 (MindGames) and arXiv:2603.21350 ("Beyond Memorization"), with a written statement of what Q-A adds or reuses.
+2. One-paragraph architecture statement confirming judge independence is achievable with bounded effort.
+3. Addition of arXiv:2603.21350 to the prior-work register.
+
+The human alone records Gate 1. This review is advisory.
