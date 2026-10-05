@@ -5,6 +5,7 @@ __pycache__/
 
 # Local run artifacts may contain prompts, inputs, responses, and screenshots.
 runtime/runs/
+runtime/workbench_specs/
 
 # Dedicated persistent browser profiles contain local authenticated site state.
 runtime/browser_profiles/

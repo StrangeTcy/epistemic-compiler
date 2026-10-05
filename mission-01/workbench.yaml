@@ -1,0 +1,14 @@
+schema_version: 1
+mission_id: mission-01
+title: "Mission 01 — bounded local-to-global audit"
+lifecycle: closed
+human_hold: false
+gate_status:
+  gate_1: approved
+  gate_2: approved_and_frozen
+  gate_3: completed
+  gate_4: approved_bounded_claim_set
+stages: []
+description: >-
+  Closed at Gate 4. Registration, raw evidence, and the bounded approved claim set are preserved.
+  The workbench cannot reopen this mission.

@@ -217,6 +217,9 @@ def load_mission(path: str | Path) -> MissionSpec:
             "profile",
             "output_artifact",
             "timeout_seconds",
+            "metadata_required",
+            "canonical_response_artifact",
+            "canonical_ingestion_artifact",
         }
         unknown_job_fields = set(item) - allowed_job_fields
         if unknown_job_fields:
@@ -278,6 +281,25 @@ def load_mission(path: str | Path) -> MissionSpec:
             raise MissionValidationError(
                 f"jobs[{job_id}].timeout_seconds must be an integer >= 10"
             )
+        metadata_required = _string_list(
+            item.get("metadata_required"), f"jobs[{job_id}].metadata_required"
+        )
+        if len(set(metadata_required)) != len(metadata_required):
+            raise MissionValidationError(
+                f"jobs[{job_id}].metadata_required contains duplicate fields"
+            )
+        canonical_response_artifact = item.get("canonical_response_artifact")
+        canonical_ingestion_artifact = item.get("canonical_ingestion_artifact")
+        for field_name, value in (
+            ("canonical_response_artifact", canonical_response_artifact),
+            ("canonical_ingestion_artifact", canonical_ingestion_artifact),
+        ):
+            if value is not None and (
+                not isinstance(value, str) or not value.strip()
+            ):
+                raise MissionValidationError(
+                    f"jobs[{job_id}].{field_name} must be a non-empty string or null"
+                )
         jobs.append(
             JobSpec(
                 job_id=job_id,
@@ -291,6 +313,17 @@ def load_mission(path: str | Path) -> MissionSpec:
                 profile=profile.strip() if isinstance(profile, str) else None,
                 output_artifact=output_artifact,
                 timeout_seconds=timeout_seconds,
+                metadata_required=metadata_required,
+                canonical_response_artifact=(
+                    canonical_response_artifact.strip()
+                    if isinstance(canonical_response_artifact, str)
+                    else None
+                ),
+                canonical_ingestion_artifact=(
+                    canonical_ingestion_artifact.strip()
+                    if isinstance(canonical_ingestion_artifact, str)
+                    else None
+                ),
             )
         )
 
@@ -409,6 +442,9 @@ def _new_run_state(spec: MissionSpec, run_id: str) -> dict[str, Any]:
                 "dependencies": list(job.dependencies),
                 "prompt_artifact": job.prompt_artifact,
                 "input_artifacts": list(job.input_artifacts),
+                "metadata_required": list(job.metadata_required),
+                "canonical_response_artifact": job.canonical_response_artifact,
+                "canonical_ingestion_artifact": job.canonical_ingestion_artifact,
                 "output_artifact": None,
                 "status": "queued",
                 "attempts": 0,
@@ -720,6 +756,9 @@ async def _execute_one(
         "input_artifacts": [],
         "response_artifact": None,
         "response_sha256": None,
+        "metadata_required": list(job.metadata_required),
+        "canonical_response_artifact": job.canonical_response_artifact,
+        "canonical_ingestion_artifact": job.canonical_ingestion_artifact,
         "conversation_id": job_state.get("conversation_id"),
         "current_url": job_state.get("current_url"),
         "screenshot": job_state.get("screenshot"),
@@ -893,14 +932,32 @@ def ingest_human_response(
     response_path: str | Path | bytes,
     *,
     model_label: str | None = None,
+    run_metadata: dict[str, Any] | None = None,
+    run_metadata_source: dict[str, str] | None = None,
+    ingestion_method: str = "post_workflow_cli",
 ) -> dict[str, Any]:
-    """Ingest one saved Battle response into its waiting job exactly once.
+    """Ingest one saved human-provided model response into a waiting job.
 
-    The human-provided file is copied byte-for-byte to the job's declared output
-    artifact. Neither that response nor its ingestion record can be overwritten.
-    The waiting job is then transitioned to completed so the ordinary DAG
-    scheduler can resume its dependents.
+    The response is copied byte-for-byte to the job's declared output artifact.
+    Neither that response nor its ingestion record can be overwritten. Optional
+    run metadata is retained as supplied; fields required by the staged job but
+    not supplied are recorded as missing rather than inferred.
     """
+    if not isinstance(ingestion_method, str) or not ingestion_method.strip():
+        raise MissionValidationError("ingestion_method must be a non-empty string")
+    if run_metadata is not None and not isinstance(run_metadata, dict):
+        raise MissionValidationError("run_metadata must be a JSON object")
+    try:
+        json.dumps(run_metadata or {}, ensure_ascii=False, allow_nan=False)
+    except (TypeError, ValueError) as exc:
+        raise MissionValidationError("run_metadata must contain JSON-compatible values") from exc
+    if run_metadata_source is not None and (
+        not isinstance(run_metadata_source, dict)
+        or not isinstance(run_metadata_source.get("path"), str)
+        or not isinstance(run_metadata_source.get("sha256"), str)
+    ):
+        raise MissionValidationError("run_metadata_source requires string path and sha256 fields")
+
     run_path = Path(run_dir).expanduser().resolve()
     state_path = run_path / STATE_FILE
     if not state_path.is_file():
@@ -971,10 +1028,42 @@ def ingest_human_response(
             )
         response_hash = sha256_bytes(response_bytes)
         ingested_at = utc_now()
+        metadata_payload = dict(run_metadata or {})
+        if model_label is not None:
+            if not isinstance(model_label, str):
+                raise MissionValidationError("model_label must be a string or null")
+            if "model_label" in metadata_payload and metadata_payload["model_label"] != model_label:
+                raise MissionValidationError(
+                    "model_label conflicts with run_metadata.model_label"
+                )
+            metadata_payload.setdefault("model_label", model_label)
+        required_metadata = job_state.get("metadata_required", [])
+        if not isinstance(required_metadata, list) or any(
+            not isinstance(field, str) for field in required_metadata
+        ):
+            raise MissionValidationError("stored metadata requirements are invalid")
+        missing_metadata = [
+            field
+            for field in required_metadata
+            if field not in metadata_payload
+            or metadata_payload[field] is None
+            or (
+                isinstance(metadata_payload[field], str)
+                and not metadata_payload[field].strip()
+            )
+        ]
+        if run_metadata is None and ingestion_method == "post_workflow_cli":
+            observed_model_label = (model_label or "").strip() or None
+            stored_run_metadata = None
+        else:
+            observed_model_label = metadata_payload.get("model_label")
+            if observed_model_label is not None and not isinstance(observed_model_label, str):
+                raise MissionValidationError("run_metadata.model_label must be a string or null")
+            stored_run_metadata = metadata_payload
         ingestion = {
             "schema_version": 1,
             "ingested_at": ingested_at,
-            "method": "post_workflow_cli",
+            "method": ingestion_method.strip(),
             "run_id": state.get("run_id"),
             "mission_id": state.get("mission_id"),
             "job_id": job_id,
@@ -986,7 +1075,13 @@ def ingest_human_response(
             "response_sha256": response_hash,
             "prompt_to_paste": prompt_relative,
             "prompt_sha256": prompt_hash,
-            "model_label": (model_label or "").strip() or None,
+            "model_label": observed_model_label,
+            "run_metadata": stored_run_metadata,
+            "run_metadata_source": run_metadata_source,
+            "required_metadata": list(required_metadata),
+            "missing_metadata": missing_metadata,
+            "canonical_response_artifact": job_state.get("canonical_response_artifact"),
+            "canonical_ingestion_artifact": job_state.get("canonical_ingestion_artifact"),
             "input_artifacts": job_state.get("input_records", []),
             "expanded_source_inputs": handoff.get("expanded_source_inputs", []),
         }
@@ -1009,7 +1104,9 @@ def ingest_human_response(
                 "response_sha256": response_hash,
                 "response_origin": {
                     "type": "human_ingested_external_model_response",
+                    "method": ingestion["method"],
                     "model_label": ingestion["model_label"],
+                    "missing_metadata": ingestion["missing_metadata"],
                     "ingestion_record": str(ingest_path.relative_to(run_path)),
                 },
                 "human_ingestion": ingestion,

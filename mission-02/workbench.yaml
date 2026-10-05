@@ -1,0 +1,80 @@
+schema_version: 1
+mission_id: mission-02
+title: "Mission 02 — higher-order epistemic-game instance family and strategy-pack gate"
+lifecycle: active
+human_hold: false
+gate_status:
+  gate_1: pending_council_and_human_disposition
+  gate_2: not_reached
+  gate_3: not_authorized
+  gate_4: not_reached
+stages:
+  - id: council_round_1
+    label: "Council round 1"
+    status: active
+    authorized: true
+    authorization_basis: "User instruction to resume Mission 02 from its persisted Council artifacts. This is Council intake only, not approval of a research gate or experiment."
+    blockers: []
+    next_action: >-
+      After all four roles are stored, prepare the cross-critique only after the human resolves the
+      open disposition of the post-prompt Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md.
+      Gate 1 remains an explicit human decision.
+    roles:
+      - id: theorist
+        label: "Theorist (P01-T)"
+        prompt:
+          source: mission-02/council/prompts/01_theorist_prompt.md
+        inputs: {}
+        sample_artifacts:
+          single: mission-02/council/theorist.md
+        min_samples: 1
+        max_samples: 1
+        metadata_required: [arena_mode, model_label, session_time, tools]
+        legacy_metadata_note: >-
+          mission-02/council/intake_log.md records that arena mode, Arena-displayed model name, session time,
+          and tool presence are missing for every pre-workbench response; response headers are self-reported.
+      - id: experimentalist
+        label: "Experimentalist (P02-E)"
+        prompt:
+          source: mission-02/council/prompts/02_experimentalist_prompt.md
+        inputs: {}
+        sample_artifacts:
+          a: mission-02/council/experimentalist.a.md
+          b: mission-02/council/experimentalist.b.md
+        min_samples: 2
+        max_samples: 2
+        metadata_required: [arena_mode, model_label, session_time, tools]
+        legacy_metadata_note: >-
+          mission-02/council/intake_log.md records that arena mode, Arena-displayed model name, session time,
+          and tool presence are missing for every pre-workbench response; response headers are self-reported.
+      - id: skeptic
+        label: "Skeptic (P03-S)"
+        prompt:
+          source: mission-02/council/prompts/03_skeptic_prompt.md
+        inputs: {}
+        sample_artifacts:
+          single: mission-02/council/skeptic.md
+          a: mission-02/council/skeptic.a.md
+          b: mission-02/council/skeptic.b.md
+        min_samples: 1
+        max_samples: 2
+        metadata_required: [arena_mode, model_label, session_time, tools]
+      - id: prior_work_killer
+        label: "Prior-Work Killer (P04-PW)"
+        prompt:
+          source: mission-02/council/prompts/04_prior_work_killer_prompt.md
+        inputs: {}
+        sample_artifacts:
+          a: mission-02/council/prior_work_killer.a.md
+          b: mission-02/council/prior_work_killer.b.md
+        min_samples: 2
+        max_samples: 2
+        metadata_required: [arena_mode, model_label, session_time, tools]
+        legacy_metadata_note: >-
+          mission-02/council/intake_log.md records that arena mode, Arena-displayed model name, session time,
+          and tool presence are missing for every pre-workbench response; response headers are self-reported.
+description: >-
+  Stored role files are discovered from disk; they are not re-requested. One Skeptic response is required.
+  If Arena returns two side-by-side responses, stage and ingest samples a and b separately. Responses are
+  stored byte-for-byte in the Council folder with a separate immutable .intake.json sidecar. No gate is
+  inferred from a completed Council round.

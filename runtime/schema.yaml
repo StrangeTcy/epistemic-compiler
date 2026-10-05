@@ -6,7 +6,9 @@ $comment: >-
   unique outputs and resumable state. Artifact references are mission:<input_id>,
   job:<job_id>:response, or a path relative to the mission YAML. Runtime sites may
   be browser-backed (arena), local deterministic role executors, or manual human
-  handoffs; manual model-response jobs remain waiting until immutable ingestion.
+  handoffs. The legacy `manual` site is workflow-specific; `manual_arena` is a
+  generic no-network paste-ready handoff. Model-response jobs wait until immutable
+  ingestion.
   Persisted job statuses are queued, running, completed, failed, blocked, waiting_for_human.
 type: object
 additionalProperties: false
@@ -86,6 +88,14 @@ $defs:
       profile: {type: [string, 'null']}
       output_artifact: {type: string, minLength: 1}
       timeout_seconds: {type: integer, minimum: 10}
+      metadata_required:
+        oneOf:
+          - type: string
+            minLength: 1
+          - type: array
+            items: {type: string, minLength: 1}
+      canonical_response_artifact: {type: [string, 'null']}
+      canonical_ingestion_artifact: {type: [string, 'null']}
     allOf:
       - anyOf:
           - required: [id]

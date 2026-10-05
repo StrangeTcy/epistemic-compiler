@@ -34,6 +34,9 @@ class JobSpec:
     profile: str | None = None
     output_artifact: str = ""
     timeout_seconds: int = 300
+    metadata_required: tuple[str, ...] = ()
+    canonical_response_artifact: str | None = None
+    canonical_ingestion_artifact: str | None = None
 
 
 @dataclass(frozen=True)

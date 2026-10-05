@@ -1,0 +1,22 @@
+schema_version: 1
+mission_id: mission-04
+title: "Mission 04 — common-knowledge neglect proposal"
+lifecycle: on_hold
+human_hold: true
+gate_status:
+  gate_1: draft_not_approved_reframe_recommended
+  gate_2: unauthorized
+  experiment: unauthorized
+stages:
+  - id: held
+    label: "Mission-level HOLD"
+    status: blocked
+    authorized: false
+    authorization_basis: "User-directed HOLD; Gate 1 is not approved and Gate 2 is unauthorized."
+    blockers:
+      - "Do not run Mission 04, modify its seed/design, dispatch roles, or bypass the hold."
+    next_action: "Wait for a new explicit human instruction that changes the HOLD and records the Gate 1 disposition."
+    roles: []
+description: >-
+  Council, cross-critique, and the Gate 1 draft are preserved. The Gate 1 artifact recommends REFRAME;
+  no reframed direction was selected. The workbench has no override or gate-approval command.

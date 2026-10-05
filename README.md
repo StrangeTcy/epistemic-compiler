@@ -16,6 +16,12 @@
 - Mission 03 is a **proposal** (`mission-03/`, 2026-10-02): a matched/mismatched comparison of two strategy cards on two hardened task families, gated by a blind-characterization stage and a pilot. Nothing has been run. `mission-03/DESIGN.md` states what was checked and what was not, and why it is recommended before Mission 02. Two human decisions are recorded in `mission-03/decisions/` (margin 0.15; pilot on Atria-Dawn-Preview alone).
 - Mission 04 is a **proposal** (`mission-04/`, 2026-10-02): do frontier models treat deep private confirmation chains as public announcements? A parameterized decision family (public vs lossy-chain delivery, facts held fixed) with a deterministic exact oracle, comprehension controls and registered falsification variants. Pre-Council; nothing run; the runtime repository is absent from this workspace, so its additions to `rl_eval_generator` are specifications. The Council round is ready to run: four role prompts with hashes are in `mission-04/council/`. `mission-01/harvest.md` carries the durable Mission 01 methods it reuses.
 
+## Mission Workbench (Local DAG + Manual Arena UI)
+
+The mission workbench is a small configuration-driven front end over the existing resumable DAG runner. It discovers mission manifests, validates configured paths and recorded text artifacts, reports persisted role/artifact status, stages an authorized role as an exact manual Arena handoff, resumes an interrupted local run, and ingests a saved response byte-for-byte with a separate provenance record. It makes no model call, requires no API key, and has no gate-approval or hold-override command. Start with [`runtime/WORKBENCH.md`](runtime/WORKBENCH.md) for the Windows/PowerShell flow.
+
+Current workbench state: Mission 02 is at Council kickoff with Skeptic (P03-S) still required; the stored legacy responses' missing Arena mode, displayed model, session time, and tool-presence metadata is surfaced rather than inferred. Mission 03 remains a proposal: Stage 0 blind characterization was requested but is blocked because its vector/seed selection rule, pre-rating card/vocabulary and reliability-feature freeze, three-state/undefined-kappa policy, and independent dispatch procedure are unresolved. No Stage 0 prompt or stimulus was generated. Mission 04 remains on HOLD (Gate 1 unapproved; Gate 2 unauthorized); Mission 01 remains closed at Gate 4. The CLI cannot change any of these states. Deterministic workbench tests exercise mocked/local boundaries only; they do not contact Arena or establish a research result.
+
 ## Architecture Boundary & Pilot Lessons (Prospective)
 
 The intended product boundary is a research-control layer above a replaceable agent runtime—not a hand-built swarm runtime. The protocol provides research-memory/schema conventions, provenance, human gates, and validation/claim controls. The optional `runtime/` addition is a deliberately small local executor for explicit YAML job DAGs through a persistent browser profile; it is infrastructure, not a new research framework. It adds no provider APIs, persistent agents, automatic delegation, generic swarm/memory machinery, truth validator, or automatic gate decisions. It has not altered `research_protocol/protocol.md` or any frozen mission artifact.
@@ -49,8 +55,12 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 │   ├── requirements.txt         # PyYAML and Playwright runtime dependencies
 │   ├── browser/                 # Generic persistent Playwright controller; site-specific adapter lives beneath it
 │   ├── executor.py              # Browser/site adapter registry (Arena UI only; no API provider)
+│   ├── manual_handoff.py        # Model-free manual Arena prompt handoff
+│   ├── workbench.py             # Mission discovery, gates, staging, recovery, and response ingestion
+│   ├── WORKBENCH.md             # Windows/PowerShell mission workflow and manual Arena boundary
 │   └── README.md                # Chrome profile, manual auth, one-shot/worker setup and live-UI limits
 ├── examples/campaign-analysis.yaml # Inert runtime-only DAG; placeholder prompts; not authorized/executed
+├── scripts/mission_workbench.py # Discover/status/validate/next/resume/ingest mission roles
 ├── scripts/run_mission.py       # Run/resume one local mission YAML
 ├── scripts/worker.py            # Poll local mission queue; one-shot and continuous modes
 ├── scripts/browser_login.py     # Open a persistent profile for manual authentication
@@ -58,6 +68,7 @@ Mission 01's manual execution is retained as a pilot, but its lessons are kept s
 ├── tests/test_browser_config.py
 ├── tests/test_worker.py
 ├── tests/test_runtime_engine.py
+├── tests/test_mission_workbench.py # Mission discovery, gates, manual handoffs, provenance, recovery, and holds
 ├── tests/test_arena_adapter.py
 ├── tests/test_import_mindcluster_html.py
 ├── tests/test_retrieve_context.py

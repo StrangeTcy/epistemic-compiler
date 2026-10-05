@@ -1,0 +1,42 @@
+schema_version: 1
+mission_id: mission-03
+title: "Mission 03 — matched/mismatched strategy-card proposal"
+lifecycle: proposal
+human_hold: false
+gate_status:
+  gate_1: not_approved
+  stage_0: directly_requested_but_blocked_by_specification_gaps
+  gate_2: not_authorized
+stages:
+  - id: stage0_blind_characterization
+    label: "Stage 0 — blind characterization reliability"
+    status: blocked
+    authorized: true
+    authorization_basis: "User explicitly requested Stage 0 only, conditional on a faithful specification. This does not authorize Stage 1, Stage 2, solver calls, or experiment spend."
+    blockers:
+      - >-
+        The pinned source revision e1b038a4efb7343afd713f4e981c90fc0fb0485c was inspected read-only. Its instance-oracle REFERENCES frame contains exactly these 12 environments and matches mission-01/gates/gate3_execution.md: rope, rd_state_carry, categorical_lenses, moco, glyph, epistemic_games, regex_state_machine, sql_fixed_point, css_state_machine, spreadsheet_dataflow, template_interpreter, ci_dependency_graph. Stage 0 specifies a census of those names, not random environment sampling, but no rendered difficulty vector/seed rule (or instruction to use every vector) is registered; axis settings change some agent-visible prompts.
+      - >-
+        The card files exist but are not frozen for Mission 03: E is strategies/cards/elimination-discriminating-test-ordering.yaml, version 1, current SHA-256 015416020fab575e7b968d64969f4df4c8ab453fe033314f7812b2f1a66bdfb7; C is strategies/cards/counterexample-minimal-failure.yaml, version 1, current SHA-256 99a73592b1e720e47f9dfc2ab8fbbc260058517da9403b2ae1570a206f48894e. Both are candidate/unreviewed. E currently triggers on competing_hypotheses_remain and cheap_discriminating_test_available; C on claim_with_searchable_state_space. The shared 25-feature vocabulary is research_protocol/structural_features.yaml (status proposed_unvalidated; SHA-256 fb109998c31c0dc2d7ddd2bc9ee99e2bc8e51d66e6b4aca5f55e99d562d50fa0). DESIGN.md places the card freeze at Gate 2 after Stage 0, while M07/ABORT-01 need the trigger feature set before reliability is calculated. Human decision required: pre-register these exact card hashes, vocabulary hash, and three-feature reliability set before ratings, or specify alternatives. This is Stage 0 measurement registration only, not Gate 1/2 approval; card files and candidate_measurements.yaml must not reach characterizers.
+      - >-
+        M07 requires Cohen's kappa between the two blind characterizers for each feature used by the cards, plus matched/blocked assignment agreement. The IR/seed use present, absent, and unknown (undeclared); neither the category treatment for unknown ratings nor the rule for reporting kappa when it is undefined (for example, expected agreement equals one) is specified. Do not silently treat unknown as absent, drop it, or invent a fallback.
+      - >-
+        decisions/human_decisions.yaml requires two independent characterizers but leaves dispatch unresolved: the responsible dispatcher(s), Arena mode, and whether characterizer identity/model pairing must be controlled or recorded are unspecified.
+      - >-
+        The pinned environment repository is not materialized in this checkout. After the vector/seed rule is decided and before any prompt is staged, preserve exact agent-visible rendered prompts, file/tool lists, visible tests, vector/seed, and source hashes from the pin. Exclude axes, judges, results, card files, and compiler_expectation_non_blind from both characterizer bundles.
+    next_action: >-
+      Human: record (1) the vector/seed or all-vector rule for the 12-environment census; (2) whether to
+      register the current E/C hashes, 25-feature vocabulary hash, and three trigger-feature IDs before ratings
+      (or approved replacements); (3) how unknown is treated in kappa and how undefined kappa is reported; and
+      (4) the independent Arena dispatch/mode/model-control procedure. Then materialize and hash only the
+      approved blind stimuli. Do not proceed to Stage 1/2, solver comparison, or spend.
+    roles: []
+description: >-
+  The Stage 0 sampling frame is a census of these 12 REFERENCES environments (3 Discovery, 9 Holdout):
+  rope, rd_state_carry, categorical_lenses, moco, glyph, epistemic_games, regex_state_machine,
+  sql_fixed_point, css_state_machine, spreadsheet_dataflow, template_interpreter, ci_dependency_graph.
+  No random environment sampling is specified. The 25-feature vocabulary is proposed/unvalidated. E and C
+  are candidate/unreviewed cards; their listed current hashes are not Mission 03 freeze records.
+  candidate_measurements.yaml (SHA-256 65f9f5086790bb9de67e093d06b98cd43ea38ef8c22d08f03717ff38b43de7b6)
+  contains compiler_expectation_non_blind and must never enter a characterizer prompt. No Stage 0 prompt,
+  stimulus bundle, response artifact, characterization, consensus, or reliability result has been generated.

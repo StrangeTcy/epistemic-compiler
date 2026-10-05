@@ -8,6 +8,7 @@ from typing import Any
 from runtime.browser.browser import BrowserController
 from runtime.browser.sites.arena import ArenaAdapter
 from runtime.models import ExecutionResult, JobContext, WaitingForHuman
+from runtime.manual_handoff import execute_arena_manual_handoff
 from runtime.post_production import execute_local, execute_manual_handoff
 
 
@@ -43,6 +44,8 @@ class BrowserSiteExecutor:
             return await execute_local(context)
         if context.job.site == "manual":
             return execute_manual_handoff(context)
+        if context.job.site == "manual_arena":
+            return execute_arena_manual_handoff(context)
         if context.job.site != "arena":
             raise ValueError(f"unsupported runtime site {context.job.site!r}")
         profile_id = context.job.profile or context.job.site
