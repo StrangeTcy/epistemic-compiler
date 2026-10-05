@@ -12,7 +12,7 @@ This cross-critique addresses Mission 02's current seed (`../seed.yaml`) and the
 - Skeptic: `skeptic.a.md`, `skeptic.b.md`
 - Prior-Work Killer: `prior_work_killer.a.md`, `prior_work_killer.b.md`
 
-The human disposition is to keep the separate earlier Arena dialogue out of round 1. Its contents are excluded here; this document uses only the current seed and the four Council roles' responses. No new Arena/model call was made. I did not independently check literature citations, implementation claims, or the role responses' statistical calculations while preparing this synthesis. Preserve each response's own `[V]`, `[S]`, and `[R]` labels as reported; they are not upgraded by appearing in this document. The older responses have incomplete legacy provenance; the Skeptic sidecars record the missing Arena mode, exact Arena-displayed model label, and session time.
+The human disposition is to keep the separate earlier Arena dialogue out of round 1. Its contents are excluded here; this document uses only the current seed and the four Council roles' responses. No new Arena/model call was made. A later reviewer pass prompted editorial clarifications to the comparison trade-offs, dispatch-channel fork, threat model, and checklist sequence; it added no Council evidence and did not change this source set. I did not independently check literature citations, implementation claims, or the role responses' statistical calculations while preparing this synthesis. Preserve each response's own `[V]`, `[S]`, and `[R]` labels as reported; they are not upgraded by appearing in this document. The older responses have incomplete legacy provenance; the Skeptic sidecars record the missing Arena mode, exact Arena-displayed model label, and session time.
 
 ## Executive synthesis
 
@@ -23,7 +23,7 @@ The strongest shared findings are:
 1. **The current Q-A is carrying too many claims.** A formal answer computation, an independently reliable verifier, a faithful English rendering, higher-order dependence, and a novel instance family are separate properties. A successful checker comparison would establish only a portion of that chain. The Council repeatedly asks for reuse and a narrower contribution before building a broad generator.
 2. **The current Q-B controls do not isolate every claimed mechanism.** P/L/R/N can compare prompt packages, but do not by themselves show that trigger matching adds value or that obligations prevent misuse. Different proposed controls answer different questions; they should not all be treated as interchangeable.
 3. **The text-to-semantics link is a first-order risk.** Independent programs can agree on a formal instance while the rendered English fails to specify it. Conversely, exposing the validity fact in text or in the characterization can make S1/S2 status a cue rather than a test of the card.
-4. **The proposed manual-dispatch budget has no settled power basis.** The two Experimentalist samples and Skeptic samples use different definitions and assumptions, and their estimates do not reconcile. A wide interval must not become a retirement decision.
+4. **The proposed dispatch budget has no settled power basis, and the dispatch channel is an upstream design fork.** The two Experimentalist samples and Skeptic samples use different definitions and assumptions, and their estimates do not reconcile. Experimentalist-a proposes a deterministic API solver, while the seed fixes manual Arena dispatch in R6. Those channels differ in attainable sample size, observability, and session/model confounds; settle the channel before calculating power. A wide interval must not become a retirement decision.
 5. **The claim ceiling should remain narrow.** Accuracy on a frozen family would not establish recursive reasoning, theory of mind, or a general retrieval mechanism. Prior-work claims remain to be verified at source level.
 
 The Council has therefore produced useful objections and candidate repairs, but not a single agreed design. This cross-critique does not select one or approve Gate 1.
@@ -91,6 +91,14 @@ The seed's P/L/R/N arms answer some prompt-content questions, but they do not co
 
 Those comparisons are not substitutes. The human should select one primary causal question and one primary contrast before considering secondary arms. Random cards drawn from unrelated families risk measuring distraction rather than retrieval.
 
+| Candidate claim | Cleanest distinguishing comparison | What it costs or depends on | What it cannot establish by itself |
+|---|---|---|---|
+| **Useful method content beyond generic advice** | P versus a strong, actionable, length/format-matched L | The fewest additional conditions; L must be frozen and strong enough to be a meaningful control. | Trigger-matching value or obligation efficacy. |
+| **Value added by trigger-based selection** | P versus a fixed recipe, all-card dump, or carefully yoked same-family card; choose the comparator to match the exact claim | Extra condition(s), reliable predeclared features, and a characterization/matcher audit; preferably held-out schemas. | Whether the method text is useful at all, or whether obligations cause any benefit. |
+| **Incremental effect of obligations** | The same card with versus without its obligations, with output format held constant | An operational obligation and an observable applicability decision; S2 validity must be specified without an obvious status cue. | Whether retrieval is useful or whether the full card beats a strong generic method. |
+
+For a practical adoption claim, first establish that the matched package adds value over an appropriate baseline; an obligation ablation can then explain or limit that value. If obligation behavior is itself the primary scientific question, it can be tested directly, but a positive safety effect does not establish that the matcher improves solving.
+
 ### 4. S1/S2 may conflate validity with difficulty or a visible cue
 
 If an S2 instance includes a clause that plainly says “private” or “untruthful,” the clause may make S2 easier to classify even if the card is ignored. If that clause is withheld, the solver or matcher may lack the information needed to assess validity. The responses propose minimal pairs, blind characterization, held-out schemas, and audits, but do not yet converge on one procedure. The feature dictionary, what each actor sees, the characterization unit, and the status-labeling rule must be specified together.
@@ -99,16 +107,22 @@ If an S2 instance includes a clause that plainly says “private” or “untrut
 
 The responses variously count “trials,” “pastes,” paired instances, pilot responses, and solver replications. Their assumed baseline, discordance, effect margin, strata shares, primary contrast, and multiplicity burden differ. Before any solver study, one calculation must state all of these, include the actual feasible dispatch cap, cluster repeated items by base schema, and distinguish an inconclusive interval from evidence against the registered effect. The seed's R9 retirement rule cannot be used as a proxy for adequate power.
 
+### 6. Dispatch channel changes the target, not just the throughput
+
+R6 fixes manual copy-and-paste Arena sessions. Experimentalist-a's API proposal may make dispatch more reproducible and scalable, but it changes the evaluated channel and the conditions under which the result would generalize. Manual Arena and API runs should not be pooled as if they were interchangeable. If the human chooses API dispatch, the model/provider/version, settings, tool access, logging, and claim ceiling must be revised together; if the target remains manual Arena, the power plan must use the human-feasible paste budget and treat unobservable settings as unknown. This choice must precede the sample-size calculation.
+
 ## Candidate Gate 1 checklist (not a decision)
 
 For a human Gate 1 disposition, the Council's convergence suggests resolving these items in writing:
 
 1. **Scope:** choose one narrow Q-A family/semantics, or defer Q-A; state what is being reused and what is genuinely missing.
-2. **Claim:** state whether Q-B concerns generic method text, trigger matching, obligation efficacy, or a selected subset. Do not bundle these into one result.
+2. **Claim:** provisionally state whether Q-B concerns generic method text, trigger matching, obligation efficacy, or a selected subset. Do not bundle these into one result.
 3. **Text validity:** specify the formal verifier, the independent text-to-model audit, and how disagreements or ambiguous prose are handled.
-4. **Characterization:** fix the unit, feature dictionary, blinding/access boundaries, and a reliability/leakage test before any solver output.
+4. **Characterization and threat model:** fix the unit and feature dictionary, then state who (family/card authors, characterizers, matcher, solver, dispatcher, verifier) can see the family, cards, labels, answer, and arm key; what each can infer from the text; and the remaining leakage risks. Specify access/blinding boundaries and a reliability/leakage test before any solver output.
 5. **Comparison:** choose one primary contrast and matched controls that identify that claim; set secondary analyses and multiplicity rules separately.
-6. **Feasibility:** reconcile the manual-dispatch budget and power calculation; register an explicit “uninformative” outcome if the target precision cannot be reached.
+6. **Feasibility:** choose the dispatch channel, reconcile its feasible budget with one reproducible power calculation, and register an explicit “uninformative” outcome if the target precision cannot be reached.
 7. **Novelty and claims:** verify the specific prior-art leads required for the chosen wedge and state the narrow claim ceiling.
+
+This checklist is **iterative, not a fixed sequence**: select a provisional claim, verify the relevant prior-art leads, revise the claim if a lead closes the proposed gap, then re-check that the comparison and power plan still test the surviving claim. Items 2 and 7 constrain one another.
 
 **Compiler recommendation, not Gate 1 approval:** do not authorize Gate 2 or a paid/solver experiment from the current seed and response set. Request a narrowed, source-checked Gate 1 revision first. Gate 1 remains a human decision; this cross-critique neither approves nor rejects it on the user's behalf.
