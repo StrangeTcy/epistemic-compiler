@@ -1,6 +1,6 @@
 # Mission 02 — Gate 1 question portfolio (working draft)
 
-**Status:** non-decisional working draft, prepared in response to the human's direction to retain *many* sharp questions. This is neither a Gate 1 artifact nor a decision to reframe, approve Gate 1, proceed to Gate 2, or run an experiment. No family or question has been selected. The current Gate 1 status remains pending.
+**Status:** non-decisional working draft. **Human scope decision:** keep all 15 listed candidates (E1–E8, S1–S4, V1–V3) for further development; develop them serially rather than in one Arena Battle prompt. This retains the candidates but does not select a primary question, approve Gate 1, authorize a reframe, proceed to Gate 2, or authorize an experiment. The current Gate 1 status remains pending.
 
 ## How to use this portfolio
 
@@ -147,10 +147,22 @@ These are distinct causal questions. A positive answer to one does not imply a p
 
 - **Role:** Gate 1 testability evidence and an engineering feasibility check, not a scientific hypothesis about solver behavior. Gate 1 need not require building the full verifier or running an experiment.
 
+## Serial development plan
+
+All 15 candidates are retained by human direction, but **they are not to be developed in parallel in one Arena Battle**. Work through one question card at a time. This is serial portfolio development, not 15 separate seed rewrites and not a Gate 1 reframe; the protocol's one-reseed limit still applies only to a formal reframe after a Gate 1 failure. Serial development also does **not** require 15 Arena sessions: do the local specification/source work first and request model critique selectively, one candidate at a time. For each card, complete the following locally before deciding whether another Arena review is useful:
+
+1. State the target family, formal assumptions, manipulation/contrast, and observable precisely.
+2. Write at least two genuinely competing, plausible explanations and what observation would distinguish them.
+3. Inspect the closest prior-work sources and record what is source-verified, only abstract-level, or still unknown.
+4. Record the family-specific feasibility, including verifier and text-fidelity needs. Apply V1/V3 to epistemic-family cards and V2 to characterization/retrieval cards; do not turn those supporting checks into LLM outcome claims.
+5. Only if the human wants another model critique, prepare **one question-specific prompt for one Battle session**. Preserve each returned answer separately. No additional Arena prompt or call is authorized by this draft.
+
+Suggested work order (provisional, not a scientific ranking): E1 as the supplied-policy/v0 anchor; E2–E5 for public updates, silence, nested knowledge, and observation structure; E6–E8 for type spaces, level-k comparisons, and signalling; then S1–S4 for prompt content, matching, obligations, and transfer. The supporting V1–V3 checks attach to the relevant card as prerequisites. The user can reorder the queue without dropping any candidate.
+
 ## Gate 1 handling proposal
 
-1. Keep the candidates as a **portfolio**, not a promise to execute all of them. Do not force a single family or a single question merely to satisfy the word “sharp.”
+1. Keep all 15 candidates in the portfolio for serial development; this is not a promise to execute all of them. Do not force a single family or question merely to satisfy the word “sharp.”
 2. Apply the four Gate 1 criteria **to each retained question**. Record the strongest prior-work collision and the narrow unestablished regime, if any, for that question separately.
 3. Mark infrastructure and measurement-validity items (V1–V3) as supporting checks or engineering preconditions, not as LLM outcome hypotheses.
-4. Only after the human selects which questions to retain should the formal `gates/gate1_question.md` be written with surviving hypotheses, pruned questions, prior-work differentiation, and explicit novelty statements. The existing `gate1_review_prompt.md` and the response bundles are advisory materials, not that artifact.
-5. Detailed controls, sample size, power, and execution remain Gate 2 or later. No question portfolio, review response, or passing software test authorizes an experiment.
+4. After the question cards have been developed, prepare the formal `gates/gate1_question.md` with the surviving question portfolio, per-question hypotheses, pruned ideas (if any), prior-work differentiation, and explicit novelty statements. The existing `gate1_review_prompt.md` and response bundles are advisory materials, not that artifact.
+5. Detailed controls, sample size, power, and execution remain Gate 2 or later. The user's decision to retain all candidates is a scope choice, not Gate 1 approval or experiment authorization.

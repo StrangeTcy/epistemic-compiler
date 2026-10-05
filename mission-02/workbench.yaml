@@ -19,11 +19,12 @@ stages:
       The human has kept the separate Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md
       outside Council round 1. The user supplied advisory Gate 1 Arena review bundles at
       mission-02/council/gate01_responses_v1 and gate01_responses_v2 and requested no more model opinions
-      for now. At the user's direction to retain many sharp questions, a non-decisional portfolio draft
-      is prepared at mission-02/gates/question_portfolio_draft.md. The human reviews that portfolio and
-      decides whether to invoke the protocol's one allowed Gate 1 reframe. Gate 1 remains pending;
-      do not change the seed or gate status without human disposition. Gate 2 and experiments remain
-      unauthorized.
+      for now. The human chose to keep all 15 question-portfolio candidates for serial development, not
+      parallel development in one Arena Battle. The non-decisional portfolio and suggested queue are at
+      mission-02/gates/question_portfolio_draft.md. Develop one candidate card at a time; request another
+      model critique only selectively and with a question-specific prompt. This is not a formal seed
+      reframe. Gate 1 remains pending; do not change the seed or gate status without human disposition.
+      Gate 2 and experiments remain unauthorized.
     roles:
       - id: theorist
         label: "Theorist (P01-T)"
