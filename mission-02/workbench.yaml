@@ -17,11 +17,13 @@ stages:
     blockers: []
     next_action: >-
       The human has kept the separate Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md
-      outside Council round 1. A copy-ready, advisory-only Gate 1 review prompt is prepared at
-      mission-02/gates/gate1_review_prompt.md for the human to submit manually in Arena Battle mode.
-      The assistant made no Arena call. Preserve the two returned reviews separately with available
-      session metadata; then the human makes an explicit Gate 1 decision. Gate 1 remains pending; this
-      review does not authorize Gate 2 or an experiment.
+      outside Council round 1. The user supplied advisory Gate 1 Arena review bundles at
+      mission-02/council/gate01_responses_v1 and gate01_responses_v2 and requested no more model opinions
+      for now. At the user's direction to retain many sharp questions, a non-decisional portfolio draft
+      is prepared at mission-02/gates/question_portfolio_draft.md. The human reviews that portfolio and
+      decides whether to invoke the protocol's one allowed Gate 1 reframe. Gate 1 remains pending;
+      do not change the seed or gate status without human disposition. Gate 2 and experiments remain
+      unauthorized.
     roles:
       - id: theorist
         label: "Theorist (P01-T)"
