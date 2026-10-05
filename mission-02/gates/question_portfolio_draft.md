@@ -4,7 +4,7 @@
 
 ## How to use this portfolio
 
-At the human's direction, this draft preserves a portfolio rather than collapsing the program to one question. It treats each candidate as a separate research question and applies the Gate 1 criteria to each; it does not assume that all candidates must pass, be combined, or be run. The protocol uses “the research question” in the singular, so the final Gate 1 artifact should state explicitly whether the surviving set is one coordinated portfolio or several prunable branches. Do not bundle distinct questions into a single claim: each candidate below has its own contrast, observable, hypotheses, nearest prior-work collision, and feasibility needs.
+At the human's direction, this draft preserves all candidates rather than collapsing the program to one question. Treat them as individually assessed branches sharing some validation infrastructure—not as one bundled scientific claim. The protocol uses “the research question” in the singular, so the formal Gate 1 artifact should explicitly explain this portfolio structure and how each retained branch is assessed. Do not bundle distinct questions into one claim: each candidate below has its own contrast, observable, hypotheses, nearest prior-work collision, and feasibility needs. A branch may be tagged as an anchor, source-check-needed, blocked, or ready for Gate 1 review without being deleted from the retained portfolio.
 
 The candidate sentences make the empirical contrasts explicit; they are starting formulations, not registered protocols. A question that is actually retained must still pass the four criteria in `research_protocol/protocol.md` §3.1: sharp empirical discrimination, genuinely competing plausible hypotheses, adequate source-level prior-work differentiation, and accessibility in an existing or locally extensible architecture.
 
@@ -147,22 +147,28 @@ These are distinct causal questions. A positive answer to one does not imply a p
 
 - **Role:** Gate 1 testability evidence and an engineering feasibility check, not a scientific hypothesis about solver behavior. Gate 1 need not require building the full verifier or running an experiment.
 
-## Serial development plan
+## Dependency-first serial development plan
 
-All 15 candidates are retained by human direction, but **they are not to be developed in parallel in one Arena Battle**. Work through one question card at a time. This is serial portfolio development, not 15 separate seed rewrites and not a Gate 1 reframe; the protocol's one-reseed limit still applies only to a formal reframe after a Gate 1 failure. Serial development also does **not** require 15 Arena sessions: do the local specification/source work first and request model critique selectively, one candidate at a time. For each card, complete the following locally before deciding whether another Arena review is useful:
+All 15 candidates are retained by human direction, but **they are not to be developed in parallel in one Arena Battle**. Develop one question card at a time, following prerequisites rather than finishing every E-card before starting any S-card. This is portfolio development—not 15 separate seed rewrites and not a Gate 1 reframe. The protocol's one-reseed limit still applies only to a formal reframe after a Gate 1 failure. Serial development also does **not** require 15 Arena sessions: do local specification and source work first; request model critique selectively, one candidate at a time.
 
-1. State the target family, formal assumptions, manipulation/contrast, and observable precisely.
-2. Write at least two genuinely competing, plausible explanations and what observation would distinguish them.
-3. Inspect the closest prior-work sources and record what is source-verified, only abstract-level, or still unknown.
-4. Record the family-specific feasibility, including verifier and text-fidelity needs. Apply V1/V3 to epistemic-family cards and V2 to characterization/retrieval cards; do not turn those supporting checks into LLM outcome claims.
-5. Only if the human wants another model critique, prepare **one question-specific prompt for one Battle session**. Preserve each returned answer separately. No additional Arena prompt or call is authorized by this draft.
+### Proposed dependency path (order is provisional; nothing is pruned)
 
-Suggested work order (provisional, not a scientific ranking): E1 as the supplied-policy/v0 anchor; E2–E5 for public updates, silence, nested knowledge, and observation structure; E6–E8 for type spaces, level-k comparisons, and signalling; then S1–S4 for prompt content, matching, obligations, and transfer. The supporting V1–V3 checks attach to the relevant card as prerequisites. The user can reorder the queue without dropping any candidate.
+1. **Establish one substrate family:** start with E1 as the v0 anchor because it is the existing, specified implementation. Develop its exact question and identify any factor beyond v0. If it adds none, keep E1 explicitly as a baseline/anchor rather than presenting the unchanged v0 task as a novel contribution.
+2. **Check that substrate:** assess V3 (independent-verifier feasibility) and V1 (English-to-formal fidelity) for that family. These are local/source/feasibility checks, not a requirement to build the full verifier or conduct an Arena Battle.
+3. **Check the retrieval precondition:** assess V2 (characterization reliability and leakage) using the selected substrate before claiming a trigger-matching test is feasible.
+4. **Develop S2, then S3 on that substrate:** S2 tests incremental value from trigger matching; S3 separately tests the effect of obligations. Give each its own question card and contrast. Neither result stands in for the other.
+5. **Continue the epistemic branches one at a time:** E2–E8 all remain in the queue. E3 (informative silence) is a reasonable early follow-up for targeted prior-work checking; E2, E4, and E5 have especially close DEL/ToM benchmark collisions; E6–E8 need their own formal solution/oracle checks. This order does not imply that any candidate is accepted or dropped.
+6. **Develop S1 and S4:** S1 (method text versus strong generic advice) remains separate from S2; S4 (cross-family transfer) comes after at least two family cards have stable semantics and supporting checks.
+7. **Repeat V1/V3 where a new family changes the formal or language-generation assumptions.** V2 is repeated only if the trigger vocabulary or characterization procedure changes materially.
+
+For each card, record the target family and assumptions, manipulated contrast, observable, competing hypotheses, closest source-checked prior work, and family-specific feasibility. Use statuses such as `queued`, `in development`, `baseline/anchor`, `source check needed`, `blocked`, or `ready for Gate 1 review`; **these statuses track progress without removing any of the 15 retained candidates**.
+
+Only if the human wants another model critique, prepare **one question-specific prompt for one Battle session** after the corresponding local card is ready, and preserve each returned answer separately. No additional Arena prompt or call is authorized by this plan.
 
 ## Gate 1 handling proposal
 
 1. Keep all 15 candidates in the portfolio for serial development; this is not a promise to execute all of them. Do not force a single family or question merely to satisfy the word “sharp.”
 2. Apply the four Gate 1 criteria **to each retained question**. Record the strongest prior-work collision and the narrow unestablished regime, if any, for that question separately.
 3. Mark infrastructure and measurement-validity items (V1–V3) as supporting checks or engineering preconditions, not as LLM outcome hypotheses.
-4. After the question cards have been developed, prepare the formal `gates/gate1_question.md` with the surviving question portfolio, per-question hypotheses, pruned ideas (if any), prior-work differentiation, and explicit novelty statements. The existing `gate1_review_prompt.md` and response bundles are advisory materials, not that artifact.
+4. After the question cards have been developed, prepare the formal `gates/gate1_question.md` with the retained question portfolio, per-question hypotheses, prior-work differentiation, and explicit novelty statements. There are currently no pruned candidates; record that explicitly. Any later pruning requires a separate human decision. The existing `gate1_review_prompt.md` and response bundles are advisory materials, not that artifact.
 5. Detailed controls, sample size, power, and execution remain Gate 2 or later. The user's decision to retain all candidates is a scope choice, not Gate 1 approval or experiment authorization.
