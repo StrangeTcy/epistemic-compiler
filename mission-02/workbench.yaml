@@ -16,9 +16,10 @@ stages:
     authorization_basis: "User instruction to resume Mission 02 from its persisted Council artifacts. This is Council intake only, not approval of a research gate or experiment."
     blockers: []
     next_action: >-
-      After all four roles are stored, prepare the cross-critique only after the human resolves the
-      open disposition of the post-prompt Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md.
-      Gate 1 remains an explicit human decision.
+      The human has kept the separate Arena dialogue in mission-02/sources/2026-09-29_arena_round_note.md
+      outside Council round 1. Review the compiler-prepared cross-critique at
+      mission-02/council/cross_critique.md, then make an explicit Gate 1 decision. The cross-critique
+      does not approve Gate 1 or authorize Gate 2 or an experiment.
     roles:
       - id: theorist
         label: "Theorist (P01-T)"

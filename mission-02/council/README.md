@@ -1,6 +1,6 @@
 # Mission 02: running the Council round
 
-**Status (2026-10-05): all four Council roles are stored. Skeptic (P03-S) has two separate samples: `skeptic.a.md` (source-bundle label `opus 5`) and `skeptic.b.md` (label `gpt 6 luna max`); the source bundle remains at `skeptic_prompt_responses`. Each sample has an `.intake.json` sidecar. The Skeptic pair has not been substantively reviewed, and no cross-critique has been prepared. Gate 1 remains pending, and the human must resolve whether/how to use the earlier Arena dialogue recorded in `../sources/2026-09-29_arena_round_note.md` before cross-critique.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9). This round remains paused, not discarded.
+**Status (2026-10-05): all four Council roles are stored. Skeptic (P03-S) has two separate samples: `skeptic.a.md` (source-bundle label `opus 5`) and `skeptic.b.md` (label `gpt 6 luna max`); the source bundle remains at `skeptic_prompt_responses`. Each sample has an `.intake.json` sidecar. The compiler-prepared, non-decisional cross-critique is at `cross_critique.md`; it uses the current Council round only, and does not independently verify cited literature. The human chose to keep the earlier Arena dialogue in `../sources/2026-09-29_arena_round_note.md` separate from round 1. Cross-critique is complete; Gate 1 remains pending and no experiment is authorized.** A research-director pass the same day recommends running `../../mission-03/` first (`mission-03/DESIGN.md`, section 9).
 
 Mission 02 asks two linked questions (see `../seed.yaml`): Q-A, what a higher-order epistemic-game instance family needs so that its ground truth is independently checkable; and Q-B, whether trigger-matched strategy packs improve solving, with the comparison's design constraints registered in the seed. Mission 01 is frozen and is not reopened.
 
@@ -36,7 +36,7 @@ f668ecf81a355a52c73daae656e88605fb9f5777d3ec1292b31e0c9ebcccc6f0  prompts/01_the
 
 1. The seed, the retrieval view, the evidence digest and these prompts are committed first.
 2. The `game`-family candidate cards were authored from the graph leads and the primary literature, and frozen (card versions and content hashes in `mission-02/freeze/`) in a later commit, **before any Council response was stored in this repository**. The Council does not see the cards in this round, so the instance-family design cannot be tuned to them.
-3. Responses are stored unedited. Cross-critique is a separate step that waits for the human to resolve the open disposition of the earlier Arena dialogue (`../sources/2026-09-29_arena_round_note.md`); Gate 1 remains an explicit human decision.
+3. Responses are stored unedited. The human kept the separate Arena dialogue (`../sources/2026-09-29_arena_round_note.md`) outside round 1; the compiler-prepared cross-critique is in `cross_critique.md`. That analysis is not Gate 1 approval; Gate 1 remains an explicit human decision.
 
 ## Material received after these prompts were written
 

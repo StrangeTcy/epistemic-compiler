@@ -2,6 +2,8 @@
 
 **Status.** The compiler agent's reading of material the user pasted on 2026-10-02, after the Mission 02 kickoff commit (`312bc80`) and the card freeze (`426d693`). The compiler had not seen it when it wrote the seed, the four Council prompts, or the five `game` cards. **The dialogue itself is not stored here.** It is long (about 90 KB) and re-typing it risks silent edits; the user holds the original, and this note refers to messages by model label and order. It is **not shown to the Council in round 1**. Nothing in it is evidence for or against any hypothesis in `../seed.yaml`. Statements below are unverified unless a row in section 3 says otherwise.
 
+**Human disposition (2026-10-05).** Keep this dialogue separate from Mission 02 Council round 1. The compiler-prepared cross-critique uses only round 1 Council responses; no amendment to the current seed or prompts is made by this decision. Gate 1 remains a separate human decision.
+
 ## 1. What the material is
 
 A ChatGPT conversation (message times 17:12 to 21:25 on 2026-09-29) that moves from epistemic game theory to "control of another agent's epistemic process", stage-magic misdirection, Pelevin's MI-13 and Gilbo's «дезонтологическая атака». The user then ran the conversation through several Arena models (GPT-6 Astra Max, GPT-5.6 Luna, Gemini 3.1 Pro, GPT-6 Sol Max, Opus 5, GPT-5.6 Sol xhigh, Opus 4.8); those outputs are undated. The `knowledge/` graph comes from the same lineage: it has nodes for `alon-2023`, `dbos-2026`, `lying-with-truths-2026`, `potemkin-2026`, `epistemic-process-control`, `pelevin-mi13` and `lefebvre-reflexive`.
