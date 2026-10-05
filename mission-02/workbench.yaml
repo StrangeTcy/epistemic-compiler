@@ -23,13 +23,15 @@ stages:
       in one Arena Battle. The non-decisional portfolio at mission-02/gates/question_portfolio_draft.md uses
       a dependency-first path: one substrate family, V1/V3, V2, then S2/S3; continue the remaining E
       questions, with S1/S4 later. The first local E1 question card is at
-      mission-02/gates/question_cards/E1_supplied_policy_update.md and now records the pinned-v0 source spot-check:
+      mission-02/gates/question_cards/E1_supplied_policy_update.md and records the pinned-v0 source spot-check:
       finite prior/evidence grid, shared-core renderer/judge, and no independent text-fidelity audit in the inspected
-      path. Treat E1 provisionally as the baseline/anchor; the next human step is to review these findings in that
-      card, then continue local V3/V1 feasibility work. Develop one card at a time; request model critique only
-      selectively. This is not a formal seed reframe. Gate 1 remains
-      pending; do not change the seed or status without human disposition. Gate 2 and experiments remain
-      unauthorized.
+      path. The user supplied an advisory response bundle at mission-02/gates/question_cards/e1_responses. The E1
+      card now captures its candidate log-odds observable and a proposed V1/V3 check from rendered text; neither
+      is registered or executed, and literature claims in the bundle remain unverified. Treat E1 provisionally as
+      the baseline/anchor; the next human step is to review this synthesis, then continue local V1/V3 feasibility
+      work. Develop one card at a time; request model critique only selectively. This is not a formal seed reframe.
+      Gate 1 remains pending; do not change the seed or status without human disposition. Gate 2 and experiments
+      remain unauthorized.
     roles:
       - id: theorist
         label: "Theorist (P01-T)"

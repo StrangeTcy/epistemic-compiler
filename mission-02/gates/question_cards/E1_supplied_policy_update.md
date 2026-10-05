@@ -1,6 +1,6 @@
 # E1 — Updating from a supplied behavior policy
 
-**Status:** first serial question card; working draft only. E1 remains in the retained portfolio. This card is not a Gate 1 decision, seed rewrite, Arena prompt, Gate 2 specification, or experiment authorization. No Arena call has been made for E1.
+**Status:** first serial question card; working draft only. E1 remains in the retained portfolio. This card is not a Gate 1 decision, seed rewrite, Arena prompt, Gate 2 specification, or experiment authorization. The assistant has made no Arena call for E1.
 
 ## Candidate empirical question
 
@@ -19,22 +19,37 @@ posterior_odds(w1 | a)
 likelihood_ratio(a) = P(a | w1) / P(a | w2)
 ```
 
-E1 varies the prior odds and likelihood ratio independently across finite, well-posed cases. The response format and score must distinguish a numeric posterior from a categorical verdict; a correct category alone does not establish posterior calibration.
+E1 varies the prior odds and likelihood ratio independently across finite, well-posed cases. For the posterior update, the likelihood ratio is signed: it can be below or above 1. In a log-odds analysis use `log(P(a|w1)/P(a|w2))`; do not substitute the unsigned evidence-strength statistic `R = max(L1/L2, L2/L1)`, which loses the direction of the update. The response format and score must distinguish a numeric posterior from categorical outputs; a correct category alone does not establish posterior calibration.
 
 ## Competing hypotheses (candidate, not registered)
 
-- **H1 — evidence-sensitive updating:** model posterior estimates move in the direction and approximate amount specified by the Bayes factor when likelihood ratios change, while also responding correctly to prior odds.
-- **H0 — prior-dominant / evidence-neglect account:** estimates mostly follow the prior or a simple base-rate rule and under-respond to changes in the supplied likelihood ratio.
-- **H2 — surface-sensitive account (optional alternative):** estimates change with narrative/table presentation even when the formal prior and likelihoods are identical; apparent updating is not stable across equivalent renderings.
+A reviewer-suggested diagnostic for making the numeric predictions distinct is a response model in log-odds space:
 
-H1 versus H0 is the core discrimination. H2 is a candidate alternative that would need a matched-rendering comparison; it should not be folded into the primary contrast without stating that claim separately.
+```text
+logit(reported_posterior)
+  = beta0 + beta_prior * logit(prior_world1)
+          + beta_LR * log(P(a|w1) / P(a|w2)) + error
+```
+
+Under exact Bayesian updating, the point target is `(beta0, beta_prior, beta_LR) = (0, 1, 1)`. This is a candidate estimand, not a registered analysis; any equivalence margins, estimator details, boundary handling, and sample design remain open.
+
+- **H1 — evidence-sensitive Bayesian updating:** reported posteriors track both prior odds and the signed likelihood ratio, with coefficients near the exact Bayes targets.
+- **H0a — likelihood neglect / prior-only updating:** `beta_LR` is near zero while prior odds retain influence.
+- **H0b — prior neglect / base-rate neglect:** `beta_prior` is near zero while the signed likelihood ratio retains influence.
+- **H0c — conservative updating:** the likelihood-ratio coefficient is positive but below the Bayes target, indicating systematic under-updating rather than merely noisy answers.
+- **Noise:** zero-mean response imprecision would appear as residual variation and can coexist with any of the updating accounts; it is not itself a competing mechanism.
+- **H2 — surface-sensitive account (optional):** estimates change with narrative/table presentation when the formal inputs are identical. Keep this matched-rendering contrast separate from the primary update contrast.
+
+These are candidate distinctions, not registered thresholds. The signed likelihood ratio is essential: the v0 verdict band uses unsigned evidence strength `R`, which cannot serve as the directional log-likelihood predictor.
 
 ## Observable and contrast
 
-- **Primary observable:** numeric `posterior_world1` error relative to the exact posterior (with calibration or proper-score summaries specified later). Track the evidence-strength `verdict` and directional `most_supported` classification as distinct categorical observables; a correct category alone does not establish posterior calibration.
-- **Core contrast:** model outputs across instances that change the prior odds or likelihood ratio while holding the other formal inputs fixed; compare observed changes with Bayes-predicted changes and the prior-only prediction.
-- **Potential matched rendering contrast:** the same formal instance presented in narrative and bare-table forms, as in the described v0 axes. This can test surface sensitivity but is not required to define H1 versus H0.
-- **Do not set:** solver identities, trial counts, margins, power, sampling settings, or arm order here. Those belong to a later measurement design if Gate 1 is human-approved.
+- **Primary response:** model-reported numeric `posterior_world1`. Aggregate absolute posterior error can be reported descriptively, but by itself it does not distinguish systematic under-updating, prior-only responses, and noisy responses.
+- **Candidate discriminator:** compare posterior log-odds against prior log-odds and the **signed** log likelihood ratio, with the Bayes coefficient vector as the reference. Test the model's evidence sensitivity on matched instances that vary the likelihood ratio while holding the prior fixed, and vice versa. Confirm from the realized finite item grid—not just the axis labels—that these inputs vary independently enough to identify the contrasts.
+- **Boundary caution:** `logit(reported_posterior)` is undefined at reports of exactly 0 or 1; predefine how boundary/heaped responses are represented before interpreting coefficients. Check whether true posteriors in the v0 grid approach saturation. No clipping rule or threshold is selected here.
+- **Categorical outputs:** score the evidence-strength `verdict` and directional `most_supported` separately. The verdict is based on unsigned `R`, not posterior direction; categorical correctness cannot substitute for numeric calibration. If retained as an outcome, inspect how much of the grid lies near its decision boundaries.
+- **Potential matched-rendering contrast:** the same formal instance presented in narrative and bare-table forms, as in the v0 axes. This can test surface sensitivity but is not required to define the primary updating contrast.
+- **Do not set:** solver identities, trial counts, numerical tolerance/equivalence margins, power, sampling settings, or arm order here. Those belong to later measurement design if Gate 1 is human-approved; no reviewer-suggested numeric tolerance is adopted.
 
 ## Relation to the existing Mission 02 substrate
 
@@ -50,6 +65,22 @@ The pinned source is `rl_eval_generator` commit `e1b038a4efb7343afd713f4e981c90f
 
 **V1 / text-fidelity finding:** the renderer constructs the formal spec and agent-facing task from the same `Instance` object. The inspected path verifies clean rendering/provenance, but does not independently establish that a reader can reconstruct the intended formal instance from the English text. No independent text-to-model audit was found in these files.
 
+## Advisory response synthesis (non-decisional)
+
+The linked bundle is preserved at [`e1_responses`](e1_responses). Its headings self-label two response sources (`grok 4.3`, `opus 5`); Arena mode, verified Arena-displayed model labels, session times, and tool metadata were not supplied. Treat the contents as advisory critiques, not as source-level evidence, verified literature review, Gate disposition, or authorization.
+
+- The reviews converge on retaining E1 as the supplied-policy/v0 baseline rather than claiming a novel family. A possible agent-policy-versus-abstract-signal framing contrast is parked as a separate candidate extension; it is not folded into E1's primary question.
+- The log-odds coefficient decomposition above is retained as a candidate way to distinguish likelihood neglect, prior neglect, and conservative updating. It is not registered; the realized grid's identifiability and boundary handling still need checking.
+- The bundle's named papers and novelty claims remain **unverified leads**. The reviews do not close Gate 1's prior-work criterion; verify primary sources before citing or relying on those claims.
+- No numeric tolerance or equivalence margin proposed in the bundle is adopted here.
+
+## Proposed local V1/V3 feasibility check (not yet run)
+
+1. **V1 — text-to-formal fidelity:** from only the rendered task text, independently record the prior, the two worlds' probabilities for the observed action, the observed action, and the world/action mappings. Freeze that record before exposing the annotator to `INSTANCE_SPEC` or generator internals; then compare the record with the formal spec. Include both narrative and bare-table renderings in the local check.
+2. **V3 — independent recomputation:** compute the posterior, unsigned evidence-strength band, and directional support from the V1 text-derived record using a separate exact-arithmetic implementation (or a documented manual calculation). Do not call/import the generator's `core.py` or calculate from hidden instance parameters. Compare the independent result with the frozen spec and existing grader outputs.
+
+This is a bounded feasibility plan, not an executed audit or an experiment. It remains to be implemented and tested before E1 can support later S2/S3 work.
+
 Therefore, E1 is retained as a **baseline/anchor on the existing v0 substrate**, not as a novel task-family claim. Its current discrete prior/evidence grid can support a bounded calibration question; a broader posterior-calibration sweep would require a specified local extension. Do not relabel evidence neglect on supplied behavior tables as higher-order reasoning.
 
 Source paths at the pinned revision: [`config.yaml`](https://github.com/StrangeTcy/rl_eval_generator/blob/e1b038a4efb7343afd713f4e981c90fc0fb0485c/envs/epistemic_games/config.yaml), [`renderer.py`](https://github.com/StrangeTcy/rl_eval_generator/blob/e1b038a4efb7343afd713f4e981c90fc0fb0485c/envs/epistemic_games/files/renderer.py), [`core.py`](https://github.com/StrangeTcy/rl_eval_generator/blob/e1b038a4efb7343afd713f4e981c90fc0fb0485c/envs/epistemic_games/files/core.py), [`judge.py`](https://github.com/StrangeTcy/rl_eval_generator/blob/e1b038a4efb7343afd713f4e981c90fc0fb0485c/envs/epistemic_games/files/judge.py), and [`instance_spec.py`](https://github.com/StrangeTcy/rl_eval_generator/blob/e1b038a4efb7343afd713f4e981c90fc0fb0485c/envs/epistemic_games/files/instance_spec.py). This is a bounded source spot-check, not a full code audit or proof that a proposed verifier extension will work.
@@ -58,17 +89,17 @@ Source paths at the pinned revision: [`config.yaml`](https://github.com/StrangeT
 
 | Gate 1 criterion | Current E1 status | What remains |
 |---|---|---|
-| Sharp empirical discrimination | **Promising, now bounded to the pinned v0 grid** | Specify the unit of analysis and score later; keep the optional matched-rendering contrast separate from the primary Bayes-updating contrast. E1 is provisionally the baseline/anchor, not a novelty claim. |
-| Competing plausible hypotheses | **Candidate pair stated** | H1/H0 still need domain evidence; keep H2 separate unless a matched-rendering claim is deliberately included. |
-| Prior-work differentiation | **Open** | Search source-level work on LLM Bayesian updating, probability calibration, and supplied-policy inference; distinguish existing v0 and nearby benchmarks from any E1-specific contribution. |
-| Existing/local architecture | **Pinned source spot-checked; feasibility partial** | v0 supplies exact Bayes ground truth but couples renderer and judge through `core.py`; a genuinely independent checker and text-fidelity audit are not present in the inspected path. Their local implementation remains to be specified and tested. |
+| Sharp empirical discrimination | **Promising candidate, with a sharper estimand proposed** | Check the realized grid's rank/conditioning and boundary cases for the candidate log-odds contrast; keep numerical margins, scores, and design choices open for later. E1 remains the baseline/anchor, not a novelty claim. |
+| Competing plausible hypotheses | **Candidate accounts now separated conceptually** | Assess whether the finite grid can distinguish likelihood neglect, prior neglect, and conservative updating; do not set thresholds here. Keep H2 separate unless the matched-rendering claim is deliberately promoted. |
+| Prior-work differentiation | **Open; response-bundle leads unverified** | Verify source-level work on Bayesian updating, probability calibration, and supplied-policy inference before making any novelty claim. The `e1_responses` literature summaries are not verified findings. |
+| Existing/local architecture | **Pinned source spot-checked; bounded check proposed, not run** | v0 couples renderer and judge through `core.py`. The proposed independent V1/V3 check must derive inputs from rendered text, not generator internals; agreement and feasibility remain untested. |
 
 ## Remaining work before E1 is ready for Gate 1 review
 
-E1 stays in the portfolio and is treated as a **baseline/anchor for now**, because v0 already supplies behavior policies and exact Bayesian ground truth. No standalone-novelty claim is being made. The candidate question is bounded to v0's finite grid; broader prior/likelihood coverage would need a separately specified extension.
+E1 stays in the portfolio and is treated as a **baseline/anchor for now**, because v0 already supplies behavior policies and exact Bayesian ground truth. No standalone-novelty claim is being made. The candidate question is bounded to v0's finite grid; a broader prior/likelihood sweep or the parked agent-policy-versus-abstract-signal contrast would be a separate extension, not part of this baseline.
 
-1. Specify the posterior score and task unit so under-updating is distinguishable from prior neglect and ordinary numerical imprecision.
-2. Search source-level prior work on LLM Bayesian/probabilistic updating with supplied likelihood tables, then state what (if anything) remains differentiated from v0 and nearby benchmarks.
-3. For V3, define and test the smallest checker that does not reuse the generator's semantic implementation. For V1, define an independent text-to-formal fidelity check. The source check above identifies the gaps; it does not establish these extensions.
+1. Check the realized finite grid for independent variation and identifiability of prior and signed-likelihood effects; inspect true posterior saturation and define boundary handling for reported 0/1 values. Keep numerical margins and sample design for later.
+2. Verify source-level prior work on LLM Bayesian/probabilistic updating with supplied likelihoods. Treat papers and novelty claims in `e1_responses` as unverified leads until checked against primary sources.
+3. Run the proposed local V1/V3 feasibility check: blind text-to-formal extraction, then separate exact recomputation from those extracted values. Record outcomes and missing information; do not rely on the shared `core.py` path or generate model/experiment calls.
 
-**Next dependency:** use this card's source findings to develop E1's V3 (independent-verifier feasibility) and V1 (text-to-formal fidelity) checks before using E1 as the substrate for S2/S3. This is local design work only: no Arena call, Gate 1 decision, Gate 2 specification, or experiment authorization. All other portfolio items remain retained and unapproved.
+**Next dependency:** after human review of this synthesis, continue with the local V1/V3 check on E1 before using E1 as the substrate for S2/S3. This remains local, non-decisional work: no Gate 1 decision, Gate 2 specification, or experiment authorization. All other portfolio items remain retained and unapproved.
