@@ -86,11 +86,18 @@ def test_repository_discovery_uses_actual_mission_state_and_preserves_holds():
     m04 = workbench.mission_status("mission-04")
 
     assert m01["lifecycle"] == "closed"
-    assert m02["pending_role"] == {"stage_id": "council_round_1", "role_id": "skeptic"}
+    assert m02["pending_role"] is None
+    assert m02["gate_status"]["gate_1"] == "pending_council_and_human_disposition"
     role_rows = {row["id"]: row for row in m02["stages"][0]["roles"]}
     assert role_rows["theorist"]["recorded_samples"] == 1
     assert role_rows["experimentalist"]["recorded_samples"] == 2
-    assert role_rows["skeptic"]["recorded_samples"] == 0
+    assert role_rows["skeptic"]["recorded_samples"] == 2
+    skeptic_samples = {row["sample_id"]: row for row in role_rows["skeptic"]["samples"]}
+    assert skeptic_samples["a"]["status"] == "recorded"
+    assert skeptic_samples["b"]["status"] == "recorded"
+    expected_missing = ["arena_mode", "model_label", "session_time"]
+    assert skeptic_samples["a"]["missing_metadata"] == expected_missing
+    assert skeptic_samples["b"]["missing_metadata"] == expected_missing
     assert role_rows["prior_work_killer"]["recorded_samples"] == 2
     assert "missing for every pre-workbench response" in role_rows["theorist"]["legacy_metadata_note"]
     assert m03["stages"][0]["status"] == "blocked"
