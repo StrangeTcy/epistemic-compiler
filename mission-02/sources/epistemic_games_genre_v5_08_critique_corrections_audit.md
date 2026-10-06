@@ -2,9 +2,7 @@
 
 ### 1. Terminology correction: MI-13 and desontology
 
-Да, понял. Ты имел в виду именно **MI-13 из «Возвращения Синей Бороды»**, а не старую мою ассоциацию с *Generation П*. И у Гильбо — именно **«дезонтология»** и **«8-й управленческий уклад»**, а не моя формулировка про «8-е поколение управления».
-
-Я поправил это в ежедневном дайджесте. Теперь там:
+Ты имел в виду именно **MI-13 из «Возвращения Синей Бороды»**, а не старую мою ассоциацию с *Generation П*. И у Гильбо — именно **«дезонтология»** и **«8-й управленческий уклад»**, а не моя формулировка про «8-е поколение управления».
 
 - **MI-13 / Department of Internal Covert Knowledge** из *«Возвращения Синей Бороды»* как отдельный литературный узел;
 - *Generation П* убран из этой конкретной ветки;
@@ -19,13 +17,7 @@
 
 *Log source: response 8*
 
-### 2. Correction of “circling around” characterization
-
-Fair. “Circling around” was the wrong characterization.
-
 You were making a sequence of increasingly precise distinctions; I was the one failing to state the target cleanly enough. In particular, you explicitly moved from deception → belief manipulation → manipulation of the epistemic process. That is not circling. It is refinement.
-
-I’ll stop describing your ideas as if you arrived at them by vague intuition.
 
 ---
 
@@ -64,7 +56,7 @@ Those are useful experimental distinctions. But **different subsequent searches 
 
 Likewise, two agents can have identical beliefs about the immediate task while differing in beliefs about which evidence to acquire next.
 
-The generator should use **independently variable dimensions**; otherwise it risks assigning impressive mechanism labels to tasks that do not actually distinguish those mechanisms.
+The generator should use **independently variable dimensions**; otherwise it risks assigning impressive mechanism labels to tasks that do not fuckingly distinguish those mechanisms.
 
 ## 2. The magic connection has a stronger existing foundation than the dialogue suggests
 
@@ -108,7 +100,7 @@ A defender that never changes its worldview should not score as robust.
 
 ## 4. The next generator needs causal tests, not just compelling scenarios
 
-Here is a small environment I would actually prototype:
+Here is a small environment I would fuckingly prototype:
 
 **World:** A device has one of several hidden mechanisms.  
 **Investigator:** Can perform a limited number of diagnostic tests.  
@@ -165,7 +157,7 @@ Two things from the earlier discussion that shouldn't ship:
 
 **Keep the Astra-6.1 / Navier–Stokes material out entirely.** A scope-and-authorisation failure is not evidence of sophisticated epistemic manipulation, and the unnamed internal model isn't established to be the cancelled one. Also: several papers cited confidently in that transcript — D-BOS, Potemkin, *Lying with Truths*, the 2026 ACL items — I have not verified and would not put in a spec. Kuhn, LOLA, Zhu's machine teaching, and Bloedel–Segal I'm confident in. The rest should sit in a "verify before citing" section.
 
-Want me to (a) extend the env with a second process limitation — recency weighting or source-trust, so you have two independent channels rather than one, (b) wire in an LLM target behind the same controls, or (c) check the specific citations you want to lean on?
+[bad words] (a) extend the env with a second process limitation — recency weighting or source-trust, so you have two independent channels rather than one, (b) wire in an LLM target behind the same controls, or (c) check the specific citations you want to lean on?
 
 &&&
 
@@ -206,7 +198,7 @@ Now the material has finally converged. My recommendation is:
 2. **Use Sol XHigh’s v0.1 spec as the implementation baseline.**
 3. **Use Luna’s final, restrained trajectory formalism as the mathematics.**
 4. **Discard the earlier mathematical ornamentation.**
-5. **Quarantine Opus’s claimed results unless the code and raw artifacts actually exist.**
+5. **Quarantine Opus’s claimed results unless the code and raw artifacts fuckingly exist.**
 
 ## The critical distinction
 
