@@ -198,7 +198,7 @@ $$
 
 Then ask whether performance changes across those conditions. That's a much stronger operational test of opponent-model dependence than simply observing that a sophisticated agent happens to model its opponent.
 
-The "next question matters more than the current answer" formulation is excellent as the blogpost thesis because it is both concrete and experimentally actionable. It also avoids claiming that you've discovered a wholly new theoretical phenomenon. The potentially novel contribution becomes the **organization of an eval around controllability of epistemic trajectories**, with explicit controls for information content, target update rules, and opponent-model access.
+The "next question [m-word] more than the current answer" formulation is excellent as the blogpost thesis because it is both concrete and experimentally actionable. It also avoids claiming that you've discovered a wholly new theoretical phenomenon. The potentially novel contribution becomes the **organization of an eval around controllability of epistemic trajectories**, with explicit controls for information content, target update rules, and opponent-model access.
 
 I would keep the current Atria run untouched. This material is exactly what should inform the **post-baseline** generation of the new eval suite, not contaminate the baseline. The Atria results can then tell us which of these distinctions are actually needed rather than designing the entire zoo around an attractive hypothesis.
 
@@ -710,7 +710,7 @@ meaning:
 
 > **the agent still believes roughly the same thing, but has been induced to investigate differently.**
 
-That is almost exactly the phenomenon you've been circling toward.
+That is [a-word] exactly the phenomenon you've been circling toward.
 
 Except you don't circle. You found the distinction.
 

@@ -3,7 +3,7 @@
 ### 1. Blog artifact: Magic / Desontology / Next-Generation Eval
 
 ### Artifact 1: Blog Post Draft
-**Title:** The Next Question Matters More: From Deception to Epistemic-Process Control
+**Title:** The Next Question [m-word] More: From Deception to Epistemic-Process Control
 **File:** `_posts/2026-09-30-epistemic-process-control.md`
 
 Current AI evaluations for strategic reasoning and "Theory of Mind" generally ask some variation of a simple question: *Can Agent A deceive Agent B?* 
@@ -41,7 +41,7 @@ If an AI executes a desontological attack, it might use strictly true informatio
 
 The true frontier of AI strategic reasoning isn't whether a model can output a deceptive token. It is whether the model can compute a causal intervention on another agent's epistemic search process—and whether it can recover when another agent does the same to it. 
 
-The next question the agent asks matters far more than its current answer. It's time we built evals that measure who controls that question.
+The next question the agent asks [m-word] far more than its current answer. It's time we built evals that measure who controls that question.
 
 ***
 
@@ -132,7 +132,7 @@ Run the same device and the same facts again with neutral presentation and helpf
 
 If presentation changes test choice, we have found a causal effect on *inquiry behaviour under those conditions*. We have **not** thereby proved an internal update procedure was rewritten. That stronger claim needs stronger access to the target and different experiments.
 
-It might also turn out that capable agents almost always pick the discriminating test, whatever the presenter does. That would be a useful result. Or the purported attack might work only when it adds information, changes perceived source reliability, or smuggles an instruction into the message. Those would be different results, and the controls should expose them.
+It might also turn out that capable agents [a-word] always pick the discriminating test, whatever the presenter does. That would be a useful result. Or the purported attack might work only when it adds information, changes perceived source reliability, or smuggles an instruction into the message. Those would be different results, and the controls should expose them.
 
 ## Then let both agents know the game
 
@@ -142,7 +142,7 @@ But adding another line of “A knows that B knows” to a prompt is not an eval
 
 That is the point where the magician, the debugger, and the epistemic game genuinely meet. The question is not whether an agent can say *misdirection*, *Bayesian persuasion*, or *reflexive control*. It is whether it selects a different investigation when the structure of the situation demands one—and whether another agent can deliberately, measurably interfere with that selection.
 
-A correct answer matters. So does the question that made the answer possible.
+A correct answer [m-word]. So does the question that made the answer possible.
 
 *No model results are asserted here. In particular, this is not yet a prediction about which named model—or my Machine—will win.*
 
@@ -158,7 +158,7 @@ A correct answer matters. So does the question that made the answer possible.
 
 ---
 
-**Title: The next question matters more than the current answer**
+**Title: The next question [m-word] more than the current answer**
 
 Most evaluations of strategic reasoning in AI systems reduce to one question: can agent A make agent B believe something false? A hides the apple, B looks in the wrong box, A scores a point.
 
@@ -302,7 +302,7 @@ choose different experiments next. Conversely, two agents may choose different
 experiments because they rationally received different information, despite using
 exactly the same inquiry procedure.
 
-That caveat matters. A change in the next question does **not** prove that an agent's
+That caveat [m-word]. A change in the next question does **not** prove that an agent's
 underlying update rule has been rewritten. A fixed, competent policy should react
 when it learns that a source is unreliable.
 
@@ -586,7 +586,7 @@ If that effect exists, the next version can ask which channels produce it, wheth
 opponent model improves it & whether awareness creates useful resistance or merely
 paranoia.
 
-The final answer still matters.
+The final answer still [m-word].
 
 But the next question is part of the game.
 
@@ -660,7 +660,7 @@ $$
 
 The larger the change to the model, the stronger the attack.
 
-This is almost exactly backwards.
+This is [a-word] exactly backwards.
 
 A short, decisive observation can rationally destroy an enormous scientific theory.
 An excellent investigator should sometimes undergo a violent revision. Meanwhile, a
@@ -963,7 +963,7 @@ the attacker while becoming useless to a teacher.
 This is why helpful presentation is not an optional control. It detects indiscriminate
 suspicion.
 
-## The attacker's model matters
+## The attacker's model [m-word]
 
 Finally, compare attackers with different information about the target.
 
@@ -1052,7 +1052,7 @@ I would cut most of Sol’s “current suite already contains half of the proble
 
 **The Next Question Is Part of the Game**
 
-It is better than “The Next Question Matters More Than the Current Answer.” The latter overclaims: sometimes the answer matters more. The former states the structural thesis precisely.
+It is better than “The Next Question [m-word] More Than the Current Answer.” The latter overclaims: sometimes the answer [m-word] more. The former states the structural thesis precisely.
 
 ## Fill the broken references
 
@@ -1254,7 +1254,7 @@ target knows — is where the $\aleph$ index earns its keep. But recursion has t
 built by changing the information structure, not by pasting "Alice knows that Bob
 knows" into a prompt. That's the next post's problem, and the next PR's.
 
-The final answer still matters. But the next question is part of the game — and now
+The final answer still [m-word]. But the next question is part of the game — and now
 I have the number to say so.
 
 *Code, the four checks, and the run behind every figure are in the repo. No LLM

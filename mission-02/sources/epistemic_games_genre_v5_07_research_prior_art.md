@@ -52,7 +52,7 @@ The closest hits I found:
 
 - **Alon et al. 2023, “A (Dis-)information Theory…”** is extremely close to what we were talking about. They use recursive ToM in an RL environment and explicitly say that their agents can **“plan through another agent’s inference process”**. They study deception that causes the counterpart to reinterpret or discard signals; elsewhere they describe the manipulation as effectively mangling the counterpart’s inference process. ([direct.mit.edu](https://direct.mit.edu/opmi/article/doi/10.1162/opmi_a_00097/117147/A-Dis-information-Theory-of-Revealed-and?utm_source=chatgpt.com))
 
-- **Sasahara’s research program** is almost embarrassingly on-point. His research page explicitly asks whether agents can “deliberately control an opponent’s beliefs” and frames the problem as understanding deception from an **“epistemic and control perspective.”** ([hampei.net](https://hampei.net/research_en.php?utm_source=chatgpt.com))
+- **Sasahara’s research program** is [a-word] embarrassingly on-point. His research page explicitly asks whether agents can “deliberately control an opponent’s beliefs” and frames the problem as understanding deception from an **“epistemic and control perspective.”** ([hampei.net](https://hampei.net/research_en.php?utm_source=chatgpt.com))
 
 - **D-BOS (2026), “Differentiable Belief-based Opponent Shaping,”** goes one step further computationally: the opponent’s belief state is literally made the optimization target, and the authors differentiate through the opponent’s multi-step Bayesian belief dynamics. That is direct algorithmic **belief-state shaping**, not merely “tell a lie and see whether it works.” ([arXiv](https://arxiv.org/abs/2605.29042?utm_source=chatgpt.com))
 

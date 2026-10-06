@@ -17,7 +17,7 @@ $$
 \text{intervene}
 $$
 is [a-word] exactly the sort of thing a symbolic hypergraph machine could represent directly. A conventional LLM has to implicitly maintain most of that structure in its activations/context; the Machine could literally have nodes and edges corresponding to it.
-But that does not mean it will ace them. Representation is not reasoning. It still needs to discover useful search procedures, opponent models, interventions, counterfactuals, and recursive structure. In fact, your evals could become a rather nasty test of whether the Machine's structural substrate fuckingly buys it anything.
+But that does not mean it will ace them. Representation is not reasoning. It still needs to discover useful search procedures, opponent models, interventions, counterfactuals, and recursive structure. In fact, your evals could become a rather nasty test of whether the Machine's structural substrate [ac-word] buys it anything.
 And the contrast with the mysterious “beyond Astra” thing is potentially much more fun. If you're talking about a future frontier model beyond the Astra generation, I would expect it to be extremely strong on the shallow and medium-depth versions:
 recognizing misdirection;
 modelling simple beliefs;
@@ -34,8 +34,8 @@ Those are very different capabilities.
 My prior is therefore roughly:
 Current Machine: probably gets murdered by the current evals unless its relevant capabilities have advanced much further than I know.
 Atria-Dawn: useful baseline; likely good for discovering where the current generator is and isn't demanding genuine sequential reasoning.
-A future frontier model beyond Astra: likely extremely strong on many surface forms, but exactly the sort of system I'd want to throw the nastier epistemic-process environments at. It might reveal that what looks like “strategic reasoning” on conventional benchmarks is fuckingly a collection of learned heuristics.
-A mature version of your Machine: potentially very good on this particular family, because you're building an explicit substrate in which epistemic structure is a first-class object. Whether it fuckingly gets there is the interesting empirical question.
+A future frontier model beyond Astra: likely extremely strong on many surface forms, but exactly the sort of system I'd want to throw the nastier epistemic-process environments at. It might reveal that what looks like “strategic reasoning” on conventional benchmarks is [ac-word] a collection of learned heuristics.
+A mature version of your Machine: potentially very good on this particular family, because you're building an explicit substrate in which epistemic structure is a first-class object. Whether it [ac-word] gets there is the interesting empirical question.
 And there is a delicious possibility here: you could eventually have an eval where the Machine is unusually good but a frontier LLM is not, not because the Machine is generally smarter, but because the task rewards exactly the sort of explicit structural reasoning the Machine was built to perform.
 That would be a much more interesting result than “my system beats GPT on a benchmark.”
 ---
