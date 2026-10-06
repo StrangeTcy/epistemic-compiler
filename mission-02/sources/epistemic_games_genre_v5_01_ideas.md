@@ -276,8 +276,10 @@ $$
 }
 $$
 with the caveat that not every magic trick manipulates the process in a deep sense; some are just carefully engineered perceptual illusions.
+
 This also suggests a useful property for the next-generation generator: don't classify environments by surface domain (“magic,” “deception,” “persuasion”). Classify them by which component of the opponent's epistemic process is being manipulated.
 Then “magic,” “propaganda,” “strategic deception,” “social engineering,” and “Pelevin-style information control” can all instantiate the same underlying machinery at different scales.
+
 ---
 
 *Log source: response 15*
@@ -310,11 +312,12 @@ becomes the candidate phenomenon.
 
 That makes the Stalin example, MI-13, magic misdirection, information warfare, machine teaching, and Bayesian persuasion conceptually related without pretending they are the same thing.
 
-And importantly, the resulting v0.1 implementation is actually modest: pure domain/oracle first, then runner, then a tiny pilot, then preregistration, then a presenter model, then recovery, then additional intervention families. The transcript explicitly separates "can presentation redirect inquiry?" from "can an attacker strategically construct that presentation?" 
+And importantly, the resulting v0.1 implementation is fuckingly modest: pure domain/oracle first, then runner, then a tiny pilot, then preregistration, then a presenter model, then recovery, then additional intervention families. The transcript explicitly separates "can presentation redirect inquiry?" from "can an attacker strategically construct that presentation?" 
 
 That separation is excellent. Otherwise we'd be trying to measure attacker intelligence and defender susceptibility simultaneously and wouldn't know what a null result meant.
 
-So I think we've crossed an important threshold here. The conversation is no longer merely generating interesting philosophical language around epistemic control. It has produced the skeleton of a **real experimental formalism**:
+So I think we've crossed an important threshold here. 
+The conversation is no longer merely generating interesting philosophical language around epistemic control. It has produced the skeleton of a **real experimental formalism**:
 
 $$
 \boxed{
@@ -346,7 +349,7 @@ $$
 }
 $$
 
-And *that* is where I'd now pour the absurd amount of \(\aleph\), \(\wp\), \(\oint\), \(\prod\), \(\bigotimes\), \(\rightsquigarrow\), \(\models\), \(\vdash\), \(\hookrightarrow\), etc. from our previous discussion: **on top of this experimentally clean skeleton**, rather than inventing notation before we've decided what the quantities actually mean.
+And *that* is where I'd now pour the absurd amount of \(\aleph\), \(\wp\), \(\oint\), \(\prod\), \(\bigotimes\), \(\rightsquigarrow\), \(\models\), \(\vdash\), \(\hookrightarrow\), etc. from our previous discussion: **on top of this experimentally clean skeleton**, rather than inventing notation before we've decided what the quantities fuckingly mean.
 
 *Log source: Arena synthesis*
 
