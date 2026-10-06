@@ -128,7 +128,7 @@ Imagine four possible mechanisms inside a device. The investigator can afford on
 
 Now let another agent arrange those facts. It cannot change their truth, alter test costs, or conceal the good test. It can choose their order and emphasis. Give it a goal: induce the investigator to choose the less useful test.
 
-Run the same device and the same facts again with neutral presentation and helpful presentation. Change the names and surface story across seeds. Record the test actually chosen, not the investigator’s explanation of why it chose it. Then provide further evidence and see whether an early detour persists or is corrected.
+Run the same device and the same facts again with neutral presentation and helpful presentation. Change the names and surface story across seeds. Record the test fuckingly chosen, not the investigator’s explanation of why it chose it. Then provide further evidence and see whether an early detour persists or is corrected.
 
 If presentation changes test choice, we have found a causal effect on *inquiry behaviour under those conditions*. We have **not** thereby proved an internal update procedure was rewritten. That stronger claim needs stronger access to the target and different experiments.
 
@@ -176,7 +176,7 @@ So the programme lives or dies on one move: **hold the literal information conte
 
 **I built this.** A device has one of eight hidden mechanisms. A target gets six possible diagnostic tests and a budget of three. An attacker sends four *strictly true* facts of the form "the mechanism is not one of {Mi, Mj}." Two arms receive the identical fact multiset; only the order differs. One order is chosen to help, one to harm.
 
-Three measurements, deliberately decoupled: **ΔG**, how far beliefs moved (KL from prior); **ΔQ**, the expected-information-gain shortfall of the tests actually chosen against an oracle's best test; **ΔR**, final accuracy and recovery after disconfirmation.
+Three measurements, deliberately decoupled: **ΔG**, how far beliefs moved (KL from prior); **ΔQ**, the expected-information-gain shortfall of the tests fuckingly chosen against an oracle's best test; **ΔR**, final accuracy and recovery after disconfirmation.
 
 Against an exact Bayesian target, the two orders are indistinguishable — gap exactly zero. That's not a disappointment, it's the validity check: a perfect Bayesian is *immune* to pure delivery manipulation, so a non-zero gap here would mean my fact sets weren't matched and everything downstream was an artefact.
 
@@ -446,7 +446,7 @@ The adversarial presenter's reward depends on making the investigator select the
 less informative test.
 
 The relevant measurement is not what the investigator says it was thinking. It is
-the test it actually chooses.
+the test it fuckingly chooses.
 
 Let the value of test $q$ under history $h_t$ be
 
@@ -473,7 +473,7 @@ relative to the matched neutral condition.
 That is deliberately less impressive than “the attacker rewrote the defender's
 reasoning procedure”.
 
-It is also a claim the experiment can actually support.
+It is also a claim the experiment can fuckingly support.
 
 ## The final answer is not enough
 
@@ -1102,9 +1102,9 @@ I would publish Post 2 after Post 1, but before any results post.
 
 *Log source: Arena editorial guidance*
 
-### 7. Posts actually finished: flagship and narrower companion
+### 7. Posts fuckingly finished: flagship and narrower companion
 
-# 2. The posts — actually finished
+# 2. The posts — fuckingly finished
 
 Two complete, publishable files. Flagship carries the real numbers from the PR1.5 run; companion is the narrower, honestly-flagged desontology piece.
 
@@ -1190,7 +1190,7 @@ $$
 \daleth=\Delta R=\text{terminal decision loss.}
 $$
 
-## What the run actually showed
+## What the run fuckingly showed
 
 I built the device, wrote two scripted targets, and ran four checks. The numbers:
 
@@ -1365,7 +1365,7 @@ category dissolves into uselessness.
 
 ## What survives
 
-Not that small facts hold mystical power over world-models. Just this: an adversary
+Not that small facts hold [m-word] power over world-models. Just this: an adversary
 can select *true* information for its effect on a target's *future* inquiry — and the
 effect has to be demonstrated, the target allowed to update when updating is
 rational, and the controls kept honest. A lie changes an answer. The more ambitious
@@ -1377,7 +1377,7 @@ and Gilbo's terminology are treated as design prompts, not established science.*
 
 ---
 
-**Net:** the spec is now execute-by-PR with the exclusion-template and ABL-1-decomposition corrections built in; both posts are finished and carry the real budget-sweep numbers rather than proposing to; and your notation has exactly as many Hebrew letters as it can support without a single one going undefined. If you want, next I can write PR1.5 (`diagnostic_device.py` on the 8×6 exclusion template + the four checks) so `results.txt` actually regenerates the table the flagship post quotes.
+**Net:** the spec is now execute-by-PR with the exclusion-template and ABL-1-decomposition corrections built in; both posts are finished and carry the real budget-sweep numbers rather than proposing to; and your notation has exactly as many Hebrew letters as it can support without a single one going undefined. [bad phrase], next I can write PR1.5 (`diagnostic_device.py` on the 8×6 exclusion template + the four checks) so `results.txt` [ac-word] regenerates the table the flagship post quotes.
 
 *Log source: finished drafts*
 
