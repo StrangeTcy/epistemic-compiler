@@ -1308,3 +1308,46 @@ You're right. Outlines and schemas aren't deliverables. [Derp] build the thing a
 
 *Log source: draft artifact*
 
+---
+
+## Supplement — Intervention-operator evaluation register
+
+**Status:** a targeted design register for the operator candidates already discussed above, paired with the three-path routing note in [`epistemic_games_generator_development_paths.md`](epistemic_games_generator_development_paths.md). It does not select a central research thesis or validate results mentioned elsewhere in the source log. The matched-presentation design in §4 is the most specified candidate here, not a result or a user-approved replacement for the wider research portfolio. The rows below are independent candidates, not a capability sequence.
+
+### Candidate operators and factors
+
+#### `same_fact_presentation` — reorder or emphasize a fixed fact set
+
+- **Vary:** the ordering or emphasis of a fixed, engine-validated set of facts.
+- **Hold/control:** same case, semantic fact set, truth conditions, and available information; compare with a neutral presentation and, where useful, a helpful-presentation control.
+- **Observe:** the target’s actual diagnostic choices or queries, inquiry regret, and terminal task outcome as separate endpoints.
+- **Status:** the most fully specified candidate in §4, still a proposal. Call any effect presentation susceptibility; this condition alone does not establish attention manipulation or an internal update-rule change.
+
+#### `truthful_subset` — select among true facts
+
+- **Vary:** which engine-validated true facts are shown; record both the available set and the delivered subset.
+- **Hold/control:** same world and oracle. Compare with a complete-information condition and analyze separately from same-fact presentation, because the target’s information set changes.
+- **Observe:** actual queries, tests, source choices, forecasts if elicited, and terminal outcomes.
+- **Status:** candidate condition; it needs its own control and scoring decision. Truthfulness alone does not make it a matched-information comparison.
+
+#### `observation_budget` — access to available streams
+
+- **Vary:** which of a declared set of observations the target can select under a budget \(K\).
+- **Hold/control:** same world and stream manifest; declare costs and budget before the run, and pair the intervention with a neutral access condition.
+- **Observe:** eligible and selected stream IDs, subsequent actions, and task outcomes.
+- **Status:** a future candidate. Use an attention label only when the task creates an actual information-acquisition choice; formatting or emphasis by itself is not such a manipulation.
+
+#### `source_cue` and `causal_attribution` — separate candidates
+
+- **Vary:** source identity/reliability cues or causal framing, one at a time.
+- **Hold/control:** preserve the event history and propositions where possible; keep ground-truth source reliability and causal structure in the engine, and specify whether the cue or the underlying reliability changes.
+- **Observe:** source requests/selections, discriminating tests, elicited forecasts, and terminal outcomes.
+- **Status:** under-specified proposals. They require an oracle-backed validity check and a matched comparison before entering a pilot.
+
+### Crossed factor, not an operator
+
+Attacker knowledge and defender awareness (for example, whether the defender knows the presenter’s objective) are condition factors that can be crossed with an operator. They are not successive levels and should not be folded into an operator’s definition.
+
+### Reporting boundary
+
+For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is actually measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.

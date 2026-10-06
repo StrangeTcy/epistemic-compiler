@@ -854,3 +854,35 @@ A changed next question is a **behavioural** effect. v0.1 claims exactly that an
 
 *Log source: actionable spec*
 
+---
+
+## Supplement — Implementation contracts for candidate operators
+
+**Status:** proposed generator-facing contracts, paired with the three-path routing note in [`epistemic_games_generator_development_paths.md`](epistemic_games_generator_development_paths.md). This supplement does not change the current v0.1 scope, freeze a general API, or authorize code implementation. The existing v0.1 proposal remains the narrow fixed-fact presentation condition; other operators require separate design and validation.
+
+### Shared record fields to consider
+
+For a generated condition, keep the following concepts distinct even if a later schema chooses different names:
+
+- operator type and parameters;
+- case/domain identifier and paired-control identifier;
+- canonical input manifest and its hash;
+- allowed transformation and truth/information constraints;
+- engine validation result;
+- emitted fact/stream IDs and the target’s observed actions;
+- separately computed outcomes.
+
+Keep `domain_id` separate from `operator_id`. Treat attacker knowledge and defender awareness as condition metadata, not as operator types. Use engine-validated IDs and structured facts rather than trusting free text as the source of truth.
+
+### Type-specific validation candidates
+
+- **`same_fact_presentation`:** emit an ordering and emphasis over canonical fact IDs. Validate that the output contains no new or missing fact and preserves the canonical fact-set hash. This is the operator closest to the existing v0.1 proposal.
+- **`truthful_subset`:** record the full eligible fact set and the delivered subset separately. Validate each delivered fact against the engine’s ground truth; mark explicitly that the available information changed. Do not reuse the same-facts validation as if nothing else changed.
+- **`observation_budget`:** declare the available stream IDs, budget \(K\), costs, and selected IDs. Validate the selected set against the budget and retain a log of eligible, selected, and returned observations. This is not an attention test unless the target really chooses what to acquire.
+- **`source_cue` / `causal_attribution`:** do not enable until the engine can validate the true source reliability or causal structure independently of the displayed cue and can generate a matched control.
+
+A model presenter, if added later, should choose among validated IDs and parameters; it should not supply ground truth or bypass operator validation. A condition is not implementation-ready until its allowed mutation, invariant, validator, paired control, observable endpoint, and null expectation are specified.
+
+### Output boundary
+
+Store actual choices, queries, selected streams, and task outcomes in the event record. Keep proposed measures such as \(\Delta_Q\), \(\Delta_B\), \(\Delta_R\), and \(\rho\) separate and define each before implementation. Do not add a hidden graph or policy-distance field as a default score; behavior does not establish a change to an internal update rule.
