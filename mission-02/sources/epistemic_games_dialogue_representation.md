@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–27, using the speaker-by-speaker numbering corrected by the user; turns 25–26 are omitted as irrelevant.
+**Coverage in this record:** dialogue turns 14–28, using the speaker-by-speaker numbering corrected by the user; turns 25–26 are omitted as irrelevant.
 
-**Record status:** Turn 27 is the latest reviewed source turn; the assistant's response to the Arena Battle / generator question is next.
+**Record status:** Turn 28 is the latest reviewed source turn; the user's next message raises illusions and magic misdirection.
 
 ## Reading and attribution rules
 
@@ -104,7 +104,15 @@ The user asks whether this part of the conversation could be given to Arena Batt
 
 **Representation update:** This is an exploratory feasibility question about using the dialogue as input to a development workflow. It is not, by itself, authorization to run Arena Battle, solicit more model opinions, or implement the next generator. Those remain subject to the user's separate gates and constraints.
 
-## Current state after turn 27
+### Dialogue turn 28 — assistant proposes an Arena-to-generator workflow
+
+The assistant answers yes to the user's feasibility question and recommends using the conversation as a shared seed for model-vs-model proposal and criticism, then candidate formalizations, environment families, minimal distinguishing environments, implementation, validation, and a generator suite. It lists candidate mechanisms and asks what observable behavior would distinguish ordinary deception from the proposed process-control framing. It suggests environments involving changed search behavior, truthful information order, hypothesis manipulation, opponent models, and detection/recovery.
+
+It also proposes an E0–E8 progression from ordinary decision problems through hidden information, deception, higher-order belief, belief shaping, attention, hypothesis-space and opponent-model manipulation, to recursive process manipulation, plus a research question about monotonic transfer versus qualitative discontinuities.
+
+**Attribution and status:** These are assistant-generated workflow and taxonomy proposals. The user's turn asks whether this could be done; it does not authorize running Arena Battle, soliciting more model opinions, or implementing anything. The E0–E8 ladder is not a user-approved hierarchy and must not override the 15-question portfolio or its dependency-based serial queue. The suggested focus on search-policy change is one candidate discriminator, not the settled research object.
+
+## Current state after turn 28
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
 - The user wanted substantive discussion of Pelevin/Gilbo, not graph editing alone; later, the user explicitly requested adding related-work candidates to the existing repository graph.
@@ -113,5 +121,6 @@ The user asks whether this part of the conversation could be given to Arena Batt
 - The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
 - The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
 - The user requested adding prior-art candidates to the existing graph. This is graph maintenance, not a conceptual update. The assistant reported doing so; actual persistence remains unverified.
-- The user asked whether the dialogue could be used as input to Arena Battle models and a next-generation `rl_eval_generator`; this is a question, not permission to execute.
-- Next source turn: the assistant's response to the feasibility question.
+- The user asked whether the dialogue could be used as input to Arena Battle models and a next-generation `rl_eval_generator`; the assistant recommended a workflow but the question did not authorize execution.
+- The assistant's E0–E8 progression remains provisional and must not collapse the user's portfolio into one hierarchy.
+- Next source turn: the user's 17:56:17 question about illusions and magic misdirection.
