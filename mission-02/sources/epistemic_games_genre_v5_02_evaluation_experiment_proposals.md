@@ -46,6 +46,7 @@ this conversation / research corpus
 The important bit is not “have the models generate code.” They will happily generate 40 variations of a vaguely defined deception game.
 The useful task is to force them to answer:
 > What observable behavior would distinguish ordinary strategic deception from actual control of another agent's epistemic process?
+
 That gives you an experimental target.
 For example, the Arena models could independently propose environments where:
 the target's final belief can remain unchanged while its search policy is altered;
