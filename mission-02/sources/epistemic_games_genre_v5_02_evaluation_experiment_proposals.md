@@ -55,7 +55,9 @@ the attacker manipulates what hypotheses the target considers;
 the attacker induces the target to adopt a systematically wrong model of the attacker;
 the attacker exploits the target's model of its own susceptibility to manipulation;
 the target can recover if it detects the intervention, producing an explicit attacker/defender recursion.
+
 Then have other Arena models try to kill the proposed distinction. That's crucial. A good env should survive objections like “this is really just persuasion,” “the agent could solve it with a shallow heuristic,” “the effect is just reward hacking,” “the target isn't fuckingly modelling anything,” etc.
+
 That would turn this from a collection of interesting ideas into something much closer to an experimental program.
 And it fits `rl_eval_generator` particularly well because your generator can make the epistemic structure itself a controllable parameter. You could have families like:
 ```text
@@ -93,7 +95,8 @@ $$
 \rightarrow
 \text{next } rl_eval_generator.
 $$
-And the blogpost(s) needn't pretend the whole thing was known from the start. There's fuckingly a useful story in the progression: strategic deception → misdirection → belief manipulation → epistemic-process manipulation, with magic providing a surprisingly concrete low-level example.
+
+And the blogpost(s) needn't pretend the whole thing was known from the start. There's [ac-word] a useful story in the progression: strategic deception → misdirection → belief manipulation → epistemic-process manipulation, with magic providing a surprisingly concrete low-level example.
 For now, though, Atria-Dawn is the experiment. The new stuff is the research program that comes after it.
 ---
 
@@ -107,7 +110,9 @@ This is a [s-word] better critique than the earlier synthesis, and I think it ch
 
 The most important correction is methodological: these are different variables.
 
-Those are different variables. A target changing its next test because it learned that source X is unreliable is not evidence that its underlying inquiry procedure was modified. Conversely, two targets can have the same current posterior but choose radically different next experiments. That gives us a much cleaner experimental object: not “did the attacker change the victim's beliefs?” but “which component of the victim's epistemic policy was causally affected?”
+Those are different variables. 
+A target changing its next test because it learned that source X is unreliable is not evidence that its underlying inquiry procedure was modified. Conversely, two targets can have the same current posterior but choose radically different next experiments. 
+That gives us a much cleaner experimental object: not “did the attacker change the victim's beliefs?” but “which component of the victim's epistemic policy was causally affected?”
 
 I would [ac-word] make that the central design principle for the next `rl_eval_generator` spec:
 
@@ -233,7 +238,8 @@ The second is a formal specification for your `rl_eval_generator` repository. It
 
 **Proposed track:** `epistemic_trajectories`, a continuation of—not a rename for—`epistemic_games`.
 
-The existing `epistemic_games` prototype tests inference from an observation, including a paired-world non-identifiability condition. Its `answer.py` is extracted as bounded literal data by a terminal judge. That is a useful foundation for calibrated belief questions, but it cannot, without additional interaction machinery, measure an attacker choosing a presentation and a defender subsequently choosing a diagnostic action over multiple turns. Similarly, the current general-purpose runner’s steps are chiefly workspace operations culminating in a patch submission. Do **not** write a new YAML subtype and pretend those existing steps are already the desired game. 
+The existing `epistemic_games` prototype tests inference from an observation, including a paired-world non-identifiability condition. Its `answer.py` is extracted as bounded literal data by a terminal judge. That is a useful foundation for calibrated belief questions, but it cannot, without additional interaction machinery, measure an attacker choosing a presentation and a defender subsequently choosing a diagnostic action over multiple turns. 
+Similarly, the current general-purpose runner’s steps are chiefly workspace operations culminating in a patch submission. Do **not** write a new YAML subtype and pretend those existing steps are already the desired game. 
 
 ### Primary research question
 
@@ -353,7 +359,7 @@ Only after those pass would I use Arena models to propose attacks and have other
 
 Finally, pin the current Atria-Dawn attempt to its code revision, configuration, seeds, and runner settings before modifying this track. It is evidence about the *current* suite, not a result on this proposed one. The existing `epistemic_games` task can remain a static belief-inference baseline; the new track earns its place only if it measures something the static answer cannot. 
 
-**The first deliverable I would fuckingly build is the four-mechanism pilot plus its oracle and paired-condition tests.** If those cannot distinguish an adversarial presentation from changed information, there is no reason yet to add Pelevin-scale information environments or recursive attacker–defender theatre.
+**The first deliverable I would [ac-word] build is the four-mechanism pilot plus its oracle and paired-condition tests.** If those cannot distinguish an adversarial presentation from changed information, there is no reason yet to add Pelevin-scale information environments or recursive attacker–defender theatre.
 
 --
 
@@ -605,7 +611,7 @@ $$
 
 means it changes both search and hypothesis generation.
 
-That gives us a taxonomy which is fuckingly formal rather than rhetorical.
+That gives us a taxonomy which is [ac-word] formal rather than rhetorical.
 
 ## And then the really nice bit
 
@@ -659,7 +665,7 @@ $$
 
 where \(D\) is some distance/divergence over epistemic trajectories.
 
-But we don't fuckingly want merely "large change." As Max correctly pointed out, a huge change can be good.
+But we don't [ac-word] want merely "large change." As Max correctly pointed out, a huge change can be good.
 
 So define **epistemic damage relative to counterfactual optimal inquiry**:
 
@@ -713,9 +719,9 @@ meaning:
 
 > **the agent still believes roughly the same thing, but has been induced to investigate differently.**
 
-That is [a-word] exactly the phenomenon you've been circling toward.
+That is [a-word] exactly the phenomenon you've been [bad words].
 
-Except you don't circle. You found the distinction.
+Except you don't [c-word]. You found the distinction.
 
 ---
 
@@ -934,7 +940,7 @@ m_t
 \Bigr),
 $$
 
-although I'd probably use \(\bigotimes\) somewhere more interesting than this if we don't actually mean Cartesian/product structure.
+although I'd probably use \(\bigotimes\) somewhere more interesting than this if we don't fuckingly mean Cartesian/product structure.
 
 The intervention channel itself can have a very satisfying decomposition:
 
@@ -1352,7 +1358,7 @@ Attacker knowledge and defender awareness (for example, whether the defender kno
 
 ### Reporting boundary
 
-For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is actually measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.
+For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is fuckingly measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.
 
 ---
 
