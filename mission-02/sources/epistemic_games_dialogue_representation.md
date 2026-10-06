@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–20, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–21, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 20 is the latest reviewed source turn; the user's response to its literature/novelty assessment is next.
+**Record status:** Turn 21 is the latest reviewed source turn; the assistant's response to the user's Gilbo definition is next.
 
 ## Reading and attribution rules
 
@@ -68,10 +68,17 @@ The assistant's qualified novelty claim is that it did not find a mature benchma
 
 **Attribution and status:** the user's direct question asks whether the assistant's previous framing has prior art or is unique. The more specific formulation, taxonomy, and ladder are assistant-generated; they are not established as the user's chosen thesis. The assistant's literature-search conclusion is self-reported and not independently verified here. Treat the named papers and their descriptions as leads requiring source checks, not as verified literature findings. The proposed linear ladder must not replace the user's 15-question portfolio or be treated as its settled hierarchy.
 
-## Current state after turn 20
+### Dialogue turn 21 — user supplies Gilbo-attributed definition (17:43:22)
+
+Responding to the assistant's caution that Gilbo's terminology needs reconstruction, the user supplies this attributed description: a **дезонтологическая атака** is a message to an opponent—usually brief information—that destroys the opponent's worldview. The user gives examples of telling Americans about a coming state of **Ацтлан**, claiming Germans created their civilization, and telling Stalinists that “Stalin was short and pockmarked.”
+
+**Representation update:** The user supplies a more concrete, Gilbo-attributed description of the target as the opponent's broader **картина мира** (worldview), not merely one isolated belief. This turn does not establish that the examples are true, that truthfulness is required, how “destruction” is measured, or that the claimed effect has been empirically demonstrated. The definition is user-attributed in this dialogue, not independently verified against a primary Gilbo source.
+
+## Current state after turn 21
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
 - The user wanted substantive discussion, not graph editing alone.
 - The assistant proposed a broad conceptual bridge among literary fiction, influence operations, reflexive control, and epistemic-game research. This remains a candidate synthesis.
 - The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
-- Next source turn: the user's message at 17:43:22, which supplies Gilbo's description of a “дезонтологическая атака.”
+- The user has now supplied a definition attributed to Gilbo: a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
+- Next source turn: the assistant's response to the user's definition.
