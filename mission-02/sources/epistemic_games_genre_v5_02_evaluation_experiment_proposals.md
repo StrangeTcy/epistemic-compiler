@@ -1353,3 +1353,16 @@ Attacker knowledge and defender awareness (for example, whether the defender kno
 ### Reporting boundary
 
 For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is actually measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.
+
+---
+
+## Supplement — Disposition of the Arena debate proposal
+
+**Status:** assistant-generated method proposal (source log: response 14), not a user-approved method, result, or generator feature. The passage does not authorize an Arena/Battle review or model call.
+
+- **Salvage as a design question:** “What observable behavior would distinguish ordinary strategic deception from the specified intervention?” Keep this as an open question, and define the behavior, comparison, and alternative explanations before treating it as an evaluation target.
+- **Keep, as a possible later method:** adversarial review can challenge a bounded candidate after it has been selected and specified. The useful task would be to try to falsify that candidate—for example, test whether it reduces to ordinary deception, extra information, a shallow heuristic, or reward effects—not to produce another open-ended list of environments.
+- **Defer:** the model-vs-model pipeline, the sample-family list, and the empty schema block. They are brainstorming and workflow proposals, not a validated generator plan, experimental result, or implementation specification.
+- **Do not adopt as a capability scale:** the sequence from deception through belief manipulation to epistemic-process manipulation, or the proposed monotonic-transfer question. They are assistant-authored ordering claims, not a user-approved ladder and not a substitute for the 15-question portfolio. Future transfer tests need not assume one common scale.
+- **Keep the evidence boundary:** for black-box targets, report changes in observed queries, tests, source choices, forecasts, and outcomes. Do not describe an internal search policy or update rule as changed unless it is independently instrumented.
+- **Next action:** park this method proposal. Do not initiate Arena/Battle or other model review unless the user explicitly authorizes it; until then, no model calls.
