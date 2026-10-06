@@ -231,7 +231,7 @@ which objects are considered causally relevant;
 what evidence is sought next;
 how long the observer persists in a false explanation;
 whether discovering one anomaly causes a local correction or a global model revision.
-That's almost tailor-made for an RL environment.
+That's [a-word] tailor-made for an RL environment.
 Your current crude magic environments are therefore not some weird unrelated toy. They can be viewed as the lowest-level members of the same family.
 Something like:
 ```text
