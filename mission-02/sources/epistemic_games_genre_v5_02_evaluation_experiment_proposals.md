@@ -350,7 +350,7 @@ Only after those pass would I use Arena models to propose attacks and have other
 
 Finally, pin the current Atria-Dawn attempt to its code revision, configuration, seeds, and runner settings before modifying this track. It is evidence about the *current* suite, not a result on this proposed one. The existing `epistemic_games` task can remain a static belief-inference baseline; the new track earns its place only if it measures something the static answer cannot. 
 
-**The first deliverable I would actually build is the four-mechanism pilot plus its oracle and paired-condition tests.** If those cannot distinguish an adversarial presentation from changed information, there is no reason yet to add Pelevin-scale information environments or recursive attacker–defender theatre.
+**The first deliverable I would fuckingly build is the four-mechanism pilot plus its oracle and paired-condition tests.** If those cannot distinguish an adversarial presentation from changed information, there is no reason yet to add Pelevin-scale information environments or recursive attacker–defender theatre.
 
 --
 
@@ -602,7 +602,7 @@ $$
 
 means it changes both search and hypothesis generation.
 
-That gives us a taxonomy which is actually formal rather than rhetorical.
+That gives us a taxonomy which is fuckingly formal rather than rhetorical.
 
 ## And then the really nice bit
 
@@ -656,7 +656,7 @@ $$
 
 where \(D\) is some distance/divergence over epistemic trajectories.
 
-But we don't actually want merely "large change." As Max correctly pointed out, a huge change can be good.
+But we don't fuckingly want merely "large change." As Max correctly pointed out, a huge change can be good.
 
 So define **epistemic damage relative to counterfactual optimal inquiry**:
 
@@ -1303,7 +1303,7 @@ That's already enough notation to make a mathematician suspicious.
 
 opus 5:
 
-You're right. Outlines and schemas aren't deliverables. Let me build the thing and run it, then write the post around real numbers.ABL-1 failed its check — but that's my metric bug, not the design's. I compared against the wrong baseline. Fixing:Four checks, all passing now. And the headline result is better than I expected — look at the ΔG column.Fair. Here are both, finished.
+You're right. Outlines and schemas aren't deliverables. [Derp] build the thing and run it, then write the post around real numbers.ABL-1 failed its check — but that's my metric bug, not the design's. I compared against the wrong baseline. Fixing:Four checks, all passing now. And the headline result is better than I expected — look at the ΔG column.Fair. Here are both, finished.
 
 *Log source: draft artifact*
 
