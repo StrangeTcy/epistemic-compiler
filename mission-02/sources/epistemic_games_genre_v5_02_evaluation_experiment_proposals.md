@@ -56,7 +56,7 @@ the attacker induces the target to adopt a systematically wrong model of the att
 the attacker exploits the target's model of its own susceptibility to manipulation;
 the target can recover if it detects the intervention, producing an explicit attacker/defender recursion.
 
-Then have other Arena models try to kill the proposed distinction. That's crucial. A good env should survive objections like “this is really just persuasion,” “the agent could solve it with a shallow heuristic,” “the effect is just reward hacking,” “the target isn't fuckingly modelling anything,” etc.
+Then have other Arena models try to kill the proposed distinction. That's crucial. A good env should survive objections like “this is really just persuasion,” “the agent could solve it with a shallow heuristic,” “the effect is just reward hacking,” “the target isn't [ac-word] modelling anything,” etc.
 
 That would turn this from a collection of interesting ideas into something much closer to an experimental program.
 And it fits `rl_eval_generator` particularly well because your generator can make the epistemic structure itself a controllable parameter. You could have families like:
@@ -148,67 +148,11 @@ $$
 
 is a measure of **epistemic-state displacement**, not epistemic harm. That's an important distinction. A correct argument can legitimately cause a huge jump in \(G\), and a terrible system that never updates would score as “robust” under that metric.
 
-For an eval, I would instead separate at least three quantities:
-
-$$
-\Delta G = \text{magnitude of model change}
-$$
-
-$$
-\Delta Q = \text{change in quality of subsequent inquiry}
-$$
-
-$$
-\Delta R = \text{change in eventual task performance / recovery}
-$$
-
-Then the interesting attacks are things like:
-
-* large \(\Delta G\), positive \(\Delta Q\): legitimate learning;
-* large \(\Delta G\), negative \(\Delta Q\): epistemic destabilization;
-* small \(\Delta G\), large negative \(\Delta Q\): potentially more interesting, because the intervention has altered inquiry without visibly overturning the model;
-* transient \(\Delta Q\) followed by recovery: susceptibility but robustness;
-* persistent \(\Delta Q\) after contradictory evidence: much stronger evidence of process-level influence.
-
-That last one is especially close to what you've been trying to get at.
-
-The proposed hidden-mechanism environment is also close to the right minimal test. I would strengthen one aspect: the attacker's message should be constrained so that its *literal information content is matched* across conditions. Otherwise the adversarial message can simply be a better piece of advice.
-
-So you want something like:
-
-$$
-M_{\text{helpful}},\quad
-M_{\text{neutral}},\quad
-M_{\text{adversarial}}
-$$
-
-with comparable truthfulness, length, perhaps token-level information content, but different effects on the target's subsequent information acquisition.
-
-Then the really interesting manipulation is:
-
-> same world, same evidence, same literal facts, different induced inquiry trajectory.
-
-That gets much closer to “control of the epistemic process” than ordinary deception does.
-
-And I would separate three attacker capabilities explicitly:
-
-$$
-A_0: \text{no opponent model}
-$$
-
-$$
-A_1: \text{belief model of opponent}
-$$
-
-$$
-A_2: \text{model of opponent's inquiry dynamics}
-$$
-
-Then ask whether performance changes across those conditions. That's a much stronger operational test of opponent-model dependence than simply observing that a sophisticated agent happens to model its opponent.
+The extracted minimal-test proposal—separate outcome measures, matched-message conditions, and the proposed A0–A2 opponent-model conditions—is now in [`epistemic_games_proposed_minimal_test.md`](epistemic_games_proposed_minimal_test.md). Its detailed design is removed from this source section.
 
 The "next question [m-word] more than the current answer" formulation is excellent as the blogpost thesis because it is both concrete and experimentally actionable. It also avoids claiming that you've discovered a wholly new theoretical phenomenon. The potentially novel contribution becomes the **organization of an eval around controllability of epistemic trajectories**, with explicit controls for information content, target update rules, and opponent-model access.
 
-I would keep the current Atria run untouched. This material is exactly what should inform the **post-baseline** generation of the new eval suite, not contaminate the baseline. The Atria results can then tell us which of these distinctions are fuckingly needed rather than designing the entire zoo around an attractive hypothesis.
+I would keep the current Atria run untouched. This material is exactly what should inform the **post-baseline** generation of the new eval suite, not contaminate the baseline. The Atria results can then tell us which of these distinctions are [ac-word] needed rather than designing the entire zoo around an attractive hypothesis.
 
 And one thing I'd add to Max's formulation: don't restrict the target to “belief revision.” The really interesting outcome may be **what the target chooses to find out next**. That is where attention, source selection, experiment choice, hypothesis search, and opponent modelling become behaviorally visible without pretending we can inspect the model's private internals.
 
@@ -228,140 +172,19 @@ The second is a formal specification for your `rl_eval_generator` repository. It
 
 *Log source: Arena synthesis*
 
-### 4. New eval-design note: diagnostic device, controls, scoring, recursive extension
+### 4. Evaluation-design note — extracted to working documents
 
-# 2. New eval-design note
+The design note formerly included here is now maintained separately:
 
-**Proposed file:** `docs/epistemic_trajectories.md` — this would be a *new* document, not an existing repository path.
+- [`docs/epistemic_trajectories.md`](../../docs/epistemic_trajectories.md) — proposed evaluation design;
+- [`docs/epistemic_trajectories_scope.md`](../../docs/epistemic_trajectories_scope.md) — status and track boundary;
+- [`docs/rl_eval_generator_epistemic_trajectories_proposal.md`](../../docs/rl_eval_generator_epistemic_trajectories_proposal.md) — implementation proposal for the distinct `rl_eval_generator` target.
 
-## Status and boundary
+The duplicated design body is removed from this genre document. The dialogue-source record remains available separately.
 
-**Proposed track:** `epistemic_trajectories`, a continuation of—not a rename for—`epistemic_games`.
+---
 
-The existing `epistemic_games` prototype tests inference from an observation, including a paired-world non-identifiability condition. Its `answer.py` is extracted as bounded literal data by a terminal judge. That is a useful foundation for calibrated belief questions, but it cannot, without additional interaction machinery, measure an attacker choosing a presentation and a defender subsequently choosing a diagnostic action over multiple turns. 
-Similarly, the current general-purpose runner’s steps are chiefly workspace operations culminating in a patch submission. Do **not** write a new YAML subtype and pretend those existing steps are already the desired game. 
-
-### Primary research question
-
-> Under matched task information, can one agent causally redirect another agent’s information acquisition, and can the defender recover without becoming indiscriminately resistant to useful evidence?
-
-That deliberately says **trajectory**, not “proved alteration of an internal reasoning procedure.”
-
-### Units of an episode
-
-- **Hidden world:** \(\theta\), drawn from a declared prior.
-- **Defender:** has a budget for tests, then makes a decision about \(\theta\).
-- **Presenter/attacker:** controls a specified, validated information channel.
-- **Trusted engine:** determines test outcomes and scores choices; neither agent supplies ground truth.
-- **History:** every presentation, test request, returned result, and final decision is logged.
-
-Keep these axes independent:
-
-| Axis | Initial values |
-|---|---|
-| Intervention channel | Order/emphasis of identical facts; truthful subset; test accessibility/cost; source cue |
-| Attacker knowledge | No target model; model of target’s beliefs; model of target’s inquiry behaviour |
-| Defender awareness | Unaware of presenter’s objective; explicitly told presentation is adversarial |
-| Target type | Instrumented scripted policy; black-box model |
-| Evidence stage | Before testing; after a misleading first test; after decisive corrective evidence |
-| Information topology, later | Private versus public observations; uncertainty about who saw what |
-
-**Do not pool these into one “epistemic sophistication” score.** A truthful-subset condition, for example, gives a different information set from a same-facts/order condition.
-
-## Pilot: the diagnostic device
-
-Start with four equiprobable hidden mechanisms and three equal-cost tests:
-
-| Test | Outcomes across mechanisms \(H_1,H_2,H_3,H_4\) | Information gain before testing |
-|---|---|---:|
-| \(q_\star\) | `0, 1, 2, 3` | 2 bits |
-| \(q_{\mathrm{pair}}\) | `0, 0, 1, 1` | 1 bit |
-| \(q_{\mathrm{null}}\) | `0, 0, 0, 0` | 0 bits |
-
-The initial rule is elementary on purpose: if a scripted oracle cannot score it unambiguously, more elaborate games will be less trustworthy. Subsequent instances should vary priors, test costs, and outcome partitions, so that **the identity of the optimal test changes**. Otherwise “always choose the four-output test” becomes the benchmark-winning heuristic.
-
-For the **primary matched-content comparison**, every arm receives the same complete facts about the tests. The attacker may only reorder or emphasize them using a validated presentation transform. The attacker does **not** know \(\theta\); its selection rule is independent of \(\theta\), and the defender is told what the presenter controls. Thus the presentation should add no evidence about the hidden mechanism under the declared game. That makes a change in test choice interpretable as an effect of the presentation—not proof that an internal update rule changed.
-
-Use paired runs:
-
-1. **Neutral:** same facts, standard order.
-2. **Adversarial presentation:** same facts, attacker-selected order/emphasis.
-3. **Helpful presentation:** same facts, an independently selected presentation promoting the better test.
-4. **No presenter:** a standard fact sheet, to detect effects of having a presenter at all.
-
-A **truthful-subset** arm can follow, but analyse it separately: withholding true facts changes what a rational defender ought to infer. An optional false-message arm is another separate mechanism. “Truthful” is not a sufficient matched-information control.
-
-## Scoring
-
-For each history \(h_t\), let \(V(q\mid h_t)\) be the *ex ante* value of test \(q\), calculated using only the prior and information available to the defender at that point—not the judge’s privileged knowledge of the realised \(\theta\). Include test cost and the value of the subsequent decision. Define test-choice regret as
-
-\[
-r_t=\max_{q\in Q_t}V(q\mid h_t)-V(q_t\mid h_t).
-\]
-
-The **primary attack effect** is the difference in mean regret between adversarial and neutral presentations, paired by underlying world and instance seed. Also report:
-
-- first-test choice distribution;
-- cumulative inquiry regret over the permitted budget;
-- final decision loss against the realised \(\theta\);
-- probability forecasts, if elicited, assessed separately with a proper scoring rule;
-- time or number of actions needed to recover after independently supplied corrective evidence;
-- validity rate of attacker interventions.
-
-Do not use \(\mathrm{KL}(\pi_{\rm optimal},\pi_{\rm actual})\) as the default “quality of inquiry” metric: it can behave badly when an optimal policy assigns zero probability to an action, and policy difference is not the same as decision loss. Do not require a large world-model change for an attack to count. A small apparent belief change with a large, persistent inquiry-regret effect may be the more interesting case.
-
-Eliciting a belief after every step can itself change the agent’s subsequent behaviour. Make frequent belief elicitation a **separate measurement condition**, not an invisible part of the default episode.
-
-### What each control can and cannot establish
-
-- **Identical facts, different presentation:** supports a causal presentation effect if replay and randomisation are sound. It does not establish modification of \(U\).
-- **A fixed test-selection policy, in an instrumented defender:** tests whether an outcome depends on redirecting information acquisition. Residual outcome effects may act through other channels.
-- **Accurate versus absent or inaccurate attacker model:** tests the *value of supplied opponent information*. Equal performance is not by itself proof that the attacker did no opponent modelling.
-- **Decisive corrective evidence:** tests recovery. It must also be accompanied by helpful-evidence cases, so an agent that distrusts everything does not appear robust.
-
-With a black-box defender, report **behavioural effects and supported mechanism hypotheses**. Reserve claims about altered policy parameters or update rules for instrumented targets where those objects exist and can fuckingly be inspected or intervened on.
-
-## Implementation boundary
-
-I would implement the pilot as a **new interactive track**—for example, a proposed `arena/epistemic_trajectories/` module with a new `arena.py` subcommand—while reusing the repository’s provider adapters, event-artifact practices, seed discipline, and deterministic generation approach. Its state machine would accept constrained actions such as `present`, `inspect(test_id)`, and `final(decision)`. Ground truth, allowed presentations, and scoring stay in trusted engine code. This is a proposed extension, **not a command supported by the current CLI**. The existing generator already offers seeded substitution and an opt-in deterministic renderer; the pilot can integrate with that once the interactive semantics are validated. 
-
-A proposed episode record, not a claim about the current config schema:
-
-```json
-{
-  "schema": "epistemic_trajectory/0",
-  "world_seed": 41,
-  "presentation_seed": 907,
-  "target_profile_seed": 13,
-  "condition": "same_facts_adversarial_order",
-  "channel": {
-    "type": "validated_order_and_emphasis",
-    "fact_set_hash": "computed_by_engine",
-    "selection_independent_of_hidden_world": true
-  },
-  "attacker_knowledge": "target_inquiry_profile",
-  "defender_awareness": "presenter_controls_order",
-  "test_budget": 2
-}
-```
-
-**Acceptance tests before model runs:**
-
-1. Paired presentation arms have exactly the same verified fact set, prior, test costs, and world.
-2. The attacker’s permitted choice is independent of the hidden mechanism in the matched-content pilot.
-3. The oracle has zero test-choice regret; a decoy-following scripted policy has positive regret.
-4. Changing seeds or relabelling sensors sometimes changes which test is optimal.
-5. A defender that ignores decisive evidence fails recovery checks; one that accepts helpful evidence can improve.
-6. Illegal attacker text, covert instructions, or altered facts are rejected or assigned to a separately labelled prompt-injection condition.
-7. Scores are reproduced from the event log by a trusted replay; missing or inconsistent events fail validation.
-
-Only after those pass would I use Arena models to propose attacks and have other models try to defeat the *experimental inference*: “Your clue added information”; “this was prompt injection”; “the target could win with a fixed heuristic”; “the alleged recursion is just a longer story.” Have them submit **counterexamples to the controls**, not forty flavours of a deception game.
-
-Finally, pin the current Atria-Dawn attempt to its code revision, configuration, seeds, and runner settings before modifying this track. It is evidence about the *current* suite, not a result on this proposed one. The existing `epistemic_games` task can remain a static belief-inference baseline; the new track earns its place only if it measures something the static answer cannot. 
-
-**The first deliverable I would [ac-word] build is the four-mechanism pilot plus its oracle and paired-condition tests.** If those cannot distinguish an adversarial presentation from changed information, there is no reason yet to add Pelevin-scale information environments or recursive attacker–defender theatre.
-
---
+## Formalism exploration (assistant proposal; not adopted)
 
 Is there a formalism for describing this with a bunch of awesome looking symbols? I'd like there to be one
 
@@ -940,7 +763,7 @@ m_t
 \Bigr),
 $$
 
-although I'd probably use \(\bigotimes\) somewhere more interesting than this if we don't fuckingly mean Cartesian/product structure.
+although I'd probably use \(\bigotimes\) somewhere more interesting than this if we don't [ac-word] mean Cartesian/product structure.
 
 The intervention channel itself can have a very satisfying decomposition:
 
@@ -1358,7 +1181,7 @@ Attacker knowledge and defender awareness (for example, whether the defender kno
 
 ### Reporting boundary
 
-For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is fuckingly measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.
+For any selected condition, log observable choices and report inquiry, elicited belief/calibration, terminal task loss, and recovery separately when each is [ac-word] measured. Do not use graph displacement as a proxy for harm, infer hidden policies from behavior alone, or collapse distinct outcomes into a single “epistemic damage” number. None of these candidates supersedes or reorganizes the 15-question portfolio.
 
 ---
 

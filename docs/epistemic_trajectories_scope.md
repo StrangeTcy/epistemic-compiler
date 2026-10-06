@@ -15,4 +15,4 @@ The source proposal describes `epistemic_games` as a static belief-inference tas
 
 ## Source and companion document
 
-The source passage is in §4 of [`epistemic_games_genre_v5_02_evaluation_experiment_proposals.md`](../mission-02/sources/epistemic_games_genre_v5_02_evaluation_experiment_proposals.md). The separate working design is [`epistemic_trajectories.md`](epistemic_trajectories.md). The source archive remains intact for attribution and comparison.
+Section 4 of [`epistemic_games_genre_v5_02_evaluation_experiment_proposals.md`](../mission-02/sources/epistemic_games_genre_v5_02_evaluation_experiment_proposals.md) now points to the extracted companion documents; its detailed body is not duplicated there. The separate working design is [`epistemic_trajectories.md`](epistemic_trajectories.md); target-repository implementation suggestions are in [`rl_eval_generator_epistemic_trajectories_proposal.md`](rl_eval_generator_epistemic_trajectories_proposal.md). The broader source archive remains available for attribution and comparison.

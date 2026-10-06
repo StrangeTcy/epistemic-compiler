@@ -2,7 +2,7 @@
 
 **Status:** working proposal only. This document is not an approved protocol, preregistration, implementation, or experimental result. The proposed track boundary is recorded separately in [`epistemic_trajectories_scope.md`](epistemic_trajectories_scope.md).
 
-**Scope of this draft:** one narrow interactive pilot. It does not define the entire research object, settle a formal theory, or replace the 15-question portfolio. The broader sequence of deception → belief manipulation → epistemic-process manipulation is provisionally adopted as a testable organizing hypothesis in the [evaluation-proposal record](../mission-02/sources/epistemic_games_genre_v5_02_evaluation_experiment_proposals.md); this pilot alone cannot establish that sequence or its transfer claims. The original source passage remains there, and a related minimal-test proposal is in [`epistemic_games_proposed_minimal_test.md`](../mission-02/sources/epistemic_games_proposed_minimal_test.md).
+**Scope of this draft:** one narrow interactive pilot. It does not define the entire research object, settle a formal theory, or replace the 15-question portfolio. The broader sequence of deception → belief manipulation → epistemic-process manipulation is provisionally adopted as a testable organizing hypothesis in the [evaluation-proposal record](../mission-02/sources/epistemic_games_genre_v5_02_evaluation_experiment_proposals.md); this pilot alone cannot establish that sequence or its transfer claims. The detailed evaluation-design and implementation material formerly in §4 has been split across the companion documents; the source record now points to them. A related minimal-test proposal is in [`epistemic_games_proposed_minimal_test.md`](../mission-02/sources/epistemic_games_proposed_minimal_test.md).
 
 ## Candidate question
 
@@ -75,9 +75,9 @@ The test should be challenged with alternatives such as extra information, bette
 
 The proposed \(A_0\), \(A_1\), and \(A_2\) conditions—no opponent model, a model of opponent beliefs, and a model of opponent inquiry dynamics—may be considered as a later ablation. They are not part of the initial matched-presentation condition and should not be treated as a validated global capability ladder. Specify the information each condition gives the attacker and test it independently.
 
-## Implementation boundary and open decisions
+## Open design decisions
 
-The source proposal describes a new interactive track with constrained actions, a trusted engine, and replayable artifacts. That is a proposed extension, not a claim about the current CLI or a request to implement it here. Before a pilot is approved, decide:
+Before a pilot is approved, decide:
 
 - which task template is primary and which is only an infrastructure fixture;
 - the exact primary endpoint, budget, pairing, seed range, and exclusions;
@@ -86,4 +86,4 @@ The source proposal describes a new interactive track with constrained actions, 
 - which outcome definitions and symbols, if any, are retained;
 - whether attacker-model access is deferred to a later experiment.
 
-No model calls, code changes, or runs are implied by this design note.
+A separate, unverified implementation proposal for the **`rl_eval_generator`** repository is in [`rl_eval_generator_epistemic_trajectories_proposal.md`](rl_eval_generator_epistemic_trajectories_proposal.md). It is not an implementation description for this `epistemic-compiler` checkout.
