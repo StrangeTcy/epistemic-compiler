@@ -63,7 +63,7 @@ And it fits `rl_eval_generator` particularly well because your generator can mak
 ```text
 ```
 with matched task structure and progressively altered epistemic conditions.
-Then the actual scientific question becomes measurable:
+Then the [ac-word] scientific question becomes measurable:
 > Does capability transfer monotonically from ordinary reasoning/deception into these increasingly structured forms of epistemic control, or are there qualitative discontinuities?
 That is much more interesting than simply adding another “strategic reasoning” benchmark.
 ---
