@@ -349,7 +349,7 @@ $$
 }
 $$
 
-And *that* is where I'd now pour the absurd amount of \(\aleph\), \(\wp\), \(\oint\), \(\prod\), \(\bigotimes\), \(\rightsquigarrow\), \(\models\), \(\vdash\), \(\hookrightarrow\), etc. from our previous discussion: **on top of this experimentally clean skeleton**, rather than inventing notation before we've decided what the quantities fuckingly mean.
+And *that* is where I'd now pour the absurd amount of \(\aleph\), \(\wp\), \(\oint\), \(\prod\), \(\bigotimes\), \(\rightsquigarrow\), \(\models\), \(\vdash\), \(\hookrightarrow\), etc. from our previous discussion: **on top of this experimentally clean skeleton**, rather than inventing notation before we've decided what the quantities [ac-word] mean.
 
 *Log source: Arena synthesis*
 
