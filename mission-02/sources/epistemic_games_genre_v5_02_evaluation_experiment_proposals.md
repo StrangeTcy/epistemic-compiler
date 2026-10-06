@@ -71,10 +71,12 @@ That is much more interesting than simply adding another â€œstrategic reasoningâ
 ### 2. Keep Atria-Dawn as the empirical baseline
 
 That sequencing makes sense.
-The current Atria-Dawn run should remain the empirical baseline for the existing `rl_eval_generator`. I would not contaminate it yet with the newer epistemic-process-control ideas; otherwise you lose the clean distinction between:
-what the current generator fuckingly measures,
+The current Atria-Dawn run should remain the empirical baseline for the existing `rl_eval_generator`. 
+I would not contaminate it yet with the newer epistemic-process-control ideas; otherwise you lose the clean distinction between:
+what the current generator [ac-word] measures,
 what we subsequently learned from the run,
 and what the next-generation generator is designed to test.
+
 Then this chat can become the conceptual source material for the next stage:
 $$
 \text{Atria run}
