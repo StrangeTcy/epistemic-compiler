@@ -2,15 +2,16 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–19, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–20, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 19 is the latest reviewed source turn; the assistant's response to its related-work question is next and has not yet been reviewed here.
+**Record status:** Turn 20 is the latest reviewed source turn; the user's response to its literature/novelty assessment is next.
 
 ## Reading and attribution rules
 
 - Keep direct user corrections and requests distinct from assistant-generated interpretations, proposals, and claims of action.
 - A model's claim that it changed a graph or other artifact is a self-report, not proof that the artifact was persisted.
 - Treat proposed research framings as candidates unless the user explicitly adopts them. In particular, do not reduce the broader research object to control of an agent's next inquiry or inquiry trajectory.
+- Keep the user's 15-question portfolio intact; do not force it into one question, formal family, or capability ladder. Serial sequencing follows dependencies, not a claim that the questions form a settled hierarchy.
 - Preserve fiction as fiction and Gilbo's terminology as attributed terminology, not established academic theory.
 
 ## Turn-by-turn representation
@@ -59,9 +60,18 @@ The user quotes the assistant's proposed framing—evaluating “control of anot
 
 **Update:** this is a request for a literature and novelty assessment. The quoted phrase is under investigation, not a settled definition or a claim of originality.
 
-## Current state after turn 19
+### Dialogue turn 20 — assistant's literature and novelty response
+
+The assistant separates three questions: whether the general idea exists in theory, whether it has been experimentally studied, and whether there is an AI benchmark whose manipulated object is an opponent's epistemic process. It reports searching and says the general idea is **not unique**. It names prior work/traditions including Alon et al. (2023), Sasahara, D-BOS, Bloedel and Segal, Bayesian persuasion/rational inattention, hypergames, I-POMDPs, dynamic epistemic logic, cyber deception, and reflexive control. It also cites recent 2026 work under titles including *Potemkin*, *Lying with Truths*, and *Persuasion Under Endogenous Attention*.
+
+The assistant's qualified novelty claim is that it did not find a mature benchmark that varies components of an opponent's epistemic process under controlled, fixed-task conditions. It then proposes “altering the procedure” of another agent's epistemic-model construction as a formulation, lists possible intervention targets, and gives a linear “experimental ladder” from state manipulation through recursive epistemic-process manipulation.
+
+**Attribution and status:** the user's direct question asks whether the assistant's previous framing has prior art or is unique. The more specific formulation, taxonomy, and ladder are assistant-generated; they are not established as the user's chosen thesis. The assistant's literature-search conclusion is self-reported and not independently verified here. Treat the named papers and their descriptions as leads requiring source checks, not as verified literature findings. The proposed linear ladder must not replace the user's 15-question portfolio or be treated as its settled hierarchy.
+
+## Current state after turn 20
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
 - The user wanted substantive discussion, not graph editing alone.
 - The assistant proposed a broad conceptual bridge among literary fiction, influence operations, reflexive control, and epistemic-game research. This remains a candidate synthesis.
-- A question about prior work and novelty is now open. The assistant's response to that question is the next source turn to review.
+- The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
+- Next source turn: the user's message at 17:43:22, which supplies Gilbo's description of a “дезонтологическая атака.”
