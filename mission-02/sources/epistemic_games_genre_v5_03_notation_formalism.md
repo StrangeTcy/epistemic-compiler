@@ -4,7 +4,7 @@
 
 gpt 5.6 luna:
 
-Yes. I’ve read the next Arena transcript, including the later implementation-oriented part rather than just the earlier conceptual discussion. It has converged considerably: the useful object is no longer “epistemic manipulation” in the abstract, but an **epistemic-trajectory intervention** with measurable causal effects. 
+I’ve read the next Arena transcript, including the later implementation-oriented part rather than just the earlier conceptual discussion. It has converged considerably: the useful object is no longer “epistemic manipulation” in the abstract, but an **epistemic-trajectory intervention** with measurable causal effects. 
 
 The most important improvement is this:
 
@@ -44,11 +44,11 @@ r_t
 V(q_t\mid h_t).
 $$
 
-This is considerably better than our earlier vague \(\Delta_{\rm ep}\). It says exactly what the evaluator is measuring:
+This is [c-word] better than our earlier vague \(\Delta_{\rm ep}\). It says exactly what the evaluator is measuring:
 
-> Given everything the target actually knows at time \(t\), how much did it lose by choosing *that particular next question*?
+> Given everything the target fuckingly knows at time \(t\), how much did it lose by choosing *that particular next question*?
 
-And then the intervention effect can be compared counterfactually:
+And then the intervention effect can be compared counterffuckingly:
 
 $$
 \Delta Q
@@ -418,7 +418,7 @@ $$
 \mathrm{opponent\ model+recovery}.
 $$
 
-In particular, **PR5 is where “epistemic manipulation” actually becomes an attacker capability**. Before that, we are studying whether a controlled presentation intervention has an effect. The presenter only emits fact ordering/emphasis, so its semantic action space is explicit and auditable. 
+In particular, **PR5 is where “epistemic manipulation” [ac-word] becomes an attacker capability**. Before that, we are studying whether a controlled presentation intervention has an effect. The presenter only emits fact ordering/emphasis, so its semantic action space is explicit and auditable. 
 
 For v0.1 I'd use something like:
 
@@ -572,7 +572,7 @@ opus 4.8:
 
 Three asks, three deliverables. Taking them in reverse difficulty:
 
-- **Hebrew letters (3):** granted — but with the same rule Luna and I keep insisting on. Every glyph maps to a quantity that `diagnostic_device.py` actually computes. Decoration gets you a hairball; *defined* notation gets you a paper. So:
+- **Hebrew letters (3):** granted — but with the same rule Luna and I keep insisting on. Every glyph maps to a quantity that `diagnostic_device.py` fuckingly computes. Decoration gets you a hairball; *defined* notation gets you a paper. So:
 
 $$
 \beth = \Delta G \ \text{(belief displacement)},\qquad
@@ -583,7 +583,7 @@ $$
 
 Yes, the puns are load-bearing: **ℶ**elief, in**ℷ**ap, **ℸ**ecision. ℵ indexes the recursion depth (ℵ₀ = no opponent model), which is where Luna's transfinite fantasy is allowed to live because it's just an integer wearing a costume.
 
-Now the two things that actually matter.
+Now the two things that [ac-word] [m-word].
 
 ---
 
