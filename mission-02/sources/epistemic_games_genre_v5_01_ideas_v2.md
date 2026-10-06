@@ -18,7 +18,7 @@ This is a short navigation register for [`epistemic_games_genre_v5_01_ideas.md`]
 
 ## 3. Operational meaning of a “desontological attack”
 
-- **Provenance/status:** Assistant operationalization of examples in the discussion (source log: response 11). The initial objective \(\max_m D(G,\operatorname{Update}(G,m))\) is superseded: model change alone does not establish damage, harm, or degraded inquiry.
+- **Provenance/status:** Assistant operationalization of examples in the discussion (source log: response 11). The initial objective \(\max_m D(G,\mathrm{Update}(G,m))\) is superseded: model change alone does not establish damage, harm, or degraded inquiry.
 - **Unresolved decision:** What observable outcome would distinguish a harmful effect of selecting or presenting true information from ordinary belief revision, missing evidence, or task difficulty?
 - **Destination:** [`epistemic_games_genre_v5_02_evaluation_experiment_proposals.md`](epistemic_games_genre_v5_02_evaluation_experiment_proposals.md) §4; [`epistemic_games_genre_v5_03_notation_formalism.md`](epistemic_games_genre_v5_03_notation_formalism.md) for proposed measures; [`epistemic_games_genre_v5_05_implementation_generator_specifications.md`](epistemic_games_genre_v5_05_implementation_generator_specifications.md) for proposed implementation material.
 - **Next action:** Keep the graph-distance objective marked as superseded. Do not operationalize a replacement until the outcome and controls are specified in observable terms.
