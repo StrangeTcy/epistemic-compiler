@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–21, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–22, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 21 is the latest reviewed source turn; the assistant's response to the user's Gilbo definition is next.
+**Record status:** Turn 22 is the latest reviewed source turn; the user's response at 17:45:33 is next.
 
 ## Reading and attribution rules
 
@@ -74,11 +74,20 @@ Responding to the assistant's caution that Gilbo's terminology needs reconstruct
 
 **Representation update:** The user supplies a more concrete, Gilbo-attributed description of the target as the opponent's broader **картина мира** (worldview), not merely one isolated belief. This turn does not establish that the examples are true, that truthfulness is required, how “destruction” is measured, or that the claimed effect has been empirically demonstrated. The definition is user-attributed in this dialogue, not independently verified against a primary Gilbo source.
 
-## Current state after turn 21
+### Dialogue turn 22 — assistant interprets and formalizes the definition
+
+The assistant distinguishes deception (changing a proposition), persuasion (changing its probability), and a desontological attack (breaking the model in which propositions are interpreted). It proposes that an attack on a central world-model element could cascade into changes in evidence interpretation, source trust, hypothesis generation, and future behavior. It then sketches two formal targets: maximizing world-model graph displacement, \(D(G,\operatorname{Update}(G,m))\), or maximizing a change in the target's inquiry/update policy, \(D(\pi_B^{\mathrm{before}},\pi_B^{\mathrm{after}})\). It frames desontology as a possible subclass of adversarial intervention and calls “selection of truth for maximal destructive effect” a stronger eval setup.
+
+**Attribution and status:** The distinction, cascade, graph model, objective functions, and placement inside an epistemic-process framework are assistant-generated proposals. The user's definition does not establish that a small fact causes structural collapse, that the examples are true, or that truth is a required constraint. The assistant's claim that the Stalin example is true is not established by the user's message. Treat cascading worldview disruption and degraded inquiry as hypotheses to test, not consequences of the definition.
+
+The proposed distance objectives measure displacement, not necessarily harm; an appropriate independent outcome and counterfactual baseline would still be needed. The \(\pi_B\) expression also speaks as if a hidden inquiry policy changed; for black-box agents, report observable behavior and supported mechanism hypotheses, not unobserved internal changes. This turn again narrows toward inquiry behavior; that remains one candidate manifestation, not the whole research object.
+
+## Current state after turn 22
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
 - The user wanted substantive discussion, not graph editing alone.
 - The assistant proposed a broad conceptual bridge among literary fiction, influence operations, reflexive control, and epistemic-game research. This remains a candidate synthesis.
 - The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
-- The user has now supplied a definition attributed to Gilbo: a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
-- Next source turn: the assistant's response to the user's definition.
+- The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
+- The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
+- Next source turn: the user's message at 17:45:33, quoting “The closest hits I found” and asking to add them to the graph.
