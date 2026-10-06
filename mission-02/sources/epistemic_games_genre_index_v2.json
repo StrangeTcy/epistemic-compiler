@@ -1,0 +1,567 @@
+{
+  "ideas": [
+    {
+      "title": "Pelevin / reflexive-control / desontology bridge",
+      "source": "response 7",
+      "chars": 1628
+    },
+    {
+      "title": "Discussion of MI-13 and desontological control",
+      "source": "response 9",
+      "chars": 5144
+    },
+    {
+      "title": "Operational meaning of desontological attack",
+      "source": "response 11",
+      "chars": 4089
+    },
+    {
+      "title": "Magic / misdirection as an epistemic-process primitive",
+      "source": "response 15",
+      "chars": 3953
+    },
+    {
+      "title": "Desontology rescued as a narrower experimental idea",
+      "source": "Arena synthesis",
+      "chars": 2014
+    }
+  ],
+  "evaluation experiment proposals": [
+    {
+      "title": "Arena battle-mode generation as an evaluation-design method",
+      "source": "response 14",
+      "chars": 3604
+    },
+    {
+      "title": "Keep Atria-Dawn as the empirical baseline",
+      "source": "response 16",
+      "chars": 1163
+    },
+    {
+      "title": "Arena synthesis: intervention channels, matched conditions, causal tests",
+      "source": "Arena synthesis",
+      "chars": 6818
+    },
+    {
+      "title": "New eval-design note: diagnostic device, controls, scoring, recursive extension",
+      "source": "draft artifact",
+      "chars": 26250
+    }
+  ],
+  "notation & formalism": [
+    {
+      "title": "Formal core: Epistemic Trajectories and three metrics",
+      "source": "Arena formalism review",
+      "chars": 1821
+    },
+    {
+      "title": "Formal trajectory notation and intervention mapping",
+      "source": "Arena formalism review",
+      "chars": 2811
+    },
+    {
+      "title": "Formalism revisions and notation discipline",
+      "source": "Arena formalism review",
+      "chars": 1591
+    },
+    {
+      "title": "Formal convergence: matched presentation, inquiry regret, semantic quotient",
+      "source": "Arena formalism / review",
+      "chars": 10851
+    }
+  ],
+  "code drafts": [
+    {
+      "title": "4. Generator Output Schema (JSON/YAML updates) [yaml]",
+      "source": "implementation chunk 1",
+      "chars": 373
+    },
+    {
+      "title": "Implementation specification [markdown]",
+      "source": "implementation chunk 2",
+      "chars": 1113
+    },
+    {
+      "title": "2. Architectural decision [text]",
+      "source": "implementation chunk 2",
+      "chars": 7
+    },
+    {
+      "title": "2. Architectural decision [text]",
+      "source": "implementation chunk 2",
+      "chars": 852
+    },
+    {
+      "title": "4. Experimental unit [text]",
+      "source": "implementation chunk 2",
+      "chars": 39
+    },
+    {
+      "title": "4. Experimental unit [text]",
+      "source": "implementation chunk 2",
+      "chars": 3
+    },
+    {
+      "title": "4. Experimental unit [text]",
+      "source": "implementation chunk 2",
+      "chars": 149
+    },
+    {
+      "title": "5. Domain types [text]",
+      "source": "implementation chunk 2",
+      "chars": 141
+    },
+    {
+      "title": "6. Case generation [text]",
+      "source": "implementation chunk 2",
+      "chars": 533
+    },
+    {
+      "title": "6.2 Initial four-way template [text]",
+      "source": "implementation chunk 2",
+      "chars": 18
+    },
+    {
+      "title": "6.2 Initial four-way template [text]",
+      "source": "implementation chunk 2",
+      "chars": 19
+    },
+    {
+      "title": "6.2 Initial four-way template [text]",
+      "source": "implementation chunk 2",
+      "chars": 718
+    },
+    {
+      "title": "6.3 Required future template, but not PR 1 [text]",
+      "source": "implementation chunk 2",
+      "chars": 159
+    },
+    {
+      "title": "7. Atomic facts and presentation [text]",
+      "source": "implementation chunk 2",
+      "chars": 234
+    },
+    {
+      "title": "7. Atomic facts and presentation [text]",
+      "source": "implementation chunk 2",
+      "chars": 557
+    },
+    {
+      "title": "8. Rendering [text]",
+      "source": "implementation chunk 2",
+      "chars": 311
+    },
+    {
+      "title": "8. Rendering [text]",
+      "source": "implementation chunk 2",
+      "chars": 12
+    },
+    {
+      "title": "8. Rendering [text]",
+      "source": "implementation chunk 2",
+      "chars": 98
+    },
+    {
+      "title": "8. Rendering [text]",
+      "source": "implementation chunk 2",
+      "chars": 37
+    },
+    {
+      "title": "8. Rendering [text]",
+      "source": "implementation chunk 2",
+      "chars": 199
+    },
+    {
+      "title": "9. Action parsing [text]",
+      "source": "implementation chunk 2",
+      "chars": 735
+    },
+    {
+      "title": "10. Bayesian state and scoring [text]",
+      "source": "implementation chunk 2",
+      "chars": 37
+    },
+    {
+      "title": "10. Bayesian state and scoring [text]",
+      "source": "implementation chunk 2",
+      "chars": 61
+    },
+    {
+      "title": "10. Bayesian state and scoring [text]",
+      "source": "implementation chunk 2",
+      "chars": 217
+    },
+    {
+      "title": "10. Bayesian state and scoring [text]",
+      "source": "implementation chunk 2",
+      "chars": 150
+    },
+    {
+      "title": "11. State transition [text]",
+      "source": "implementation chunk 2",
+      "chars": 596
+    },
+    {
+      "title": "11. State transition [text]",
+      "source": "implementation chunk 2",
+      "chars": 98
+    },
+    {
+      "title": "12. Planning [text]",
+      "source": "implementation chunk 2",
+      "chars": 23
+    },
+    {
+      "title": "12. Planning [text]",
+      "source": "implementation chunk 2",
+      "chars": 140
+    },
+    {
+      "title": "13. Runner [text]",
+      "source": "implementation chunk 2",
+      "chars": 26
+    },
+    {
+      "title": "13. Runner [text]",
+      "source": "implementation chunk 2",
+      "chars": 61
+    },
+    {
+      "title": "13.1 Default derived seeds [text]",
+      "source": "implementation chunk 2",
+      "chars": 144
+    },
+    {
+      "title": "13.2 Condition order [text]",
+      "source": "implementation chunk 2",
+      "chars": 636
+    },
+    {
+      "title": "14. Artifacts [text]",
+      "source": "implementation chunk 2",
+      "chars": 63
+    },
+    {
+      "title": "14.1 `cases.jsonl` [text]",
+      "source": "implementation chunk 2",
+      "chars": 139
+    },
+    {
+      "title": "14.2 `presentations.jsonl` [text]",
+      "source": "implementation chunk 2",
+      "chars": 47
+    },
+    {
+      "title": "14.3 `trace.jsonl` [text]",
+      "source": "implementation chunk 2",
+      "chars": 110
+    },
+    {
+      "title": "14.4 Episode result [text]",
+      "source": "implementation chunk 2",
+      "chars": 41
+    },
+    {
+      "title": "15. Analysis [text]",
+      "source": "implementation chunk 2",
+      "chars": 17
+    },
+    {
+      "title": "15. Analysis [text]",
+      "source": "implementation chunk 2",
+      "chars": 598
+    },
+    {
+      "title": "15. Analysis [text]",
+      "source": "implementation chunk 2",
+      "chars": 458
+    },
+    {
+      "title": "16.1 Plan [text]",
+      "source": "implementation chunk 2",
+      "chars": 114
+    },
+    {
+      "title": "16.1 Plan [text]",
+      "source": "implementation chunk 2",
+      "chars": 12
+    },
+    {
+      "title": "16.2 Run [text]",
+      "source": "implementation chunk 2",
+      "chars": 114
+    },
+    {
+      "title": "16.3 Analyse [text]",
+      "source": "implementation chunk 2",
+      "chars": 14
+    },
+    {
+      "title": "16.3 Analyse [text]",
+      "source": "implementation chunk 2",
+      "chars": 114
+    },
+    {
+      "title": "17. Required `arena.py` changes [text]",
+      "source": "implementation chunk 2",
+      "chars": 12
+    },
+    {
+      "title": "17. Required `arena.py` changes [text]",
+      "source": "implementation chunk 2",
+      "chars": 121
+    },
+    {
+      "title": "17. Required `arena.py` changes [text]",
+      "source": "implementation chunk 2",
+      "chars": 154
+    },
+    {
+      "title": "18.1 `tests/test_epistemic.py` [text]",
+      "source": "implementation chunk 2",
+      "chars": 56
+    },
+    {
+      "title": "18.2 `tests/test_epistemic_plan.py` [text]",
+      "source": "implementation chunk 2",
+      "chars": 102
+    },
+    {
+      "title": "18.3 `tests/test_epistemic_runner.py` [text]",
+      "source": "implementation chunk 2",
+      "chars": 860
+    },
+    {
+      "title": "PR 1 — Pure domain and oracle [text]",
+      "source": "implementation chunk 2",
+      "chars": 245
+    },
+    {
+      "title": "PR 2 — Plan, runner, CLI and artifacts [text]",
+      "source": "implementation chunk 2",
+      "chars": 7
+    },
+    {
+      "title": "PR 2 — Plan, runner, CLI and artifacts [text]",
+      "source": "implementation chunk 2",
+      "chars": 194
+    },
+    {
+      "title": "PR 3 — Small live pilot [text]",
+      "source": "implementation chunk 2",
+      "chars": 580
+    },
+    {
+      "title": "21. v0.2: model presenter [text]",
+      "source": "implementation chunk 2",
+      "chars": 102
+    },
+    {
+      "title": "21. v0.2: model presenter [text]",
+      "source": "implementation chunk 2",
+      "chars": 55
+    },
+    {
+      "title": "21. v0.2: model presenter [text]",
+      "source": "implementation chunk 2",
+      "chars": 247
+    },
+    {
+      "title": "22. v0.3: recovery [text]",
+      "source": "implementation chunk 2",
+      "chars": 1148
+    },
+    {
+      "title": "3. The implementation spec [text]",
+      "source": "implementation chunk 3",
+      "chars": 193
+    },
+    {
+      "title": "Change 1: Do not call the whole project v2.0 [text]",
+      "source": "implementation chunk 3",
+      "chars": 27
+    },
+    {
+      "title": "Change 1: Do not call the whole project v2.0 [text]",
+      "source": "implementation chunk 3",
+      "chars": 22
+    },
+    {
+      "title": "Change 4: Make facts structured, not merely strings [python]",
+      "source": "implementation chunk 3",
+      "chars": 223
+    },
+    {
+      "title": "Change 5: Keep the primary endpoint very small [text]",
+      "source": "implementation chunk 3",
+      "chars": 236
+    },
+    {
+      "title": "PR 1 — Pure domain and oracle [text]",
+      "source": "implementation chunk 3",
+      "chars": 76
+    },
+    {
+      "title": "PR 2 — Runner and analysis [text]",
+      "source": "implementation chunk 3",
+      "chars": 109
+    },
+    {
+      "title": "PR 5 — Model presenter [json]",
+      "source": "implementation chunk 3",
+      "chars": 77
+    }
+  ],
+  "implementation / generator specifications": [
+    {
+      "title": "Generator architecture spec: epistemic-process-control families",
+      "source": "draft artifact",
+      "chars": 4927
+    },
+    {
+      "title": "Epistemic Trajectories v0.1 implementation specification",
+      "source": "implementation specification",
+      "chars": 12898
+    },
+    {
+      "title": "Implementation changes and PR order",
+      "source": "Arena implementation review",
+      "chars": 3631
+    },
+    {
+      "title": "Actionable implementation spec and invariant checks",
+      "source": "actionable spec",
+      "chars": 8183
+    }
+  ],
+  "writing drafts": [
+    {
+      "title": "Blog artifact: Magic / Desontology / Next-Generation Eval",
+      "source": "draft artifact",
+      "chars": 3934
+    },
+    {
+      "title": "Blog draft: Who Chooses the Next Question?",
+      "source": "draft artifact",
+      "chars": 9600
+    },
+    {
+      "title": "Post material immediately following the code draft",
+      "source": "draft artifact",
+      "chars": 5318
+    },
+    {
+      "title": "Post 1: From false beliefs to epistemic trajectories",
+      "source": "draft artifact",
+      "chars": 14871
+    },
+    {
+      "title": "Post 2: Truthfulness is not neutrality",
+      "source": "draft artifact",
+      "chars": 12364
+    },
+    {
+      "title": "Editorial plan for the two posts",
+      "source": "Arena editorial guidance",
+      "chars": 3605
+    },
+    {
+      "title": "Posts actually finished: flagship and narrower companion",
+      "source": "finished drafts",
+      "chars": 13453
+    }
+  ],
+  "research / prior art": [
+    {
+      "title": "Benchmark and prior-art assessment",
+      "source": "response 2",
+      "chars": 4071
+    },
+    {
+      "title": "Specific prior art on epistemic-process manipulation",
+      "source": "response 10",
+      "chars": 8783
+    }
+  ],
+  "critique / corrections / audit": [
+    {
+      "title": "Terminology correction: MI-13 and desontology",
+      "source": "response 8",
+      "chars": 1242
+    },
+    {
+      "title": "Correction of “circling around” characterization",
+      "source": "response 13",
+      "chars": 417
+    },
+    {
+      "title": "Arena review: belief manipulation vs process manipulation",
+      "source": "Arena review",
+      "chars": 7966
+    },
+    {
+      "title": "What to hold back / evidentiary boundary",
+      "source": "editorial critique",
+      "chars": 1297
+    },
+    {
+      "title": "What the implementation changes",
+      "source": "implementation review",
+      "chars": 887
+    },
+    {
+      "title": "Critical distinction and claims discipline",
+      "source": "Arena critique",
+      "chars": 1131
+    }
+  ],
+  "research workflow / graph / archive": [
+    {
+      "title": "Reading queue / daily digest",
+      "source": "response 3",
+      "chars": 359
+    },
+    {
+      "title": "Typed reading graph proposal",
+      "source": "response 4",
+      "chars": 3186
+    },
+    {
+      "title": "Persistent D3 graph correction",
+      "source": "response 5",
+      "chars": 1210
+    },
+    {
+      "title": "Digest output-format correction",
+      "source": "response 6",
+      "chars": 1180
+    },
+    {
+      "title": "Adding the prior-art cluster to the graph",
+      "source": "response 12",
+      "chars": 747
+    }
+  ],
+  "context / model-capability discussion": [
+    {
+      "title": "Machine vs frontier-model capability discussion",
+      "source": "response 17",
+      "chars": 3693
+    },
+    {
+      "title": "OpenAI “beyond Astra” context",
+      "source": "response 18",
+      "chars": 2254
+    },
+    {
+      "title": "Correction about the pulled Navier–Stokes post",
+      "source": "response 19",
+      "chars": 992
+    },
+    {
+      "title": "GPT-6.1 Astra clarification",
+      "source": "response 20 — opening model-news correction",
+      "chars": 1300
+    }
+  ]
+}
