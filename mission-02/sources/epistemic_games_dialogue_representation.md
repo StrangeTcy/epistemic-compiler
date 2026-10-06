@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–23, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–24, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 23 is the latest reviewed source turn; the assistant's response to the graph-addition request is next.
+**Record status:** Turn 24 is the latest reviewed source turn; the user's next message corrects the assistant's “circling around” characterization.
 
 ## Reading and attribution rules
 
@@ -88,13 +88,19 @@ The user quotes the assistant's heading **“The closest hits I found”** and s
 
 **Representation update:** This is a graph-maintenance request, not a conceptual development. The user clarifies that a version of the graph already exists in the repository. The request is to add the assistant's literature candidates to that graph; it does not contradict turn 17, which clarified that the earlier Pelevin/Gilbo prompt also required discussion. The quoted “I found” is the assistant's phrase, not a user claim of having found or verified the sources. Adding candidates does not independently verify their citations or endorse the assistant's descriptions as established findings; provenance and epistemic status should remain attached.
 
-## Current state after turn 23
+### Dialogue turn 24 — assistant reports graph update
+
+The assistant says it added the related-work items to the persistent reading-graph instructions and names Alon et al. (2023), D-BOS, endogenous attention, POTEMKIN/epistemic drift, *Lying with Truths*, and the Sasahara research line. It also reports adding concept nodes for belief-state shaping, attention manipulation, epistemic drift, information-environment manipulation, cognitive collusion, and epistemic-process control. It says the graph instructions preserve the difference between established work and the dialogue's synthesis.
+
+**Status:** This is graph maintenance, not a substantive evolution of the research ideas. These are the assistant's claims about what it added; the dialogue turn alone does not verify that the existing repository graph or its instructions were actually changed. The concepts named are not, by this turn alone, user-approved constructs or verified literature findings.
+
+## Current state after turn 24
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
-- The user wanted substantive discussion of Pelevin/Gilbo, not graph editing alone; later, the user explicitly requested that the assistant's related-work candidates be added to the graph.
+- The user wanted substantive discussion of Pelevin/Gilbo, not graph editing alone; later, the user explicitly requested adding related-work candidates to the existing repository graph.
 - The assistant proposed a broad conceptual bridge among literary fiction, influence operations, reflexive control, and epistemic-game research. This remains a candidate synthesis.
-- The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
+- The assistant's literature/novelty assessment and cited items remain unverified in this representation.
 - The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
 - The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
-- The user requested adding the assistant's related-work candidates to the existing repository graph, with source attribution and verification status preserved. This is graph maintenance, not an update to the conceptual representation.
-- Next source turn: the assistant's response to the graph-addition request.
+- The user requested adding prior-art candidates to the existing graph. This is graph maintenance, not a conceptual update. The assistant reported doing so; actual persistence remains unverified.
+- Next source turn: the user's correction at 17:48:33 (“I never circle…”).
