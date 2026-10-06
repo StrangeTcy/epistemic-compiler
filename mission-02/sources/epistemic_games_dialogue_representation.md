@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–22, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–23, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 22 is the latest reviewed source turn; the user's response at 17:45:33 is next.
+**Record status:** Turn 23 is the latest reviewed source turn; the assistant's response to the graph-addition request is next.
 
 ## Reading and attribution rules
 
@@ -82,12 +82,19 @@ The assistant distinguishes deception (changing a proposition), persuasion (chan
 
 The proposed distance objectives measure displacement, not necessarily harm; an appropriate independent outcome and counterfactual baseline would still be needed. The \(\pi_B\) expression also speaks as if a hidden inquiry policy changed; for black-box agents, report observable behavior and supported mechanism hypotheses, not unobserved internal changes. This turn again narrows toward inquiry behavior; that remains one candidate manifestation, not the whole research object.
 
-## Current state after turn 22
+### Dialogue turn 23 — user requests graph addition (17:45:33)
+
+The user quotes the assistant's heading **“The closest hits I found”** and says **“add to graph.”** In context, this is an explicit request to add the literature candidates just listed by the assistant to the research graph.
+
+**Representation update:** This is a graph-addition request for this literature list; it does not contradict turn 17, which clarified that the earlier Pelevin/Gilbo prompt also required discussion. The quoted “I found” is the assistant's phrase, not a user claim of having found or verified the sources. The request to record the candidates does not independently verify their citations or endorse the assistant's descriptions as established findings; provenance and epistemic status should remain attached.
+
+## Current state after turn 23
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
-- The user wanted substantive discussion, not graph editing alone.
+- The user wanted substantive discussion of Pelevin/Gilbo, not graph editing alone; later, the user explicitly requested that the assistant's related-work candidates be added to the graph.
 - The assistant proposed a broad conceptual bridge among literary fiction, influence operations, reflexive control, and epistemic-game research. This remains a candidate synthesis.
 - The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
 - The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
 - The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
-- Next source turn: the user's message at 17:45:33, quoting “The closest hits I found” and asking to add them to the graph.
+- The assistant's related-work candidates are to be added to the graph with source attribution and verification status preserved.
+- Next source turn: the assistant's response to the graph-addition request.
