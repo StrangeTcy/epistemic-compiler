@@ -156,11 +156,11 @@ $$
 
 Если я сделал так, что после этой перестройки ты **начал иначе искать информацию, генерировать гипотезы и моделировать меня**, тогда я вмешался в твой epistemic process.
 
-И вот это уже очень близко к тому, что ты, похоже, нащупываешь для evals.
+И вот это уже очень близко к тому, что ты, похоже, [н-word] для evals.
 
 Причём у дезонтологии есть ещё одна важная особенность: **необязательно атаковать самый важный факт непосредственно**. Можно выбрать небольшой факт с огромной структурной связностью. «Сталин был низенький и рябой» как раз выглядит как такой пример. Информационно это мелочь; **онтологически** — potentially большой рычаг.
 
-Это можно превратить почти непосредственно в экспериментальную схему. Представить world-model агента как граф:
+Это можно превратить [п-word] непосредственно в экспериментальную схему. Представить world-model агента как граф:
 
 $$
 G=(V,E)
@@ -199,7 +199,7 @@ $$
 
 ### 4. Magic / misdirection as an epistemic-process primitive
 
-Yes. And I think “magic” is actually a very clean primitive for the broader framework.
+And I think “magic” is [ac-word] a very clean primitive for the broader framework.
 A magician normally does not need to make the audience believe some arbitrary proposition. The trick works by controlling the audience's epistemic trajectory:
 $$
 \text{what is observed}
