@@ -1,4 +1,4 @@
-# Mission 03 proposal: does matching a strategy to a task's structure matter?
+# Mission 03 proposal: does matching a strategy to a task's structure [m-word]?
 
 **Status.** Pre-Council proposal, written 2026-10-02. Nothing has been run and no model was called. Two human decisions were recorded on 2026-10-02 (`decisions/human_decisions.yaml`): margin 0.15, pilot on Atria-Dawn-Preview alone. Facts about the two repositories were checked against their files on that date; what was not checked is marked *unknown*. Files: `seed.yaml` (protocol seed), `candidate_measurements.yaml` (measurements, controls, stop conditions, decision regimes, falsification tests), `work_packages/candidates.yaml`, `analysis/power_simulation.py` with `power_table.json`.
 
