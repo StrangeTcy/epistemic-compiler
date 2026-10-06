@@ -2,9 +2,9 @@
 
 **Primary source:** [`epistemic games_copyable.md`](../../epistemic%20games_copyable.md)
 
-**Coverage in this record:** dialogue turns 14–24, using the speaker-by-speaker numbering corrected by the user.
+**Coverage in this record:** dialogue turns 14–25, using the speaker-by-speaker numbering corrected by the user.
 
-**Record status:** Turn 24 is the latest reviewed source turn; the user's next message corrects the assistant's “circling around” characterization.
+**Record status:** Turn 25 is the latest reviewed source turn; the assistant's response to the user's correction is next.
 
 ## Reading and attribution rules
 
@@ -94,7 +94,13 @@ The assistant says it added the related-work items to the persistent reading-gra
 
 **Status:** This is graph maintenance, not a substantive evolution of the research ideas. These are the assistant's claims about what it added; the dialogue turn alone does not verify that the existing repository graph or its instructions were actually changed. The concepts named are not, by this turn alone, user-approved constructs or verified literature findings.
 
-## Current state after turn 24
+### Dialogue turn 25 — user objects to “circling around” characterization (17:48:33)
+
+The user quotes the assistant's phrase “what you've been circling around” and rejects that characterization: “I never circle, []”. The literal transcript contains the bracketed placeholder; its intended content is not inferred here.
+
+**Representation update:** This is a correction to how the assistant characterizes the user's reasoning process, not a new research claim. Do not describe the user's development of ideas as vague circling. The user's correction should be kept distinct from whatever refinement sequence the assistant proposes in its reply.
+
+## Current state after turn 25
 
 - The user corrected the literary reference to MI-13 in *«Возвращении Синей Бороды»* and Gilbo's wording to **«дезонтология» / «8-й управленческий уклад»**.
 - The user wanted substantive discussion of Pelevin/Gilbo, not graph editing alone; later, the user explicitly requested adding related-work candidates to the existing repository graph.
@@ -103,4 +109,5 @@ The assistant says it added the related-work items to the persistent reading-gra
 - The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
 - The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
 - The user requested adding prior-art candidates to the existing graph. This is graph maintenance, not a conceptual update. The assistant reported doing so; actual persistence remains unverified.
-- Next source turn: the user's correction at 17:48:33 (“I never circle…”).
+- Do not characterize the user's reasoning as “circling”; this is a user correction about framing.
+- Next source turn: the assistant's response to the user's correction.
