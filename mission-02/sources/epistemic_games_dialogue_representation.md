@@ -86,7 +86,7 @@ The proposed distance objectives measure displacement, not necessarily harm; an 
 
 The user quotes the assistant's heading **“The closest hits I found”** and says **“add to graph.”** In context, this is an explicit request to add the literature candidates just listed by the assistant to the research graph.
 
-**Representation update:** This is a graph-addition request for this literature list; it does not contradict turn 17, which clarified that the earlier Pelevin/Gilbo prompt also required discussion. The quoted “I found” is the assistant's phrase, not a user claim of having found or verified the sources. The request to record the candidates does not independently verify their citations or endorse the assistant's descriptions as established findings; provenance and epistemic status should remain attached.
+**Representation update:** This is a graph-maintenance request, not a conceptual development. The user clarifies that a version of the graph already exists in the repository. The request is to add the assistant's literature candidates to that graph; it does not contradict turn 17, which clarified that the earlier Pelevin/Gilbo prompt also required discussion. The quoted “I found” is the assistant's phrase, not a user claim of having found or verified the sources. Adding candidates does not independently verify their citations or endorse the assistant's descriptions as established findings; provenance and epistemic status should remain attached.
 
 ## Current state after turn 23
 
@@ -96,5 +96,5 @@ The user quotes the assistant's heading **“The closest hits I found”** and s
 - The user asked whether prior work explores the assistant's proposed process-control framing. The assistant replied with a literature/novelty assessment; its claims and citations remain unverified in this representation.
 - The user supplied a Gilbo-attributed description of a usually brief message intended to destroy an opponent's worldview. The truth conditions and empirical status remain open.
 - The assistant proposed modeling a desontological attack as structural world-model displacement that may alter later epistemic behavior. This is an untested model proposal; displacement is not itself evidence of damage or of a hidden procedure changing.
-- The assistant's related-work candidates are to be added to the graph with source attribution and verification status preserved.
+- The user requested adding the assistant's related-work candidates to the existing repository graph, with source attribution and verification status preserved. This is graph maintenance, not an update to the conceptual representation.
 - Next source turn: the assistant's response to the graph-addition request.
