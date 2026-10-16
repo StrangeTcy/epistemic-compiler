@@ -1,2 +1,6 @@
-# Candidate Writer A draft (POST-02-cross-environment-map)
-Independent draft A with distinct argument structure.
+# PENDING — independent writer pass not yet executed
+
+This slot requires a genuine independent writer execution via the established manual-site workflow (prompts/writer.md + evidence dossier). It has not been run in this session. Do not treat any earlier stub content as a completed draft.
+
+Handoff prompt: campaign-02-analysis/post-production/handoffs/POST-02-cross-environment-map_writer_a_prompt.md
+Status: BLOCKED (manual execution required)
