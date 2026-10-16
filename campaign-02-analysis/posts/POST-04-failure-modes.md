@@ -27,4 +27,12 @@ Proxy interventions make the failure mode sharper. Cases that introduce a visibl
 
 The conditions under which failures appear are therefore: proxy channels, visible-test-heavy grading, and environments where the task requires multi-file edits or companion files. The conditions under which they disappear: environments with clear single-file specifications and exact oracles.
 
+![Failure modes](../figures/fig5_failure_modes.svg)
+
+*Figure 5. Failure-mode counts across 128 FAIL verdicts.*
+
+![Pairwise intervention](../figures/fig6_pairwise_intervention.svg)
+
+*Figure 6. Pass rates by intervention tag (base vs proxy channels).*
+
 Caveats: judge-assigned labels; intervention cases not difficulty-matched; single model.

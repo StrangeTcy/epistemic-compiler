@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+<rect width="100%" height="100%" fill="#0d1117"/>
+<text x="152" y="60" text-anchor="end" fill="#c9d1d9" font-size="12">base</text>
+<rect x="160" y="44" width="388.1" height="22" fill="#58a6ff" rx="2"/>
+<text x="554.1" y="60" fill="#8b949e" font-size="11">228/329 (0.69)</text>
+<text x="152" y="98" text-anchor="end" fill="#c9d1d9" font-size="12">visible_proxy</text>
+<rect x="160" y="82" width="165.9" height="22" fill="#f85149" rx="2"/>
+<text x="331.9" y="98" fill="#8b949e" font-size="11">8/27 (0.30)</text>
+<text x="152" y="136" text-anchor="end" fill="#c9d1d9" font-size="12">reward_proxy</text>
+<rect x="160" y="120" width="140.0" height="22" fill="#f85149" rx="2"/>
+<text x="306.0" y="136" fill="#8b949e" font-size="11">1/4 (0.25)</text>
+<text x="152" y="174" text-anchor="end" fill="#c9d1d9" font-size="12">retrieval_cue</text>
+<rect x="160" y="158" width="320.0" height="22" fill="#d29922" rx="2"/>
+<text x="486.0" y="174" fill="#8b949e" font-size="11">4/7 (0.57)</text>
+<text x="152" y="212" text-anchor="end" fill="#c9d1d9" font-size="12">terminology</text>
+<rect x="160" y="196" width="473.8" height="22" fill="#3fb950" rx="2"/>
+<text x="639.8" y="212" fill="#8b949e" font-size="11">11/13 (0.85)</text>
+<text x="152" y="250" text-anchor="end" fill="#c9d1d9" font-size="12">evaluator</text>
+<rect x="160" y="234" width="560.0" height="22" fill="#3fb950" rx="2"/>
+<text x="726.0" y="250" fill="#8b949e" font-size="11">10/10 (1.00)</text>
+<text x="152" y="288" text-anchor="end" fill="#c9d1d9" font-size="12">evidence</text>
+<rect x="160" y="272" width="560.0" height="22" fill="#3fb950" rx="2"/>
+<text x="726.0" y="288" fill="#8b949e" font-size="11">6/6 (1.00)</text>
+<text x="152" y="326" text-anchor="end" fill="#c9d1d9" font-size="12">presentation</text>
+<rect x="160" y="310" width="560.0" height="22" fill="#3fb950" rx="2"/>
+<text x="726.0" y="326" fill="#8b949e" font-size="11">4/4 (1.00)</text>
+<text x="152" y="364" text-anchor="end" fill="#c9d1d9" font-size="12">prior</text>
+<rect x="160" y="348" width="560.0" height="22" fill="#3fb950" rx="2"/>
+<text x="726.0" y="364" fill="#8b949e" font-size="11">5/5 (1.00)</text>
+</svg>

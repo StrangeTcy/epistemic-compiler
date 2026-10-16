@@ -101,7 +101,7 @@
       "id": "F-006",
       "status": "observed",
       "title": "Bimodal environment difficulty",
-      "claim": "Pass rates across 38 environments are bimodal: 10 environments score 0.00 (glyph, functorial_augmentation, monadic_reward, sheaf_invariant_gluing, sheaf_physical_constraints, ts_one_step, ts_trajectory, plus 3 unscored-only environments) and ~12 score 1.00 (categorical_lenses, ci_dependency_graph, css_state_machine, epistemic_games, rd_gradient_credit, rd_state_carry, semiring_unification, spreadsheet_dataflow, stochastic_monad, template_interpreter, tokenizer_adjunction, ts_parse_only, neuro_symbolic_parser, epistemic_announcements, epistemic_fragmented_observation, epistemic_nested_knowledge).",
+      "claim": "Pass rates across 38 environments: 7 environments score 0.00 (glyph, functorial_augmentation, monadic_reward, sheaf_invariant_gluing, sheaf_physical_constraints, ts_one_step, ts_trajectory), 17 score 1.00, 2 are entirely unscored (epistemic_silence, epistemic_type_games), and 12 are partial.",
       "evidence": [
         "environment_summary_v2.csv",
         "case_results.csv"

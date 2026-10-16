@@ -29,4 +29,12 @@ This matters for two reasons. First, a non-monotonic result is a signal that the
 
 The strongest defensible statement: in this archived run, several environments show non-monotonic outcomes across their difficulty axes, and the axes themselves change different task properties. Whether those are real thresholds or seed-specific accidents requires replication.
 
+![Difficulty transitions](../figures/fig4_difficulty_transitions.svg)
+
+*Figure 3. MoCo visible-test sweeps holding other dimensions fixed; each line is one control combination. Points show pass/fail at easy/medium/hard visible-test levels.*
+
+![Difficulty heatmap](../figures/fig3_difficulty_heatmap.svg)
+
+*Figure 4. Environment × difficulty-tuple heatmap for six representative environments. Cells show pass counts over scored counts; grey = unscored.*
+
 Caveats: single seed per cell; dirty source repository; mixed judge guarantees.

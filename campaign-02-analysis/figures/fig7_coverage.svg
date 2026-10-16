@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="360" viewBox="0 0 700 360">
+<rect width="100%" height="100%" fill="#0d1117"/>
+<text x="40" y="40" fill="#c9d1d9" font-size="14" font-weight="bold">Coverage: 416 selected cases</text>
+<text x="40" y="80" fill="#8b949e" font-size="12">scored</text>
+<rect x="120" y="66" width="486.8" height="22" fill="#3fb950" rx="2"/>
+<text x="612.8" y="82" fill="#c9d1d9" font-size="11">405</text>
+<text x="40" y="110" fill="#8b949e" font-size="12">unscored</text>
+<rect x="120" y="96" width="13.2" height="22" fill="#f85149" rx="2"/>
+<text x="139.2" y="112" fill="#c9d1d9" font-size="11">11</text>
+<text x="40" y="160" fill="#8b949e" font-size="12">behavioral_reference</text>
+<rect x="200" y="146" width="190.8" height="22" fill="#58a6ff" rx="2"/>
+<text x="396.8" y="162" fill="#c9d1d9" font-size="11">189</text>
+<text x="40" y="190" fill="#8b949e" font-size="12">compile_only</text>
+<rect x="200" y="176" width="229.2" height="22" fill="#d29922" rx="2"/>
+<text x="435.2" y="192" fill="#c9d1d9" font-size="11">227</text>
+</svg>

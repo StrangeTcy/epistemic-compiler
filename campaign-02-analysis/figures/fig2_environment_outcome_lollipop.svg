@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+<rect width="100%" height="100%" fill="#0d1117"/>
+<text x="252" y="53" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_silence</text>
+<rect x="260" y="42" width="0.0" height="14" fill="#6e7681" rx="2"/>
+<text x="266.0" y="53" fill="#8b949e" font-size="10">0/0 (0.00)</text>
+<text x="252" y="79" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_type_games</text>
+<rect x="260" y="68" width="0.0" height="14" fill="#6e7681" rx="2"/>
+<text x="266.0" y="79" fill="#8b949e" font-size="10">0/0 (0.00)</text>
+<text x="252" y="105" text-anchor="end" fill="#c9d1d9" font-size="11">functorial_augmentation</text>
+<rect x="260" y="94" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="105" fill="#8b949e" font-size="10">0/9 (0.00)</text>
+<text x="252" y="131" text-anchor="end" fill="#c9d1d9" font-size="11">glyph</text>
+<rect x="260" y="120" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="131" fill="#8b949e" font-size="10">0/24 (0.00)</text>
+<text x="252" y="157" text-anchor="end" fill="#c9d1d9" font-size="11">monadic_reward</text>
+<rect x="260" y="146" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="157" fill="#8b949e" font-size="10">0/9 (0.00)</text>
+<text x="252" y="183" text-anchor="end" fill="#c9d1d9" font-size="11">sheaf_invariant_gluing</text>
+<rect x="260" y="172" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="183" fill="#8b949e" font-size="10">0/9 (0.00)</text>
+<text x="252" y="209" text-anchor="end" fill="#c9d1d9" font-size="11">sheaf_physical_constraints</text>
+<rect x="260" y="198" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="209" fill="#8b949e" font-size="10">0/9 (0.00)</text>
+<text x="252" y="235" text-anchor="end" fill="#c9d1d9" font-size="11">ts_one_step</text>
+<rect x="260" y="224" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="235" fill="#8b949e" font-size="10">0/4 (0.00)</text>
+<text x="252" y="261" text-anchor="end" fill="#c9d1d9" font-size="11">ts_trajectory</text>
+<rect x="260" y="250" width="0.0" height="14" fill="#f85149" rx="2"/>
+<text x="266.0" y="261" fill="#8b949e" font-size="10">0/4 (0.00)</text>
+<text x="252" y="287" text-anchor="end" fill="#c9d1d9" font-size="11">batchnorm_ema</text>
+<rect x="260" y="276" width="74.7" height="14" fill="#d29922" rx="2"/>
+<text x="340.7" y="287" fill="#8b949e" font-size="10">2/15 (0.13)</text>
+<text x="252" y="313" text-anchor="end" fill="#c9d1d9" font-size="11">gnn_message_passing</text>
+<rect x="260" y="302" width="311.1" height="14" fill="#d29922" rx="2"/>
+<text x="577.1" y="313" fill="#8b949e" font-size="10">5/9 (0.56)</text>
+<text x="252" y="339" text-anchor="end" fill="#c9d1d9" font-size="11">regex_state_machine</text>
+<rect x="260" y="328" width="311.1" height="14" fill="#d29922" rx="2"/>
+<text x="577.1" y="339" fill="#8b949e" font-size="10">5/9 (0.56)</text>
+<text x="252" y="365" text-anchor="end" fill="#c9d1d9" font-size="11">ssm_parallel_scan</text>
+<rect x="260" y="354" width="311.1" height="14" fill="#d29922" rx="2"/>
+<text x="577.1" y="365" fill="#8b949e" font-size="10">5/9 (0.56)</text>
+<text x="252" y="391" text-anchor="end" fill="#c9d1d9" font-size="11">rd_adaptive_halting</text>
+<rect x="260" y="380" width="320.0" height="14" fill="#d29922" rx="2"/>
+<text x="586.0" y="391" fill="#8b949e" font-size="10">8/14 (0.57)</text>
+<text x="252" y="417" text-anchor="end" fill="#c9d1d9" font-size="11">moco</text>
+<rect x="260" y="406" width="366.5" height="14" fill="#d29922" rx="2"/>
+<text x="632.5" y="417" fill="#8b949e" font-size="10">36/55 (0.65)</text>
+<text x="252" y="443" text-anchor="end" fill="#c9d1d9" font-size="11">tensor_functor</text>
+<rect x="260" y="432" width="373.3" height="14" fill="#d29922" rx="2"/>
+<text x="639.3" y="443" fill="#8b949e" font-size="10">6/9 (0.67)</text>
+<text x="252" y="469" text-anchor="end" fill="#c9d1d9" font-size="11">compositional_optimizer</text>
+<rect x="260" y="458" width="435.6" height="14" fill="#d29922" rx="2"/>
+<text x="701.6" y="469" fill="#8b949e" font-size="10">7/9 (0.78)</text>
+<text x="252" y="495" text-anchor="end" fill="#c9d1d9" font-size="11">equivariant_diagram</text>
+<rect x="260" y="484" width="435.6" height="14" fill="#d29922" rx="2"/>
+<text x="701.6" y="495" fill="#8b949e" font-size="10">7/9 (0.78)</text>
+<text x="252" y="521" text-anchor="end" fill="#c9d1d9" font-size="11">sheaf_schema_sync</text>
+<rect x="260" y="510" width="497.8" height="14" fill="#d29922" rx="2"/>
+<text x="763.8" y="521" fill="#8b949e" font-size="10">8/9 (0.89)</text>
+<text x="252" y="547" text-anchor="end" fill="#c9d1d9" font-size="11">sql_fixed_point</text>
+<rect x="260" y="536" width="497.8" height="14" fill="#d29922" rx="2"/>
+<text x="763.8" y="547" fill="#8b949e" font-size="10">8/9 (0.89)</text>
+<text x="252" y="573" text-anchor="end" fill="#c9d1d9" font-size="11">transformer_ssm_lift</text>
+<rect x="260" y="562" width="497.8" height="14" fill="#d29922" rx="2"/>
+<text x="763.8" y="573" fill="#8b949e" font-size="10">8/9 (0.89)</text>
+<text x="252" y="599" text-anchor="end" fill="#c9d1d9" font-size="11">architecture_naturality</text>
+<rect x="260" y="588" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="599" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="625" text-anchor="end" fill="#c9d1d9" font-size="11">categorical_lenses</text>
+<rect x="260" y="614" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="625" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="651" text-anchor="end" fill="#c9d1d9" font-size="11">ci_dependency_graph</text>
+<rect x="260" y="640" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="651" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="677" text-anchor="end" fill="#c9d1d9" font-size="11">css_state_machine</text>
+<rect x="260" y="666" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="677" fill="#8b949e" font-size="10">18/18 (1.00)</text>
+<text x="252" y="703" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_announcements</text>
+<rect x="260" y="692" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="703" fill="#8b949e" font-size="10">6/6 (1.00)</text>
+<text x="252" y="729" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_fragmented_observation</text>
+<rect x="260" y="718" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="729" fill="#8b949e" font-size="10">4/4 (1.00)</text>
+<text x="252" y="755" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_games</text>
+<rect x="260" y="744" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="755" fill="#8b949e" font-size="10">23/23 (1.00)</text>
+<text x="252" y="781" text-anchor="end" fill="#c9d1d9" font-size="11">epistemic_nested_knowledge</text>
+<rect x="260" y="770" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="781" fill="#8b949e" font-size="10">6/6 (1.00)</text>
+<text x="252" y="807" text-anchor="end" fill="#c9d1d9" font-size="11">neuro_symbolic_parser</text>
+<rect x="260" y="796" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="807" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="833" text-anchor="end" fill="#c9d1d9" font-size="11">rd_gradient_credit</text>
+<rect x="260" y="822" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="833" fill="#8b949e" font-size="10">15/15 (1.00)</text>
+<text x="252" y="859" text-anchor="end" fill="#c9d1d9" font-size="11">rd_state_carry</text>
+<rect x="260" y="848" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="859" fill="#8b949e" font-size="10">15/15 (1.00)</text>
+<text x="252" y="885" text-anchor="end" fill="#c9d1d9" font-size="11">semiring_unification</text>
+<rect x="260" y="874" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="885" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="911" text-anchor="end" fill="#c9d1d9" font-size="11">spreadsheet_dataflow</text>
+<rect x="260" y="900" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="911" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="937" text-anchor="end" fill="#c9d1d9" font-size="11">stochastic_monad</text>
+<rect x="260" y="926" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="937" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="963" text-anchor="end" fill="#c9d1d9" font-size="11">template_interpreter</text>
+<rect x="260" y="952" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="963" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="989" text-anchor="end" fill="#c9d1d9" font-size="11">tokenizer_adjunction</text>
+<rect x="260" y="978" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="989" fill="#8b949e" font-size="10">9/9 (1.00)</text>
+<text x="252" y="1015" text-anchor="end" fill="#c9d1d9" font-size="11">ts_parse_only</text>
+<rect x="260" y="1004" width="560.0" height="14" fill="#3fb950" rx="2"/>
+<text x="826.0" y="1015" fill="#8b949e" font-size="10">4/4 (1.00)</text>
+</svg>

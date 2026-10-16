@@ -1,18 +1,18 @@
-# Campaign 02 analytic Council — role prompts (Mercury)
+# Campaign 02 Council — cross-environment difficulty (Mercury)
 
-Shared evidence brief: use `campaign-02-analysis/evidence/generated/` tables, `findings/findings.json`, and raw archive members indexed by `archive_inventory.csv`. Archive: `mercury-pairwise-state-38873207827.zip` (SHA-256 `ece98bcf1cfd53dd24625c43da5e647aa63a5fac645603976c1213bdbd9af389`). Model: mercury-2.5, reasoning_effort=high, reasoning_enabled=true. Distinguish recorded fact / reproduced result / interpretation / proposal. Do not reproduce reasoning content. Do not invent references. Atria findings are method precedent only, not Mercury evidence.
+Roles work from environment_difficulty_matrix.csv, environment_summary_v2.csv, case_results.csv, findings.
 
 ## Theorist
-Identify the strongest explanatory structure for the belief/decision dissociation (F-001) and competing explanations (parsing vs decision-layer fragility). Specify discriminating evidence.
+Strongest structural interpretation of cross-environment pattern: shared vs task-specific behaviour, apparent transitions, where evidence stops.
 
 ## Experimentalist
-Reconstruct measurement design: T1 probe (6 cells x 6 seeds), paired intervention cases, scoring guarantees, exclusions, denominators. State which contrasts are controlled.
+Reconstruct tuple design, within-environment controls, scoring modes, sample coverage, validity of comparisons. Which plots warranted?
 
 ## Skeptic
-Attack F-001 and F-002: denominators, confounds, judge/scorer edge cases, small samples, provider-specificity.
+Attack headline findings, denominators, environment groupings, non-monotonicity claims, failure-label interpretations. Counterexamples.
 
 ## Prior-Work Killer
-Assess novelty of the belief/decision dissociation and proxy-intervention findings against prior LLM reasoning/order-effect literature.
+What is established practice vs genuinely new observation from this campaign. Reject inflated novelty.
 
-## Cross-critique
-Each role addresses strongest objection from others; preserve disagreements.
+## Claim Refuter
+Dedicated adversarial examination. For each principal claim: exact wording, supporting evidence, counterevidence, verdict (survives/narrow/reject), correction.

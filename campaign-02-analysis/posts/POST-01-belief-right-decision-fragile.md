@@ -61,6 +61,10 @@ The limits are as important as the result. This is one model on one provider con
 
 The campaign also cannot support a general claim about "reasoning." The 405 scored cases span environments with pass rates from 0.00 to 1.00, and the judge guarantees differ (189 behavioral-reference, 227 compile-only). Collapsing those into one number would be a category error. The 11 infrastructure-unscored cases and 56 unverified twin groups are further reasons to keep the claims narrow.
 
+![Coverage](../figures/fig7_coverage.svg)
+
+*Figure 7. Coverage: scored vs unscored cases and judge-guarantee split.*
+
 ## A bounded conclusion
 
 What I can say: on this probe, with this model, belief computation is presentation-invariant and content-sensitive, while terminal decisions are presentation- and proxy-sensitive. That is a dissociation worth measuring for, not a diagnosis of an internal mechanism. Whether it survives replication, difficulty matching, and a second model is the experiment that would actually settle it.
