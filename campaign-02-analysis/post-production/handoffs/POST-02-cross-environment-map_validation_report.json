@@ -1,0 +1,10 @@
+{
+  "post": "POST-02-cross-environment-map",
+  "checks": {
+    "frontmatter": true,
+    "byline": true,
+    "epistemic": true,
+    "no_internal_ids": true
+  },
+  "passed": true
+}

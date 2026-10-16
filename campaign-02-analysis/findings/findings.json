@@ -1,0 +1,177 @@
+{
+  "campaign": "mercury-pairwise-state",
+  "archive_sha256": "ece98bcf1cfd53dd24625c43da5e647aa63a5fac645603976c1213bdbd9af389",
+  "findings": [
+    {
+      "id": "F-001",
+      "status": "observed",
+      "title": "Presentation order changes decisions but not stated beliefs",
+      "claim": "Across 36 matched same-fact pairs (6 cells x 6 seeds), Mercury-2.5's elicited posterior is identical in both presentation orders in every trial (0/36 belief flips), yet the terminal answer flips in 5/36 pairs (all 5 are correctness flips) and diagnostic choices diverge in 17/36 pairs.",
+      "evidence": [
+        "t1_same_fact_presentation.json",
+        "t1_m0.json"
+      ],
+      "numerator": "5 terminal flips; 17 diagnostic-choice divergences",
+      "denominator": "36 matched pairs",
+      "uncertainty": "Small sample (36 pairs); no confidence interval computed; single model/provider.",
+      "alternatives": [
+        "Presentation may affect parsing rather than decision; order effects may be seed-specific."
+      ],
+      "falsifier": "A replication with larger seed count showing zero terminal flips.",
+      "prior_work": "Consistent with order-sensitivity of LLM decisions reported in prior work; distinct in isolating belief invariance.",
+      "followup": "Increase seeds; add belief-elicitation controls; test other models."
+    },
+    {
+      "id": "F-002",
+      "status": "observed",
+      "title": "Proxy-channel interventions sharply reduce pass rates",
+      "claim": "Intervention cases introducing a visible_proxy or reward_proxy channel pass at 0.30 (8/27) and 0.25 (1/4) respectively, versus 0.69 base pass rate (228/331 scored base cases). Within paired groups sharing a latent spec, 7 of 76 intervention cases flip a passing base case to FAIL, 4 of which are visible_proxy.",
+      "evidence": [
+        "suite_checkpoint.json",
+        "case_results.csv"
+      ],
+      "numerator": "8/27 visible_proxy; 1/4 reward_proxy; 7 pass->fail flips",
+      "denominator": "27 visible_proxy cases; 4 reward_proxy cases; 76 intervention cases with a base in pair",
+      "uncertainty": "Intervention cases differ in difficulty levels; not a fully controlled manipulation.",
+      "alternatives": [
+        "Difficulty confounding; proxy cases may be intrinsically harder."
+      ],
+      "falsifier": "A difficulty-matched re-run showing no proxy effect.",
+      "prior_work": "Relates to shortcut learning / proxy gaming in code-generation benchmarks.",
+      "followup": "Difficulty-stratified analysis; paired difficulty matching."
+    },
+    {
+      "id": "F-003",
+      "status": "observed",
+      "title": "Exact posterior match on all epistemic-game variants",
+      "claim": "All 23 epistemic_games cases (base + evidence/presentation/prior interventions) achieve zero posterior error and correct verdict; posterior_reported equals posterior_true in every case.",
+      "evidence": [
+        "suite_checkpoint.json",
+        "episodes/epistemic_games/*/final.json"
+      ],
+      "numerator": "23/23",
+      "denominator": "23",
+      "uncertainty": "Compile-only? No, behavioral_reference guarantee for all 23.",
+      "alternatives": [
+        "Tasks may be within training distribution; exact-match oracle may be lenient."
+      ],
+      "falsifier": "Harder epistemic instances with nonzero posterior error.",
+      "prior_work": "Consistent with LLM Bayesian updating on explicit likelihoods.",
+      "followup": "Harder instances; out-of-distribution likelihoods."
+    },
+    {
+      "id": "F-004",
+      "status": "observed",
+      "title": "Overall campaign pass rate with strong environment heterogeneity",
+      "claim": "Of 405 scored cases, 277 PASS and 128 FAIL (0.684). Pass rates range from 0.00 (glyph, functorial_augmentation, monadic_reward, sheaf_*, ts_one_step, ts_trajectory, epistemic_silence/type_games unscored) to 1.00 (categorical_lenses, ci_dependency_graph, css_state_machine, epistemic_games, etc.).",
+      "evidence": [
+        "suite_checkpoint.json",
+        "environment_summary.csv"
+      ],
+      "numerator": "277",
+      "denominator": "405",
+      "uncertainty": "Mixed judge guarantees (behavioral_reference vs compile_only); not a single benchmark score.",
+      "alternatives": [
+        "Provider/model-specific; may not generalize."
+      ],
+      "falsifier": "Replication on another model.",
+      "prior_work": "Benchmark-style aggregate; not a novel claim.",
+      "followup": "Per-guarantee reporting; model sweep."
+    },
+    {
+      "id": "F-005",
+      "status": "observed",
+      "title": "Infrastructure gaps: 11 unscored cases and unverified twin groups",
+      "claim": "11 cases are infrastructure_unscored (6 epistemic_silence, 4 epistemic_type_games, 1 rd_adaptive_halting). Twin verification status is unverified (56 of 132 twin cases unverified).",
+      "evidence": [
+        "suite_checkpoint.json",
+        "pilot_manifest.json"
+      ],
+      "numerator": "11; 56",
+      "denominator": "416; 132",
+      "uncertainty": "Infrastructure failures may be provider-specific.",
+      "alternatives": [
+        "Retry budget insufficient."
+      ],
+      "falsifier": "Re-run with higher retry budget.",
+      "prior_work": "n/a",
+      "followup": "Improve retry/transport robustness."
+    },
+    {
+      "id": "F-006",
+      "status": "observed",
+      "title": "Bimodal environment difficulty",
+      "claim": "Pass rates across 38 environments are bimodal: 10 environments score 0.00 (glyph, functorial_augmentation, monadic_reward, sheaf_invariant_gluing, sheaf_physical_constraints, ts_one_step, ts_trajectory, plus 3 unscored-only environments) and ~12 score 1.00 (categorical_lenses, ci_dependency_graph, css_state_machine, epistemic_games, rd_gradient_credit, rd_state_carry, semiring_unification, spreadsheet_dataflow, stochastic_monad, template_interpreter, tokenizer_adjunction, ts_parse_only, neuro_symbolic_parser, epistemic_announcements, epistemic_fragmented_observation, epistemic_nested_knowledge).",
+      "evidence": [
+        "environment_summary_v2.csv",
+        "case_results.csv"
+      ],
+      "numerator": "277 PASS",
+      "denominator": "405 scored",
+      "uncertainty": "Single model; mixed judge guarantees.",
+      "alternatives": [
+        "Difficulty labels may be mis-calibrated per environment."
+      ],
+      "falsifier": "A second model showing different environment ordering.",
+      "prior_work": "Benchmark-style aggregate.",
+      "followup": "Model sweep."
+    },
+    {
+      "id": "F-007",
+      "status": "observed",
+      "title": "Failure modes dominated by underfit and visible-test overfit",
+      "claim": "Of 128 FAIL verdicts, 51 are underfit and 49 are overfit_visible_tests; source_invalid 9, runtime_error 11, invalid_action 5, training_failed 3.",
+      "evidence": [
+        "case_results.csv",
+        "failure_taxonomy.csv (Atria-style)"
+      ],
+      "numerator": "51+49=100",
+      "denominator": "128 FAIL",
+      "uncertainty": "Labels are judge-assigned; overfit_visible_tests cases often have missing required files.",
+      "alternatives": [
+        "Label semantics may not match failure cause."
+      ],
+      "falsifier": "Manual audit of failure notes.",
+      "prior_work": "n/a",
+      "followup": "Failure-mode re-audit."
+    },
+    {
+      "id": "F-008",
+      "status": "observed",
+      "title": "Non-monotonic difficulty transitions",
+      "claim": "Several environments show non-monotonic outcomes across difficulty levels: MoCo visible-test levels yield pass/fail/pass; CSS easy-surface cases yield partial/source-invalid/pass; SQL easy-surface passes at lengths 6 and 25 but source-invalid at 12.",
+      "evidence": [
+        "environment_difficulty_matrix.csv",
+        "case_results.csv"
+      ],
+      "numerator": "multiple",
+      "denominator": "per-environment tuples",
+      "uncertainty": "Single seed per cell; no replication.",
+      "alternatives": [
+        "Sample composition or hidden checks."
+      ],
+      "falsifier": "Multi-seed replication.",
+      "prior_work": "n/a",
+      "followup": "Seed replication."
+    },
+    {
+      "id": "F-009",
+      "status": "observed",
+      "title": "Proxy interventions reduce pass rates",
+      "claim": "visible_proxy 8/27 (0.30), reward_proxy 1/4 (0.25) vs base 228/331 (0.69); 7 pass->fail flips within shared latent specs.",
+      "evidence": [
+        "suite_checkpoint.json",
+        "case_results.csv"
+      ],
+      "numerator": "8;1;7",
+      "denominator": "27;4;76",
+      "uncertainty": "Not difficulty-matched.",
+      "alternatives": [
+        "Difficulty confounding."
+      ],
+      "falsifier": "Difficulty-stratified re-run.",
+      "prior_work": "Shortcut learning.",
+      "followup": "Difficulty matching."
+    }
+  ]
+}

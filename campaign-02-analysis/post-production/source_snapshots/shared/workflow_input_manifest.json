@@ -1,0 +1,501 @@
+{
+  "constraints": [
+    "No Atria campaign rerun or evidence rewrite",
+    "No Mission 01/04 edits",
+    "No public export until all five validators and cross-post review pass",
+    "No automatic push"
+  ],
+  "publication_date": "2026-10-03",
+  "reference_material": {
+    "file": "style_reference_material.md",
+    "sha256": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+    "source_commit": "bcc89c392920b3be172a27eec10ad205b58d4fa3"
+  },
+  "requested_source_drafts": {
+    "POST-01": "POST-01-non-monotone-capability-map.md",
+    "POST-02": "POST-02-epistemic-games-bayesian-not-recursive.md",
+    "POST-03": "POST-03-category-track-implementation-audit.md",
+    "POST-04": "POST-04-what-scalar-scores-conceal.md",
+    "POST-05": "POST-05-weird-machines-surface-and-depth.md"
+  },
+  "schema_version": 1,
+  "snapshots": {
+    "campaign_provenance": {
+      "snapshot": "source_snapshots/shared/campaign_provenance.md",
+      "snapshot_bytes": 13690,
+      "snapshot_sha256": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9",
+      "source_path": "campaign-01-analysis/evidence/PROVENANCE.md",
+      "source_sha256": "3d0f3255143366c9a2521ef8d7f1ba6576b0d537169d9fb391a3d6848378e3f9"
+    },
+    "evidence_analysis_family_summary_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/analysis_family_summary.csv",
+      "snapshot_bytes": 539,
+      "snapshot_sha256": "70e97ffa64a7ffe1be655cf943269d7e2cc4aa45d0242155b26b1aaa42a5207c",
+      "source_path": "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+      "source_sha256": "c6f2327fb06444e4cd5a866a1cb86c0390f10e65791d2d40407fbbff47d234a4"
+    },
+    "evidence_analysis_family_summary_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence/analysis_family_summary.csv",
+      "snapshot_bytes": 387,
+      "snapshot_sha256": "30c966fff429a3d634ef6eca92b3e167af55ceee459176ffe9b758381d6d86ee",
+      "source_path": "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+      "source_sha256": "c6f2327fb06444e4cd5a866a1cb86c0390f10e65791d2d40407fbbff47d234a4"
+    },
+    "evidence_analysis_family_summary_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/analysis_family_summary.csv",
+      "snapshot_bytes": 427,
+      "snapshot_sha256": "dc7408b3767289e684378b7f65bf69320d5ee49ce61e152a61bc3af1189854c9",
+      "source_path": "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+      "source_sha256": "c6f2327fb06444e4cd5a866a1cb86c0390f10e65791d2d40407fbbff47d234a4"
+    },
+    "evidence_analysis_family_summary_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/analysis_family_summary.csv",
+      "snapshot_bytes": 341,
+      "snapshot_sha256": "adf76efc0842ab0fc123a5ac021c56227588d65938f3bfc15ae5a203a2c7f4b4",
+      "source_path": "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+      "source_sha256": "c6f2327fb06444e4cd5a866a1cb86c0390f10e65791d2d40407fbbff47d234a4"
+    },
+    "evidence_analysis_family_summary_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/analysis_family_summary.csv",
+      "snapshot_bytes": 406,
+      "snapshot_sha256": "512256464f66c5bf8a075c229a1bef4ad428b6ffec0ba074c0ec58d6d7f7fa66",
+      "source_path": "campaign-01-analysis/evidence/generated/analysis_family_summary.csv",
+      "source_sha256": "c6f2327fb06444e4cd5a866a1cb86c0390f10e65791d2d40407fbbff47d234a4"
+    },
+    "evidence_axis_placeholder_audit_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/axis_placeholder_audit.csv",
+      "snapshot_bytes": 16015,
+      "snapshot_sha256": "64c368e44f2922d776793b64f374635dbab39cea31fb16e3cef84f0ccbc748df",
+      "source_path": "campaign-01-analysis/evidence/generated/axis_placeholder_audit.csv",
+      "source_sha256": "29df8a6b87ebbc1f8757a3c8c2614c554e909b89c249c6f885a3764e989d4ee4"
+    },
+    "evidence_axis_summary_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/axis_summary.csv",
+      "snapshot_bytes": 101637,
+      "snapshot_sha256": "fba9921f214994cd0b017b8d914d1460eb744046dca161ee2878b3a0b4d27c45",
+      "source_path": "campaign-01-analysis/evidence/generated/axis_summary.csv",
+      "source_sha256": "f8ba0b7286edc5d8a742a9fe031a22a999ec011292573340d35ae6fc388b3856"
+    },
+    "evidence_axis_summary_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence/axis_summary.csv",
+      "snapshot_bytes": 11547,
+      "snapshot_sha256": "ef2e3448ac367023c5705cd38bad376f03ee81092ff7abf3c73cafa11e8c2fd3",
+      "source_path": "campaign-01-analysis/evidence/generated/axis_summary.csv",
+      "source_sha256": "f8ba0b7286edc5d8a742a9fe031a22a999ec011292573340d35ae6fc388b3856"
+    },
+    "evidence_axis_summary_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/axis_summary.csv",
+      "snapshot_bytes": 35107,
+      "snapshot_sha256": "6adbe8a6968def08ab6d197bcea048d4be7212aacf63bef2432ce9cb86128fab",
+      "source_path": "campaign-01-analysis/evidence/generated/axis_summary.csv",
+      "source_sha256": "f8ba0b7286edc5d8a742a9fe031a22a999ec011292573340d35ae6fc388b3856"
+    },
+    "evidence_axis_summary_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/axis_summary.csv",
+      "snapshot_bytes": 13453,
+      "snapshot_sha256": "30fe936cb6cf794533fead907529b9d798baca6f65e83dc3feff2561886c9e82",
+      "source_path": "campaign-01-analysis/evidence/generated/axis_summary.csv",
+      "source_sha256": "f8ba0b7286edc5d8a742a9fe031a22a999ec011292573340d35ae6fc388b3856"
+    },
+    "evidence_campaign_exclusions_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/campaign_exclusions.csv",
+      "snapshot_bytes": 8047,
+      "snapshot_sha256": "3300ad90064458a38b1166bd9f5b3c840fa690604c2219cbc3129a3207b92542",
+      "source_path": "campaign-01-analysis/evidence/generated/campaign_exclusions.csv",
+      "source_sha256": "3300ad90064458a38b1166bd9f5b3c840fa690604c2219cbc3129a3207b92542"
+    },
+    "evidence_campaign_exclusions_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/campaign_exclusions.csv",
+      "snapshot_bytes": 8047,
+      "snapshot_sha256": "3300ad90064458a38b1166bd9f5b3c840fa690604c2219cbc3129a3207b92542",
+      "source_path": "campaign-01-analysis/evidence/generated/campaign_exclusions.csv",
+      "source_sha256": "3300ad90064458a38b1166bd9f5b3c840fa690604c2219cbc3129a3207b92542"
+    },
+    "evidence_campaign_scope_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/campaign_scope.json",
+      "snapshot_bytes": 3472,
+      "snapshot_sha256": "a6212933369f324049fd0732a97b290d9ec17469d7ed106bd9c5267778cde4da",
+      "source_path": "campaign-01-analysis/evidence/generated/audit.json",
+      "source_sha256": "142dcabca5287729c436b05e10082642e9f09d81f52ff00c4f5bbb49f65a109e"
+    },
+    "evidence_campaign_scope_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/campaign_scope.json",
+      "snapshot_bytes": 6058,
+      "snapshot_sha256": "acacd9f7891af79958df9f66838bdafa4a237021826784d195a3b1eae5c9208e",
+      "source_path": "campaign-01-analysis/evidence/generated/audit.json",
+      "source_sha256": "142dcabca5287729c436b05e10082642e9f09d81f52ff00c4f5bbb49f65a109e"
+    },
+    "evidence_campaign_scope_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/campaign_scope.json",
+      "snapshot_bytes": 3472,
+      "snapshot_sha256": "a6212933369f324049fd0732a97b290d9ec17469d7ed106bd9c5267778cde4da",
+      "source_path": "campaign-01-analysis/evidence/generated/audit.json",
+      "source_sha256": "142dcabca5287729c436b05e10082642e9f09d81f52ff00c4f5bbb49f65a109e"
+    },
+    "evidence_case_results_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/selected_case_results.csv",
+      "snapshot_bytes": 35758,
+      "snapshot_sha256": "5e5e2860e67c1f43ef0c4bee92033cf3242a6f12730250478792efe799577ff8",
+      "source_path": "campaign-01-analysis/evidence/generated/case_results.csv",
+      "source_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5"
+    },
+    "evidence_case_results_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence/selected_case_results.csv",
+      "snapshot_bytes": 10078,
+      "snapshot_sha256": "d3f6e76008fdbdf2e85f5959a366aae6a53a7fd8004fd98bab0dcfdd086860d6",
+      "source_path": "campaign-01-analysis/evidence/generated/case_results.csv",
+      "source_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5"
+    },
+    "evidence_case_results_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/selected_case_results.csv",
+      "snapshot_bytes": 6012,
+      "snapshot_sha256": "39b433fc910bd670535ce6e9d7b81bd88dc57a478b07bb130a61ba9557e77339",
+      "source_path": "campaign-01-analysis/evidence/generated/case_results.csv",
+      "source_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5"
+    },
+    "evidence_case_results_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/selected_case_results.csv",
+      "snapshot_bytes": 207,
+      "snapshot_sha256": "6fac93cfe36d331f85bf454908d40989f5337e68546354023267f9742a986e09",
+      "source_path": "campaign-01-analysis/evidence/generated/case_results.csv",
+      "source_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5"
+    },
+    "evidence_case_results_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/selected_case_results.csv",
+      "snapshot_bytes": 11509,
+      "snapshot_sha256": "7916f99a3e606a1de14b7d43184a5ea612f22feab9da0a7fbd9a2377b1dfe87b",
+      "source_path": "campaign-01-analysis/evidence/generated/case_results.csv",
+      "source_sha256": "859d825b3e4d1c63ad5212556f85303956d59bf2c54b41535832540a836b9dc5"
+    },
+    "evidence_environment_summary_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/environment_summary.csv",
+      "snapshot_bytes": 1998,
+      "snapshot_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806",
+      "source_path": "campaign-01-analysis/evidence/generated/environment_summary.csv",
+      "source_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806"
+    },
+    "evidence_environment_summary_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence/environment_summary.csv",
+      "snapshot_bytes": 383,
+      "snapshot_sha256": "a29d015640d99e171cb2a861df5759b23503073e204bf690d8d72be8dfb7df76",
+      "source_path": "campaign-01-analysis/evidence/generated/environment_summary.csv",
+      "source_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806"
+    },
+    "evidence_environment_summary_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/environment_summary.csv",
+      "snapshot_bytes": 497,
+      "snapshot_sha256": "f3c2c57c5d034d4c188818b094e4748ee70a6234d3e901032e1c5be48166d9e6",
+      "source_path": "campaign-01-analysis/evidence/generated/environment_summary.csv",
+      "source_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806"
+    },
+    "evidence_environment_summary_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/environment_summary.csv",
+      "snapshot_bytes": 1998,
+      "snapshot_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806",
+      "source_path": "campaign-01-analysis/evidence/generated/environment_summary.csv",
+      "source_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806"
+    },
+    "evidence_environment_summary_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/environment_summary.csv",
+      "snapshot_bytes": 633,
+      "snapshot_sha256": "f530e5e0e1d1cdf70dace0a314e4dc27b0cc827e10ab8a8efd0b3a33b1ff9162",
+      "source_path": "campaign-01-analysis/evidence/generated/environment_summary.csv",
+      "source_sha256": "3de3177a6dbdd61e74b3532f14157efc865b517aa3f4f9c6023e721d22e6d806"
+    },
+    "evidence_extract_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence_extract.md",
+      "snapshot_bytes": 1887,
+      "snapshot_sha256": "d026738cb3b3b5b287aa2398d4d0453503499e14adb3da43863bbfec2862f436",
+      "source_path": "campaign-01-analysis/battle/POST-01/evidence_extract.md",
+      "source_sha256": "d026738cb3b3b5b287aa2398d4d0453503499e14adb3da43863bbfec2862f436"
+    },
+    "evidence_extract_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence_extract.md",
+      "snapshot_bytes": 1501,
+      "snapshot_sha256": "b276f9e3564eb7cb8e3a016684dffa58763ac6252de85e7840941f553a58a8dc",
+      "source_path": "campaign-01-analysis/battle/POST-02/evidence_extract.md",
+      "source_sha256": "b276f9e3564eb7cb8e3a016684dffa58763ac6252de85e7840941f553a58a8dc"
+    },
+    "evidence_extract_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence_extract.md",
+      "snapshot_bytes": 1649,
+      "snapshot_sha256": "15495ccf6759b297e0691f456d72f9fb64319840b8bd40652bfcc2a3e54d3860",
+      "source_path": "campaign-01-analysis/battle/POST-03/evidence_extract.md",
+      "source_sha256": "15495ccf6759b297e0691f456d72f9fb64319840b8bd40652bfcc2a3e54d3860"
+    },
+    "evidence_extract_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence_extract.md",
+      "snapshot_bytes": 1853,
+      "snapshot_sha256": "d6a8a332ff5173f4b42371b0e06ae4668d31d7733003cf8ec2a2517269565203",
+      "source_path": "campaign-01-analysis/battle/POST-04/evidence_extract.md",
+      "source_sha256": "d6a8a332ff5173f4b42371b0e06ae4668d31d7733003cf8ec2a2517269565203"
+    },
+    "evidence_extract_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence_extract.md",
+      "snapshot_bytes": 1723,
+      "snapshot_sha256": "a466b52cb0776b4cce89212f3ba02cfb0338c368b8505aa1e554ecb5b7f1dfd6",
+      "source_path": "campaign-01-analysis/battle/POST-05/evidence_extract.md",
+      "source_sha256": "a466b52cb0776b4cce89212f3ba02cfb0338c368b8505aa1e554ecb5b7f1dfd6"
+    },
+    "evidence_failure_details_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/failure_details.csv",
+      "snapshot_bytes": 3945,
+      "snapshot_sha256": "ba98a1663167e2ae4e7721916d5e328028d05cebfd14b817c5f51af05e5c15d7",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_details.csv",
+      "source_sha256": "62ea6d3c655ba7eea35f150c4818041b2ecfb1e1a18d43f58a1c6284d5bc61e2"
+    },
+    "evidence_failure_details_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/failure_details.csv",
+      "snapshot_bytes": 20228,
+      "snapshot_sha256": "ddfbf8f204f2f1935b4166d4fee88ec7e5988fdabd191c09c9fc0c7f2268ba84",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_details.csv",
+      "source_sha256": "62ea6d3c655ba7eea35f150c4818041b2ecfb1e1a18d43f58a1c6284d5bc61e2"
+    },
+    "evidence_failure_details_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/failure_details.csv",
+      "snapshot_bytes": 2247,
+      "snapshot_sha256": "8304a428e1e04f897c5dbea6070989875777cb182fc42173cf146811d8cc36d8",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_details.csv",
+      "source_sha256": "62ea6d3c655ba7eea35f150c4818041b2ecfb1e1a18d43f58a1c6284d5bc61e2"
+    },
+    "evidence_failure_taxonomy_POST-01": {
+      "snapshot": "source_snapshots/POST-01/evidence/failure_taxonomy.csv",
+      "snapshot_bytes": 6231,
+      "snapshot_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+      "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+    },
+    "evidence_failure_taxonomy_POST-02": {
+      "snapshot": "source_snapshots/POST-02/evidence/failure_taxonomy.csv",
+      "snapshot_bytes": 6231,
+      "snapshot_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+      "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+    },
+    "evidence_failure_taxonomy_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/failure_taxonomy.csv",
+      "snapshot_bytes": 6231,
+      "snapshot_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+      "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+    },
+    "evidence_failure_taxonomy_POST-04": {
+      "snapshot": "source_snapshots/POST-04/evidence/failure_taxonomy.csv",
+      "snapshot_bytes": 6231,
+      "snapshot_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+      "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+    },
+    "evidence_failure_taxonomy_POST-05": {
+      "snapshot": "source_snapshots/POST-05/evidence/failure_taxonomy.csv",
+      "snapshot_bytes": 6231,
+      "snapshot_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4",
+      "source_path": "campaign-01-analysis/evidence/generated/failure_taxonomy.csv",
+      "source_sha256": "49155e9c8f1d8bfbdccb50f44c8b2a55c22e0866bb86c8d0b2ce8022d0669ca4"
+    },
+    "evidence_track_summary_POST-03": {
+      "snapshot": "source_snapshots/POST-03/evidence/track_summary.csv",
+      "snapshot_bytes": 417,
+      "snapshot_sha256": "af1b17cea27fc651479694cd83090ff5b727232567b786c6080b58d9fce2cc12",
+      "source_path": "campaign-01-analysis/evidence/generated/track_summary.csv",
+      "source_sha256": "14f9322542f6f6e076265746665e8e4b5b77f679839502be17375b2b6644b462"
+    },
+    "house_style": {
+      "snapshot": "source_snapshots/shared/house_style.md",
+      "snapshot_bytes": 12397,
+      "snapshot_sha256": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+      "source_path": "campaign-01-analysis/posts/HOUSE_STYLE.md",
+      "source_sha256": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973"
+    },
+    "limitations_POST-01": {
+      "snapshot": "source_snapshots/POST-01/limitations.md",
+      "snapshot_bytes": 1542,
+      "snapshot_sha256": "a93d3511cb78ce0ee32bf7adeefa0bc2581a0515c525f59c70fd515201d20bc0",
+      "source_path": "campaign-01-analysis/battle/POST-01/LIMITATIONS.md",
+      "source_sha256": "a93d3511cb78ce0ee32bf7adeefa0bc2581a0515c525f59c70fd515201d20bc0"
+    },
+    "limitations_POST-02": {
+      "snapshot": "source_snapshots/POST-02/limitations.md",
+      "snapshot_bytes": 1376,
+      "snapshot_sha256": "7fcc58d4ce9331cf23a1a2d1f143627110749b0f6dc2245a36a33af51c7f6bd6",
+      "source_path": "campaign-01-analysis/battle/POST-02/LIMITATIONS.md",
+      "source_sha256": "7fcc58d4ce9331cf23a1a2d1f143627110749b0f6dc2245a36a33af51c7f6bd6"
+    },
+    "limitations_POST-03": {
+      "snapshot": "source_snapshots/POST-03/limitations.md",
+      "snapshot_bytes": 1408,
+      "snapshot_sha256": "7716d9a9744fa3dfd56266688c7d7b260d375349e573e82fda7fb6963e318ff8",
+      "source_path": "campaign-01-analysis/battle/POST-03/LIMITATIONS.md",
+      "source_sha256": "7716d9a9744fa3dfd56266688c7d7b260d375349e573e82fda7fb6963e318ff8"
+    },
+    "limitations_POST-04": {
+      "snapshot": "source_snapshots/POST-04/limitations.md",
+      "snapshot_bytes": 1347,
+      "snapshot_sha256": "e83695e956d4dcb47177cde0ec505b963650898e34ed5d20e47f148f734f629e",
+      "source_path": "campaign-01-analysis/battle/POST-04/LIMITATIONS.md",
+      "source_sha256": "e83695e956d4dcb47177cde0ec505b963650898e34ed5d20e47f148f734f629e"
+    },
+    "limitations_POST-05": {
+      "snapshot": "source_snapshots/POST-05/limitations.md",
+      "snapshot_bytes": 1381,
+      "snapshot_sha256": "5ade5de4559b32c6de091ea33e381ff9698edb0e71e9f74ee70bc294e76d5020",
+      "source_path": "campaign-01-analysis/battle/POST-05/LIMITATIONS.md",
+      "source_sha256": "5ade5de4559b32c6de091ea33e381ff9698edb0e71e9f74ee70bc294e76d5020"
+    },
+    "references": {
+      "snapshot": "source_snapshots/shared/references.md",
+      "snapshot_bytes": 3532,
+      "snapshot_sha256": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0",
+      "source_path": "campaign-01-analysis/sources/references.md",
+      "source_sha256": "54a35af7db803d8c0af0e1098a761e0ffc99eacc1a717127c532419bde6c0cc0"
+    },
+    "relevant_findings_POST-01": {
+      "snapshot": "source_snapshots/POST-01/relevant_findings.json",
+      "snapshot_bytes": 51175,
+      "snapshot_sha256": "cb67218edc108c03d96edee664ed6a64e3369a6cd361892dfd089dff188c1905",
+      "source_path": "campaign-01-analysis/battle/POST-01/relevant_findings.json",
+      "source_sha256": "4672dc790281bc1fee6244fd02ad81ad980453425c51f87305ff02f7dcff0b35"
+    },
+    "relevant_findings_POST-02": {
+      "snapshot": "source_snapshots/POST-02/relevant_findings.json",
+      "snapshot_bytes": 23469,
+      "snapshot_sha256": "0cd1bb194592dc77e92fce37bf1730470d98aa2c74618dd7210caebf192b7f1d",
+      "source_path": "campaign-01-analysis/battle/POST-02/relevant_findings.json",
+      "source_sha256": "4a811039570f4df8f788d684807ac50365242e69dcdf321c659cb314d233ded3"
+    },
+    "relevant_findings_POST-03": {
+      "snapshot": "source_snapshots/POST-03/relevant_findings.json",
+      "snapshot_bytes": 36022,
+      "snapshot_sha256": "1faf368a1c32f05d15eb66ddba329957680c45287d8e0847175c062859142e34",
+      "source_path": "campaign-01-analysis/battle/POST-03/relevant_findings.json",
+      "source_sha256": "41c116ee43f9508e9ea31d72f2d528237b8c6abf574399528c532e3cadcbc8b3"
+    },
+    "relevant_findings_POST-04": {
+      "snapshot": "source_snapshots/POST-04/relevant_findings.json",
+      "snapshot_bytes": 45774,
+      "snapshot_sha256": "dd0c94b3d256a124cfdf5eb45f8c7dc4fa51ebc9a633936b970cb1b7d6f38f12",
+      "source_path": "campaign-01-analysis/battle/POST-04/relevant_findings.json",
+      "source_sha256": "fadc83dbedcb6694ff0b0fc3aeedbb593d0dd5e704822bdc2d84330723a412a6"
+    },
+    "relevant_findings_POST-05": {
+      "snapshot": "source_snapshots/POST-05/relevant_findings.json",
+      "snapshot_bytes": 37908,
+      "snapshot_sha256": "e29c577bb4da46c88cc6ce446dfe9a0256c9c950df697e2f631a0f4479b851b1",
+      "source_path": "campaign-01-analysis/battle/POST-05/relevant_findings.json",
+      "source_sha256": "55f59e740962bc4f89889ee4e7f83e2f3b1866fa3d5f68389c61ab82ee290ec8"
+    },
+    "source_audit_POST-01": {
+      "snapshot": "source_snapshots/POST-01/source_audit_excerpt.md",
+      "snapshot_bytes": 6919,
+      "snapshot_sha256": "d5d54c278bf2bae34a5d397475ec9b166fcbb3ec8cb323bf174f2367142ea060",
+      "source_path": "campaign-01-analysis/evidence/source_implementation_audit.md",
+      "source_sha256": "31cb96a99ce4f95bbe371874a8168ac4f334dc6bb3480eb6eb6dac14584f6d89"
+    },
+    "source_audit_POST-02": {
+      "snapshot": "source_snapshots/POST-02/source_audit_excerpt.md",
+      "snapshot_bytes": 5098,
+      "snapshot_sha256": "168935bd41f48a2c281a43aa4c6a5d83ef78e8d89c4e86f1098b264adf691beb",
+      "source_path": "campaign-01-analysis/evidence/source_implementation_audit.md",
+      "source_sha256": "31cb96a99ce4f95bbe371874a8168ac4f334dc6bb3480eb6eb6dac14584f6d89"
+    },
+    "source_audit_POST-03": {
+      "snapshot": "source_snapshots/POST-03/source_audit_excerpt.md",
+      "snapshot_bytes": 9309,
+      "snapshot_sha256": "66dad2ff836b4e0db41b9e90938970030242604bf059ee3749ba8e0ab8fa5437",
+      "source_path": "campaign-01-analysis/evidence/source_implementation_audit.md",
+      "source_sha256": "31cb96a99ce4f95bbe371874a8168ac4f334dc6bb3480eb6eb6dac14584f6d89"
+    },
+    "source_audit_POST-04": {
+      "snapshot": "source_snapshots/POST-04/source_audit_excerpt.md",
+      "snapshot_bytes": 5888,
+      "snapshot_sha256": "2c17ea0fb622c866b5d11582080817041bc7abb59b098333b2c78c465d878b72",
+      "source_path": "campaign-01-analysis/evidence/source_implementation_audit.md",
+      "source_sha256": "31cb96a99ce4f95bbe371874a8168ac4f334dc6bb3480eb6eb6dac14584f6d89"
+    },
+    "source_audit_POST-05": {
+      "snapshot": "source_snapshots/POST-05/source_audit_excerpt.md",
+      "snapshot_bytes": 6024,
+      "snapshot_sha256": "26804ac767c24391761e94f43d850b8ecba395c2aeb60c29f764a87ea995c0be",
+      "source_path": "campaign-01-analysis/evidence/source_implementation_audit.md",
+      "source_sha256": "31cb96a99ce4f95bbe371874a8168ac4f334dc6bb3480eb6eb6dac14584f6d89"
+    },
+    "source_draft_POST-01": {
+      "snapshot": "source_snapshots/POST-01/source_draft.md",
+      "snapshot_bytes": 5925,
+      "snapshot_sha256": "aef9c8b2e8be7221367a684d65b6767e86077795f4e8d661324d43359fb27e0a",
+      "source_path": "campaign-01-analysis/posts/POST-01-non-monotone-capability-map.md",
+      "source_sha256": "aef9c8b2e8be7221367a684d65b6767e86077795f4e8d661324d43359fb27e0a"
+    },
+    "source_draft_POST-02": {
+      "snapshot": "source_snapshots/POST-02/source_draft.md",
+      "snapshot_bytes": 5377,
+      "snapshot_sha256": "eeea2454b3b15e67568a54efc9f1ddd2e3b06e560be15f5fac1a6a78e6903964",
+      "source_path": "campaign-01-analysis/posts/POST-02-epistemic-games-bayesian-not-recursive.md",
+      "source_sha256": "eeea2454b3b15e67568a54efc9f1ddd2e3b06e560be15f5fac1a6a78e6903964"
+    },
+    "source_draft_POST-03": {
+      "snapshot": "source_snapshots/POST-03/source_draft.md",
+      "snapshot_bytes": 5783,
+      "snapshot_sha256": "fac657f187fb7cb366d735b3899d9477487bbf7d89f597fbe8bce03fd9a24932",
+      "source_path": "campaign-01-analysis/posts/POST-03-category-track-implementation-audit.md",
+      "source_sha256": "fac657f187fb7cb366d735b3899d9477487bbf7d89f597fbe8bce03fd9a24932"
+    },
+    "source_draft_POST-04": {
+      "snapshot": "source_snapshots/POST-04/source_draft.md",
+      "snapshot_bytes": 5765,
+      "snapshot_sha256": "1ae2208ea2af67f284e042f7522f7340ba6a100611c4369ca908c4d495000b38",
+      "source_path": "campaign-01-analysis/posts/POST-04-what-scalar-scores-conceal.md",
+      "source_sha256": "1ae2208ea2af67f284e042f7522f7340ba6a100611c4369ca908c4d495000b38"
+    },
+    "source_draft_POST-05": {
+      "snapshot": "source_snapshots/POST-05/source_draft.md",
+      "snapshot_bytes": 5510,
+      "snapshot_sha256": "18c5ba9c58cba696cab947bcb9ed19c844911291caad87e880f5304fd71e1e13",
+      "source_path": "campaign-01-analysis/posts/POST-05-weird-machines-surface-and-depth.md",
+      "source_sha256": "18c5ba9c58cba696cab947bcb9ed19c844911291caad87e880f5304fd71e1e13"
+    },
+    "style_reference_material": {
+      "snapshot": "source_snapshots/shared/style_reference_material.md",
+      "snapshot_bytes": 19939,
+      "snapshot_sha256": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4",
+      "source_path": "campaign-01-analysis/post-production/style_reference_material.md",
+      "source_sha256": "bd5b755d0b5f308d07c2ae525937b5b7219b18f4be3d093a44df4fda78f5d3f4"
+    },
+    "trace_rows_POST-01": {
+      "snapshot": "source_snapshots/POST-01/trace_rows.csv",
+      "snapshot_bytes": 10562,
+      "snapshot_sha256": "ee9db593124edb5c94b597317a9ca08448691f422e2ce38eb27d129bea9b867e",
+      "source_path": "generated",
+      "source_sha256": null
+    },
+    "trace_rows_POST-02": {
+      "snapshot": "source_snapshots/POST-02/trace_rows.csv",
+      "snapshot_bytes": 5619,
+      "snapshot_sha256": "40abbbb39f0b435e9e77e79f50202460a7db4834cd887477d7b845a6e84d0ce9",
+      "source_path": "generated",
+      "source_sha256": null
+    },
+    "trace_rows_POST-03": {
+      "snapshot": "source_snapshots/POST-03/trace_rows.csv",
+      "snapshot_bytes": 8606,
+      "snapshot_sha256": "9308f4b1769234260490558154e906fec1f82d49c4ec7214f5c82e52bcb0856a",
+      "source_path": "generated",
+      "source_sha256": null
+    },
+    "trace_rows_POST-04": {
+      "snapshot": "source_snapshots/POST-04/trace_rows.csv",
+      "snapshot_bytes": 9307,
+      "snapshot_sha256": "c64b4bd39323d9ed8d26f176dda07eba0c929ef59bc1822a7c5bc8067ce97362",
+      "source_path": "generated",
+      "source_sha256": null
+    },
+    "trace_rows_POST-05": {
+      "snapshot": "source_snapshots/POST-05/trace_rows.csv",
+      "snapshot_bytes": 10202,
+      "snapshot_sha256": "30a2b2fb79d4556cc4f7af05ec560b11b46dedb7e3589d26be546e1439fe410a",
+      "source_path": "generated",
+      "source_sha256": null
+    }
+  },
+  "workflow_id": "campaign-01-post-production"
+}

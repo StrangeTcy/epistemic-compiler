@@ -1,0 +1,42 @@
+{
+  "campaign": "mercury-pairwise-state",
+  "posts": [
+    {
+      "title": "The Model's Belief Is Right; Its Decision Is Fragile",
+      "slug": "POST-01-belief-right-decision-fragile",
+      "date": "2026-10-16",
+      "artifact_path": "campaign-02-analysis/posts/POST-01-belief-right-decision-fragile.md",
+      "artifact_hash": "0e81506a12751f53e87f3ba23cc088a3537e648bab89a7e7e44e681ad2d293fd",
+      "validator_report": "campaign-02-analysis/post-production/handoffs/POST-01_validation_report.json",
+      "validator_passed": true
+    },
+    {
+      "title": "Mercury-2.5 Across 38 Environments: A Bimodal Capability Map",
+      "slug": "POST-02-cross-environment-map",
+      "date": "2026-10-16",
+      "artifact_path": "campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "artifact_hash": "058d18498d13b97adf73a4eec3eca15c424e8d5cad1cdc815e6c66726c75487a",
+      "validator_report": "campaign-02-analysis/post-production/handoffs/POST-02-cross-environment-map_validation_report.json",
+      "validator_passed": true
+    },
+    {
+      "title": "Where Mercury Breaks: Non-Monotonic Difficulty Transitions",
+      "slug": "POST-03-difficulty-transitions",
+      "date": "2026-10-16",
+      "artifact_path": "campaign-02-analysis/posts/POST-03-difficulty-transitions.md",
+      "artifact_hash": "45e5a2c2c38b391fb4535d846149f5f6fcc68bf43d8e55d070d75679249a006e",
+      "validator_report": "campaign-02-analysis/post-production/handoffs/POST-03-difficulty-transitions_validation_report.json",
+      "validator_passed": true
+    },
+    {
+      "title": "How Mercury Fails: Recurring Failure Modes and Their Conditions",
+      "slug": "POST-04-failure-modes",
+      "date": "2026-10-16",
+      "artifact_path": "campaign-02-analysis/posts/POST-04-failure-modes.md",
+      "artifact_hash": "39b4b7c5ea7b0534a4fa26e017b31c7e208a30ac031451f0e34be1a9ff0ecaef",
+      "validator_report": "campaign-02-analysis/post-production/handoffs/POST-04-failure-modes_validation_report.json",
+      "validator_passed": true
+    }
+  ],
+  "archive_sha256": "ece98bcf1cfd53dd24625c43da5e647aa63a5fac645603976c1213bdbd9af389"
+}

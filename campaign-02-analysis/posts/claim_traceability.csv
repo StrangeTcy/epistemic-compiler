@@ -1,0 +1,8 @@
+post_id,claim_id,claim_summary,finding_ids,raw_archive_members,generated_evidence_artifacts
+POST-01,POST-01-C01,36 matched pairs; 0/36 belief flips; 5/36 terminal flips; 17/36 diagnostic divergences,F-001,t1_same_fact_presentation.json,campaign-02-analysis/post-production/source_snapshots/POST-01/trace_rows.csv
+POST-01,POST-01-C02,23/23 epistemic games exact posterior match,F-003,episodes/epistemic_games/*/final.json,campaign-02-analysis/evidence/generated/case_results.csv
+POST-01,POST-01-C03,Proxy pass rates visible_proxy 8/27 (0.30) reward_proxy 1/4 (0.25) vs base 228/331 (0.69),F-002,suite_checkpoint.json,campaign-02-analysis/evidence/generated/environment_summary.csv
+POST-02,POST-02-C01,10 environments at 0.00 and ~12 at 1.00 pass rate,F-006,suite_checkpoint.json,campaign-02-analysis/evidence/generated2/environment_summary_v2.csv
+POST-02,POST-02-C02,Of 128 FAIL 51 underfit and 49 overfit_visible_tests,F-007,suite_checkpoint.json,campaign-02-analysis/evidence/generated/case_results.csv
+POST-03,POST-03-C01,Non-monotonic transitions in MoCo/CSS/SQL,F-008,case_results.csv,campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv
+POST-04,POST-04-C01,Proxy interventions cut pass rates to 0.30/0.25,F-009,suite_checkpoint.json,campaign-02-analysis/evidence/generated/case_results.csv

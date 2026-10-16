@@ -1,0 +1,63 @@
+{
+  "campaign": "mercury-pairwise-state",
+  "archive_sha256": "ece98bcf1cfd53dd24625c43da5e647aa63a5fac645603976c1213bdbd9af389",
+  "findings": [
+    {
+      "id": "F-001",
+      "status": "observed",
+      "title": "Presentation order changes decisions but not stated beliefs",
+      "claim": "Across 36 matched same-fact pairs (6 cells x 6 seeds), Mercury-2.5's elicited posterior is identical in both presentation orders in every trial (0/36 belief flips), yet the terminal answer flips in 5/36 pairs (all 5 are correctness flips) and diagnostic choices diverge in 17/36 pairs.",
+      "evidence": [
+        "t1_same_fact_presentation.json",
+        "t1_m0.json"
+      ],
+      "numerator": "5 terminal flips; 17 diagnostic-choice divergences",
+      "denominator": "36 matched pairs",
+      "uncertainty": "Small sample (36 pairs); no confidence interval computed; single model/provider.",
+      "alternatives": [
+        "Presentation may affect parsing rather than decision; order effects may be seed-specific."
+      ],
+      "falsifier": "A replication with larger seed count showing zero terminal flips.",
+      "prior_work": "Consistent with order-sensitivity of LLM decisions reported in prior work; distinct in isolating belief invariance.",
+      "followup": "Increase seeds; add belief-elicitation controls; test other models."
+    },
+    {
+      "id": "F-002",
+      "status": "observed",
+      "title": "Proxy-channel interventions sharply reduce pass rates",
+      "claim": "Intervention cases introducing a visible_proxy or reward_proxy channel pass at 0.30 (8/27) and 0.25 (1/4) respectively, versus 0.69 base pass rate (228/331 scored base cases). Within paired groups sharing a latent spec, 7 of 76 intervention cases flip a passing base case to FAIL, 4 of which are visible_proxy.",
+      "evidence": [
+        "suite_checkpoint.json",
+        "case_results.csv"
+      ],
+      "numerator": "8/27 visible_proxy; 1/4 reward_proxy; 7 pass->fail flips",
+      "denominator": "27 visible_proxy cases; 4 reward_proxy cases; 76 intervention cases with a base in pair",
+      "uncertainty": "Intervention cases differ in difficulty levels; not a fully controlled manipulation.",
+      "alternatives": [
+        "Difficulty confounding; proxy cases may be intrinsically harder."
+      ],
+      "falsifier": "A difficulty-matched re-run showing no proxy effect.",
+      "prior_work": "Relates to shortcut learning / proxy gaming in code-generation benchmarks.",
+      "followup": "Difficulty-stratified analysis; paired difficulty matching."
+    },
+    {
+      "id": "F-003",
+      "status": "observed",
+      "title": "Exact posterior match on all epistemic-game variants",
+      "claim": "All 23 epistemic_games cases (base + evidence/presentation/prior interventions) achieve zero posterior error and correct verdict; posterior_reported equals posterior_true in every case.",
+      "evidence": [
+        "suite_checkpoint.json",
+        "episodes/epistemic_games/*/final.json"
+      ],
+      "numerator": "23/23",
+      "denominator": "23",
+      "uncertainty": "Compile-only? No, behavioral_reference guarantee for all 23.",
+      "alternatives": [
+        "Tasks may be within training distribution; exact-match oracle may be lenient."
+      ],
+      "falsifier": "Harder epistemic instances with nonzero posterior error.",
+      "prior_work": "Consistent with LLM Bayesian updating on explicit likelihoods.",
+      "followup": "Harder instances; out-of-distribution likelihoods."
+    }
+  ]
+}

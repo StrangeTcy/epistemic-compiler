@@ -1,0 +1,18 @@
+seed_id: C02
+title: "Mercury pairwise-state: belief computation versus decision fragility"
+intuition: |
+  Mercury-2.5 computes correct posteriors under presentation and intervention variation,
+  but its terminal decisions flip under presentation reordering and proxy channels.
+precise_research_question: |
+  Does Mercury-2.5's elicited belief remain invariant under presentation order while its
+  terminal decision and diagnostic choices remain sensitive to presentation and proxy channels?
+candidate_hypotheses:
+  - id: H1
+    name: "Belief/decision dissociation"
+    statement: "Belief computation is robust; decision selection is fragile to surface form."
+relevant_prior_work:
+  - "Order effects in LLM decisions"
+  - "Shortcut learning and proxy gaming"
+known_unknowns:
+  - "Whether terminal flips are decision-layer or extraction artifacts"
+  - "Whether proxy effect survives difficulty matching"

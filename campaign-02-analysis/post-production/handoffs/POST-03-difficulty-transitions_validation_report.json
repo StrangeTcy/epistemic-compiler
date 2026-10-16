@@ -1,0 +1,10 @@
+{
+  "post": "POST-03-difficulty-transitions",
+  "checks": {
+    "frontmatter": true,
+    "byline": true,
+    "epistemic": true,
+    "no_internal_ids": true
+  },
+  "passed": true
+}

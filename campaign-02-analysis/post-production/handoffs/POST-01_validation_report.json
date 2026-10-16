@@ -1,0 +1,15 @@
+{
+  "post": "POST-01",
+  "checks": {
+    "has_frontmatter": true,
+    "has_byline": true,
+    "has_epistemic_status": true,
+    "mentions_36": true,
+    "mentions_5_flips": true,
+    "mentions_17": true,
+    "mentions_23": true,
+    "mentions_proxy": true,
+    "no_internal_ids": true
+  },
+  "passed": true
+}
