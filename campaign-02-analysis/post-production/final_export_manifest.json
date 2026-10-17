@@ -11,11 +11,11 @@
       "validator_passed": true
     },
     {
-      "title": "Mercury-2.5 Across 38 Environments: A Bimodal Capability Map",
+      "title": "What a 68.4% Pass Rate Hides: Mercury-2.5 Across 38 Environments",
       "slug": "POST-02-cross-environment-map",
       "date": "2026-10-16",
       "artifact_path": "campaign-02-analysis/posts/POST-02-cross-environment-map.md",
-      "artifact_hash": "058d18498d13b97adf73a4eec3eca15c424e8d5cad1cdc815e6c66726c75487a",
+      "artifact_hash": "a54286871aa63d5179277e153b6422546663478beb716ceba71f4ed957dfdf8c",
       "validator_report": "campaign-02-analysis/post-production/handoffs/POST-02-cross-environment-map_validation_report.json",
       "validator_passed": true
     },

@@ -1,0 +1,10 @@
+{
+  "selected_article": "POST-02 cross-environment outcome map",
+  "current_role": "Stage E accepted \u2014 Redactor (final article produced)",
+  "status": "accepted",
+  "accepted_artifacts": [
+    "campaign-02-analysis/posts/POST-02_cross-environment-map.md"
+  ],
+  "next_stage": "Validation complete \u2014 ready for human review",
+  "notes": "Interactive user-mediated pipeline. Do not advance until response pasted."
+}
