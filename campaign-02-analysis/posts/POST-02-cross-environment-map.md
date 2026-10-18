@@ -162,7 +162,7 @@ An earlier project summary says there are 10 zero-pass environments. The environ
 The archive assigns these labels to the 128 FAIL outcomes:
 
 ![Horizontal bar chart of recorded failure labels across all environments](../figures/fig11_failure_labels.svg)
-*Figure: Recorded failure labels for all 128 FAIL outcomes combined. The archive gives no environment-level breakdown, so these counts cannot be attributed to any environment.*
+*Figure: Recorded failure labels for all 128 FAIL outcomes combined. These are global counts. The per-environment breakdown is in the table below, built from the same per-case records.*
 
 | Label | Count |
 |---|---:|
@@ -176,9 +176,30 @@ The archive assigns these labels to the 128 FAIL outcomes:
 
 The `runtime_error` count combines 9 cases recorded as `RUNTIME_ERROR` and 2 recorded as `runtime_error`. The difference in casing is a data-quality issue, not two kinds of runtime failure.
 
-These are recorded classifications, not observations of Mercury-2.5's internal reasoning. I cannot infer a mechanism from the label names. The counts are also global only. No breakdown by environment is available, so I do not assign any label to any environment.
+These are recorded classifications, not observations of Mercury-2.5's internal reasoning. I cannot infer a mechanism from the label names.
 
-Judge guarantees add a second limit. Across the 416 selected cases, the campaign records **189 `behavioral_reference` and 227 `compile_only`** guarantees, and those totals include unscored cases. The two guarantees check different things, so a PASS under one does not establish what a PASS under the other does. Without a breakdown by environment and guarantee, I cannot test whether the contrasts between environments would hold under a single standard. A PASS records only what that case's judge checked. It does not show that the model understood or solved the task.
+The per-case records do carry the environment for each FAIL, so the labels can be broken down by environment. The breakdown is below. It is descriptive only, and it rests on the recorded labels.
+
+| Environment | FAIL | Recorded labels |
+|---|---:|---|
+| `glyph` | 24 | overfit_visible_tests 22, underfit 1, invalid_action 1 |
+| `moco` | 19 | overfit_visible_tests 16, training_failed 2, invalid_action 1 |
+| `batchnorm_ema` | 13 | overfit_visible_tests 11, training_failed 1, invalid_action 1 |
+| `functorial_augmentation` | 9 | underfit 6, runtime_error 3 |
+| `monadic_reward` | 9 | source_invalid 8, invalid_action 1 |
+| `sheaf_invariant_gluing` | 9 | underfit 9 |
+| `sheaf_physical_constraints` | 9 | underfit 9 |
+| `rd_adaptive_halting` | 6 | runtime_error 5, underfit 1 |
+| `gnn_message_passing`, `regex_state_machine`, `ssm_parallel_scan`, `ts_one_step`, `ts_trajectory` | 4 each | underfit 17, invalid_action 1, runtime_error 2 |
+| `tensor_functor`, `compositional_optimizer`, `equivariant_diagram`, `sheaf_schema_sync`, `sql_fixed_point`, `transformer_ssm_lift` | 3, 2, 2, 1, 1, 1 | underfit 8, runtime_error 1, source_invalid 1 |
+
+The rows above sum to 128. Two patterns stand out. Most `glyph` and `moco` failures carry the overfit label, and the three `sheaf_*` environments carry only underfit labels. Both are descriptions of recorded labels. Neither shows why the cases failed.
+
+Nine of the ten `rejected` cases carry the `source_invalid` label (eight in `monadic_reward`, one in `transformer_ssm_lift`). The tenth, in `batchnorm_ema`, carries a different label. The disposition and the label therefore overlap, but they are not the same field.
+
+Judge guarantees add a second limit. Across the 416 selected cases, the campaign records **189 `behavioral_reference` and 227 `compile_only`** guarantees, and those totals include unscored cases. Each environment carries exactly one guarantee: 11 environments are `behavioral_reference` and 27 are `compile_only`. The guarantee is therefore fixed by environment, and I cannot separate a guarantee effect from an environment effect.
+
+By guarantee, the scored results are: `behavioral_reference`, **141/189 (74.6%)** across 11 environments; `compile_only`, **136/216 (63.0%)** across 27 environments, with 11 further unscored cases. These two numbers differ, but the difference is confounded with which environments fall in each group. I do not read it as a judge effect. A PASS under one guarantee does not establish what a PASS under the other does. A PASS records only what that case's judge checked. It does not show that the model understood or solved the task.
 
 ## The selection frame
 
@@ -208,6 +229,6 @@ Three flags apply to cases inside the 416:
 
 On this archived selection, Mercury-2.5 received **277 PASS judgments among 405 scored cases**. The judges recorded all-pass outcomes in 17 environments, all-fail outcomes in 7, mixed outcomes in 12, and no scored outcome in 2. Closely named environments sometimes landed far apart. At the tuple level, nearly all rows are binary and most hold a single case. Fractional rows occur only in `moco`.
 
-This analysis does *not* show that environment identity matters more than difficulty, because there is no common difficulty scale to compare against. It does not show a difficulty effect or a ranking within environments. It does not identify a model-internal cause for `glyph` or `batchnorm_ema`. It does not tell us whether the endpoints would hold under other seeds, a uniform judge guarantee, or a cleanly recorded source state. A breakdown of outcomes by environment, judge guarantee, and failure label would be the next useful step.
+This analysis does *not* show that environment identity matters more than difficulty, because there is no common difficulty scale to compare against. It does not show a difficulty effect or a ranking within environments. It does not identify a model-internal cause for `glyph` or `batchnorm_ema`. It does not tell us whether the endpoints would hold under other seeds, whether the guarantee contrast would survive if guarantees varied within environments (they do not in this archive), or whether the source state was clean. The breakdowns by environment, guarantee, and failure label now exist in the text. The next useful step is evidence the archive cannot give: repeated seeds within environments, so that endpoints can be tested for stability.
 
 So I would keep **68.4%** as the answer to one precise question: *What fraction of scored, selected cases received PASS?* I would not let it stand alone as the campaign's outcome. The map beside it says more: the zeros, the all-pass environments, the 40.7% of scored cases in between, and the gaps and disagreements in the archive that limit what any single number can mean.

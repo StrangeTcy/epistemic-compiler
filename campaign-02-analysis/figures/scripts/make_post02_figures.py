@@ -176,7 +176,7 @@ def fig11():
     for s in ["top", "right"]:
         ax.spines[s].set_visible(False)
     ax.set_title("Recorded failure labels, all environments combined", loc="left", fontsize=11)
-    fig.text(0.01, -0.04, "Global counts only: the archive gives no environment-level breakdown of labels.", fontsize=8, color=C_INK)
+    fig.text(0.01, -0.04, "Global counts across all 128 FAIL outcomes; the per-environment breakdown is in the article text.", fontsize=8, color=C_INK)
     save(fig, "fig11_failure_labels.svg")
 
 
