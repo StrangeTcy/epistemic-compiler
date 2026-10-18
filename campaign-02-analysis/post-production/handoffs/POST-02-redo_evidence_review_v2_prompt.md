@@ -10,7 +10,7 @@
    - Table D: environment × difficulty-tuple matrix (340 rows)
 
    Read the full packet, in chunks if your fetch tool returns chunks. Do not stop after the first chunk.
-3. **Figure script:** `campaign-02-analysis/figures/scripts/make_post02_figures.py` (what each chart draws), at the same commit.
+3. **Chart descriptions:** Section E of the same packet. It states, in text, what each of the four charts plots, with the values. You cannot render the charts; judge the captions against Section E.
 
 If you cannot read any of these, say which one and which part, and withhold any verdict on claims that depend on it. Do not reconstruct the tables from the article, from earlier reviewer summaries, or from memory. Do not say you have cloned, checked out, or run anything. You can only read what you fetched.
 
@@ -38,7 +38,7 @@ You are an independent Evidence Reviewer. Check every number, count and factual 
 ## Tasks
 
 1. Check each number in the article against the packet. Report each mismatch with the article location, the article value, and the packet value and row.
-2. Check each figure caption against what the script draws. Report any caption that claims more or less than the chart shows.
+2. Check each figure caption against Section E of the packet. Report any caption that claims more or less than the chart plots.
 3. Check each disclosure beside a claim: the 10 `rejected` FAILs, the 80 omissions, the performance-ineligible PASS, the 9 `unscored`-disposition FAILs, and the 14-vs-24 known-gate conflict.
 4. Identify any causal or mechanism claim the packet does not support, and any "cannot" or "does not show" statement that the packet contradicts.
 5. Identify any statement that treats a recorded label, disposition or guarantee as a fact about the model rather than a recorded classification.
