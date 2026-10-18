@@ -1,0 +1,24 @@
+metric,value,note
+recorded_cases,415,rows in case_results.csv (all status=scored)
+pass,290,
+fail,125,
+pass_rate_recorded,290/415 = 69.9%,"all recorded rows, incl. provider-outage FAIL"
+performance_eligible_cases,414,excludes one provider-outage-attributed case
+pass_rate_performance,290/414 = 70.0%,
+judge_behavioral_reference_pass,131/189,
+judge_compile_only_pass,159/226,compile_only is exploratory per campaign report
+disposition_rejected,62,see README: 'unscored' rows still carry FAIL verdicts
+disposition_scored,335,see README: 'unscored' rows still carry FAIL verdicts
+disposition_unscored,18,see README: 'unscored' rows still carry FAIL verdicts
+failure_mode_invalid_action,6,
+failure_mode_overfit_visible_tests,7,
+failure_mode_patch_invalid,45,
+failure_mode_runtime_error,1,
+failure_mode_source_invalid,17,
+failure_mode_training_failed,11,
+failure_mode_underfit,38,
+scored_environments,38,
+omitted_intervention_twin_omission,56,outside the 416-case manifest; no score recorded
+omitted_known_gate_calibration_failure,14,outside the 416-case manifest; no score recorded
+omitted_unsupported_provider_input_modality,10,outside the 416-case manifest; no score recorded
+manifest_cases_unrecorded,1,ts_trajectory__witness_status=valid_representation=reflective__seed-0 (campaign paused)
