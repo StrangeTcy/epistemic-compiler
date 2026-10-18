@@ -57,7 +57,7 @@ All analysis in this workstream describes the 415 recorded cases only. The campa
 | Manifest cases (416) minus recorded (415) | exactly one case: `ts_trajectory…valid_representation=reflective…seed-0` ✓ |
 | Omissions | 80 outside manifest: 56 intervention-twin, 14 known-gate, 10 unsupported modality (rope) ✓ |
 | Case-ID overlap with campaign-02 (Mercury) | 415 of 415 recorded IDs are in the Mercury 416-case set; the one Mercury-only ID is the same unrecorded case above |
-| Config hashes vs clean comparator | 38 unique config paths selected; 0 checked (no comparator supplied) — NOT verified |
+| Config hashes vs clean comparator | 38 unique config paths selected; 38 checked against a clean checkout of `StrangeTcy/rl_eval_generator` at `9ec2d919726ba39aded2e1d011a8274f938fb7ba`; 38 match. This shows the config files match the clean commit. It does not show the executed code matches, because the run tree was dirty (see §6.6). |
 
 ## 6. Open discrepancies (do not resolve silently)
 
@@ -65,8 +65,8 @@ All analysis in this workstream describes the 415 recorded cases only. The campa
 2. **`rejected` disposition.** 62 FAIL rows (`patch_invalid` 45, `source_invalid` 17) carry `case_disposition = rejected`. The archive does not define the term. The stage statuses show these stopped at patch or source validation, before behavioral evaluation.
 3. **Performance-ineligible case.** One FAIL (`sheaf_schema_sync__naming=hard_symptom_mask=medium__seed-0`, `patch_invalid`) is marked `performance_eligible = False`; its final note attributes the failure to a provider transient after bounded retries. The report's provider-outage counter names the same case.
 4. **Environment count.** The pilot manifest lists 39 environments; 38 have recorded cases. The 39th is `rope`, fully omitted before scoring (10 manifest-listed omissions).
-5. **Environment-level config audit not performed.** No clean comparator snapshot was supplied, so no config-hash match is claimed.
-6. **Source tree.** Campaign-02 (Mercury) provenance recorded `dirty=true`. Whether this archive's campaign source tree was dirty has not been checked; the archived campaign report should be read before any source claim.
+5. **Config-hash audit (run).** Selected config paths: 38; checked against the clean checkout: 38; matches: 38; mismatches: none. Outputs: `evidence/generated/config_hash_audit.csv` and `audit.json`. Limit: this checks configuration files only, not the code that executed.
+6. **Source-tree cleanliness (open).** `pilot_manifest.json` records the generator repository at commit `9ec2d91` with `dirty: true`, and `audit.json` records `repository_dirty_at_run: true`. The archive does not list which files were dirty, so the executed source cannot be verified against the clean commit. Any source-level claim must carry this caveat. (Separately, Campaign-02 Mercury provenance also recorded `dirty=true`.)
 
 ## 7. What this provenance does not establish
 

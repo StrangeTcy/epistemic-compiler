@@ -340,10 +340,10 @@
     "runtime_error": 1
   },
   "config_hash_audit": {
-    "generator_source_path_argument": null,
+    "generator_source_path_argument": "external clean checkout of StrangeTcy/rl_eval_generator at 9ec2d919726ba39aded2e1d011a8274f938fb7ba (temporary directory, not committed)",
     "selected_unique_config_paths": 38,
-    "config_paths_checked": 0,
-    "config_hash_matches": 0,
+    "config_paths_checked": 38,
+    "config_hash_matches": 38,
     "config_hash_mismatches": []
   },
   "generated_tables": [
