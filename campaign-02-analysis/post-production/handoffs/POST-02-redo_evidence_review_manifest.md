@@ -1,8 +1,8 @@
 # POST-02 redo — evidence review manifest
 
-Pinned commit: `d7e94c390f7e20309f3c5b3063fe39389aa984d2` on `arena/7471eb0f-epistemic-compiler`.
+Pinned commit: `1cb8511c0eb7cc8d338008af84928f7fcfaa955b` on `arena/7471eb0f-epistemic-compiler`.
 
-Fetch: `git clone https://github.com/StrangeTcy/epistemic-compiler.git && git -C epistemic-compiler checkout d7e94c390f7e20309f3c5b3063fe39389aa984d2`. Then verify every hash below with `sha256sum -c`. If any file is missing or any hash differs, stop and report it. Do not substitute another copy of the data.
+Fetch: `git clone https://github.com/StrangeTcy/epistemic-compiler.git && git -C epistemic-compiler checkout 1cb8511c0eb7cc8d338008af84928f7fcfaa955b`. Then verify every hash below with `sha256sum -c`. If any file is missing or any hash differs, stop and report it. Do not substitute another copy of the data.
 
 | SHA-256 | Rows | File |
 |---|---:|---|
