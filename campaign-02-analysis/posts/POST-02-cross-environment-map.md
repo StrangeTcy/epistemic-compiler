@@ -22,10 +22,10 @@ My aim is to understand what that number summarizes, not to replace it with a di
 
 ## First, count the cases that received a judgment
 
-The archive contains **416 selected cases in 38 environments**. Of these, 405 received a PASS or FAIL judgment: 277 PASS and 128 FAIL. So **277/405, or 68.4%**, is the scored-case pass rate (the case-weighted pooled rate). The other 11 cases are unscored. That is a gap in judge coverage, not a third kind of outcome.
+The archive contains **416 selected cases in 38 environments**. Of these, 405 received a PASS or FAIL judgment: 277 PASS and 128 FAIL. So **277/405, or 68.4%**, is the scored-case pass rate (the case-weighted pooled rate). The other 11 cases have no scored result. The archive labels them `infrastructure_unscored` and records no further cause, so I do not describe them as judge gaps or as a third kind of outcome.
 
 ![Bar chart from 496 design cells to 277 PASS and 128 FAIL judgments; 80 cases omitted before scoring](../figures/fig8_selection_frame.svg)
-*Figure: From the 496 design cells, 80 were omitted before scoring and 416 were selected. Of the 416, 11 were never scored and 405 were scored: 277 PASS and 128 FAIL. The omitted cases have no score, so they are outside every pass rate in this article.*
+*Figure: From the 496 design cells, 80 were omitted before scoring and 416 were selected. Of the 416, 11 have no scored result (the archive's `infrastructure_unscored` status) and 405 were scored: 277 PASS and 128 FAIL. The omitted cases have no score, so they are outside every pass rate in this article. Nine of the 405 scored FAILs carry a disposition label that conflicts with their scored status; the text explains this.*
 
 The fraction **277/416, or 66.6%**, answers a different question: what share of *all selected cases* has an observed PASS? It must not be presented as a pass rate, because doing so silently turns the 11 unknown outcomes into failures.
 
@@ -49,7 +49,7 @@ Across the 36 scored environments, the unweighted mean of the pass fractions is 
 Out of the 36 scored environments, 24 sit at an endpoint.
 
 ![Dot plot of pass fraction by environment with 95% Wilson intervals](../figures/fig9_environment_intervals.svg)
-*Figure: Each dot is one environment's pass fraction among its scored cases; each bar is a 95% Wilson interval. Environments with 4 to 9 cases have wide intervals, so an endpoint on a small n is a weak result. The interval is a sampling approximation for a single seed, not a measure of seed-to-seed variation.*
+*Figure: Each dot is one environment's pass fraction among its scored cases; each bar is a 95% Wilson interval; the dotted vertical line is the pooled 277/405 = 68.4%, and the label beside each bar is PASS/scored. Environments with 4 to 9 cases have wide intervals, so an endpoint on a small n is a weak result. The interval is a sampling approximation for a single seed, not a measure of seed-to-seed variation. Environments with no scored cases are not drawn.*
 
 - **17 all-pass environments (rate 1.0), 172/172 scored cases.** That is 17 of 36 scored environments (47%).
   - **9/9:** `architecture_naturality`, `categorical_lenses`, `ci_dependency_graph`, `neuro_symbolic_parser`, `semiring_unification`, `spreadsheet_dataflow`, `stochastic_monad`, `template_interpreter`, and `tokenizer_adjunction`.
@@ -99,7 +99,7 @@ Together, these three environments contribute **94 of the 405 scored cases but 5
 Within each environment, cases are organized by difficulty tuples. The archive includes a matrix with one row per environment × tuple: **340 rows** in total. Each environment has between 4 and 15 rows, and six environments have more than 10.
 
 ![Grid of 340 environment by difficulty-tuple rows coloured by pass rate](../figures/fig10_tuple_matrix.svg)
-*Figure: Each square is one environment × difficulty-tuple row, coloured by its pass rate; grey marks rows with no scored case. Most rows hold a single case, so most squares are 0 or 1. The fractional values appear only in moco. The tuples carry environment-specific labels, so columns are not comparable across environments.*
+*Figure: Each square is one environment × difficulty-tuple row, coloured by its pass rate; grey marks rows with no scored case, and a number marks rows holding more than one case. Most rows hold a single case, so most squares are 0 or 1. The fractional values appear only in moco. The tuples carry environment-specific labels, so columns are not comparable across environments.*
 
 There are **34 difficulty dimension names** across the matrix. The tuples are specific to each environment. A dimension in one environment is not calibrated against a dimension in another. For that reason, I do not pool, rank, or regress tuples across environments, and I do not read any tuple-level pattern as a difficulty effect.
 
@@ -122,7 +122,7 @@ Because case density is uneven, a few environments pull hard on the global avera
 
 | Scenario | Pass rate | Change |
 |---|---:|---:|
-| Exclude `moco` | 241/350 = 68.86% | +0.47 pt |
+| Exclude `moco` | 241/350 = 68.86% | +0.46 pt |
 | Exclude `glyph` | 277/381 = 72.70% | +4.31 pt |
 | Exclude both | 241/326 = 73.93% | — |
 | Shrink `moco` to 9 cases at its own 65.5% rate | about 68.8% | about +0.4 pt |
@@ -143,13 +143,13 @@ The archive has no row-by-row key linking each value to its tuple. I therefore c
 
 ## Unscored cases are not failures
 
-The 11 unscored cases are:
+The 11 cases with no scored result are:
 
 - 6 in `epistemic_silence`
 - 4 in `epistemic_type_games`
 - 1 in `rd_adaptive_halting`
 
-The first two environments have no scored case at all, which is why the scored-environment count drops from 38 to 36. The unscored `rd_adaptive_halting` case sits at the tuple where all five dimensions are `easy`. The gap is in judge coverage, and that tuple label does not make it evidence about difficulty.
+The first two environments have no scored case at all, which is why the scored-environment count drops from 38 to 36. The unscored `rd_adaptive_halting` case sits at the tuple where all five dimensions are `easy`. The archive records no cause for the gap, and that tuple label does not make the case evidence about difficulty.
 
 Recoding these 11 cases as failures would put invented outcomes into the denominator. The scored pass rate stays at 277/405. The all-selected figure, 277/416, answers a different question. `rd_adaptive_halting` remains 8/14 scored plus one unscored case. It is not a 15-case judgment with an assumed failure.
 
@@ -192,9 +192,10 @@ The 416 cases are themselves a selection. Before scoring, **80 cases** were omit
 
 The provenance summary instead gives **24** known-gate omissions, which disagrees with the exclusion record's 14. I report both and do not resolve the conflict.
 
-Two flags apply to cases inside the 416:
+Three flags apply to cases inside the 416:
 
 - **Ten scored FAIL cases carry the disposition `rejected`:** eight in `monadic_reward`, one in `batchnorm_ema`, and one in `transformer_ssm_lift`. The archive does not define "rejected." All ten stay in the 128 failures.
+- **Nine scored FAIL cases carry the disposition `unscored`.** Their status is `scored` and their verdict is FAIL, so the disposition label conflicts with the rest of the record. They are `moco` 3, `batchnorm_ema` 1, `glyph` 1, `monadic_reward` 1, `regex_state_machine` 1, `ts_one_step` 1, and `ts_trajectory` 1. Their recorded labels are `invalid_action` 5, `training_failed` 2, and `runtime_error` 2. I keep them as scored FAILs in the 128. The archive does not define the disposition.
 - **One PASS in `ts_parse_only` is marked performance-ineligible**, and its exclusion note contradicts its verdict. It stays in the 277.
 
 ## Confounds I cannot remove
