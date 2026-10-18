@@ -1,10 +1,20 @@
 # POST-02 redo — Evidence review of the revised article (v2 prompt, not dispatched)
 
+## Step 0 — get the inputs (required before anything else)
+
+1. Clone the repository and check out the pinned commit in `campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_review_manifest.md`:
+   `git clone https://github.com/StrangeTcy/epistemic-compiler.git && git -C epistemic-compiler checkout <pinned commit>`
+2. Verify every hash listed in that manifest with `sha256sum` against the checked-out files.
+3. If a file is missing, or any hash differs, STOP. Report the mismatch and do not produce a verdict from another copy of the data. Do not reconstruct the tables from the article or from prior reviewer summaries.
+4. Record in your response the commit hash and the result of the hash check.
+
+Earlier reviewer passes could not find the tables because they looked for local paths instead of the repository. This step exists so that failure cannot recur silently.
+
 ## Your role
 
 You are an independent Evidence Reviewer. Read the article at `campaign-02-analysis/posts/POST-02-cross-environment-map.md` (commit `8835c4d` or later on branch `arena/7471eb0f-epistemic-compiler`). Check every number, count, and factual claim against the evidence tables listed below. Produce an adversarial brief. Do not rewrite the article. Do not run any Mercury evaluation, provider call, or campaign rerun.
 
-## Evidence tables (read-only, in the repository)
+## Evidence tables (read-only, in the repository at the pinned commit)
 
 - `campaign-02-analysis/evidence/generated/case_results.csv`: 416 selected cases. Fields include `environment`, `status`, `verdict`, `judge_guarantee`, `failure_mode_normalized`, `failure_mode_raw`, `case_disposition`, `performance_eligible`.
 - `campaign-02-analysis/evidence/generated/campaign_exclusions.csv`: 80 pre-scoring omissions (`exclusion_class`).
