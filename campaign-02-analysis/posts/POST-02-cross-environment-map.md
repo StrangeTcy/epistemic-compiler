@@ -24,6 +24,9 @@ My aim is to understand what that number summarizes, not to replace it with a di
 
 The archive contains **416 selected cases in 38 environments**. Of these, 405 received a PASS or FAIL judgment: 277 PASS and 128 FAIL. So **277/405, or 68.4%**, is the scored-case pass rate (the case-weighted pooled rate). The other 11 cases are unscored. That is a gap in judge coverage, not a third kind of outcome.
 
+![Bar chart from 496 design cells to 277 PASS and 128 FAIL judgments; 80 cases omitted before scoring](../figures/fig8_selection_frame.svg)
+*Figure: From the 496 design cells, 80 were omitted before scoring and 416 were selected. Of the 416, 11 were never scored and 405 were scored: 277 PASS and 128 FAIL. The omitted cases have no score, so they are outside every pass rate in this article.*
+
 The fraction **277/416, or 66.6%**, answers a different question: what share of *all selected cases* has an observed PASS? It must not be presented as a pass rate, because doing so silently turns the 11 unknown outcomes into failures.
 
 | Environment outcome | Environments | PASS / scored cases | Share of scored cases | Unscored cases |
@@ -40,12 +43,13 @@ The mixed environments are not minor exceptions. They hold **165 of the 405 scor
 
 Across the 36 scored environments, the unweighted mean of the pass fractions is about 69.2%, and the median is 8/9 (88.9%). Each of these summaries answers a different question, and each still hides the shape of the map.
 
-![Lollipop chart of pass rates by environment](../figures/fig2_environment_outcome_lollipop.svg)
-*Figure: Pass rate by environment for the 36 environments with scored cases. Many environments sit at exactly 1.0 or 0.0. Read each fraction together with its case count.*
 
 ## The endpoint-heavy distribution
 
 Out of the 36 scored environments, 24 sit at an endpoint.
+
+![Dot plot of pass fraction by environment with 95% Wilson intervals](../figures/fig9_environment_intervals.svg)
+*Figure: Each dot is one environment's pass fraction among its scored cases; each bar is a 95% Wilson interval. Environments with 4 to 9 cases have wide intervals, so an endpoint on a small n is a weak result. The interval is a sampling approximation for a single seed, not a measure of seed-to-seed variation.*
 
 - **17 all-pass environments (rate 1.0), 172/172 scored cases.** That is 17 of 36 scored environments (47%).
   - **9/9:** `architecture_naturality`, `categorical_lenses`, `ci_dependency_graph`, `neuro_symbolic_parser`, `semiring_unification`, `spreadsheet_dataflow`, `stochastic_monad`, `template_interpreter`, and `tokenizer_adjunction`.
@@ -93,6 +97,9 @@ Together, these three environments contribute **94 of the 405 scored cases but 5
 ## A second layer: the environment × tuple matrix
 
 Within each environment, cases are organized by difficulty tuples. The archive includes a matrix with one row per environment × tuple: **340 rows** in total. Each environment has between 4 and 15 rows, and six environments have more than 10.
+
+![Grid of 340 environment by difficulty-tuple rows coloured by pass rate](../figures/fig10_tuple_matrix.svg)
+*Figure: Each square is one environment × difficulty-tuple row, coloured by its pass rate; grey marks rows with no scored case. Most rows hold a single case, so most squares are 0 or 1. The fractional values appear only in moco. The tuples carry environment-specific labels, so columns are not comparable across environments.*
 
 There are **34 difficulty dimension names** across the matrix. The tuples are specific to each environment. A dimension in one environment is not calibrated against a dimension in another. For that reason, I do not pool, rank, or regress tuples across environments, and I do not read any tuple-level pattern as a difficulty effect.
 
@@ -153,6 +160,9 @@ An earlier project summary says there are 10 zero-pass environments. The environ
 ## What can a FAIL label explain?
 
 The archive assigns these labels to the 128 FAIL outcomes:
+
+![Horizontal bar chart of recorded failure labels across all environments](../figures/fig11_failure_labels.svg)
+*Figure: Recorded failure labels for all 128 FAIL outcomes combined. The archive gives no environment-level breakdown, so these counts cannot be attributed to any environment.*
 
 | Label | Count |
 |---|---:|
