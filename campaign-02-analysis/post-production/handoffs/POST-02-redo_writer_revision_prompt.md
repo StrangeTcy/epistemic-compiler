@@ -1,5 +1,8 @@
 # POST-02 redo — Stage B2 (Writer revision) prompt
 
+> **Status (2026-10-18): executed directly, not dispatched.** The revision was written in-session as the article at `campaign-02-analysis/posts/POST-02-cross-environment-map.md` (commit `f07e246`), applying the corrections below. No independent Battle Arena Writer round has been run on this prompt. This file is kept as the record of the requested corrections, not as pending work. Dispatch it only if an independent Writer pass is wanted.
+
+
 Revise the cross-environment map article on Mercury-2.5 using the verified corrections below. Output the full article only, as one Markdown document. Do not include production metadata, notes, or reviewer commentary inside the article.
 
 ## Scope and constraints (standing)
