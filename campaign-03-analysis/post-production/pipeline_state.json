@@ -1,28 +1,40 @@
 {
-  "campaign": "reasoning_atria_pairwise_campaign",
-  "archive": "reasoning-atria-pairwise-state-39028365163.zip",
-  "archive_sha256": "2daf0e24cf2a38702f3e1182153627aa28b51b71f67744c50febd3741cea231f",
-  "campaign_status": "paused (max_tokens_total), non-resumable, 415 of 416 episodes recorded",
-  "reconstruction": "complete",
-  "headline_counts": "complete (recomputed; see evidence/generated/headline_counts.csv)",
-  "stages": {
-    "A_evidence_reviewer": "not started",
-    "B_writer": "not started",
-    "C_claim_killer": "not started",
-    "D_editorial_critic": "not started",
-    "E_redactor": "not started"
+ "campaign": "reasoning_atria_pairwise_campaign",
+ "archive": "reasoning-atria-pairwise-state-39028365163.zip",
+ "archive_sha256": "2daf0e24cf2a38702f3e1182153627aa28b51b71f67744c50febd3741cea231f",
+ "campaign_status": "paused (max_tokens_total), non-resumable, 415 of 416 episodes recorded",
+ "reconstruction": "complete",
+ "headline_counts": "complete (recomputed; see evidence/generated/headline_counts.csv)",
+ "stages": {
+  "A_evidence_reviewer": "not started",
+  "B_writer": "not started",
+  "C_claim_killer": "not started",
+  "D_editorial_critic": "not started",
+  "E_redactor": "not started"
+ },
+ "posts": {
+  "R-POST-01": {
+   "title": "A Paused Campaign Is Not a Finished Evaluation",
+   "stage": "not started"
   },
-  "posts": {
-    "R-POST-01": {"title": "A Paused Campaign Is Not a Finished Evaluation", "stage": "not started"},
-    "R-POST-02": {"title": "A Rejected Patch Is Not a Failed Repair Attempt", "stage": "not started"},
-    "R-POST-03": {"title": "Two Judges, One Pass Mark", "stage": "not started"},
-    "R-POST-04": {"title": "Same Manifest, Different Model: a deferred comparison", "stage": "deferred; requires separate scoping"}
+  "R-POST-02": {
+   "title": "A Rejected Patch Is Not a Failed Repair Attempt",
+   "stage": "not started"
   },
-  "open_items": [
-    "unscored disposition vs FAIL verdicts (18 rows)",
-    "rejected disposition undefined (62 rows)",
-    "performance-eligibility reason for provider-outage FAIL",
-    "config-hash audit not run",
-    "source-tree cleanliness not checked"
-  ]
+  "R-POST-03": {
+   "title": "Two Judges, One Pass Mark",
+   "stage": "not started"
+  },
+  "R-POST-04": {
+   "title": "Same Manifest, Different Model: a deferred comparison",
+   "stage": "deferred; requires separate scoping"
+  }
+ },
+ "open_items": [
+  "unscored disposition vs FAIL verdicts (18 rows): undecided, needs user decision",
+  "rejected disposition undefined in archive (62 rows): undecided, needs user decision",
+  "performance-eligibility reason for provider-outage FAIL: undecided, needs user decision",
+  "source-tree cleanliness: not checked; archive records only dirty=true, not which files"
+ ],
+ "config_hash_audit": "run 2026-10-18: 38 selected config paths, 38 checked against clean rl_eval_generator checkout at 9ec2d919726ba39aded2e1d011a8274f938fb7ba, 38 match; configuration files only, does not verify executed code"
 }
