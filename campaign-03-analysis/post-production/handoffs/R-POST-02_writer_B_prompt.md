@@ -16,111 +16,172 @@ layout: post
 _by StrangeTcy_
 
 **Epistemic Status**
-- **Original ideas:** 4/10 (Building on outcome patterns observed within the Atria campaign dataset).
-- **Synthesis:** 7/10 (Aggregating within-environment case pairs to test whether difficulty dimensions predict failure).
-- **Prose:** 8/10 (First-person, analytical, strictly bound by empirical constraints).
-- **Certainty:** High on the reported counts; limited on generalizing beyond this single campaign.
-- **Importance:** 6/10 (Relevant for understanding whether "difficulty" labels are meaningful predictors in reasoning benchmarks).
+- **Original ideas:** 4/10 — An interpretation of outcome patterns in the Atria campaign, not a new theory of difficulty.
+- **Synthesis:** 7/10 — Comparing matched difficulty settings while separating recorded verdicts from oracle-supported results.
+- **Prose:** 8/10 — First-person, analytical, and bounded by the available evidence.
+- **Certainty:** High on the reported counts and listed verdict contrasts; limited on predictive strength, causal interpretation, and generalization.
+- **Importance:** 6/10 — A concrete test of whether intended difficulty labels order observed reasoning outcomes.
 
 ***
 
-When we design a reasoning benchmark, we tend to treat "difficulty" as a dial we can turn. Easy tasks pass, hard tasks fail, and the slope between them tells us something about a model's reasoning capacity. It is intuitive to assume that dialing up the difficulty dimensions of a case — more logical constraints, deeper inference, more complex data structures — will smoothly decrease the likelihood of success.
+If I change one task setting from `easy` to `hard`, should I expect the model to fail more often?
 
-But what if that assumption is wrong? What if flipping a case from "easy" to "hard" sometimes makes it easier, sometimes makes it harder, and sometimes changes nothing at all?
+My first instinct is yes. Otherwise, what is the difficulty setting doing? A benchmark need not produce a failure on every hard instance, but I would expect its labels to provide some direction: increasing difficulty should generally move performance downward, not unpredictably between success and failure.
 
-This is the central tension I wanted to explore when I analyzed the `atria_covering_campaign`. The campaign recorded 194 cases across 33 environment families, each case carrying a difficulty string of dimension values (easy, medium, hard). I initially expected to find that harder cases fail more often within the same environment. The data says otherwise.
+The `atria_covering_campaign` complicates that expectation. Its recorded comparisons include easy cases that fail while their hard counterparts pass. Other comparisons run in the expected direction: easy passes, hard fails. Elsewhere, the recorded verdict does not change across difficulty settings.
 
-Before testing the difficulty dial, we have to establish the boundaries of the dataset.
+The narrow finding is that **`hard` does not impose a consistent ordering on these recorded outcomes**.
 
-### The Atria Covering Campaign: Strict Judge Guarantees
+That is not the same as proving that difficulty has no statistical relationship with failure. Nor does a passing hard case prove that increasing difficulty helped the model. Those stronger interpretations require evidence this campaign summary does not provide.
 
-The campaign successfully recorded 194 cases. To maintain technical rigor, we must strictly divide these cases by the judge guarantee they carry. We cannot stitch these two buckets into a single aggregate pass rate, as doing so would conflate validated results with exploratory signals.
+There is another distinction I need to make before examining the cases. Here, `hard` is a configuration label. I am testing whether that label orders observed verdicts—not measuring an intrinsic quantity of difficulty experienced by the model.
 
-**1. The Behavioral Reference Bucket**
-This bucket contains cases carrying a strict, exact-instance oracle guarantee. These are validated model verdicts. Within this gated bucket, the campaign evaluated 72 cases: 56 `PASS` and 16 `FAIL`.
+## First, which verdicts carry which guarantee?
 
-**2. The Compile-Only Bucket**
-The remaining cases were graded by judges without a behavioral reference on that exact instance. Compile-only verdicts are purely exploratory. They do not carry the exact-instance oracle guarantee and must not be read as validated model verdicts. Within this bucket, 121 cases were scored: 75 `PASS` and 46 `FAIL`. One additional case was marked as `paused_provider_error`.
+The campaign record contains 194 cases across 33 environment families, using the `atria` provider with text-only inputs. Each selected cell was executed with a single seed.
 
-*(Contextual note on the pause: The campaign is currently paused due to a provider error. A provider outage lasted approximately 55 minutes — 3300.0 seconds — requiring 8 retries and a final backoff of 600.0 seconds. The campaign paused on the case `ts_trajectory__witness_status=broken_representation=reflective__seed-0`. I mention this purely as context for why the dataset represents exactly 194 cases. The pause does not impact the analysis of the completed, scored cases.)*
+Those cases do not all have the same evidential status.
 
-### The Difficulty Dial Does Not Turn the Way We Expect
+| Judge guarantee | Recorded cases | Scored cases | `PASS` | `FAIL` | Unscored provider-error case |
+|---|---:|---:|---:|---:|---:|
+| `behavioral_reference` | 72 | 72 | 56 | 16 | 0 |
+| `compile_only` | 122 | 121 | 75 | 46 | 1 |
 
-If "hard" reliably predicted failure, we would expect to see a consistent pattern: within any given environment, flipping a dimension from "easy" to "hard" should move a case from PASS to FAIL. The data does not show this.
+The 72 `behavioral_reference` cases carry the campaign's strict, exact-instance oracle guarantee. These are the validated verdicts under that gate.
 
-Across all 194 cases, those containing at least one "hard" dimension actually passed *more* often than those with no "hard" at all:
+The `compile_only` cases were graded without a behavioral reference on the exact instance. Their verdicts are exploratory. A `PASS` in this bucket must not be read as an oracle-validated demonstration of correct behavior; a `FAIL` likewise does not become a validated model verdict merely because it appears in the same campaign.
 
-- Cases with at least one "hard" dimension: PASS=53, FAIL=20 (pass rate 0.726)
-- Cases with no "hard" dimension: PASS=78, FAIL=42 (pass rate 0.650)
+I therefore keep the buckets separate. There is no combined validated pass rate in this essay.
 
-The aggregate is already counterintuitive. But the within-environment comparison is where the story really breaks down.
+The progress snapshot updated on October 2, 2026 records the campaign as paused after a provider error. One compile-only case has no scored verdict. That explains the unscored row; I do not count the interruption as a model failure.
 
-### Within-Environment Easy-vs-Hard Pairs
+A further limitation applies to the comparisons below: the available pair summary does not identify the judge guarantee for each member. I can report the recorded contrasts, but I cannot present all nine pairs as oracle-validated behavioral comparisons. That caveat belongs beside the evidence, not only in a limitations section at the end.
 
-I looked at pairs of cases within the same environment family where every difficulty dimension was held constant except the last one, flipped from "easy" to "hard." If difficulty predicted failure, the hard case should fail whenever the easy case passes — or at least never pass when the easy case fails.
+## The same label change, opposite outcomes
 
-That is not what happens.
+The most useful comparisons are within an environment family, with all difficulty coordinates held fixed except the last, which changes from `easy` to `hard`.
 
-**Hard passes while easy fails** — counterintuitive cases where increasing difficulty appears to help:
+This is more controlled than comparing an arbitrary easy case from one family with a hard case from another. It is still a comparison between recorded cases, however. Matching the other difficulty labels does not establish that every other property of the task instances was identical.
 
-- `css_state_machine`: easy,easy=FAIL | easy,hard=PASS
-- `compositional_optimizer`: easy,easy=FAIL | easy,hard=PASS
-- `functorial_augmentation`: easy,easy=FAIL | easy,hard=PASS
-- `sheaf_schema_sync`: easy,easy=FAIL | easy,hard=PASS
-- `rd_adaptive_halting`: easy,easy,easy,easy,easy=FAIL | easy,easy,easy,easy,hard=PASS
+Seven of the listed pairs have two difficulty coordinates:
 
-**Easy passes while hard fails** — the intuitive cases, but they are not the whole story:
+`easy,easy` versus `easy,hard`.
 
-- `categorical_lenses`: easy,easy=PASS | easy,hard=FAIL
-- `moco`: easy,easy,easy,easy,easy,easy=PASS | easy,easy,easy,easy,easy,hard=FAIL
-- `monadic_reward`: easy,easy=PASS | easy,hard=FAIL
-- `tensor_functor`: easy,easy=PASS | easy,hard=FAIL
+The remaining two use longer strings:
 
-In some environments, hard makes failure more likely. In others, it makes failure less likely. In still others, it changes nothing. The difficulty dial does not turn in one direction.
+- `rd_adaptive_halting`: `easy,easy,easy,easy,easy` versus `easy,easy,easy,easy,hard`.
+- `moco`: `easy,easy,easy,easy,easy,easy` versus `easy,easy,easy,easy,easy,hard`.
 
-<br>
+In every row of Figure 1, then, the preceding coordinates remain `easy`. Only the final difficulty label changes.
 
-> **Figure 1: The Difficulty Dial Is Not Monotonic**
-> *(Within-environment easy-vs-hard pairs where only the last difficulty dimension changes. In `css_state_machine`, `compositional_optimizer`, `functorial_augmentation`, `sheaf_schema_sync`, and `rd_adaptive_halting`, flipping a dimension from easy to hard converts a FAIL into a PASS. In `categorical_lenses`, `moco`, `monadic_reward`, and `tensor_functor`, the same flip converts a PASS into a FAIL. The direction of the effect depends on the environment family, not on the difficulty label itself.)*
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" role="img" aria-labelledby="difficulty-pairs-title difficulty-pairs-desc" style="max-width:100%;height:auto;">
+  <title id="difficulty-pairs-title">Opposite verdict changes under the same easy-to-hard label change</title>
+  <desc id="difficulty-pairs-desc">Five listed environment pairs change from FAIL on easy to PASS on hard. Four change from PASS on easy to FAIL on hard. Only the final difficulty coordinate changes in each pair.</desc>
+  <g fill="currentColor" font-family="sans-serif" font-size="16" font-weight="bold">
+    <text x="20" y="35">Environment</text>
+    <text x="430" y="35">Final: easy</text>
+    <text x="590" y="35">Final: hard</text>
+  </g>
+  <path d="M20 52H700 M20 250H700" stroke="currentColor" stroke-opacity="0.3"/>
+  <g fill="currentColor" font-family="monospace" font-size="14">
+    <text x="20" y="90">css_state_machine<tspan x="430">FAIL</tspan><tspan x="590">PASS</tspan></text>
+    <text x="20" y="125">compositional_optimizer<tspan x="430">FAIL</tspan><tspan x="590">PASS</tspan></text>
+    <text x="20" y="160">functorial_augmentation<tspan x="430">FAIL</tspan><tspan x="590">PASS</tspan></text>
+    <text x="20" y="195">sheaf_schema_sync<tspan x="430">FAIL</tspan><tspan x="590">PASS</tspan></text>
+    <text x="20" y="230">rd_adaptive_halting<tspan x="430">FAIL</tspan><tspan x="590">PASS</tspan></text>
+    <text x="20" y="290">categorical_lenses<tspan x="430">PASS</tspan><tspan x="590">FAIL</tspan></text>
+    <text x="20" y="325">moco<tspan x="430">PASS</tspan><tspan x="590">FAIL</tspan></text>
+    <text x="20" y="360">monadic_reward<tspan x="430">PASS</tspan><tspan x="590">FAIL</tspan></text>
+    <text x="20" y="395">tensor_functor<tspan x="430">PASS</tspan><tspan x="590">FAIL</tspan></text>
+  </g>
+</svg>
+<figcaption><strong>Figure 1. The same difficulty-label change accompanies opposite verdict changes.</strong> All non-final difficulty coordinates remain fixed at easy. These are the nine listed discordant pairs, not a complete count of all matched pairs. The available pair summary does not specify each case's judge guarantee; the plotted outcomes are recorded verdicts, not a claim that every comparison is oracle-validated.</figcaption>
+</figure>
 
-<br>
+Five listed pairs run against the intuitive ordering. In `css_state_machine`, for example, `easy,easy` receives `FAIL`, while `easy,hard` receives `PASS`. The same contrast appears in `compositional_optimizer`, `functorial_augmentation`, and `sheaf_schema_sync`.
 
-### What the Evidence Establishes (And What It Cannot)
+The longer configuration in `rd_adaptive_halting` does not remove the reversal: four preceding coordinates remain easy, the final coordinate changes to hard, and the recorded verdict changes from failure to success.
 
-The strongest defensible thesis is narrow: flipping a difficulty dimension from "easy" to "hard" does not reliably produce a failure. Within the same environment, holding all other dimensions constant, some easy→hard flips cause pass→fail, some cause fail→pass, and some cause no change. "Hard" is not a reliable failure predictor.
+These are concrete counterexamples to a simple rule that moving toward `hard` must worsen the recorded verdict. They are not evidence that the hard cases demanded less computation or that the model benefited from difficulty. I have verdicts, not a measurement of either proposition.
 
-The evidence establishes the following concrete facts:
+The four pairs in the other direction matter just as much. `categorical_lenses`, `moco`, `monadic_reward`, and `tensor_functor` all show an easy-side `PASS` and a hard-side `FAIL`.
 
-1. **Cases containing "hard" pass more often overall** — 0.726 vs 0.650 pass rate.
-2. **Within some environments, hard makes failure more likely** — `categorical_lenses`, `moco`, `monadic_reward`, `tensor_functor`.
-3. **Within other environments, hard makes failure less likely** — `css_state_machine`, `compositional_optimizer`, `functorial_augmentation`, `sheaf_schema_sync`, `rd_adaptive_halting`.
-4. **The effect direction depends on the environment family**, not on the difficulty label alone.
+I cannot use the five reversals to announce that difficulty is irrelevant while ignoring these four. The record contains exactly the kind of worsening that difficulty labels are intended to anticipate—just not consistently across the listed environments.
 
-However, what the evidence cannot establish is just as important:
+Nor is five against four a meaningful contest over whether difficulty helps more often than it hurts. These are nine listed changing pairs. Without a complete inventory of comparable pairs, including unchanged outcomes, that count is not an estimate of the probability that a difficulty increase improves performance.
 
-First, this data does not support the claim that difficulty dimensions never matter. Some easy→hard flips do cause failures. Difficulty has not been ruled out as a factor.
+## A third possibility: the verdict stays put
 
-Second, this data does not support the claim that "hard" reliably makes tasks easier either. The effect is inconsistent across environments. The five counterintuitive cases are interesting, but they do not establish a general rule.
+A difficulty-setting change need not cross the `PASS`/`FAIL` boundary at all.
 
-Third, this dataset cannot provide a causal mechanism for why flipping a dimension helps in some environments and hurts in others. I will not speculate on internal model architectures or mechanistic limitations.
+The family summaries include groups with no recorded verdict variation. `architecture_naturality` has five `PASS` verdicts and no `FAIL` verdicts. `rd_gradient_credit` has eleven `PASS` verdicts and no `FAIL` verdicts. In the opposite direction, `glyph` has eight `FAIL` verdicts and no `PASS` verdicts.
 
-Finally, this essay offers no general evaluation prescriptions. This is an analysis of one campaign, one provider, one modality.
+These are recorded-label summaries, subject to the same judge-guarantee caution. They show the unchanged-outcome side of the campaign: different selected settings can retain the same verdict. The available summary does not enumerate the unchanged last-coordinate pairs individually, so I cannot give their number or infer their frequency from Figure 1.
 
-### Limitations
+There is also an important resolution limit here. "Unchanged" means unchanged **verdict**, not necessarily unchanged performance on every measure.
 
-This campaign relied entirely on a single provider (`atria`) in text-only modality. A different provider or modality might yield different patterns.
+Some failures in the campaign receive nonzero partial-credit scores, including scores such as 0.95 and 0.5. Two cases labeled `FAIL` therefore need not have performed equally well. Conversely, a verdict transition does not by itself tell me the size of the numerical score change.
 
-The campaign executed a single seed per selected cell, so we cannot calculate confidence intervals.
+This essay concerns the ordering of binary verdicts. It does not establish that every stable verdict represents identical performance, or that every changed verdict represents a large deterioration or improvement.
 
-The within-environment pairs only flip the last difficulty dimension; not all dimensions were independently varied.
+## The aggregate reversal—and why I do not turn it into a validated rate
 
-Compile-only verdicts (122 of 194 cases) are exploratory and lack the exact-instance oracle guarantee.
+The campaign summary contains another counterintuitive observation: among scored cases, the group containing at least one `hard` dimension has a higher recorded pass share than the group containing no `hard` dimension.
 
-### Conclusion
+That is the reported direction of the pooled difficulty comparison. It is not a validated aggregate result.
 
-When a model fails a reasoning task, our instinct is to blame the difficulty of the prompt. We assume the model couldn't handle the depth of the logic or the length of the constraints.
+The comparison combines `behavioral_reference` and `compile_only` verdicts. Reproducing its pooled pass rates as model-success rates would cross the judge-guarantee boundary established above. I therefore do not report those combined rates or use the pooled reversal to strengthen the oracle-supported evidence.
 
-The `atria_covering_campaign` suggests a different picture. Difficulty is not a universal, domain-agnostic slider. Whether "hard" makes a task harder depends on the environment family the task lives in. If you want to predict whether a model will pass or fail, asking whether the prompt is "hard" is not enough. You have to ask what environment it lives in — because the environment shapes what difficulty even means.
+The missing information is the intersection of difficulty status and judge guarantee. The summary supplies totals by guarantee and a separate pooled difficulty comparison. It does not supply the `hard`-containing and no-`hard` counts separately inside each guarantee bucket.
+
+Consequently, I cannot determine from these summaries whether hard-containing cases pass more often within `behavioral_reference`, within `compile_only`, within both, or within neither. The pooled direction alone does not answer those questions.
+
+Even apart from the guarantee problem, this aggregate comparison asks a different question from the matched pairs.
+
+"No `hard` dimension" is not synonymous with "all dimensions easy"; it can include medium settings. The groups also contain cases from different environment families, which contribute different numbers of recorded cases. An across-case difference is therefore not equivalent to changing one coordinate while holding the environment and remaining coordinates fixed.
+
+My initial temptation is to treat the aggregate reversal as the headline: hard cases pass more often. On inspection, that is too strong. The defensible account is that the supplied mixed-guarantee tally has that direction, while a guarantee-separated difficulty comparison is unavailable.
+
+The within-environment contrasts remain interesting without borrowing authority from an inadmissible pooled rate.
+
+## How much does "not reliable" mean?
+
+There are several claims I need to keep apart.
+
+**First, the recorded outcomes are not uniformly monotonic in the difficulty label.** The listed pairs establish that directly: the same final-coordinate change accompanies both `FAIL`-to-`PASS` and `PASS`-to-`FAIL` transitions. Other recorded settings retain the same verdict.
+
+**Second, that does not establish that difficulty has zero predictive value.** A probabilistic predictor can have exceptions. Counterexamples to a perfect ordering do not prove the absence of an average relationship.
+
+This is where the opening question needs a careful answer. If "does hard make failure more likely?" means "does every such change worsen the recorded outcome?", these cases answer no. If it means "what is the change in conditional failure probability?", the available summaries do not provide a reliable estimate.
+
+I use "not reliable" in the narrower sense: the label alone does not consistently order these observed comparisons. I am not reporting a fitted predictive model, a calibrated failure probability, or a statistical demonstration of no association.
+
+**Third, the direction varies across the listed environment families, but that does not make environment identity a proven replacement predictor.** The record shows heterogeneity. It does not establish that the family name determines what a difficulty change will do.
+
+It would be easy to replace one overstatement with another: first assuming that difficulty controls the outcome, then concluding that environment controls it instead. Neither causal claim follows from this summary.
+
+Several limits keep the interpretation local.
+
+The campaign used one provider and text-only inputs. These observations do not establish the same pattern for another provider or modality.
+
+Each selected cell has a single seed. The record therefore does not characterize run-to-run stability within a cell. I report no confidence intervals or estimates of how often each listed verdict would recur under repeated executions.
+
+The displayed comparisons change only the last difficulty coordinate. They do not test every coordinate independently, and they do not establish what happens when several coordinates change together.
+
+Finally, matching configuration labels is not the same as identifying a causal effect. The summary gives me no basis for explaining why a particular hard-side case passed when its easy-side counterpart failed. I cannot infer a mechanism from the direction of a verdict change.
+
+These limits do not erase the observed contrasts. They determine what those contrasts can support.
+
+## What survives the caveats
+
+The result is smaller than "difficulty does not matter," but more concrete.
+
+In five listed within-environment comparisons, the hard-side case passes while the easy-side case fails. In four, the easy-side case passes while the hard-side case fails. Other recorded settings retain their verdicts. A separate pooled summary points toward a higher pass share among hard-containing cases, but it mixes judge guarantees and cannot serve as a validated aggregate comparison.
+
+I can therefore reject a simple reading of this campaign in which `hard` consistently pushes recorded outcomes toward failure. I cannot conclude that difficulty is irrelevant, that difficulty helps, or that I know why the contrasts reverse.
+
+For this Atria record, `hard` is an intended setting—not a dependable ordering of observed success and failure. That is the correction I can make without turning a small empirical inconsistency into a universal theory.
 ]
 
 EVIDENCE PACKET (verified against source snapshots and findings register)
