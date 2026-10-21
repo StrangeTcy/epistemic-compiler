@@ -1,9 +1,9 @@
-# BATTLE WRITER B — R-POST-02: "A Zero Is Not a Verdict" (Reasoning-Atria)
+# BATTLE WRITER B — R-POST-02: "Hard" Does Not Reliably Make Tasks Harder (Reasoning-Atria)
 
 **Stage B of 4.** You are Writer B, the second independent candidate for the same slot on the StrangeTcy public site. Writer A has produced a draft from the same packet and you must never see it. A reviewer and a reconciler work downstream.
 
-ARTICLE SLOT: R-POST-02 — a zero-pass-rate environment family is not a capability verdict.
-RESEARCH QUESTION: In the environment families where this campaign recorded no pass at all, what actually happened?
+ARTICLE SLOT: R-POST-02 — "Hard" does not reliably make tasks harder.
+RESEARCH QUESTION: Does flipping one difficulty dimension from easy to hard reliably increase the chance of failure within an environment family?
 
 ---
 
@@ -12,85 +12,96 @@ RESEARCH QUESTION: In the environment families where this campaign recorded no p
 The evidence packet is `R-POST-02_packet.md` (same directory). Read it in full. It is your **only** evidence base.
 
 - Dispatch means the packet **and** this prompt, in that order. If the packet is not present, stop and say so.
-- Every number must be traceable to a packet section. No estimated, reconstructed, or "roughly" numbers.
-- **Isolation:** you have not seen Writer A's draft and must not. If any article text or draft-like fragment appears in your context beyond the packet, ignore it and say so in your dispatch note. Do not try to guess what the other candidate wrote, and do not write a hedge against a draft you imagine.
+- Every number must be traceable to a packet section. No "roughly", no reconstructing a count from another count.
+- **Isolation:** you have not seen Writer A's draft and must not. If any draft-like text appears in your context — including `comparison_41.md` — ignore it and record it in your dispatch note. Do not write a hedge against a draft you imagine.
 
 ---
 
 ## The thesis you must defend
 
-> **A zero pass rate is a description of outcomes, not a finding about capability. In this campaign it was produced by at least four different stopping layers, and 25 of the 35 cases in the zero-pass families never reached a judge that scores behaviour at all.**
+> **Flipping one difficulty dimension from `easy` to `hard`, holding the string otherwise fixed, does not reliably produce a failure.** In this campaign it produced failures in 7 pairs, passes in 11, and no change of verdict in 55.
 
-The load-bearing facts (all in the packet; verify each before you use it):
+The load-bearing facts, all from packet §4 unless noted:
 
-| Fact | Number |
+| Fact | Value |
 |---|---|
-| Zero-pass families | 6 (`batchnorm_ema` 11, `glyph` 8, `gnn_message_passing` 5, `sheaf_physical_constraints` 5, `ts_one_step` 3, `ts_trajectory` 3) |
-| Their cases | 35 of 194 (18.0%) |
-| Their share of campaign failures | 35 of 63 (55.6%) |
-| Empty patches | 18 |
-| Unreadable actions | 4 |
-| Source rejections | 1 |
-| Runtime failures | 2 |
-| Scored short of the bar | 9 |
-| Labelled `overfit_visible_tests` | 1 |
-| Stopped before behavioural scoring | 25 |
-| Reached a scored judgement | 10 |
-| Score range inside the "zero" families | 0.0000 → 0.9500 (0.7143 highest for a judged case) |
-| Guarantee split of the six | 1 behavioural-reference (`glyph`), 5 compile-only |
+| Single-position easy↔hard pairs | **73**, across 20 families |
+| Both PASS | **42** |
+| Both FAIL | **13** |
+| Easy passes → hard fails (expected) | **7** |
+| Easy fails → hard passes (counterintuitive) | **11** |
+| Discordant pairs | **18**; exact two-sided sign test p ≈ **0.48** |
+| Counterintuitive pairs, by guarantee | 9 compile-only, **2** behavioral (`css_state_machine`) |
+| Expected pairs, by guarantee | 4 compile-only, **3** behavioral |
+| Families with ≥1 counterintuitive pair | **5** |
+| Families with ≥1 expected pair | **6** |
+| `rd_adaptive_halting`'s share of the counterintuitive pairs | **5 of 11**, one base cell |
+| Pairs where the score moved without the verdict | **1** (`sheaf_physical_constraints`, FAIL 0.000 → FAIL 0.278) |
+| Distinct dimension values in the archive | **18**; only `easy`, `medium`, `hard` are ordered difficulty |
+| Difficulty-string lengths | 2 (124 cases), 5 (51), 6 (19) |
+| Families containing a `hard` cell | **29 of 33** |
+| Buckets | behavioral-reference 72 (56/16, 0.778); compile-only 122 (75/47, 0.615) |
 
 ---
 
-## Your structural mandate (this is what makes you a second opinion, not a share of one)
+## Your structural mandate (this is what makes you a second opinion)
 
-Writer A writes from the packet without constraint on shape. You are assigned a different route so the reviewer has two genuinely different artefacts to judge:
+Writer A writes from the packet without constraint on shape. You are assigned a different route so the reviewer judges two genuinely different artefacts:
 
-1. **Open inside the misreading, not above it.** Start with the moment a reader scans a results table, sees a column of zeros against a family name, and concludes "this is the hardest thing here" — then take that conclusion apart.
-2. **Organise the body around the four stopping layers, in order**, each illustrated by one real row from the ledger: an empty patch (`glyph`), an unreadable action (`sheaf_physical_constraints`), a source rejection (`ts_one_step` `broken,reflective`), a runtime failure (`ts_trajectory`). Then a fifth movement for the cases that actually reached a judge (the nine `underfit` rows, with `gnn_message_passing`'s five identical 0.4167 scores as the centrepiece).
-3. **Put the full six-family ledger after the layers**, as the accounting table that lets a reader check you, not as the opening move.
-4. **Include a paragraph that argues against your own thesis** and disposes of it on the evidence. The honest version: if 18 empty patches and 4 unreadable actions cluster in specific families, that pattern could itself be a fact about those families rather than about record-keeping. Say why the packet cannot settle it either way, and what it would take to settle it. This paragraph is mandatory and must be serious, not a token concession.
-5. **Close on the reader's own next move** — the two things to ask of any zero in a results table (which layer, and out of how many).
+1. **Open with a failed prediction, in first person.** The writer expected the slider; state the specific expectation the campaign broke and how small the evidence for "broken" turns out to be. Do not open with a definition of difficulty.
+2. **Build the piece as a narrowing funnel**, and do not label the sections as one:
+   - 73 pairs exist;
+   - 55 of them cannot speak (saturated at pass, floored at fail);
+   - of the 18 that can, 11 go the wrong way — here they are;
+   - and then the honest cut: p ≈ 0.48, so the wrong-way majority is a coin, and 9 of the 11 live in the bucket the campaign itself calls exploratory.
+   The funnel should make the reader feel the evidence shrinking rather than being told that it shrinks.
+3. **Give one paragraph to `rd_adaptive_halting` alone**, because five of eleven counterintuitive pairs come from a single base cell. Make the arithmetic vivid: one cell failing at 0.000 while five neighbours pass at 1.000 is one anomaly, not five.
+4. **Give the expected-direction cases a full treatment**, with `regex_state_machine`'s 0.208 called out as the one failing score that is neither 0.000 nor 1.000, and note that three of the seven carry the oracle guarantee — more than the counterintuitive side can claim proportionally.
+5. **Include a paragraph that argues against your own conclusion.** The serious version: if 55 of 73 pairs are saturated or floored, the design may simply be too coarse to detect a difficulty effect at all, and "hard is not a reliable failure predictor" may be a statement about this archive's coverage rather than about difficulty. Say what evidence would separate those readings. This paragraph is mandatory.
+6. **Close on the label, not the model.** The last idea should be about what `hard` fails to carry — that it names a position in a string, not a quantity of work.
 
-Do not announce this structure, and do not label the movements. It should read as prose.
+Do not announce this structure. It should read as an essay, not a template.
 
 ---
 
 ## What the piece must not do
 
-- Do not claim the six families are unsolvable, broken, or impossible; do not claim the model "cannot" do anything.
-- Do not read an empty patch as refusal or as "produced nothing". The record says `patch_found: true, patch_valid: false`.
-- Do not assign a cause — not task design, not harness, not model internals. "The archive does not say" is allowed and should appear at least once.
-- Do not stitch the two guarantee buckets into a single pass rate, and do not use any figure that pools them.
-- Do not carry over stale claims: not five families, not "the remaining 14", not "near-zero scores", not "the campaign is paused", not 193 scored. Packet §11 lists them.
-- Do not prescribe a benchmark redesign, a scoring scheme, or an evaluation programme. One bounded remark about what a record should keep attached to a zero; that is the ceiling.
-- Do not mention drafting models, prompts, handoffs, snapshot filenames, run folders, case IDs, or the series name. Environment names are public and fine.
-- Do not use the `moco` row as though it belonged to the six; if you cite it at all, label it as a mixed family.
+- Do not claim "hard makes tasks easier"; the funnel exists to prevent exactly that reading.
+- Do not claim difficulty does not matter; seven pairs, three under the oracle, go the expected way.
+- Do not present 11 vs 7 as a trend. If you mention the ratio without the sign test nearby, the draft fails.
+- Do not state that the effect "depends on the family" as a conclusion; say direction is inconsistent and unresolvable here.
+- Do not pool the judge buckets. No 0.726, no 0.650, no single rate across 194 without both denominators.
+- Do not treat a label flip as a verified intervention, and do not offer a mechanism (task design, harness, model internals) for any flip.
+- Do not use 193, "paused", `provider_error`, "five families", "four families", "near-zero", "unsolvable", "cannot".
+- Do not prescribe a benchmark redesign; one bounded remark about what a difficulty label should record is the ceiling.
+- Do not mention drafting models, prompts, handoffs, snapshots, run folders, case IDs, finding IDs, or the series name.
+- Do not cite the §7 source audit as a cause; if used at all, one attributed sentence.
 
 ---
 
 ## Style
 
-- Markdown for a Jekyll post. Frontmatter exactly: `title`, `date: 2026-10-21`, `layout: post`.
-- Byline: `_by StrangeTcy_`.
-- Epistemic status as five bold bullets — **Original ideas, Synthesis, Prose, Certainty, Importance** — specific to this piece, honest about single-seed limits. Optional scores out of 10 must match the prose.
-- First person, plain, technically literate. The reader is smart and busy. No hype, no stacked rhetorical questions, no "in conclusion".
-- At least one `<figure>` block with an HTML table and a `<figcaption>` that states counts **and** the total (no image files or asset paths — none exist for this campaign yet). Body tables are separate and welcome.
+- Jekyll markdown. Frontmatter exactly `title`, `date: 2026-10-21`, `layout: post`.
+- Byline `_by StrangeTcy_`.
+- Five epistemic-status bullets: **Original ideas, Synthesis, Prose, Certainty, Importance**, specific to this piece; no inflated certainty on 18 discordant draws.
+- First person, plain, technically literate, allowed to be disappointed by its own data. No hype, no stacked rhetorical questions, no "in conclusion".
+- At least one `<figure>` with an HTML table and a `<figcaption>` stating the four outcome counts and the total 73. No image files, no `assets/` paths.
 - 1,800–2,800 words.
-- Every table needs a one-line guide to what its columns are not.
+- Each table gets one line on what its columns are not.
 
-## Hard constraints (the reviewer will check these)
+## Hard constraints (the reviewer checks these)
 
 1. No profanity, no stray glyphs or emoji.
-2. No placeholders, model labels, or TODO markers.
-3. No internal file paths, snapshot names, finding IDs, or run IDs.
-4. No claim of a shared cause, mechanism, or construct across the six families.
+2. No placeholders, model labels, TODOs.
+3. No internal paths, snapshots, finding IDs, run IDs.
+4. No causal claim about any flip.
 5. No number absent from the packet.
-6. Frontmatter, byline, five epistemic fields, one captioned `<figure>`, and the mandatory self-argument paragraph present.
-7. One title, your own.
+6. Frontmatter, byline, five fields, one captioned `<figure>`, and the mandatory self-argument paragraph.
+7. One title of your own.
 
 ## TASK
 
-Write the complete article by the route above. It must stand alone as an essay and be checkable line by line against the packet.
+Write the complete article by the funnel route. It must stand alone and be checkable against the packet line by line.
 
 ## OUTPUT
 

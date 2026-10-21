@@ -1,81 +1,88 @@
 # R-POST-02 — STAGE D: RECONCILER
 
-**Stage D of 4.** You produce the publishable article. You are neither writer: you inherit one draft as the spine, the other as a donor, and a review that tells you what is broken.
+**Stage D of 4.** You produce the publishable article. You are neither writer: you inherit one draft as the spine, the other as a donor, and a review that says what is broken.
 
-ARTICLE SLOT: R-POST-02 — a zero-pass-rate environment family is not a capability verdict.
+ARTICLE SLOT: R-POST-02 — "Hard" does not reliably make tasks harder.
 
 ---
 
 ## Inputs
 
 1. `R-POST-02_packet.md` — authoritative evidence base.
-2. `drafts/R-POST-02_A.md` — Writer A.
-3. `drafts/R-POST-02_B.md` — Writer B.
-4. `drafts/R-POST-02_C_review.md` — the adjudicator's report, including its `COMPARATIVE RECOMMENDATION`.
+2. `drafts/R-POST-02_A.md`
+3. `drafts/R-POST-02_B.md`
+4. `drafts/R-POST-02_C_review.md` — including its `COMPARATIVE RECOMMENDATION`.
 
-Read the review's **VERDICT** lines first. If it recommends **re-dispatch** for both drafts, stop: do not reconcile, do not salvage. Say what the next brief must change and end.
+Read the review's **VERDICT** lines first. If it recommends **re-dispatch** for both drafts, stop: do not reconcile, do not salvage. State what the next brief must change and end.
 
 ---
 
 ## What you are doing
 
-Reconciliation is not averaging and not merging. It is: adopt the spine the reviewer named, repair everything it flagged, transplant only passages it graded clean, and keep the concessions that cost the article something. Two drafts that disagree factually are not both wrong — the packet decides.
+Reconciliation is not averaging and not merging. Adopt the spine the reviewer named, repair everything it flagged, transplant only passages it graded clean, and keep the concessions that cost the article something. Two drafts that disagree factually are not both right — the packet decides.
 
 ## Rules, in priority order
 
-1. **The packet decides.** Any number, attribution, or layer-split fact comes from the packet, not from either draft. If both drafts are wrong, the review will have marked it `SHARED`; fix it once.
-2. **Every BLOCKER and CORRECTION from the review must be repaired.** Where you disagree with a finding, you do not get to ignore it — you either repair it or state, in the change log, the packet sentence that refutes the finding. Silent non-compliance is the one failure mode that voids this stage.
-3. **No new claims and no new numbers.** You may delete, compress, reorder, and rephrase. You may not add a fact that is absent from the packet, including a "safe" summary statistic, an inferred percentage, or a reconstructed total.
-4. **Spine, not collage.** One voice, one argument line. Do not alternate between the two writers' sensibilities; do not keep two openings, two conclusions, or two epistemic-status blocks.
-5. **Keep the minimum viable concession set.** At least: the single-seed / one-provider / text-only limits; the fact that the archive records the layer and not the cause; and the record conflict on the 0.95 row. These are not decoration and may not be compressed into one throwaway sentence.
-6. **Denominators travel with counts.** Every stated count carries its total in the same sentence, or sits in a table whose caption carries it.
-7. **Nothing from `assets/`.** The one `<figure>` is an HTML table with a `<figcaption>` naming counts and total.
+1. **The packet decides.** Every number, attribution, and pair outcome comes from `R-POST-02_packet.md`, not from either draft.
+2. **Repair every `BLOCKER` and `CORRECTION`.** Where you disagree with a finding, you may not ignore it: either repair it, or state in the change log the packet sentence that refutes it. Silent non-compliance voids this stage.
+3. **No new claims, no new numbers.** Delete, compress, reorder, rephrase. Do not add a statistic, an inferred percentage, a reconstructed count, or a "roughly".
+4. **Spine, not collage.** One voice, one argument line, one opening, one conclusion, one epistemic-status block.
+5. **Keep the minimum concession set.** These may not be compressed into a throwaway sentence and may not move to the end as a formality:
+   - 55 of 73 pairs are saturated or floored and carry no directional information;
+   - 11 vs 7 with p ≈ 0.48 is not a trend;
+   - 9 of the 11 counterintuitive pairs are compile-only;
+   - `rd_adaptive_halting` contributes 5 of 11 from one base cell;
+   - the flip holds the label string constant, not the rendered task;
+   - one seed per cell, one provider, text-only.
+6. **Denominators travel with counts; buckets travel with rates.** No pooled pass rate anywhere, including in a summary sentence.
+7. **Nothing from `assets/`.** The one `<figure>` is an HTML table with a `<figcaption>` naming the four outcomes and the total 73.
 8. **No leakage.** No run folders, snapshots, case IDs, finding IDs, series labels, writer labels, drafting-model names, or TODOs.
 
 ## Publishable requirements
 
 - Frontmatter: `title`, `date: 2026-10-21`, `layout: post` — nothing else.
 - Byline `_by StrangeTcy_`.
-- Five epistemic-status bullets: Original ideas, Synthesis, Prose, Certainty, Importance. "Prose" must now say what actually happened: two independent drafts, an adjudication, and a reconciliation — and that no new campaign was run. Honest self-scores only.
-- One captioned `<figure>`; body tables as needed; each table gets a one-line note on what its columns are not.
+- Five epistemic bullets: Original ideas, Synthesis, Prose, Certainty, Importance. "Prose" states what happened: two independent drafts from one packet, an adjudication, and a reconciliation, with no new campaign run. Honest self-scores only.
+- One captioned `<figure>`; body tables as needed; each table carries one line on what its columns are not.
 - 1,800–2,800 words.
-- A title you would defend in public. It may come from either draft or be new. No colon-stacked subtitles, no numerals-only titles, no "On the…".
-- One-sentence opening a reader can disagree with.
+- A title you would defend publicly. It may come from either draft or be new. The slot is not entitled "inconsistency in difficulty labels". No colon-stacked subtitle, no numerals-only title.
+- The opening sentence must be a claim a reader can disagree with.
 
-## Self-check before you output
+## Self-check before output
 
-Run this list and paste the result into your change log, with the actual value found, not a tick:
+Paste actual values, not ticks:
 
-1. Count of zero-pass families stated = **6**.
-2. Their cases = **35**; failures = **35 of 63**; share of cases = **35 of 194**.
-3. Layer split present and summing to **35**: 18 + 4 + 1 + 2 + 9 + 1.
-4. The words **25** (stopped before behavioural scoring) and **10** (judged) both appear correctly.
-5. `glyph` described with **8** cases, **0.0000**, **behavioural-reference**.
-6. `gnn_message_passing` described with **5** cases at **0.4167** and the word "identical" or equivalent.
-7. `ts_one_step` **0.7143** present as the highest judged score in a zero family.
-8. The 0.95 row appears with `trusted_score` **1.0** and the missing file, and the disagreement is stated rather than resolved.
-9. No occurrence of: `paused`, `provider_error`, `193`, `131/194` without bucket split, `0.726`, `0.650`, `five families`, `near-zero`, "unsolvable", "cannot", "gave up".
-10. Bucket split if mentioned: **72** (56/16) and **122** (75/47).
-11. Word count in range; frontmatter exact; byline present; five fields present; one figure with a caption containing counts.
-12. Grep clean for: `fuck`, `shit`, `🫣`, `runs/atria_campaign`, `seed-0`, `R-POST`, `Reasoning-Atria`, `Writer A`, `Writer B`, `TODO`, `some model:`.
+1. Pairs stated = **73**; both-pass **42**; both-fail **13**; expected **7**; counterintuitive **11**.
+2. `73 = 42 + 13 + 7 + 11` verified as arithmetic in the article.
+3. Sign test stated as two-sided exact, **p ≈ 0.48**, adjacent to the 11-vs-7 count.
+4. Guarantee split of the counterintuitive pairs = **9 compile-only / 2 behavioral**; of the expected = **4 / 3**.
+5. `rd_adaptive_halting` described as **5 of 11** from **one base cell**, not five findings.
+6. `css_state_machine` identified as carrying the only two counterintuitive pairs under the oracle guarantee.
+7. `regex_state_machine` losing at **0.208**.
+8. `sheaf_physical_constraints` **0.000 → 0.278** present as the single verdict-identical score move.
+9. **18** distinct dimension values; **29 of 33** families contain a `hard` cell.
+10. No occurrence of: `0.726`, `0.650`, `0.645`, `131/194`, `193`, `paused`, `provider_error`, `resumable`, "five families", "four families", "near-zero", "unsolvable", "cannot", "hard makes tasks easier", "depends on the environment family".
+11. Buckets if mentioned: **72** (56/16, 0.778) and **122** (75/47, 0.615).
+12. Word count in range; frontmatter exact; byline present; five fields present; one figure whose caption carries counts and the total.
+13. Grep clean: `fuck`, `shit`, `🫣`, `runs/atria_campaign`, `seed-0`, `R-POST`, `Reasoning-Atria`, `Writer A`, `Writer B`, `TODO`, `some model:`.
 
-If any check fails, fix it before producing output. Do not output a draft that fails its own checklist.
+Fix any failure before producing output. Do not emit a draft that fails its own checklist.
 
 ## OUTPUT — exactly this shape
 
 ```
-<the complete article markdown, starting with --- frontmatter ---, ending with the last sentence of the article>
+<the complete article markdown, starting with --- frontmatter ---, ending with the last sentence>
 
 ---
 <!-- NOT FOR PUBLICATION — reconciliation log -->
-SPINE: draft A | draft B | re-synthesised (justify in one line)
+SPINE: draft A | draft B | re-synthesised (one-line justification)
 INHERITED FROM SPINE: ...
-TRANSPLANTED (quoted in C, clean on re-check): ...
-BLOCKERS REPAIRED: one line each, with the packet §
+TRANSPLANTED (clean in review, re-checked): ...
+BLOCKERS REPAIRED: one line each, with packet §
 CORRECTIONS REPAIRED: one line each
 FINDINGS REJECTED (with the packet sentence that refutes them): ...
-SELF-CHECK RESULT: 12 lines, actual values
-OPEN ISSUES FOR A HUMAN: anything the packet cannot settle and the article now flags as open
+SELF-CHECK RESULT: 13 lines, actual values
+OPEN ISSUES FOR A HUMAN: anything the packet cannot settle and the article now flags
 SUGGESTED PUBLICATION PATH: _posts/2026-10-21-<slug>.md
 ```
 

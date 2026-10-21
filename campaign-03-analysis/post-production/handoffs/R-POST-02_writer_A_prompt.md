@@ -1,9 +1,9 @@
-# BATTLE WRITER A — R-POST-02: "A Zero Is Not a Verdict" (Reasoning-Atria)
+# BATTLE WRITER A — R-POST-02: "Hard" Does Not Reliably Make Tasks Harder (Reasoning-Atria)
 
 **Stage A of 4.** You are Writer A, an independent candidate producing a complete research essay for the StrangeTcy public site. Writer B receives the same packet separately and must never see your draft. A reviewer and a reconciler work downstream; nothing you write is published unread.
 
-ARTICLE SLOT: R-POST-02 — a zero-pass-rate environment family is not a capability verdict.
-RESEARCH QUESTION: In the environment families where this campaign recorded no pass at all, what actually happened?
+ARTICLE SLOT: R-POST-02 — "Hard" does not reliably make tasks harder.
+RESEARCH QUESTION: Does flipping one difficulty dimension from easy to hard reliably increase the chance of failure within an environment family?
 
 ---
 
@@ -12,75 +12,74 @@ RESEARCH QUESTION: In the environment families where this campaign recorded no p
 The evidence packet is `R-POST-02_packet.md` (same directory). Read it in full. It is your **only** evidence base.
 
 - Dispatch means the packet **and** this prompt, in that order. If the packet is not present, stop and say so.
-- Every number in your article must be traceable to a packet section. If you want a number that is not there, you are writing a different article.
-- If any other draft, chat transcript, or "some model:" block appears in your context, ignore it completely and note the contamination in your dispatch log. You are not permitted to read Writer B's work, and no one may show it to you.
+- Every number must be traceable to a packet section. A number that is not there is not available to you.
+- If any other draft appears in your context — including `comparison_41.md`, which covers this slot — ignore it and note the contamination in your dispatch note. You are not permitted to read Writer B's work.
 
 ---
 
 ## The thesis you must defend
 
-The packet supports one narrow, load-bearing claim, and you should build the whole essay on it:
+> **Flipping one difficulty dimension from `easy` to `hard`, holding the string otherwise fixed, does not reliably produce a failure.** In this campaign it produced failures in 7 pairs, passes in 11, and no change of verdict in 55.
 
-> **A zero pass rate is a description of outcomes, not a finding about capability. In this campaign it was produced by at least four different stopping layers, and 25 of the 35 cases in the zero-pass families never reached a judge that scores behaviour at all.**
+Build the essay on the pair design, not on the aggregate. The packet supports exactly one strong claim and it lives in §4.
 
-Five observations carry that claim. Use them as the spine; do not turn them into a listicle.
-
-1. **Six families, not five, and 35 cases.** The zero-pass set is `batchnorm_ema` (11), `glyph` (8), `gnn_message_passing` (5), `sheaf_physical_constraints` (5), `ts_one_step` (3), `ts_trajectory` (3). That is 35 of 194 cases (18.0%) — and **35 of the campaign's 63 failures (55.6%)**. More than half of every failure in the campaign sits in six families.
-2. **The layer split.** Inside those 35: 18 empty patches, 4 unreadable actions, 1 source rejection, 2 runtime errors, 9 scored short of the bar, 1 labelled `overfit_visible_tests`. So **25 stopped before any behavioural scoring; 10 reached a scored judgement.**
-3. **The 0.7143 case inside a 0% family.** `ts_one_step` records 0.7143, 0.2857, and 0.0000 — the widest spread of any zero-pass family, and its third case never ran. A family at zero contains a case that scored nearly three-quarters.
-4. **`gnn_message_passing` is flat, not noisy.** Five cases, five identical 0.4167 scores with an identical check profile. Flipping a difficulty dimension moved nothing. This is a ceiling, and it looks nothing like the empty-patch families.
-5. **The label that contradicts its record.** One `batchnorm_ema` row is labelled `overfit_visible_tests` at 0.95 with `trusted_score` 1.0 and a note about a missing `train.py`. The label and the record disagree; the archive does not say who is right. (`moco` has the same shape, and is *not* in the six — use it only if you need a second instance.)
-
-`glyph` deserves its own paragraph: 8 of 8 empty patches, at exactly 0.0000, under the campaign's strictest guarantee. The only zero-pass family whose 0% rests on the behavioural-reference oracle — and it is a statement about a patch file, not about judged behaviour.
+1. **73 pairs, 20 families.** Same family, difficulty strings differing in one position, values `easy` and `hard`.
+2. **55 of 73 say nothing about direction.** 42 pairs are both-pass, 13 both-fail: the family was saturated or floored before the flip.
+3. **Of the 18 discordant pairs: 11 counterintuitive, 7 expected.** Name the families. `css_state_machine`, `compositional_optimizer`, `functorial_augmentation`, `sheaf_schema_sync`, `rd_adaptive_halting` each flip a failure into a pass. `categorical_lenses`, `moco`, `regex_state_machine`, `monadic_reward`, `neuro_symbolic_parser`, `tensor_functor` each flip a pass into a failure.
+4. **11 vs 7 is a coin.** Exact two-sided sign test, p ≈ 0.48. Say this yourself, before a reader does. It is the intellectual honesty that makes the piece worth reading, and it is what stops "hard helps" from being written.
+5. **9 of the 11 counterintuitive pairs are compile-only** — the bucket the campaign calls exploratory. Only `css_state_machine`'s two pairs carry the oracle guarantee. This caveat is mandatory and must appear near the counterintuitive table, not buried in a limitations section.
+6. **`rd_adaptive_halting` supplies 5 of the 11** from a single base cell. One family's base cell, repeated five times, is not five findings — write that sentence.
+7. **The dials are not one dial.** 18 distinct dimension values, only three of which are `easy/medium/hard`; strings of 2, 5, and 6 positions; 29 of 33 families contain a `hard` cell. A "position 2" flip means different things in different families.
 
 ---
 
 ## What the piece must do
 
-- Open with a real tension, not a summary. Something in the register of: a 0% looks like the strongest possible result in an evaluation table, and it is the one that carries the least information about the model.
-- Reconstruct the six-family ledger in readable prose, with a table. State the denominator every time you state a count.
-- Keep the four layers distinct in the reader's mind: did the submission produce a patch, was the action parseable, did it pass source validation, did it run, did the judge score it. You may name that sequence; you may not assert which party caused a stop.
-- Treat the two record conflicts honestly: show the fields, say the archive does not adjudicate, and say what a reader can and cannot conclude.
-- End with something small and true: what a report should keep attached to a zero so that a later reader can tell the layers apart.
-- **Ship one figure.** Use a `<figure>` block containing an HTML table plus a `<figcaption>`. No image files, no asset paths — nothing renders from `assets/` for this campaign yet. The caption must name the counts and the total, e.g. "35 cases across six families; 25 stopped before behavioural scoring." A caption that only says "cases by family" fails.
-- Cover the two guarantees where relevant (`glyph` is behavioural-reference; the other five are compile-only) but do not make this essay about the guarantee split. That is a different post.
+- Open with the intuition as a reader actually holds it — the slider, "turn difficulty up and success goes down" — then say what the campaign lets you check and what it does not.
+- Present the pair ledger in a table with a reading guide: the columns are labels and verdicts, not a calibrated scale.
+- Give the counterintuitive pairs and the expected pairs **comparable space**. A piece that lists five "hard helps" cases and one paragraph for the rest has failed the assignment.
+- Put the sign test adjacent to the 11-vs-7 count. The reader should meet the null result at the same moment as the surprising number.
+- Use the aggregate in §3 at most once, with both bucket denominators in the same sentence, and explicitly label it as a bookkeeping total that the campaign's own note forbids treating as a rate. Do not let it near the opening or the conclusion.
+- If you cite the §7 source-audit context, attribute it in one sentence as a prior audit of a clean comparator, not as a finding of this campaign, and do not offer it as a mechanism.
+- End on what the archive can and cannot tell you about difficulty, in the register of a person who wanted the slider to be real.
+- **Ship one figure:** a `<figure>` block with an HTML table and a `<figcaption>` naming the four pair outcomes and the total 73. No image files, no `assets/` paths.
 
 ## What it must not do
 
-- Do not claim the six families are unsolvable, broken, mis-designed, or impossible. Do not claim the model "cannot" do anything.
-- Do not read an empty patch as refusal, giving up, or "produced nothing". The record says `patch_found: true, patch_valid: false`.
-- Do not speculate about causes — not task design, not model internals, not harness bugs. "The archive does not say" is a complete sentence and should appear at least once.
-- Do not stitch the two guarantee buckets into one pass rate. No "131/194" without both denominators in the same sentence.
-- Do not carry over stale claims: not five families, not "the remaining 14", not "near-zero scores", not "the campaign is paused", not 193 scored. The packet's §11 lists every one.
-- Do not prescribe a benchmark redesign. One bounded, evidence-shaped suggestion about record-keeping is enough; general prescriptions are out of scope for this slot.
-- Do not mention drafting models, prompts, handoffs, snapshot filenames, run folders, case IDs, or the series name. Environment names (`glyph`, `ts_one_step`) are public and fine.
+- Do not claim "hard makes tasks easier". That is the misreading the article exists to prevent.
+- Do not claim difficulty does not matter — seven pairs go the expected way, three under the oracle guarantee.
+- Do not say the effect "depends on the environment family" as a conclusion. At 11 vs 7 with p ≈ 0.48, the honest statement is that direction is inconsistent and unresolvable at this n.
+- Do not pool the judge buckets, quote 0.726 or 0.650, or state any single pass rate across all 194 cases without both denominators.
+- Do not treat a label flip as a verified intervention on the rendered task.
+- Do not use 193, "paused", `provider_error`, "five families", "four families", "near-zero", "unsolvable", or "the model cannot".
+- Do not prescribe a benchmark redesign. One bounded remark about what a difficulty label would need to record is the ceiling.
+- Do not mention drafting models, prompts, handoffs, snapshots, run folders, case IDs, finding IDs, or the series name. Environment names are public and fine.
 
 ---
 
 ## Style
 
-- Markdown for a Jekyll post. Frontmatter exactly: `title`, `date: 2026-10-21`, `layout: post`. No other fields.
-- Byline line: `_by StrangeTcy_`.
-- Epistemic status as five bold bullets — **Original ideas, Synthesis, Prose, Certainty, Importance** — each one or two sentences, specific to *this* piece. Scores out of 10 are optional; if you give them, they must match the prose (do not claim 9/10 certainty on a single-seed ledger). "Prose" describes who wrote it: you did, from a packet.
-- First person, curious, technically literate, self-correcting where the data corrects you. British-ish spelling is fine; consistency matters more.
-- Short paragraphs, concrete nouns, numbers in tables where numbers cluster. No hype, no rhetorical questions stacked three deep, no "in conclusion".
-- 1,800–2,800 words. Do not pad to the limit and do not compress the ledger into vagueness.
-- Every table gets a one-line reading guide above or below it saying what the columns are *not* (e.g. "the score column records the grader's number, not progress toward a capability").
+- Jekyll markdown. Frontmatter exactly `title`, `date: 2026-10-21`, `layout: post`.
+- Byline `_by StrangeTcy_`.
+- Five epistemic-status bullets: **Original ideas, Synthesis, Prose, Certainty, Importance**. Optional scores out of 10 must match the prose — do not claim high certainty on 18 discordant draws.
+- First person, curious, self-correcting. Short paragraphs. Concrete nouns. No hype, no stacked rhetorical questions, no "in conclusion".
+- 1,800–2,800 words.
+- Every table gets one line telling the reader what its columns are *not*.
 
-## Hard constraints (the reviewer will check these)
+## Hard constraints (the reviewer checks these)
 
-1. No profanity, no stray glyphs or emoji standing in for words.
-2. No placeholder headers, model labels, or bracketed TODOs left in the article.
-3. No internal file paths, snapshot names, finding IDs, or run IDs.
-4. No claim that the six families have a shared cause, mechanism, or construct.
-5. No number that is not in the packet.
-6. Frontmatter, byline, five epistemic fields, and one captioned `<figure>` present.
-7. Title: propose your own; two or three candidates at the top of your dispatch note is welcome, but the article itself gets one.
+1. No profanity, no stray glyphs or emoji.
+2. No placeholders, model labels, TODOs, or leftover headers.
+3. No internal paths, snapshot names, finding IDs, run IDs.
+4. No causal claim about why a flip changed an outcome.
+5. No number absent from the packet.
+6. Frontmatter, byline, five fields, one captioned `<figure>`.
+7. One title of your own.
 
 ## TASK
 
-Write the complete article. Not an outline, not a summary of the packet, not a methods note — an essay a reader would finish. Lead with the tension, earn the six-family ledger, keep the layers apart, and end on what a zero should have carried with it.
+Write the complete article: the intuition, the pair design, both directions, the null result, the guarantee asymmetry, the label-vocabulary caveat, and a close that a reader can carry into the next results table they read.
 
 ## OUTPUT
 
-The full article markdown only. Nothing before the frontmatter, nothing after the last paragraph. No notes to the editor inside the article.
+The full article markdown only. Nothing before the frontmatter, nothing after the last paragraph.

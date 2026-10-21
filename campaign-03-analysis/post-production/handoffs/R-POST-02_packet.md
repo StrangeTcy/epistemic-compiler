@@ -1,12 +1,12 @@
 # R-POST-02 — EVIDENCE PACKET (authoritative)
 
-**Slot:** R-POST-02 — a zero-pass-rate environment family is not a capability verdict.
-**Series:** *Reasoning-Atria* (campaign 03). Slot map: 01 environment dominates · 02 the floor (this) · 03 the difficulty dial · 04 the ceiling · 05 partial credit.
-**Snapshot:** `atria-campaign-state-62.zip` → `coverage.json` (`updated_at` 2026-10-02T14:44:58Z). This is the **completed** campaign. `campaign_report.json` reports `status: completed`, `resumable: false`.
-**Status:** verified against row-level `coverage.json`. Every count below is reproducible from the fields in Appendix A.
-**Authority:** this file is the single source of truth. If a prompt, a draft, or an earlier packet disagrees with it, this file wins.
+**Slot:** R-POST-02 — "Hard" does not reliably make tasks harder.
+**Series:** *Reasoning-Atria* (campaign 03). Slot map: 01 environment dominates · **02 the difficulty dial (this)** · 03 the floor · 04 the ceiling · 05 partial credit.
+**Snapshot:** `atria-campaign-state-62.zip` → `coverage.json` (`updated_at` 2026-10-02T14:44:58Z). Completed campaign: `campaign_report.json` reports `status: completed`, `resumable: false`.
+**Status:** verified row-by-row against `coverage.json`. Every count below is reproducible from Appendix A.
+**Authority:** this file is the single source of truth. If a prompt, a draft, or the earlier `comparison_41.md` disagrees with it, this file wins.
 
-Writers and reviewers may not introduce any number that is not in this packet. If an argument needs a number the packet lacks, the argument is cut, not estimated.
+Writers and reviewers may not introduce a number that is not here. If an argument needs one, the argument is cut.
 
 ---
 
@@ -15,199 +15,176 @@ Writers and reviewers may not introduce any number that is not in this packet. I
 | Field | Value |
 |---|---|
 | Event | `atria_covering_campaign` |
-| Provider / mode | `atria`, paid execution, `text_only` input modality |
+| Provider / mode | `atria`, paid, `text_only` |
 | Case manifest sha256 | `c08e3637b50da84f8a02e47be96c0b18ec2792b0ccf109ba6b07ec00e699872d` |
 | Source commit under test | `d7357092493f311f649a0742889b301d796911b5` |
-| Intent recorded | 2026-09-29T13:34:39Z |
 | Cases recorded / scored | 194 / 194 |
 | Paused cases | 0 |
-| Seeds | `0` on all 194 rows; one seed per cell, no reruns |
+| Seeds | `0` everywhere; one seed per cell, no reruns |
 | `reasoning_enabled` | `false` on all 194 rows |
-| Sum of per-case elapsed | ≈ 23.03 h (shortest case 27.7 s, longest 1,945.1 s ≈ 32 min) |
-| Provider outage (report field) | 3,300 s waited, 8 retries, last case `ts_trajectory__witness_status=broken_representation=reflective__seed-0` |
 
-The outage is **history, not status**: the campaign finished after it. Do not describe the campaign as paused, incomplete, or "193 scored".
+The provider outage in the report (3,300 s, 8 retries) is history, not status. The campaign completed. Do not describe it as paused or "193 scored".
 
 ---
 
 ## 2. The two judge guarantees
 
-Guarantee is fixed per environment: **11 families are behavioral-reference, 22 are compile-only.** No family mixes the two.
+Guarantee is fixed per family: **11 behavioral-reference, 22 compile-only.** No family mixes them.
 
-| Bucket | Scored | PASS | FAIL | Pass rate | What the campaign report says |
-|---|---:|---:|---:|---:|---|
-| `behavioral_reference` | 72 | 56 | 16 | 0.778 | exact-instance oracle carried |
-| `compile_only` | 122 | 75 | 47 | 0.615 | exploratory; excluded from any validated aggregate |
-| **Total** | **194** | **131** | **63** | — | report per bucket only |
+| Bucket | Scored | PASS | FAIL | Pass rate |
+|---|---:|---:|---:|---:|
+| `behavioral_reference` | 72 | 56 | 16 | 0.778 |
+| `compile_only` | 122 | 75 | 47 | 0.615 |
+| Total | 194 | 131 | 63 | — |
 
-Never stitch the buckets into one rate. "131/194" may be used only as a bookkeeping total with both denominators named in the same sentence.
-
----
-
-## 3. Shape of the distribution (33 families)
-
-| Group | Families | Cases | Guarantee split |
-|---|---:|---:|---|
-| All-pass (14) | 14 | 84 | 5 behavioral-reference, 9 compile-only |
-| Zero-pass (6) | 6 | 35 | 1 behavioral-reference (`glyph`), 5 compile-only |
-| Mixed (13) | 13 | 75 | 5 behavioral-reference, 8 compile-only |
-
-The all-pass families: `architecture_naturality`, `ci_dependency_graph`, `epistemic_games`, `equivariant_diagram`, `rd_gradient_credit`, `rd_state_carry`, `semiring_unification`, `sheaf_invariant_gluing`, `spreadsheet_dataflow`, `ssm_parallel_scan`, `stochastic_monad`, `template_interpreter`, `tokenizer_adjunction`, `transformer_ssm_lift`.
-
-The all-pass guarantee split matters for R-POST-04, not for this post; it is included so no writer borrows "14 solved" without its composition.
-
-Track totals (all 194): category-theoretic/compositional 57/85 · ML debugging 16/37 · recurrent depth 31/33 · weird machine 25/30 · trajectory 2/9.
+Never pool the buckets. The campaign report's own aggregate note forbids it. Any rate in the article is a per-bucket rate, or it is labelled a bookkeeping total with both denominators in the same sentence.
 
 ---
 
-## 4. The six zero-pass families — case ledger (35 cases, 0 passes)
+## 3. The headline aggregate — and why it is not the article
 
-Zero pass rate, and nothing else in common. Mean family scores: `glyph` 0.000 · `ts_trajectory` 0.000 · `batchnorm_ema` 0.086 · `sheaf_physical_constraints` 0.111 · `ts_one_step` 0.333 · `gnn_message_passing` 0.417.
+| Set | Cases | PASS | Pass rate |
+|---|---:|---:|---:|
+| Cases with ≥1 `hard` dimension | 73 | 53 | 0.726 |
+| Cases with no `hard` dimension | 121 | 78 | 0.645 |
 
-| Family | Guarantee | Difficulty string | Score | `failure_mode` |
-|---|---|---|---:|---|
-| `batchnorm_ema` | compile-only | easy,easy,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | hard,easy,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | medium,easy,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,hard,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,medium,easy,easy,easy | 0.9500 | `overfit_visible_tests` |
-| `batchnorm_ema` | compile-only | easy,easy,hard,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,easy,medium,easy,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,easy,easy,hard,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,easy,easy,medium,easy | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,easy,easy,easy,hard | 0.0000 | `patch_invalid` |
-| `batchnorm_ema` | compile-only | easy,easy,easy,easy,medium | 0.0000 | `invalid_action` |
-| `glyph` | behavioral-reference | easy,easy,easy,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | medium,easy,easy,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,medium,easy,easy,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,easy,hard,easy,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,easy,medium,easy,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,easy,easy,hard,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,easy,easy,medium,easy | 0.0000 | `patch_invalid` |
-| `glyph` | behavioral-reference | easy,easy,easy,easy,easy,medium | 0.0000 | `patch_invalid` |
-| `gnn_message_passing` | compile-only | easy,easy | 0.4167 | `underfit` |
-| `gnn_message_passing` | compile-only | hard,easy | 0.4167 | `underfit` |
-| `gnn_message_passing` | compile-only | medium,easy | 0.4167 | `underfit` |
-| `gnn_message_passing` | compile-only | easy,hard | 0.4167 | `underfit` |
-| `gnn_message_passing` | compile-only | easy,medium | 0.4167 | `underfit` |
-| `sheaf_physical_constraints` | compile-only | easy,easy | 0.0000 | `invalid_action` |
-| `sheaf_physical_constraints` | compile-only | hard,easy | 0.0000 | `invalid_action` |
-| `sheaf_physical_constraints` | compile-only | medium,easy | 0.2778 | `underfit` |
-| `sheaf_physical_constraints` | compile-only | easy,hard | 0.2778 | `underfit` |
-| `sheaf_physical_constraints` | compile-only | easy,medium | 0.0000 | `patch_invalid` |
-| `ts_one_step` | compile-only | broken,flat | 0.2857 | `underfit` |
-| `ts_one_step` | compile-only | valid,flat | 0.7143 | `underfit` |
-| `ts_one_step` | compile-only | broken,reflective | 0.0000 | `source_invalid` |
-| `ts_trajectory` | compile-only | broken,flat | 0.0000 | `runtime_error` |
-| `ts_trajectory` | compile-only | valid,flat | 0.0000 | `runtime_error` |
-| `ts_trajectory` | compile-only | broken,reflective | 0.0000 | `invalid_action` |
+Split by guarantee:
 
-The difficulty strings are the ordered dimension **values** only. The archive does not record which dimension name each position holds, so no writer may attach names to positions. `ts_one_step` and `ts_trajectory` use two-valued strings (`broken`/`valid`, `flat`/`reflective`).
+| Bucket | hard: cases / pass / rate | no hard: cases / pass / rate |
+|---|---|---|
+| `behavioral_reference` | 26 / 21 / **0.808** | 46 / 35 / **0.761** |
+| `compile_only` | 47 / 32 / **0.681** | 75 / 43 / **0.573** |
+
+Read this before you write: the pooled comparison (0.726 vs 0.645) is **exactly the cross-bucket stitched rate the campaign report forbids**, and the same direction appears inside both buckets only because compile-only cases are both more likely to contain a `hard` cell and more likely to fail. The per-bucket gaps (0.047 and 0.108) are small, from one seed, with no interval. **The article's argument must not rest on this table.** It is context, not evidence, and if a draft leads with it the reviewer will strike it.
+
+A fourth of the archive has no `easy/medium/hard` cells at all — see §6.
 
 ---
 
-## 5. Layer split inside the six families
+## 4. The pair design (the article's real evidence)
 
-| Layer | Cases | What the record shows |
-|---|---:|---|
-| `patch_invalid` (empty patch) | 18 | `patch_found: true`, `patch_valid: false`, `sources_valid: false`; note reads `Patch validation failed: FAIL: Patch file is empty` |
-| `invalid_action` (unreadable action) | 4 | the submitted action was not parseable; all four are compile-only |
-| `source_invalid` (rejected before running) | 1 | `ts_one_step` `broken,reflective` |
-| `runtime_error` (failed while running) | 2 | both `ts_trajectory`; the campaign's third runtime failure is recorded as `RUNTIME_ERROR` in capitals in `rd_adaptive_halting`, a mixed family, and is not counted here |
-| `underfit` (ran, scored below the bar) | 9 | `gnn_message_passing` 5 × 0.4167; `sheaf_physical_constraints` 2 × 0.2778; `ts_one_step` 0.7143 and 0.2857 |
-| `overfit_visible_tests` | 1 | `batchnorm_ema` at 0.95 (see §7) |
-| **Total** | **35** | |
+Within a family, two cells whose difficulty strings differ in exactly one position, with values `easy` and `hard`. All other positions identical. **73 such pairs across 20 families.**
 
-**25 of the 35 stopped before any judge scored behaviour. 10 reached a scored judgement.** The 25 are 18 empty patches, 4 unreadable actions, 1 source rejection, 2 runtime failures.
+| Outcome of the flip | Pairs |
+|---|---:|
+| both PASS | **42** |
+| both FAIL | **13** |
+| easy passes → hard fails (**expected direction**) | **7** |
+| easy fails → hard passes (**counterintuitive direction**) | **11** |
+| **Total** | **73** |
 
-Scores recorded inside these "zero" families: `0.0000, 0.2778, 0.2857, 0.4167, 0.7143, 0.9500`.
+Two facts sit above every interpretation:
 
----
+1. **55 of 73 pairs (75%) cannot speak to direction at all.** In 42 the family was already saturated at pass; in 13 it was already floored at fail. Only the 18 discordant pairs carry directional information.
+2. **Among those 18, the split is 11 counterintuitive vs 7 expected.** An exact two-sided sign test on 11/18 gives **p ≈ 0.48**. The counterintuitive majority is not distinguishable from a coin flip at this n. Do not describe it as a trend, a pattern, or "hard helps".
 
-## 6. Where the zero is not uniform
+### 4.1 The 11 counterintuitive pairs
 
-- **`gnn_message_passing` — five cases, one number.** All five records carry score `0.416667`, `raw_accuracy 0.5`, `trusted_score 0.5`, and an identical check profile (`patch_valid: true`, `sources_valid: true`, `hidden_metric_passed: false`, `anti_gaming_passed: true`, `required_multifile_edit: true`, `basic_run: false`, `permutation_equivariance: true`, `training_completed: false`, `artifact_found: false`). Changing a difficulty dimension did not move the score at all. This is a ceiling, not variance.
-- **`ts_one_step` — three cases spanning the widest range in the campaign's zero families:** 0.7143, 0.2857, 0.0000. A 0% family contains the campaign's highest-scoring failure by margin (0.7143); its third case never ran because source validation rejected it.
-- **`glyph` — 8 of 8 at exactly 0.0000**, every one an empty patch, under the strictest guarantee in the campaign (behavioral-reference). This is the only zero-pass family whose 0% rests on the oracle guarantee, and its 0% is a statement about the submitted patch file, not about a judged behaviour.
-- **`batchnorm_ema` — 11 cases: 9 empty patches, 1 unreadable action, 1 record at 0.95.**
+| Family | Position flipped | easy cell | hard cell | Guarantee |
+|---|---|---:|---:|---|
+| `css_state_machine` | 1 | FAIL 0.417 | PASS 1.000 | behavioral-reference |
+| `css_state_machine` | 2 | FAIL 0.417 | PASS 1.000 | behavioral-reference |
+| `compositional_optimizer` | 1 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `compositional_optimizer` | 2 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `functorial_augmentation` | 2 | FAIL 0.417 | PASS 1.000 | compile-only |
+| `sheaf_schema_sync` | 2 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `rd_adaptive_halting` | 1 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `rd_adaptive_halting` | 2 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `rd_adaptive_halting` | 3 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `rd_adaptive_halting` | 4 | FAIL 0.000 | PASS 1.000 | compile-only |
+| `rd_adaptive_halting` | 5 | FAIL 0.000 | PASS 1.000 | compile-only |
 
----
+**9 of the 11 are compile-only** — the bucket the campaign report calls exploratory. Only `css_state_machine`'s two pairs carry the oracle guarantee.
 
-## 7. Two record conflicts that a careful reader must not flatten
+`rd_adaptive_halting` contributes 5 of the 11 on its own: its all-easy cell fails at 0.000 and every single-`hard` variant passes at 1.000. That is one family's base cell behaving differently from its five neighbours, repeated five times, not five independent observations. A writer may say this; a writer may not count it as five findings.
 
-| Case | Verdict | Score | `trusted_score` | `missing_required_files` | Note |
-|---|---|---:|---:|---|---|
-| `batchnorm_ema` `easy,medium,easy,easy,easy` | FAIL | 0.95 | 1.0 | `["train.py"]` | "Patch does not touch all required cross-context files; missing: train.py"; also `hidden_metric_passed: false`, `anti_gaming_passed: false` |
-| `moco` `easy,easy,easy,easy,medium,easy` (not in the six; a mixed family) | FAIL | 0.95 | 1.0 | `["moco_model.py"]` | same note shape, plus the unexplained flag `temperature_cancelled` |
+### 4.2 The 7 expected-direction pairs
 
-The label is `overfit_visible_tests`; the fields describe a missing file and a full trusted score. The archive does not establish whether the submission, the task, or the pipeline produced that. The packet supports "the label and the record disagree"; it does not support "the model overfit" or "the model was correct".
+| Family | Position flipped | easy cell | hard cell | Guarantee |
+|---|---|---:|---:|---|
+| `categorical_lenses` | 2 | PASS 1.000 | FAIL 0.000 | behavioral-reference |
+| `moco` | 6 | PASS 1.000 | FAIL 0.000 | behavioral-reference |
+| `regex_state_machine` | 1 | PASS 1.000 | FAIL 0.208 | behavioral-reference |
+| `monadic_reward` | 1 | PASS 1.000 | FAIL 0.000 | compile-only |
+| `monadic_reward` | 2 | PASS 1.000 | FAIL 0.000 | compile-only |
+| `neuro_symbolic_parser` | 1 | PASS 1.000 | FAIL 0.000 | compile-only |
+| `tensor_functor` | 2 | PASS 1.000 | FAIL 0.000 | compile-only |
 
----
+**3 behavioral-reference, 4 compile-only.** `regex_state_machine` is the only expected-direction pair whose failing score is neither 0.000 nor 1.000; it is 0.208.
 
-## 8. Campaign context for the 63 failures
+Family counts: **5 families** contain at least one counterintuitive pair (`css_state_machine`, `compositional_optimizer`, `functorial_augmentation`, `sheaf_schema_sync`, `rd_adaptive_halting`); **6 families** contain at least one expected pair (`categorical_lenses`, `moco`, `regex_state_machine`, `monadic_reward`, `neuro_symbolic_parser`, `tensor_functor`).
 
-| `failure_mode` | Total | behavioral-reference / compile-only |
-|---|---:|---|
-| `patch_invalid` | 24 | 9 / 15 |
-| `underfit` | 20 | 3 / 17 |
-| `source_invalid` | 10 | 3 / 7 |
-| `invalid_action` | 4 | 0 / 4 |
-| `runtime_error` (+ `RUNTIME_ERROR` casing variant) | 2 + 1 | 0 / 3 |
-| `overfit_visible_tests` | 2 | 1 / 1 |
-| **Total** | **63** | 16 / 47 |
+### 4.3 Pairs that differ in score but not verdict
 
-- The six families hold **35 of the 63 failures (55.6%)** and **35 of the 194 cases (18.0%)**.
-- **18 of the campaign's 24 empty patches** are in these six families; **all 4** `invalid_action` failures are.
-- Failures carrying a non-zero score across the whole campaign: 18 rows, ranging 0.2083 to 0.9500.
-
----
-
-## 9. Limitations (state these, do not perform them)
-
-- One provider, one model, text-only modality, one seed per cell (`seed 0`), no reruns: no variance, no confidence intervals, no population estimates.
-- The campaign record and the per-case rows disagree on retry volume: `campaign_progress.json` reports `http_attempts: 6412`, while per-row `http_attempts` sum to 4,319. Cite neither, or cite both as a conflict.
-- Snapshot sensitivity: state-56 recorded compile-only as 121 scored + 1 paused; state-62 records 122 scored. This packet uses state-62.
-- The archive holds the verdict and the layer, not a cause. Nothing in it says why a patch was empty or an action unreadable.
-- Family labels are labels. Nothing in the packet says the six families share a construct, a difficulty, or a mechanism.
+Exactly **one** of the 55 same-verdict pairs moves at all: `sheaf_physical_constraints` position 2, FAIL 0.000 → FAIL 0.278. Every one of the 42 both-pass pairs is identical at 1.000/1.000. The flips do not nudge performance; they either cross the verdict line or do nothing.
 
 ---
 
-## 10. What the evidence supports / does not support
+## 5. What the pairs mean — and the three things they do not
 
-**Supports (the defensible thesis):** a zero pass rate is a description of outcomes, and in this campaign it is produced by at least four different stopping layers. Within six families that passed nothing, 25 of 35 cases never reached a judge that scores behaviour; the ones that did score spread from 0.0000 to 0.7143. So "0%" cannot be read as one kind of evidence, and cannot be read as a capability verdict, until the layer is attached.
+The defensible thesis:
 
-**Does not support:**
-- that these six tasks are unsolvable, impossible, or broken;
-- that the model cannot do the underlying work;
-- that an empty patch means the model gave up, produced nothing, or refused (the record says `patch_found: true`);
-- any causal claim about why a family is at zero;
-- any mechanism claim about the model;
-- any ranking of these families against each other;
-- general evaluation prescriptions beyond "record the layer and the denominator";
-- extrapolation to another provider, modality, or seed;
-- any stitched aggregate pass rate across the two guarantees.
+> **Flipping one difficulty dimension from `easy` to `hard`, holding the string otherwise fixed, does not reliably produce a failure.** In this campaign it produced failures in 7 pairs, passes in 11, and no change of verdict in 55.
+
+Not licensed by the packet:
+
+1. **"Hard makes tasks easier."** 11 vs 7 with p ≈ 0.48 is a directionless coin. The counterintuitive cases are worth reporting; they are not a finding about difficulty.
+2. **"Difficulty does not matter."** Seven pairs show a clean pass→fail conversion, three of them under the oracle guarantee.
+3. **"A label flip is a verified intervention."** See §7. The pair design holds the *string* constant, not the rendered task.
 
 ---
 
-## 11. Corrections to earlier drafts (do not repeat these errors)
+## 6. The dial is not the same dial everywhere
 
-1. **"Five uniformly unsolvable families"** — there are **six**. `gnn_message_passing` (0/5) is missing from every prior list. Its absence makes the arithmetic work by accident ("remaining 14 environments").
-2. **"The remaining 14 environments"** — the mixed set is **13** (33 − 14 − 6).
-3. **"near-zero scores"** — the range inside the zero families is 0.0000 to 0.9500, and `ts_one_step` averages 0.333 with a 0.7143 case. "Near-zero" is false for `gnn_message_passing` (0.4167) and `ts_one_step`.
-4. **"The campaign is paused at provider_error / 193 scored"** — stale state-56 language. State-62 is completed with 194 scored.
-5. **The 0.726 vs 0.650 aggregate** (cases with any `hard` dimension vs none) — that is a stitched cross-bucket rate and must not appear in this post. Per bucket it is 0.808 vs 0.761 (behavioral-reference) and 0.681 vs 0.573 (compile-only); that belongs to R-POST-03, not here.
-6. **`comparison_44.md`'s opening line "some model:"** — a placeholder left in a draft. No draft may contain tool labels, model names, or placeholder headers.
+- Only **3 of the 18 distinct dimension values** in the archive are `easy`, `medium`, `hard`. The others: `narrative`, `report`, `trap`, `ambiguous`, `strong`, `weak`, `balanced`, `skewed`, `solo`, `paired`, `bare_table`, `broken`, `valid`, `flat`, `reflective`.
+- Difficulty strings have **three different lengths**: 2 dimensions (124 cases), 5 dimensions (51), 6 (19). A "position 2" flip is not the same kind of change across lengths.
+- **29 of 33 families** contain at least one `hard` cell; 4 contain none.
+- In the mixed-evidence families (`epistemic_games`, `ts_one_step`, `ts_trajectory`) the axes are not ordered difficulty at all, so no `easy`→`hard` pair exists there and none is counted in §4.
+
+The 73 pairs are therefore 73 comparisons of *labels*, drawn from families whose labels mean different things. That is the reason the article is about the unreliability of the label, not about the magnitude of a difficulty effect.
 
 ---
 
-## Appendix A — field provenance
+## 7. External context — cite as prior audit, never as this packet's data
 
-Every figure in this packet derives from `coverage.json` (194 rows) with:
+A prior source audit of the clean comparator behind this campaign (published separately) found ten advertised control or variable axes across nine category-family environments with **no implementation reference** in the inspected templates. If that reading holds for the executed workspaces, some label flips changed nothing any agent or judge could see — which would be one mechanical explanation for "no change of verdict" pairs.
 
-- family ledger: `groupby(environment)` → `verdict`, `score`, `failure_mode`, `difficulty`, `judge_guarantee`, `track`;
-- layer split: `failure_mode` on the 35 zero-pass rows, joined to the `final.checks` / `final.notes` objects embedded in `stdout_tail`;
-- guarantee split: `judge_guarantee` counts, verified against `campaign_report.json` → `results_by_judge_guarantee` (72 / 122, 56/16 and 75/47);
-- campaign identity: `campaign_intent.json`, `campaign_report.json`, `campaign_progress.json`;
-- retry conflict: `campaign_progress.json` `http_attempts` vs `sum(coverage.http_attempts)`.
+The packet does not establish this for this campaign, and no draft may assert it as a cause. It may be cited, once, clearly attributed, as the reason a label flip is not automatically an intervention. The audit's premise is itself limited: it inspected a clean comparator, not the executed tree.
 
-Recomputation is two `json.load` calls and a `Counter`. If a writer cannot reproduce a number this way, the number is not in the packet and does not go in the article.
+---
+
+## 8. Limitations (state them; do not perform them)
+
+- One provider, one model, text-only, **one seed per cell**, no reruns: no variance, no interval, no population estimate. The 73 pairs are 73 single draws.
+- The pairing holds other dimensions constant in the *label string* only. Nothing in the archive shows the rendered tasks differed in exactly that one respect.
+- Pair counts are not independent observations: `rd_adaptive_halting` (5 pairs) and `moco` (5 pairs) each reuse a single base cell.
+- `compile_only` verdicts are exploratory by the campaign's own note; 9 of the 11 counterintuitive pairs live there.
+- The archive records verdicts and scores, not causes. Nothing here says why a flip changed an outcome.
+- Retry volume is inconsistent inside the export: `campaign_progress.json` reports `http_attempts: 6412`; the per-row `http_attempts` sum to 4,319. Cite neither, or cite both as a conflict.
+
+---
+
+## 9. Corrections to the earlier draft (`comparison_41.md`) — do not repeat
+
+1. **"Five counterintuitive pairs, four intuitive pairs"** — the true counts are **11 and 7**. The draft listed one pair per family and dropped `regex_state_machine` position 1 and `neuro_symbolic_parser` position 1 entirely.
+2. **"Five environments, four environments"** — the family counts are **5** and **6**.
+3. **The pooled 0.726 vs 0.650 comparison** — cross-bucket, forbidden by the report's own aggregate note, and 0.650 is a state-56 figure (state-62 gives 0.645 with n = 121). Report per bucket or not at all.
+4. **"The campaign is paused / 193 scored / one paused case"** — stale. Completed, 194 scored.
+5. **"The effect direction depends on the environment family"** — stated as a conclusion, but the comparison is 11 vs 7 with p ≈ 0.48, and 55 of 73 pairs are saturated or floored. The honest version: direction is inconsistent and the inconsistency is not resolvable at this n.
+6. **No mention that 9 of 11 counterintuitive pairs are compile-only** — the single most important caveat for this slot, and it was absent.
+7. **"Near-zero scores" / "unsolvable" language** — inapplicable here and banned series-wide.
+
+---
+
+## Appendix A — provenance
+
+All figures derive from `coverage.json` (194 rows):
+
+- §2: `judge_guarantee` counts, cross-checked against `campaign_report.json` → `results_by_judge_guarantee`.
+- §3: `hard in difficulty.split(',')` over rows, per bucket.
+- §4: for each family, index cells by `tuple(difficulty.split(','))`; take all unordered pairs differing in exactly one index whose values are `{easy, hard}`; classify by `verdict`, then read `score`. Recomputed count: 73 pairs, 42 both-pass, 13 both-fail, 7 expected, 11 counterintuitive, 18 discordant.
+- §4.3: same pairs, comparing `score` where verdicts match; 1 difference.
+- §6: `Counter` over `len(difficulty.split(','))` and over all values.
+- §8: `campaign_progress.json` `http_attempts` vs `sum(coverage.http_attempts)`.
+
+Sign test: exact binomial, two-sided, n = 18, k = 11 → p = 0.4807.
