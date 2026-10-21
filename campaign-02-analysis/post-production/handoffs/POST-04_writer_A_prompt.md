@@ -1,0 +1,158 @@
+BATTLE WRITER A — POST-04: How Mercury Fails: Observed Failure Patterns in Mercury-2.5
+
+You are Writer A, an independent candidate producing a complete research essay for the StrangeTcy public site. Writer B will receive the evidence separately and must not see your draft. Do not reference or incorporate Writer B's work.
+
+ARTICLE SLOT: POST-04 — observed failure patterns (Mercury-2.5).
+RESEARCH QUESTION: What does the recorded failure taxonomy establish about Mercury-2.5's failed cases, and where do the data stop supporting causal or conditional claims?
+
+Article:
+
+[
+---
+title: "How Mercury Fails: Observed Failure Patterns in Mercury-2.5"
+date: 2026-10-16
+layout: post
+---
+
+*by <span class="icon-self">StrangeTcy</span>*
+
+<dl class="epistemic-status">
+  <dt>Original ideas</dt>
+  <dd>Failure-mode taxonomy as the organising lens; separation of quantified patterns from descriptive ones.</dd>
+  <dt>Synthesis</dt>
+  <dd>Role-separated analysis over the archived Mercury evidence (F-002, F-005, F-007, F-009; failure taxonomy and judge-guarantee tables).</dd>
+  <dt>Prose</dt>
+  <dd>Final writer from evidence dossier and adversarial review brief.</dd>
+  <dt>Certainty</dt>
+  <dd>Low-to-moderate. Judge-assigned labels; a single model (mercury-2.5) from a single provider; a single seed per cell; a dirty repository; no replication; no difficulty matching between intervention and base cells; no manual audit of individual verdicts. Everything below is correlational; nothing is causal.</dd>
+  <dt>Importance</dt>
+  <dd>Establishes the base-rate shape of Mercury-2.5's failures and the one intervention-level pattern the data can currently support.</dd>
+</dl>
+
+## A note on the title
+
+An earlier version of this post promised "failure modes and their conditions." The word *conditions* was doing more work than the evidence can bear, and I have removed it. What I have is a count of judge-assigned labels on 128 failed cases, one intervention comparison with small cells, and a handful of descriptive observations about individual cases. That is enough to describe *patterns*. It is not enough to say under what conditions Mercury-2.5 fails, and still less to say why. Nothing in this post should be read as a conditional or counterfactual claim — not the section headings, not the figure captions, and not the summary. The framing below is deliberately weaker than the one it replaces.
+
+## The shape of the failure set
+
+Of the 128 FAIL verdicts in the archived run, 51 carry the label `underfit` and 49 carry `overfit_visible_tests`. Together these two labels account for 100 of 128 failures, or 78.1%. The remaining 28 (21.9%) split across four labels: `runtime_error` (11), `source_invalid` (9), `invalid_action` (5), and `training_failure` (3). The six counts sum to 128 (F-007).
+
+Before going further, a point about that denominator. The field F-007 reports is `share_of_eligible_failures`. The 128 are therefore *eligible* failures under a criterion the packet does not state, and every percentage in this section is a share of 128 and of nothing else. I cannot reconcile 128 against the 416 selected cases, nor against the 331 base cases in F-002, and I have not tried: the arithmetic would be invented rather than derived. Read 78.1% as "78.1% of the eligible failure set," not as a proportion of the run.
+
+The stub this post replaces summarised the distribution as "mostly behavioural, not infrastructural." I am retiring that phrasing for two reasons. First, the taxonomy does not classify its labels along a behavioural/infrastructural axis; that split was an editorial gloss I imposed, not a field in the data. Second, even on the most generous reading of the gloss, roughly one failure in five (28/128) is a mechanical error — the patch did not run, did not parse, took an action the harness rejected, or crashed during training. One in five is not a rounding error.
+
+A related claim in the stub — that the model "usually produces a patch that runs; it just does not solve the task" — is also withdrawn. F-007 records failure-mode labels, not execution status. It is tempting to infer that the 108 cases not labelled `runtime_error` or `source_invalid` executed cleanly, but the taxonomy does not say so, and a case labelled `underfit` may well have crashed on a hidden check that the judge chose to describe in terms of coverage rather than execution. The inference is plausible. It is not in the evidence packet, and I flag it here as inference only.
+
+What the counts do support is narrower and still useful, on a deliberately narrow reading: the two dominant labels describe cases where a patch was produced and judged against hidden behaviour, and the dominant *verdict* when Mercury-2.5 fails is that the patch did not do enough (`underfit`) or did the visible part and not the hidden part (`overfit_visible_tests`).
+
+![Failure modes](../figures/fig5_failure_modes.svg)
+
+*Figure 5. Failure-mode counts across n=128 eligible failures (F-007). Labels are judge-assigned.*
+
+## What "overfit" does and does not mean here
+
+The label `overfit_visible_tests` invites the reading that the model gamed the visible tests. In at least some cases that reading is wrong. Several cases carrying this label have a `trusted_score` of 1.0 — the behavioural check passed — and were marked FAIL because a required companion file was missing. The `batchnorm_ema` case is the documented example, and as far as the packet goes it is the *only* documented example: the patch scored 1.0 but the spec required a `model.py` that was not delivered.
+
+How many of the 49 overfit cases are of this kind is not known. The word the evidence packet uses is "several," and I am going to leave it at that. I could write down a range, but any range I produced would be an illustration of my ignorance rather than a measurement — the packet contains no count, and inventing bounds would lend the gap a precision it does not have. The consequence is a real interpretive fork that I cannot resolve: at the low end, the overfit label is mostly about hidden-test coverage; at the high end, it is substantially a deliverable-completeness artifact. Until the 49 cases are individually audited — which has not been done — the overfit count should be read as an **upper bound** on visible-test overfitting proper, with an unquantified companion-file component to be subtracted from it.
+
+The `batchnorm_ema` case also motivates a hypothesis that recurs below: that specs requiring multi-file deliverables are harder for Mercury-2.5 than single-file specs. This is a hypothesis from one example. It is not a measured pattern, and there is no multi-file pass rate anywhere in the packet to turn it into one.
+
+## The one quantified intervention pattern
+
+The evidence packet contains one comparison with cell-level numbers (F-002). Base cases pass at 228 of 331 (0.69). Cases carrying a `visible_proxy` channel pass at 8 of 27 (0.30). Cases carrying a `reward_proxy` channel pass at 1 of 4 (0.25).
+
+These three numbers deserve different weights. The visible-proxy cell, at n=27, is small. The association between the proxy tag and the lower pass rate is a single unreplicated measurement on cells that were not difficulty-matched to the base population, and I have computed no interval for it and make no claim about its statistical significance. The reward-proxy cell, at n=4, is degenerate. One additional pass would move it from 0.25 to 0.50. I report it for completeness and it should not be quoted as a rate.
+
+Within the 76 latent specifications shared between base and intervention cases, seven interventions flipped a passing base case to a failure — a flip rate of roughly 9%, or about one in eleven, of shared specs. The flip count is the more [d-word] quantity here, because it is a within-spec comparison rather than a cross-population one; but it carries the same single-seed caveat as everything else in the run, it rests on a twin-identity assumption discussed in the caveats below, and seven events is seven events.
+
+F-009 restates the same comparison. It is not a replication and I am not counting it as one: there is one measurement of this effect in the archive, not two.
+
+![Pairwise intervention](../figures/fig6_pairwise_intervention.svg)
+
+*Figure 6. Pass rates by intervention tag (F-002). Base 228/331; visible_proxy 8/27; reward_proxy 1/4. The reward_proxy cell is n=4 and is degenerate — too small to interpret as a rate. Cells were not difficulty-matched; the figure shows association only.*
+
+## What the proxy pattern does not show
+
+The stub described the proxy channel as "a shortcut that the model takes." That is a claim about the model's process, and the data contain no observation of the model's process. What the data show is that pass rates are lower in cells tagged with a proxy channel. At least five explanations are consistent with that, and they are not mutually exclusive:
+
+- The model may optimise against the proxy rather than the hidden target — the shortcut-taking reading, which is one candidate among several and not the default.
+- Proxy-tagged specs may be harder on average, independently of the proxy, because the intervention cases were not difficulty-matched to the base population.
+- Adding a proxy channel may lengthen or complicate the spec, and the drop may be a general spec-complexity effect rather than a proxy-specific one.
+- The grading surface may differ: the judge may grade proxy cases more strictly, or may be more likely to assign `overfit_visible_tests` when a proxy is present, by construction of the taxonomy.
+- With a single seed per cell, some portion of the gap may be sampling variance that a second seed would shrink.
+
+I have ruled out none of these. The [d-word] statement is: *pass rate is lower in the cells tagged with a proxy channel, and within shared specs the intervention coincided with roughly one in eleven passing cases becoming failures.* Anything about intent or mechanism is speculation.
+
+## Observed patterns, sorted by how much evidence stands behind them
+
+It is worth being explicit about which of the "conditions" in the original draft are measured and which are not.
+
+**Tier 1 — Quantified (one measurement, no replication):**
+
+- Presence of a `visible_proxy` channel is associated with a lower pass rate (0.30 on 8/27 vs 0.69 on 228/331). Unreplicated, unmatched cells, small n.
+- Within 76 shared latent specs, 7 interventions flipped pass to fail.
+- The failure-label distribution itself: 51 / 49 / 11 / 9 / 5 / 3 across 128 eligible failures.
+
+**Tier 2 — Descriptive, from one or a few cases:**
+
+- Specs requiring companion files (e.g. `model.py` alongside the primary patch) can produce FAIL verdicts with a trusted score of 1.0. Documented in `batchnorm_ema`, the sole documented case; the count among the 49 overfit cases is unknown.
+- "Visible-test-heavy grading" and "multi-file edits" appear in my notes as failure conditions. They are descriptive observations generalised from this same small set of cases. I offer them as hypotheses, not as measured general risk factors, and no rate attaches to either.
+
+**Tier 3 — Not measured at all:**
+
+- The stub asserted that failures "disappear" under single-file specifications with exact oracles. I withdraw that assertion. No pass rate for that stratum exists in the evidence packet, and the success conditions are unquantified in the source. There is also a circularity risk: if single-file-exact-oracle cases are simply the cases that are easiest to pass, then observing that they pass more often tells us about difficulty, not about a failure-suppressing condition. Single-file specifications and exact oracles are recorded here strictly as hypotheses for a future stratified analysis, and nothing more.
+
+## Caveats
+
+The following limitations apply to every number above, and most of them were absent from the earlier draft.
+
+1. **Judge-label composition.** All failure-mode labels are judge-assigned. The 416 selected cases split into 189 with a `behavioral_reference` guarantee and 227 with `compile_only`. A `compile_only` judge cannot, by construction, assign some labels with the same confidence as a `behavioral_reference` judge. There is no cross-tabulation of failure labels by guarantee type anywhere in the packet, and the counts above are not stratified by guarantee; the share of each label attributable to each judge type is simply unknown.
+2. **Eligibility of the 128.** As noted above, the taxonomy field is `share_of_eligible_failures`. The shares are shares of 128 eligible failures only and cannot be reconciled against the 416 selected cases or the 331 base cases.
+3. **Unscored cases.** 11 cases received no score: 6 `epistemic_silence`, 4 `epistemic_type_games`, 1 `rd_adaptive_halting` (F-005). These are excluded from the 128 failures and from the pass rates. They are not failures in the taxonomy's sense and they are not successes either; they are non-ignorable exclusions, and I make no claim about the direction in which their exclusion moves any rate.
+4. **Unverified twins.** 56 of 132 twin cases (42%) are unverified. The remainder, 76, numerically matches the "76 shared latent specs" used for the flip-rate denominator. Whether that is the same 76 or a coincidence has not been confirmed. If it is the same set, the flip analysis rests on the verified twins only, which is the right subset; if it is not, the denominator means something else. The identity needs checking before the number is relied on, and I flag the match as unverified.
+5. **Single seed, single model, no replication.** Every cell was run once, with a single seed. The model is mercury-2.5 from a single provider. F-009 restates F-002 rather than reproducing it. No result above has been observed twice.
+6. **Dirty repository.** The run was executed against a repository with uncommitted or uncontrolled state. Which cases, if any, were affected is unknown.
+7. **No matching, no audit.** Intervention cases were not difficulty-matched to base cases, and no manual audit of individual verdicts was performed.
+
+## Summary
+
+Mercury-2.5's 128 eligible failures are dominated by two judge labels — `underfit` (51) and `overfit_visible_tests` (49), together 78.1% — with the remaining 21.9% spread across mechanical errors of four kinds. Within the overfit label, an unknown fraction are companion-file artifacts rather than visible-test gaming, so 49 is an upper bound on gaming proper and `batchnorm_ema` is the only case documented in detail. The one quantified intervention pattern is that proxy-channel cells pass less often than base cells (0.30 on 8/27 vs 0.69 on 228/331; the reward-proxy cell at n=4 is degenerate and not quotable), with 7 pass-to-fail flips across 76 shared specs, measured once and restated once in F-009 rather than replicated. That pattern is correlational, singly measured, and admits at least five explanations besides the model taking a shortcut. The conditions under which failures might be suppressed have not been measured, and single-file specifications with exact oracles are offered only as a target for the next pass.
+]
+
+EVIDENCE PACKET (F-002, F-005, F-007, F-009 and failure taxonomy)
+- The campaign selected 416 cases across 38 environments; 405 scored, 277 PASS / 128 FAIL, and 11 unscored. Judge guarantees: 189 behavioral_reference, 227 compile_only. One seed per selected cell; dirty repository; no replication.
+- F-007 taxonomy covers 128 *eligible* failures, although the selection criterion for eligibility is not stated. Counts: underfit 51, overfit_visible_tests 49, runtime_error 11, source_invalid 9, invalid_action 5, training_failure 3 (sum 128).
+- 51 + 49 = 100/128 = 78.1%; the other 28/128 = 21.9% are in four mechanical-error labels. The taxonomy does not classify failures as behavioral vs infrastructural.
+- Some cases labelled overfit_visible_tests have trusted_score=1.0 but fail because a required companion file is missing. `batchnorm_ema` is a documented example (missing `model.py`); the number of such cases among the 49 is unknown.
+- F-002 proxy-tagged pass results: base 228/331 (0.69), visible_proxy 8/27 (0.30), reward_proxy 1/4 (0.25). The cells were not difficulty-matched and were not replicated; reward_proxy n=4 is extremely small.
+- Within 76 latent specifications described as shared between base and intervention, 7 pass→fail flips were recorded. No opposite-direction flip count is supplied.
+- F-009 restates the F-002 result; it is not an independent replication.
+- 11 cases had no score: 6 epistemic_silence, 4 epistemic_type_games, 1 rd_adaptive_halting. 56 of 132 twin cases are unverified; it is unconfirmed whether that is the same set as the 76 linked specs.
+- No manual case-by-case failure audit or guarantee-stratified label cross-tabulation is supplied.
+
+REVIEWER BRIEF — required corrections
+- Replace “mostly behavioural, not infrastructural” with the actual taxonomy counts: the dominant underfit + overfit labels are 100/128 (78.1%); 28/128 (21.9%) carry four mechanical-error labels. The taxonomy itself does not encode a behavioral/infrastructural split.
+- Do not infer that the model usually produces a patch that runs. Failure-mode labels are not execution-status records.
+- For the 49 overfit_visible_tests cases, the fraction attributable to companion-file incompleteness is unknown. `batchnorm_ema` is a documented example, not a basis for a quantified general claim.
+- Proxy-tagged cells have lower observed pass fractions, but this is correlational, non-replicated and unmatched; n=4 makes reward_proxy unstable. Seven pass→fail flips are seven of 76 linked specs, not a causal rate. F-009 restates F-002 rather than replicating it.
+- Do not call the proxy result “a shortcut the model takes” or infer intention. Identify alternative explanations.
+- Treat single-file/exact-oracle success “conditions” as unmeasured hypotheses, not conclusions.
+- Clarify that 128 is the taxonomy's eligible-failure denominator; do not silently reconcile it to 416/405/331.
+- Retain all caveats: mixed judge guarantees, 11 unscored cases, 56/132 unverified twins, single seed, one model/provider, dirty repository, no manual audit and no replication.
+
+STYLE REFERENCE
+- Jekyll front matter: `title`, `date`, `layout: post`. No extra fields.
+- Byline: `*by <span class="icon-self">StrangeTcy</span>*`.
+- Epistemic-status block as a `<dl class="epistemic-status">` with five fields: Original ideas, Synthesis, Prose, Certainty, Importance.
+- First-person, curious, technically literate, self-correcting.
+- Concrete cases and exact counts; put caveats next to the claims they qualify.
+- No internal file paths, finding IDs, trace IDs, or draft labels in public copy.
+- Target approximately 1,800–2,800 words. Do not inflate.
+- At least one informative figure or table with a caption; captions must not make stronger claims than the body.
+- Do not invent results, run IDs, replications, or source details. Do not convert unscored cases into failures.
+
+
+TASK
+Produce a complete, publication-ready essay for Mercury POST-04. Organize it by evidential strength: quantified failure labels, the single proxy-channel comparison, and individual-case observations. State what is measured and what is only hypothesized. Include at least one figure/table with precise denominator and caveat captions. Do not claim causal conditions or infer internal mechanisms.
+
+OUTPUT: full article markdown only.
