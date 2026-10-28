@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "post_id": "POST-02",
+  "stage": "evidence_reviewer_v2",
+  "status": "response_recorded",
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "article_source": "campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+  "evidence_source": "campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+  "prompt_file": "arena-handoffs/Mercury-POST-02-evidence-review-v2.md",
+  "prompt_sha256": "22dce5d631e05ccedf82a3d7cccc555ab46e79a3e06e83443f646369129abf9a",
+  "article_sha256": "227e14fa95945e7322aaf7bb1a7968483fc28f8d177354e1350a47744c31619d",
+  "evidence_packet_sha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+  "article_bytes": 23772,
+  "evidence_packet_bytes": 86175,
+  "response_artifact": "arena-handoffs/Mercury-POST-02-evidence-review-v2.response.md",
+  "response_sha256": "f6e534bf72c64663ef5eef90503bb34bab7d24b46fd5cce8d775b5f572c3d7ac",
+  "arena_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/main/comparison_100.md",
+  "arena_commit": "7af6331f15959b3ceb002a6b9f96d5a306b598ad"
+}

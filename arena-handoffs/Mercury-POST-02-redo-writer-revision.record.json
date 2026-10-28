@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "post_id": "POST-02",
+  "stage": "writer_revision_after_evidence_review",
+  "status": "prepared_not_dispatched",
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "prompt_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision.md",
+  "prompt_sha256": "99f6508cabd2a9ac5fe1c3f5838f7c373936d3668db223242382d3830cb6f975",
+  "article_source": "campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+  "evidence_review_response_artifact": "arena-handoffs/Mercury-POST-02-evidence-review-v2.response.md",
+  "evidence_review_response_sha256": "f6e534bf72c64663ef5eef90503bb34bab7d24b46fd5cce8d775b5f572c3d7ac",
+  "input_models": [
+    {
+      "label": "some model",
+      "verdict": "reject"
+    },
+    {
+      "label": "some other model",
+      "verdict": "accept with corrections"
+    },
+    {
+      "label": "grok 4.5",
+      "verdict": "accept with corrections"
+    },
+    {
+      "label": "fable 5.1",
+      "verdict": "accept with corrections"
+    }
+  ],
+  "next_output": "complete revised POST-02 article markdown"
+}

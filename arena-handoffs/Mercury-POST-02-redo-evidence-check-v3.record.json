@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "post_id": "POST-02",
+  "stage": "evidence_review_of_writer_pair",
+  "revision": "v3",
+  "status": "prepared_not_dispatched",
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "prompt_artifact": "arena-handoffs/Mercury-POST-02-redo-evidence-check-v3.prompt.md",
+  "prompt_sha256": "d51ac7cbf50948828fbf46272fb26bd38c1f9c8434511052e1bbcb67703e1d93",
+  "prompt_characters": 187173,
+  "prompt_utf8_bytes": 187269,
+  "governing_instructions_sha256": "dd318b73e52d6ba320738036637e68b242d0c929dff45c2f8c947b46e52c17e3",
+  "required_battle_mode": "Web Search enabled",
+  "candidate_models": [
+    "gpt 6 luna max",
+    "opus 5"
+  ],
+  "inputs": [
+    {
+      "label": "WRITER_PAIR",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision.responses.md",
+      "utf8_bytes": 31911,
+      "characters": 31848,
+      "sha256": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756",
+      "embedding": "complete source text verbatim"
+    },
+    {
+      "label": "COMPLETE_EVIDENCE_PACKET",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+      "utf8_bytes": 86175,
+      "characters": 86161,
+      "sha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+      "embedding": "complete source text verbatim"
+    },
+    {
+      "label": "COMPLETE_DIFFICULTY_MATRIX_CSV",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+      "utf8_bytes": 54929,
+      "characters": 54929,
+      "sha256": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "embedding": "complete source text verbatim"
+    },
+    {
+      "label": "CAMPAIGN_PROVENANCE",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+      "utf8_bytes": 2063,
+      "characters": 2061,
+      "sha256": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395",
+      "embedding": "complete source text verbatim"
+    },
+    {
+      "label": "EARLIER_ANALYSIS_OVERVIEW",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+      "utf8_bytes": 1269,
+      "characters": 1262,
+      "sha256": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e",
+      "embedding": "complete source text verbatim"
+    },
+    {
+      "label": "FULL_SELECTED_CASE_SOURCE_FOR_EXCERPT",
+      "artifact": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+      "utf8_bytes": 751779,
+      "characters": 751779,
+      "sha256": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "embedding": "original CSV header and one complete matching source row only"
+    }
+  ],
+  "ineligible_pass_excerpt": {
+    "sha256": "1459c54acd17ac872b5f6b2228a427a778ec1951b88b7a77224dca9080db9b70",
+    "utf8_bytes": 2237,
+    "original_csv_header": true,
+    "complete_original_source_row": true,
+    "source_row_key": "ts_parse_only__witness_status=broken_representation=flat__seed-0"
+  },
+  "verbatim_checks": [
+    {
+      "label": "WRITER_PAIR",
+      "complete_text_present": true
+    },
+    {
+      "label": "COMPLETE_EVIDENCE_PACKET",
+      "complete_text_present": true
+    },
+    {
+      "label": "COMPLETE_DIFFICULTY_MATRIX_CSV",
+      "complete_text_present": true
+    },
+    {
+      "label": "CAMPAIGN_PROVENANCE",
+      "complete_text_present": true
+    },
+    {
+      "label": "EARLIER_ANALYSIS_OVERVIEW",
+      "complete_text_present": true
+    }
+  ],
+  "excluded_material": [
+    "older article draft",
+    "older reviewer transcript",
+    "house style guide",
+    "old writer instructions"
+  ],
+  "scope": "Review both saved writer candidates, including all numerical/factual/caption claims, against complete pinned sources. Source-based correction is distinct from new analysis. Assertions of unavailable source fields are checked against the included full matrix.",
+  "required_output": "Separate accept / accept with corrections / reject verdicts, per-draft cited findings and severity counts, shared unresolved discrepancies, and exact handoff corrections. No rewrite.",
+  "arena_dispatch": null,
+  "arena_response": null
+}

@@ -1,0 +1,11 @@
+{
+  "post_id": "POST-02",
+  "stage": "writer_revision_after_evidence_review",
+  "status": "generating",
+  "arena_url": "https://arena.ai/c/01a1821c-097b-774a-8e9e-ed642e4c7e02",
+  "modality": "Web Search",
+  "submitted_by": "user",
+  "observed_prompt_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision.md",
+  "observed_at": "2026-10-28T10:51:35.062Z",
+  "response_format": "model name:\nresponse\n\n&&&&&&&&\n\nmodel name:\nresponse"
+}

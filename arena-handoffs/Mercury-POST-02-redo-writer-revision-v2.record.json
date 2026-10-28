@@ -1,0 +1,190 @@
+{
+  "schema_version": 2,
+  "post_id": "POST-02",
+  "stage": "writer_revision_after_evidence_review",
+  "revision": "v2",
+  "status": "prepared_not_dispatched",
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "prompt_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.md",
+  "prompt_sha256": "805d10323e095c3e99d037e59b4d080f2a41c3bd82636be05da0f2d372b9c0b3",
+  "prompt_characters": 229228,
+  "prompt_utf8_bytes": 229694,
+  "governing_instructions_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.instructions.md",
+  "replaces_prompt_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision.md",
+  "replaced_artifact_preserved": true,
+  "snapshot_method": "git cat-file blob at pinned commit; exact blob bytes, no line-ending normalization",
+  "source_snapshots": [
+    {
+      "repository_path": "campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "git_blob": "38b9cdaff1438ad44605c7e834cab65e520fc11b",
+      "sha256": "227e14fa95945e7322aaf7bb1a7968483fc28f8d177354e1350a47744c31619d",
+      "bytes": 23772
+    },
+    {
+      "repository_path": "campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+      "git_blob": "b9c8fa4789620573f1ff050c203036b1e0d14e00",
+      "sha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+      "bytes": 86175
+    },
+    {
+      "repository_path": "campaign-02-analysis/post-production/source_snapshots/shared/house_style.md",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/source_snapshots/shared/house_style.md",
+      "git_blob": "336a56c84740c870bdebcf36ed5c3551a152d358",
+      "sha256": "590b57b503361c4a535a2566626c06a019bd3c19c52f52f48a82e64f75569973",
+      "bytes": 12397
+    },
+    {
+      "repository_path": "campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+      "git_blob": "a18856bbbe10302a4f82e6b92f8050739d7a4b0e",
+      "sha256": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "bytes": 54929
+    },
+    {
+      "repository_path": "campaign-02-analysis/evidence/generated/case_results.csv",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+      "git_blob": "5f990936f45ca4a7b0b24cf3324ca11440cb9dec",
+      "sha256": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "bytes": 751779
+    },
+    {
+      "repository_path": "campaign-02-analysis/evidence/generated/campaign_exclusions.csv",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/campaign_exclusions.csv",
+      "git_blob": "a64e74f1a47c5307a6ae980d27a80b0ba1ecfbdb",
+      "sha256": "23629f5b7133631eaeccf654134cdaea6a2e71451f7fb8c19f90a706d828efaa",
+      "bytes": 28289
+    },
+    {
+      "repository_path": "campaign-02-analysis/evidence/PROVENANCE.md",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+      "git_blob": "df6e390fd1cbdaae52ffacd97f4fb1d13fa9dc66",
+      "sha256": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395",
+      "bytes": 2063
+    },
+    {
+      "repository_path": "campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+      "snapshot_path": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+      "git_blob": "73f1e00abfde433105837edc6ea66310de255d3d",
+      "sha256": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e",
+      "bytes": 1269
+    }
+  ],
+  "review_source": {
+    "original_artifact": "arena-handoffs/Mercury-POST-02-evidence-review-v2.response.md",
+    "snapshot_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/Mercury-POST-02-evidence-review-v2.response.md",
+    "record_snapshot_artifact": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/Mercury-POST-02-evidence-review-v2.response.record.json",
+    "sha256": "f6e534bf72c64663ef5eef90503bb34bab7d24b46fd5cce8d775b5f572c3d7ac",
+    "bytes": 34212,
+    "recorded_source_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/main/comparison_100.md",
+    "recorded_source_commit": "7af6331f15959b3ceb002a6b9f96d5a306b598ad",
+    "models": [
+      {
+        "label": "some model",
+        "verdict": "reject"
+      },
+      {
+        "label": "some other model",
+        "verdict": "accept with corrections"
+      },
+      {
+        "label": "grok 4.5",
+        "verdict": "accept with corrections"
+      },
+      {
+        "label": "fable 5.1",
+        "verdict": "accept with corrections"
+      }
+    ]
+  },
+  "verbatim_embedding": {
+    "current_article": true,
+    "complete_evidence_packet": true,
+    "complete_review_response": true,
+    "complete_house_style": true,
+    "complete_difficulty_matrix": true,
+    "campaign_provenance": true,
+    "earlier_analysis_overview": true,
+    "ineligible_pass_csv_excerpt": {
+      "original_header": true,
+      "complete_original_row": true,
+      "bytes": 2237
+    }
+  },
+  "source_checks": {
+    "difficulty_key_names": 34,
+    "selected_case_rows": 416,
+    "unique_selected_case_ids": 416,
+    "omitted_case_rows": 80,
+    "unique_omitted_case_ids": 80,
+    "overlap_between_selected_and_omitted_ids": 0,
+    "selected_seed_values": "0",
+    "moco_tuple_keys_available": true,
+    "environment_failure_breakdown_available": true,
+    "environment_guarantee_breakdown_available": true,
+    "all_easy_rd_adaptive_halting_unscored_row_verified": true,
+    "ineligible_pass_exclusion_reason_verified_as_recorded_text_only": true,
+    "rope_omissions": 15,
+    "known_gate_omissions": 14,
+    "known_gate_split": "glyph 9; rope 5",
+    "omissions_by_environment": "moco 35; glyph 21; rope 15; epistemic_games 9",
+    "guarantee_environment_counts": "behavioral_reference 11; compile_only 27"
+  },
+  "unresolved_discrepancies": [
+    "Detailed omission rows give 14 known-gate omissions; pinned provenance prose gives 24. The numerical 14+10=24 aggregation explanation is unverified.",
+    "Detailed scored-environment rows give 7 with zero passes; earlier overview prose gives 10. Combining unscored and omitted environments is not a verified reconciliation."
+  ],
+  "transport": {
+    "arena_limit_verified": false,
+    "arena_limit_characters": null,
+    "suggested_max_segment_characters": 60000,
+    "segments": [
+      {
+        "part": 1,
+        "start_character": 0,
+        "end_character_exclusive": 47305,
+        "characters": 47305,
+        "utf8_bytes": 47431,
+        "starts_with": "# Mercury POST-02 — writer revision after evidence review, v2\n\nProduce a complete revised article fr"
+      },
+      {
+        "part": 2,
+        "start_character": 47305,
+        "end_character_exclusive": 93224,
+        "characters": 45919,
+        "utf8_bytes": 45925,
+        "starts_with": "# POST-02 redo — evidence packet for review\n\nThis packet is the only data source for the evidence re"
+      },
+      {
+        "part": 3,
+        "start_character": 93224,
+        "end_character_exclusive": 133497,
+        "characters": 40273,
+        "utf8_bytes": 40281,
+        "starts_with": "## Table C — pre-scoring omissions (80 rows)\n\nFields: environment and exclusion_class.\n\n| row | envi"
+      },
+      {
+        "part": 4,
+        "start_character": 133497,
+        "end_character_exclusive": 188990,
+        "characters": 55493,
+        "utf8_bytes": 55493,
+        "starts_with": "## Additional pinned sources omitted from the compact review packet\n\nThe full matrix below supplies "
+      },
+      {
+        "part": 5,
+        "start_character": 188990,
+        "end_character_exclusive": 229228,
+        "characters": 40238,
+        "utf8_bytes": 40564,
+        "starts_with": "<BEGIN SOURCE INELIGIBLE_PASS_CSV_EXCERPT>\ncase_id,environment,track,analysis_family,track_label_ove"
+      }
+    ],
+    "segment_concatenation_sha256": "805d10323e095c3e99d037e59b4d080f2a41c3bd82636be05da0f2d372b9c0b3",
+    "note": "Suggested logical boundaries only. Keep all parts in the same battle context and defer the writing instruction until the final part. No segment was dispatched by the preparer."
+  },
+  "next_output": "complete revised POST-02 article markdown from Arena battle models",
+  "arena_dispatch": null,
+  "arena_response": null
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "post_id": "POST-02",
+  "stage": "evidence_reviewer_v2",
+  "status": "response_recorded",
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "prompt_artifact": "arena-handoffs/Mercury-POST-02-evidence-review-v2.md",
+  "prompt_sha256": "22dce5d631e05ccedf82a3d7cccc555ab46e79a3e06e83443f646369129abf9a",
+  "response_artifact": "arena-handoffs/Mercury-POST-02-evidence-review-v2.response.md",
+  "response_sha256": "f6e534bf72c64663ef5eef90503bb34bab7d24b46fd5cce8d775b5f572c3d7ac",
+  "arena_url": "https://github.com/StrangeTcy/epistemic-compiler/blob/main/comparison_100.md",
+  "arena_commit": "7af6331f15959b3ceb002a6b9f96d5a306b598ad",
+  "models": [
+    {
+      "label": "some model",
+      "verdict": "reject"
+    },
+    {
+      "label": "some other model",
+      "verdict": "accept with corrections"
+    },
+    {
+      "label": "grok 4.5",
+      "verdict": "accept with corrections"
+    },
+    {
+      "label": "fable 5.1",
+      "verdict": "accept with corrections"
+    }
+  ],
+  "selected_editorial_inputs": {
+    "verdict": "accept with corrections",
+    "blocking_findings": 0,
+    "correction_findings": 3,
+    "corrections": [
+      "rope has 15 omitted rows, not 10",
+      "moco row-key wording needs correction",
+      "remove stray public-prose artifacts"
+    ],
+    "additional_review_points": [
+      "known-gate 14-vs-24 arithmetic should remain open",
+      "packet cannot verify tuple labels or provider-attributed free-text note",
+      "figure 8 caption includes a non-plotted disposition claim"
+    ]
+  }
+}
