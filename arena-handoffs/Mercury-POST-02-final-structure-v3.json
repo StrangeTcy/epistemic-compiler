@@ -1,0 +1,151 @@
+{
+  "report": "Mercury POST-02 final writer v3 supporting structural check",
+  "checked_on": "2026-10-29",
+  "scope": "Local source inspection of both complete final candidates at their intended posts locations. Candidate Markdown was not edited. This report is supporting structural verification, not an Arena verdict, a complete final-validator decision, or publication approval.",
+  "contract": "arena-handoffs/Mercury-POST-02-final-writer-v3.instructions.md",
+  "verification_method": "PowerShell UTF-8 reads, regular-expression source checks, XML parsing of all HTML elements, file existence checks, and SHA-256 hashing. No Python, browser, site build, or rendered-page inspection was used.",
+  "site_build": "NOT_PERFORMED",
+  "rendered_qa": "NOT_PERFORMED",
+  "numerical_and_caption_semantics": "OUTSIDE_THIS_STRUCTURAL_REPORT",
+  "pipeline_verdict": "NOT_ASSESSED",
+  "word_count_method": {
+    "unit": "lexical words",
+    "primary_scope": "Includes byline, epistemic-status text, headings, prose, captions, Markdown table cells and image alt text. Excludes frontmatter, HTML tags, figure destinations and Markdown/table punctuation.",
+    "normalization": "Remove frontmatter; replace Markdown images with their alt text; replace HTML tags with spaces so adjacent dt/dd text remains separate; count lexical matches.",
+    "lexical_pattern": "[\\p{L}\\p{N}]+(?:[_\\u2019\\x27.,/-][\\p{L}\\p{N}]+)*",
+    "contract_target": "approximately 2,000-2,800 words"
+  },
+  "common_expected_metadata": {
+    "title": "What a 68.4% Pass Rate Hides: Mercury-2.5 Across 38 Environments",
+    "date": "2026-10-16",
+    "layout": "post",
+    "byline": "*by <span class=\"icon-self\">StrangeTcy</span>*",
+    "epistemic_fields_in_order": [
+      "Original ideas",
+      "Synthesis",
+      "Prose",
+      "Certainty",
+      "Importance"
+    ]
+  },
+  "common_figure_resolution": {
+    "status": "PASS",
+    "article_directory": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts",
+    "figures": [
+      {
+        "relative_link": "../figures/fig8_selection_frame.svg",
+        "resolved_path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/figures/fig8_selection_frame.svg",
+        "target": "EXISTING_FILE"
+      },
+      {
+        "relative_link": "../figures/fig9_environment_intervals.svg",
+        "resolved_path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/figures/fig9_environment_intervals.svg",
+        "target": "EXISTING_FILE"
+      },
+      {
+        "relative_link": "../figures/fig10_tuple_matrix.svg",
+        "resolved_path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/figures/fig10_tuple_matrix.svg",
+        "target": "EXISTING_FILE"
+      },
+      {
+        "relative_link": "../figures/fig11_failure_labels.svg",
+        "resolved_path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/figures/fig11_failure_labels.svg",
+        "target": "EXISTING_FILE"
+      }
+    ],
+    "placement_note": "Both final candidates are now in the intended posts directory, resolving the earlier arena-handoffs staging-location caveat. File existence establishes relative-link resolution only; it does not establish rendered appearance or caption accuracy."
+  },
+  "candidates": {
+    "A": {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A.md",
+      "sha256": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4",
+      "structural_status": "PASS",
+      "word_count_including_tables_and_alt_text": 2649,
+      "word_count_including_tables_excluding_alt_text": 2574,
+      "approximate_word_target": "PASS",
+      "frontmatter": "EXACT_MATCH",
+      "exact_byline_occurrences": 1,
+      "epistemic_status_blocks": 1,
+      "epistemic_dt_count": 5,
+      "epistemic_dd_count": 5,
+      "epistemic_field_order": "EXACT_MATCH",
+      "html_balance": "PASS: all source HTML consists of one span and one dl with five dt/dd pairs; the complete extracted HTML parses as well-formed XML under a synthetic root.",
+      "author_exclusions": {
+        "comparison": "case-insensitive substring search of complete candidate",
+        "six_contract_exclusions_checked": 6,
+        "total_matches": 0
+      },
+      "required_figure_links": "All four required relative links occur exactly once; all resolve from this candidate's directory.",
+      "image_embed_count": 4,
+      "ordinary_markdown_links": 0,
+      "reference_link_definitions": 0,
+      "http_or_https_urls": 0,
+      "code_fence_lines": 0,
+      "inline_backtick_characters": 290,
+      "backtick_parity": "EVEN",
+      "script_tags": 0,
+      "html_comments": 0,
+      "mathjax_references": 0,
+      "dollar_sign_characters": 0,
+      "bare_exclamation_debris_lines": 0,
+      "unicode_replacement_characters": 0,
+      "intentional_tokens": {
+        "[m-word]": 1,
+        "[ac-word]": 0,
+        "[d-word]": 0,
+        "note": "The contract requires preservation where corresponding passages remain, not insertion of every token."
+      },
+      "internal_provenance_leakage": {
+        "status": "NO_SUBSTANTIVE_LEAKAGE_FOUND",
+        "method": "Searches for production-stage terms, Arena/reviewer/model identifiers, internal file paths and extensions, post/finding identifiers and commit/hash patterns, followed by inspection of matches and article text.",
+        "permitted_or_ordinary_matches": "Four source_invalid label occurrences; two generic case IDs unit references and one generic case-ID unit reference. No individual case identifiers are present."
+      }
+    },
+    "B": {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-B.md",
+      "sha256": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270",
+      "structural_status": "PASS",
+      "word_count_including_tables_and_alt_text": 2542,
+      "word_count_including_tables_excluding_alt_text": 2491,
+      "approximate_word_target": "PASS",
+      "frontmatter": "EXACT_MATCH",
+      "exact_byline_occurrences": 1,
+      "epistemic_status_blocks": 1,
+      "epistemic_dt_count": 5,
+      "epistemic_dd_count": 5,
+      "epistemic_field_order": "EXACT_MATCH",
+      "html_balance": "PASS: all source HTML consists of one span and one dl with five dt/dd pairs; the complete extracted HTML parses as well-formed XML under a synthetic root.",
+      "author_exclusions": {
+        "comparison": "case-insensitive substring search of complete candidate",
+        "six_contract_exclusions_checked": 6,
+        "total_matches": 0
+      },
+      "required_figure_links": "All four required relative links occur exactly once; all resolve from this candidate's directory.",
+      "image_embed_count": 4,
+      "ordinary_markdown_links": 0,
+      "reference_link_definitions": 0,
+      "http_or_https_urls": 0,
+      "code_fence_lines": 0,
+      "inline_backtick_characters": 292,
+      "backtick_parity": "EVEN",
+      "script_tags": 0,
+      "html_comments": 0,
+      "mathjax_references": 0,
+      "dollar_sign_characters": 0,
+      "bare_exclamation_debris_lines": 0,
+      "unicode_replacement_characters": 0,
+      "intentional_tokens": {
+        "[m-word]": 1,
+        "[ac-word]": 0,
+        "[d-word]": 0,
+        "note": "The contract requires preservation where corresponding passages remain, not insertion of every token."
+      },
+      "internal_provenance_leakage": {
+        "status": "NO_SUBSTANTIVE_LEAKAGE_FOUND",
+        "method": "Searches for production-stage terms, Arena/reviewer/model identifiers, internal file paths and extensions, post/finding identifiers and commit/hash patterns, followed by inspection of matches and article text.",
+        "permitted_or_ordinary_matches": "Four source_invalid label occurrences and three generic case IDs unit references. No individual case identifiers are present."
+      }
+    }
+  },
+  "limitations": "This report does not validate numerical claims, evidence-availability assertions, caption semantics, authorial claims, or final editorial selection. XML parsing and Markdown source checks do not substitute for the unavailable site build and rendered QA."
+}

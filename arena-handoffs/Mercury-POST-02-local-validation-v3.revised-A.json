@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "stage": "local_article_validation_after_targeted_revision",
+  "checked_at": "2026-10-29T18:32:35.798Z",
+  "result": "PASS_WITH_NONBLOCKING_ADVISORIES",
+  "candidate": {
+    "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\posts\\POST-02-cross-environment-map-v3-final-A-revised.md",
+    "sha256": "45cbd4e2d066bc5ba7a9786056b1166d1f97879a908c3da824d37187dac45e18",
+    "characters": 18814,
+    "words_including_tables_and_alt": 2662
+  },
+  "source_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "specification": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/prompts/post_validator.md",
+  "current_contract": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-final-writer-v3.instructions.md",
+  "authorization": {
+    "source": "User continuation following the explicit request to approve the five exact A corrections",
+    "message": "Impressive. Go on with processing this article as the pipeline specifies"
+  },
+  "revision_gate": {
+    "status": "COMPLETED",
+    "approved_replacements": 5,
+    "applied_replacements": 5,
+    "remaining_blocking_findings": 0,
+    "applied_record": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.applied.json"
+  },
+  "validation_method": "Exact approved-edit reconstruction, targeted structural and integrity checks, focused source-backed review of each changed claim, and inheritance of previously validated numerical/caption content after proving the remaining article text is unchanged. This follows the supplied validator specification; it is not a standalone executable compiler or a fresh campaign run.",
+  "mechanical_checks": {
+    "exact_five_replacements": true,
+    "changed_lines": [
+      11,
+      46,
+      119,
+      128,
+      177
+    ],
+    "line_count_unchanged": true,
+    "numerical_literals_unchanged": true,
+    "frontmatter_exact": true,
+    "byline_exact": true,
+    "epistemic_fields_exact": true,
+    "html_tag_sequence_unchanged": true,
+    "html_balance_basis": "Tag sequence exactly equals the XML-parsed original; replacement prose adds no HTML",
+    "fences_absent": true,
+    "external_urls_absent": true,
+    "scripts_absent": true,
+    "no_mathjax_required_or_added": true,
+    "inline_backticks_even": true,
+    "author_exclusions_absent": true,
+    "replacement_provenance_leakage_absent": true,
+    "word_count_including_tables_and_alt": 2662,
+    "word_count_target_met": true,
+    "figure_urls_unchanged": true,
+    "m_word_token_preserved": true
+  },
+  "resolved_findings": [
+    {
+      "id": "A-S01",
+      "line": 11,
+      "status": "RESOLVED",
+      "replacement": "Records for 416 selected cases in 38 environments",
+      "evidence": "Focused case_results.csv grouping returns 277 scored PASS, 128 scored FAIL and 11 infrastructure_unscored with blank verdict. The replacement accurately calls all 416 selected records rather than verdicts.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S05",
+      "line": 46,
+      "status": "RESOLVED",
+      "replacement": "The records explain these exclusions but do not establish a general sampling scheme, so I infer neither random nor targeted sampling.",
+      "evidence": "Focused campaign_exclusions.csv grouping retains 10 modality exclusions, 14 known-gate calibration failures and 56 intervention-twin omissions, with their recorded reasons and dispositions. The sentence now acknowledges these known exclusions and does not infer a random or targeted general sampling scheme.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S02",
+      "line": 119,
+      "status": "RESOLVED",
+      "replacement": "`moco` is the only environment with fractional pass rates within tuple rows.",
+      "evidence": "Focused matrix filter 0 < pass_rate < 1 returns nine rows, all in moco. A batchnorm_ema countercheck finds thirteen rate-0 rows and two rate-1 rows, confirming that across-row variation is not unique to moco. The replacement correctly scopes uniqueness to fractional within-row rates.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S03",
+      "line": 128,
+      "status": "RESOLVED",
+      "replacement": "The labels are recorded classifications; their names do not establish an internal reasoning mechanism.",
+      "evidence": "The supplied internal article line 179 bounds the labels as recorded classifications rather than evidence of internal reasoning, and rejects inference of a mechanism from their names. The replacement removes the broader unsupported denial of behavioral observation.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S04",
+      "line": 177,
+      "status": "RESOLVED",
+      "replacement": "the supplied records contain no clean configuration-hash comparison",
+      "evidence": "PROVENANCE.md line 34 states that config hashes were not compared because no clean source snapshot was available in that environment, with 0 checked; line 13 records the dirty campaign source. The replacement limits absence of comparison to the supplied records.",
+      "new_issue": "NONE"
+    }
+  ],
+  "numerical_validation": {
+    "status": "PASS",
+    "numerical_literals_unchanged": true,
+    "lines_with_numerical_literals": 91,
+    "unmapped_numerical_lines": [],
+    "basis": "The full contextual ledger for original A is retained. Exact five-replacement equality and unchanged numeric tokens/line positions permit reuse of unchanged claims. Changed evidence-scope claims were rechecked against source rows.",
+    "prior_report": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-local-validation-v3.json",
+    "ledger": [
+      {
+        "article_lines": "2-3, 10",
+        "assertion": "Title identifies Mercury-2.5, 68.4%, 38 environments; date is 2026-10-16; one retrospective campaign.",
+        "evidence": "Exact title/date contract in instructions. Model identity and archived campaign in provenance lines 3-17. Scored rate and environment count independently verified below.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "11, 13, 17, 19, 25, 29, 31, 181",
+        "assertion": "416 selected; 38 environments; 80 omitted; 340 matrix rows; 405 scored, 277 PASS, 128 FAIL, 11 infrastructure_unscored; 277/405 rounds to 68.4%; 277/416 rounds to 66.6%.",
+        "evidence": "Full cases status/verdict grouping: scored/PASS=277, scored/FAIL=128, infrastructure_unscored/blank=11. Distinct environment grouping=38. Omissions count=80; matrix count=340. 100*277/405=68.3950617284; 100*277/416=66.5865384615. Internal article also supplies unchanged headline and the revision context.",
+        "result": "NUMBERS_SUPPORTED; A-S01 selected-record scope corrected and verified"
+      },
+      {
+        "article_lines": "13, 23, 58, 117, 119, 169, 177",
+        "assertion": "One supplied seed, seed 0 for every selected case; no supplied second-seed measurement; exactly one of two guarantee labels per environment.",
+        "evidence": "Cases grouped by seed returns only 0 with 416 records. Grouping judge_guarantee within each environment returns one guarantee for all 38 environments. Across all cases exactly compile_only and behavioral_reference are present. These checks are confined to the supplied campaign records.",
+        "result": "SUPPORTED_WITH_SUPPLIED_RECORD_SCOPE"
+      },
+      {
+        "article_lines": "21, 58, 175",
+        "assertion": "36 scored environments; only MoCo 36/55=65.5% and tensor_functor 6/9=66.7% are within five percentage points of 68.4%; 24 environments are at an endpoint.",
+        "evidence": "Aggregate cases by environment, exclude n_scored=0, and filter abs(n_pass/n_scored - 277/405)<=0.05: only moco and tensor_functor. There are 36 scored environments, of which 17 have n_pass=n_scored and seven have n_pass=0. MoCo=65.4545454545%, tensor_functor=66.6666666667%.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "33-34, 36, 40-46",
+        "assertion": "Three Figure 8 bars; 496=416+80, 416=405+11, 405=277+128. Omission table: moco 35 intervention twins; glyph 12 intervention twins plus 9 known-gate=21; rope 5 known-gate plus 10 modality=15; epistemic_games 9 intervention twins. Totals 56/14/10=80 across four environments. Nine disposition conflicts are absent from the plot; 11 has no numeric image label.",
+        "evidence": "Complete omissions grouping produces exactly the six nonzero table cells stated. No rope case appears in cases or matrix. Packet Section E line 916 describes the three bars and omission counts. figure_support records SVG source geometry, the absent 11 label and absent separate disposition-conflict plot. The Figure 8 omission fills are pale grey/blue-grey (#cfd8dc, #e3e8eb, #f2f4f5), consistent with the broad caption description. Provenance line 29 separately states 24 known-gate omissions; 14+10=24 is arithmetic only and A preserves the disagreement.",
+        "result": "SUPPORTED; figure source and packet inspection, not a fresh visual rendering"
+      },
+      {
+        "article_lines": "52-58, 175",
+        "assertion": "Outcome table: 17 all-pass environments with 172/172 and 42.5% of scored cases, no unscored; seven zero-pass with 0/68 and 16.8%, no unscored; 12 mixed with 105/165 and 40.7%, one unscored; two unscored-only with ten unscored. Total 38, 277/405, 100%, 11 unscored. Endpoint examples include four and 24 cases.",
+        "evidence": "Aggregate complete cases by environment and filter n_pass=n_scored>0, n_pass=0<n_scored, 0<n_pass<n_scored, and n_scored=0. Category sums are the stated values. 100*172/405=42.4691358025, 100*68/405=16.7901234568, 100*165/405=40.7407407407. ts_one_step and ts_trajectory each have four scored cases; glyph has 24.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "60-61",
+        "assertion": "Figure 9 shows 36 dots, excludes two entirely unscored environments, uses 95% Wilson intervals, pooled reference 277/405, and colour groups 7/12/17.",
+        "evidence": "Packet Section E line 918 and following table; figure_support: 36 interval paths, 7/12/17 colour groups, 95% Wilson axis text, pooled 68.4% label. No interval endpoints are quoted numerically in A. The existing supporting SVG check spot-checks two Wilson endpoints only.",
+        "result": "SUPPORTED; binomial and seed-variation qualifications retained"
+      },
+      {
+        "article_lines": "63",
+        "assertion": "17 all-pass environments: nine named environments at 9/9, epistemic_games 23/23, css_state_machine 18/18, rd_gradient_credit and rd_state_carry 15/15, epistemic_announcements and epistemic_nested_knowledge 6/6, epistemic_fragmented_observation and ts_parse_only 4/4. One of four parse-only PASS records is performance-ineligible and remains in 277.",
+        "evidence": "Cases grouped by environment reproduce every listed pair and the exact nine 9/9 names. The sole row with verdict=PASS and performance_eligible=False is ts_parse_only. Its exclusion_reason reads: campaign report provider-outage case; final result explicitly attributes terminal failure to provider transient after bounded retries. A attributes this to the field and preserves its conflict with PASS.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "65",
+        "assertion": "Seven zero-pass environments: functorial_augmentation, monadic_reward, sheaf_invariant_gluing and sheaf_physical_constraints each 0/9; ts_one_step and ts_trajectory each 0/4; glyph 0/24. Eight of nine monadic_reward FAILs are rejected.",
+        "evidence": "Environment grouping from cases returns exactly these seven ratios. Filter environment=monadic_reward and verdict=FAIL; eight have case_disposition=rejected and one has unscored.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "67, 71-84",
+        "assertion": "12 mixed environments: sheaf_schema_sync 8/9, sql_fixed_point 8/9, transformer_ssm_lift 8/9, compositional_optimizer 7/9, equivariant_diagram 7/9, tensor_functor 6/9, moco 36/55, rd_adaptive_halting 8/14, gnn_message_passing 5/9, regex_state_machine 5/9, ssm_parallel_scan 5/9, batchnorm_ema 2/15. Mixed total165/405=40.7%, range 2/15 to 8/9. Unweighted mean of 36 environment rates 69.2%, median 8/9.",
+        "evidence": "Full cases grouping reproduces all 12 ratios. Flags: transformer_ssm_lift lone FAIL rejected; moco three FAIL/unscored; rd_adaptive_halting one infrastructure_unscored; regex_state_machine one FAIL/unscored; batchnorm_ema one FAIL/rejected and one FAIL/unscored. Arithmetic mean of 36 n_pass/n_scored fractions=0.69207952541285889. The 18th and 19th sorted fractions are both 8/9.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "88",
+        "assertion": "Prefix examples repeat ts_parse_only 4/4, ts_one_step 0/4, ts_trajectory 0/4, sheaf_schema_sync 8/9, sheaf_invariant_gluing 0/9, sheaf_physical_constraints 0/9, categorical_lenses 9/9, functorial_augmentation 0/9 and tensor_functor 6/9.",
+        "evidence": "Each named value matches the full cases environment aggregation, also printed in packet Table A lines 16-53. A does not treat prefixes as a calibrated scale.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "90, 94-97",
+        "assertion": "glyph 0/24, moco 36/55 and batchnorm_ema 2/15 jointly supply94/405 scored cases and 56/128 FAILs. Removing moco gives 241/350=68.9%; glyph 277/381=72.7%; both 241/326=73.9%.",
+        "evidence": "24+55+15=94; 24+19+13=56. (277-36)/(405-55)=241/350=68.8571428571%; 277/(405-24)=277/381=72.7034120735%; (277-36)/(405-55-24)=241/326=73.9263803681%. Article calls these arithmetic sensitivity examples, not new runs or replacement results.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "101, 103, 105-106",
+        "assertion": "340 matrix rows, 4 to 15 per environment, six environments above10. Figure 10: 340 squares, 11 unscored rows, ten in two entirely unscored environments plus one halting row; 44 multi-case annotations; nine fractional rows all in moco; endpoint colours0 and 1.",
+        "evidence": "Matrix group counts range4-15; groups above10 are batchnorm_ema 15, glyph 12, moco 15, rd_adaptive_halting 15, rd_gradient_credit 15, rd_state_carry 15. Blank pass_rate count 11. figure_support confirms340 data glyphs, 11 grey glyphs, 44 numeric multi-case annotations, 222 green/98 red/9 fractional glyphs. Packet Section E supplies the chart interpretation.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "110",
+        "assertion": "296 singleton rows=285 scored+11 unscored; 44 multi-case rows in four environments: moco 15 rows/55 cases, glyph 12/24, css_state_machine 9/18, epistemic_games 8/23.",
+        "evidence": "Filter matrix n_cases=1 and n_scored>0 versus n_scored=0. Filter n_cases>1, then group by environment and sum n_cases; exact group counts and case sums match. 296+44=340; 15+12+9+8=44.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "111-113, 175",
+        "assertion": "329 rated rows; 320 binary=97.3%; nine fractional, moco only. Uniform scored environment rows 204=148 all-pass+56 zero-pass; ten unscored-only rows yield214 only when absence is included.98 scored zero-pass tuples across19 environments, including all 12 mixed environments; seven zero-pass environments remain distinct.",
+        "evidence": "Matrix pass_rate groups: 222 at 1.0, 98 at 0.0, 11 blank, nine fractional. 222+98=320; 340-11=329; 100*320/329=97.2644376900. Join matrix environment to complete cases outcome classification: 148 all-pass rows and 56 zero-pass rows; epistemic_silence6+epistemic_type_games4=10 unscored-only rows. Filter pass_rate=0.0 and group environment: 19; all 12 mixed environment names appear. Counts corroborate source_audit_support with its explicit204/214 caveat.",
+        "result": "SUPPORTED; adding the word scored before line 113's zero-pass tuples would remove any residual ambiguity"
+      },
+      {
+        "article_lines": "115, 117",
+        "assertion": "34 distinct difficulty keys; 340 rows hold416 cases; 44 multi-case rows; all cases seed0; 405 scored cases are not405 distinct tuples.",
+        "evidence": "Extract all JSON key names from matrix difficulty_tuple and count unique names=34. Sum n_cases=416. Rated tuple count 329; cases scored count 405. Multi-case and seed results above apply. No common calibrated scale or independence estimate is established by these fields.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "119",
+        "assertion": "MoCo 15 keyed rows, 6 endpoint and 9 fractional; fractional rates2/3 four times, 5/6, 3/4, 2/5, 1/3, 1/6; overall36/55. The specified hard/easy/easy/hard/hard/easy row has 6 cases, 1 PASS, 5 overfit_visible_tests FAILs. Every row uses six keys and contains2-6 cases.",
+        "evidence": "Matrix CSV lines 135-149 contain all 15 MoCo rows. Line 140 is the quoted1/6 tuple and failure_modes={overfit_visible_tests: 5}. Nine fractional stored rates include one 4/6 rate equivalent to 2/3 and three 2/3 rates. Total n_pass 36, n_scored 55. Every MoCo tuple has the same six named keys and n_cases ranges2-6.",
+        "result": "NUMBERS_SUPPORTED; uniqueness of across-row variation is false, see A-S02"
+      },
+      {
+        "article_lines": "121",
+        "assertion": "One unscored rd_adaptive_halting case at a tuple with all five keys easy.",
+        "evidence": "Matrix CSV line 168: n_cases 1, n_scored 0, n_unscored 1; batching_complexity, clue_clarity, implementation_obfuscation, recurrence_depth, visible_tests all easy.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "125-126, 152",
+        "assertion": "128 FAILs; global labels 51 underfit, 49 overfit_visible_tests, 11 normalized runtime_error, 9 source_invalid, 5 invalid_action, 3 training_failed. Raw runtime split9 uppercase/2 lowercase; all 9 uppercase dispositions scored, all 2 lowercase unscored.",
+        "evidence": "Case-sensitive grouping of failure_mode_raw over verdict=FAIL gives 51/49/9 uppercase/2 lowercase/9/5/3. Case-sensitive grouping by raw runtime label and case_disposition yields RUNTIME_ERROR, scored=9 and runtime_error, unscored=2. The normalized global labels sum128. figure_support identifies six global bars and no environment split.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "132-150",
+        "assertion": "Every environment-by-failure-label cell in the 19-row table.",
+        "verified_cells": {
+          "glyph": "overfit_visible_tests 22; underfit 1; invalid_action 1",
+          "moco": "overfit_visible_tests 16; training_failed 2; invalid_action 1",
+          "batchnorm_ema": "overfit_visible_tests 11; training_failed 1; invalid_action 1",
+          "functorial_augmentation": "underfit 6; RUNTIME_ERROR 3",
+          "monadic_reward": "source_invalid 8; invalid_action 1",
+          "sheaf_invariant_gluing": "underfit 9",
+          "sheaf_physical_constraints": "underfit 9",
+          "rd_adaptive_halting": "RUNTIME_ERROR 5; underfit 1",
+          "gnn_message_passing": "underfit 4",
+          "ssm_parallel_scan": "underfit 4",
+          "regex_state_machine": "underfit 3; invalid_action 1",
+          "ts_one_step": "underfit 3; runtime_error 1",
+          "ts_trajectory": "underfit 3; runtime_error 1",
+          "tensor_functor": "underfit 3",
+          "compositional_optimizer": "underfit 2",
+          "equivariant_diagram": "underfit 1; RUNTIME_ERROR 1",
+          "sheaf_schema_sync": "underfit 1",
+          "sql_fixed_point": "underfit 1",
+          "transformer_ssm_lift": "source_invalid 1"
+        },
+        "evidence": "Full case rows where verdict=FAIL grouped by environment and raw label, retaining raw capitalization. The 32 nonzero cells above reproduce every printed cell and sum128; no other FAIL environment is omitted.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "154",
+        "assertion": "Ten rejected FAILs: eight monadic_reward+one transformer_ssm_lift source_invalid, one batchnorm_ema training_failed. Nine FAIL/unscored: three moco plus one each batchnorm_ema, glyph, monadic_reward, regex_state_machine, ts_one_step, ts_trajectory; label totals5 invalid_action, 2 training_failed, 2 runtime_error. All 19 remain among128 FAILs.",
+        "evidence": "Filter full cases status=scored and verdict=FAIL, group by case_disposition, environment, failure_mode_raw. Rejected 10 and unscored 9 exactly match the stated cells. The 11 status=infrastructure_unscored rows instead have blank verdict and blank case_disposition. No definition or mechanism is inferred for disposition terms.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "156, 160-163, 179",
+        "assertion": "11 behavioral-reference environments 141/189=74.6%, 0 unscored; 27 compile-only 136/216=63.0%, 11 unscored. Each environment has one guarantee; epistemic_games 23/23 and glyph 0/24 are both behavioral-reference. Nine 9/9 environments split4 behavioral and 5 compile-only.",
+        "evidence": "Complete cases grouped by guarantee: behavioral_reference 189 selected, 141 PASS, 189 scored, 11 environments; compile_only 227 selected, 136 PASS, 216 scored, 27 environments, 11 unscored. 100*141/189=74.6031746032; 100*136/216=62.9629629630. Within-environment grouping confirms one guarantee each. The exact nine 9/9 names from line 63 split4/5. Later use of 74.6/63.0 repeats these rates.",
+        "result": "SUPPORTED; future-design claim at line 179 is considered separately"
+      },
+      {
+        "article_lines": "167, 169",
+        "assertion": "CSS18 PASS across nine 2/2 tuple rows; the single SQL FAIL has hidden_depth=hard, surface_deceptiveness=easy; one observation under one supplied seed.",
+        "evidence": "Matrix lines 53-61: nine CSS rows each n_cases 2, n_scored 2, n_pass 2, n_fail 0. Matrix line 270 is the only SQL row with n_fail 1 and the stated key values; all other SQL rows 267-275 are1/1. Complete cases contain only seed0. Article explicitly withdraws CSS variation and declines a SQL trend.",
+        "result": "SUPPORTED"
+      },
+      {
+        "article_lines": "171",
+        "assertion": "Earlier overview says10 environments atzero and approximately 12 at 1.0; rows give7 and 17; 19 environments with a zero-pass tuple do not reproduce10. Provenance says24 known-gate versus14 detailed omissions.",
+        "evidence": "Supplied assembled_prompt line 1757 quotes the project overview: 10 environments at 0.00 versus~12 at 1.00. Cases aggregation yields 7 scored zero-pass/17 all-pass. Matrix zero-pass grouping yields 19. Provenance line 29 says24 known gate-blocked; omissions grouping says14. A preserves every discrepancy without declaring a reconciliation.",
+        "result": "SUPPORTED_AS_ATTRIBUTED_CONFLICTS"
+      },
+      {
+        "article_lines": "175, 179, 181",
+        "assertion": "Closing numerical recap: 277/405; 17 all-pass, 7 all-fail, 12 mixed, 2 with no verdict; two environments near pooled; 320/329 binary rows; 74.6% and 63.0%; 68.4% scored selected PASS share.",
+        "evidence": "All are repetitions of the named aggregates and calculations already checked above. The closing does not turn the 11 unscored cases into FAILs or a new denominator.",
+        "result": "NUMBERS_SUPPORTED"
+      }
+    ]
+  },
+  "other_criteria": {
+    "title_date_layout_signature": "PASS_EXACT_CONTRACT",
+    "slug": "PASS_FOR_STAGED_REVIEW_ARTIFACT; no publication route assigned",
+    "html_balance": "PASS_TAG_SEQUENCE_UNCHANGED_FROM_XML_VALIDATED_ORIGINAL",
+    "external_links_fences_scripts": "PASS",
+    "author_wording_exclusions": "PASS",
+    "internal_provenance_leakage": "PASS: original checked and no replacement introduces internal identifiers",
+    "figures": "PASS: four unchanged URLs resolve and all figure hashes match prior validated SVG sources",
+    "caveats_and_evidence_scope": "PASS: all five blockers resolved; remaining caveat text unchanged",
+    "independent_replication_claims": "PASS_UNCHANGED",
+    "POST_02_recursive_ToM_overclaims": "PASS_UNCHANGED",
+    "POST_05_Turing_completeness": "NOT_APPLICABLE"
+  },
+  "source_integrity": [
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\case_results.csv",
+      "expected": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "observed": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\campaign_exclusions.csv",
+      "expected": "23629f5b7133631eaeccf654134cdaea6a2e71451f7fb8c19f90a706d828efaa",
+      "observed": "23629f5b7133631eaeccf654134cdaea6a2e71451f7fb8c19f90a706d828efaa"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated2\\environment_difficulty_matrix.csv",
+      "expected": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "observed": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e"
+    }
+  ],
+  "figure_integrity": [
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig8_selection_frame.svg",
+      "expected": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d",
+      "observed": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig9_environment_intervals.svg",
+      "expected": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3",
+      "observed": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig10_tuple_matrix.svg",
+      "expected": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e",
+      "observed": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig11_failure_labels.svg",
+      "expected": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187",
+      "observed": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187"
+    }
+  ],
+  "preserved_originals": [
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A.md",
+      "expected": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4",
+      "observed": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-B.md",
+      "expected": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270",
+      "observed": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "expected": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282",
+      "observed": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282"
+    }
+  ],
+  "nonblocking_advisories": [
+    {
+      "article_line": 17,
+      "topic": "publication_history",
+      "quote": "this version replaces the one first published under this title",
+      "assessment": "Inherited verbatim in substance from the supplied internal_article line 17. It is not a new invention unique to A. This reviewer has no independent publication record, so publication history remains unverified beyond that supplied assertion. Do not classify it as fabricated without further evidence."
+    },
+    {
+      "article_line": 163,
+      "topic": "compile_only_definition",
+      "assessment": "The no-behavioral-validation boundary is supported. House_style line 98 explicitly refers to compile checks and disallows promotion to behavioral validation. No detailed implementation-level judge definition was established in this review; the statement should remain bounded to the recorded guarantee and checks. This is not raised as a proven factual defect."
+    },
+    {
+      "article_line": 179,
+      "topic": "future_experiment_strength",
+      "assessment": "The proposals are reasonable, but 'would show which endpoints are stable' and the judges-versus-environments dichotomy are stronger than an unspecified design guarantees. Prefer language about testing stability and helping separate effects, with matched outputs or cases and other conditions held fixed. This is an inferential wording refinement rather than a numerical mismatch.",
+      "suggested_public_wording": "Repeated seeds would test how stable the endpoints are. Judging matched cases under both guarantees would help separate guarantee effects from environment differences."
+    },
+    {
+      "article_line": 113,
+      "topic": "zero_pass_tuple_scope",
+      "assessment": "The 98 count correctly denotes scored zero-pass tuples. Adding 'scored' directly to the claim would make explicit why11 entirely unscored rows with no PASS are excluded. Earlier context distinguishes absence from zero outcomes."
+    },
+    {
+      "article_line": 34,
+      "topic": "Figure 8_colour",
+      "assessment": "The caption's broad 'in grey' description is supported by the packet and pale grey/blue-grey omission fills. 'Light grey' is optional precision, not a material caption error."
+    }
+  ],
+  "supporting_reports": {
+    "mechanical": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.mechanical-check.json",
+    "semantic": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.semantic-check.json"
+  },
+  "next_stage": "USER_REVIEW",
+  "limits": [
+    "Only the five approved corrections were applied. Original Arena outputs, B candidate and internal article are preserved.",
+    "Prior nonblocking advisories remain recorded; the focused revision closes the five failed checks.",
+    "No site build, rendered-page QA, publication or independent campaign replication is claimed.",
+    "This local revision is derived from Arena A, not a new Arena response or a selection of a prose winner."
+  ]
+}

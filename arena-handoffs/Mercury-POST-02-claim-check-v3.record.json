@@ -1,0 +1,64 @@
+{
+  "stage": "claim_check",
+  "status": "complete_voted_both_bad",
+  "promptSha256": "22927e45418bdd0e5eb8a17fc450596a343b48f8529003ddb2cd307dd6f3238d",
+  "promptCharacters": 432248,
+  "bounds": [
+    0,
+    47772,
+    95998,
+    143940,
+    191965,
+    239995,
+    287923,
+    335924,
+    383973,
+    431955,
+    432248
+  ],
+  "partCharacters": [
+    48054,
+    48508,
+    48224,
+    48307,
+    48312,
+    48210,
+    48283,
+    48331,
+    48264,
+    888
+  ],
+  "receipts": {
+    "part1": "Assistant A\nNo Sources\n\nReceived — Part 1 of 10 logged (instructions block plus the opening of SOURCE WRITER_PAIR, which breaks off mid-sentence in the opus 5 candidate at \"## The selection frame\").\n\nNo review, search, drafting, or findings will be issued yet. Awaiting Part 2.\n\nAssistant B\nNo Sources\n\nReceived part 1 of 10. I’ll wait for the remaining parts and won’t review or issue findings until the final part.",
+    "part2": "Assistant A\nNo Sources\n\nReceived — Part 2 of 10 logged: the remainder of the opus 5 candidate (through \"What this supports\"), the END marker for SOURCE WRITER_PAIR, and the opening of SOURCE COMPLETE_EVIDENCE_PACKET (header/hashes, Table A's 38 environment rows, and Table B selected-case rows 1–407, which break off mid-table).\n\nNo review, search, drafting, or findings yet. Awaiting Part 3.\n\nAssistant B\nNo Sources\n\nReceived part 2 of 10. I’ll continue to wait and won’t review or issue findings until the final part.",
+    "part3": "Assistant A\nNo Sources\n\nReceived — Part 3 of 10 logged: Table B rows 408–416 (including the performance_eligible False row at 409, ts_parse_only), Table C's 80 omission rows, Table D's full 340-row environment × tuple matrix, Section E figure descriptions (Figures 8–11 with the Figure 9 Wilson-interval table), the END marker for SOURCE COMPLETE_EVIDENCE_PACKET, and the opening of SOURCE COMPLETE_DIFFICULTY_MATRIX_CSV (through ci_dependency_graph rows, breaking off mid-file).\n\nNo review, search, drafting, or findings yet. Awaiting Part 4.\n\nAssistant B\nNo Sources\n\nReceived part 3 of 10. I’ll keep waiting and won’t review or issue findings until the final part.",
+    "part4": "Assistant A\nNo Sources\n\nReceived — Part 4 of 10 logged: continuation of SOURCE COMPLETE_DIFFICULTY_MATRIX_CSV with full difficulty_tuple keys, from ci_dependency_graph through ts_trajectory (breaking off at the reflective/broken row, before the file's final row and END marker).\n\nNo review, search, drafting, or findings yet. Awaiting Part 5.\n\nAssistant B\nNo Sources\n\nReceived part 4 of 10. I’ll continue waiting and won’t review or issue findings until the final part.",
+    "part5": "Assistant A\nNo Sources\n\nReceived — Part 5 of 10 logged: the final ts_trajectory CSV row and END marker for SOURCE COMPLETE_DIFFICULTY_MATRIX_CSV; SOURCE CAMPAIGN_PROVENANCE (archive identity, dirty commit, scope with 24 known-gate figure, limits); SOURCE EARLIER_ANALYSIS_OVERVIEW (including the \"10 environments at 0.00\" summary); SOURCE INELIGIBLE_PASS_CSV_EXCERPT (header plus the ts_parse_only PASS row with performance_eligible False and its exclusion_reason); SOURCE CURRENT_INTERNAL_ARTICLE in full; SOURCE HOUSE_STYLE in full; and the opening of SOURCE ACTUAL_REFERENCE_POST_EXCERPTS, breaking off mid-excerpt in \"What this is not\".\n\nNo review, search, drafting, or findings yet. Awaiting Part 6.\n\nAssistant B\nNo Sources\n\nReceived part 5 of 10. I’ll continue waiting and won’t review or issue findings until the final part.",
+    "part6": "Assistant A\nNo Sources\n\nReceived — Part 6 of 10 logged: the remainder of SOURCE ACTUAL_REFERENCE_POST_EXCERPTS (Diagram ending, \"Knowing What Kind of Problem You Are In\", \"The Next Question Is Part of the Game\", \"Lying With Truth\") with its END marker; SOURCE PRIOR_WORK_REFERENCES in full; SOURCE SUPPORTING_LOCAL_SOURCE_CHECK in full (including the 204 + 10 = 214 uniform-row correction and the absent standalone environment-summary CSV note); and the opening of SOURCE SUPPORTING_LOCAL_SOURCE_CHECK_JSON, which breaks off mid-array in scored_fail_unscored_disposition.\n\nNo review, search, drafting, or findings yet. Awaiting Part 7.\n\nAssistant B\nNo Sources\n\nReceived part 6 of 10. I’ll keep waiting and won’t review or issue findings until the final part.",
+    "part7": "Assistant A\nNo Sources\n\nReceived — Part 7 of 10 logged: the remainder of SOURCE SUPPORTING_LOCAL_SOURCE_CHECK_JSON (disposition case IDs, rejected-failure IDs, omission cross-tab, derived environment rows, uniform-row caveat, input hashes, case-sensitive failure labels) with its END marker; and the opening of SOURCE CURRENT_V3_EVIDENCE_REVIEW_PAIR containing the grok 4.5 response in full and the claude fable 5.1 response through section 3, which breaks off mid-item.\n\nNo review, search, drafting, or findings yet. Awaiting Part 8.\n\nAssistant B\nNo Sources\n\nReceived part 7 of 10. I’ll continue waiting and won’t review or issue findings until the final part.",
+    "part8": "Assistant A\nNo Sources\n\nReceived — Part 8 of 10 logged: the remainder of the claude fable 5.1 evidence review (section 3 discrepancies and section 4 handoff) with the END marker for SOURCE CURRENT_V3_EVIDENCE_REVIEW_PAIR; and the opening of SOURCE CURRENT_EDITORIAL_BLUEPRINT_PAIR containing the claude fable 5.1 blueprint through section 7's opening \"Frame\" checklist, which breaks off mid-checklist.\n\nNo review, search, drafting, or findings yet. Awaiting Part 9.\n\nAssistant B\nNo Sources\n\nReceived part 8 of 10. I’ll continue waiting and won’t review or issue findings until the final part.",
+    "part9": "Assistant A\nNo Sources\n\nReceived — Part 9 of 10 logged: the remainder of the claude fable 5.1 blueprint checklist and scope statement; the complete grok 4.5 editorial blueprint with its END marker for SOURCE CURRENT_EDITORIAL_BLUEPRINT_PAIR; SOURCE SUPPORTING_REVIEW_RECONCILIATION (R1–R4) in full; SOURCE SUPPORTING_BLUEPRINT_RECONCILIATION in full; and the opening of SOURCE SUPPORTING_SVG_SOURCE_CHECK (figures 8–11 source inspection, recommended candidate path), which breaks off mid-limits array.\n\nNo review, search, drafting, or findings yet. Awaiting Part 10.\n\nAssistant B\nNo Sources\n\nReceived part 9 of 10. I’ll wait for the final part and won’t review or issue findings before then."
+  },
+  "modeObserved": "Modality: Web Search",
+  "arenaUrl": "https://arena.ai/c/01a18816-4a23-7355-97e5-6ee5c1fac266",
+  "submittedAt": "2026-10-29T14:57:51.040Z",
+  "vote": "Both are bad",
+  "rawNames": [
+    "claude-opus-5-search",
+    "gpt-6-luna-search-max"
+  ],
+  "displayNames": [
+    "claude opus 5",
+    "gpt 6 luna max"
+  ],
+  "capture": {
+    "method": "Exact Markdown text from single complete twelve-tilde code block per response",
+    "characters": [
+      65964,
+      57412
+    ],
+    "sha256": "5182c82b4e9b20bb13bc742d3f04d2938579c879a1b032f6cff7f428ecfeeed8"
+  },
+  "voteReason": "Pair requires correction before writer use: B handoff falsely says nine ts_parse_only PASSes although the recorded environment is 4/4. Both reports identify a missing operational manifest; actual UI mode observations and exact path/hash records will be supplied in the writer handoff. No prose winner chosen.",
+  "completedAt": "2026-10-29T15:14:49.086Z"
+}

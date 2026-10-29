@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29T18:30:51.573Z",
+  "candidate": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\posts\\POST-02-cross-environment-map-v3-final-A-revised.md",
+  "sha256": "45cbd4e2d066bc5ba7a9786056b1166d1f97879a908c3da824d37187dac45e18",
+  "checks": {
+    "exact_five_replacements": true,
+    "changed_lines": [
+      11,
+      46,
+      119,
+      128,
+      177
+    ],
+    "line_count_unchanged": true,
+    "numerical_literals_unchanged": true,
+    "frontmatter_exact": true,
+    "byline_exact": true,
+    "epistemic_fields_exact": true,
+    "html_tag_sequence_unchanged": true,
+    "html_balance_basis": "Tag sequence exactly equals the XML-parsed original; replacement prose adds no HTML",
+    "fences_absent": true,
+    "external_urls_absent": true,
+    "scripts_absent": true,
+    "no_mathjax_required_or_added": true,
+    "inline_backticks_even": true,
+    "author_exclusions_absent": true,
+    "replacement_provenance_leakage_absent": true,
+    "word_count_including_tables_and_alt": 2662,
+    "word_count_target_met": true,
+    "figure_urls_unchanged": true,
+    "m_word_token_preserved": true
+  },
+  "source_integrity": [
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\case_results.csv",
+      "expected": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "observed": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\campaign_exclusions.csv",
+      "expected": "23629f5b7133631eaeccf654134cdaea6a2e71451f7fb8c19f90a706d828efaa",
+      "observed": "23629f5b7133631eaeccf654134cdaea6a2e71451f7fb8c19f90a706d828efaa"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated2\\environment_difficulty_matrix.csv",
+      "expected": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "observed": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e"
+    }
+  ],
+  "figure_integrity": [
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig8_selection_frame.svg",
+      "expected": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d",
+      "observed": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig9_environment_intervals.svg",
+      "expected": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3",
+      "observed": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig10_tuple_matrix.svg",
+      "expected": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e",
+      "observed": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig11_failure_labels.svg",
+      "expected": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187",
+      "observed": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187"
+    }
+  ],
+  "preserved_originals": [
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A.md",
+      "expected": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4",
+      "observed": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-B.md",
+      "expected": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270",
+      "observed": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "expected": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282",
+      "observed": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282"
+    }
+  ],
+  "changes": [
+    {
+      "line": 11,
+      "before": "  <dt>Synthesis</dt><dd>Recorded verdicts for 416 cases in 38 environments, an 80-case omission record, and a 340-row environment × difficulty-tuple matrix, read against the conflicts the records themselves carry.</dd>",
+      "after": "  <dt>Synthesis</dt><dd>Records for 416 selected cases in 38 environments, an 80-case omission record, and a 340-row environment × difficulty-tuple matrix, read against the conflicts the records themselves carry.</dd>"
+    },
+    {
+      "line": 46,
+      "before": "`rope` never reached scoring and has no row in the 38-environment tables. One disagreement sits here: the campaign's provenance summary gives 24 known-gate omissions where the detailed rows give 14. I report both; nothing in the records says which was intended, and the coincidence that 14 plus the 10 modality cases equals 24 is not a reconciliation. The records say nothing about how selection was done, so I assume neither random nor targeted selection. What the table does show is that omissions concentrate in `moco` and `glyph`, two environments that weigh heavily on the pooled figure.",
+      "after": "`rope` never reached scoring and has no row in the 38-environment tables. One disagreement sits here: the campaign's provenance summary gives 24 known-gate omissions where the detailed rows give 14. I report both; nothing in the records says which was intended, and the coincidence that 14 plus the 10 modality cases equals 24 is not a reconciliation. The records explain these exclusions but do not establish a general sampling scheme, so I infer neither random nor targeted sampling. What the table does show is that omissions concentrate in `moco` and `glyph`, two environments that weigh heavily on the pooled figure."
+    },
+    {
+      "line": 119,
+      "before": "`moco` is the one environment whose rows vary. Six of its 15 rows are at 0 or 1; the other nine are fractional (2/3 four times, 5/6, 3/4, 2/5, 1/3, 1/6), summing with the rest to 36/55. Every row has a recorded tuple key, so a descriptive map is possible. The 1/6 row, for instance, is `distractors=hard, naming=easy, queue_math=easy, symptom_mask=hard, temperature=hard, visible_tests=easy`: six cases, five labelled `overfit_visible_tests`. The keys permit description only; under one seed, with six-key tuples and two to six cases per row, they establish no isolated dimension effect and no trend.",
+      "after": "`moco` is the only environment with fractional pass rates within tuple rows. Six of its 15 rows are at 0 or 1; the other nine are fractional (2/3 four times, 5/6, 3/4, 2/5, 1/3, 1/6), summing with the rest to 36/55. Every row has a recorded tuple key, so a descriptive map is possible. The 1/6 row, for instance, is `distractors=hard, naming=easy, queue_math=easy, symptom_mask=hard, temperature=hard, visible_tests=easy`: six cases, five labelled `overfit_visible_tests`. The keys permit description only; under one seed, with six-key tuples and two to six cases per row, they establish no isolated dimension effect and no trend."
+    },
+    {
+      "line": 128,
+      "before": "The labels are recorded classifications, not observations of what the model did. By environment:",
+      "after": "The labels are recorded classifications; their names do not establish an internal reasoning mechanism. By environment:"
+    },
+    {
+      "line": 177,
+      "before": "What it does not support: a common difficulty scale, so no ranking of environments and no claim that environment identity outweighs difficulty; a mechanism behind `glyph`, `moco`, or `batchnorm_ema`; how an endpoint would hold under a second seed; or what a uniform judge would show. Reproduction is bounded too. The source repository was recorded as dirty at run time, and no clean configuration-hash comparison exists, so the exact working-tree state is [m-word] for anyone trying to rerun this.",
+      "after": "What it does not support: a common difficulty scale, so no ranking of environments and no claim that environment identity outweighs difficulty; a mechanism behind `glyph`, `moco`, or `batchnorm_ema`; how an endpoint would hold under a second seed; or what a uniform judge would show. Reproduction is bounded too. The source repository was recorded as dirty at run time, and the supplied records contain no clean configuration-hash comparison, so the exact working-tree state is [m-word] for anyone trying to rerun this."
+    }
+  ],
+  "scope": "Targeted mechanical validation after five approved replacements. Prior complete numerical and figure ledgers reused only where text and evidence are unchanged. No site build or rendered-page QA."
+}

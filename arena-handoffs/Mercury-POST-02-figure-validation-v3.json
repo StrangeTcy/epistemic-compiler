@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-29",
+  "scope": "Supporting inspection of existing SVG source; not an Arena verdict or final-article validation.",
+  "method": "Read-only PowerShell and .NET XML parsing with external XML resolution disabled; source geometry, text nodes, counts and SHA-256 inspected.",
+  "source_result": "PASS",
+  "visual_rendering": "NOT_PERFORMED",
+  "modifications": "Only this supporting JSON report was created.",
+  "figure_directory": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/figures",
+  "source_description": "arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md, Section E",
+  "figures": [
+    {
+      "file": "fig8_selection_frame.svg",
+      "existence": "PRESENT",
+      "bytes": 5994,
+      "sha256": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d",
+      "xml_parse": "PASS",
+      "checks": {
+        "stacked_bars": {
+          "status": "PASS",
+          "observed": 3,
+          "evidence": "Eight clipped segment paths, patch_3 through patch_10, occupy three distinct horizontal bands: y=201.486281, 135.578589 and 69.670897. Text labels: Scored cases, Selected cases, Design cells."
+        },
+        "eleven_case_segment": {
+          "status": "PASS",
+          "observed": 11,
+          "evidence": "Grey patch_6 is adjacent to the 405 scored segment. Its width ratio to patch_5 times 405 equals 11 to six decimals. Section E identifies it as unscored."
+        },
+        "eleven_numeric_label": {
+          "status": "ABSENT_AS_EXPECTED",
+          "evidence": "All 12 text elements were read. None labels the grey segment with 11. The caption must supply the count."
+        },
+        "visible_count_labels": [
+          "277 PASS",
+          "128 FAIL",
+          "405 scored",
+          "416 selected",
+          "56 intervention-twin, 14 known-gate,",
+          "10 unsupported input modality (rope)"
+        ],
+        "disposition_conflicts": {
+          "status": "NOT_PLOTTED",
+          "evidence": "The three bars encode scored outcomes, selected status and omissions. No separate segment or label describes the nine conflicting dispositions."
+        }
+      },
+      "caption_limits": "The source title uses design cells for 496; this label does not define a technical unit. Retain the eleven-case caption count and the selected/scored distinction."
+    },
+    {
+      "file": "fig9_environment_intervals.svg",
+      "existence": "PRESENT",
+      "bytes": 46798,
+      "sha256": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3",
+      "xml_parse": "PASS",
+      "checks": {
+        "interval_label": {
+          "status": "PASS",
+          "exact_text": "Pass fraction among scored cases (dot); 95% Wilson interval (bar)"
+        },
+        "environment_intervals": {
+          "status": "PASS",
+          "observed": 36,
+          "color_groups": {
+            "no_scored_pass": 7,
+            "mixed": 12,
+            "all_scored_passed": 17
+          },
+          "evidence": "Direct clipped interval paths under axes_1, grouped by red, amber and green stroke, excluding the one dashed pooled reference path."
+        },
+        "pooled_reference": {
+          "status": "PASS",
+          "label": "pooled 68.4%",
+          "dashed_paths": 1
+        },
+        "wilson_endpoint_spot_checks": {
+          "status": "PASS",
+          "method": "Mapped SVG endpoint coordinates onto axis ticks 0 and 1; compared with Wilson formula using z=1.959963984540054.",
+          "zero_of_four_upper": {
+            "svg": 0.48989084,
+            "computed": 0.489890836
+          },
+          "nine_of_nine_lower": {
+            "svg": 0.700854948,
+            "computed": 0.700854952
+          },
+          "limit": "Two distinct endpoint calculations checked; not a recomputation of every interval."
+        }
+      },
+      "caption_limits": "Use a binomial sampling convention with selection and possible dependence qualifications. These intervals do not measure seed variation. Two entirely unscored environments are outside the 36 plotted environments."
+    },
+    {
+      "file": "fig10_tuple_matrix.svg",
+      "existence": "PRESENT",
+      "bytes": 99887,
+      "sha256": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e",
+      "xml_parse": "PASS",
+      "checks": {
+        "data_glyphs": {
+          "status": "PASS",
+          "observed": 340,
+          "evidence": "Clipped patch paths directly under axes_1, excluding axes/background and legend patches. Source title: Each square is one environment x difficulty-tuple row (340 rows). Paths are rectangular cell glyphs."
+        },
+        "environment_rows": {
+          "status": "PASS",
+          "observed": 38,
+          "evidence": "38 environment text nodes under matplotlib.axis_2."
+        },
+        "unscored_glyphs": {
+          "status": "PASS",
+          "observed": 11,
+          "evidence": "11 data paths use fill #9e9e9e; the legend identifies grey as unscored."
+        },
+        "scored_glyphs": {
+          "pass_rate_one": 222,
+          "pass_rate_zero": 98,
+          "fractional": 9
+        },
+        "multicase_numbers": {
+          "status": "PASS",
+          "observed": 44,
+          "label_frequencies": {
+            "2": 27,
+            "3": 9,
+            "4": 4,
+            "5": 1,
+            "6": 3
+          },
+          "evidence": "44 direct text annotations under axes_1 use font-size 6px; the title says Numbers mark rows with several cases; most rows hold one."
+        }
+      },
+      "caption_limits": "Columns represent environment-specific tuples and are not comparable across environments. Eleven unscored matrix rows are distinct from the ten rows belonging to entirely unscored environments."
+    },
+    {
+      "file": "fig11_failure_labels.svg",
+      "existence": "PRESENT",
+      "bytes": 10345,
+      "sha256": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187",
+      "xml_parse": "PASS",
+      "checks": {
+        "failure_total": {
+          "status": "PASS",
+          "observed": 128,
+          "exact_axis_label": "FAIL outcomes (n = 128)"
+        },
+        "bars": {
+          "status": "PASS",
+          "observed": 6
+        },
+        "labels_and_counts": {
+          "underfit": 51,
+          "overfit_visible_tests": 49,
+          "runtime_error": 11,
+          "source_invalid": 9,
+          "invalid_action": 5,
+          "training_failed": 3
+        },
+        "count_sum": 128,
+        "aggregation": {
+          "status": "PASS",
+          "exact_title": "Recorded failure labels, all environments combined",
+          "exact_footer": "Global counts across all 128 FAIL outcomes; the per-environment breakdown is in the article text."
+        }
+      },
+      "caption_limits": "The SVG contains global failure counts, with no environment split. The final article must supply its environment breakdown separately. Runtime aggregation is an analysis convention."
+    }
+  ],
+  "recommended_candidate": {
+    "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final.md",
+    "parent_directory": "PRESENT",
+    "proposed_file_at_inspection": "ABSENT",
+    "action_taken": "NONE; location recommendation only.",
+    "relative_links": [
+      "../figures/fig8_selection_frame.svg",
+      "../figures/fig9_environment_intervals.svg",
+      "../figures/fig10_tuple_matrix.svg",
+      "../figures/fig11_failure_labels.svg"
+    ],
+    "resolution": "All four paths were resolved from the existing posts directory to the inspected original SVG files.",
+    "preservation": "A new filename in posts preserves the current internal article and original SVG files."
+  },
+  "limits": [
+    "No visual rendering, browser inspection or publication check was performed.",
+    "SVG source inspection confirms labels and encoded shapes, not final page layout or readability.",
+    "Two Wilson endpoint spot checks passed; all 36 interval values were not independently recomputed."
+  ]
+}

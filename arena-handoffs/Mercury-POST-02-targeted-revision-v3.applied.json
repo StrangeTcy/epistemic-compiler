@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-29T18:29:07.831Z",
+  "stage": "targeted_human_revision",
+  "authorization": {
+    "source": "User continuation following the explicit request to approve the five exact A corrections",
+    "message": "Impressive. Go on with processing this article as the pipeline specifies"
+  },
+  "original": {
+    "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A.md",
+    "sha256": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4"
+  },
+  "revised": {
+    "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\posts\\POST-02-cross-environment-map-v3-final-A-revised.md",
+    "sha256": "45cbd4e2d066bc5ba7a9786056b1166d1f97879a908c3da824d37187dac45e18",
+    "characters": 18814
+  },
+  "proposal": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.json",
+  "applied_fixes": [
+    {
+      "id": "A-S01",
+      "line": 11,
+      "reason": "416 counts selected records. Only 405 have a verdict; 11 have blank verdict and status infrastructure_unscored. The later body states this correctly, but the epistemic-status summary blurs the distinction.",
+      "evidence": "cases: status/verdict grouping across all 416 rows; packet Table A and Table B",
+      "before": "Recorded verdicts for 416 cases in 38 environments",
+      "after": "Records for 416 selected cases in 38 environments"
+    },
+    {
+      "id": "A-S05",
+      "line": 46,
+      "reason": "The detailed omission records do explain exclusions through modality limits, known gate failures and unsuccessful twin checks. The broader sampling scheme is not established, but denying all selection information contradicts the supplied omission reasons. Preserve the known filters while declining to infer random or targeted sampling.",
+      "evidence": "omissions grouped by exclusion_class, reason and disposition: 10 unsupported_provider_input_modality / provider_input_modality_unsupported / omitted_before_scoring; 14 known_gate_calibration_failure / known_gate_blocked_calibration_failures / omitted_before_provider_access; 56 intervention_twin_omission / twin_check did not return pass, so the overlay's equivalence expectation is unproven for this instance / omitted_before_provider_access.",
+      "before": "The records say nothing about how selection was done, so I assume neither random nor targeted selection.",
+      "after": "The records explain these exclusions but do not establish a general sampling scheme, so I infer neither random nor targeted sampling."
+    },
+    {
+      "id": "A-S02",
+      "line": 119,
+      "reason": "Other mixed environments vary across tuple rows. MoCo alone has fractional PASS fractions within a row. For example, batchnorm_ema has 0.0 rows and 1.0 rows, so the unqualified across-row uniqueness is false.",
+      "evidence": "matrix CSV line 11: batchnorm_ema pass_rate 0.0; line 23: batchnorm_ema pass_rate 1.0; lines 135-149: moco's nine fractional rows and six endpoints. SQL lines 267 and 270 provide another across-row counterexample.",
+      "before": "`moco` is the one environment whose rows vary.",
+      "after": "`moco` is the only environment with fractional pass rates within tuple rows."
+    },
+    {
+      "id": "A-S03",
+      "line": 128,
+      "reason": "The source boundary concerns internal reasoning and mechanisms. It does not establish that failure labels are unrelated to observed behavior. The sentence broadens a sound limitation into an unsupported negative assertion.",
+      "evidence": "internal_article line 179: These are recorded classifications, not observations of Mercury-2.5's internal reasoning. I cannot infer a mechanism from the label names. Current instructions require labels to remain recorded classifications.",
+      "before": "The labels are recorded classifications, not observations of what the model did.",
+      "after": "The labels are recorded classifications; their names do not establish an internal reasoning mechanism."
+    },
+    {
+      "id": "A-S04",
+      "line": 177,
+      "reason": "The available evidence establishes a missing comparison in the supplied reconstruction environment, not global nonexistence. Restore the source scope beside this reproduction claim.",
+      "evidence": "provenance line 34: config hashes not compared(no clean source snapshot available in this environment); config_hash_audit.csv has 0 checked. Campaign dirty source commit in provenance line 13 is ea827277d42a714d4cd9760f4a4930ab5237e6de, distinct from the pinned analysis snapshot.",
+      "before": "no clean configuration-hash comparison exists",
+      "after": "the supplied records contain no clean configuration-hash comparison"
+    }
+  ],
+  "preflight": [
+    {
+      "id": "A-S01",
+      "occurrences": 1
+    },
+    {
+      "id": "A-S05",
+      "occurrences": 1
+    },
+    {
+      "id": "A-S02",
+      "occurrences": 1
+    },
+    {
+      "id": "A-S03",
+      "occurrences": 1
+    },
+    {
+      "id": "A-S04",
+      "occurrences": 1
+    }
+  ],
+  "scope": "Only the five approved exact replacements; original Arena articles and current internal article preserved.",
+  "validation": {
+    "result": "PASS_WITH_NONBLOCKING_ADVISORIES",
+    "report": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-local-validation-v3.revised-A.json",
+    "checked_at": "2026-10-29T18:32:35.798Z"
+  }
+}

@@ -1,0 +1,66 @@
+# Mercury POST-02 — supporting reconciliation of current review claims
+
+Checked 2026-10-29 against the pinned local sources. This note is local row and field verification for the subsequent claim check. It is not an Arena verdict, a replacement review, a prose revision, or final-article validation. The saved candidate and reviewer responses remain unchanged. No browser, Python, or new evaluation run was used.
+
+The review being checked is `Mercury-POST-02-redo-evidence-check-v3.retry-1.responses.md`, labelled `grok 4.5` and `claude fable 5.1`. Its SHA-256 at inspection was `2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93`. Citations below use its saved line numbers and section descriptions.
+
+Source identifiers below are relative to `arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/`, pinned to `6ed48cb1c4447d4f902d1fbc8a908a56185e34ed`:
+
+- **Packet:** `post-production/handoffs/POST-02-redo_evidence_packet.md`, Tables A, B, D.
+- **Matrix:** `evidence/generated2/environment_difficulty_matrix.csv`; grouped by `environment`, summing `n_scored` and `n_pass`.
+- **Cases:** `evidence/generated/case_results.csv`; grouped by `environment`, `judge_guarantee`, `status`, `verdict`, and `failure_mode_raw` as relevant.
+- **Overview:** `ANALYSIS_OVERVIEW.md`, Key patterns 1.
+- **Provenance:** `evidence/PROVENANCE.md`, Scope.
+
+PowerShell `Import-Csv`, grouping, and numerical sums were used. The five source hashes were reread and match the corresponding entries in `Mercury-POST-02-editorial-critic-v3.sources.record.json`.
+
+## R1 — nine 9/9 environments; four behavioral-reference and five compile-only
+
+**CORRECTION_REQUIRED in one reviewer sentence.** The matrix contains exactly nine environments with `n_pass = n_scored = 9`. Both candidates' nine-name enumerations are supported, as is the `claude fable 5.1` confirmed-arithmetic row at review line 131. Its later statement at line 176, “four 9/9 environments are behavioral_reference ...; six are compile_only,” has the wrong compile-only count.
+
+| Recorded guarantee | 9/9 environments | Count |
+|---|---|---:|
+| `behavioral_reference` | `categorical_lenses`, `ci_dependency_graph`, `spreadsheet_dataflow`, `template_interpreter` | 4 |
+| `compile_only` | `architecture_naturality`, `neuro_symbolic_parser`, `semiring_unification`, `stochastic_monad`, `tokenizer_adjunction` | 5 |
+
+Source: Packet Table A, the nine named environment rows; Matrix, all rows for those environments; Cases, all selected records for those environments and their `judge_guarantee` fields. Carry **four plus five equals nine** into the next claim check; preserve the original review verbatim.
+
+## R2 — historical “~12 at 1.00” versus 17 all-pass environments
+
+**SUPPORTED historical discrepancy; UNRESOLVED explanation.** The `claude fable 5.1` additions at review lines 164 and 194 are supported. Overview Key patterns 1 says “vs ~12 at 1.00.” Packet Table A and Matrix instead yield 17 environments with positive `n_scored` and no FAILs.
+
+The grouping is nine at 9/9, one at 18/18, two at 15/15, one at 23/23, two at 6/6, and two at 4/4: **17 environments and 172/172 scored cases**. The two environments with no scored outcomes do not enter this count. No rule in the supplied overview explains its approximate twelve. Record this alongside the already identified historical ten versus seven scored zero-pass environments; do not invent a historical filtering rule or replace the source text.
+
+## R3 — provider prose and recorded attempt/time fields
+
+**SUPPORTED field contrast; UNRESOLVED equivalence of units.** The `claude fable 5.1` claim at review line 195 accurately transcribes the available values. Provenance Scope calls `ts_parse_only__witness_status=broken_representation=flat__seed-0` a provider-outage case with “1 retry, 60s.” Its Cases row, also supplied as the complete ineligible-PASS excerpt, records:
+
+| Field | Recorded value |
+|---|---|
+| `http_attempts_result` | 19 |
+| `http_attempt_ceiling_result` | 240 |
+| `elapsed_seconds` | 46.101 |
+| `stage_statuses.provider_transport` | `completed_with_errors` |
+| `status` / `verdict` | `scored` / `PASS` |
+| `performance_eligible` | `False` |
+
+Packet Table B identifies this as row 409. The full Cases row's `exclusion_reason` is “campaign report provider-outage case; final result explicitly attributes terminal failure to provider transient after bounded retries.” Its `final_notes` is empty and `final_metrics` supplies task labels, without a reconciliation of the attempt/time quantities.
+
+The supplied records do not establish whether “1 retry” means the same unit as an HTTP attempt or whether “60s” denotes the measured elapsed duration. Therefore, retain an unresolved prose-versus-field contrast, not an asserted conversion or mechanism. These fields do not independently prove provider causation or authorize removing the recorded PASS.
+
+## R4 — failure and guarantee breakdowns are available
+
+**The stronger availability correction is supported.** In `grok 4.5`, review lines 40 and 65 accept unavailable environment-by-guarantee claims; line 63 says “Packet supplies globals” and softens the failure-breakdown correction to absence of a prebuilt table. Those conclusions understate the supplied packet. Packet Table B explicitly includes environment, verdict, guarantee, and both failure-label fields. Table D explicitly includes environment, `failure_modes`, and `judge_guarantees` (field descriptions at packet lines 57 and 567). An environment-level display table need not already exist for these recorded breakdowns to be available by aggregation.
+
+The corresponding `claude fable 5.1` corrections at review lines 150–152 and 170–174 are supported. Cases produces exactly one guarantee per environment, with these totals:
+
+| Guarantee | Environments | PASS | FAIL | Scored | Infrastructure-unscored |
+|---|---:|---:|---:|---:|---:|
+| `behavioral_reference` | 11 | 141 | 48 | 189 | 0 |
+| `compile_only` | 27 | 136 | 80 | 216 | 11 |
+
+The reviewer’s failure-breakdown examples also match the case rows: `source_invalid` is eight `monadic_reward` plus one `transformer_ssm_lift`; `rd_adaptive_halting` has five uppercase `RUNTIME_ERROR` FAILs; underfit counts include nine in each of the two zero-pass sheaf environments, six in `functorial_augmentation`, and four each in `gnn_message_passing` and `ssm_parallel_scan`.
+
+Thus, remove evidence-unavailability claims from the factual handoff. Preserve the separate limit: guarantee is constant within each environment, so those counts do not supply a controlled within-environment comparison or a measured judge effect. Failure-label counts likewise do not identify mechanisms. Distinguish a missing preformatted display from missing source data.
+
+No other review claims were audited in this note.

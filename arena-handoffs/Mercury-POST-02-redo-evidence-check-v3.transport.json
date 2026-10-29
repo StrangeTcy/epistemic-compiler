@@ -1,0 +1,23 @@
+{
+    "prompt":  "Mercury-POST-02-redo-evidence-check-v3.prompt.md",
+    "sourceCharacters":  187173,
+    "partCharacters":  [
+                           48919,
+                           48945,
+                           48944,
+                           40365
+                       ],
+    "boundaries":  [
+                       0,
+                       48919,
+                       97864,
+                       146808,
+                       187173
+                   ],
+    "exactConcatenation":  true,
+    "status":  "four_parts_submitted_review_incomplete_after_errors",
+    "requiredMode":  "Web Search",
+    "createdAt":  "2026-10-28T17:02:31.763Z",
+    "arenaUrl":  "https://arena.ai/c/01a1879d-4519-79f8-a4cb-edf20b759c9b",
+    "updatedAt":  "2026-10-29T13:12:16.2976933Z"
+}

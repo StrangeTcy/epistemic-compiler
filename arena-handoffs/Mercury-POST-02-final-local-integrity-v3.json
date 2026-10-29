@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-10-29T17:59:40.719Z",
+  "sourceRef": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "manifestChecks": [
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision.responses.md",
+      "expected": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756",
+      "observed": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+      "expected": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+      "observed": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+      "expected": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "observed": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+      "expected": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395",
+      "observed": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+      "expected": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e",
+      "observed": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+      "expected": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "observed": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "expected": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282",
+      "observed": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/house_style.md",
+      "expected": "3452665419f00aeb382d84da71e73392759fc6b9016d84d5c3c6ebcb64154390",
+      "observed": "3452665419f00aeb382d84da71e73392759fc6b9016d84d5c3c6ebcb64154390"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/style_reference_material.md",
+      "expected": "3800b01ba7bcbc7823eb86f94bbc6f313dca25ed0715ff7b2cc68f2af908d6f2",
+      "observed": "3800b01ba7bcbc7823eb86f94bbc6f313dca25ed0715ff7b2cc68f2af908d6f2"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/references.md",
+      "expected": "f2610b23b44af8e9b238f987aacfab07a8cf79712f71840c48bf78f3e2bc92e0",
+      "observed": "f2610b23b44af8e9b238f987aacfab07a8cf79712f71840c48bf78f3e2bc92e0"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-source-audit-v3.md",
+      "expected": "dbec11cfc8abd29e5f7528958965909ec7c2ab60c11213c7d9bff2875d494542",
+      "observed": "dbec11cfc8abd29e5f7528958965909ec7c2ab60c11213c7d9bff2875d494542"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-source-audit-v3.json",
+      "expected": "65607ff85ce0f93e93ee0e1aa2a7163fa486afc2d31e4f9b57921ddc63c88f10",
+      "observed": "65607ff85ce0f93e93ee0e1aa2a7163fa486afc2d31e4f9b57921ddc63c88f10"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-evidence-check-v3.retry-1.responses.md",
+      "expected": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93",
+      "observed": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-editorial-critic-v3.responses.md",
+      "expected": "b155daf2ec12071f31f99239b99b3af5324be02e175b9ff106849ec7e4297fd4",
+      "observed": "b155daf2ec12071f31f99239b99b3af5324be02e175b9ff106849ec7e4297fd4"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-claim-check-v3.responses.md",
+      "expected": "5182c82b4e9b20bb13bc742d3f04d2938579c879a1b032f6cff7f428ecfeeed8",
+      "observed": "5182c82b4e9b20bb13bc742d3f04d2938579c879a1b032f6cff7f428ecfeeed8"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-review-reconciliation-v3.md",
+      "expected": "a499666b7de3eb61fe4b84c6ca6a10afc8edd6bb2fe8670aa4c25ad1eff64cfb",
+      "observed": "a499666b7de3eb61fe4b84c6ca6a10afc8edd6bb2fe8670aa4c25ad1eff64cfb"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-blueprint-reconciliation-v3.md",
+      "expected": "15902ac605a1dff052c5b9f61ada43705511e8a0aa38c20b57d25c822b1ef0bc",
+      "observed": "15902ac605a1dff052c5b9f61ada43705511e8a0aa38c20b57d25c822b1ef0bc"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-claim-reconciliation-v3.md",
+      "expected": "4a5cd76e23a4cbb64d57bde35ff2d7072f36274bb58cb4f07c09aa0da551b86c",
+      "observed": "4a5cd76e23a4cbb64d57bde35ff2d7072f36274bb58cb4f07c09aa0da551b86c"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-figure-validation-v3.json",
+      "expected": "abf6125828160b66e65c5a895308d4c9251346d6bb89aa93879c21f102c670ca",
+      "observed": "abf6125828160b66e65c5a895308d4c9251346d6bb89aa93879c21f102c670ca"
+    }
+  ],
+  "candidates": [
+    {
+      "side": "A",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A.md",
+      "characters": 18712,
+      "sha256": "853f4734ecae0bcc3f1dbee06bcc66f50f0e7f4c72b0c96894e808eaaeb421a4",
+      "identicalToCapture": true,
+      "numericalParagraphs": 91
+    },
+    {
+      "side": "B",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-B.md",
+      "characters": 18590,
+      "sha256": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270",
+      "identicalToCapture": true,
+      "numericalParagraphs": 74
+    }
+  ],
+  "figures": [
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig8_selection_frame.svg",
+      "sha256": "1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig9_environment_intervals.svg",
+      "sha256": "fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig10_tuple_matrix.svg",
+      "sha256": "d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e"
+    },
+    {
+      "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\figures\\fig11_failure_labels.svg",
+      "sha256": "bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187"
+    }
+  ]
+}

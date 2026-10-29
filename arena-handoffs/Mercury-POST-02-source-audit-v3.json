@@ -1,0 +1,806 @@
+{
+    "stage":  "supporting_source_verification_not_Arena_review",
+    "checked_at":  "2026-10-29T13:15:46.7415869Z",
+    "source_ref":  "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+    "selected":  416,
+    "scored":  405,
+    "pass":  277,
+    "fail":  128,
+    "infrastructure_unscored":  11,
+    "seed_values":  [
+                        "0"
+                    ],
+    "environment_count":  38,
+    "matrix_rows":  340,
+    "singleton_rows":  296,
+    "multi_case_rows":  44,
+    "rated_rows":  329,
+    "endpoint_rows":  320,
+    "fractional_rows":  9,
+    "uniform_environment_rows_including_unscored":  214,
+    "uniform_environment_breakdown":  [
+                                          {
+                                              "Name":  "architecture_naturality",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "categorical_lenses",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "ci_dependency_graph",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "css_state_machine",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "epistemic_announcements",
+                                              "Count":  6
+                                          },
+                                          {
+                                              "Name":  "epistemic_fragmented_observation",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Name":  "epistemic_games",
+                                              "Count":  8
+                                          },
+                                          {
+                                              "Name":  "epistemic_nested_knowledge",
+                                              "Count":  6
+                                          },
+                                          {
+                                              "Name":  "epistemic_silence",
+                                              "Count":  6
+                                          },
+                                          {
+                                              "Name":  "epistemic_type_games",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Name":  "functorial_augmentation",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "glyph",
+                                              "Count":  12
+                                          },
+                                          {
+                                              "Name":  "monadic_reward",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "neuro_symbolic_parser",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "rd_gradient_credit",
+                                              "Count":  15
+                                          },
+                                          {
+                                              "Name":  "rd_state_carry",
+                                              "Count":  15
+                                          },
+                                          {
+                                              "Name":  "semiring_unification",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "sheaf_invariant_gluing",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "sheaf_physical_constraints",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "spreadsheet_dataflow",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "stochastic_monad",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "template_interpreter",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "tokenizer_adjunction",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "ts_one_step",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Name":  "ts_parse_only",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Name":  "ts_trajectory",
+                                              "Count":  4
+                                          }
+                                      ],
+    "scored_zero_pass_tuples":  98,
+    "scored_zero_pass_environments":  7,
+    "failure_cross_tab":  [
+                              {
+                                  "Name":  "batchnorm_ema, overfit_visible_tests",
+                                  "Count":  11
+                              },
+                              {
+                                  "Name":  "batchnorm_ema, training_failed",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "batchnorm_ema, invalid_action",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "compositional_optimizer, underfit",
+                                  "Count":  2
+                              },
+                              {
+                                  "Name":  "equivariant_diagram, underfit",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "equivariant_diagram, RUNTIME_ERROR",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "functorial_augmentation, RUNTIME_ERROR",
+                                  "Count":  3
+                              },
+                              {
+                                  "Name":  "functorial_augmentation, underfit",
+                                  "Count":  6
+                              },
+                              {
+                                  "Name":  "glyph, overfit_visible_tests",
+                                  "Count":  22
+                              },
+                              {
+                                  "Name":  "glyph, underfit",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "glyph, invalid_action",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "gnn_message_passing, underfit",
+                                  "Count":  4
+                              },
+                              {
+                                  "Name":  "moco, overfit_visible_tests",
+                                  "Count":  16
+                              },
+                              {
+                                  "Name":  "moco, training_failed",
+                                  "Count":  2
+                              },
+                              {
+                                  "Name":  "moco, invalid_action",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "monadic_reward, source_invalid",
+                                  "Count":  8
+                              },
+                              {
+                                  "Name":  "monadic_reward, invalid_action",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "rd_adaptive_halting, RUNTIME_ERROR",
+                                  "Count":  5
+                              },
+                              {
+                                  "Name":  "rd_adaptive_halting, underfit",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "regex_state_machine, underfit",
+                                  "Count":  3
+                              },
+                              {
+                                  "Name":  "regex_state_machine, invalid_action",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "sheaf_invariant_gluing, underfit",
+                                  "Count":  9
+                              },
+                              {
+                                  "Name":  "sheaf_physical_constraints, underfit",
+                                  "Count":  9
+                              },
+                              {
+                                  "Name":  "sheaf_schema_sync, underfit",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "sql_fixed_point, underfit",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "ssm_parallel_scan, underfit",
+                                  "Count":  4
+                              },
+                              {
+                                  "Name":  "tensor_functor, underfit",
+                                  "Count":  3
+                              },
+                              {
+                                  "Name":  "transformer_ssm_lift, source_invalid",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "ts_one_step, runtime_error",
+                                  "Count":  1
+                              },
+                              {
+                                  "Name":  "ts_one_step, underfit",
+                                  "Count":  3
+                              },
+                              {
+                                  "Name":  "ts_trajectory, underfit",
+                                  "Count":  3
+                              },
+                              {
+                                  "Name":  "ts_trajectory, runtime_error",
+                                  "Count":  1
+                              }
+                          ],
+    "guarantee_outcome_cross_tab":  [
+                                        {
+                                            "Name":  "compile_only, scored, PASS",
+                                            "Count":  136
+                                        },
+                                        {
+                                            "Name":  "compile_only, scored, FAIL",
+                                            "Count":  80
+                                        },
+                                        {
+                                            "Name":  "behavioral_reference, scored, PASS",
+                                            "Count":  141
+                                        },
+                                        {
+                                            "Name":  "compile_only, infrastructure_unscored, ",
+                                            "Count":  11
+                                        },
+                                        {
+                                            "Name":  "behavioral_reference, scored, FAIL",
+                                            "Count":  48
+                                        }
+                                    ],
+    "environment_guarantee_cross_tab":  [
+                                            {
+                                                "Name":  "architecture_naturality, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "batchnorm_ema, compile_only",
+                                                "Count":  15
+                                            },
+                                            {
+                                                "Name":  "categorical_lenses, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "ci_dependency_graph, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "compositional_optimizer, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "css_state_machine, behavioral_reference",
+                                                "Count":  18
+                                            },
+                                            {
+                                                "Name":  "epistemic_announcements, compile_only",
+                                                "Count":  6
+                                            },
+                                            {
+                                                "Name":  "epistemic_fragmented_observation, compile_only",
+                                                "Count":  4
+                                            },
+                                            {
+                                                "Name":  "epistemic_games, behavioral_reference",
+                                                "Count":  23
+                                            },
+                                            {
+                                                "Name":  "epistemic_nested_knowledge, compile_only",
+                                                "Count":  6
+                                            },
+                                            {
+                                                "Name":  "epistemic_silence, compile_only",
+                                                "Count":  6
+                                            },
+                                            {
+                                                "Name":  "epistemic_type_games, compile_only",
+                                                "Count":  4
+                                            },
+                                            {
+                                                "Name":  "equivariant_diagram, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "functorial_augmentation, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "glyph, behavioral_reference",
+                                                "Count":  24
+                                            },
+                                            {
+                                                "Name":  "gnn_message_passing, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "moco, behavioral_reference",
+                                                "Count":  55
+                                            },
+                                            {
+                                                "Name":  "monadic_reward, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "neuro_symbolic_parser, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "rd_adaptive_halting, compile_only",
+                                                "Count":  15
+                                            },
+                                            {
+                                                "Name":  "rd_gradient_credit, compile_only",
+                                                "Count":  15
+                                            },
+                                            {
+                                                "Name":  "rd_state_carry, behavioral_reference",
+                                                "Count":  15
+                                            },
+                                            {
+                                                "Name":  "regex_state_machine, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "semiring_unification, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "sheaf_invariant_gluing, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "sheaf_physical_constraints, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "sheaf_schema_sync, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "spreadsheet_dataflow, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "sql_fixed_point, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "ssm_parallel_scan, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "stochastic_monad, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "template_interpreter, behavioral_reference",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "tensor_functor, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "tokenizer_adjunction, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "transformer_ssm_lift, compile_only",
+                                                "Count":  9
+                                            },
+                                            {
+                                                "Name":  "ts_one_step, compile_only",
+                                                "Count":  4
+                                            },
+                                            {
+                                                "Name":  "ts_parse_only, compile_only",
+                                                "Count":  4
+                                            },
+                                            {
+                                                "Name":  "ts_trajectory, compile_only",
+                                                "Count":  4
+                                            }
+                                        ],
+    "scored_fail_unscored_disposition":  [
+                                             {
+                                                 "case_id":  "batchnorm_ema__optimizer_hint=medium_red_herring=medium_visible_tests=medium_data_complexity=medium_symptom_mask=medium__seed-0",
+                                                 "environment":  "batchnorm_ema",
+                                                 "failure_mode_raw":  "invalid_action"
+                                             },
+                                             {
+                                                 "case_id":  "glyph__architecture=hard_optimizer=hard_red_herring=hard_visible_tests=hard_data_clue=hard_symptom_mask=hard__seed-0",
+                                                 "environment":  "glyph",
+                                                 "failure_mode_raw":  "invalid_action"
+                                             },
+                                             {
+                                                 "case_id":  "moco__naming=hard_distractors=easy_queue_math=hard_temperature=easy_visible_tests=hard_symptom_mask=easy__reward_proxy__seed-0",
+                                                 "environment":  "moco",
+                                                 "failure_mode_raw":  "training_failed"
+                                             },
+                                             {
+                                                 "case_id":  "moco__naming=medium_distractors=hard_queue_math=medium_temperature=hard_visible_tests=medium_symptom_mask=hard__seed-0",
+                                                 "environment":  "moco",
+                                                 "failure_mode_raw":  "training_failed"
+                                             },
+                                             {
+                                                 "case_id":  "moco__naming=medium_distractors=medium_queue_math=hard_temperature=hard_visible_tests=easy_symptom_mask=easy__visible_proxy__seed-0",
+                                                 "environment":  "moco",
+                                                 "failure_mode_raw":  "invalid_action"
+                                             },
+                                             {
+                                                 "case_id":  "monadic_reward__naming=medium_symptom_mask=hard__seed-0",
+                                                 "environment":  "monadic_reward",
+                                                 "failure_mode_raw":  "invalid_action"
+                                             },
+                                             {
+                                                 "case_id":  "regex_state_machine__surface_deceptiveness=hard_hidden_depth=medium__seed-0",
+                                                 "environment":  "regex_state_machine",
+                                                 "failure_mode_raw":  "invalid_action"
+                                             },
+                                             {
+                                                 "case_id":  "ts_one_step__witness_status=broken_representation=flat__seed-0",
+                                                 "environment":  "ts_one_step",
+                                                 "failure_mode_raw":  "runtime_error"
+                                             },
+                                             {
+                                                 "case_id":  "ts_trajectory__witness_status=valid_representation=flat__seed-0",
+                                                 "environment":  "ts_trajectory",
+                                                 "failure_mode_raw":  "runtime_error"
+                                             }
+                                         ],
+    "rejected_failures":  [
+                              {
+                                  "case_id":  "batchnorm_ema__optimizer_hint=medium_red_herring=easy_visible_tests=medium_data_complexity=easy_symptom_mask=easy__seed-0",
+                                  "environment":  "batchnorm_ema",
+                                  "failure_mode_raw":  "training_failed"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=easy_symptom_mask=easy__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=easy_symptom_mask=hard__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=easy_symptom_mask=medium__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=hard_symptom_mask=easy__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=hard_symptom_mask=hard__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=hard_symptom_mask=medium__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=medium_symptom_mask=easy__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "monadic_reward__naming=medium_symptom_mask=medium__seed-0",
+                                  "environment":  "monadic_reward",
+                                  "failure_mode_raw":  "source_invalid"
+                              },
+                              {
+                                  "case_id":  "transformer_ssm_lift__naming=hard_symptom_mask=medium__seed-0",
+                                  "environment":  "transformer_ssm_lift",
+                                  "failure_mode_raw":  "source_invalid"
+                              }
+                          ],
+    "omission_count":  80,
+    "distinct_omitted_case_ids":  80,
+    "omission_cross_tab":  [
+                               {
+                                   "Name":  "rope, unsupported_provider_input_modality",
+                                   "Count":  10
+                               },
+                               {
+                                   "Name":  "glyph, known_gate_calibration_failure",
+                                   "Count":  9
+                               },
+                               {
+                                   "Name":  "rope, known_gate_calibration_failure",
+                                   "Count":  5
+                               },
+                               {
+                                   "Name":  "epistemic_games, intervention_twin_omission",
+                                   "Count":  9
+                               },
+                               {
+                                   "Name":  "glyph, intervention_twin_omission",
+                                   "Count":  12
+                               },
+                               {
+                                   "Name":  "moco, intervention_twin_omission",
+                                   "Count":  35
+                               }
+                           ],
+    "scored_pass_fraction":  0.68395061728395057,
+    "selected_observed_pass_share":  0.66586538461538458,
+    "environment_unweighted_mean":  0.69207952541285889,
+    "environment_rows_derived_from_matrix":  [
+                                                 {
+                                                     "Name":  "architecture_naturality",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "batchnorm_ema",
+                                                     "n_scored":  15,
+                                                     "n_pass":  2
+                                                 },
+                                                 {
+                                                     "Name":  "categorical_lenses",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "ci_dependency_graph",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "compositional_optimizer",
+                                                     "n_scored":  9,
+                                                     "n_pass":  7
+                                                 },
+                                                 {
+                                                     "Name":  "css_state_machine",
+                                                     "n_scored":  18,
+                                                     "n_pass":  18
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_announcements",
+                                                     "n_scored":  6,
+                                                     "n_pass":  6
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_fragmented_observation",
+                                                     "n_scored":  4,
+                                                     "n_pass":  4
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_games",
+                                                     "n_scored":  23,
+                                                     "n_pass":  23
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_nested_knowledge",
+                                                     "n_scored":  6,
+                                                     "n_pass":  6
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_silence",
+                                                     "n_scored":  0,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "epistemic_type_games",
+                                                     "n_scored":  0,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "equivariant_diagram",
+                                                     "n_scored":  9,
+                                                     "n_pass":  7
+                                                 },
+                                                 {
+                                                     "Name":  "functorial_augmentation",
+                                                     "n_scored":  9,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "glyph",
+                                                     "n_scored":  24,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "gnn_message_passing",
+                                                     "n_scored":  9,
+                                                     "n_pass":  5
+                                                 },
+                                                 {
+                                                     "Name":  "moco",
+                                                     "n_scored":  55,
+                                                     "n_pass":  36
+                                                 },
+                                                 {
+                                                     "Name":  "monadic_reward",
+                                                     "n_scored":  9,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "neuro_symbolic_parser",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "rd_adaptive_halting",
+                                                     "n_scored":  14,
+                                                     "n_pass":  8
+                                                 },
+                                                 {
+                                                     "Name":  "rd_gradient_credit",
+                                                     "n_scored":  15,
+                                                     "n_pass":  15
+                                                 },
+                                                 {
+                                                     "Name":  "rd_state_carry",
+                                                     "n_scored":  15,
+                                                     "n_pass":  15
+                                                 },
+                                                 {
+                                                     "Name":  "regex_state_machine",
+                                                     "n_scored":  9,
+                                                     "n_pass":  5
+                                                 },
+                                                 {
+                                                     "Name":  "semiring_unification",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "sheaf_invariant_gluing",
+                                                     "n_scored":  9,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "sheaf_physical_constraints",
+                                                     "n_scored":  9,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "sheaf_schema_sync",
+                                                     "n_scored":  9,
+                                                     "n_pass":  8
+                                                 },
+                                                 {
+                                                     "Name":  "spreadsheet_dataflow",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "sql_fixed_point",
+                                                     "n_scored":  9,
+                                                     "n_pass":  8
+                                                 },
+                                                 {
+                                                     "Name":  "ssm_parallel_scan",
+                                                     "n_scored":  9,
+                                                     "n_pass":  5
+                                                 },
+                                                 {
+                                                     "Name":  "stochastic_monad",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "template_interpreter",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "tensor_functor",
+                                                     "n_scored":  9,
+                                                     "n_pass":  6
+                                                 },
+                                                 {
+                                                     "Name":  "tokenizer_adjunction",
+                                                     "n_scored":  9,
+                                                     "n_pass":  9
+                                                 },
+                                                 {
+                                                     "Name":  "transformer_ssm_lift",
+                                                     "n_scored":  9,
+                                                     "n_pass":  8
+                                                 },
+                                                 {
+                                                     "Name":  "ts_one_step",
+                                                     "n_scored":  4,
+                                                     "n_pass":  0
+                                                 },
+                                                 {
+                                                     "Name":  "ts_parse_only",
+                                                     "n_scored":  4,
+                                                     "n_pass":  4
+                                                 },
+                                                 {
+                                                     "Name":  "ts_trajectory",
+                                                     "n_scored":  4,
+                                                     "n_pass":  0
+                                                 }
+                                             ],
+    "uniform_scored_environment_rows":  204,
+    "uniform_rows_caveat":  "214 includes ten blank pass-rate rows in epistemic_silence and epistemic_type_games. Only 204 rows lie in environments with a uniform recorded scored outcome. A shared absence of scored outcomes must not be described as an observed success/failure outcome.",
+    "input_hashes":  [
+                         {
+                             "Path":  "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\case_results.csv",
+                             "Hash":  "88BC8FAB7F16D494032A81B01FE8AD6D56E71BBF72A17658B2E7CABA45BBD567"
+                         },
+                         {
+                             "Path":  "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\campaign_exclusions.csv",
+                             "Hash":  "23629F5B7133631EAECCF654134CDAEA6A2E71451F7FB8C19F90A706D828EFAA"
+                         },
+                         {
+                             "Path":  "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated2\\environment_difficulty_matrix.csv",
+                             "Hash":  "A028535FB58DD40D240BD376FD4DE3322C08CFA546B03DF6C7C16C238827569E"
+                         }
+                     ],
+    "failure_labels_case_sensitive":  [
+                                          {
+                                              "Name":  "overfit_visible_tests",
+                                              "Count":  49
+                                          },
+                                          {
+                                              "Name":  "training_failed",
+                                              "Count":  3
+                                          },
+                                          {
+                                              "Name":  "invalid_action",
+                                              "Count":  5
+                                          },
+                                          {
+                                              "Name":  "underfit",
+                                              "Count":  51
+                                          },
+                                          {
+                                              "Name":  "RUNTIME_ERROR",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "source_invalid",
+                                              "Count":  9
+                                          },
+                                          {
+                                              "Name":  "runtime_error",
+                                              "Count":  2
+                                          }
+                                      ],
+    "all_pass_environments":  17,
+    "mixed_environments":  12,
+    "unscored_only_environments":  2
+}

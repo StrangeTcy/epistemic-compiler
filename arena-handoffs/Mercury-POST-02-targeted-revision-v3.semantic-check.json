@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "stage": "targeted_revision_semantic_check",
+  "checked_at": "2026-10-29T18:31:02.126Z",
+  "scope": "Focused local review of the five approved replacements and their immediate context. Does not repeat the prior full numerical audit or claim independent campaign replication.",
+  "candidate": {
+    "path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-pipeline-resources\\campaign-02-analysis\\posts\\POST-02-cross-environment-map-v3-final-A-revised.md",
+    "sha256": "45cbd4e2d066bc5ba7a9786056b1166d1f97879a908c3da824d37187dac45e18",
+    "characters": 18814
+  },
+  "proposal": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.json",
+  "applied_record": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-targeted-revision-v3.applied.json",
+  "prior_report": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-local-validation-v3.json",
+  "result": "PASS_TARGETED_SEMANTIC_CHECK",
+  "resolved_findings": [
+    {
+      "id": "A-S01",
+      "line": 11,
+      "status": "RESOLVED",
+      "replacement": "Records for 416 selected cases in 38 environments",
+      "evidence": "Focused case_results.csv grouping returns 277 scored PASS, 128 scored FAIL and 11 infrastructure_unscored with blank verdict. The replacement accurately calls all 416 selected records rather than verdicts.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S05",
+      "line": 46,
+      "status": "RESOLVED",
+      "replacement": "The records explain these exclusions but do not establish a general sampling scheme, so I infer neither random nor targeted sampling.",
+      "evidence": "Focused campaign_exclusions.csv grouping retains 10 modality exclusions, 14 known-gate calibration failures and 56 intervention-twin omissions, with their recorded reasons and dispositions. The sentence now acknowledges these known exclusions and does not infer a random or targeted general sampling scheme.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S02",
+      "line": 119,
+      "status": "RESOLVED",
+      "replacement": "`moco` is the only environment with fractional pass rates within tuple rows.",
+      "evidence": "Focused matrix filter 0 < pass_rate < 1 returns nine rows, all in moco. A batchnorm_ema countercheck finds thirteen rate-0 rows and two rate-1 rows, confirming that across-row variation is not unique to moco. The replacement correctly scopes uniqueness to fractional within-row rates.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S03",
+      "line": 128,
+      "status": "RESOLVED",
+      "replacement": "The labels are recorded classifications; their names do not establish an internal reasoning mechanism.",
+      "evidence": "The supplied internal article line 179 bounds the labels as recorded classifications rather than evidence of internal reasoning, and rejects inference of a mechanism from their names. The replacement removes the broader unsupported denial of behavioral observation.",
+      "new_issue": "NONE"
+    },
+    {
+      "id": "A-S04",
+      "line": 177,
+      "status": "RESOLVED",
+      "replacement": "the supplied records contain no clean configuration-hash comparison",
+      "evidence": "PROVENANCE.md line 34 states that config hashes were not compared because no clean source snapshot was available in that environment, with 0 checked; line 13 records the dirty campaign source. The replacement limits absence of comparison to the supplied records.",
+      "new_issue": "NONE"
+    }
+  ],
+  "replacement_presence": [
+    {
+      "id": "A-S01",
+      "old_occurrences": 0,
+      "approved_replacement_occurrences": 1
+    },
+    {
+      "id": "A-S05",
+      "old_occurrences": 0,
+      "approved_replacement_occurrences": 1
+    },
+    {
+      "id": "A-S02",
+      "old_occurrences": 0,
+      "approved_replacement_occurrences": 1
+    },
+    {
+      "id": "A-S03",
+      "old_occurrences": 0,
+      "approved_replacement_occurrences": 1
+    },
+    {
+      "id": "A-S04",
+      "old_occurrences": 0,
+      "approved_replacement_occurrences": 1
+    }
+  ],
+  "introduced_blocking_findings": [],
+  "source_paths": {
+    "cases": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+    "omissions": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/campaign_exclusions.csv",
+    "matrix": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+    "provenance": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+    "internal_article": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md"
+  },
+  "limits": [
+    "Mechanical checks, exact whole-file change scope and full artifact integrity are owned by the parent validator.",
+    "Prior nonblocking advisories remain available in the earlier report; this check addresses the five blockers only.",
+    "No article files were edited by this reviewer; no browser interaction, publication, site build or rendered QA was performed."
+  ]
+}

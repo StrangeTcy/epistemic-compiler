@@ -1,0 +1,70 @@
+{
+  "createdAt": "2026-10-29T12:52:33.136Z",
+  "sourceRef": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "reviewInputs": [
+    {
+      "label": "WRITER_PAIR",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision.responses.md",
+      "sha256": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756",
+      "expected": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756"
+    },
+    {
+      "label": "COMPLETE_EVIDENCE_PACKET",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+      "sha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+      "expected": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640"
+    },
+    {
+      "label": "COMPLETE_DIFFICULTY_MATRIX_CSV",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+      "sha256": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+      "expected": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e"
+    },
+    {
+      "label": "CAMPAIGN_PROVENANCE",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+      "sha256": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395",
+      "expected": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395"
+    },
+    {
+      "label": "EARLIER_ANALYSIS_OVERVIEW",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+      "sha256": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e",
+      "expected": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e"
+    },
+    {
+      "label": "FULL_SELECTED_CASE_SOURCE_FOR_EXCERPT",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+      "sha256": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+      "expected": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567"
+    }
+  ],
+  "extraInputs": [
+    {
+      "label": "CURRENT_INTERNAL_ARTICLE",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+      "characters": 23994,
+      "sha256": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282"
+    },
+    {
+      "label": "HOUSE_STYLE",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/house_style.md",
+      "characters": 12393,
+      "sha256": "3452665419f00aeb382d84da71e73392759fc6b9016d84d5c3c6ebcb64154390"
+    },
+    {
+      "label": "ACTUAL_REFERENCE_POST_EXCERPTS",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/style_reference_material.md",
+      "characters": 20228,
+      "sha256": "3800b01ba7bcbc7823eb86f94bbc6f313dca25ed0715ff7b2cc68f2af908d6f2"
+    },
+    {
+      "label": "PRIOR_WORK_REFERENCES",
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/references.md",
+      "characters": 3504,
+      "sha256": "f2610b23b44af8e9b238f987aacfab07a8cf79712f71840c48bf78f3e2bc92e0"
+    }
+  ],
+  "sourceBlocksSha256": "f70efed3b8b929d9138faf62c3774354932f0b9635084cb051edf33d3555d20a",
+  "status": "source_material_ready_reviews_pending"
+}

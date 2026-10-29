@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "stage": "supporting_local_review_of_final_writer_B_not_formal_pipeline_validator",
+  "checked_at": "2026-10-29T18:01:29.918Z",
+  "input": {
+    "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-final-writer-v3.response-B.md",
+    "sha256": "3b4911b5b7be6321e3559e67af53e117ef4cc8862758b7242b5e157a7a54b270",
+    "characters": 18590,
+    "completeness": "COMPLETE",
+    "earlier_pending_capture": "17862-character prefix preserved; final capture adds728 characters",
+    "final_candidate_path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-B.md"
+  },
+  "result": "NO_BLOCKING_CONTENT_FINDINGS",
+  "blocking_findings": [],
+  "advisories": [
+    {
+      "id": "B-CLARITY-01",
+      "severity": "LOW_NONBLOCKING",
+      "line": 86,
+      "excerpt": "98 individual tuples have zero passes",
+      "finding": "The value98 is correct for scored tuple rows with n_pass=0. Adding scored would state the denominator directly; eleven wholly unscored rows also have n_pass=0 fields, although the surrounding article explicitly treats them as unknown outcomes.",
+      "suggested_wording": "98 scored tuple rows have zero passes",
+      "basis": "environment_difficulty_matrix.csv filter n_scored>0 and n_pass=0 returns98 rows across19 environments. The article does not assign FAIL verdicts to the11 unscored rows."
+    }
+  ],
+  "reviewed_concerns": [
+    {
+      "id": "B-AGGREGATION-HYPOTHESIS",
+      "lines": [
+        47,
+        135
+      ],
+      "result": "NOT_A_BLOCKING_VIOLATION",
+      "reason": "The contract says an arithmetic aggregation hypothesis is not reconciliation. Both passages explicitly call14+10=24 unverified and leave14versus24 unresolved. This is repetition and an optional editorial deletion, not a claimed source reconciliation."
+    },
+    {
+      "id": "B-FIGURE9-LINE-STYLE",
+      "line": 52,
+      "result": "SUPPORTED",
+      "reason": "SVG source uses stroke-dasharray1,1.65 for the pooled line; dotted is a defensible visual description. No figure rendering was performed."
+    },
+    {
+      "id": "B-FINAL-ENDING",
+      "lines": [
+        145,
+        147
+      ],
+      "result": "PASS",
+      "reason": "The final728 characters were inspected after complete capture. They preserve single-campaign scope, introduce no new measured result, and end with the correctly scoped68.4% and40.7% figures."
+    }
+  ],
+  "numerical_assertion_ledger": [
+    {
+      "lines": [
+        2,
+        3
+      ],
+      "claim": "Model label, title percentage/environment count, and date",
+      "result": "PASS",
+      "basis": "Title/date match current final-writer contract exactly; Mercury-2.5 is a model label, not a measured quantity. Title counts are verified below."
+    },
+    {
+      "lines": [
+        11,
+        17
+      ],
+      "claim": "Retrospective scope; 416 cases, 38 environments, 340 tuple rows; one recorded seed",
+      "result": "PASS",
+      "basis": "case_results.csv contains 416 selected rows, 38 distinct environment values, and only seed 0; environment_difficulty_matrix.csv contains 340 data rows. No new run is claimed."
+    },
+    {
+      "lines": [
+        22,
+        35
+      ],
+      "claim": "277/405 = 68.4%; 277/416 = 66.6%; 128 FAIL and 11 infrastructure-unscored",
+      "result": "PASS",
+      "basis": "case_results.csv grouped by status/verdict: selected=416, scored=405, PASS=277, FAIL=128, infrastructure_unscored=11. Fractions are 0.6839506172839506 and 0.6658653846153846. Unscored rows have empty verdict, unknown normalized label, empty final notes, and exclusion_reason infrastructure_unscored: no scored result."
+    },
+    {
+      "lines": [
+        24,
+        26
+      ],
+      "claim": "Two of 36 scored environments within five percentage points; MoCo 36/55=65.5%, tensor_functor 6/9=66.7%; 24 endpoint environments",
+      "result": "PASS",
+      "basis": "Direct case_results.csv environment grouping and abs(PASS/scored-277/405)<=0.05 returns only moco and tensor_functor. 38 total minus 2 entirely unscored=36; 17 all-pass+7 scored-zero-pass=24."
+    },
+    {
+      "lines": [
+        32,
+        33
+      ],
+      "claim": "Figure 8: three bars; 496=416+80; omissions 56/14/10; selected 405+11; scored 277+128; nine disposition conflicts not plotted",
+      "result": "PASS",
+      "basis": "campaign_exclusions.csv has 80 distinct omitted records, class totals 56 intervention twins, 14 known gate, 10 unsupported modality (all rope). SVG source audit verifies 3 bands and unlabeled eleven-case segment; figure has no separate disposition segment. case_results.csv has 9 scored FAIL records with disposition unscored."
+    },
+    {
+      "lines": [
+        37,
+        43
+      ],
+      "claim": "Outcome table: all-pass 17,172/172,42.5%,0 unscored; zero-pass 7,0/68,16.8%,0; mixed 12,105/165,40.7%,1; entirely unscored 2,10",
+      "result": "PASS",
+      "basis": "Source-audit-v3 environment tallies and environment_summary_v2.csv support each membership and tally. Percent shares use 172/405=42.4691%,68/405=16.7901%,165/405=40.7407%; totals 17+7+12+2=38,172+68+165=405,172+105=277,1+10=11."
+    },
+    {
+      "lines": [
+        45,
+        45
+      ],
+      "claim": "Endpoint sample sizes four through 24; mixed fractions 2/15 through 8/9; mean 69.2%, median 8/9=88.9%",
+      "result": "PASS",
+      "basis": "environment_summary_v2.csv scored environment fractions sorted numerically: count=36, arithmetic mean=0.6920795254128588, middle two both=8/9. Mixed minimum batchnorm_ema 2/15; maximum sheaf_schema_sync/sql_fixed_point/transformer_ssm_lift 8/9. Endpoint sample sizes include 4,23,24."
+    },
+    {
+      "lines": [
+        47,
+        47
+      ],
+      "claim": "Omissions: MoCo35 twins; glyph21=9gate+12twins; rope15=10modality+5gate; epistemic_games9twins; unresolved 14 versus24",
+      "result": "PASS",
+      "basis": "Direct campaign_exclusions.csv grouping by environment and exclusion_class gives those six groups. PROVENANCE.md:29 states 24 known gate-blocked cases. The candidate identifies the discrepancy and explicitly marks 14+10=24 unverified; no reconciliation is asserted."
+    },
+    {
+      "lines": [
+        51,
+        52
+      ],
+      "claim": "Figure 9: 36 dots, two excluded wholly unscored environments, 95% Wilson intervals, pooled line, k/n labels, sample sizes4..24",
+      "result": "PASS",
+      "basis": "Figure-validation-v3 source audit verifies 36 intervals in 7/12/17 color groups, 95% Wilson axis text, and pooled 68.4% reference. SVG:894 uses stroke-dasharray 1,1.65, supporting dotted description. Candidate explicitly limits intervals to binomial convention and denies measured seed variation. Only two interval endpoint values were independently checked by earlier SVG audit; full interval recomputation is not claimed."
+    },
+    {
+      "lines": [
+        54,
+        54
+      ],
+      "claim": "All-pass names and rates; nine9/9;23/23;18/18;two15/15;two6/6;two4/4; one ineligible parse-only PASS",
+      "result": "PASS",
+      "basis": "Environment counts match case_results.csv and environment_summary_v2.csv. ts_parse_only has4 scored PASS rows; exactly one has performance_eligible=False. That row has status=scored, verdict=PASS and exclusion text attributing terminal failure to provider transient; candidate attributes the note and preserves conflict/count."
+    },
+    {
+      "lines": [
+        56,
+        56
+      ],
+      "claim": "Seven zero-pass environments sum0/68; monadic_reward8 of9 rejected",
+      "result": "PASS",
+      "basis": "functorial_augmentation9+monadic_reward9+sheaf_invariant_gluing9+sheaf_physical_constraints9+ts_one_step4+ts_trajectory4+glyph24=68; no PASS in those groups. monadic_reward has8 rejected source_invalid FAILs and one unscored-disposition invalid_action FAIL, all status=scored."
+    },
+    {
+      "lines": [
+        58,
+        73
+      ],
+      "claim": "All twelve mixed-table environment ratios and nearby disposition flags",
+      "result": "PASS",
+      "basis": "Automated extraction of each Markdown table environment and PASS/scored fraction compared directly with case_results.csv grouped counts: all12 agree. Ratios: sheaf_schema_sync8/9;sql_fixed_point8/9;transformer_ssm_lift8/9;compositional_optimizer7/9;equivariant_diagram7/9;tensor_functor6/9;gnn_message_passing5/9;regex_state_machine5/9;ssm_parallel_scan5/9;moco36/55;rd_adaptive_halting8/14 plus1 unscored;batchnorm_ema2/15. Flags match disposition records."
+    },
+    {
+      "lines": [
+        75,
+        75
+      ],
+      "claim": "Named-family examples ts4/4,0/4,0/4; sheaf8/9,0/9,0/9; category9/9,0/9,6/9",
+      "result": "PASS",
+      "basis": "Ratios independently appear in environment_summary_v2.csv and case_results.csv grouping. Candidate does not infer a shared mechanism or calibrated difficulty from the names."
+    },
+    {
+      "lines": [
+        77,
+        77
+      ],
+      "claim": "glyph+moco+batchnorm94 of405,56 of128; exclusions241/350=68.86%,277/381=72.70%,241/326=73.93%",
+      "result": "PASS",
+      "basis": "24+55+15=94 scored;24+19+13=56 FAIL. Removing moco:277-36=241,405-55=350,68.857142857%;removing glyph:277/(405-24)=72.703412073%;removing both:241/(405-55-24)=73.926380368%. Candidate identifies arithmetic density illustrations and preserves all original counts."
+    },
+    {
+      "lines": [
+        81,
+        82
+      ],
+      "claim": "Figure10 has340 row squares;11 unscored rows;44 multi-case numbers;nine fractional rows in MoCo",
+      "result": "PASS",
+      "basis": "Figure-validation-v3 source geometry reports340 data glyphs,11 grey,44 number annotations,9 fractional. Candidate warns that columns are environment-specific and noncomparable."
+    },
+    {
+      "lines": [
+        84,
+        84
+      ],
+      "claim": "4..15 rows per environment; six above10;296 singleton;44 multi-case in four environments;329 rated;320 endpoints=97.3%",
+      "result": "PASS",
+      "basis": "Direct matrix grouping:340 rows;296 with n_cases=1;44 with n_cases>1;11 with n_scored=0. Multicase groups CSS9rows18cases,epistemic_games8/23,glyph12/24,moco15/55. All11 unscored rows single-case. environment_summary_v2 has6 n_tuples>10.320/329=97.264437690%."
+    },
+    {
+      "lines": [
+        86,
+        86
+      ],
+      "claim": "204 rows in uniform-scored environments; ten in unscored environments6+4;214 inclusive;98 zero-pass tuples over19 environments including12 mixed",
+      "result": "PASS_WITH_CLARITY_ADVISORY",
+      "basis": "source-audit-v3 verifies204 scored-uniform environment rows and10 in wholly unscored environments (epistemic_silence6,epistemic_type_games4). Candidate explicitly denies214 observed outcomes. Direct matrix filter n_scored>0 and n_pass=0 gives98 rows over19 distinct environments=7 entirely zero-pass+12 mixed. See B-CLARITY-01 about making the scored qualifier explicit."
+    },
+    {
+      "lines": [
+        88,
+        88
+      ],
+      "claim": "All15 MoCo rows keyed;6 endpoints,9fractional;fractional values1/6,1/3,2/5,2/3,3/4,5/6; six-case1/6 tuple and five labels;34 keys total",
+      "result": "PASS",
+      "basis": "Direct inspection of15 MoCo matrix rows confirms stated tuple values; fractional2/3 repeats4 times (candidate gives unique values, not frequencies). Named1/6 row has distractors=hard,naming=easy,queue_math=easy,symptom_mask=hard,temperature=hard,visible_tests=easy; n_cases6,n_pass1,n_fail5,failure_modes overfit_visible_tests5. Distinct property names from every difficulty_tuple total34."
+    },
+    {
+      "lines": [
+        90,
+        90
+      ],
+      "claim": "Every selected record seed0;44 multi-case rows; adaptive-halting unscored tuple all five dimensions easy;8/14+1",
+      "result": "PASS",
+      "basis": "Direct case/matrix inspection matches. Unscored tuple keys batching_complexity,clue_clarity,implementation_obfuscation,recurrence_depth,visible_tests all easy. No missing verdict converted to FAIL and no independence or technical cell unit assumed."
+    },
+    {
+      "lines": [
+        94,
+        95
+      ],
+      "claim": "Failure bars:51 underfit,49 overfit_visible_tests,11 runtime(9 uppercase+2lowercase),9 source_invalid,5invalid_action,3training_failed=128",
+      "result": "PASS",
+      "basis": "Direct case_results.csv FAIL grouping (case sensitive raw label) gives exact counts. Figure11 source audit confirms6 global bars and128 total. Candidate states aggregation convention and supplies environment table."
+    },
+    {
+      "lines": [
+        97,
+        117
+      ],
+      "claim": "All19 environment rows of failure-label table",
+      "result": "PASS",
+      "basis": "Compared each table cell against direct case_results.csv FAIL grouping and source-audit-v3.failure_cross_tab. All counts and raw label spellings agree; runtime uppercase appears only equivariant_diagram1,functorial_augmentation3,rd_adaptive_halting5; lowercase only ts_one_step1,ts_trajectory1. The19 table rows sum128."
+    },
+    {
+      "lines": [
+        119,
+        121
+      ],
+      "claim": "Runtime case alignment;10 rejected and9 disposition-unscored FAILs; affected environment counts",
+      "result": "PASS",
+      "basis": "Direct case-sensitive raw-label/disposition cross-tab: RUNTIME_ERROR/scored9,runtime_error/unscored2,source_invalid/rejected9,training_failed/rejected1,training_failed/unscored2,invalid_action/unscored5. Nine disposition-unscored failures distributed moco3 plus batchnorm_ema,glyph,monadic_reward,regex_state_machine,ts_one_step,ts_trajectory one each. Candidate preserves19 distinct FAILs and does not equate disposition with status."
+    },
+    {
+      "lines": [
+        123,
+        123
+      ],
+      "claim": "11 behavioral-reference environments189 selected141PASS48FAIL;27 compile-only227 selected216scored136PASS80FAIL11unscored; nine9/9 split4/5",
+      "result": "PASS",
+      "basis": "Direct judge_guarantee grouping of case_results.csv gives all values. Direct9-case all-pass environment grouping gives4 behavioral_reference and5compile_only. epistemic_games23/23 andglyph0/24 both behavioral_reference. Every environment has one guarantee; confound and lack of behavioral validation for compile-only are stated."
+    },
+    {
+      "lines": [
+        127,
+        129
+      ],
+      "claim": "CSS18/18 across9rows2/2; loneSQL FAIL at hard hidden_depth/easy surface_deceptiveness; no difficulty effect",
+      "result": "PASS",
+      "basis": "Matrix CSS rows all n_cases2,n_pass2;SQL soleFAIL row has required two-key tuple and underfit label. Chance wording is explicitly hypothetical, with no computed base rate claimed."
+    },
+    {
+      "lines": [
+        133,
+        139
+      ],
+      "claim": "Preserved conflicts7vs10,17vs~12,14vs24,1retry60s versus row fields,dirty state/no clean hash comparison",
+      "result": "PASS",
+      "basis": "ANALYSIS_OVERVIEW.md:11 has10 at0.00 and~12 at1.00. PROVENANCE.md:29-30 has24 known-gate and1retry60s. Ineligible parse-only case has19http_attempts_result,240ceiling,46.101elapsed_seconds; candidate leaves mismatch unresolved. PROVENANCE.md:13,34 records dirty source and zero checked config-hash audit."
+    },
+    {
+      "lines": [
+        143,
+        147
+      ],
+      "claim": "Concluding277/405,17/7/12/2 categories,24/36 endpoints,two near pooled,320/329 rated endpoints,204+10 rows,68.4% and40.7%",
+      "result": "PASS",
+      "basis": "Restates the preceding verified scoped counts. Completed ending introduces no fresh empirical assertion; repeated seeds and varying guarantees are proposed as future evidence, not claimed results."
+    }
+  ],
+  "semantic_contract_checks": [
+    {
+      "check": "Record denominators and unknowns",
+      "result": "PASS",
+      "reason": "Scored and selected fractions are separate; omitted and infrastructure-unscored outcomes are not assigned verdicts."
+    },
+    {
+      "check": "Selection, units, and dependence",
+      "result": "PASS",
+      "reason": "496 case-ID frame is distinct from340 matrix rows; no technical cell definition, random selection, independence, or common difficulty scale is asserted."
+    },
+    {
+      "check": "Difficulty effects and claims withdrawn",
+      "result": "PASS",
+      "reason": "CSS variation is withdrawn; MoCo and SQL patterns remain open with no isolated dimension effect or monotonic trend inferred."
+    },
+    {
+      "check": "Guarantee and failure-label scope",
+      "result": "PASS",
+      "reason": "Guarantee/environment confound, compile-only limitation, runtime normalization, classifications rather than internal reasoning, and both disposition conflict groups are stated."
+    },
+    {
+      "check": "Unresolved sources",
+      "result": "PASS",
+      "reason": "14/24known-gate,7/10zero-pass,17/~12all-pass,undefined dispositions,parse-only provider-note/PASS and attempt/time conflict remain open."
+    },
+    {
+      "check": "Reproduction and epistemic-games scope",
+      "result": "PASS",
+      "reason": "Retrospective single-campaign scope,seed0records,no repeat measurements,dirty source/no clean config comparison are explicit. Epistemic games is bounded to Bayesian inference over stipulated policies and does not claim recursive theory of mind."
+    },
+    {
+      "check": "Authorship and external verification",
+      "result": "PASS",
+      "reason": "Neutral AI drafting/revision disclosure; no independent human verification, replication, rendering, or fresh web-source access asserted."
+    },
+    {
+      "check": "Required figures and captions",
+      "result": "PASS_SOURCE_SCOPE",
+      "reason": "All4required links present with supported caption content; checks reuse source figure audit, with direct check of dotted reference line. No visual-rendering pass claimed."
+    },
+    {
+      "check": "Provenance leakage",
+      "result": "PASS_REVIEWED_TEXT",
+      "reason": "No Arena identities, reviewer identities, hashes, case IDs, internal source paths, or production-stage instructions in reviewed public prose. Required figure relative paths are present."
+    }
+  ],
+  "mechanical_spot_checks": {
+    "word_count": 2585,
+    "word_count_method": "Remove frontmatter, replace image Markdown with alt text, remove HTML tags and |*`#markup, count non-whitespace tokens; includes tables/captions/epistemic text.",
+    "word_target": "approximately2000..2800",
+    "word_count_result": "PASS",
+    "excluded_wording_matches": 0,
+    "frontmatter": "PASS",
+    "signature": "PASS",
+    "epistemic_fields_order": "Original ideas,Synthesis,Prose,Certainty,Importance",
+    "mathjax": "NOT_REQUIRED: arithmetic uses ordinary text, no TeX delimiters",
+    "external_citations": "NONE",
+    "scope": "Root formal validator remains responsible for final mechanical report."
+  },
+  "sources": {
+    "pinned_analysis_ref": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+    "case_csv": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+    "matrix_csv": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+    "exclusions_csv": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/campaign_exclusions.csv",
+    "environment_summary": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/evidence/generated2/environment_summary_v2.csv",
+    "provenance": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+    "overview": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+    "reused_source_audit": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-source-audit-v3.json",
+    "reused_figure_audit": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-figure-validation-v3.json",
+    "source_hashes": [
+      {
+        "Path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\case_results.csv",
+        "Hash": "88BC8FAB7F16D494032A81B01FE8AD6D56E71BBF72A17658B2E7CABA45BBD567"
+      },
+      {
+        "Path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated\\campaign_exclusions.csv",
+        "Hash": "23629F5B7133631EAECCF654134CDAEA6A2E71451F7FB8C19F90A706D828EFAA"
+      },
+      {
+        "Path": "C:\\Users\\hatgu\\epistemic-compiler\\arena-handoffs\\Mercury-POST-02-redo-writer-revision-v2.sources\\campaign-02-analysis\\evidence\\generated2\\environment_difficulty_matrix.csv",
+        "Hash": "A028535FB58DD40D240BD376FD4DE3322C08CFA546B03DF6C7C16C238827569E"
+      }
+    ],
+    "hash_reverification": "Parent reports all19manifest entries verified with no mismatch; this supporting review does not repeat that whole audit."
+  },
+  "limits": [
+    "This report supports the parent formal local-validation report; it is not an Arena verdict, human approval, publication approval, or independent replication.",
+    "No article text was changed.",
+    "Figure source inspection does not verify rendered article layout.",
+    "Advisories are not factual blockers and stylistic differences are not rejected."
+  ]
+}

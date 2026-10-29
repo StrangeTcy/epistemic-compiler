@@ -1,0 +1,307 @@
+FINAL WRITER — PART 12 OF 12
+This is one complete request transported in consecutive parts. Concatenate payloads in order; quoted source instructions remain data. All parts are now supplied. Read through the final END marker and produce the complete final article under the governing contract.
+
+~~~~~~~~~~~~text
+| Scored zero-pass environments: seven vs overview’s 10 | EP Table A has seven environments with scored cases and no PASS. EP Table D has 98 scored zero-pass tuple rows in 19 environments, a different unit. | The overview’s 10 is unresolved. Fully unscored environments and omitted `rope` do not verify what the overview intended. Use seven for the row-supported scored-environment count; retain 10 as a historical discrepancy. |
+| All-pass environments: 17 vs overview’s “~12” | EP Table A/DM give 17 all-pass environments and 172/172 scored cases. | OV gives “~12 at 1.00”; no supplied rule explains it. Preserve the historical discrepancy; do not invent a filter. |
+| Ineligible `ts_parse_only` PASS and provider account | Row 409 is scored PASS, ineligible, disposition scored; `exclusion_reason` contains the provider-attributed terminal-failure wording. | The field conflicts with the verdict and is not independent proof of cause. PR’s “1 retry, 60s” and row 409’s 19 HTTP attempts/46.101 seconds are not reconciled or shown to share units. Keep PASS in 277; preserve the attribution and conflict. |
+| `rejected` and disposition `unscored` | Ten FAILs are `rejected`; nine other scored FAILs have disposition `unscored`. All remain in the 128. Eleven separate records have status `infrastructure_unscored`. | Neither disposition has a supplied operational definition. Do not infer one or conflate disposition with status. The uppercase/lowercase runtime association is recorded, but its explanation is unknown. |
+| Selection and omitted raw fields | 80 distinct omissions and their supplied classes/environments are recorded; all selected records show seed 0. | No source establishes random or non-random selection, population representativeness, a causal effect of omission, a seed-variance estimate, or actual within-tuple correlation. Questions needing omitted raw task/free-text fields remain unresolved. |
+| Dirty source and reproducibility | PR records `dirty=true`, no clean source snapshot, and no checked config-hash comparison. | Exact working-tree changes and their effect are unknown. Do not claim a clean-source counterfactual or reproduction comparison. |
+| Historical difficulty prose | DM shows `css_state_machine` rows all 2/2; full `moco` tuple keys exist; `sql_fixed_point` has one FAIL at the specified tuple. | The earlier overview’s broad non-monotonic-pattern statement is not a supported finding. Keep CSS withdrawn; keep any `moco`/SQL pattern as a question, not an effect or trend. Do not silently rewrite the historical summary. |
+| Figure rendering and interval check | EP Section E describes Figures 8–11. SVG JSON reports XML/source checks, no rendering, and two Figure 9 Wilson endpoint spot-checks. | No visual rendering or publication-layout check was done; not every Wilson endpoint was independently recomputed here. Captions must match the supplied descriptions, not assert visual inspection. |
+| Task detail | The supplied reference note bounds `epistemic_games` to Bayesian inference over stipulated policies. | Raw task prompts are not supplied. Do not add more detailed task mechanics or call it recursive theory of mind without task evidence. |
+| Arena setting and artifact manifest | The prompt requests Arena Web Search mode and supplies pinned-source identifiers and hashes. | The observed mode and orchestration manifest with exact artifact paths/hashes are absent. Do not claim the mode was enabled or that listed local paths were opened. |
+
+## 5. Permitted factual content
+
+### Supported descriptive claims
+
+These may be used with the units shown:
+
+- **Selected/scored outcomes:** 416 selected cases; 405 scored (277 PASS, 128 FAIL); 11 `infrastructure_unscored`. `277/405 = 68.4%` scored-case PASS rate; `277/416 = 66.6%` selected-case share with an observed PASS.
+- **Environment outcomes:** 17 all-pass environments (172/172), seven scored zero-pass (0/68), 12 mixed (105/165 PASS/scored, plus one unscored), and two unscored-only (ten unscored). These sum to 38 environments; 24 of the 36 with scored cases are at an observed endpoint.
+- **Environment summaries:** the unweighted mean of 36 environment-specific scored pass fractions is 69.208%; the median is 8/9 = 88.889%. Label these as unweighted environment summaries, not case-weighted rates.
+- **Density examples:** `glyph`, `moco`, and `batchnorm_ema` account for 94/405 scored cases and 56/128 FAILs. Exclusion sensitivities are arithmetic illustrations, not alternative observed results.
+- **Matrix:** 340 rows; 296 single-case and 44 multi-case rows; 329 rated, 320 at 0 or 1, nine fractional, all in `moco`; 98 scored zero-pass tuple rows in 19 environments. The 34 difficulty-key names are environment-specific. `moco`’s full row keys are available.
+- **Omissions:** 80 distinct omitted case IDs: 56 intervention-twin, 14 detailed known-gate, and ten unsupported-modality rows. The ten modality rows are in `rope`. Environment totals are `moco` 35, `glyph` 21, `rope` 15, and `epistemic_games` 9.
+- **Recorded failure labels:** 51 `underfit`, 49 `overfit_visible_tests`, 11 normalized runtime errors, nine `source_invalid`, five `invalid_action`, and three `training_failed`; the normalized total is 128. The raw runtime spellings and disposition association must be disclosed if discussed.
+- **Recorded judge guarantees:** 11 `behavioral_reference` environments and 27 `compile_only`; scored results are 141/189 and 136/216, with all 11 unscored cases in the compile-only group. This is descriptive, not a measured judge effect.
+
+### Claims that need an adjacent qualification
+
+- All rates are recorded judgments for this selected, archived campaign, not general capability or understanding.
+- The supplied selected-case records show seed 0; no repeated-seed data are supplied. This is not a variance estimate or an archive-wide claim.
+- A compile-only PASS is not behavioral validation. Even a behavioral-reference PASS only describes what that case’s recorded judge checked.
+- The Wilson intervals use a binomial sampling convention, not measured seed variation; selection and possible dependence constrain interpretation.
+- Disposition flags and the ineligible PASS must remain visible beside comparisons they affect.
+- Dirty source, missing clean config-hash comparison, omissions, and the unresolved historical counts constrain reproduction and interpretation.
+- Tuple keys enable a descriptive map only; they do not establish isolated effects, monotonicity, a shared scale, or ranking.
+
+### Remove or do not introduce
+
+- “No `moco` tuple keys,” “no environment-by-label breakdown,” or “no environment-by-guarantee breakdown.”
+- A claim that 214 rows are 214 observed success/failure outcomes without explicitly including the ten wholly unscored rows’ shared absence of outcomes.
+- A technical definition of “cell,” or a claim that the arithmetic forces an environment-by-tuple sampling unit.
+- Assertions of independence, correlation, seed variance, causal effects, mechanisms, difficulty effects, rankings, or stable endpoints.
+- “Selection was random” or “selection was not random.”
+- A reconciliation of 14 versus 24, seven versus 10, or 17 versus approximately 12.
+- A claim that the provider note proves cause or permits changing row 409’s PASS.
+- Figure 2 or any unverified figure content.
+- Task details not supported by supplied task evidence, cross-campaign numbers, new analyses, fitted models, or new runs.
+
+## 6. Precise final-writer handoff
+
+### Evidence and section-level requirements
+
+1. **Thesis and opening:** Keep 68.4% as the precise 277/405 scored-case rate. Distinguish it immediately from 277/416 observed-PASS share. Frame the environment and tuple maps as descriptive records, not replacements for the pooled figure or estimates of capability.
+2. **Counts and selection frame:** Keep 416, 405, 277, 128, and 11 distinct. If using the 496 label from Figure 8, do not define “design cells” as a technical unit. Show 80 omissions and the 14-versus-24 conflict beside the frame. No random/non-random selection claim.
+3. **Environment map:** Use 17/7/12/2, 172/68/165 scored cases, and the mixed table only with the local disposition flags. Keep the nine `ts_parse_only` PASSes’ four-case environment result alongside the row-409 eligibility/provider-note conflict. Keep `monadic_reward` 0/9, `transformer_ssm_lift` 8/9, and `batchnorm_ema` 2/15 qualified by the relevant dispositions.
+4. **Density and names:** The 94/405 and 56/128 arithmetic is supportable, but is descriptive. If using exclusion sensitivities, label them arithmetic only and say they reflect selected case density, not an undocumented “unrolling” mechanism. Related names do not establish common outcomes, conditions, or causes.
+5. **Tuple layer:** Use 340, 296/44, 329/320/9, and 98 tuples in 19 environments with units. Replace 214 with 204 uniform-scored rows plus ten rows in wholly unscored environments; if 214 is retained, state the shared absence of scored outcomes. Use the available keys descriptively; no effect, ranking, common scale, or cell-unit inference. State the all-easy `rd_adaptive_halting` tuple has no scored outcome.
+6. **Withdrawals/open claims:** State the `css_state_machine` withdrawal: nine rows, each 2/2. Keep `moco` and `sql_fixed_point` as open questions only; name the SQL tuple (`hidden_depth=hard`, `surface_deceptiveness=easy`) if discussed, and say one observation establishes no effect. Preserve the 14/24, seven/10, and 17/approximately-12 discrepancies.
+7. **Failure labels and judge limits:** Figure 11 is global only. If the article says an environment breakdown is present, provide a readable row-level table. The following cross-tab is supported by EP Table B/DM and the local reconciliation; raw runtime casing is retained:
+
+   | Environment | Recorded FAIL labels and counts |
+   |---|---|
+   | `batchnorm_ema` | `overfit_visible_tests` 11; `training_failed` 1; `invalid_action` 1 |
+   | `compositional_optimizer` | `underfit` 2 |
+   | `equivariant_diagram` | `underfit` 1; `RUNTIME_ERROR` 1 |
+   | `functorial_augmentation` | `underfit` 6; `RUNTIME_ERROR` 3 |
+   | `glyph` | `overfit_visible_tests` 22; `underfit` 1; `invalid_action` 1 |
+   | `gnn_message_passing` | `underfit` 4 |
+   | `moco` | `overfit_visible_tests` 16; `training_failed` 2; `invalid_action` 1 |
+   | `monadic_reward` | `source_invalid` 8; `invalid_action` 1 |
+   | `rd_adaptive_halting` | `RUNTIME_ERROR` 5; `underfit` 1 |
+   | `regex_state_machine` | `underfit` 3; `invalid_action` 1 |
+   | `sheaf_invariant_gluing` | `underfit` 9 |
+   | `sheaf_physical_constraints` | `underfit` 9 |
+   | `sheaf_schema_sync` | `underfit` 1 |
+   | `sql_fixed_point` | `underfit` 1 |
+   | `ssm_parallel_scan` | `underfit` 4 |
+   | `tensor_functor` | `underfit` 3 |
+   | `transformer_ssm_lift` | `source_invalid` 1 |
+   | `ts_one_step` | `underfit` 3; `runtime_error` 1 |
+   | `ts_trajectory` | `underfit` 3; `runtime_error` 1 |
+
+   The two lowercase runtime labels above are the recorded spellings in `ts_one_step` and `ts_trajectory`; nine other cases use uppercase `RUNTIME_ERROR`. Normalizing to 11 is an analysis convention, not an explanation. Keep both disposition groups visible: ten `rejected` and nine scored FAILs with disposition `unscored`; define neither. For guarantees, show the 11/27 environment split and 141/189 versus 136/216 counts, with the confound stated beside the comparison. The nine 9/9 environments split four behavioral-reference and five compile-only, not four and six.
+8. **Provenance and task scope:** Say the source was recorded dirty and no clean config-hash comparison is supplied. Do not claim reproduction against a clean tree. If `epistemic_games` is described beyond a count, limit it to Bayesian inference over stipulated policies; do not expand beyond supplied task evidence.
+
+### Figure links and caption requirements
+
+Use these exact links in useful positions, with alt text and captions consistent with EP Section E and the supplied SVG-source check:
+
+- `../figures/fig8_selection_frame.svg` — include the three-bar counts and explain that the unlabelled 11-case unscored segment is counted in the caption; the nine disposition conflicts are not plotted.
+- `../figures/fig9_environment_intervals.svg` — state the 36 scored environments, k/n labels, 95% Wilson intervals under a binomial sampling convention, pooled 68.4% line, omission of the two unscored-only environments, and that intervals are not seed variation.
+- `../figures/fig10_tuple_matrix.svg` — state 340 squares, 11 grey unscored rows, 44 multi-case rows, nine fractional `moco` rows, and environment-specific columns that are not comparable.
+- `../figures/fig11_failure_labels.svg` — state global counts for 128 FAILs, the 9-uppercase/2-lowercase normalization convention, and that the environment breakdown is in the article table.
+
+Do not restore Figure 2. The SVG check reports source inspection, not visual rendering or page-layout verification. Its supplied hashes, not independently checked here, are: Figure 8 `1adc919e00bd4af48a39f7df40bf60bf51daf193b075c496db702ad300d5a98d`; Figure 9 `fab530a275cb51b6ba2102c449b033cae0a270f5f89104433ca2a5b999244bc3`; Figure 10 `d3811935a4000fe7fbb57ff52799ae5c4d0593878d9b441ec81e2f95d5198b5e`; Figure 11 `bf74789998f679b7d272c74a8a1e125369ca8fc1c028149c1bf25de030ce1187`.
+
+### Current public-site contract
+
+- Exact frontmatter:
+
+  ```yaml
+  ---
+  title: "What a 68.4% Pass Rate Hides: Mercury-2.5 Across 38 Environments"
+  date: 2026-10-16
+  layout: post
+  ---
+  ```
+
+- Preserve `*by <span class="icon-self">StrangeTcy</span>*` and the five-field `<dl class="epistemic-status">` in this order: Original ideas, Synthesis, Prose, Certainty, Importance. Use only supportable disclosures. Neutral AI-assisted drafting/revision attribution is permissible; no invented personal experiences, independent human verification, or independent replication.
+- Add `{% include mathjax.html %}` immediately after frontmatter and before the byline only if inline/display mathematics is used. Do not add external MathJax or polyfill scripts; plain fractions need no loader.
+- Plan approximately 2,000–2,800 words. The contract does not exclude tables from that target. Include a concise revision note, substantive withdrawn/open-claims disclosure, and caveats beside the claims they qualify; do not discard required evidence to meet length mechanically.
+- Preserve `[ac-word]`, `[d-word]`, and `[m-word]` wherever their passages remain. Remove accidental transcript debris and malformed text.
+- Keep the six author wording exclusions out of generated public copy. For internal checklist purposes only, the joined forms are represented as `("If "+"you want")`, `("mat"+"ters")`, `("but "+"wait")`, `("ac"+"tually")`, `("hone"+"st")`, and `("Let "+"me")`; this notation must not enter the article.
+- Public copy must not contain internal paths, case/trace/finding IDs, internal post labels, Arena/reviewer/model labels, production-stage terminology, or extraction instructions. The four required figure URLs are the stated exception. Internal citations in this report are not public citations. Any public external link must be checked for usability and must support the adjacent claim; no external source was used by this report.
+
+### Context-only corrections to the supplied current internal article
+
+The internal article is not selected as a candidate and is not rewritten here. Its relevant issues for the final writer are:
+
+- Replace “the 24 cannot coexist with the selection frame” with the unresolved 14-versus-24 discrepancy; do not infer impossibility from totals.
+- Remove the statement that runtime-label casing is a “data-quality artefact.” State normalization as a convention and the recorded disposition association without explanation.
+- Remove its attributed “one seed per cell” source convention and the inference that a row must be the technical unit.
+- Its 204 + 10 uniform-row distinction is correct; preserve the explicit absence of scored outcomes in the ten rows.
+- Its environment-by-failure table bundles multiple environments into combined rows, so it does not give each environment’s label breakdown. Rebuild it from the row-level cross-tab above; retain raw uppercase/lowercase spellings or label the normalization convention.
+- Remove or avoid the speculative `7 + 2 + rope` explanation for the overview’s 10. It does not verify what the overview intended.
+- Its Figure 8 caption includes the 11 unscored count, but the final caption should explicitly make clear that the image does not plot the nine disposition conflicts separately.
+- Its use of the excluded wording in the Importance disclosure must be changed before any public copy is produced.
+
+**No prose winner is selected.** This report ends at the claim-check handoff. It does not dispatch the final writer, report a local-validator result, open a human-revision gate, or claim that any later stage has passed.
+<END SOURCE CURRENT_CLAIM_CHECK_PAIR>
+<BEGIN SOURCE SUPPORTING_CLAIM_RECONCILIATION>
+Supporting orchestration reconciliation, not an Arena verdict. The claim-check outputs are preserved verbatim. Claim response B (gpt 6 luna max), section 6 item 3, says "nine ts_parse_only PASSes"; this is a handoff error. Table A and Table B record FOUR selected/scored ts_parse_only cases, all PASS (4/4), with ONE performance-ineligible PASS whose exclusion_reason conflicts with its verdict. Do not propagate nine. Claim response A (claude opus 5), C-10: unanimous multi-case rows establish observed within-row agreement, but do not establish independence, estimate correlation, or demonstrate repeatability. Its section 5.1 wording about 34 difficulty-key names must mean 34 distinct names across the entire matrix; each row contains its own environment-specific tuple, not 34 dimensions per row. The accompanying orchestration manifest now supplies the actual observed Web Search setting and exact source/capture artifact paths and hashes that were absent from the claim-check prompt. Those earlier reports correctly marked the operational inputs they did not receive as unverifiable; the present manifest supplies the missing records without implying that reviewers themselves performed hash checks or web access. Neither local verification nor an Arena vote establishes publication acceptance. Final public text must omit every internal record label/path/hash and all stage terminology.
+<END SOURCE SUPPORTING_CLAIM_RECONCILIATION>
+<BEGIN SOURCE VERIFIED_ORCHESTRATION_MANIFEST>
+{
+  "createdAt": "2026-10-29T15:27:59.910Z",
+  "sourceRef": "6ed48cb1c4447d4f902d1fbc8a908a56185e34ed",
+  "sourceVerification": {
+    "method": "SHA-256 of local file bytes recomputed by orchestrator",
+    "entries": [
+      {
+        "label": "WRITER_PAIR",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision.responses.md",
+        "expectedSha256": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756",
+        "observedSha256": "b489102941eb208f984e5e09cda0717227c091697178e32dd13c9724fe19c756"
+      },
+      {
+        "label": "COMPLETE_EVIDENCE_PACKET",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/post-production/handoffs/POST-02-redo_evidence_packet.md",
+        "expectedSha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640",
+        "observedSha256": "4df055b994cf3ccf8bcad7ce761b1bbb2ff4717f72cdeaf0b24e22d6fc66b640"
+      },
+      {
+        "label": "COMPLETE_DIFFICULTY_MATRIX_CSV",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated2/environment_difficulty_matrix.csv",
+        "expectedSha256": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e",
+        "observedSha256": "a028535fb58dd40d240bd376fd4de3322c08cfa546b03df6c7c16c238827569e"
+      },
+      {
+        "label": "CAMPAIGN_PROVENANCE",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/PROVENANCE.md",
+        "expectedSha256": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395",
+        "observedSha256": "c96f1d46980b30c4cc75c1d6fda5862780b4c039eddf6a0c756139790bf00395"
+      },
+      {
+        "label": "EARLIER_ANALYSIS_OVERVIEW",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/ANALYSIS_OVERVIEW.md",
+        "expectedSha256": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e",
+        "observedSha256": "50cd45ad695be1de2b2df687ee54c692aab6c7eafae447e4d3677dc773d9de3e"
+      },
+      {
+        "label": "FULL_SELECTED_CASE_SOURCE_FOR_EXCERPT",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-writer-revision-v2.sources/campaign-02-analysis/evidence/generated/case_results.csv",
+        "expectedSha256": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567",
+        "observedSha256": "88bc8fab7f16d494032a81b01fe8ad6d56e71bbf72a17658b2e7caba45bbd567"
+      },
+      {
+        "label": "CURRENT_INTERNAL_ARTICLE",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map.md",
+        "expectedSha256": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282",
+        "observedSha256": "3e7c6fa5e551ca241fa3e951392c8e3671c0a6bc99b1370f645a5c70f7256282"
+      },
+      {
+        "label": "HOUSE_STYLE",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/house_style.md",
+        "expectedSha256": "3452665419f00aeb382d84da71e73392759fc6b9016d84d5c3c6ebcb64154390",
+        "observedSha256": "3452665419f00aeb382d84da71e73392759fc6b9016d84d5c3c6ebcb64154390"
+      },
+      {
+        "label": "ACTUAL_REFERENCE_POST_EXCERPTS",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/style_reference_material.md",
+        "expectedSha256": "3800b01ba7bcbc7823eb86f94bbc6f313dca25ed0715ff7b2cc68f2af908d6f2",
+        "observedSha256": "3800b01ba7bcbc7823eb86f94bbc6f313dca25ed0715ff7b2cc68f2af908d6f2"
+      },
+      {
+        "label": "PRIOR_WORK_REFERENCES",
+        "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/post-production/source_snapshots/shared/references.md",
+        "expectedSha256": "f2610b23b44af8e9b238f987aacfab07a8cf79712f71840c48bf78f3e2bc92e0",
+        "observedSha256": "f2610b23b44af8e9b238f987aacfab07a8cf79712f71840c48bf78f3e2bc92e0"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-source-audit-v3.md",
+      "sha256": "dbec11cfc8abd29e5f7528958965909ec7c2ab60c11213c7d9bff2875d494542"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-source-audit-v3.json",
+      "sha256": "65607ff85ce0f93e93ee0e1aa2a7163fa486afc2d31e4f9b57921ddc63c88f10"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-redo-evidence-check-v3.retry-1.responses.md",
+      "sha256": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-editorial-critic-v3.responses.md",
+      "sha256": "b155daf2ec12071f31f99239b99b3af5324be02e175b9ff106849ec7e4297fd4"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-claim-check-v3.responses.md",
+      "sha256": "5182c82b4e9b20bb13bc742d3f04d2938579c879a1b032f6cff7f428ecfeeed8"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-review-reconciliation-v3.md",
+      "sha256": "a499666b7de3eb61fe4b84c6ca6a10afc8edd6bb2fe8670aa4c25ad1eff64cfb"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-blueprint-reconciliation-v3.md",
+      "sha256": "15902ac605a1dff052c5b9f61ada43705511e8a0aa38c20b57d25c822b1ef0bc"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-claim-reconciliation-v3.md",
+      "sha256": "4a5cd76e23a4cbb64d57bde35ff2d7072f36274bb58cb4f07c09aa0da551b86c"
+    },
+    {
+      "path": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-figure-validation-v3.json",
+      "sha256": "abf6125828160b66e65c5a895308d4c9251346d6bb89aa93879c21f102c670ca"
+    }
+  ],
+  "modeObservations": [
+    {
+      "stage": "evidence_review",
+      "arenaUrl": "https://arena.ai/c/01a187dd-b0eb-7501-b2e8-5dce27b56175",
+      "observedControl": "Modality: Web Search",
+      "vote": "Both are bad",
+      "rawNames": [
+        "grok-4.5-search",
+        "claude-fable-5.1-search"
+      ],
+      "capture": {
+        "method": "verbatim rendered innerText plus exact DOM innerHTML sidecar",
+        "clipboard": "Copy controls repeatedly returned empty clipboard; Markdown-source fidelity is not claimed.",
+        "characters": [
+          12715,
+          15813
+        ],
+        "sha256": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93"
+      }
+    },
+    {
+      "stage": "editorial_blueprint",
+      "arenaUrl": "https://arena.ai/c/01a187f3-a83f-7da0-ac6e-b689dd235cdb",
+      "observedControl": "Modality: Web Search",
+      "vote": "Both are bad",
+      "rawNames": [
+        "claude-fable-5.1-search",
+        "grok-4.5-search"
+      ],
+      "capture": {
+        "A": "Exact full Markdown code-block text from DOM",
+        "B": "Complete rendered response text; nested fence closed early, original Markdown fidelity not claimed for the final checklist",
+        "sidecar": "Mercury-POST-02-editorial-critic-v3.rendered.json",
+        "sha256": "b155daf2ec12071f31f99239b99b3af5324be02e175b9ff106849ec7e4297fd4"
+      }
+    },
+    {
+      "stage": "claim_check",
+      "arenaUrl": "https://arena.ai/c/01a18816-4a23-7355-97e5-6ee5c1fac266",
+      "observedControl": "Modality: Web Search",
+      "vote": "Both are bad",
+      "rawNames": [
+        "claude-opus-5-search",
+        "gpt-6-luna-search-max"
+      ],
+      "capture": {
+        "method": "Exact Markdown text from single complete twelve-tilde code block per response",
+        "characters": [
+          65964,
+          57412
+        ],
+        "sha256": "5182c82b4e9b20bb13bc742d3f04d2938579c879a1b032f6cff7f428ecfeeed8"
+      }
+    }
+  ],
+  "limits": "UI mode observations do not establish actual web-source access. Sources/figures were checked locally as recorded, not independently by Arena reviewers. Final writer not yet dispatched."
+}
+<END SOURCE VERIFIED_ORCHESTRATION_MANIFEST>
+<END OF COMPLETE FINAL_WRITER HANDOFF>
+
+~~~~~~~~~~~~
+
+Lossless capture packaging: return the ENTIRE complete article in ONE outer code fence of TWELVE tildes labelled markdown, with no commentary outside. Inside that transport fence, start immediately with the exact required frontmatter and end with the article. The wrapper is not article content. Respect approximately 2,000–2,800 words including tables, retain required evidence, and apply every author wording exclusion. Do not introduce internal hashes, model labels, paths, or production terms into public prose.

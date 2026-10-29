@@ -1,0 +1,292 @@
+Markdown
+# Mercury POST-02 — Editorial Critic Blueprint (v3)
+**Internal report only. Not the article. Not a winner selection. Not a stitch job.**
+
+## 1. State and evidence-review disposition
+
+**Inputs read (complete):**
+- Writer pair: `gpt 6 luna max` and `opus 5` (full drafts).
+- COMPLETE_EVIDENCE_PACKET (Tables A–D, Section E Figs 8–11 descriptions).
+- COMPLETE_DIFFICULTY_MATRIX_CSV (340 rows with full `difficulty_tuple` keys).
+- CAMPAIGN_PROVENANCE, EARLIER_ANALYSIS_OVERVIEW, INELIGIBLE_PASS_CSV_EXCERPT.
+- CURRENT_INTERNAL_ARTICLE.
+- HOUSE_STYLE + ACTUAL_REFERENCE_POST_EXCERPTS + PRIOR_WORK_REFERENCES.
+- SUPPORTING_LOCAL_SOURCE_CHECK + JSON (2026-10-29).
+- CURRENT_V3_EVIDENCE_REVIEW_PAIR (`grok 4.5`, `claude fable 5.1`).
+- ORCHESTRATION_CAPTURE_NOTE + supporting reconciliation note.
+- Pinned commit `6ed48cb1c4447d4f902d1fbc8a908a56185e34ed`.
+
+**Arena Web Search mode:** Enabled per orchestration; reviews report access to public Mercury-2.5/Inception pages and repo landing page. No campaign CSVs, hashes, or StrangeTcy commit content retrieved externally. All factual claims rest on embedded sources. No fabrication of additional access.
+
+**Current review verdicts (as recorded):**
+- Both: “accept with corrections.”
+- `grok 4.5`: 0 blocking / 2–3 corrections (moco keys, 214 wording; mild label availability) + notes.
+- `claude fable 5.1`: 1–2 blocking (moco keys; “no env-by-label/guarantee breakdown”) + several corrections (214, cell phrase, judge-coverage language, 9 disposition cases, Fig 2, etc.).
+- Orchestration note: both rated “Both are bad” for substantive defects. Reviewer A retained false source-availability limits; Reviewer B had inconsistent 9/9 guarantee counts and unestablished execution claims. **Useful findings preserved only after recheck against rows; neither response is acceptance or publication clearance.**
+
+**Unresolved reviewer disagreements / gaps:**
+- Strength of “unavailable” language for env×label and env×guarantee (stronger correction in claude + local reconciliation supported; breakdowns aggregable from Table B/D).
+- Exact 9/9 guarantee split: local reconciliation R1 corrects to 4 behavioral_reference + 5 compile_only (not 4+6).
+- Fig 2 vs Section E Figs 8–11 (neither draft’s “Figure 2” matches packet numbering; content nearest Fig 9).
+- “One seed per cell” attribution (phrase not in supplied sources).
+- “Judge-coverage gap” / “judging pipeline” causal language vs recorded `infrastructure_unscored`.
+
+**Missing / unverifiable:**
+- Actual SVG binary renders (Section E text descriptions only; captions/alt must not claim visual inspection).
+- Exact dirty working-tree state; clean config-hash comparison (0 checked).
+- Origin of overview “10” zero-pass and “~12 at 1.00”.
+- Operational definitions of `rejected` / `unscored` dispositions.
+- Independent causation for `ts_parse_only` exclusion_reason (recorded attribution only).
+- Base rate of apparent non-monotonicity; seed variance; any new runs.
+
+**Local verification attribution (not Arena verdict):** Supporting check + JSON + reconciliation confirm core arithmetic (416/405/11; 277/128; 17/7/12/2; 340/296/44; 329/320/9; 98 zero-pass tuples; 204 uniform-scored rows + 10 fully unscored; omission cross-tab; guarantee 141/189 vs 136/216; 9 scored-FAIL + disposition unscored; 10 rejected). 214 only when blanks included; must not be described as 214 observed success/failure outcomes.
+
+**Handoff gap:** No fresh independent claim-killer or final human validation of these candidates beyond the supplied v3 pair + local checks. Missing current clean review of the exact pair must remain explicit.
+
+---
+
+## 2. Seven-dimension comparison
+
+### 1. Argument and structure
+**Reader question:** What does the single 68.4% scored-case pass rate compress, and what do the environment map + tuple matrix add (and still cannot establish)?
+
+**Strongest source-supported thesis:** On this archived seed-0 selection of 416 cases (405 scored), Mercury-2.5 received 277 PASS / 128 FAIL (68.4%). The distribution is endpoint-heavy (17 all-pass 172/172, 7 scored zero-pass 0/68, 12 mixed 105/165 +1 unscored, 2 fully unscored). The 340-row environment×tuple matrix is mostly singleton/binary (296/340 single-case; 320/329 rated rows exactly 0 or 1; 9 fractionals all in `moco`); dimensions are environment-specific (no shared scale). Selection (80 omissions), single seed, dirty source, guarantee/environment confound, undefined dispositions, and open 14-vs-24 / 7-vs-10 discrepancies bound every causal or general-capability reading.
+
+**Structures:**
+- `gpt 6 luna max`: Cleaner linear count → endpoints → names-as-handles → matrix → withdrawn/open → unscored → 7-vs-10 → labels/guarantees → selection → confounds → supports/does-not. Slightly more compressed; ends with broken “!” + Figure 2.
+- `opus 5`: Similar skeleton with stronger density/sensitivity arithmetic early, more explicit “what this does not show,” and a live Fig 2 embed. Slightly more rhetorical framing of the pooled number as “descriptively thin.”
+
+**Move/combine/shorten/remove:**
+- Progress: intelligible pooled-rate problem → exact counts + selection frame (Fig 8) → endpoint map (Fig 9) → density/names caution → tuple matrix (Fig 10) → failure labels (Fig 11) + guarantee confound → withdrawn/open + unresolved discrepancies → bounded consequence.
+- Avoid audit-findings-as-essay. Shorten repeated caveat lists into point-of-use attachments. Remove any “no breakdown available” claims. Do not sequence every local-check row as prose.
+
+### 2. Opening
+**gpt:** Direct 68.4% + ts_* contrast; solid but report-like.
+**opus:** “What should I expect if I open one environment at random?” + ts_*; better tension, still close to internal article.
+
+**Proposed fresh strategy (do not draft full opening or copy either):** Open on a concrete, source-supported contrast that makes the pooled rate feel immediately insufficient—e.g., the three `ts_*` environments (4/4 vs 0/4 vs 0/4) or the sheaf split (8/9 vs 0/9 vs 0/9)—then state that 277/405 = 68.4% is the precise answer to one counting question and the rest of the piece maps what that number hides and cannot support. Ground in supplied example; establish single-seed/selected/retrospective limit within first screen. No slogan replacement; no imported reference-post scene.
+
+### 3. Examples and technical depth
+**Keep exact supported examples:**
+- ts_* trio; sheaf_* split; categorical_lenses 9/9 vs functorial_augmentation 0/9 vs tensor_functor 6/9.
+- Density: glyph 0/24, moco 36/55, batchnorm_ema 2/15 → 94/405 cases, 56/128 FAILs.
+- css_state_machine all 2/2 (withdraw variation claim).
+- sql_fixed_point single FAIL at hidden_depth=hard, surface_deceptiveness=easy (one observation; no non-monotonic effect).
+- moco: 15 rows, 6 endpoint + 9 fractional (values 1/6, 1/3, 2/5, 2/3, 3/4, 5/6); complete matrix supplies keys—descriptive mapping only, no difficulty effect/ranking/scale.
+- rd_adaptive_halting unscored at all-easy five-dimension tuple (missing outcome ≠ easy-case failure).
+- 10 rejected FAILs (8 monadic_reward source_invalid, 1 batchnorm_ema, 1 transformer_ssm_lift); 9 scored-FAIL + disposition unscored (all 5 invalid_action, 2 training_failed, 2 lowercase runtime_error).
+- ts_parse_only row performance_eligible=False PASS kept in 277; exclusion_reason = recorded provider-attribution conflict.
+
+**Tables/figures (roles):**
+- Compact env-outcome summary table (17/7/12/2).
+- Mixed-env rate table (or integrate into Fig 9 reading).
+- Optional compact omission table (56/14/10) + dual 14/24 note.
+- Optional sensitivity arithmetic (ex-moco/ex-glyph) as illustration only.
+- Fig 8 (selection frame): 496 → 80 omitted + 416; 405 scored + 11 unscored; 277+128. Caption must state 11-case segment unlabelled on image; does not plot 9 conflicting-disposition cases.
+- Fig 9 (env intervals): 36 scored envs, k/n dots, 95% Wilson (binomial sampling convention, not seed variance), pooled 68.4% line; selection/dependence limit.
+- Fig 10 (tuple matrix): 340 squares, 11 grey, 44 multi-case numbered; columns not comparable; 9 amber fractionals in moco.
+- Fig 11 (failure labels): global 51/49/11/9/5/3; env breakdown in article table (aggregable from records).
+- No new math, shared difficulty scale, or rendering dependency. Prefer parallel counts over long enumerations.
+
+### 4. Prose and tone
+**Faults to excise:** Stock transitions (“Thus,” “So I keep”); empty emphasis; repetitive global caveat dumps; mechanical benchmark-report cadence; unsupported superlatives; invented first-person experiential claims; “judge-coverage gap” causal promotion; unattributed “one seed per cell”; “no key/no breakdown available” overclaims; any excluded fragments (“If you want”, “matters”, “but wait”, “actually”, “honest”, “Let me”).
+
+**Strengths to calibrate (not copy):** Both drafts’ first-person exploratory voice tied to arithmetic; willingness to withdraw/leave open; dry precision. Match house-style curious technically-literate judgment and self-correction (reference excerpts) without distinctive metaphors, openings, or personal claims from those posts. Epistemic-status must disclose AI-assisted drafting/revision neutrally; no invented independent human verification or dual-model authorship.
+
+### 5. Transitions and caveat placement
+Attach limits at point of interpretation:
+- Selected-case denominator + 80 omissions + 14-vs-24 → with selection frame / Fig 8.
+- 11 infrastructure_unscored (not failures; recorded status) + 277/416 ≠ pass rate → with first counts.
+- One-seed scope / no variance → with endpoints, matrix, and any stability language.
+- Selection + possible dependence → with Fig 9 Wilson reading and matrix aggregates.
+- Guarantee/environment confound (each env one guarantee; 11 BR / 27 CO; 141/189 vs 136/216) → beside any guarantee contrast; not a measured judge effect.
+- Undefined dispositions (10 rejected + 9 scored/FAIL/unscored) → beside affected counts/comparisons (incl. monadic_reward 0/9, transformer_ssm_lift 8/9).
+- Provider-note conflict on ts_parse_only → at its PASS mention; keep in 277.
+- Dirty source + no clean config-hash → beside any reproduction claim ([m-word]).
+- Compile-only PASS ≠ behavioral validation; PASS/FAIL ≠ understanding/mechanism/general capability.
+- Epistemic_games: bounded Bayesian inference over stipulated policies, not recursive ToM (if mentioned).
+Consolidate repetition; no ending-disclaimer dump that hides qualifications.
+
+### 6. Claim support and traceability
+(See §6 Claim-check handoff for full table. Key corrections both drafts share:)
+- moco keys **exist** in COMPLETE_DIFFICULTY_MATRIX_CSV (both claimed unavailable).
+- 214 → 204 uniform-scored-outcome rows + 10 fully-unscored-environment rows (local check).
+- Env×label and env×guarantee breakdowns **aggregable** from Table B/D (remove “not available”).
+- 9 scored-FAIL + disposition=unscored must be visible alongside 10 rejected.
+- Fig numbering/captions must align to packet Figs 8–11 (or descriptive match only).
+- Overview 10 vs Table A 7; provenance 24 vs Table C 14; overview ~12 vs 17 all-pass: preserve as open.
+Distinguish editorial preference (pacing, example order) from evidence correction.
+
+### 7. Public-site fit
+- Frontmatter exact: title/date/layout as contracted.
+- Byline + five-field `<dl class="epistemic-status">` (Original ideas, Synthesis, Prose, Certainty, Importance) with supportable disclosures; neutral AI-assisted OK.
+- MathJax include only if inline/display math used (plain fractions do not require it).
+- Four figure URLs only: fig8_selection_frame, fig9_environment_intervals, fig10_tuple_matrix, fig11_failure_labels. No earlier Fig 2 substitution.
+- Captions/alt checked against Section E / SVG descriptions (unread render ≠ visually inspected).
+- Intentional tokens `[ac-word]`, `[d-word]`, `[m-word]` retained where passages remain.
+- No internal paths, case/trace/finding IDs, Arena/reviewer/model labels, stage terminology, or blueprint citations in public prose.
+- Clean Markdown/HTML; repair any broken embeds (gpt “!”).
+- ~2,000–2,800 words; retain required evidence over mechanical length.
+- Concise revision note + substantive withdrawn/open-claims disclosure.
+
+---
+
+## 3. Original thesis and opening strategy
+
+**Thesis (source-supported):** The 68.4% (277/405) scored-case pass rate on this archived Mercury-2.5 campaign is arithmetically exact for one question and descriptively thin: environment outcomes are endpoint-heavy, case density is uneven, the 340-row tuple matrix is mostly single-case binary with environment-specific dimensions, and selection, single-seed, dirty-source, guarantee confound, undefined dispositions, and open record discrepancies sharply limit causal, stability, or general-capability claims.
+
+**Reader question:** What does 68.4% hide about where the cases sit, and what can the environment + tuple maps actually support?
+
+**Opening device:** Concrete mini-contrast (ts_* 4/4 vs 0/4 vs 0/4, or equivalent supplied split) that makes “open one environment at random” immediately awkward, then name the precise counting question the 68.4% answers and signal that the piece maps the compression and its bounds. No copied candidate/reference opening; no full draft here.
+
+---
+
+## 4. Section-by-section blueprint
+
+**Frontmatter + byline + epistemic-status + revision note**  
+Exact YAML. Byline. Five-field dl (retrospective archive reading; regrouping 416 + 340 matrix; first-person exploratory tied to recorded arithmetic; high on counts, low on causal given seed/dirty/unscored/guarantees/selection; importance = pooled number hides distribution and support limits). Revision note: replaces earlier version; headline 68.4% unchanged; matrix added as exploratory layer; withdrawn/open listed explicitly.
+
+**Opening (no heading)**  
+Device above. Establish 416 selected / 405 scored / 277 PASS / 68.4%; 11 infrastructure_unscored; retrospective, not new runs; environment name ≠ difficulty.
+
+**## First, count the cases that received a judgment**  
+Purpose: Fix denominators.  
+Evidence: Table A/B; 277/405 vs 277/416; summary table 17/7/12/2; unweighted mean ~69.2%, median 8/9.  
+Fig 8 + caption (11 unlabelled on image; 9 conflicting-disposition not plotted).  
+Local caveat: unscored ≠ FAIL; selected denominator.  
+Transition → map shape.
+
+**## The endpoint-heavy distribution**  
+Purpose: Show 24/36 endpoints without capability-population claim.  
+Evidence: 17 all-pass list (9×9/9 + largers/smallers); 7 zero-pass; mixed table; monadic_reward 8/9 rejected; transformer_ssm_lift rejected FAIL; ts_parse_only ineligible PASS flag.  
+Fig 9 + caption (Wilson binomial convention; not seed variance; selection/dependence).  
+Caveat: small-n endpoints; one seed.  
+Transition → names unreliable.
+
+**## Names are useful handles, not forecasts**  
+Purpose: Kill prefix-family and density misreadings.  
+Evidence: ts_*, sheaf_*, category-flavoured splits; glyph/moco/batchnorm_ema density (94 cases / 56 FAILs); optional sensitivity arithmetic as illustration.  
+Caveat: no shared mechanism inferred.  
+Transition → tuple layer.
+
+**## A second layer: the environment × tuple matrix**  
+Purpose: Exploratory description of arrangement, not difficulty effects.  
+Evidence: 340 rows; 296 singleton / 44 multi (moco/glyph/css/epistemic_games); 329 rated / 320 endpoint / 9 fractional (moco); 34 dim names environment-specific; 98 zero-pass tuples in 19 envs; **204 uniform-scored rows + 10 fully unscored** (or 214 only if shared absence explicit).  
+Fig 10 + caption.  
+### What a “cell” means: all seed 0; cell ≈ env×tuple row by arithmetic inference (do not quote unattributed “one seed per cell”); no within-tuple dependence estimate.  
+### moco: only fractionals; keys exist in complete matrix—optional compact descriptive map of 9 fractionals; no shape/effect claim; overall 36/55.  
+Caveat: single-case rows make 0/1 unsurprising; no cross-env scale/ranking/regression.  
+Transition → withdrawn/open.
+
+**## Claims withdrawn or left open**  
+Withdraw css_state_machine non-monotonic (all 2/2).  
+Open: apparent moco / sql_fixed_point patterns (single seed, mostly binary, no base rate); sql one FAIL location noted without effect claim.  
+Disclose 7 vs overview 10; 17 vs ~12; 14 vs 24 known-gate (identity 14+10=24 possible but unverified).  
+
+**## Unscored cases are not failures**  
+11 = 6 epistemic_silence + 4 epistemic_type_games + 1 rd_adaptive_halting (all-easy tuple). Recorded status infrastructure_unscored. rd remains 8/14 +1.  
+
+**## Failure labels and judge guarantees**  
+Fig 11 global + article env-breakdown table (aggregable; descriptive only; labels ≠ mechanisms). Runtime 9 RUNTIME_ERROR (scored) + 2 runtime_error (unscored disposition)—convention, no cosmetic mechanism.  
+9 disposition=unscored FAILs + 10 rejected visible; undefined; stay in 128.  
+Guarantees: 189 BR / 227 CO; per-env constant (11/27); scored 141/189 vs 136/216 +11 unscored in CO; **confound, not judge effect**. Compile-only PASS ≠ behavioral validation.  
+
+**## The selection frame**  
+80 = 56 twin + 14 known-gate + 10 modality (all rope); totals by env 35 moco / 21 glyph / 15 rope / 9 epistemic_games. Dual 14/24 open. rope absent from 38. Flags: rejected, unscored-disposition, ineligible PASS.  
+
+**## Confounds that remain**  
+Single seed 0; dirty source [m-word]; selection/dependence; guarantee confound; undefined dispositions; open discrepancies. No Atria/other-campaign numbers.  
+
+**## What this supports—and what it does not**  
+Restate 277/405, 17/7/12/2, matrix descriptive facts.  
+Does not: common difficulty scale or env-vs-difficulty ranking; mechanisms for glyph/moco/batchnorm; seed stability; uniform-judge counterfactual; clean-source effect; understanding/general capability.  
+Keep 68.4% for the precise counting question; map + bounds are the informative answer.  
+Optional bounded next step (repeated seeds) without new-run claim.
+
+**Withdrawn/open disclosure** already integrated; ensure visible.
+
+---
+
+## 5. Retention and reconstruction decisions
+
+**Useful from gpt 6 luna max:** Tight count-first progression; clear withdrawn/open section; restrained tone; good endpoint/mixed separation; intentional [m-word].  
+**Remove/narrow:** Broken “!”/Fig 2; moco “no key”; 214 unglazed; “judge-coverage gap”; light treatment of 9 disposition cases; global-only label implication.
+
+**Useful from opus 5:** Density/sensitivity arithmetic; stronger “what this does not show”; live figure attempt; explicit thinness of pooled number; good monadic_reward/rejected handling.  
+**Remove/narrow:** moco “no key”; repeated “no breakdown available”; 214; “unrolled” mechanism language; Fig 2 path/caption mismatch with packet; over-general “behaviourally settled.”
+
+**Neither handles adequately (blueprint must supply):**
+- Exact 204+10 uniform distinction with shared-absence language.
+- Visibility of both 10 rejected and 9 scored/FAIL/unscored disposition.
+- Aggregation-available env×label and env×guarantee stated as recorded cross-tabs + confound limit.
+- moco keys present → descriptive option without effect claim.
+- Fig 8–11 alignment + caption fidelity to Section E (Wilson convention, unlabelled 11, grey 11, etc.).
+- Overview ~12 vs 17 noted beside 10 vs 7.
+- Guarantee split on 9/9 envs (4 BR + 5 CO) if discussed.
+- Provider field contrast (prose 1 retry/60s vs http_attempts 19 / 46.1s) left unresolved.
+- Clean public voice free of internal labels while preserving every numerical boundary.
+
+Do not stitch quoted paragraphs. Reconstruct argumentatively from evidence.
+
+---
+
+## 6. Claim-check handoff
+
+| Candidate quotation / location | Source / v3 finding | Required action | Remaining limit |
+|---|---|---|---|
+| Both: moco “no row-by-row key / cannot draw shape / missing key” | COMPLETE_DIFFICULTY_MATRIX_CSV all 15 moco keys; grok #1, claude #1 (blocking) | Replace: keys present in complete matrix; optional descriptive fractional map; pattern stays open | No difficulty effect, ranking, or shared scale |
+| Both: “214 of 340 (63%) … same outcome” | Local check: 204 uniform-scored + 10 fully unscored; grok/claude + reconciliation | Reword to 204+10 (or 214 only with explicit shared-absence) | Blanks ≠ observed success/failure |
+| opus (strong): “No environment-by-label breakdown is available”; “nothing … supplies” env×guarantee/label | Table B/D fields; local failure_cross_tab / guarantee tabs; claude blocking + R4 | Delete unavailability; report aggregated descriptive counts | Not controlled comparison; labels ≠ mechanisms; guarantee confounded with env |
+| gpt: “counts are global only; do not show which environments…” | Same | Soften; supply breakdown table | Same |
+| Both (implicit/light): 10 rejected only | Table B + JSON: also 9 scored+FAIL+disposition unscored | Make both visible; undefined; stay in 128 | No operational definitions |
+| Both: “judge-coverage gap” / “judging pipeline” | status=`infrastructure_unscored` | Use recorded status label | Cause not established |
+| Both: “one seed per cell” (quoted or as campaign record) | Phrase absent from supplied sources; all seed=0 in Table B | Drop unattributed quote; state all selected seed 0 | No variance estimate |
+| Both Fig 2 lollipop / broken embed | Section E = Figs 8–11; nearest content = Fig 9 | Align to fig9 (or 8–11 set); caption = Wilson, pooled line, binomial convention, no unscored envs; repair MD | Unread SVG ≠ visual inspection |
+| Both: 7 zero-pass vs overview 10 | Table A=7; overview=10; tuple=19 | Keep 7; leave 10 open | Do not invent filter |
+| Add: overview “~12 at 1.00” vs 17 | Table A/Matrix=17 (172/172); R2 | Note unresolved beside 10-vs-7 | No invented rule |
+| Both: 14 vs 24 known-gate | Table C=14 (9 glyph+5 rope); provenance=24 | Report both; open; 14+10=24 unverified | Do not double-count or assert coexistence impossibility beyond frame arithmetic |
+| Both: ts_parse_only ineligible PASS | Excerpt + row 409: PASS, eligible=False, exclusion_reason provider-attribution | Keep in 277; flag conflict; recorded attribution only | Not independent proof of cause; retry/time fields unresolved (R3) |
+| gpt/opus guarantees “cannot compare under common standard” because totals only | Per-env constant; 141/189 vs 136/216 | Reword to confound (no within-env variation) | Not measured judge effect |
+| Optional 9/9 guarantee split | R1: 4 BR + 5 CO | If mentioned, use 4+5=9 | — |
+| css non-monotonic | All rows 2/2 | Withdrawn | — |
+| sql_fixed_point / moco non-monotonic | One FAIL location; moco fractionals | Open, not findings | Single seed, no base rate |
+| Runtime casing | 9 upper scored + 2 lower unscored disp. | Normalize to 11 for display; note association | No cosmetic/mechanism claim |
+| Epistemic_games (if used) | Task evidence | Bayesian stipulated policies, not recursive ToM | — |
+| Dirty source / reproduction | Provenance dirty=true; 0 clean hashes | [m-word]; no clean comparison | — |
+
+**Editorial preferences (not evidence corrections):** Opening contrast choice (ts_* vs sheaf); whether to print full 9 moco fractional key table vs prose summary; exact sensitivity rows; heading wording; length within 2–2.8k while retaining evidence.
+
+**Refer to next claim-check:** Any residual SVG pixel-level caption match; final public-link verification; unresolved overview/provenance origins if new primary sources appear. Do not invent answers.
+
+---
+
+## 7. Final writer checklist
+
+- [ ] Frontmatter exact:  
+  ```yaml
+  ---
+  title: "What a 68.4% Pass Rate Hides: Mercury-2.5 Across 38 Environments"
+  date: 2026-10-16
+  layout: post
+  ---
+ {% include mathjax.html %} only if real math used (immediately after frontmatter).
+ Byline: *by <span class="icon-self">StrangeTcy</span>*
+ <dl class="epistemic-status"> five fields in order, supportable text; neutral AI-assisted drafting/revision OK; no invented human verification or dual external authorship.
+ Concise revision note + substantive withdrawn/open disclosure.
+ Figures only:
+../figures/fig8_selection_frame.svg
+../figures/fig9_environment_intervals.svg
+../figures/fig10_tuple_matrix.svg
+../figures/fig11_failure_labels.svg
+Captions/alt match Section E (11 unlabelled; Wilson binomial ≠ seed var; 340/11 grey/44 multi; global labels + table breakdown).
+ Intentional tokens [ac-word], [d-word], [m-word] preserved; accidental debris gone.
+ Numerical boundaries: 416/405/11; 277/128; 68.4% (277/405) vs 66.6% (277/416); 17/7/12/2; 172/68/165; 340/296/44/329/320/9; 98 tuples/19 envs; 204+10 uniform; 51/49/11/9/5/3; 189/227; 141/189 & 136/216; 80=56+14+10; dual 14/24; 10 rejected + 9 unscored-disp; ts_parse_only PASS kept; all seed 0; 7 (not 10) scored zero-pass; css all 2/2 withdrawn; moco keys usable descriptively; no shared scale/ranking/causal/seed-variance/clean-hash.
+ Local caveats at point of use (selection, seed, dirty [m-word], confound, dispositions, open discrepancies, compile-only limit).
+ No excluded word fragments in public prose.
+ No internal paths, IDs, Arena/reviewer/model labels (gpt 6 luna max/opus 5 etc.), stage terms, or blueprint citations in public text.
+ Public citations only verified usable links supporting adjacent claim (prior-work list discipline).
+ ~2,000–2,800 words; evidence retained over word-count pressure.
+ Clean Markdown/HTML; no broken embeds; house-style voice/pacing without copied distinctive phrases.
+ Retrospective single-campaign scope only; no new evals, fitted models, or cross-campaign imports.
+
+End of blueprint. Do not produce the article, dispatch stages, or claim claim-killer / final-writer / local-validator / human-review passage.

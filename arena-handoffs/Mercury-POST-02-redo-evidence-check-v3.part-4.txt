@@ -1,0 +1,293 @@
+MULTIPART EVIDENCE REVIEW — PART 4 OF 4
+Final exact continuation. After its final END marker, review the complete source material from all four parts under the governing instructions in PART 1.
+
+gnn_message_passing,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+gnn_message_passing,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+moco,"{""distractors"": ""easy"", ""naming"": ""easy"", ""queue_math"": ""easy"", ""symptom_mask"": ""easy"", ""temperature"": ""easy"", ""visible_tests"": ""easy""}",6,6,0,4,2,0.6666666666666666,"{""overfit_visible_tests"": 2}","{""behavioral_reference"": 6}"
+moco,"{""distractors"": ""easy"", ""naming"": ""easy"", ""queue_math"": ""hard"", ""symptom_mask"": ""medium"", ""temperature"": ""hard"", ""visible_tests"": ""medium""}",3,3,0,2,1,0.6666666666666666,"{""overfit_visible_tests"": 1}","{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""easy"", ""naming"": ""easy"", ""queue_math"": ""medium"", ""symptom_mask"": ""hard"", ""temperature"": ""medium"", ""visible_tests"": ""hard""}",3,3,0,3,0,1.0,{},"{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""easy"", ""naming"": ""hard"", ""queue_math"": ""hard"", ""symptom_mask"": ""easy"", ""temperature"": ""easy"", ""visible_tests"": ""hard""}",6,6,0,5,1,0.8333333333333334,"{""training_failed"": 1}","{""behavioral_reference"": 6}"
+moco,"{""distractors"": ""easy"", ""naming"": ""medium"", ""queue_math"": ""medium"", ""symptom_mask"": ""easy"", ""temperature"": ""easy"", ""visible_tests"": ""medium""}",3,3,0,2,1,0.6666666666666666,"{""overfit_visible_tests"": 1}","{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""hard"", ""naming"": ""easy"", ""queue_math"": ""easy"", ""symptom_mask"": ""hard"", ""temperature"": ""hard"", ""visible_tests"": ""easy""}",6,6,0,1,5,0.16666666666666666,"{""overfit_visible_tests"": 5}","{""behavioral_reference"": 6}"
+moco,"{""distractors"": ""hard"", ""naming"": ""hard"", ""queue_math"": ""easy"", ""symptom_mask"": ""medium"", ""temperature"": ""easy"", ""visible_tests"": ""medium""}",4,4,0,3,1,0.75,"{""overfit_visible_tests"": 1}","{""behavioral_reference"": 4}"
+moco,"{""distractors"": ""hard"", ""naming"": ""hard"", ""queue_math"": ""hard"", ""symptom_mask"": ""hard"", ""temperature"": ""hard"", ""visible_tests"": ""hard""}",5,5,0,2,3,0.4,"{""overfit_visible_tests"": 3}","{""behavioral_reference"": 5}"
+moco,"{""distractors"": ""hard"", ""naming"": ""hard"", ""queue_math"": ""medium"", ""symptom_mask"": ""easy"", ""temperature"": ""medium"", ""visible_tests"": ""easy""}",3,3,0,2,1,0.6666666666666666,"{""overfit_visible_tests"": 1}","{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""hard"", ""naming"": ""medium"", ""queue_math"": ""medium"", ""symptom_mask"": ""hard"", ""temperature"": ""hard"", ""visible_tests"": ""medium""}",2,2,0,0,2,0.0,"{""training_failed"": 1, ""overfit_visible_tests"": 1}","{""behavioral_reference"": 2}"
+moco,"{""distractors"": ""medium"", ""naming"": ""easy"", ""queue_math"": ""easy"", ""symptom_mask"": ""medium"", ""temperature"": ""medium"", ""visible_tests"": ""easy""}",3,3,0,3,0,1.0,{},"{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""medium"", ""naming"": ""hard"", ""queue_math"": ""hard"", ""symptom_mask"": ""medium"", ""temperature"": ""medium"", ""visible_tests"": ""hard""}",2,2,0,2,0,1.0,{},"{""behavioral_reference"": 2}"
+moco,"{""distractors"": ""medium"", ""naming"": ""medium"", ""queue_math"": ""easy"", ""symptom_mask"": ""hard"", ""temperature"": ""easy"", ""visible_tests"": ""hard""}",4,4,0,4,0,1.0,{},"{""behavioral_reference"": 4}"
+moco,"{""distractors"": ""medium"", ""naming"": ""medium"", ""queue_math"": ""hard"", ""symptom_mask"": ""easy"", ""temperature"": ""hard"", ""visible_tests"": ""easy""}",3,3,0,1,2,0.3333333333333333,"{""overfit_visible_tests"": 1, ""invalid_action"": 1}","{""behavioral_reference"": 3}"
+moco,"{""distractors"": ""medium"", ""naming"": ""medium"", ""queue_math"": ""medium"", ""symptom_mask"": ""medium"", ""temperature"": ""medium"", ""visible_tests"": ""medium""}",2,2,0,2,0,1.0,{},"{""behavioral_reference"": 2}"
+monadic_reward,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""invalid_action"": 1}","{""compile_only"": 1}"
+monadic_reward,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+neuro_symbolic_parser,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,0,1,0,0,,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,0,1,0.0,"{""RUNTIME_ERROR"": 1}","{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""hard""}",1,1,0,0,1,0.0,"{""RUNTIME_ERROR"": 1}","{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,0,1,0.0,"{""RUNTIME_ERROR"": 1}","{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""hard""}",1,1,0,0,1,0.0,"{""RUNTIME_ERROR"": 1}","{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_adaptive_halting,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,0,1,0.0,"{""RUNTIME_ERROR"": 1}","{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_gradient_credit,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""easy"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""hard"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""easy"", ""implementation_obfuscation"": ""hard"", ""recurrence_depth"": ""easy"", ""visible_tests"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""hard"", ""implementation_obfuscation"": ""easy"", ""recurrence_depth"": ""hard"", ""visible_tests"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+rd_state_carry,"{""batching_complexity"": ""medium"", ""clue_clarity"": ""medium"", ""implementation_obfuscation"": ""medium"", ""recurrence_depth"": ""medium"", ""visible_tests"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""hard""}",1,1,0,0,1,0.0,"{""invalid_action"": 1}","{""behavioral_reference"": 1}"
+regex_state_machine,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+semiring_unification,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+semiring_unification,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_invariant_gluing,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_physical_constraints,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+sheaf_schema_sync,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+spreadsheet_dataflow,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+sql_fixed_point,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+ssm_parallel_scan,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ssm_parallel_scan,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+stochastic_monad,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+template_interpreter,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""easy"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""hard"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""easy""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""hard""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+template_interpreter,"{""hidden_depth"": ""medium"", ""surface_deceptiveness"": ""medium""}",1,1,0,1,0,1.0,{},"{""behavioral_reference"": 1}"
+tensor_functor,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+tensor_functor,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+tokenizer_adjunction,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""easy"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""easy"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""easy"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""hard"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""hard"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""hard"", ""symptom_mask"": ""medium""}",1,1,0,0,1,0.0,"{""source_invalid"": 1}","{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""medium"", ""symptom_mask"": ""easy""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""medium"", ""symptom_mask"": ""hard""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+transformer_ssm_lift,"{""naming"": ""medium"", ""symptom_mask"": ""medium""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ts_one_step,"{""representation"": ""flat"", ""witness_status"": ""broken""}",1,1,0,0,1,0.0,"{""runtime_error"": 1}","{""compile_only"": 1}"
+ts_one_step,"{""representation"": ""flat"", ""witness_status"": ""valid""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ts_one_step,"{""representation"": ""reflective"", ""witness_status"": ""broken""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ts_one_step,"{""representation"": ""reflective"", ""witness_status"": ""valid""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ts_parse_only,"{""representation"": ""flat"", ""witness_status"": ""broken""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ts_parse_only,"{""representation"": ""flat"", ""witness_status"": ""valid""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ts_parse_only,"{""representation"": ""reflective"", ""witness_status"": ""broken""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ts_parse_only,"{""representation"": ""reflective"", ""witness_status"": ""valid""}",1,1,0,1,0,1.0,{},"{""compile_only"": 1}"
+ts_trajectory,"{""representation"": ""flat"", ""witness_status"": ""broken""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ts_trajectory,"{""representation"": ""flat"", ""witness_status"": ""valid""}",1,1,0,0,1,0.0,"{""runtime_error"": 1}","{""compile_only"": 1}"
+ts_trajectory,"{""representation"": ""reflective"", ""witness_status"": ""broken""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+ts_trajectory,"{""representation"": ""reflective"", ""witness_status"": ""valid""}",1,1,0,0,1,0.0,"{""underfit"": 1}","{""compile_only"": 1}"
+
+<END SOURCE COMPLETE_DIFFICULTY_MATRIX_CSV>
+
+<BEGIN SOURCE CAMPAIGN_PROVENANCE>
+# Evidence provenance and reconstruction rules (Mercury)
+
+## 1. Primary archive identity
+
+| Item | Value |
+|---|---|
+| Archive | `mercury-pairwise-state-38873207827.zip` |
+| Git blob SHA-1 | `b96d00d3206929da5089ca63b75b667639e87ebc` (verified) |
+| ZIP size | 10,580,748 bytes |
+| ZIP SHA-256 | `ece98bcf1cfd53dd24625c43da5e647aa63a5fac645603976c1213bdbd9af389` |
+| ZIP members | 5,129 |
+| Root-level members | 29 |
+| Campaign source commit | `ea827277d42a714d4cd9760f4a4930ab5237e6de` (dirty=true) |
+| Model | `mercury-2.5` (reasoning_effort=high, reasoning_enabled=true) |
+| Provider | mercury / https://api.inceptionlabs.ai/v1 |
+
+The archive was read in place; no member changed. SHA-256 computed by `reconstruct_campaign.py`.
+
+## 2. Reconstruction
+
+Script: `campaign-02-analysis/evidence/reconstruct_campaign.py` (adapted from Atria's `campaign-01-analysis/evidence/reconstruct_campaign.py`; run_dir prefix changed to `runs/mercury_pairwise_campaign/`, unscored cases handled, Mercury fields `pair_id`, `interventions`, `generation_id` carried).
+
+Generated tables in `evidence/generated/`: archive_inventory.csv, campaign_exclusions.csv, case_results.csv, run_attempts.csv, trace_index.csv, failure_details.csv, environment_summary.csv, track_summary.csv, analysis_family_summary.csv, axis_summary.csv, failure_taxonomy.csv, config_hash_audit.csv, audit.json.
+
+## 3. Scope
+
+- 416 selected case IDs; 405 scored, 11 infrastructure_unscored.
+- 189 behavioral_reference (gated), 227 compile_only.
+- Omissions: 10 rope cases (provider input modality unsupported), 24 known gate-blocked cases, 56 intervention-twin omissions (unverified).
+- Provider outage: one recorded case `ts_parse_only__witness_status=broken_representation=flat__seed-0` (1 retry, 60s).
+
+## 4. Limits
+
+- Source repository dirty at run; config hashes not compared (no clean source snapshot available in this environment) — config_hash_audit.csv has 0 checked.
+- Reasoning content not copied (only counts).
+- No independent rerun of the campaign; all figures reproduced from archived records.
+
+<END SOURCE CAMPAIGN_PROVENANCE>
+
+<BEGIN SOURCE EARLIER_ANALYSIS_OVERVIEW>
+# Mercury-2.5 cross-environment difficulty analysis — overview
+
+Primary question: How does Mercury-2.5's behaviour vary across environments and difficulty tuples?
+
+## Dimensions
+- 38 environments, 340 distinct environment × difficulty-tuple rows, 416 selected cases (405 scored, 11 unscored).
+- Difficulty is multi-dimensional per environment (e.g. naming × symptom_mask; hidden_depth × surface_deceptiveness); not a single scalar.
+- Outcomes: PASS/FAIL/unscored, failure_mode, score, plus epistemic-game posterior/verdict.
+
+## Key patterns
+1. Bimodal environment difficulty: 10 environments at 0.00 pass rate (glyph, functorial_augmentation, monadic_reward, sheaf_*, ts_one_step, ts_trajectory) vs ~12 at 1.00.
+2. Failure modes: underfit (51) and overfit_visible_tests (49) dominate; source_invalid (9), runtime (11), invalid_action (5), training_failed (3).
+3. Difficulty transitions are non-monotonic in several environments (e.g. MoCo visible-test levels pass/fail/pass).
+4. Proxy interventions (visible_proxy, reward_proxy) cut pass rates to 0.30/0.25.
+5. Belief computation exact (23/23) while decisions fragile — supporting diagnostic, not headline.
+
+## Visualisations
+- environment_difficulty_matrix.csv (340 rows)
+- environment_summary_v2.csv (38 rows)
+
+<END SOURCE EARLIER_ANALYSIS_OVERVIEW>
+
+<BEGIN SOURCE INELIGIBLE_PASS_CSV_EXCERPT>
+case_id,environment,track,analysis_family,track_label_overridden_for_analysis,seed,difficulty_levels,config_path,config_sha256,judge_guarantee,status,verdict,score,failure_mode_raw,failure_mode_normalized,interventions,pair_id,pair_id_basis,generation_id,family,case_disposition,stage_statuses,final_notes,final_metrics,returncode,elapsed_seconds,http_attempts_result,http_attempt_ceiling_result,reasoning_enabled,performance_eligible,exclusion_reason,run_id,run_member_prefix,result_member,final_member,manifest_member,response_member,prompt_tokens_final_run,completion_tokens_final_run,total_tokens_final_run
+ts_parse_only__witness_status=broken_representation=flat__seed-0,ts_parse_only,trajectory_solver_synthesis,trajectory_solver_synthesis,False,0,"{""representation"": ""flat"", ""witness_status"": ""broken""}",envs/trajectory_semantics/parse_only/config.yaml,53816a7d544de28c65a50a775f7d42d729f87bf5a0114de03ac6d908212440b8,compile_only,scored,PASS,1.0,pass,pass,[],P965681a0a939d6dd,latent_spec,G6dedadba4e84d060,,scored,"{""behavioral_evaluation"": ""scored_pass"", ""judge_execution"": ""passed"", ""patch_validation"": ""passed"", ""provider_transport"": ""completed_with_errors"", ""required_artifacts"": ""passed"", ""response_parsing"": ""passed"", ""runtime_execution"": ""unknown"", ""source_validation"": ""passed""}",[],"{""query_type"": ""parse_only"", ""track"": ""solver_synthesis_debugging""}",0,46.101,19,240,True,False,campaign report provider-outage case; final result explicitly attributes terminal failure to provider transient after bounded retries,ts_parse_only-20261016T111739Z-40975e49,episodes/ts_parse_only__witness_status=broken_representation=flat__seed-0/ts_parse_only-20261016T111739Z-40975e49/,suite_checkpoint.json#/results/ts_parse_only__witness_status=broken_representation=flat__seed-0,episodes/ts_parse_only__witness_status=broken_representation=flat__seed-0/ts_parse_only-20261016T111739Z-40975e49/final.json,episodes/ts_parse_only__witness_status=broken_representation=flat__seed-0/ts_parse_only-20261016T111739Z-40975e49/manifest.json,episodes/ts_parse_only__witness_status=broken_representation=flat__seed-0/ts_parse_only-20261016T111739Z-40975e49/model_responses.jsonl,11926,12935,24861
+
+<END SOURCE INELIGIBLE_PASS_CSV_EXCERPT>
+
+<END ALL SUPPLIED SOURCES>
+
+Review both new candidate articles under the governing instructions above. Return separate evidence verdicts, cited findings, and the handoff corrections only. No article rewrite.

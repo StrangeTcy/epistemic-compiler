@@ -1,0 +1,120 @@
+{
+  "stage": "final_writer",
+  "status": "targeted_revision_validated_ready_for_user_review",
+  "promptSha256": "ce71f393e8d5e52fc6a5db3f5c736ffbe8da14c934e03b34974cc49de731c2bc",
+  "promptCharacters": 554699,
+  "bounds": [
+    0,
+    47931,
+    95943,
+    143984,
+    191974,
+    239959,
+    287973,
+    334719,
+    383863,
+    431585,
+    479738,
+    527639,
+    554699
+  ],
+  "partCharacters": [
+    48226,
+    48307,
+    48336,
+    48285,
+    48280,
+    48309,
+    47041,
+    49439,
+    48017,
+    48449,
+    48197,
+    27903
+  ],
+  "receipts": {
+    "part1": "Assistant A\nNo Sources\n\nAcknowledged — Part 1 of 12 received. I'll hold the payload (the Mercury POST-02 v3 final-writer contract, both writer candidates, and the start of the evidence packet through Table B row 42) and wait for the remaining parts. No drafting, searching, review, or conclusions until the final part arrives.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 1 OF 12 received.\n\nPayload buffer started. Awaiting subsequent parts.",
+    "part2": "Assistant A\nNo Sources\n\nAcknowledged — Part 2 of 12 received. Payload held (Table B rows 43–416, Table C omissions rows 1–80, and Table D matrix rows through epistemic_announcements#3). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 2 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part3": "Assistant A\nNo Sources\n\nAcknowledged — Part 3 of 12 received. Payload held (Table D matrix rows epistemic_announcements#4 through ts_trajectory#4, Section E chart descriptions for Figures 8–11, the END marker for the evidence packet, and the start of the complete difficulty-matrix CSV through the second glyph row). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 3 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part4": "Assistant A\nNo Sources\n\nAcknowledged — Part 4 of 12 received. Payload held (remaining difficulty-matrix CSV rows through ts_trajectory and its END marker, the campaign provenance block, the earlier analysis overview, the ineligible-PASS CSV excerpt, and the start of the current internal article through the heading \"The endpoint-heavy distribution\"). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 4 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part5": "Assistant A\nNo Sources\n\nAcknowledged — Part 5 of 12 received. Payload held (remainder of the current internal article through its END marker, the house-style guide, and the reference-post excerpts through \"The Next Question Is Part of the Game\" opening/trajectory model). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 5 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part6": "Assistant A\nNo Sources\n\nAcknowledged — Part 6 of 12 received. Payload held (the \"Lying With Truth\" reference excerpt and END marker for the reference-post excerpts, the prior-work references block, the supporting local source check Markdown, and the companion JSON through the environment_rows_derived_from_matrix entry for glyph with n_scored: 24). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 6 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part7": "Assistant A\nNo Sources\n\nAcknowledged — Part 7 of 12 received. Payload held (remainder of the supporting local-check JSON through its END marker, the complete v3 evidence-review pair from grok 4.5 and claude fable 5.1, and the start of the editorial blueprint pair — claude fable 5.1's blueprint through section 1.5 and the heading for 1.6). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 7 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part8": "Assistant A\nNo Sources\n\nAcknowledged — Part 8 of 12 received. Payload held (claude fable 5.1's blueprint sections 1.6 through 7 and its scope statement, and the start of grok 4.5's blueprint through section 2.1 \"Argument and structure\" up to the \"Move/combine/shorten/remove\" heading). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 8 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part9": "Assistant A\nNo Sources\n\nAcknowledged — Part 9 of 12 received. Payload held (remainder of grok 4.5's editorial blueprint through its checklist and END marker, the supporting review reconciliation R1–R4, the supporting blueprint reconciliation, the supporting SVG source-check JSON, and the start of the claim-check pair — claude opus 5's report through §1.4 and claim entries C-01 and C-02). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 9 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part10": "Assistant A\nNo Sources\n\nAcknowledged — Part 10 of 12 received. Payload held (claude opus 5's claim-check report continued: claim entries C-03 through C-50, §3 review/blueprint reconciliation, §4 unresolved-discrepancy register U-1 through U-11, §5 permitted factual content, and the start of §6 final-writer handoff through 6.1 thesis constraints). Awaiting the remaining parts; no drafting, searching, review, or conclusions until the final part.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 10 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts.",
+    "part11": "Assistant A\nNo Sources\n\nAcknowledged — Part 11 of 12 received. Payload held (remainder of claude opus 5's claim-check §6.2–6.10 and stop point, and gpt 6 luna max's claim-check report through its §1 input manifest, §2 claim table C1–C23 with figure decisions, §3 review/blueprint reconciliation, and the first row of its §4 unresolved-discrepancy register). Awaiting the final part; no drafting, searching, review, or conclusions until it arrives.\n\nAssistant B\nNo Sources\n\nAcknowledged: PART 11 OF 12 received.\n\nPayload buffer updated. Awaiting subsequent parts."
+  },
+  "inputManifest": "Mercury-POST-02-final-writer-v3.input-manifest.json",
+  "browserIssue": "Two fresh-tab attachment attempts timed out; reused tab 5 at /search has empty DOM/zero-width screenshot despite reconnect and reload. Existing tab 6 intermittently times out.",
+  "modeObserved": "Modality: Web Search",
+  "browserRecovery": "Existing Arena session New Chat navigation reached healthy /search UI; no working tab closed.",
+  "tabId": "1",
+  "arenaUrl": "https://arena.ai/c/01a1889b-e39a-786d-b67d-5dba0f1d46d3",
+  "submittedAt": "2026-10-29T17:38:39.776Z",
+  "responseRetries": [
+    {
+      "side": "B",
+      "reason": "Generation returned a response error after final part; A full article preserved before retry.",
+      "at": "2026-10-29T17:47:13.059Z"
+    }
+  ],
+  "capture": {
+    "at": "2026-10-29T17:58:04.471Z",
+    "method": "Exact full Markdown code-block text from DOM; one complete article block per side",
+    "characters": [
+      18712,
+      18590
+    ],
+    "AUnchangedAfterBRetry": true,
+    "sidecar": "Mercury-POST-02-final-writer-v3.rendered.json",
+    "candidates": [
+      "POST-02-cross-environment-map-v3-final-A.md",
+      "POST-02-cross-environment-map-v3-final-B.md"
+    ]
+  },
+  "responseRecovery": {
+    "method": "Saved stalled partial text and reloaded persisted battle; completion and voting controls became visible",
+    "BStalledCharacters": 17862,
+    "BFinalCharacters": 18590
+  },
+  "vote": {
+    "value": "Both are bad",
+    "at": "2026-10-29T18:05:49.960Z",
+    "basis": "Pair does not satisfy final publication-readiness because A requires evidence-scope corrections; user convention allows only Both are good or Both are bad, with no prose winner. This Arena vote is separate from candidate-specific local validation."
+  },
+  "rawNames": [
+    "claude-fable-5.1-search",
+    "grok-4.5-search"
+  ],
+  "normalizedNames": [
+    "claude fable 5.1",
+    "grok 4.5"
+  ],
+  "pairSha256": "c141b051124c8eb6122d5663f7118f9d8f63968bd4a20153a0c7854315edbde1",
+  "screenshot": "Mercury-POST-02-final-writer-vote.png",
+  "completedWriterAt": "2026-10-29T18:15:23.661Z",
+  "localValidation": {
+    "report": "Mercury-POST-02-local-validation-v3.json",
+    "A": "FAIL_FIVE_TARGETED_CORRECTIONS",
+    "B": "PASS_WITH_NONBLOCKING_ADVISORY",
+    "gate": "COMPLETED",
+    "articlesEdited": false,
+    "ARevised": "PASS_WITH_NONBLOCKING_ADVISORIES",
+    "revisedReport": "Mercury-POST-02-local-validation-v3.revised-A.json"
+  },
+  "reviewPacket": "Mercury-POST-02-final-review-v3.md",
+  "targetedRevision": {
+    "authorization": {
+      "source": "User continuation following the explicit request to approve the five exact A corrections",
+      "message": "Impressive. Go on with processing this article as the pipeline specifies"
+    },
+    "status": "COMPLETED",
+    "candidate": "C:/Users/hatgu/epistemic-compiler/arena-handoffs/Mercury-POST-02-pipeline-resources/campaign-02-analysis/posts/POST-02-cross-environment-map-v3-final-A-revised.md",
+    "sha256": "45cbd4e2d066bc5ba7a9786056b1166d1f97879a908c3da824d37187dac45e18",
+    "appliedRecord": "Mercury-POST-02-targeted-revision-v3.applied.json",
+    "validationReport": "Mercury-POST-02-local-validation-v3.revised-A.json",
+    "validationResult": "PASS_WITH_NONBLOCKING_ADVISORIES"
+  },
+  "finalUserReview": "PENDING"
+}

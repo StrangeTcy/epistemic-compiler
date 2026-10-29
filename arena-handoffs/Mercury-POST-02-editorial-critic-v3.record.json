@@ -1,0 +1,105 @@
+{
+  "stage": "editorial_blueprint",
+  "status": "complete_voted_both_bad",
+  "promptSha256": "ca207f3e6217165053fcbe464d00471052afa58709aa2bf50c60807ff76d57dd",
+  "sourceCharacters": 337181,
+  "bounds": [
+    0,
+    47814,
+    95951,
+    143885,
+    191977,
+    239886,
+    287978,
+    335952,
+    337181
+  ],
+  "partCharacters": [
+    48186,
+    48509,
+    48306,
+    48464,
+    48281,
+    48464,
+    48346,
+    8972
+  ],
+  "receipts": {
+    "part1": "Assistant A\nNo Sources\n\nAcknowledged — Part 1 of 8 received (Mercury POST-02 editorial blueprint instructions v3, plus the WRITER_PAIR source block containing the gpt 6 luna max candidate in full and the opus 5 candidate through its \"What this supports\" section). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 1 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part2": "Assistant A\nNo Sources\n\nAcknowledged — Part 2 of 8 received (end of the opus 5 candidate closing the WRITER_PAIR block, plus the start of COMPLETE_EVIDENCE_PACKET: source-table hashes, Table A environment summary, Table B all 416 selected-case rows, and Table C omission rows 1–25). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 2 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part3": "Assistant A\nNo Sources\n\nAcknowledged — Part 3 of 8 received (Table C omission rows 26–80, Table D complete 340-row environment × tuple matrix, Section E chart descriptions for Figures 8–11 closing the COMPLETE_EVIDENCE_PACKET, and the start of COMPLETE_DIFFICULTY_MATRIX_CSV through the first six css_state_machine rows). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 3 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part4": "Assistant A\nNo Sources\n\nAcknowledged — Part 4 of 8 received (remainder of COMPLETE_DIFFICULTY_MATRIX_CSV from the final three css_state_machine rows through ts_trajectory, closing that block, plus the complete CAMPAIGN_PROVENANCE block: archive identity, reconstruction, scope, and limits). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 4 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part5": "Assistant A\nNo Sources\n\nAcknowledged — Part 5 of 8 received (closing CAMPAIGN_PROVENANCE; complete EARLIER_ANALYSIS_OVERVIEW; complete INELIGIBLE_PASS_CSV_EXCERPT; complete CURRENT_INTERNAL_ARTICLE; complete HOUSE_STYLE; and the start of ACTUAL_REFERENCE_POST_EXCERPTS through the opening of the \"Knowing What Kind of Problem You Are In\" epistemic-status block). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 5 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part6": "Assistant A\nNo Sources\n\nAcknowledged — Part 6 of 8 received (remainder of ACTUAL_REFERENCE_POST_EXCERPTS closing that block; complete PRIOR_WORK_REFERENCES; complete SUPPORTING_LOCAL_SOURCE_CHECK; and the start of SUPPORTING_LOCAL_SOURCE_CHECK_JSON through the beginning of the rejected_failures array). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 6 of 8 received and acknowledged.\n\nPayload stored. Awaiting subsequent parts for concatenation. No review, drafting, search, or findings issued.",
+    "part7": "Assistant A\nNo Sources\n\nAcknowledged — Part 7 of 8 received (remainder of SUPPORTING_LOCAL_SOURCE_CHECK_JSON closing that block, and the CURRENT_V3_EVIDENCE_REVIEW_PAIR block containing the grok 4.5 review in full and the claude fable 5.1 review through its section 4 handoff list). Holding as data; no review, drafting, searching, or findings until the final part arrives.\n\nAssistant B\nNo Sources\n\nPart 7 of 8 received and acknowledged.\n\nPayload stored. Awaiting the final part for concatenation. No review, drafting, search, or findings issued."
+  },
+  "evidenceReview": {
+    "stage": "evidence_review",
+    "status": "reviews_complete_voted_rendered_capture",
+    "previousBattle": "https://arena.ai/c/01a1879d-4519-79f8-a4cb-edf20b759c9b",
+    "sourcePromptSha256": "d51ac7cbf50948828fbf46272fb26bd38c1f9c8434511052e1bbcb67703e1d93",
+    "boundaries": [
+      0,
+      48919,
+      97864,
+      146808,
+      187173
+    ],
+    "exactOriginalPayload": true,
+    "partCharacters": [
+      49341,
+      49367,
+      49366,
+      44250
+    ],
+    "supportingAuditSha256": "dbec11cfc8abd29e5f7528958965909ec7c2ab60c11213c7d9bff2875d494542",
+    "createdAt": "2026-10-29T13:35:38.338Z",
+    "arenaUrl": "https://arena.ai/c/01a187dd-b0eb-7501-b2e8-5dce27b56175",
+    "receipts": {
+      "part1": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 1 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 1 of 4 received (governing instructions, both writer drafts, and the start of the evidence packet through Table B row 51); I will not review or issue verdicts until PART 4 arrives.",
+      "part2": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 2 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 2 of 4 received (Table B rows 52–416, Table C's 80 omission rows, and Table D through epistemic_nested_knowledge#5); still holding all review and verdicts until PART 4.",
+      "part3": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 3 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 3 of 4 received (Table D through ts_trajectory#4, Section E chart descriptions for Figures 8–11, and the complete difficulty-matrix CSV with tuple keys through gnn_message_passing row 1); still holding all review and verdicts until PART 4."
+    },
+    "submittedAt": "2026-10-29T13:43:17.466Z",
+    "vote": "Both are bad",
+    "voteReason": "Both contain material review defects: A retains false availability limits and understates figure/disposition problems; B contains inconsistent 9/9-environment arithmetic and unverified execution/access assertions. Findings are passed forward for source-based reconciliation, without treating either review as acceptance.",
+    "rawNames": [
+      "grok-4.5-search",
+      "claude-fable-5.1-search"
+    ],
+    "displayNames": [
+      "grok 4.5",
+      "claude fable 5.1"
+    ],
+    "capture": {
+      "method": "verbatim rendered innerText plus exact DOM innerHTML sidecar",
+      "clipboard": "Copy controls repeatedly returned empty clipboard; Markdown-source fidelity is not claimed.",
+      "characters": [
+        12715,
+        15813
+      ],
+      "sha256": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93"
+    },
+    "completedAt": "2026-10-29T13:56:23.464Z"
+  },
+  "modeObserved": "Modality: Web Search",
+  "arenaUrl": "https://arena.ai/c/01a187f3-a83f-7da0-ac6e-b689dd235cdb",
+  "supplementSha256": "a499666b7de3eb61fe4b84c6ca6a10afc8edd6bb2fe8670aa4c25ad1eff64cfb",
+  "submittedAt": "2026-10-29T14:12:24.955Z",
+  "rawNames": [
+    "claude-fable-5.1-search",
+    "grok-4.5-search"
+  ],
+  "displayNames": [
+    "claude fable 5.1",
+    "grok 4.5"
+  ],
+  "vote": "Both are bad",
+  "voteReason": "A introduces unsupported non-random-selection/planning-unit claims, conflates failure-density and omission environments, and omits the scored qualification from singleton endpoints. B infers cell meaning from counts despite the current contract and retains weakly attributed or shared paraphrase quotations. Both require source-based correction in claim check.",
+  "capture": {
+    "A": "Exact full Markdown code-block text from DOM",
+    "B": "Complete rendered response text; nested fence closed early, original Markdown fidelity not claimed for the final checklist",
+    "sidecar": "Mercury-POST-02-editorial-critic-v3.rendered.json",
+    "sha256": "b155daf2ec12071f31f99239b99b3af5324be02e175b9ff106849ec7e4297fd4"
+  }
+}

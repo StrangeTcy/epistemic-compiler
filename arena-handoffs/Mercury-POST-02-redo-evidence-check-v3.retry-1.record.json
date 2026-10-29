@@ -1,0 +1,49 @@
+{
+  "stage": "evidence_review",
+  "status": "reviews_complete_voted_rendered_capture",
+  "previousBattle": "https://arena.ai/c/01a1879d-4519-79f8-a4cb-edf20b759c9b",
+  "sourcePromptSha256": "d51ac7cbf50948828fbf46272fb26bd38c1f9c8434511052e1bbcb67703e1d93",
+  "boundaries": [
+    0,
+    48919,
+    97864,
+    146808,
+    187173
+  ],
+  "exactOriginalPayload": true,
+  "partCharacters": [
+    49341,
+    49367,
+    49366,
+    44250
+  ],
+  "supportingAuditSha256": "dbec11cfc8abd29e5f7528958965909ec7c2ab60c11213c7d9bff2875d494542",
+  "createdAt": "2026-10-29T13:35:38.338Z",
+  "arenaUrl": "https://arena.ai/c/01a187dd-b0eb-7501-b2e8-5dce27b56175",
+  "receipts": {
+    "part1": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 1 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 1 of 4 received (governing instructions, both writer drafts, and the start of the evidence packet through Table B row 51); I will not review or issue verdicts until PART 4 arrives.",
+    "part2": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 2 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 2 of 4 received (Table B rows 52–416, Table C's 80 omission rows, and Table D through epistemic_nested_knowledge#5); still holding all review and verdicts until PART 4.",
+    "part3": "Assistant A\nNo Sources\n\nAcknowledged receipt of PART 3 of 4 for the Mercury POST-02 evidence review.\n\nAssistant B\nNo Sources\n\nAcknowledged — PART 3 of 4 received (Table D through ts_trajectory#4, Section E chart descriptions for Figures 8–11, and the complete difficulty-matrix CSV with tuple keys through gnn_message_passing row 1); still holding all review and verdicts until PART 4."
+  },
+  "submittedAt": "2026-10-29T13:43:17.466Z",
+  "vote": "Both are bad",
+  "voteReason": "Both contain material review defects: A retains false availability limits and understates figure/disposition problems; B contains inconsistent 9/9-environment arithmetic and unverified execution/access assertions. Findings are passed forward for source-based reconciliation, without treating either review as acceptance.",
+  "rawNames": [
+    "grok-4.5-search",
+    "claude-fable-5.1-search"
+  ],
+  "displayNames": [
+    "grok 4.5",
+    "claude fable 5.1"
+  ],
+  "capture": {
+    "method": "verbatim rendered innerText plus exact DOM innerHTML sidecar",
+    "clipboard": "Copy controls repeatedly returned empty clipboard; Markdown-source fidelity is not claimed.",
+    "characters": [
+      12715,
+      15813
+    ],
+    "sha256": "2af1df655f53f29d726b54ec5d8da3e81b3492d6a5997bc0fc5739cf7911ef93"
+  },
+  "completedAt": "2026-10-29T13:56:23.464Z"
+}
